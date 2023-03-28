@@ -1150,7 +1150,7 @@ TSWLatexianTemp*
 Brewfile.lock.json
 
 ### Data template
-*.csv
+#*.csv
 *.dat
 *.efx
 *.gbr

@@ -5,3 +5,5 @@ install.packages("blogdown")
 library("blogdown")
 
 new_site(theme = "wowchemy/starter-academic")
+
+blogdown::check_site()

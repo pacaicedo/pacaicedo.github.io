@@ -1,0 +1,16 @@
+languageCode: en-us
+title: Massively
+baseURL: http://localhost:1313/
+theme: hugo-theme-massively
+googleanalytics: ''
+disqusShortname: ''
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+  - section
+languages:
+  en:
+    languageName: English
+  es:
+    languageName: Español
+    title: Massively - Versión Español

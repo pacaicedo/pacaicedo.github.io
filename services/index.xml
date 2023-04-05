@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Hugo Hero Theme</title>
-    <link>https://www.example.com/</link>
-    <description>Recent content in Home on Hugo Hero Theme</description>
+    <title>Services on Hugo Hero Theme</title>
+    <link>https://www.example.com/services/</link>
+    <description>Recent content in Services on Hugo Hero Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Feb 2018 15:37:57 +0700</lastBuildDate><atom:link href="https://www.example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Feb 2018 11:52:18 +0700</lastBuildDate><atom:link href="https://www.example.com/services/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Accounting</title>
       <link>https://www.example.com/services/accounting/</link>
@@ -19,26 +19,6 @@ Cum det dixit Parcarum qui spemque est Exit ex huic Quod consiste agitataque cla
     </item>
     
     <item>
-      <title>Fall Plaza</title>
-      <link>https://www.example.com/work/fall-plaza/</link>
-      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
-      
-      <guid>https://www.example.com/work/fall-plaza/</guid>
-      <description>Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, te tegens ferro nocere haud, et Dulichium tui male! Quo sed fuit flexit et hic die solido, gloria?
-Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa! Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus esse iam feres mortis Plurima.</description>
-    </item>
-    
-    <item>
-      <title>Modern Hospital</title>
-      <link>https://www.example.com/work/modern-hospital/</link>
-      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
-      
-      <guid>https://www.example.com/work/modern-hospital/</guid>
-      <description>Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, te tegens ferro nocere haud, et Dulichium tui male! Quo sed fuit flexit et hic die solido, gloria?
-Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa! Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus esse iam feres mortis Plurima.</description>
-    </item>
-    
-    <item>
       <title>Tax Filing</title>
       <link>https://www.example.com/services/tax-filing/</link>
       <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
@@ -47,46 +27,6 @@ Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati d
       <description>Lorem markdownum Achaica revolutaque amore, penitus puppes nec furit, clipeus fatetur, mira inter accedere. Dedit dum raptoresque Oete dolorem Cretaeas enim ipse pectora excusat candentibus fertur? Furtiva Orontes Erysicthona dona, est per Achille viridi draconis cultis mota milia.
 Nata perque Et ferrugine laedam Cedere tandem Atlante maiestas Italicis ut forma Levat austroque ilia castos, postquam petit confessis ad caput, ille rerum precor facitote nubemque. Potuit Celadon Martem?
 Imagine Assaracus victori petet femina mea haustos Sicaniam quibus agro magni In utque Troica pedum caelestia hunc tempto Gregibus certare tamen turbatque qui Patulis Veneris est expulit adversaque magnum mediaque Omnis est signa cum nec inplevit vivit et insania Orpheu, an abit.</description>
-    </item>
-    
-    <item>
-      <title>Cargo Terminal</title>
-      <link>https://www.example.com/work/cargo-terminal/</link>
-      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
-      
-      <guid>https://www.example.com/work/cargo-terminal/</guid>
-      <description>Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, te tegens ferro nocere haud, et Dulichium tui male! Quo sed fuit flexit et hic die solido, gloria?
-Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa! Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus esse iam feres mortis Plurima.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>https://www.example.com/2020/12/01/hello-r-markdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>https://www.example.com/2020/12/01/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://www.example.com/about/</link>
-      <pubDate>Thu, 06 Dec 2018 09:29:16 +1000</pubDate>
-      
-      <guid>https://www.example.com/about/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
-      <title>History</title>
-      <link>https://www.example.com/history/</link>
-      <pubDate>Thu, 06 Dec 2018 09:29:16 +1000</pubDate>
-      
-      <guid>https://www.example.com/history/</guid>
-      <description>About Heading Theres no limits, Lorem ipsum dolor sit amet, et essent mediocritatem quo, choro volumus oporteat an mei. Numquam dolores mel eu, mea docendi omittantur et, mea ea duis erat. Elit melius cu ius. Per ex novum tantas putant, ei his nullam aliquam apeirian. Aeterno quaestio constituto sea an, no eum intellegat assueverit.
-Theres no limits, Lorem ipsum dolor sit amet, et essent mediocritatem quo, choro volumus oporteat an mei.</description>
     </item>
     
     <item>

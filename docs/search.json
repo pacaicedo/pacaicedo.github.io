@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "pacaicedo.github.io",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "OldOne/post/2020-12-01-r-rmarkdown/index.html",
+    "href": "OldOne/post/2020-12-01-r-rmarkdown/index.html",
+    "title": "Hello R Markdown",
+    "section": "",
+    "text": "R Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nYou can embed an R code chunk like this:\n\nsummary(cars)\n##      speed           dist       \n##  Min.   : 4.0   Min.   :  2.00  \n##  1st Qu.:12.0   1st Qu.: 26.00  \n##  Median :15.0   Median : 36.00  \n##  Mean   :15.4   Mean   : 42.98  \n##  3rd Qu.:19.0   3rd Qu.: 56.00  \n##  Max.   :25.0   Max.   :120.00\nfit &lt;- lm(dist ~ speed, data = cars)\nfit\n## \n## Call:\n## lm(formula = dist ~ speed, data = cars)\n## \n## Coefficients:\n## (Intercept)        speed  \n##     -17.579        3.932\n\n\n\nIncluding Plots\nYou can also embed plots. See Figure @ref(fig:pie) for example:\n\npar(mar = c(0, 1, 0, 1))\npie(\n  c(280, 60, 20),\n  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),\n  col = c('#0292D8', '#F7EA39', '#C4B632'),\n  init.angle = -50, border = NA\n)\n\n\n\n\nA fancy pie chart."
+  },
+  {
+    "objectID": "OldOne/2020/12/01/hello-r-markdown/index.html",
+    "href": "OldOne/2020/12/01/hello-r-markdown/index.html",
+    "title": "Hello R Markdown",
+    "section": "",
+    "text": "R Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nYou can embed an R code chunk like this:\n\nsummary(cars)\n##      speed           dist       \n##  Min.   : 4.0   Min.   :  2.00  \n##  1st Qu.:12.0   1st Qu.: 26.00  \n##  Median :15.0   Median : 36.00  \n##  Mean   :15.4   Mean   : 42.98  \n##  3rd Qu.:19.0   3rd Qu.: 56.00  \n##  Max.   :25.0   Max.   :120.00\nfit &lt;- lm(dist ~ speed, data = cars)\nfit\n## \n## Call:\n## lm(formula = dist ~ speed, data = cars)\n## \n## Coefficients:\n## (Intercept)        speed  \n##     -17.579        3.932\n\n\n\nIncluding Plots\nYou can also embed plots. See Figure @ref(fig:pie) for example:\n\npar(mar = c(0, 1, 0, 1))\npie(\n  c(280, 60, 20),\n  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),\n  col = c('#0292D8', '#F7EA39', '#C4B632'),\n  init.angle = -50, border = NA\n)\n\n\n\n\nA fancy pie chart."
+  }
+]

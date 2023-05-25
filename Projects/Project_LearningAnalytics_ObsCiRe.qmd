@@ -1,0 +1,11 @@
+---
+title: "Apoyo al Observatorio de Ciudad y Región"
+description: "Generación de resultados gráficos para el Observatorio de Ciudad y Región"
+lang: es
+author: 
+    - "Mtra. Sandra Patricia Castillo L"
+    - "Ph.D. Pablo Eduardo Caicedo R."
+date: "Febrero 6, 2023"
+date-modified: "Mayo 25, 2023"
+image: "../Img/popayan001.png"
+---

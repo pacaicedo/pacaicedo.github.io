@@ -1,0 +1,9 @@
+---
+title: "Probabilidad Computacional & Estadística"
+description: "Sitio de la asignatura Probabilidad computacional y estadística de la Uniautonoma del Cauca"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo R."
+date: "Febrero 6, 2023"
+date-modified: "Mayo 25, 2023"
+image: "../Img/estadistica.png"
+---

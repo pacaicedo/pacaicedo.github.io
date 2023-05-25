@@ -3,7 +3,10 @@
     "listing": "/index.html",
     "items": [
       "/Projects/Project_LearningAnalytics_SaberPro.html",
-      "/Projects/Project_LeaningAnalytics_EvalDoc01.html"
+      "/Projects/Project_LearningAnalytics_ObsCiRe.html",
+      "/Projects/Project_LeaningAnalytics_EvalDoc01.html",
+      "/Class/Class_ML.html",
+      "/Class/Class_Statistics.html"
     ]
   }
 ]

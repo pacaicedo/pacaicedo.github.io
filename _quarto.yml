@@ -4,15 +4,21 @@ project:
 
 website:
   title: "La guarida de los datos"
+  favicon: Img/logo04.png
   navbar:
+    title: false
+    logo: Img/logo05.svg
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Principal
+      - href: about.qmd
+        text: Acerca
+
+
 
 format:
   html:
-    theme: spacelab
+    theme: yeti
     css: styles.css
     toc: true
 

@@ -1,1 +1,7 @@
 /* css styles */
+.navbar-brand {
+    background: url('Img/logo06.svg');
+    width: 170px;
+    height: 70px;
+    background-repeat: no-repeat;
+}

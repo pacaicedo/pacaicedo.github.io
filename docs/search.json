@@ -2,16 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "pacaicedo.github.io",
+    "title": "La Guarida de los Datos",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Ph.D. Pablo Eduardo Caicedo R",
     "section": "",
-    "text": "About this site"
+    "text": "Soy un Analista de Datos con un sólido trasfondo como Ingeniero en Electrónica y Telecomunicaciones y Doctor en Ciencias de la Electrónica. Cuento con más de 15 años de experiencia en Educación Universitaria y una destacada participación en proyectos de investigación en el campo de la Ciencia de los Datos aplicada a las organizaciones, el aprendizaje y la ciencia. Mi enfoque se centra en utilizar mis habilidades técnicas y experiencia para analizar grandes conjuntos de datos y extraer conocimientos valiosos que impulsen la toma de decisiones informadas.\n\nHabilidades Técnicas\n\nAnálisis de datos: Experiencia en la extracción de información y conocimientos a partir de grandes conjuntos de datos mediante el uso de técnicas estadísticas y de aprendizaje automático.\nProgramación: Competente en R, Python, MATLAB y Genexus, con habilidades de programación en niveles medio a avanzado.\nIngeniería Electrónica y Telecomunicaciones: Conocimientos sólidos en el diseño y desarrollo de soluciones técnicas para la adquisición y procesamiento de datos.\nInvestigación: Experiencia en la generación y gestión de proyectos de investigación, participación en grupos de investigación y contribución al avance del campo de la Ciencia de los Datos.\nEducación: Amplia experiencia en la educación universitaria, impartiendo conocimientos y capacitando a estudiantes y profesionales en áreas relacionadas con la Ciencia de los Datos, la Electrónica y las Telecomunicaciones.\n\n\n\nCertificaciones:\n\nCertificación B2 en idioma inglés.\nCertificación Analista Genexus\n\n\n\nExperiencia profesional\n\nAnalista de Datos Certificado, Ministerio de las Tecnologías de la Información y las Comunicaciones en asocio con BDGuidance y Arcitura.\nInvestigador Junior, Minciencias.\nIngeniero en Electrónica y Telecomunicaciones.\nMagíster en Ingeniería Electrónica, Área Robótica.\nDoctor en Ciencias de la Electrónica.\n\n\n\nEducación:\n\nDoctor en Ciencias de la Electrónica.\nMagíster en Ingeniería Electrónica, Área Robótica.\nIngeniero en Electrónica y Telecomunicaciones."
   },
   {
     "objectID": "OldOne/post/2020-12-01-r-rmarkdown/index.html",
@@ -26,5 +26,12 @@
     "title": "Hello R Markdown",
     "section": "",
     "text": "R Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nYou can embed an R code chunk like this:\n\nsummary(cars)\n##      speed           dist       \n##  Min.   : 4.0   Min.   :  2.00  \n##  1st Qu.:12.0   1st Qu.: 26.00  \n##  Median :15.0   Median : 36.00  \n##  Mean   :15.4   Mean   : 42.98  \n##  3rd Qu.:19.0   3rd Qu.: 56.00  \n##  Max.   :25.0   Max.   :120.00\nfit &lt;- lm(dist ~ speed, data = cars)\nfit\n## \n## Call:\n## lm(formula = dist ~ speed, data = cars)\n## \n## Coefficients:\n## (Intercept)        speed  \n##     -17.579        3.932\n\n\n\nIncluding Plots\nYou can also embed plots. See Figure @ref(fig:pie) for example:\n\npar(mar = c(0, 1, 0, 1))\npie(\n  c(280, 60, 20),\n  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),\n  col = c('#0292D8', '#F7EA39', '#C4B632'),\n  init.angle = -50, border = NA\n)\n\n\n\n\nA fancy pie chart."
+  },
+  {
+    "objectID": "CurriculumVitae.html",
+    "href": "CurriculumVitae.html",
+    "title": "Ph.D. Pablo Eduardo Caicedo R",
+    "section": "",
+    "text": "Perfil\nSoy un Analista de Datos con un sólido trasfondo como Ingeniero en Electrónica y Telecomunicaciones y Doctor en Ciencias de la Electrónica. Cuento con más de 15 años de experiencia en Educación Universitaria y una destacada participación en proyectos de investigación en el campo de la Ciencia de los Datos aplicada a las organizaciones, el aprendizaje y la ciencia. Mi enfoque se centra en utilizar mis habilidades técnicas y experiencia para analizar grandes conjuntos de datos y extraer conocimientos valiosos que impulsen la toma de decisiones informadas.\n\n\n\n\nExperiencia profesional\n\nAnalista de Datos Certificado, Ministerio de las Tecnologías de la Información y las Comunicaciones en asocio con BDGuidance y Arcitura.\nInvestigador Junior, Minciencias.\nIngeniero en Electrónica y Telecomunicaciones.\nMagíster en Ingeniería Electrónica, Área Robótica.\nDoctor en Ciencias de la Electrónica.\n\n\n\nEducación:\n\nDoctor en Ciencias de la Electrónica.\nMagíster en Ingeniería Electrónica, Área Robótica.\nIngeniero en Electrónica y Telecomunicaciones.\n\n\n\nCertificaciones:\n\nCertificación B2 en idioma inglés.\nCertificación Analista Genexus\n\n\n\n\nHabilidades Técnicas\n\nAnálisis de datos: Experiencia en la extracción de información y conocimientos a partir de grandes conjuntos de datos mediante el uso de técnicas estadísticas y de aprendizaje automático.\nProgramación: Competente en R, Python, MATLAB y Genexus, con habilidades de programación en niveles medio a avanzado.\nIngeniería Electrónica y Telecomunicaciones: Conocimientos sólidos en el diseño y desarrollo de soluciones técnicas para la adquisición y procesamiento de datos.\nInvestigación: Experiencia en la generación y gestión de proyectos de investigación, participación en grupos de investigación y contribución al avance del campo de la Ciencia de los Datos.\nEducación: Amplia experiencia en la educación universitaria, impartiendo conocimientos y capacitando a estudiantes y profesionales en áreas relacionadas con la Ciencia de los Datos, la Electrónica y las Telecomunicaciones."
   }
 ]

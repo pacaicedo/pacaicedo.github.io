@@ -1,7 +1,17 @@
 ---
-title: "pacaicedo.github.io"
+title: "La Guarida de los Datos"
 ---
 
+
+::::{.columns}
+
+::: {.column width='50%'}
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+:::
+
+::: {.column width='50%'}
+
+:::
+::::

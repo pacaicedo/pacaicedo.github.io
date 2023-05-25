@@ -1,5 +1,43 @@
 ---
-title: "About"
+title: "Ph.D. Pablo Eduardo Caicedo R"
+image: ./Img/logo03.png
+fontsize: 12px
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/PPacaicedo
+    - icon: github
+      text: Github
+      href: https://github.com
 ---
 
-About this site
+Soy un Analista de Datos con un sólido trasfondo como Ingeniero en Electrónica y Telecomunicaciones y Doctor en Ciencias de la Electrónica. Cuento con más de 15 años de experiencia en Educación Universitaria y una destacada participación en proyectos de investigación en el campo de la Ciencia de los Datos aplicada a las organizaciones, el aprendizaje y la ciencia. Mi enfoque se centra en utilizar mis habilidades técnicas y experiencia para analizar grandes conjuntos de datos y extraer conocimientos valiosos que impulsen la toma de decisiones informadas.
+
+# Habilidades Técnicas
+
+- Análisis de datos: Experiencia en la extracción de información y conocimientos a partir de grandes conjuntos de datos mediante el uso de técnicas estadísticas y de aprendizaje automático.
+- Programación: Competente en R, Python, MATLAB y Genexus, con habilidades de programación en niveles medio a avanzado.
+- Ingeniería Electrónica y Telecomunicaciones: Conocimientos sólidos en el diseño y desarrollo de soluciones técnicas para la adquisición y procesamiento de datos.
+- Investigación: Experiencia en la generación y gestión de proyectos de investigación, participación en grupos de investigación y contribución al avance del campo de la Ciencia de los Datos.
+- Educación: Amplia experiencia en la educación universitaria, impartiendo conocimientos y capacitando a estudiantes y profesionales en áreas relacionadas con la Ciencia de los Datos, la Electrónica y las Telecomunicaciones.
+
+# Certificaciones:
+- Certificación B2 en idioma inglés.
+- Certificación Analista Genexus
+
+# Experiencia profesional
+
+- Analista de Datos Certificado, Ministerio de las Tecnologías de la Información y las Comunicaciones en asocio con BDGuidance y Arcitura.
+- Investigador Junior, Minciencias.
+- Ingeniero en Electrónica y Telecomunicaciones.
+- Magíster en Ingeniería Electrónica, Área Robótica.
+- Doctor en Ciencias de la Electrónica.
+
+# Educación:
+- Doctor en Ciencias de la Electrónica.
+- Magíster en Ingeniería Electrónica, Área Robótica.
+- Ingeniero en Electrónica y Telecomunicaciones.

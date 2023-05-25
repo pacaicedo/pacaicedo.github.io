@@ -12,7 +12,7 @@ about:
       href: https://twitter.com/PPacaicedo
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/pacaicedo
 ---
 
 Soy un Analista de Datos con un sólido trasfondo como Ingeniero en Electrónica y Telecomunicaciones y Doctor en Ciencias de la Electrónica. Cuento con más de 15 años de experiencia en Educación Universitaria y una destacada participación en proyectos de investigación en el campo de la Ciencia de los Datos aplicada a las organizaciones, el aprendizaje y la ciencia. Mi enfoque se centra en utilizar mis habilidades técnicas y experiencia para analizar grandes conjuntos de datos y extraer conocimientos valiosos que impulsen la toma de decisiones informadas.

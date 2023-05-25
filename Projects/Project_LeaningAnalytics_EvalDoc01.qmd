@@ -1,0 +1,14 @@
+---
+title: "Evaluación docente"
+description: "Proyecto para análisis de evaluación docente en la Corporación Universitaria Autónoma del Cauca"
+lang: es
+author: 
+    - "Mtra. Sandra Patricia Castillo L"
+    - "Ph.D. Pablo Eduardo Caicedo R."
+    - "Ing. Valentina Cerón Monje"
+    - "Ing. Eduar Sánchez"
+    - "Ing. María Alejandra Solarte"
+date: "Febrero 6, 2023"
+date-modified: "Mayo 25, 2023"
+image: "../Img/profesor001.png"
+---

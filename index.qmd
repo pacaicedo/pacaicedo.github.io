@@ -1,17 +1,33 @@
 ---
 title: "La Guarida de los Datos"
+lang: es
+listing:
+  - id: proyectos
+    contents: "Projects/*.qmd"
+    fields: [image, date, title, description]
+    type: grid
+  - id: tutoriales
+    contents: "Tutorials/*.qmd"
+    fields: [image, date, title, description]
+    type: grid
+  - id: clases
+    contents: "Class/*.qmd"
+    fields: [image, date, title, description]
+    type: grid
 ---
 
 
-::::{.columns}
+## Proyectos
 
-::: {.column width='50%'}
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+:::{#proyectos}
 :::
 
-::: {.column width='50%'}
+## Tutoriales
 
+:::{#tutoriales}
 :::
-::::
+
+## Clases
+
+:::{#clases}
+:::

@@ -3,9 +3,8 @@ title: "Quarto Presentations"
 subtitle: "Create beautiful interactive slide decks with Reveal.js"
 format:
   revealjs: 
+    self-contained: true
     slide-number: true
-    chalkboard: 
-      buttons: true
     preview-links: auto
     logo: images/medes.png
     css: styles.css

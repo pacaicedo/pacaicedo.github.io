@@ -4,6 +4,7 @@ subtitle: "Create beautiful interactive slide decks with Reveal.js"
 format:
   revealjs: 
     self-contained: true
+    theme: blood
     slide-number: true
     preview-links: auto
     logo: images/medes.png

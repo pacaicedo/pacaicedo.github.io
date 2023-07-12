@@ -3,7 +3,7 @@ title: "Análisis Numérico"
 description: "Sitio de la asignatura análisis numérico en la UniAutonoma del Cauca"
 subtitle: "Ingeniería de software y computación"
 author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
-image: "../Img/numericalAnalysis.jpeg"
+image: "../Img/numericalAnalysis.png"
 date: Agosto, 2023
 format:
   revealjs: 

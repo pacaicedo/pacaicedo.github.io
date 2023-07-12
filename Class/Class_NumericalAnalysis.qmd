@@ -8,4 +8,4 @@ date-modified: "Agosto 1, 2023"
 image: "../Img/numericalAnalysis.png"
 ---
 
-[presentacion](../Presentations/NumericalAnalysis.qmd)
+[presentacion](../pres/NumericalAnalysis.qmd)

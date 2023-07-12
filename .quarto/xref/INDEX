@@ -1,0 +1,71 @@
+{
+  "Class/Class_NumericalAnalysis.qmd": {
+    "Class_NumericalAnalysis.html": "84fb6f01"
+  },
+  "index.qmd": {
+    "index.html": "629671e0"
+  },
+  "Presentations/mini/fragments.qmd": {
+    "fragments.html": "5ec0e610"
+  },
+  "Presentations/mini/auto-animate.qmd": {
+    "auto-animate.html": "14022f0a"
+  },
+  "Presentations/mini/auto-animate-stack.qmd": {
+    "auto-animate-stack.html": "087c62c6"
+  },
+  "Presentations/mini/auto-animate-code.qmd": {
+    "auto-animate-code.html": "a39c513c"
+  },
+  "Presentations/mini/zoom.qmd": {
+    "zoom.html": "46c73d81"
+  },
+  "Presentations/mini/fragments-nested.qmd": {
+    "fragments-nested.html": "e951841b"
+  },
+  "Presentations/mini/absolute.qmd": {
+    "absolute.html": "d45e9007"
+  },
+  "Presentations/mini/stack.qmd": {
+    "stack.html": "185a6ab4"
+  },
+  "Presentations/mini/auto-animate-movement.qmd": {
+    "auto-animate-movement.html": "643a39a9"
+  },
+  "Presentations/NumericalAnalysis.qmd": {
+    "NumericalAnalysis.html": "355ca3dc"
+  },
+  "Class/Class_ML.qmd": {
+    "Class_ML.html": "0f18ae72"
+  },
+  "pres/mini/fragments.qmd": {
+    "fragments.html": "2415f9dd"
+  },
+  "pres/mini/auto-animate.qmd": {
+    "auto-animate.html": "ced754fb"
+  },
+  "pres/mini/auto-animate-stack.qmd": {
+    "auto-animate-stack.html": "c782fa1c"
+  },
+  "pres/mini/auto-animate-code.qmd": {
+    "auto-animate-code.html": "c0823e6c"
+  },
+  "pres/mini/zoom.qmd": {
+    "zoom.html": "db61c27b"
+  },
+  "pres/mini/fragments-nested.qmd": {
+    "fragments-nested.html": "1c035fcd"
+  },
+  "pres/mini/absolute.qmd": {
+    "absolute.html": "2b5a4da8"
+  },
+  "pres/mini/stack.qmd": {
+    "stack.html": "f79a09c5"
+  },
+  "pres/mini/auto-animate-movement.qmd": {
+    "auto-animate-movement.html": "62f51ee7"
+  },
+  "pres/NumericalAnalysis.qmd": {
+    "NumericalAnalysis.html": "62c0844e"
+  }
+}

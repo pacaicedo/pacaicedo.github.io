@@ -6,7 +6,7 @@ author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
 date: "Agosto 1, 2023"
 format:
   revealjs: 
-    self-contained: false
+    self-contained: true
     theme: blood
     slide-number: true
     preview-links: auto

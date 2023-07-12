@@ -3,8 +3,8 @@ title: "Análisis Numérico"
 description: "Sitio de la asignatura análisis numérico y estadística de la Uniautonoma del Cauca"
 lang: es
 author: "Ph.D. Pablo Eduardo Caicedo R."
-date: "Agosto 1, 2023"
-date-modified: "Agosto 1, 2023"
+date: "2023-07-1"
+date-modified: "2023-08-1"
 image: "../Img/numericalAnalysis.png"
 ---
 

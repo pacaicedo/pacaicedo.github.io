@@ -11,12 +11,12 @@ format:
     preview-links: auto
     logo: images/medes.png
     css: styles.css
-    footer: <https://pacaicedo.githhub.io>
+    footer: <https://pacaicedo.github.io>
 resources:
   - demo.pdf
 ---
 
-# Presentación del Curso
+# Análisis Numérico
 
 ## El Profesor
 
@@ -52,7 +52,7 @@ Invest. Línea de Percep. Avanz. y Robótica -- GITA
 
 Director Grupo de Investigación MEDES.
 
-Coordinador de programa de Ingeniería de Software y Computación.
+Director del laboratorio de datos de la Uniautonoma.
 
 ::::
 

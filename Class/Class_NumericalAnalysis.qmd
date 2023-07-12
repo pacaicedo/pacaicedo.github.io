@@ -1,6 +1,7 @@
 ---
-title: "Quarto Presentations"
+title: "Análisis Numérico"
 subtitle: "Create beautiful interactive slide decks with Reveal.js"
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
 format:
   revealjs: 
     self-contained: true

@@ -1683,3 +1683,5 @@ hugo.linux
 # Netlist
 *.net
 
+
+/.quarto/

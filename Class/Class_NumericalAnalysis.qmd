@@ -1,7 +1,8 @@
 ---
 title: "Análisis Numérico"
-subtitle: "Create beautiful interactive slide decks with Reveal.js"
+subtitle: "Ingeniería de software y computación"
 author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+description: "Sitio de la asignatura análisis numérico en la Uniautonoma del Cauca"
 format:
   revealjs: 
     self-contained: true
@@ -10,10 +11,184 @@ format:
     preview-links: auto
     logo: images/medes.png
     css: styles.css
-    footer: <https://quarto.org>
+    footer: <https://pacaicedo.githhub.io>
 resources:
   - demo.pdf
 ---
+
+# Presentación del Curso
+
+## El Profesor
+
+::: columns
+
+:::: column
+
+\scriptsize
+### Educación
+
+Doctor en Ciencias de la Electrónica.
+Magíster en Ingeniería Electrónica y Telecomunicaciones
+Ingeniero en Electrónica y Telecomunicaciones
+
+### Intereses
+
+Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
+
+
+\normalsize
+
+::::
+
+:::: column
+
+\scriptsize
+
+### Desempeño
+
+Profesor de la Facultad de Ingeniería
+
+Invest. Línea de Percep. Avanz. y Robótica -- GITA
+
+Director Grupo de Investigación MEDES.
+
+Coordinador de programa de Ingeniería de Software y Computación.
+
+::::
+
+:::
+
+:::columns
+
+:::: column
+
+\centering
+
+### Contacto:
+
+\small
+
+pablo.caicedo.r@uniautonoma.edu.co
+
+[https://discord.gg/KwjHvZaBbK](https://discord.gg/KwjHvZaBbK)
+
+\normalsize
+
+```{r figSvg,eval=TRUE,echo=FALSE,message=FALSE, error=FALSE, warning=FALSE,fig.height=5}
+library(cowplot)
+fig_svg<-cowplot::ggdraw()+cowplot::draw_image("./images/Discord Machine Learning.svg")
+plot(fig_svg)
+```
+
+::::
+
+:::
+
+\normalsize
+
+
+
+
+
+## Contenido del curso
+
+:::columns
+
+:::: column
+
+![](./images/wordcloud.png)
+
+::::
+
+:::: column
+
+1. Análisis exploratorio de datos
+2. Problemas de regresión
+3. Tópicos avanzados en clasificación
+
+::::
+
+:::
+
+## Evaluación
+
+:::columns
+
+:::: column
+
+\scriptsize
+
+1. Comprensión de lectura (Inglés) (10%)
+2. Consigna 001. Análisis exploratorio de datos (25%)
+2. Consigna 002. Problemas de Regresión (25%)
+3. Consigna 002. Proyecto Final (40%)
+
+\normalsize
+
+::::
+
+:::: column
+
+![](./images/evaluacion.jpg)
+
+::::
+
+:::
+
+
+## Recursos
+
+:::columns
+
+:::: column
+
+### Clases
+Martes, Miércoles Jueves y Viernes
+9:00 -- 11:00
+Sala 505
+
+### Sala Zoom
+ID de reunión: 811 5509 5461
+Código de acceso: 661194
+
+Requieren entrar con su cuenta de la UniAutonoma del Cauca.
+
+::::
+
+:::: column
+
+### Software
+**Interpretes:** Python, R, Latex(TEXLive), Anaconda.
+
+**IDE:** Visual Studio Code, Google Colaboratory ([R](https://colab.to/r), [Python](https://colab.to))
+
+**Librerías** Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy
+
+**Seguimiento de Aprendizaje:** Moodle
+
+::::
+
+:::
+
+## Bibliografía
+
+\scriptsize
+
+[1]B. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.
+
+[2]G. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.
+
+[3]M. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.
+
+[4]K. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.
+
+[5]M. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.
+
+[6]S. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.
+
+[7]S. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2.
+
+\normalsize
 
 ## Hello, There
 

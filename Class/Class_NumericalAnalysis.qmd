@@ -1,8 +1,8 @@
 ---
 title: "Análisis Numérico"
+description: "Sitio de la asignatura análisis numérico en la Uniautonoma del Cauca"
 subtitle: "Ingeniería de software y computación"
 author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
-description: "Sitio de la asignatura análisis numérico en la Uniautonoma del Cauca"
 format:
   revealjs: 
     self-contained: true
@@ -31,11 +31,6 @@ Doctor en Ciencias de la Electrónica.
 Magíster en Ingeniería Electrónica y Telecomunicaciones
 Ingeniero en Electrónica y Telecomunicaciones
 
-### Intereses
-
-Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
-
-
 \normalsize
 
 ::::
@@ -58,31 +53,20 @@ Director del laboratorio de datos de la Uniautonoma.
 
 :::
 
-:::columns
-
-:::: column
+## El Profesor
 
 \centering
 
-### Contacto:
+\scriptsize
 
-\small
+### Intereses
+
+Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
+
+### Contacto:
 
 pablo.caicedo.r@uniautonoma.edu.co
 
-[https://discord.gg/KwjHvZaBbK](https://discord.gg/KwjHvZaBbK)
-
-\normalsize
-
-```{r figSvg,eval=TRUE,echo=FALSE,message=FALSE, error=FALSE, warning=FALSE,fig.height=5}
-library(cowplot)
-fig_svg<-cowplot::ggdraw()+cowplot::draw_image("./images/Discord Machine Learning.svg")
-plot(fig_svg)
-```
-
-::::
-
-:::
 
 \normalsize
 

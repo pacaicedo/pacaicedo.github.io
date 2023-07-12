@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ph.D.&nbsp;Pablo Eduardo Caicedo Rodríguez">
+<meta name="description" content="Sitio de la asignatura análisis numérico en la UniAutonoma del Cauca">
+
+<title>La guarida de los datos - Análisis Numérico</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Img/logo04.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script type="ojs-define">
+{"contents":[{"name":"actors","value":{"x":[-0.5214,0.6999,-0.5053,-0.2424,-0.6727,0.6773,1.2531,-0.0811,0.0623,0.3599,-0.8903,-1.3527,1.5603,0.264,-0.5634,-0.7855,0.148,0.1905,-0.6046,-1.2279,-1.4626,0.5467,1.0559,0.0082,-0.2284,1.6614,-1.9262,-1.8937,0.7186,0.3306,-0.0702,-0.4619,0.4281,-0.3879,-1.0116,-0.654,0.7224,-0.8777,2.8031,0.4131,-0.9249,-0.2555,1.0359,-1.7505,-0.5564,0.775,0.5286,1.141,-0.9672,0.2142,1.7849,-1.5084,0.9835,-1.4636,0.4351,0.6796,-0.7169,0.0596,0.3579,-1.6217,0.6457,-1.2734,-1.1259,0.0786,-0.5815,-1.9837,-0.3033,-0.6848,0.8882,-0.4993,0.2793,-0.8528,-0.2909,-2.1299,1.0247,-1.1197,-0.0612,-0.524,-2.4975,2.0131,1.0182,-0.1748,0.3593,-2.029,0.5261,0.2693,-0.5233,-0.6956,-1.1436,0.4494,-0.1014,-1.0969,-0.2837,-1.0747,-1.5551,-1.4536,0.7025,0.709,0.3705,-0.0595],"y":[0.1762,-0.1727,-0.3801,0.4286,-0.8226,-0.4918,0.1466,0.1475,1.0876,-0.2853,1.0948,0.3607,-2.1666,1.7713,-2.0512,0.2269,-1.3688,0.7137,0.4833,-0.2891,-0.9046,-0.3152,-1.0554,-0.6386,-2.0118,-0.9799,-2.0352,-0.6395,-0.7306,-0.9305,0.4551,-0.1869,-0.1177,-0.3295,-0.0987,1.5872,0.9492,-0.1552,0.5409,0.6938,2.8406,0.9099,1.1573,0.2663,0.5029,-0.9437,1.3549,-0.3683,1.148,-0.4329,-2.0383,-0.979,0.17,2.4001,-1.3782,-0.0402,-0.4539,0.3882,-0.1958,0.0517,1.923,1.4139,2.3727,1.1245,1.1937,-1.0597,-1.0903,1.6812,0.6945,-2.6332,-1.075,0.3994,-0.2852,-0.1342,0.3388,-1.0027,0.6847,0.5242,0.2943,-0.6505,-1.1526,0.4336,1.031,0.413,0.6288,1.4163,-1.1167,0.4284,0.1249,1.4449,-0.0765,0.9462,0.9914,1.3823,0.0833,0.9699,-0.3034,0.1532,-0.9093,-0.0093]}}]}
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../Img/logo05.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Principal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">Acerca</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#análisis-numérico" id="toc-análisis-numérico" class="nav-link active" data-scroll-target="#análisis-numérico">Análisis Numérico</a>
+  <ul class="collapse">
+  <li><a href="#el-profesor" id="toc-el-profesor" class="nav-link" data-scroll-target="#el-profesor">El Profesor</a></li>
+  <li><a href="#el-profesor-1" id="toc-el-profesor-1" class="nav-link" data-scroll-target="#el-profesor-1">El Profesor</a>
+  <ul class="collapse">
+  <li><a href="#intereses" id="toc-intereses" class="nav-link" data-scroll-target="#intereses">Intereses</a></li>
+  <li><a href="#contacto" id="toc-contacto" class="nav-link" data-scroll-target="#contacto">Contacto:</a></li>
+  </ul></li>
+  <li><a href="#contenido-del-curso" id="toc-contenido-del-curso" class="nav-link" data-scroll-target="#contenido-del-curso">Contenido del curso</a></li>
+  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
+  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a></li>
+  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía">Bibliografía</a></li>
+  <li><a href="#hello-there" id="toc-hello-there" class="nav-link" data-scroll-target="#hello-there">Hello, There</a></li>
+  <li><a href="#pretty-code" id="toc-pretty-code" class="nav-link" data-scroll-target="#pretty-code">Pretty Code</a></li>
+  <li><a href="#code-animations" id="toc-code-animations" class="nav-link" data-scroll-target="#code-animations">Code Animations</a></li>
+  <li><a href="#line-highlighting" id="toc-line-highlighting" class="nav-link" data-scroll-target="#line-highlighting">Line Highlighting</a></li>
+  <li><a href="#executable-code" id="toc-executable-code" class="nav-link" data-scroll-target="#executable-code">Executable Code</a></li>
+  <li><a href="#latex-equations" id="toc-latex-equations" class="nav-link" data-scroll-target="#latex-equations">LaTeX Equations</a></li>
+  <li><a href="#column-layout" id="toc-column-layout" class="nav-link" data-scroll-target="#column-layout">Column Layout</a></li>
+  <li><a href="#incremental-lists" id="toc-incremental-lists" class="nav-link" data-scroll-target="#incremental-lists">Incremental Lists</a></li>
+  <li><a href="#fragments" id="toc-fragments" class="nav-link" data-scroll-target="#fragments">Fragments</a></li>
+  <li><a href="#slide-backgrounds" id="toc-slide-backgrounds" class="nav-link" data-scroll-target="#slide-backgrounds">Slide Backgrounds</a></li>
+  <li><a href="#media-backgrounds" id="toc-media-backgrounds" class="nav-link" data-scroll-target="#media-backgrounds">Media Backgrounds</a></li>
+  <li><a href="#absolute-position" id="toc-absolute-position" class="nav-link" data-scroll-target="#absolute-position">Absolute Position</a></li>
+  <li><a href="#auto-animate" id="toc-auto-animate" class="nav-link" data-scroll-target="#auto-animate">Auto-Animate</a></li>
+  <li><a href="#auto-animate-1" id="toc-auto-animate-1" class="nav-link" data-scroll-target="#auto-animate-1">Auto-Animate</a></li>
+  <li><a href="#slide-transitions" id="toc-slide-transitions" class="nav-link" data-scroll-target="#slide-transitions">Slide Transitions</a></li>
+  <li><a href="#tabsets" id="toc-tabsets" class="nav-link" data-scroll-target="#tabsets">Tabsets</a></li>
+  <li><a href="#interactive-slides" id="toc-interactive-slides" class="nav-link" data-scroll-target="#interactive-slides">Interactive Slides</a></li>
+  <li><a href="#preview-links" id="toc-preview-links" class="nav-link" data-scroll-target="#preview-links">Preview Links</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a></li>
+  <li><a href="#easy-navigation" id="toc-easy-navigation" class="nav-link" data-scroll-target="#easy-navigation">Easy Navigation</a></li>
+  <li><a href="#chalkboard" id="toc-chalkboard" class="nav-link" data-scroll-target="#chalkboard">Chalkboard</a></li>
+  <li><a href="#point-of-view" id="toc-point-of-view" class="nav-link" data-scroll-target="#point-of-view">Point of View</a></li>
+  <li><a href="#speaker-view" id="toc-speaker-view" class="nav-link" data-scroll-target="#speaker-view">Speaker View</a></li>
+  <li><a href="#authoring-tools" id="toc-authoring-tools" class="nav-link" data-scroll-target="#authoring-tools">Authoring Tools</a></li>
+  <li><a href="#authoring-tools-1" id="toc-authoring-tools-1" class="nav-link" data-scroll-target="#authoring-tools-1">Authoring Tools</a></li>
+  <li><a href="#and-more" id="toc-and-more" class="nav-link" data-scroll-target="#and-more">And More…</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="NumericalAnalysis.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Análisis Numérico</h1>
+<p class="subtitle lead">Ingeniería de software y computación</p>
+</div>
+
+<div>
+  <div class="description">
+    Sitio de la asignatura análisis numérico en la UniAutonoma del Cauca
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ph.D.&nbsp;Pablo Eduardo Caicedo Rodríguez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="análisis-numérico" class="level1">
+<h1>Análisis Numérico</h1>
+<section id="el-profesor" class="level2">
+<h2 class="anchored" data-anchor-id="el-profesor">El Profesor</h2>
+<div class="columns">
+<div class="column">
+<section id="educación" class="level3">
+<h3 class="anchored" data-anchor-id="educación">Educación</h3>
+<p>Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones</p>
+</section>
+</div><div class="column">
+<section id="desempeño" class="level3">
+<h3 class="anchored" data-anchor-id="desempeño">Desempeño</h3>
+<p>Profesor de la Facultad de Ingeniería</p>
+<p>Invest. Línea de Percep. Avanz. y Robótica – GITA</p>
+<p>Director Grupo de Investigación MEDES.</p>
+<p>Director del laboratorio de datos de la Uniautonoma.</p>
+</section>
+</div>
+</div>
+</section>
+<section id="el-profesor-1" class="level2">
+<h2 class="anchored" data-anchor-id="el-profesor-1">El Profesor</h2>
+<section id="intereses" class="level3">
+<h3 class="anchored" data-anchor-id="intereses">Intereses</h3>
+<p>Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.</p>
+</section>
+<section id="contacto" class="level3">
+<h3 class="anchored" data-anchor-id="contacto">Contacto:</h3>
+<p>pablo.caicedo.r@uniautonoma.edu.co</p>
+</section>
+</section>
+<section id="contenido-del-curso" class="level2">
+<h2 class="anchored" data-anchor-id="contenido-del-curso">Contenido del curso</h2>
+<div class="columns">
+<div class="column">
+<p><img src="images/wordcloud.png" class="img-fluid"></p>
+</div><div class="column">
+<ol type="1">
+<li>Análisis exploratorio de datos</li>
+<li>Problemas de regresión</li>
+<li>Tópicos avanzados en clasificación</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="evaluación" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación">Evaluación</h2>
+<div class="columns">
+<div class="column">
+<ol type="1">
+<li>Comprensión de lectura (Inglés) (10%)</li>
+<li>Consigna 001. Análisis exploratorio de datos (25%)</li>
+<li>Consigna 002. Problemas de Regresión (25%)</li>
+<li>Consigna 002. Proyecto Final (40%)</li>
+</ol>
+</div><div class="column">
+<p><img src="images/evaluacion.jpg" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="recursos" class="level2">
+<h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
+<div class="columns">
+<div class="column">
+<section id="clases" class="level3">
+<h3 class="anchored" data-anchor-id="clases">Clases</h3>
+<p>Martes, Miércoles Jueves y Viernes 9:00 – 11:00 Sala 505</p>
+</section>
+<section id="sala-zoom" class="level3">
+<h3 class="anchored" data-anchor-id="sala-zoom">Sala Zoom</h3>
+<p>ID de reunión: 811 5509 5461 Código de acceso: 661194</p>
+<p>Requieren entrar con su cuenta de la UniAutonoma del Cauca.</p>
+</section>
+</div><div class="column">
+<section id="software" class="level3">
+<h3 class="anchored" data-anchor-id="software">Software</h3>
+<p><strong>Interpretes:</strong> Python, R, Latex(TEXLive), Anaconda.</p>
+<p><strong>IDE:</strong> Visual Studio Code, Google Colaboratory (<a href="https://colab.to/r">R</a>, <a href="https://colab.to">Python</a>)</p>
+<p><strong>Librerías</strong> Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy</p>
+<p><strong>Seguimiento de Aprendizaje:</strong> Moodle</p>
+</section>
+</div>
+</div>
+</section>
+<section id="bibliografía" class="level2">
+<h2 class="anchored" data-anchor-id="bibliografía">Bibliografía</h2>
+<p>[1]B. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.</p>
+<p>[2]G. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.</p>
+<p>[3]M. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.</p>
+<p>[4]K. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.</p>
+<p>[5]M. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.</p>
+<p>[6]S. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.</p>
+<p>[7]S. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2.</p>
+</section>
+<section id="hello-there" class="level2">
+<h2 class="anchored" data-anchor-id="hello-there">Hello, There</h2>
+<p>This presentation will show you examples of what you can do with Quarto and <a href="https://revealjs.com">Reveal.js</a>, including:</p>
+<ul>
+<li>Presenting code and LaTeX equations</li>
+<li>Including computations in slide output</li>
+<li>Image, video, and iframe backgrounds</li>
+<li>Fancy transitions and animations</li>
+<li>Printing to PDF</li>
+</ul>
+<p>…and much more</p>
+</section>
+<section id="pretty-code" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="pretty-code">Pretty Code</h2>
+<ul>
+<li>Over 20 syntax highlighting themes available</li>
+<li>Default theme optimized for accessibility</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting">Syntax Highlighting</a></p>
+</div>
+</section>
+<section id="code-animations" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="code-animations">Code Animations</h2>
+<ul>
+<li>Over 20 syntax highlighting themes available</li>
+<li>Default theme optimized for accessibility</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations">Code Animations</a></p>
+</div>
+</section>
+<section id="line-highlighting" class="level2">
+<h2 class="anchored" data-anchor-id="line-highlighting">Line Highlighting</h2>
+<ul>
+<li>Highlight specific lines for emphasis</li>
+<li>Incrementally highlight additional lines</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb3-6"><a href="#cb3-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb3-7"><a href="#cb3-7"></a>ax.plot(theta, r)</span>
+<span id="cb3-8"><a href="#cb3-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb3-9"><a href="#cb3-9"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb3-10"><a href="#cb3-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#line-highlighting">Line Highlighting</a></p>
+</div>
+</section>
+<section id="executable-code" class="level2">
+<h2 class="anchored" data-anchor-id="executable-code">Executable Code</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation: colour
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="NumericalAnalysis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#executable-code">Executable Code</a></p>
+</div>
+</section>
+<section id="latex-equations" class="level2">
+<h2 class="anchored" data-anchor-id="latex-equations">LaTeX Equations</h2>
+<p><a href="https://www.mathjax.org/">MathJax</a> rendering of equations to HTML</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gather*</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">a_1=b_1+c_1</span><span class="sc">\\</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">a_2=b_2+c_2-d_2+e_2</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gather*</span>}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ss">a_{11}&amp; =b_{11}&amp;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  a_{12}&amp; =b_{12}</span><span class="sc">\\</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ss">a_{21}&amp; =b_{21}&amp;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ss">  a_{22}&amp; =b_{22}+c_{22}</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:60%;">
+<span class="math display">\[\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}\]</span>
+<span class="math display">\[\begin{align}
+a_{11}&amp; =b_{11}&amp;
+  a_{12}&amp; =b_{12}\\
+a_{21}&amp; =b_{21}&amp;
+  a_{22}&amp; =b_{22}+c_{22}
+\end{align}\]</span>
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/authoring/markdown-basics.html#equations">LaTeX Equations</a></p>
+</div>
+</section>
+<section id="column-layout" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="column-layout">Column Layout</h2>
+<p>Arrange content into columns of varying widths:</p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<section id="motor-trend-car-road-tests" class="level4">
+<h4 class="anchored" data-anchor-id="motor-trend-car-road-tests">Motor Trend Car Road Tests</h4>
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.</p>
+</section>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:62%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(mtcars)[,<span class="fu">c</span>(<span class="st">"mpg"</span>, <span class="st">"cyl"</span>, <span class="st">"disp"</span>, <span class="st">"hp"</span>, <span class="st">"wt"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">mpg</th>
+<th style="text-align: right;">cyl</th>
+<th style="text-align: right;">disp</th>
+<th style="text-align: right;">hp</th>
+<th style="text-align: right;">wt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">2.620</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">2.875</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">2.320</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.215</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.440</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">3.460</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#multiple-columns">Multiple Columns</a></p>
+</div>
+</section>
+<section id="incremental-lists" class="level2">
+<h2 class="anchored" data-anchor-id="incremental-lists">Incremental Lists</h2>
+<p>Lists can optionally be displayed incrementally:</p>
+<div class="incremental">
+<ul class="incremental">
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ul>
+</div>
+<p>. . .</p>
+<p><br> Insert pauses to make other types of content display incrementally.</p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#incremental-lists">Incremental Lists</a></p>
+</div>
+</section>
+<section id="fragments" class="level2">
+<h2 class="anchored" data-anchor-id="fragments">Fragments</h2>
+<p>Incremental text display and animation with fragments:</p>
+<p><br></p>
+<div class="fragment fade-in">
+<p>Fade in</p>
+</div>
+<div class="fragment fade-up">
+<p>Slide up while fading in</p>
+</div>
+<div class="fragment fade-left">
+<p>Slide left while fading in</p>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<p>Fade in then semi out</p>
+</div>
+<p>. . .</p>
+<div class="fragment strike">
+<p>Strike</p>
+</div>
+<div class="fragment highlight-red">
+<p>Highlight red</p>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#fragments">Fragments</a></p>
+</div>
+</section>
+<section id="slide-backgrounds" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="slide-backgrounds">Slide Backgrounds</h2>
+<p>Set the <code>background</code> attribute on a slide to change the background color (all CSS color formats are supported).</p>
+<p>Different background transitions are available via the <code>background-transition</code> option.</p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#color-backgrounds">Slide Backgrounds</a></p>
+</div>
+</section>
+<section id="media-backgrounds" class="level2" data-background="#43464B" data-background-image="images/milky-way.jpeg">
+<h2 data-background="#43464B" data-background-image="images/milky-way.jpeg" class="anchored" data-anchor-id="media-backgrounds">Media Backgrounds</h2>
+<p>You can also use the following as a slide background:</p>
+<ul>
+<li><p>An image: <code>background-image</code></p></li>
+<li><p>A video: <code>background-video</code></p></li>
+<li><p>An iframe: <code>background-iframe</code></p></li>
+</ul>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#image-backgrounds">Media Backgrounds</a></p>
+</div>
+</section>
+<section id="absolute-position" class="level2">
+<h2 class="anchored" data-anchor-id="absolute-position">Absolute Position</h2>
+<p>Position images or other elements at precise locations</p>
+<p><img src="mini/images/kitten-400-350.jpeg" class="absolute" data-top="170" data-left="30" width="400" height="400"></p>
+<p><img src="mini/images/kitten-450-250.jpeg" class="absolute fragment img-fluid" data-top="150" data-right="80" width="450"></p>
+<p><img src="mini/images/kitten-300-200.jpeg" class="absolute fragment img-fluid" data-bottom="110" data-right="130" width="300"></p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position">Absolute Position</a></p>
+</div>
+</section>
+<section id="auto-animate" class="level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-auto-animate="true" data-auto-animate-easing="ease-in-out" class="anchored" data-anchor-id="auto-animate">Auto-Animate</h2>
+<p>Automatically animate matching elements across slides with Auto-Animate.</p>
+<div class="r-hstack">
+<div data-id="box1" data-auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+<div data-id="box2" data-auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+<div data-id="box3" data-auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate">Auto-Animate</a></p>
+</div>
+</section>
+<section id="auto-animate-1" class="level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-auto-animate="true" data-auto-animate-easing="ease-in-out" class="anchored" data-anchor-id="auto-animate-1">Auto-Animate</h2>
+<p>Automatically animate matching elements across slides with Auto-Animate.</p>
+<div class="r-stack">
+<div data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;">
+
+</div>
+<div data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;">
+
+</div>
+<div data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;">
+
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate">Auto-Animate</a></p>
+</div>
+</section>
+<section id="slide-transitions" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="slide-transitions">Slide Transitions</h2>
+<p>The next few slides will transition using the <code>slide</code> transition</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Transition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>none</code></td>
+<td>No transition (default, switch instantly)</td>
+</tr>
+<tr class="even">
+<td><code>fade</code></td>
+<td>Cross fade</td>
+</tr>
+<tr class="odd">
+<td><code>slide</code></td>
+<td>Slide horizontally</td>
+</tr>
+<tr class="even">
+<td><code>convex</code></td>
+<td>Slide at a convex angle</td>
+</tr>
+<tr class="odd">
+<td><code>concave</code></td>
+<td>Slide at a concave angle</td>
+</tr>
+<tr class="even">
+<td><code>zoom</code></td>
+<td>Scale the incoming slide so it grows in from the center of the screen.</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions">Slide Transitions</a></p>
+</div>
+</section>
+<section id="tabsets" class="level2 smaller scrollable" data-transition="slide">
+<h2 class="smaller scrollable anchored" data-transition="slide" data-anchor-id="tabsets">Tabsets</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation: colour
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="NumericalAnalysis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">mpg</th>
+<th style="text-align: right;">cyl</th>
+<th style="text-align: right;">disp</th>
+<th style="text-align: right;">hp</th>
+<th style="text-align: right;">drat</th>
+<th style="text-align: right;">wt</th>
+<th style="text-align: right;">qsec</th>
+<th style="text-align: right;">vs</th>
+<th style="text-align: right;">am</th>
+<th style="text-align: right;">gear</th>
+<th style="text-align: right;">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108.0</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258.0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225.0</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duster 360</td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">15.84</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 240D</td>
+<td style="text-align: right;">24.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">146.7</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">3.69</td>
+<td style="text-align: right;">3.190</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 230</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">140.8</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.150</td>
+<td style="text-align: right;">22.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 280</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.30</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 280C</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">167.6</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SE</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">4.070</td>
+<td style="text-align: right;">17.40</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merc 450SL</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.730</td>
+<td style="text-align: right;">17.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Merc 450SLC</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">275.8</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">3.780</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cadillac Fleetwood</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">472.0</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">2.93</td>
+<td style="text-align: right;">5.250</td>
+<td style="text-align: right;">17.98</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lincoln Continental</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">460.0</td>
+<td style="text-align: right;">215</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.424</td>
+<td style="text-align: right;">17.82</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chrysler Imperial</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">440.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">3.23</td>
+<td style="text-align: right;">5.345</td>
+<td style="text-align: right;">17.42</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat 128</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">78.7</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.200</td>
+<td style="text-align: right;">19.47</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Honda Civic</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.7</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">1.615</td>
+<td style="text-align: right;">18.52</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Toyota Corolla</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">71.1</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">1.835</td>
+<td style="text-align: right;">19.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toyota Corona</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.1</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">2.465</td>
+<td style="text-align: right;">20.01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dodge Challenger</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">318.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.520</td>
+<td style="text-align: right;">16.87</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AMC Javelin</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">304.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.435</td>
+<td style="text-align: right;">17.30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Camaro Z28</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">350.0</td>
+<td style="text-align: right;">245</td>
+<td style="text-align: right;">3.73</td>
+<td style="text-align: right;">3.840</td>
+<td style="text-align: right;">15.41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pontiac Firebird</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">400.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.845</td>
+<td style="text-align: right;">17.05</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fiat X1-9</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">79.0</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">1.935</td>
+<td style="text-align: right;">18.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porsche 914-2</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">120.3</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">4.43</td>
+<td style="text-align: right;">2.140</td>
+<td style="text-align: right;">16.70</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lotus Europa</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">95.1</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">1.513</td>
+<td style="text-align: right;">16.90</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ford Pantera L</td>
+<td style="text-align: right;">15.8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">351.0</td>
+<td style="text-align: right;">264</td>
+<td style="text-align: right;">4.22</td>
+<td style="text-align: right;">3.170</td>
+<td style="text-align: right;">14.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ferrari Dino</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">145.0</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.62</td>
+<td style="text-align: right;">2.770</td>
+<td style="text-align: right;">15.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maserati Bora</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">301.0</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">3.570</td>
+<td style="text-align: right;">14.60</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Volvo 142E</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">121.0</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">2.780</td>
+<td style="text-align: right;">18.60</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/#tabsets">Tabsets</a></p>
+</div>
+</section>
+<section id="interactive-slides" class="level2 smaller" data-transition="slide">
+<h2 class="smaller anchored" data-transition="slide" data-anchor-id="interactive-slides">Interactive Slides</h2>
+<p>Turn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ojs_define</span>(<span class="at">actors =</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/interactive/widgets/jupyter.html">Jupyter widgets</a>, <a href="https://quarto.org/docs/interactive/widgets/htmlwidgets.html">htmlwidgets</a></p>
+</div>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="sourceCode cell-code" id="cb12" data-startfrom="528" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 527;"><span id="cb12-528"><a href="#cb12-528" aria-hidden="true" tabindex="-1"></a>viewof talentWeight <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="fl">0.7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"talent weight"</span> })</span>
+<span id="cb12-529"><a href="#cb12-529" aria-hidden="true" tabindex="-1"></a>viewof looksWeight <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="fl">0.7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"looks weight"</span> })</span>
+<span id="cb12-530"><a href="#cb12-530" aria-hidden="true" tabindex="-1"></a>viewof minimum <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"min fame"</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="sourceCode cell-code" id="cb13" data-startfrom="535" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 534;"><span id="cb13-535"><a href="#cb13-535" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { plotActors } <span class="im">from</span> <span class="st">'./actors.js'</span><span class="op">;</span></span>
+<span id="cb13-536"><a href="#cb13-536" aria-hidden="true" tabindex="-1"></a><span class="fu">plotActors</span>(actors<span class="op">,</span> talentWeight<span class="op">,</span> looksWeight<span class="op">,</span> minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/interactive/ojs/">Observable</a>, <a href="https://quarto.org/docs/interactive/shiny/">Shiny</a>, <a href="https://quarto.org/docs/interactive/layout.html">Component Layout</a></p>
+</div>
+</section>
+<section id="preview-links" class="level2">
+<h2 class="anchored" data-anchor-id="preview-links">Preview Links</h2>
+<p>Navigate to hyperlinks without disrupting the flow of your presentation.</p>
+<p>Use the <code>preview-links</code> option to open links in an iframe on top of your slides. Try clicking the link below for a demonstration:</p>
+<div style="text-align: center; margin-top: 1em">
+<p><a href="https://matplotlib.org/" data-preview-link="true" style="text-align: center">Matplotlib: Visualization with Python</a></p>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links">Preview Links</a></p>
+</div>
+</section>
+<section id="themes" class="level2">
+<h2 class="anchored" data-anchor-id="themes">Themes</h2>
+<p>10 Built-in Themes (or <a href="https://quarto.org/docs/presentations/revealjs/themes.html#creating-themes">create your own</a>)</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/moon.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/sky.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/themes.html">Themes</a></p>
+</div>
+</section>
+<section id="easy-navigation" class="level2">
+<h2 class="anchored" data-anchor-id="easy-navigation">Easy Navigation</h2>
+<div style="margin-bottom: 0.9em;">
+<p>Quickly jump to other parts of your presentation</p>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
+<p><img src="images/presentation-menu.png" class="img-fluid" width="41"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: center;">
+<p>Toggle the slide menu with the menu button (bottom left of slide) to go to other slides and access presentation tools.</p>
+</div>
+</div>
+</div>
+<p>You can also press <code>m</code> to toggle the menu open and closed.</p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#navigation-menu">Navigation</a></p>
+</div>
+</section>
+<section id="chalkboard" class="level2" data-chalkboard-buttons="true">
+<h2 data-chalkboard-buttons="true" class="anchored" data-anchor-id="chalkboard">Chalkboard</h2>
+<div style="margin-bottom: 0.9em;">
+<p>Free form drawing and slide annotations</p>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
+<p><img src="images/presentation-chalkboard.png" class="img-fluid" width="41"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: center;">
+<p>Use the chalkboard button at the bottom left of the slide to toggle the chalkboard.</p>
+</div>
+</div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
+<p><img src="images/presentation-notes-canvas.png" class="img-fluid" width="41"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: center;">
+<p>Use the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.</p>
+</div>
+</div>
+</div>
+<p>You can also press <code>b</code> to toggle the chalkboard or <code>c</code> to toggle the notes canvas.</p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#chalkboard">Chalkboard</a></p>
+</div>
+</section>
+<section id="point-of-view" class="level2">
+<h2 class="anchored" data-anchor-id="point-of-view">Point of View</h2>
+<p>Press <code>o</code> to toggle overview mode:</p>
+<p><img src="images/overview-mode.png" class="border img-fluid"></p>
+<p>Hold down the <code>Alt</code> key (or <code>Ctrl</code> in Linux) and click on any element to zoom towards it—try it now on this slide.</p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#overview-mode">Overview Mode</a>, <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#slide-zoom">Slide Zoom</a></p>
+</div>
+</section>
+<section id="speaker-view" class="level2">
+<h2 class="anchored" data-anchor-id="speaker-view">Speaker View</h2>
+<p>Press <code>s</code> (or use the presentation menu) to open speaker view</p>
+<div class="quarto-figure quarto-figure-center" style="border: 3px solid #dee2e6;">
+<figure class="figure">
+<p><img src="images/speaker-view.png" class="img-fluid figure-img" width="780"></p>
+</figure>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view">Speaker View</a></p>
+</div>
+</section>
+<section id="authoring-tools" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="authoring-tools">Authoring Tools</h2>
+<p>Live side-by-side preview for any notebook or text editor including Jupyter and VS Code</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/jupyter-edit.png" class="border border-thick img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<p><img src="images/jupyter-preview.png" class="border border-thick img-fluid"></p>
+</div>
+</div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/tools/jupyter-lab.html">Jupyter</a>, <a href="https://quarto.org/docs/tools/vscode.html">VS Code</a>, <a href="https://quarto.org/docs/tools/text-editors.html">Text Editors</a></p>
+</div>
+</section>
+<section id="authoring-tools-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="authoring-tools-1">Authoring Tools</h2>
+<p>RStudio includes an integrated presentation preview pane</p>
+<p><img src="images/rstudio.png" class="border img-fluid" width="900"></p>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/tools/rstudio.html">RStudio</a></p>
+</div>
+</section>
+<section id="and-more" class="level2">
+<h2 class="anchored" data-anchor-id="and-more">And More…</h2>
+<ul>
+<li><a href="https://quarto.org/docs/presentations/revealjs/advanced.html#touch-navigation">Touch</a> optimized (presentations look great on mobile, swipe to navigate slides)</li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/#footer-logo">Footer &amp; Logo</a> (optionally specify custom footer per-slide)</li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/presenting.html#auto-slide">Auto-Slide</a> (step through slides automatically, without any user input)</li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/presenting.html#multiplex">Multiplex</a> (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).</li>
+</ul>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/">Quarto Presentations</a></p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"viewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"talent weight\" })\nviewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"looks weight\" })\nviewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: \"min fame\" })\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"import { plotActors } from './actors.js';\nplotActors(actors, talentWeight, looksWeight, minimum)\n"},{"methodName":"interpretQuiet","source":"shinyInput('talentWeight')"},{"methodName":"interpretQuiet","source":"shinyInput('looksWeight')"},{"methodName":"interpretQuiet","source":"shinyInput('minimum')"}]}
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../Presentations";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

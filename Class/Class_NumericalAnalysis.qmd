@@ -1,6 +1,6 @@
 ---
 title: "Análisis Numérico"
-description: "Sitio de la asignatura análisis numérico y estadística de la Uniautonoma del Cauca"
+description: "Sitio de la asignatura análisis numérico de la Uniautonoma del Cauca"
 lang: es
 author: "Ph.D. Pablo Eduardo Caicedo R."
 date: "2023-07-1"
@@ -8,4 +8,78 @@ date-modified: "2023-08-1"
 image: "../Img/numericalAnalysis.png"
 ---
 
-[presentacion](../pres/NumericalAnalysis.qmd)
+# Introducción
+
+El análisis numérico es una rama de las matemáticas y la ciencia computacional que se enfoca en desarrollar algoritmos y técnicas para resolver problemas matemáticos mediante aproximaciones numéricas. Su objetivo es encontrar soluciones aproximadas a problemas que pueden ser difíciles o imposibles de resolver de manera exacta debido a su complejidad o naturaleza continua. 
+
+# Aplicaciones
+
+Algunos de los campos de aplicación del análisis numéricos son:
+
+## Física
+
+### Simulación de sistemas dinámicos
+
+Muchos sistemas físicos son gobernados por ecuaciones diferenciales que describen su comportamiento en el tiempo. Sin embargo, en muchos casos, estas ecuaciones son demasiado complejas para obtener soluciones analíticas. Aquí es donde entra en juego el análisis numérico, que permite simular el comportamiento de estos sistemas mediante la resolución numérica de las ecuaciones diferenciales. Por ejemplo, en la mecánica clásica, se pueden simular sistemas de partículas bajo la influencia de fuerzas gravitacionales o electromagnéticas para estudiar movimientos planetarios, trayectorias de proyectiles, etc. También en la mecánica cuántica, se pueden simular sistemas de partículas subatómicas para comprender su comportamiento y propiedades.
+
+
+### Resolución de problemas de transferencia de calor y fluidos
+
+En la física, es común enfrentarse a problemas que involucran la transferencia de calor o el flujo de fluidos en sistemas complejos, como en la termodinámica, la hidrodinámica o la aerodinámica. Estos problemas a menudo están representados por ecuaciones diferenciales parciales, las cuales son difíciles o imposibles de resolver analíticamente. Aquí, el análisis numérico se convierte en una herramienta esencial para resolver estas ecuaciones y obtener soluciones aproximadas. Mediante técnicas como la simulación de Monte Carlo o los métodos de elementos finitos, es posible estudiar el comportamiento térmico y fluido de sistemas complejos, como la distribución de temperatura en un motor o la aerodinámica de un avión, lo que es crucial para el diseño y la optimización de muchos dispositivos y sistemas en la ingeniería y la industria.
+
+## Ingeniería
+
+### Análisis estructural y diseño de ingeniería
+
+En la ingeniería civil y mecánica, el análisis numérico es fundamental para el análisis y diseño de estructuras como puentes, edificios, presas, aviones, automóviles, entre otros. El método de elementos finitos (MEF) es una de las técnicas más utilizadas en esta área. Permite dividir estructuras complejas en elementos más pequeños, como triángulos o tetraedros, y aproximadamente resolver las ecuaciones de equilibrio y comportamiento mecánico de cada elemento. Estos métodos numéricos permiten calcular deformaciones, tensiones y cargas en las estructuras, así como determinar su resistencia, estabilidad y seguridad, lo que es crucial para garantizar que las construcciones sean seguras y eficientes.
+
+### Simulación y modelado en ingeniería
+
+Otra aplicación importante del análisis numérico en la ingeniería es la simulación y modelado de sistemas complejos. Por ejemplo, en la ingeniería aeroespacial, se utilizan técnicas numéricas para simular el flujo de aire alrededor de aviones o cohetes, lo que permite estudiar la aerodinámica y optimizar el diseño de las aeronaves. En la ingeniería eléctrica, el análisis numérico se emplea para simular circuitos electrónicos complejos y analizar su comportamiento en diferentes condiciones. En la ingeniería química, se utilizan métodos numéricos para simular procesos de transporte de masa y calor en reactores y separadores. Estas simulaciones numéricas permiten a los ingenieros comprender mejor el comportamiento de sistemas complejos, realizar experimentos virtuales y realizar cambios de diseño de manera más rápida y económica antes de pasar a la fase de construcción y producción.
+
+## Economía
+
+### Modelado y simulación económica
+
+El análisis numérico se utiliza extensamente para modelar y simular sistemas económicos complejos. Por ejemplo, en macroeconomía, se pueden desarrollar modelos computacionales que representen la interacción de múltiples variables económicas, como la inversión, el consumo, la inflación y el crecimiento económico. Estos modelos pueden ser sistemas de ecuaciones diferenciales o de diferencia que describen la dinámica de la economía a lo largo del tiempo. Mediante técnicas numéricas, como el método de Euler o métodos más sofisticados de resolución de ecuaciones diferenciales, se pueden realizar simulaciones para estudiar el comportamiento del sistema económico bajo diferentes condiciones y escenarios, lo que ayuda a los economistas a tomar decisiones informadas y entender mejor las implicaciones de las políticas económicas.
+
+### Valoración de activos financieros
+
+En el ámbito financiero, el análisis numérico es esencial para la valoración de activos, como opciones, bonos y otros instrumentos financieros. Por ejemplo, en el mercado de opciones, los modelos de valoración de opciones, como el modelo Black-Scholes, implican resolver ecuaciones diferenciales parciales complejas. El análisis numérico permite calcular de manera eficiente los precios de las opciones y otros derivados financieros, lo que es crucial para los inversores, gestores de fondos y compañías que utilizan estos instrumentos para gestionar riesgos y tomar decisiones de inversión. Además, el análisis numérico es útil para calcular métricas financieras como el valor actual neto (VAN) y la tasa interna de retorno (TIR), que son fundamentales para la toma de decisiones en proyectos de inversión y evaluación de negocios.
+
+## Biología
+
+### Modelado de sistemas biológicos
+
+El análisis numérico se utiliza para desarrollar modelos matemáticos que describen el comportamiento y la dinámica de sistemas biológicos. Por ejemplo, en la ecología, se pueden crear modelos que describan las interacciones entre diferentes especies en un ecosistema, incluidas las tasas de crecimiento, la competencia por recursos y la depredación. Estos modelos pueden ser representados mediante ecuaciones diferenciales o sistemas de ecuaciones que reflejen las relaciones entre las variables biológicas relevantes. El análisis numérico permite simular el comportamiento de estos sistemas y estudiar cómo cambian con el tiempo o en respuesta a cambios en las condiciones ambientales. Además, en la biología molecular, se utilizan modelos numéricos para simular la dinámica de sistemas bioquímicos, como redes de reacciones enzimáticas o interacciones entre moléculas, lo que es crucial para comprender los mecanismos subyacentes de procesos biológicos complejos.
+
+### Análisis de datos biológicos
+
+En biología, se generan grandes cantidades de datos a partir de técnicas experimentales como la secuenciación genética, la microscopía y otros métodos de análisis molecular. El análisis numérico es esencial para procesar y analizar estos datos de manera eficiente y extraer información relevante. Por ejemplo, en bioinformática, se utilizan algoritmos numéricos para analizar secuencias de ADN y proteínas, identificar genes importantes, realizar análisis de expresión génica y buscar similitudes entre secuencias biológicas. Además, el análisis numérico se aplica en la imagenología médica para procesar imágenes de resonancia magnética (IRM), tomografía computarizada (TC) o imágenes microscópicas, lo que permite detectar patrones y características específicas en las imágenes que son relevantes para el diagnóstico y la investigación en biología y medicina.
+
+
+## Ciencia de datos
+
+### Aprendizaje automático (Machine Learning)
+
+El análisis numérico es esencial en el campo del aprendizaje automático, donde se utilizan algoritmos para entrenar modelos y hacer predicciones a partir de datos. En el aprendizaje supervisado, se utilizan técnicas numéricas para ajustar los parámetros de los modelos y minimizar la diferencia entre las predicciones y las salidas reales. Ejemplos de algoritmos de aprendizaje supervisado son las máquinas de soporte vectorial (SVM), regresión lineal, regresión logística, árboles de decisión, etc. Además, en el aprendizaje no supervisado, como el clustering y la reducción de dimensionalidad, se emplean técnicas numéricas para agrupar datos y encontrar estructuras ocultas en ellos. El análisis numérico permite realizar estos cálculos complejos de manera eficiente y precisa, lo que es crucial para el desarrollo y despliegue de modelos de aprendizaje automático en aplicaciones prácticas.
+
+
+### Análisis exploratorio de datos y visualización
+
+En el análisis de datos, es común realizar tareas de exploración y visualización para entender mejor las características y patrones presentes en los conjuntos de datos. El análisis numérico es esencial para calcular resúmenes estadísticos, como promedios, medianas, desviaciones estándar y cuartiles, que proporcionan información valiosa sobre la distribución de los datos. Además, las técnicas de visualización de datos, como gráficos y diagramas, también se basan en el análisis numérico para representar de manera efectiva la información contenida en los datos. Algoritmos numéricos como el muestreo, la interpolación y la aproximación se utilizan para generar gráficos y visualizaciones informativas que facilitan la comprensión y toma de decisiones basadas en datos.
+
+
+# Material del curso
+
+[Presentacion](../pres/NumericalAnalysis.qmd)
+
+# Referencias 
+
+1. Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.
+2. Burden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.
+3. Chapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.
+4. Arévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.
+5. Corriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8
+6. Gilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.
+7. Miles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter.

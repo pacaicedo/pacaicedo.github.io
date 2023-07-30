@@ -67,7 +67,7 @@ pablo.caicedo.r@uniautonoma.edu.co
 
 :::: column
 
-![](./images/NumericalAnalysis/numerical_analysis_01.jpeg){ height="650" }
+![](./images/NumericalAnalysis/numerical_analysis_01.jpeg){ height="600" }
 
 ::::
 
@@ -190,8 +190,6 @@ $$ \lim _{n \to \infty }x_n = x $$
 
 :::
 ::::
-
-### Definición
 
 Si _f_ es una función definida en un conjunto _X_ de números reales y $x_0 \in X$, lo siguientes enunciados son verdaderos:
 

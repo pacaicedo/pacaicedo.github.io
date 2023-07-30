@@ -67,7 +67,7 @@ pablo.caicedo.r@uniautonoma.edu.co
 
 :::: column
 
-![](./images/numerical_analysis_01.jpeg){ height="650" }
+![](./images/NumericalAnalysis/numerical_analysis_01.jpeg){ height="650" }
 
 ::::
 
@@ -145,6 +145,59 @@ Sala 505
 
 # Introducción al análisis numérico
 
+## Revisión Cálculo -- Límites {.smaller}
+
+::::{.columns}
+
+::: {.column width='50%'}
+
+![](./images/NumericalAnalysis/limite.png)
+
+:::
+
+::: {.column width='50%'}
+
+Una función _f_ definida en un conjunto de _X_ de números reales se dice que tiene límite, definido como 
+
+$$ \lim _{x \to x_0 }f(x)=L  $$
+
+si dado que existe $\varepsilon > 0$, existe un valor $\delta > 0$ tal que $\left| f(x) - L \right| < \varepsilon$, siempre que $x \in X$ y $0<\left| x-x_0 \right| < \delta$
+
+:::
+::::
+
+## Revisión Cálculo -- Definiciones{.smaller}
+
+::::{.columns}
+
+::: {.column width='50%'}
+
+### Continuidad
+
+Sea _f_ una función definida en un conjunto _X_ de números reales y $x_0 \in X$ entonces _f_ es contínua si se cumple lo siguiente:
+
+$$\lim _{x \to x_0 }f(x)=f(x_0)$$
+
+:::
+
+::: {.column width='50%'}
+
+### Convergencia
+
+Sea $\left\{ x_n \right\}_{n=1}^{\infty}$ una sucesión de números reales. Esta sucesión converge a _x_ si existe un número $N(\varepsilon)$ tal que se cumple que $\left| x_n - x \right| < \varepsilon$ siempre que $n>N(\varepsilon)$. O lo que es igual:
+
+$$ \lim _{n \to \infty }x_n = x $$
+
+:::
+::::
+
+### Definición
+
+Si _f_ es una función definida en un conjunto _X_ de números reales y $x_0 \in X$, lo siguientes enunciados son verdaderos:
+
+- _f_ es contínua en $x_0$.
+- Si $\left\{ x_n \right\}_{n=1}^{\infty}$ es una sucesión cualquiera en X, la cual converge a $x_0$ entonces $\lim _{n \to \infty }f(x_n)=f(x_0)$
+
 # Solución de ecuaciones
 
 # Interpolación y aproximaciones lineales
@@ -152,9 +205,6 @@ Sala 505
 # Diferenciación e integración numérica
 
 # Problemas de valor inicial para solución de ODEs
-
-
-
 
 
 # Fin del curso

@@ -760,7 +760,7 @@
     "href": "pres/NumericalAnalysis.html#el-profesor",
     "title": "Análisis Numérico",
     "section": "El Profesor",
-    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma."
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#el-profesor-1",
@@ -774,7 +774,7 @@
     "href": "pres/NumericalAnalysis.html#contenido-del-curso",
     "title": "Análisis Numérico",
     "section": "Contenido del curso",
-    "text": "Contenido del curso\n\n\n\n\n\nAnálisis exploratorio de datos\nProblemas de regresión\nTópicos avanzados en clasificación"
+    "text": "Contenido del curso\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#evaluación",
@@ -788,7 +788,7 @@
     "href": "pres/NumericalAnalysis.html#recursos",
     "title": "Análisis Numérico",
     "section": "Recursos",
-    "text": "Recursos\n\n\nClases\nMartes, Miércoles Jueves y Viernes 9:00 – 11:00 Sala 505\nSala Zoom\nID de reunión: 811 5509 5461 Código de acceso: 661194\nRequieren entrar con su cuenta de la UniAutonoma del Cauca.\n\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
+    "text": "Recursos\n\n\nClases\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 505\nSala Teams\nSala de teams\n\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#bibliografía",

@@ -20,26 +20,26 @@ resources:
 
 # Análisis Numérico
 
-## El Profesor
+## El Profesor {.smaller}
 
 ::: columns
 
 :::: column
 
-\scriptsize
+
 ### Educación
 
 Doctor en Ciencias de la Electrónica.
 Magíster en Ingeniería Electrónica y Telecomunicaciones
 Ingeniero en Electrónica y Telecomunicaciones
 
-\normalsize
+### Intereses
+
+Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
 
 ::::
 
 :::: column
-
-\scriptsize
 
 ### Desempeño
 
@@ -55,25 +55,9 @@ Director del laboratorio de datos de la Uniautonoma.
 
 :::
 
-## El Profesor
-
-\centering
-
-\scriptsize
-
-### Intereses
-
-Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
-
 ### Contacto:
 
 pablo.caicedo.r@uniautonoma.edu.co
-
-
-\normalsize
-
-
-
 
 
 ## Contenido del curso
@@ -82,15 +66,17 @@ pablo.caicedo.r@uniautonoma.edu.co
 
 :::: column
 
-![](images/wordcloud.png)
+![](./images/numerical_analysis_01.jpeg){ height="650" }
 
 ::::
 
 :::: column
 
-1. Análisis exploratorio de datos
-2. Problemas de regresión
-3. Tópicos avanzados en clasificación
+1. Introducción al análisis numérico
+2. Solución de ecuaciones
+3. Interpolación y aproximaciones lineales
+4. Diferenciación e integración numérica
+5. Problemas de valor inicial para solución de ecuaciones diferenciales ordinarias
 
 ::::
 
@@ -129,15 +115,14 @@ pablo.caicedo.r@uniautonoma.edu.co
 :::: column
 
 ### Clases
-Martes, Miércoles Jueves y Viernes
+
+Lunes, Martes, Miércoles y Jueves
 9:00 -- 11:00
 Sala 505
 
-### Sala Zoom
-ID de reunión: 811 5509 5461
-Código de acceso: 661194
+### Sala Teams
 
-Requieren entrar con su cuenta de la UniAutonoma del Cauca.
+[Sala de teams](https://teams.microsoft.com/l/channel/19%3aXtToBJm4BKK4XyFP47UVcSYBhCR1JosQE-qQ6Kk6TKE1%40thread.tacv2/General?groupId=928c3615-fd66-4e37-92de-5b85feb03424&tenantId=c91fc68b-7571-4551-933c-467a6c58bf58)
 
 ::::
 

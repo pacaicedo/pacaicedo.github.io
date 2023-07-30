@@ -5,5 +5,12 @@
 }
 
 .border-thick {
-  border-width: 3px;
+  border-width: 10px;
+}
+
+.reveal .slide-logo {
+  height: 48px !important;
+  width: 184px!important;
+  max-width: unset !important;
+  max-height: unset !important;
 }

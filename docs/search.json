@@ -759,8 +759,8 @@
     "objectID": "pres/NumericalAnalysis.html#el-profesor",
     "href": "pres/NumericalAnalysis.html#el-profesor",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "El Profesor",
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#el-profesor-1",
@@ -773,29 +773,29 @@
     "objectID": "pres/NumericalAnalysis.html#contenido-del-curso",
     "href": "pres/NumericalAnalysis.html#contenido-del-curso",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Introducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
+    "section": "Contenido del curso",
+    "text": "Contenido del curso\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#evaluación",
     "href": "pres/NumericalAnalysis.html#evaluación",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#recursos",
     "href": "pres/NumericalAnalysis.html#recursos",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Lunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 505\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
+    "section": "Recursos",
+    "text": "Recursos\nClases\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 505\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#bibliografía",
     "href": "pres/NumericalAnalysis.html#bibliografía",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
+    "section": "Bibliografía",
+    "text": "Bibliografía\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#hello-there",
@@ -1257,6 +1257,6 @@
     "href": "pres/NumericalAnalysis.html#revisión-cálculo-definiciones",
     "title": "Análisis Numérico",
     "section": "Revisión Cálculo – Definiciones",
-    "text": "Revisión Cálculo – Definiciones\n\n\n\nContinuidad\nSea f una función definida en un conjunto X de números reales y \\(x_0 \\in X\\) entonces f es contínua si se cumple lo siguiente:\n\\[\\lim _{x \\to x_0 }f(x)=f(x_0)\\]\n\n\n\nConvergencia .green-box}\nSea \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) una sucesión de números reales. Esta sucesión converge a x si existe un número \\(N(\\varepsilon)\\) tal que se cumple que \\(\\left| x_n - x \\right| &lt; \\varepsilon\\) siempre que \\(n&gt;N(\\varepsilon)\\). O lo que es igual:\n\\[ \\lim _{n \\to \\infty }x_n = x \\]\n\n\n\nSi f es una función definida en un conjunto X de números reales y \\(x_0 \\in X\\), lo siguientes enunciados son verdaderos:\n\nf es contínua en \\(x_0\\).\nSi \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) es una sucesión cualquiera en X, la cual converge a \\(x_0\\) entonces \\(\\lim _{n \\to \\infty }f(x_n)=f(x_0)\\)"
+    "text": "Revisión Cálculo – Definiciones\n\n\nContinuidad\nSea f una función definida en un conjunto X de números reales y \\(x_0 \\in X\\) entonces f es contínua si se cumple lo siguiente:\n\\[\\lim _{x \\to x_0 }f(x)=f(x_0)\\]\n\nConvergencia .green-box}\nSea \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) una sucesión de números reales. Esta sucesión converge a x si existe un número \\(N(\\varepsilon)\\) tal que se cumple que \\(\\left| x_n - x \\right| &lt; \\varepsilon\\) siempre que \\(n&gt;N(\\varepsilon)\\). O lo que es igual:\n\\[ \\lim _{n \\to \\infty }x_n = x \\]\n\n\nSi f es una función definida en un conjunto X de números reales y \\(x_0 \\in X\\), lo siguientes enunciados son verdaderos:\n\nf es contínua en \\(x_0\\).\nSi \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) es una sucesión cualquiera en X, la cual converge a \\(x_0\\) entonces \\(\\lim _{n \\to \\infty }f(x_n)=f(x_0)\\)"
   }
 ]

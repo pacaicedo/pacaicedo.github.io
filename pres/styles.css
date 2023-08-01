@@ -14,3 +14,69 @@
   max-width: unset !important;
   max-height: unset !important;
 }
+
+.blue-box {
+  background-color: #e6f0ff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px #000;
+}
+
+.green-box {
+  background-color: #d9ffe9;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px #000;
+}
+
+.red-box {
+  background-color: #ffdbdb;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px #000;
+}
+
+.orange-box {
+  background-color: #ffeedf;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px #000;
+}
+
+.info-box {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  box-shadow: 0 0 5px #000;
+}
+
+.caution {
+  background-image: url("Images/caution.png");
+  box-shadow: 0 0 5px #000;
+}
+
+.warning {
+  background-image: url("Images/warning.png");
+  box-shadow: 0 0 5px #000;
+}
+
+.tip {
+  background-image: url("Images/tip.png");
+  box-shadow: 0 0 5px #000;
+}
+
+.note {
+  background-image: url("Images/note.png");
+  box-shadow: 0 0 5px #000;
+}
+
+.important {
+  background-image: url("Images/important.png");
+  box-shadow: 0 0 5px #000;
+}

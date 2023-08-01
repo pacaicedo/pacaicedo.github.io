@@ -184,7 +184,7 @@ $$\lim _{x \to x_0 }f(x)=f(x_0)$$
 
 ::: {.column width='50%'}
 
-### Convergencia .green-box}
+### Convergencia
 
 Sea $\left\{ x_n \right\}_{n=1}^{\infty}$ una sucesión de números reales. Esta sucesión converge a _x_ si existe un número $N(\varepsilon)$ tal que se cumple que $\left| x_n - x \right| < \varepsilon$ siempre que $n>N(\varepsilon)$. O lo que es igual:
 

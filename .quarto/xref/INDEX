@@ -73,5 +73,8 @@
   },
   "pres/MachineLearning.qmd": {
     "MachineLearning.html": "ccbd1c6b"
+  },
+  "Tutorials/TutorialPython.qmd": {
+    "TutorialPython.html": "21a57323"
   }
 }

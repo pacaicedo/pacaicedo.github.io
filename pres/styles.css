@@ -80,3 +80,9 @@
   background-image: url("Images/important.png");
   box-shadow: 0 0 5px #000;
 }
+
+
+.formateador_ouput {
+  padding: 2em;
+  font-size: small;
+}

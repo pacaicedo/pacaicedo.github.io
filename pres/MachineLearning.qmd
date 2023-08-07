@@ -21,6 +21,11 @@ resources:
   - demo.pdf
 ---
 
+```{python}
+#| echo: false
+path_to_data = "D:/DatasetsVault/spotify"
+```
+
 # Presentación
 
 ## El Profesor {.smaller}
@@ -102,7 +107,7 @@ pablo.caicedo.r@uniautonoma.edu.co
 
 :::: column
 
-![](./images/MachineLearning//evaluacion.jpg)
+![](./images/MachineLearning/evaluacion.jpg)
 
 ::::
 
@@ -149,5 +154,106 @@ Sala 504
 7. S. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2.
 
 
+# Análisis exploratorio de datos
 
 
+## A little reminder ...
+
+![](./images/MachineLearning/MLWorkflow.png)
+
+## A little reminder ...
+
+![](./images/MachineLearning/DataEngineer.png)
+
+## A little reminder ...
+
+![](./images/MachineLearning/DataScientist.png)
+
+## A little reminder ...
+
+![](./images/MachineLearning/MLEngineer.png)
+
+## A little reminder ...
+
+![](./images/MachineLearning/MAD_General_ENG.png)
+
+## Exploratory Data Analysis (EDA)
+
+### Definition
+
+The art of looking the underlying structure of the information through one or more datasets.
+
+### Definition by Diaconis, P.
+
+We look at numbers or graphs and try to ﬁnd patterns. We pursue leads suggested by background information, imagination, patterns perceived, and experience with other data analyses.
+
+## Exploratory Data Analysis (EDA)
+
+EDA, depends on two things:
+
+1. Type of variable scale (information type, categorical, numerical, continuous, discrete, etc).
+
+2. Objective and type of the analysis (graphical, numerical, correlation, etc)
+
+## Learning from the example
+
+### Spotify
+
+"Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies" from [wikipedia](https://en.wikipedia.org/wiki/Spotify)
+
+### Spotify Dataset
+
+The data set is located in the kaggle site. [Dataset](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks)
+
+### Analysis Objective
+
+Spotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform.
+
+## Learning from the examples
+
+### General Workflow
+
+1. Import dataset.
+2. Preprocessing dataset.
+3. EDA on the datasets.
+4. Train the machine learning model.
+5. Predict the target using the trained model.
+
+## Import dataset.{.scrollable}
+
+### General workflow for Importing a dataset in python
+
+1. Install conda environment manager
+2. Install a suitable conda environment.
+3. Install python libraries. At least, a machine learning project without deployment needs:
+
+   1. Numpy
+   2. Pandas
+   3. Matplotlib
+   4. Seaborn
+   5. Scikit-Learn
+   6. Jupyter
+
+4. Install a suitable IDE software.
+5. Script, script, script.
+
+## Import dataset{.scrollable}
+
+```{python carga_datos_spotify1}
+#| echo: true
+#| eval: true
+#| class-output: formateador_ouput
+#| output: true
+import pandas as pd
+data_spotify = pd.read_csv(path_to_data + "/tracks.csv")
+``` 
+
+:::{.formateador_ouput}
+```{python carga_datos_spotify2}
+data_spotify.head(5)
+``` 
+:::
+
+# Problemas de regresión
+
+# Tópicos avanzados en clasificación

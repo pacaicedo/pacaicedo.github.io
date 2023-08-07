@@ -32,3 +32,16 @@ El aprendizaje automático es una tecnología en constante evolución, y se espe
 
 # Referencias
 
+1. B. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.
+
+2. G. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.
+
+3. M. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.
+
+4. K. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.
+
+5. M. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.
+
+6. S. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.
+
+7. S. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2.

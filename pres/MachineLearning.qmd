@@ -1,0 +1,212 @@
+---
+title: "Análisis Numérico"
+description: "Sitio de la asignatura análisis numérico en la UniAutonoma del Cauca"
+subtitle: "Ingeniería de software y computación"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+date: "2023-08-01"
+format:
+  revealjs: 
+    self-contained: true
+    theme: 
+      - white
+      - custom.scss
+    slide-number: true
+    preview-links: auto
+    logo: images/medes.png
+    css: styles.css
+    footer: <https://pacaicedo.github.io>
+    transition: fade
+resources:
+  - demo.pdf
+---
+
+# Análisis Numérico
+
+## El Profesor {.smaller}
+
+::: columns
+
+:::: column
+
+
+### Educación
+
+Doctor en Ciencias de la Electrónica.
+Magíster en Ingeniería Electrónica y Telecomunicaciones
+Ingeniero en Electrónica y Telecomunicaciones
+
+### Intereses
+
+Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
+
+::::
+
+:::: column
+
+### Desempeño
+
+Profesor de la Facultad de Ingeniería
+
+Invest. Línea de Percep. Avanz. y Robótica -- GITA
+
+Director Grupo de Investigación MEDES.
+
+Director del laboratorio de datos de la Uniautonoma.
+
+::::
+
+:::
+
+### Contacto:
+
+pablo.caicedo.r@uniautonoma.edu.co
+
+
+## Contenido del curso
+
+:::columns
+
+:::: column
+
+![](./images/NumericalAnalysis/numerical_analysis_01.jpeg){ height="600" }
+
+::::
+
+:::: column
+
+1. Introducción al análisis numérico
+2. Solución de ecuaciones
+3. Interpolación y aproximaciones lineales
+4. Diferenciación e integración numérica
+5. Problemas de valor inicial para solución de ecuaciones diferenciales ordinarias
+
+::::
+
+:::
+
+## Evaluación
+
+:::columns
+
+:::: column
+
+\scriptsize
+
+1. Comprensión de lectura (Inglés) (10%)
+2. Consigna 001. Análisis exploratorio de datos (25%)
+2. Consigna 002. Problemas de Regresión (25%)
+3. Consigna 002. Proyecto Final (40%)
+
+\normalsize
+
+::::
+
+:::: column
+
+![](images/evaluacion.jpg)
+
+::::
+
+:::
+
+
+## Recursos
+
+### Clases
+
+Lunes, Martes, Miércoles y Jueves
+9:00 -- 11:00
+Sala 505
+
+[Sala de teams](https://teams.microsoft.com/l/channel/19%3aXtToBJm4BKK4XyFP47UVcSYBhCR1JosQE-qQ6Kk6TKE1%40thread.tacv2/General?groupId=928c3615-fd66-4e37-92de-5b85feb03424&tenantId=c91fc68b-7571-4551-933c-467a6c58bf58)
+
+
+### Software
+**Interpretes:** Python, R, Latex(TEXLive), Anaconda.
+
+**IDE:** Visual Studio Code, Google Colaboratory ([R](https://colab.to/r), [Python](https://colab.to))
+
+**Librerías** Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy
+
+**Seguimiento de Aprendizaje:** Moodle
+
+
+## Bibliografía{.scrollable}
+
+
+1. Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.
+2. Burden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.
+3. Chapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.
+4. Arévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.
+5. Corriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8
+6. Gilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.
+7. Miles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter.
+
+
+
+# Introducción al análisis numérico
+
+## Revisión Cálculo -- Límites {.smaller}
+
+::::{.columns}
+
+::: {.column width='50%'}
+
+![](./images/NumericalAnalysis/limite.png)
+
+:::
+
+::: {.column width='50%'}
+
+Una función _f_ definida en un conjunto de _X_ de números reales se dice que tiene límite, definido como 
+
+$$ \lim _{x \to x_0 }f(x)=L  $$
+
+si dado que existe $\varepsilon > 0$, existe un valor $\delta > 0$ tal que $\left| f(x) - L \right| < \varepsilon$, siempre que $x \in X$ y $0<\left| x-x_0 \right| < \delta$
+
+:::
+::::
+
+## Revisión Cálculo -- Definiciones{.smaller}
+
+::::{.columns}
+
+::: {.column width='50%'}
+
+### Continuidad
+
+Sea _f_ una función definida en un conjunto _X_ de números reales y $x_0 \in X$ entonces _f_ es contínua si se cumple lo siguiente:
+
+$$\lim _{x \to x_0 }f(x)=f(x_0)$$
+
+:::
+
+::: {.column width='50%'}
+
+### Convergencia
+
+Sea $\left\{ x_n \right\}_{n=1}^{\infty}$ una sucesión de números reales. Esta sucesión converge a _x_ si existe un número $N(\varepsilon)$ tal que se cumple que $\left| x_n - x \right| < \varepsilon$ siempre que $n>N(\varepsilon)$. O lo que es igual:
+
+$$ \lim _{n \to \infty }x_n = x $$
+
+
+:::
+::::
+
+Si _f_ es una función definida en un conjunto _X_ de números reales y $x_0 \in X$, lo siguientes enunciados son verdaderos:
+
+- _f_ es contínua en $x_0$.
+- Si $\left\{ x_n \right\}_{n=1}^{\infty}$ es una sucesión cualquiera en X, la cual converge a $x_0$ entonces $\lim _{n \to \infty }f(x_n)=f(x_0)$
+
+# Solución de ecuaciones
+
+# Interpolación y aproximaciones lineales
+
+# Diferenciación e integración numérica
+
+# Problemas de valor inicial para solución de ODEs
+
+
+# Fin del curso
+

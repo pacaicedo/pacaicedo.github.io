@@ -7,3 +7,28 @@ date: "Febrero 6, 2023"
 date-modified: "Mayo 25, 2023"
 image: "../Img/machinelearning.png"
 ---
+
+# Que es ?
+
+El aprendizaje automático (machine learning) es una rama de la inteligencia artificial que permite a los sistemas aprender y mejorar de la experiencia sin ser explícitamente programados. Esto significa que los sistemas de aprendizaje automático pueden identificar patrones en los datos y usar esos patrones para hacer predicciones o tomar decisiones.
+
+Hay muchos tipos diferentes de algoritmos de aprendizaje automático, pero todos ellos funcionan de manera similar. Primero, el algoritmo se "entrena" con un conjunto de datos. Este conjunto de datos contiene ejemplos de los tipos de problemas que el algoritmo debe resolver. Por ejemplo, si el algoritmo está diseñado para clasificar imágenes, el conjunto de datos podría contener imágenes de gatos y perros.
+
+Una vez que el algoritmo está entrenado, puede usar los patrones que ha aprendido para hacer predicciones sobre nuevos datos. Por ejemplo, si se le muestra una nueva imagen de un animal, el algoritmo podría predecir si es un gato o un perro.
+
+El aprendizaje automático es una tecnología muy poderosa que se puede aplicar a una amplia gama de problemas. Algunos ejemplos de aplicaciones de aprendizaje automático incluyen:
+
+- Clasificación de imágenes
+- Reconocimiento de voz
+- Detección de fraudes
+- Recomendación de productos
+- Optimización de rutas
+
+El aprendizaje automático es una tecnología en constante evolución, y se espera que se use cada vez más en los próximos años.
+
+# Material del curso
+
+[Presentación](../pres/MachineLearning.qmd)
+
+# Referencias
+

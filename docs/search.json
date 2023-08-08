@@ -1270,36 +1270,36 @@
     "objectID": "pres/MachineLearning.html#el-profesor",
     "href": "pres/MachineLearning.html#el-profesor",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería & Ciencias Naturales\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "El Profesor",
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería & Ciencias Naturales\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/MachineLearning.html#contenido-del-curso",
     "href": "pres/MachineLearning.html#contenido-del-curso",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Análisis exploratorio de datos\nProblemas de regresión\nTópicos avanzados en clasificación"
+    "section": "Contenido del curso",
+    "text": "Contenido del curso\n\n\n\n\n\nAnálisis exploratorio de datos\nProblemas de regresión\nTópicos avanzados en clasificación"
   },
   {
     "objectID": "pres/MachineLearning.html#evaluación",
     "href": "pres/MachineLearning.html#evaluación",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/MachineLearning.html#recursos",
     "href": "pres/MachineLearning.html#recursos",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Lunes, Martes, Jueves y Viernes 11:00 – 13:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
+    "section": "Recursos",
+    "text": "Recursos\nClases\nLunes, Martes, Jueves y Viernes 11:00 – 13:00 Sala 504\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/MachineLearning.html#bibliografía",
     "href": "pres/MachineLearning.html#bibliografía",
     "title": "Machine Learning",
-    "section": "",
-    "text": "B. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.\nG. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.\nM. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.\nK. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.\nM. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.\nS. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.\nS. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2."
+    "section": "Bibliografía",
+    "text": "Bibliografía\n\nB. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.\nG. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.\nM. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.\nK. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.\nM. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.\nS. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.\nS. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2."
   },
   {
     "objectID": "pres/MachineLearning.html#revisión-cálculo-límites",
@@ -1362,7 +1362,7 @@
     "href": "pres/MachineLearning.html#exploratory-data-analysis-eda",
     "title": "Machine Learning",
     "section": "Exploratory Data Analysis (EDA)",
-    "text": "Exploratory Data Analysis (EDA)\n\nDefinition\nThe art of looking the underlying structure of the information through one or more datasets.\n\n\nDefinition by Diaconis, P.\nWe look at numbers or graphs and try to ﬁnd patterns. We pursue leads suggested by background information, imagination, patterns perceived, and experience with other data analyses."
+    "text": "Exploratory Data Analysis (EDA)\nDefinition\nThe art of looking the underlying structure of the information through one or more datasets.\nDefinition by Diaconis, P.\nWe look at numbers or graphs and try to ﬁnd patterns. We pursue leads suggested by background information, imagination, patterns perceived, and experience with other data analyses."
   },
   {
     "objectID": "pres/MachineLearning.html#exploratory-data-analysis-eda-1",
@@ -1376,21 +1376,21 @@
     "href": "pres/MachineLearning.html#learning-from-the-example",
     "title": "Machine Learning",
     "section": "Learning from the example",
-    "text": "Learning from the example\n\nSpotify\n“Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies” from wikipedia\n\n\nSpotify Dataset\nThe data set is located in the kaggle site. Dataset\n\n\nAnalysis Objective\nSpotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform."
+    "text": "Learning from the example\nSpotify\n“Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies” from wikipedia\nSpotify Dataset\nThe data set is located in the kaggle site. Dataset\nAnalysis Objective\nSpotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform."
   },
   {
     "objectID": "pres/MachineLearning.html#learning-from-the-examples",
     "href": "pres/MachineLearning.html#learning-from-the-examples",
     "title": "Machine Learning",
     "section": "Learning from the examples",
-    "text": "Learning from the examples\n\nGeneral Workflow\n\nImport dataset.\nPreprocessing dataset.\nEDA on the datasets.\nTrain the machine learning model.\nPredict the target using the trained model."
+    "text": "Learning from the examples\nGeneral Workflow\n\nImport dataset.\nPreprocessing dataset.\nEDA on the datasets.\nTrain the machine learning model.\nPredict the target using the trained model."
   },
   {
     "objectID": "pres/MachineLearning.html#import-dataset.",
     "href": "pres/MachineLearning.html#import-dataset.",
     "title": "Machine Learning",
     "section": "Import dataset.",
-    "text": "Import dataset.\n\nGeneral workflow for Importing a dataset in python\n\nInstall conda environment manager\nInstall a suitable conda environment.\nInstall python libraries. At least, a machine learning project without deployment needs:\n\nNumpy\nPandas\nMatplotlib\nSeaborn\nScikit-Learn\nJupyter\n\nInstall a suitable IDE software.\nScript, script, script."
+    "text": "Import dataset.\nGeneral workflow for Importing a dataset in python\n\nInstall conda environment manager\nInstall a suitable conda environment.\nInstall python libraries. At least, a machine learning project without deployment needs:\n\nNumpy\nPandas\nMatplotlib\nSeaborn\nScikit-Learn\nJupyter\n\nInstall a suitable IDE software.\nScript, script, script."
   },
   {
     "objectID": "pres/MachineLearning.html#import-dataset.-1",
@@ -1404,7 +1404,7 @@
     "href": "pres/MachineLearning.html#import-dataset",
     "title": "Machine Learning",
     "section": "Import dataset",
-    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/tracks.csv\")\n\n\n\ndata_spotify.head(5)\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
+    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/tracks.csv\")\n\n\n\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
   },
   {
     "objectID": "Tutorials/TutorialPython.html",
@@ -1503,5 +1503,19 @@
     "title": "Análisis Numérico",
     "section": "Cifras significativas",
     "text": "Cifras significativas"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#preprocessing-dataset.",
+    "href": "pres/MachineLearning.html#preprocessing-dataset.",
+    "title": "Machine Learning",
+    "section": "Preprocessing dataset.",
+    "text": "Preprocessing dataset.\nGeneral workflow for Preprocessing\n\nCheck the digital structure of the dataset\nCheck for digital information type\nCheck for nan\nCheck for outlier"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#preprocessing-dataset.-1",
+    "href": "pres/MachineLearning.html#preprocessing-dataset.-1",
+    "title": "Machine Learning",
+    "section": "Preprocessing dataset.",
+    "text": "Preprocessing dataset.\n\n\ntype(data_spotify)\n\npandas.core.frame.DataFrame\n\n\n\n\n\ndata_spotify.shape\n\n(586671, 20)\n\n\n\n\n\ndata_spotify.size\n\n11733420"
   }
 ]

@@ -243,7 +243,6 @@ Spotify wants to know if there is a relationship between the popularity of a son
 ```{python carga_datos_spotify1}
 #| echo: true
 #| eval: true
-#| class-output: formateador_ouput
 #| output: true
 import pandas as pd
 data_spotify = pd.read_csv(path_to_data + "/tracks.csv")
@@ -254,6 +253,60 @@ data_spotify = pd.read_csv(path_to_data + "/tracks.csv")
 data_spotify.head(5)
 ``` 
 :::
+
+## Preprocessing dataset.
+
+### General workflow for Preprocessing
+
+1. Check the digital structure of the dataset
+2. Check for digital information type
+3. Check for nan
+4. Check for outlier
+
+## Preprocessing dataset.
+
+:::{.formateador_output}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+type(data_spotify)
+```
+
+
+:::
+
+:::{.formateador_output}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+data_spotify.shape
+
+```
+
+
+:::
+
+:::{.formateador_output}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+data_spotify.size
+
+```
+
+:::
+
+
+
+
 
 # Problemas de regresión
 

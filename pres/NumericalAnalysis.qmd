@@ -94,9 +94,9 @@ pablo.caicedo.r@uniautonoma.edu.co
 \scriptsize
 
 1. Comprensión de lectura (Inglés) (10%)
-2. Consigna 001. Análisis exploratorio de datos (25%)
-2. Consigna 002. Problemas de Regresión (25%)
-3. Consigna 002. Proyecto Final (40%)
+2. Consigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)
+2. Consigna 002. Diferenciación e integración numérica (25%)
+3. Consigna 003. Proyecto Final (40%)
 
 \normalsize
 
@@ -127,7 +127,7 @@ Sala 504
 
 **IDE:** Visual Studio Code, Google Colaboratory ([R](https://colab.to/r), [Python](https://colab.to))
 
-**Librerías** Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy
+**Librerías** Numpy.
 
 **Seguimiento de Aprendizaje:** Moodle
 
@@ -146,6 +146,107 @@ Sala 504
 
 
 # Introducción al análisis numérico
+
+## Errores y aproximaciones
+
+::: columns
+
+:::{.column width="50%"}
+
+Las cantidades que se trabajan en la ingeniería tienen dos orígenes diferentes:
+
+- Mediciones sobre procesos físicos
+- Resultados de procesos matemáticos.
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-note title="Primer Origen" collapse="false"}
+
+Un proceso de medición nunca arroja el valor verdadero de la medida, pues las mediciones se hacen con instrumentos que se encuentran limitados
+
+:::
+
+::: {.callout-important title="Segundo Origen" collapse="false"}
+
+Las operaciones aritméticas usualmente se ejecutan en un computador o una calculadora, y la limitación de espacio de estos dispositivos lleva a que algunas cifras no se puedan representar correctamente.
+
+:::
+
+
+
+:::
+
+:::
+
+
+## Errores y aproximaciones
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.callout-important title="Importante" collapsible="false"}
+
+Los errores debido a estos orígenes es de naturaleza acumulativa, por ejemplo si se operan medidas reales con un procesador limitado la incertidumbre aumentará.
+
+:::
+
+
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-important title="Importante" collapsible="false"}
+
+Muchas veces resulta imposible siquiera expresar en términos algebraicos soluciones a ciertas ecuaciones, inclusive polinomiales.
+
+:::
+
+
+
+:::
+
+:::
+
+::: {.callout-tip title="Siempre..." collapsible="false"}
+
+Con lo anterior, es claro que el trabajo de ingeniería y ciencias se encuentra inevitablemente sujeto a error, y por tanto el tema de cuantificación de errores es de atención prioritaria en dichas áreas.
+
+:::
+
+## Errores y aproximaciones
+
+::: columns
+
+:::{.column width="50%"}
+
+### Error Absoluto
+
+$$\varepsilon = \left| x - \bar{x} \right|$$
+
+:::
+
+:::{.column width="50%"}
+
+### Error relativo
+
+$$\varepsilon_{\gamma} = \frac{\left| x - \bar{x} \right|}{\left| x \right|}$$
+
+:::
+
+:::
+
+### Error de aproximación
+
+$$\varepsilon_{ap} = {\left| x_{actual} - x_{anterior} \right|}$$
+
+
+## Cifras significativas
+
+![](./images/NumericalAnalysis/cifras_significativas.png)
 
 ## Revisión Cálculo -- Límites {.smaller}
 

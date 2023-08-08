@@ -23,7 +23,8 @@ resources:
 
 ```{python}
 #| echo: false
-path_to_data = "D:/DatasetsVault/spotify"
+#path_to_data = "D:/DatasetsVault/spotify" # For Windows
+path_to_data = "/Users/pacaicedo/DatasetsVault/spotify" #For MacOsX
 ```
 
 # Presentación

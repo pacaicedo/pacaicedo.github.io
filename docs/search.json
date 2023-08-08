@@ -753,14 +753,14 @@
     "href": "pres/NumericalAnalysis.html",
     "title": "Análisis Numérico",
     "section": "",
-    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co\n\n\n\n\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias\n\n\n\n\n\n\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)\n\n\n\n\n\n\n\n\n\n\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle\n\n\n\n\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
+    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co\n\n\n\n\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias\n\n\n\n\n\n\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)\nConsigna 002. Diferenciación e integración numérica (25%)\nConsigna 003. Proyecto Final (40%)\n\n\n\n\n\n\n\n\n\n\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle\n\n\n\n\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#el-profesor",
     "href": "pres/NumericalAnalysis.html#el-profesor",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "El Profesor",
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#el-profesor-1",
@@ -773,29 +773,29 @@
     "objectID": "pres/NumericalAnalysis.html#contenido-del-curso",
     "href": "pres/NumericalAnalysis.html#contenido-del-curso",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Introducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
+    "section": "Contenido del curso",
+    "text": "Contenido del curso\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#evaluación",
     "href": "pres/NumericalAnalysis.html#evaluación",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)\nConsigna 002. Diferenciación e integración numérica (25%)\nConsigna 003. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#recursos",
     "href": "pres/NumericalAnalysis.html#recursos",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Lunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
+    "section": "Recursos",
+    "text": "Recursos\nClases\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Numpy.\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#bibliografía",
     "href": "pres/NumericalAnalysis.html#bibliografía",
     "title": "Análisis Numérico",
-    "section": "",
-    "text": "Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
+    "section": "Bibliografía",
+    "text": "Bibliografía\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#hello-there",
@@ -1257,7 +1257,7 @@
     "href": "pres/NumericalAnalysis.html#revisión-cálculo-definiciones",
     "title": "Análisis Numérico",
     "section": "Revisión Cálculo – Definiciones",
-    "text": "Revisión Cálculo – Definiciones\n\n\n\nContinuidad\nSea f una función definida en un conjunto X de números reales y \\(x_0 \\in X\\) entonces f es contínua si se cumple lo siguiente:\n\\[\\lim _{x \\to x_0 }f(x)=f(x_0)\\]\n\n\n\nConvergencia\nSea \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) una sucesión de números reales. Esta sucesión converge a x si existe un número \\(N(\\varepsilon)\\) tal que se cumple que \\(\\left| x_n - x \\right| &lt; \\varepsilon\\) siempre que \\(n&gt;N(\\varepsilon)\\). O lo que es igual:\n\\[ \\lim _{n \\to \\infty }x_n = x \\]\n\n\n\nSi f es una función definida en un conjunto X de números reales y \\(x_0 \\in X\\), lo siguientes enunciados son verdaderos:\n\nf es contínua en \\(x_0\\).\nSi \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) es una sucesión cualquiera en X, la cual converge a \\(x_0\\) entonces \\(\\lim _{n \\to \\infty }f(x_n)=f(x_0)\\)"
+    "text": "Revisión Cálculo – Definiciones\n\n\nContinuidad\nSea f una función definida en un conjunto X de números reales y \\(x_0 \\in X\\) entonces f es contínua si se cumple lo siguiente:\n\\[\\lim _{x \\to x_0 }f(x)=f(x_0)\\]\n\nConvergencia\nSea \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) una sucesión de números reales. Esta sucesión converge a x si existe un número \\(N(\\varepsilon)\\) tal que se cumple que \\(\\left| x_n - x \\right| &lt; \\varepsilon\\) siempre que \\(n&gt;N(\\varepsilon)\\). O lo que es igual:\n\\[ \\lim _{n \\to \\infty }x_n = x \\]\n\n\nSi f es una función definida en un conjunto X de números reales y \\(x_0 \\in X\\), lo siguientes enunciados son verdaderos:\n\nf es contínua en \\(x_0\\).\nSi \\(\\left\\{ x_n \\right\\}_{n=1}^{\\infty}\\) es una sucesión cualquiera en X, la cual converge a \\(x_0\\) entonces \\(\\lim _{n \\to \\infty }f(x_n)=f(x_0)\\)"
   },
   {
     "objectID": "pres/MachineLearning.html",
@@ -1270,36 +1270,36 @@
     "objectID": "pres/MachineLearning.html#el-profesor",
     "href": "pres/MachineLearning.html#el-profesor",
     "title": "Machine Learning",
-    "section": "El Profesor",
-    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería & Ciencias Naturales\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería & Ciencias Naturales\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/MachineLearning.html#contenido-del-curso",
     "href": "pres/MachineLearning.html#contenido-del-curso",
     "title": "Machine Learning",
-    "section": "Contenido del curso",
-    "text": "Contenido del curso\n\n\n\n\n\nAnálisis exploratorio de datos\nProblemas de regresión\nTópicos avanzados en clasificación"
+    "section": "",
+    "text": "Análisis exploratorio de datos\nProblemas de regresión\nTópicos avanzados en clasificación"
   },
   {
     "objectID": "pres/MachineLearning.html#evaluación",
     "href": "pres/MachineLearning.html#evaluación",
     "title": "Machine Learning",
-    "section": "Evaluación",
-    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
+    "section": "",
+    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/MachineLearning.html#recursos",
     "href": "pres/MachineLearning.html#recursos",
     "title": "Machine Learning",
-    "section": "Recursos",
-    "text": "Recursos\nClases\nLunes, Martes, Jueves y Viernes 11:00 – 13:00 Sala 504\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
+    "section": "",
+    "text": "Lunes, Martes, Jueves y Viernes 11:00 – 13:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/MachineLearning.html#bibliografía",
     "href": "pres/MachineLearning.html#bibliografía",
     "title": "Machine Learning",
-    "section": "Bibliografía",
-    "text": "Bibliografía\n\nB. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.\nG. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.\nM. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.\nK. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.\nM. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.\nS. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.\nS. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2."
+    "section": "",
+    "text": "B. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.\nG. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.\nM. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.\nK. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.\nM. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.\nS. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.\nS. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2."
   },
   {
     "objectID": "pres/MachineLearning.html#revisión-cálculo-límites",
@@ -1362,7 +1362,7 @@
     "href": "pres/MachineLearning.html#exploratory-data-analysis-eda",
     "title": "Machine Learning",
     "section": "Exploratory Data Analysis (EDA)",
-    "text": "Exploratory Data Analysis (EDA)\nDefinition\nThe art of looking the underlying structure of the information through one or more datasets.\nDefinition by Diaconis, P.\nWe look at numbers or graphs and try to ﬁnd patterns. We pursue leads suggested by background information, imagination, patterns perceived, and experience with other data analyses."
+    "text": "Exploratory Data Analysis (EDA)\n\nDefinition\nThe art of looking the underlying structure of the information through one or more datasets.\n\n\nDefinition by Diaconis, P.\nWe look at numbers or graphs and try to ﬁnd patterns. We pursue leads suggested by background information, imagination, patterns perceived, and experience with other data analyses."
   },
   {
     "objectID": "pres/MachineLearning.html#exploratory-data-analysis-eda-1",
@@ -1376,21 +1376,21 @@
     "href": "pres/MachineLearning.html#learning-from-the-example",
     "title": "Machine Learning",
     "section": "Learning from the example",
-    "text": "Learning from the example\nSpotify\n“Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies” from wikipedia\nSpotify Dataset\nThe data set is located in the kaggle site. Dataset\nAnalysis Objective\nSpotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform."
+    "text": "Learning from the example\n\nSpotify\n“Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies” from wikipedia\n\n\nSpotify Dataset\nThe data set is located in the kaggle site. Dataset\n\n\nAnalysis Objective\nSpotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform."
   },
   {
     "objectID": "pres/MachineLearning.html#learning-from-the-examples",
     "href": "pres/MachineLearning.html#learning-from-the-examples",
     "title": "Machine Learning",
     "section": "Learning from the examples",
-    "text": "Learning from the examples\nGeneral Workflow\n\nImport dataset.\nPreprocessing dataset.\nEDA on the datasets.\nTrain the machine learning model.\nPredict the target using the trained model."
+    "text": "Learning from the examples\n\nGeneral Workflow\n\nImport dataset.\nPreprocessing dataset.\nEDA on the datasets.\nTrain the machine learning model.\nPredict the target using the trained model."
   },
   {
     "objectID": "pres/MachineLearning.html#import-dataset.",
     "href": "pres/MachineLearning.html#import-dataset.",
     "title": "Machine Learning",
     "section": "Import dataset.",
-    "text": "Import dataset.\nGeneral workflow for Importing a dataset in python\n\nInstall conda environment manager\nInstall a suitable conda environment.\nInstall python libraries. At least, a machine learning project without deployment needs:\n\nNumpy\nPandas\nMatplotlib\nSeaborn\nScikit-Learn\nJupyter\n\nInstall a suitable IDE software.\nScript, script, script."
+    "text": "Import dataset.\n\nGeneral workflow for Importing a dataset in python\n\nInstall conda environment manager\nInstall a suitable conda environment.\nInstall python libraries. At least, a machine learning project without deployment needs:\n\nNumpy\nPandas\nMatplotlib\nSeaborn\nScikit-Learn\nJupyter\n\nInstall a suitable IDE software.\nScript, script, script."
   },
   {
     "objectID": "pres/MachineLearning.html#import-dataset.-1",
@@ -1404,7 +1404,7 @@
     "href": "pres/MachineLearning.html#import-dataset",
     "title": "Machine Learning",
     "section": "Import dataset",
-    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/tracks.csv\")\n\n\n\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
+    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/tracks.csv\")\n\n\n\ndata_spotify.head(5)\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
   },
   {
     "objectID": "Tutorials/TutorialPython.html",
@@ -1475,5 +1475,33 @@
     "title": "Tutorial de Python",
     "section": "Numpy",
     "text": "Numpy\nNumPy (Numerical Python), es una biblioteca de Python que da soporte para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel. La funcionalidad principal de NumPy es su estructura de datos ndarray (arreglos), para una matriz de n dimensiones, sobre las cuales se pueden realizar operaciones matemátias de manera eficiente.\nCrearemos una lista usando código nativo de Python y lo convertiremos en una matriz unidimensional con la función np.array()\n\nimport numpy as np\n\nlist1 = [6,8,10,12]\narray1 = np.array(list1)\nprint(array1)\n\n[ 6  8 10 12]\n\n\nLos ndarrays son estructuras de datos genéricas para almacenar datos homogéneos. Son equivalentes a las matrices y los vectores en álgebra, por lo que también se les puede aplicar operaciones matemáticas. Notar que las operaciones matemáticas se pueden realizar en todos los valores en un ndarray a la vez.\n\nprint(array1 - 2)\nprint(array1 * array1, \"\\n\\n\")\n\n[ 4  6  8 10]\n[ 36  64 100 144] \n\n\n\n\nLos arreglos se encierran entre [], pero al imprimirlos no están separados por comas. Hay diferentes formas de crear arreglos con propiedades específicas, lo que les provee bastante flexibilidad.\n\n# Crea una matriz con datos específicos\nprint(np.array([[1,2],[3,4]]),'\\n')\n# Crea una matriz con unos: tres filas y cuatro columnas\nprint(np.ones((3,4)),'\\n')\n# Crea una matriz con ceros: tres filas y cuatro columnas\nprint(np.zeros((3,4)),'\\n')\n# Crea una matriz con un dato específico: tres filas y cuatro columnas\nprint(np.full((3,4), 7.3),'\\n')\n# Crea un arreglo con datos seguidos: empieza en 10 termina en 30(sin incluir) con incrementos de 5.\nprint(np.arange(10,30,5),'\\n')\n# # Crea un arreglo con inicio y fin y una cantidad de datos: arreglo de 6 datos entre 0 y 5/3 .\nprint(np.linspace(0,5/3,6),'\\n')\n# Crea una matriz con datos aleatorios entre 0 y 1: dos filas y tres columnas\nprint(np.random.rand(2,3),'\\n')\n\n[[1 2]\n [3 4]] \n\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]] \n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]] \n\n[[7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]] \n\n[10 15 20 25] \n\n[0.         0.33333333 0.66666667 1.         1.33333333 1.66666667] \n\n[[0.54417249 0.72224643 0.37755965]\n [0.10351674 0.11257588 0.90190904]] \n\n\n\n\narr1 = np.array([np.arange(0,5), np.arange(0,5)*5])\n#Arreglo\nprint(arr1, \"\\n\")\n# Forma\nprint(arr1.shape, \"\\n\")\n# Tamaño\nprint(arr1.size, \"\\n\")\n# Número de Dimensiones\nprint(arr1.ndim, \"\\n\")\n# Transpuesta\nprint(arr1.T, \"\\n\")\n\n[[ 0  1  2  3  4]\n [ 0  5 10 15 20]] \n\n(2, 5) \n\n10 \n\n2 \n\n[[ 0  0]\n [ 1  5]\n [ 2 10]\n [ 3 15]\n [ 4 20]] \n\n\n\n\narr = np.array([1,2,3,4,5,6,7])\n# Porcionar\nprint(arr[1:3])# de 1 al 3 en índice\nprint(arr[4:])# de la posición 4 en adelante\nprint(arr[::2])# de uno por medio\n\n[2 3]\n[5 6 7]\n[1 3 5 7]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones",
+    "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones",
+    "title": "Análisis Numérico",
+    "section": "Errores y aproximaciones",
+    "text": "Errores y aproximaciones\n\n\nLas cantidades que se trabajan en la ingeniería tienen dos orígenes diferentes:\n\nMediciones sobre procesos físicos\nResultados de procesos matemáticos.\n\n\n\n\n\n\n\n\nPrimer Origen\n\n\nUn proceso de medición nunca arroja el valor verdadero de la medida, pues las mediciones se hacen con instrumentos que se encuentran limitados\n\n\n\n\n\n\n\n\n\nSegundo Origen\n\n\nLas operaciones aritméticas usualmente se ejecutan en un computador o una calculadora, y la limitación de espacio de estos dispositivos lleva a que algunas cifras no se puedan representar correctamente."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones-1",
+    "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones-1",
+    "title": "Análisis Numérico",
+    "section": "Errores y aproximaciones",
+    "text": "Errores y aproximaciones\n\n\n\n\n\n\n\n\nImportante\n\n\nLos errores debido a estos orígenes es de naturaleza acumulativa, por ejemplo si se operan medidas reales con un procesador limitado la incertidumbre aumentará.\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\nMuchas veces resulta imposible siquiera expresar en términos algebraicos soluciones a ciertas ecuaciones, inclusive polinomiales.\n\n\n\n\n\n\n\n\n\n\n\nSiempre…\n\n\nCon lo anterior, es claro que el trabajo de ingeniería y ciencias se encuentra inevitablemente sujeto a error, y por tanto el tema de cuantificación de errores es de atención prioritaria en dichas áreas."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones-2",
+    "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones-2",
+    "title": "Análisis Numérico",
+    "section": "Errores y aproximaciones",
+    "text": "Errores y aproximaciones\n\n\nError Absoluto\n\\[\\varepsilon = \\left| x - \\bar{x} \\right|\\]\n\nError relativo\n\\[\\varepsilon_{\\gamma} = \\frac{\\left| x - \\bar{x} \\right|}{\\left| x \\right|}\\]\n\n\nError de aproximación\n\\[\\varepsilon_{ap} = {\\left| x_{actual} - x_{anterior} \\right|}\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#cifras-significativas",
+    "href": "pres/NumericalAnalysis.html#cifras-significativas",
+    "title": "Análisis Numérico",
+    "section": "Cifras significativas",
+    "text": "Cifras significativas"
   }
 ]

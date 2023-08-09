@@ -8,7 +8,9 @@ def decimal2binario(a):
         mantisa.append(t001%2)
         t001 = t001//2
     mantisa.append(t001%2)
-    print(' '.join(mantisa))
+    salida = (' '.join(str(e) for e in mantisa))
+    print(salida)
+    return salida
 
 a = "1011100100010000000000000000000000000000000000000000"
 n = len(a)

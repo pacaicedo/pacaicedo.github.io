@@ -248,6 +248,52 @@ $$\varepsilon_{ap} = {\left| x_{actual} - x_{anterior} \right|}$$
 
 ![](./images/NumericalAnalysis/cifras_significativas.png)
 
+
+## Cifras significativas
+
+::: {.callout-tip title="Considere..." collapsible="false"}
+
+Una región rectangular que tiene 20.5 cm de largo por 14.3 cm de ancho. Se requiere la medida del área de la región en centímetros cuadrados.
+
+:::
+
+::: columns
+
+:::{.column width="50%"}
+
+![](./images/NumericalAnalysis/cifras_significativas.png)
+
+:::
+
+:::{.column width="50%"}
+
+:::{.small_font}
+
+- Diferentes personas reportarían sin dudar los primeros dos dígitos, a saber el dos y el cero, que en este contexto se llamarán dígitos confiables.
+
+- Se entenderá que esta medida en realidad es una cifra entre 20.5 cm y 20.6 cm con el tercer dígito llamado dígito de incertidumbre.
+
+- La cantidad de dígitos confiables más otro con incertidumbre, son las cifras significativas de una medición.
+
+:::
+
+
+
+:::
+
+:::
+
+
+## Cifras significativas
+
+::: {.callout-note title="¿Que pasa con las operaciones?" collapsible="false"}
+
+Cuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas.
+
+:::
+
+
+
 ## Revisión Cálculo -- Límites {.smaller}
 
 ::::{.columns}

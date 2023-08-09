@@ -1517,5 +1517,26 @@
     "title": "Machine Learning",
     "section": "Preprocessing dataset.",
     "text": "Preprocessing dataset.\n\n\ntype(data_spotify)\n\npandas.core.frame.DataFrame\n\n\n\n\n\ndata_spotify.shape\n\n(586671, 20)\n\n\n\n\n\ndata_spotify.size\n\n11733420"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#dígito-de-incertidumbre",
+    "href": "pres/NumericalAnalysis.html#dígito-de-incertidumbre",
+    "title": "Análisis Numérico",
+    "section": "Dígito de incertidumbre",
+    "text": "Dígito de incertidumbre\n\n\n\n\n\n\nConsidere…\n\n\nUna región rectangular que tiene 20.5 cm de largo por 14.3 cm de ancho. Se requiere la medida del área de la región en centímetros cuadrados.\n\n\n\n\n\n\n\n\n\nDiferentes personas reportarían sin dudar los primeros dos dígitos, a saber el dos y el cero, que en este contexto se llamarán dígitos confiables.\nSe entenderá que la medida de 20.5 cm es en realidad una cifra entre 20.4 cm y 20.6 cm con el tercer dígito llamado dígito de incertidumbre.\nLa cantidad de dígitos confiables más otro con incertidumbre, son las cifras significativas de una medición."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#cifras-significativas-1",
+    "href": "pres/NumericalAnalysis.html#cifras-significativas-1",
+    "title": "Análisis Numérico",
+    "section": "Cifras significativas",
+    "text": "Cifras significativas\n\n\n\n\n\n\nConsidere…\n\n\nUna región rectangular que tiene 20.5 cm de largo por 14.3 cm de ancho. Se requiere la medida del área de la región en centímetros cuadrados.\n\n\n\n\n\n\n\n\n\nDiferentes personas reportarían sin dudar los primeros dos dígitos, a saber el dos y el cero, que en este contexto se llamarán dígitos confiables.\nSe entenderá que esta medida en realidad es una cifra entre 20.5 cm y 20.6 cm con el tercer dígito llamado dígito de incertidumbre.\nLa cantidad de dígitos confiables más otro con incertidumbre, son las cifras significativas de una medición."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#cifras-significativas-2",
+    "href": "pres/NumericalAnalysis.html#cifras-significativas-2",
+    "title": "Análisis Numérico",
+    "section": "Cifras significativas",
+    "text": "Cifras significativas\n\n\n\n\n\n\n¿Que pasa con las operaciones?\n\n\nCuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas."
   }
 ]

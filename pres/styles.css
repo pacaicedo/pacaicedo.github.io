@@ -86,3 +86,11 @@
   padding: 2em;
   font-size: small;
 }
+
+.x_small_font{
+  font-size: x-small;
+}
+
+.small_font{
+  font-size: 65%;
+}

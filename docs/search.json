@@ -1537,6 +1537,13 @@
     "href": "pres/NumericalAnalysis.html#cifras-significativas-2",
     "title": "Análisis Numérico",
     "section": "Cifras significativas",
-    "text": "Cifras significativas\n\n\n\n\n\n\n¿Que pasa con las operaciones?\n\n\nCuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas."
+    "text": "Cifras significativas\n\n\n\n\n\n\n¿Que pasa con las operaciones?\n\n\nCuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas.\n\n\n\n\n\n\n\n\n\nHablando de errores\n\n\nCon el número de cifras significativas \\(\\left(n\\right)\\), se puede calcular la cota del error absoluto:\n\\[\\varepsilon = \\left( 0.5\\times10^{2-n} \\right) \\%\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#que-pasa-en-los-computadores",
+    "href": "pres/NumericalAnalysis.html#que-pasa-en-los-computadores",
+    "title": "Análisis Numérico",
+    "section": "Que pasa en los computadores?",
+    "text": "Que pasa en los computadores?\n\n\\[\\left(-1\\right)^{s}2^{c-1023}\\left(1+f\\right)\\]"
   }
 ]

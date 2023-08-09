@@ -292,6 +292,20 @@ Cuando se operen números con cifras significativas, el resultado tendrá tantas
 
 :::
 
+::: {.callout-important title="Hablando de errores" collapsible="false"}
+
+Con el número de cifras significativas $\left(n\right)$, se puede calcular la cota del error absoluto:
+
+$$\varepsilon = \left( 0.5\times10^{2-n} \right) \%$$
+
+:::
+
+
+## Que pasa en los computadores?
+
+![](./images/NumericalAnalysis//cifras_significativas_ieee.png)
+
+$$\left(-1\right)^{s}2^{c-1023}\left(1+f\right)$$
 
 
 ## Revisión Cálculo -- Límites {.smaller}

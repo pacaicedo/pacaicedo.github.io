@@ -306,12 +306,20 @@ data_spotify.size
 
 :::
 
-## Preprocessing dataset.
+## Preprocessing dataset.{.scrollable}
 
 
-```{python, eval=TRUE, echo =TRUE, message=TRUE}
+:::{.formateador_output}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+#| 
 data_spotify.describe()
 ```
+
+:::
 
 
 

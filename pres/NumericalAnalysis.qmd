@@ -308,7 +308,46 @@ $$\varepsilon = \left( 0.5\times10^{2-n} \right) \%$$
 $$\left(-1\right)^{s}2^{c-1023}\left(1+f\right)$$
 
 
-## Revisión Cálculo -- Límites {.smaller}
+## Error de truncamiento
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.callout-important title="Importante" collapsible="false"}
+
+Dentro de los números reales $\left( \mathbb{R} \right)$, existen dos conjuntos de números claramente diferenciables, los racionales $\left( \mathbb{Q} \right)$ y los irracionales $\left( \mathbb{I} \right)$. Los primeros son facilmente representables en un sistema computacional; sin embargo los segundo debido a que no pueden ser representados con un número finito de digitos deben ser cortados a unas cuantas cifras.
+
+:::
+
+
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-note title="Nota" collapsible="false"}
+
+Sin embargo, hay formas metódicas de obtener aproximaciones tan buenas como se quieran a estos números. Como por ejemplo las conocidas series de Taylor 
+
+:::{.x_small_font}
+$$f\left( x \right) = f\left( c \right) + \dot{f}\left( c \right)\left( x-c \right) + \frac{\ddot{f}\left( c \right)}{2!}\left( x-c \right)^2 + \frac{\dddot{f}\left( x-c \right)}{3!}\left( x-c \right)^3 + \dots + \frac{f^{\left(n\right)}\left( x-c \right)}{n!}\left( x-c \right)^n$$
+:::
+
+- Todas las derivadas deben existir.
+- Función y derivadas  en el intervalo $\left(x,c\right)$
+
+:::
+
+:::
+
+:::
+
+## Error de truncamiento  
+
+$$R_n\left( x \right) = \frac{f^{\left( n+1 \right)}\left( \zeta \right)}{\left( n+1 \right)!}\left( x-c \right)^{n+1}$$
+
+## Revisión Cálculo -- Límites{.smaller}
 
 ::::{.columns}
 

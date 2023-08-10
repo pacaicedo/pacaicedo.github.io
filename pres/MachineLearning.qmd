@@ -23,8 +23,8 @@ resources:
 
 ```{python}
 #| echo: false
-#path_to_data = "D:/DatasetsVault/spotify" # For Windows
-path_to_data = "/Users/pacaicedo/DatasetsVault/spotify" #For MacOsX
+path_to_data = "D:/DatasetsVault/spotify" # For Windows
+#path_to_data = "/Users/pacaicedo/DatasetsVault/spotify" #For MacOsX
 ```
 
 # Presentación
@@ -206,6 +206,8 @@ EDA, depends on two things:
 
 The data set is located in the kaggle site. [Dataset](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks)
 
+## Learning from the example
+
 ### Analysis Objective
 
 Spotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform.
@@ -304,6 +306,12 @@ data_spotify.size
 
 :::
 
+## Preprocessing dataset.
+
+
+```{python, eval=TRUE, echo =TRUE, message=TRUE}
+data_spotify.describe()
+```
 
 
 

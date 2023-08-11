@@ -345,68 +345,19 @@ $$f\left( x \right) = f\left( c \right) + \dot{f}\left( c \right)\left( x-c \rig
 
 ## Error de truncamiento  
 
-$$R_n\left( x \right) = \frac{f^{\left( n+1 \right)}\left( \zeta \right)}{\left( n+1 \right)!}\left( x-c \right)^{n+1}$$
+::: {.callout-note title="Forma de Langrange" collapsible="false"}
 
-## Revisión Cálculo -- Límites{.smaller}
-
-::::{.columns}
-
-::: {.column width='50%'}
-
-![](./images/NumericalAnalysis/limite.png)
+$$R_n\left( x \right) = \frac{f^{\left( n+1 \right)}\left( \xi \right)}{\left( n+1 \right)!}\left( x-c \right)^{n+1}$$
 
 :::
 
-::: {.column width='50%'}
+::: {.callout-note title="Forma Integral" collapsible="false"}
 
-Una función _f_ definida en un conjunto de _X_ de números reales se dice que tiene límite, definido como 
-
-$$ \lim _{x \to x_0 }f(x)=L  $$
-
-si dado que existe $\varepsilon > 0$, existe un valor $\delta > 0$ tal que $\left| f(x) - L \right| < \varepsilon$, siempre que $x \in X$ y $0<\left| x-x_0 \right| < \delta$
-
-:::
-::::
-
-## Revisión Cálculo -- Definiciones{.smaller}
-
-::::{.columns}
-
-::: {.column width='50%'}
-
-### Continuidad
-
-Sea _f_ una función definida en un conjunto _X_ de números reales y $x_0 \in X$ entonces _f_ es contínua si se cumple lo siguiente:
-
-$$\lim _{x \to x_0 }f(x)=f(x_0)$$
+$$R_n\left( x \right) = \int_{c}^{x}{\frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n}dt}$$
 
 :::
 
-::: {.column width='50%'}
-
-### Convergencia
-
-Sea $\left\{ x_n \right\}_{n=1}^{\infty}$ una sucesión de números reales. Esta sucesión converge a _x_ si existe un número $N(\varepsilon)$ tal que se cumple que $\left| x_n - x \right| < \varepsilon$ siempre que $n>N(\varepsilon)$. O lo que es igual:
-
-$$ \lim _{n \to \infty }x_n = x $$
 
 
-:::
-::::
 
-Si _f_ es una función definida en un conjunto _X_ de números reales y $x_0 \in X$, lo siguientes enunciados son verdaderos:
-
-- _f_ es contínua en $x_0$.
-- Si $\left\{ x_n \right\}_{n=1}^{\infty}$ es una sucesión cualquiera en X, la cual converge a $x_0$ entonces $\lim _{n \to \infty }f(x_n)=f(x_0)$
-
-# Solución de ecuaciones
-
-# Interpolación y aproximaciones lineales
-
-# Diferenciación e integración numérica
-
-# Problemas de valor inicial para solución de ODEs
-
-
-# Fin del curso
 

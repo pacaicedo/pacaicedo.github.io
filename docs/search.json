@@ -1572,6 +1572,90 @@
     "href": "pres/NumericalAnalysis.html#error-de-truncamiento-1",
     "title": "Análisis Numérico",
     "section": "Error de truncamiento",
-    "text": "Error de truncamiento\n\n\n\n\n\n\nForma de Langrange\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\nForma Integral\n\n\n\\[R_n\\left( x \\right) = \\int_{c}^{x}{\\frac{f^{\\left(n+1\\right)}\\left(t\\right)}{n!}\\left(x-t\\right)^{n}dt}\\]\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Error de truncamiento\n\n\n\n\n\n\nForma de Langrange\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\nForma Integral\n\n\n\\[R_n\\left( x \\right) = \\int_{c}^{x}{\\frac{f^{\\left(n+1\\right)}\\left(t\\right)}{n!}\\left(x-t\\right)^{n}dt}\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a binario",
+    "text": "Ejemplos de conversión de IEEE 754 a binario\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nEl bit más izquierdo en ambos casos es “0”, por lo tanto en los dos casos los numéros son positivos."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario.scrollable",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario.scrollable",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a binario{.scrollable}}",
+    "text": "Ejemplos de conversión de IEEE 754 a binario{.scrollable}}\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\n\nEl bit más izquierdo en ambos casos es “0”, por lo tanto en los dos casos los numéros son positivos."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario-1",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario-1",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a binario",
+    "text": "Ejemplos de conversión de IEEE 754 a binario\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nEn el ambos casos el exponente es 10000000011 por lo tanto el valor c se calcula así:\n\n\\[ c = 1 \\cdot 2^{10} + 0 \\cdot 2^{9} + \\dots +1 \\cdot 2^{1} + 1 \\cdot 2^{0} = 1024+2+1=1027\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario-2",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario-2",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a binario",
+    "text": "Ejemplos de conversión de IEEE 754 a binario\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nLa mantisa para el primer caso es:\n\n\\[1011100100010000000000000000000000000000000000000000\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} \\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a decimal",
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nEl bit más izquierdo en ambos casos es “0”, por lo tanto en los dos casos los numéros son positivos."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-1",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-1",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a decimal",
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nEn el ambos casos el exponente es 10000000011 por lo tanto el valor c se calcula así:\n\n\\[ c = 1 \\cdot 2^{10} + 0 \\cdot 2^{9} + \\dots +1 \\cdot 2^{1} + 1 \\cdot 2^{0} = 1024+2+1=1027\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-2",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-2",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a decimal",
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nLa mantisa para el primer caso es:\n\n\\[1011100100010000000000000000000000000000000000000000\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} \\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 = 0.7229003906250000000000\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-3",
+    "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-3",
+    "title": "Análisis Numérico",
+    "section": "Ejemplos de conversión de IEEE 754 a decimal",
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nLa mantisa para el segundo caso es:\n\n\\[1011100100010000000000000000000000000000000000000001\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} + 1 \\cdot 2^{52}\\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 + 2,220476049250313e-16\\] \\[f = 0.7229003906250002220446\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento",
+    "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento",
+    "title": "Análisis Numérico",
+    "section": "Ejemplo de Error de truncamiento",
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( x-c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( x-c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\n\n\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\\[f\\left(x\\right)=ln\\left(x\\right)\\]\n\\[\\dot{f}\\left(x\\right) = \\frac{1}{x}\\]\n\\[\\ddot{f}\\left(x\\right) = -\\frac{1}{x^2}\\]\n\n\\[\\dddot{f}\\left(x\\right) = \\frac{2}{x^3}\\]\n\\[\\ddddot{f}\\left(x\\right) = -\\frac{6}{x^4}\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-1",
+    "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-1",
+    "title": "Análisis Numérico",
+    "section": "Ejemplo de Error de truncamiento",
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1.1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1.1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1.1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1.1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/x)*(x-1))-((1/(2*(x**2)))*(x-1)**2)+ ((2/(6*(x**3)))*(x-1)**3)-((6/(24*(x**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.08701022243471537"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-2",
+    "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-2",
+    "title": "Análisis Numérico",
+    "section": "Ejemplo de Error de truncamiento",
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\nError en forma de lagrange\n\n\n\\[R_4\\left(1.1\\right) = \\frac{24\\xi^{-5}}{5!}\\left(1.1 - 1\\right)^{5}\\]\n\n\n\n\n\ndef error_taylor_expansion(x):\n    return ((24*x**(-5))/120)*(0.1**5)"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-3",
+    "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-3",
+    "title": "Análisis Numérico",
+    "section": "Ejemplo de Error de truncamiento",
+    "text": "Ejemplo de Error de truncamiento\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nv = np.arange(1,1.1,0.0001)\nerror = error_taylor_expansion(v)\nplt.plot(v,error)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

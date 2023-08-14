@@ -307,6 +307,75 @@ $$\varepsilon = \left( 0.5\times10^{2-n} \right) \%$$
 
 $$\left(-1\right)^{s}2^{c-1023}\left(1+f\right)$$
 
+## Ejemplos de conversión de IEEE 754 a decimal{.scrollable}
+
+::: {.callout-note title="Dos numeros \"diferentes\" " collapsible="false"}
+
+1. __0 10000000011 1011100100010000000000000000000000000000000000000000__
+2. __0 10000000011 1011100100010000000000000000000000000000000000000001__
+
+:::
+
+El bit más izquierdo en ambos casos es "0", por lo tanto en los dos casos los numéros son positivos.
+
+## Ejemplos de conversión de IEEE 754 a decimal{.scrollable}
+
+::: {.callout-note title="Dos numeros \"diferentes\" " collapsible="false"}
+
+1. __0 10000000011 1011100100010000000000000000000000000000000000000000__
+2. __0 10000000011 1011100100010000000000000000000000000000000000000001__
+
+:::
+
+En el ambos casos el exponente es _10000000011_ por lo tanto el valor c se calcula así:
+
+:::{.small_font}
+
+$$ c = 1 \cdot 2^{10} + 0 \cdot 2^{9} + \dots +1 \cdot 2^{1} + 1 \cdot 2^{0} = 1024+2+1=1027$$
+
+:::
+
+## Ejemplos de conversión de IEEE 754 a decimal{.scrollable}
+
+::: {.callout-note title="Dos numeros \"diferentes\" " collapsible="false"}
+
+1. __0 10000000011 1011100100010000000000000000000000000000000000000000__
+2. __0 10000000011 1011100100010000000000000000000000000000000000000001__
+
+:::
+
+La mantisa para el primer caso es:
+
+:::{.small_font}
+
+
+$$1011100100010000000000000000000000000000000000000000$$
+$$ f = 1 \cdot 2^{-1} + 1 \cdot 2^{-3} + 1\cdot 2^{-4} +1 \cdot 2^{-5} + 1 \cdot 2^{-8} + 1 \cdot 2^{-12} $$
+$$ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 = 0.7229003906250000000000$$
+
+:::
+
+## Ejemplos de conversión de IEEE 754 a decimal{.scrollable}
+
+::: {.callout-note title="Dos numeros \"diferentes\" " collapsible="false"}
+
+1. __0 10000000011 1011100100010000000000000000000000000000000000000000__
+2. __0 10000000011 1011100100010000000000000000000000000000000000000001__
+
+:::
+
+La mantisa para el segundo caso es:
+
+:::{.small_font}
+
+
+$$1011100100010000000000000000000000000000000000000001$$
+$$ f = 1 \cdot 2^{-1} + 1 \cdot 2^{-3} + 1\cdot 2^{-4} +1 \cdot 2^{-5} + 1 \cdot 2^{-8} + 1 \cdot 2^{-12} + 1 \cdot 2^{52}$$
+$$ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 + 2,220476049250313e-16$$
+$$f = 0.7229003906250002220446$$
+
+:::
+
 
 ## Error de truncamiento
 
@@ -356,6 +425,153 @@ $$R_n\left( x \right) = \frac{f^{\left( n+1 \right)}\left( \xi \right)}{\left( n
 $$R_n\left( x \right) = \int_{c}^{x}{\frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n}dt}$$
 
 :::
+
+
+## Ejemplo de Error de truncamiento
+
+
+::: {.callout-warning title="Recordemos" collapsible="false"}
+
+:::{.small_font}
+
+$$f\left( x \right) = f\left( c \right) + \dot{f}\left( c \right)\left( x-c \right) + \frac{\ddot{f}\left( c \right)}{2!}\left( x-c \right)^2 + \frac{\dddot{f}\left( x-c \right)}{3!}\left( x-c \right)^3 + \dots + \frac{f^{\left(n\right)}\left( x-c \right)}{n!}\left( x-c \right)^n$$
+  
+
+:::
+
+
+
+:::
+
+
+
+::: {.callout-note title="Calcular ln(1.1), centrado en  c=1, y orden 4" collapsible="false"}
+
+::: columns
+
+:::{.column width="50%"}
+
+$$f\left(x\right)=ln\left(x\right)$$
+
+$$\dot{f}\left(x\right) = \frac{1}{x}$$
+
+$$\ddot{f}\left(x\right) = -\frac{1}{x^2}$$
+
+:::
+
+:::{.column width="50%"}
+
+
+$$\dddot{f}\left(x\right) = \frac{2}{x^3}$$
+
+$$\ddddot{f}\left(x\right) = -\frac{6}{x^4}$$
+
+:::
+
+:::
+
+
+
+:::
+
+
+## Ejemplo de Error de truncamiento
+
+::: {.callout-note title="Calcular ln(1.1), centrado en  c=1, y orden 4" collapsible="false"}
+
+:::{.small_font}
+
+  $$f\left(1.1\right)=ln\left(1\right)+\frac{1}{1.1}\left(1.1 - 1\right)-\frac{1}{2\cdot 1.1^2}\left(1.1-1\right)^2+\frac{2}{6\cdot 1.1^3}\left(1.1 - 1\right)^3 - \frac{6}{24\cdot 1.1^4}\left(1.1 - 1\right)^4$$
+
+:::
+
+
+
+:::
+
+:::{.small_font}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+def taylor_expansion_ln(x):
+    return ((1/x)*(x-1))-((1/(2*(x**2)))*(x-1)**2)+ ((2/(6*(x**3)))*(x-1)**3)-((6/(24*(x**4)))*(x-1)**4)
+
+```
+
+:::
+
+:::{.small_font}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+print(taylor_expansion_ln(1.1))
+
+
+```
+
+:::
+
+
+## Ejemplo de Error de truncamiento
+
+::: {.callout-warning title="Recordemos" collapsible="false"}
+
+$$R_n\left( x \right) = \frac{f^{\left( n+1 \right)}\left( \xi \right)}{\left( n+1 \right)!}\left( x-c \right)^{n+1}$$
+
+:::
+
+::: {.callout-note title="Error en forma de lagrange" collapsible="false"}
+
+$$R_4\left(1.1\right) = \frac{24\xi^{-5}}{5!}\left(1.1 - 1\right)^{5}$$
+
+:::
+
+
+:::{.small_font}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+def error_taylor_expansion(x):
+    return ((24*x**(-5))/120)*(0.1**5)
+
+```
+
+
+
+:::
+
+
+## Ejemplo de Error de truncamiento
+
+:::{.center .small_font}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+#| fig-align: center
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+v = np.arange(1,1.1,0.0001)
+error = error_taylor_expansion(v)
+plt.plot(v,error)
+plt.show()
+
+```
+
+:::
+
 
 
 

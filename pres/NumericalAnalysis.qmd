@@ -377,6 +377,14 @@ $$f = 0.7229003906250002220446$$
 
 :::
 
+## Los números \"más grande\" y \"más pequeño\"
+
+::: {.callout-important title="Importante" collapsible="false"}
+
+- **Más grande:** Sucede cuando $s=0$, $c=2046$, $f=1-2^{-52}$
+- **Más pequeño:** Sucede cuando $s=0$, $c=1$, $f=0$
+
+:::
 
 ## Error de truncamiento
 
@@ -621,4 +629,123 @@ print(taylor_expansion_ln(1.1))
 :::
 
 
+## Error de redondeo
 
+
+
+::: {.callout-important title="Supongamos..." collapsible="false"}
+
+$$x=\frac{5}{7}$$
+$$y = \frac{1}{3}$$
+
+1. Calcular x+y utilizando aritmética de digitos finitos, utilizando 6 cifras significativas, considerando:
+  
+    - Método de truncamiento
+    - Método de redondeo
+
+2. Calcular el error para todos los casos anteriores
+:::
+
+## Error de redondeo{.scrollable}
+
+::: columns
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+print(5.0/7.0)
+
+```
+
+Utilizando redondeo...
+
+$$x=0.714286\times10^0$$
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+print(1.0/3.0)
+
+```
+
+Utilizando redondeo...
+
+$$x=0.333333\times10^0$$
+
+:::
+
+:::
+
+$$x+y=0.104762\times10^{1}$$
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+print( "Error absoluto:", abs(((22.0/21.0) - (1.04762))) )
+print( "Error relativo:", abs(((22.0/21.0) - (1.04762))/((22.0/21.0))) )
+
+```
+
+## Error de redondeo{.scrollable}
+
+::: columns
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+print(5.0/7.0)
+
+```
+
+Utilizando truncamiento...
+
+$$x=0.714285\times10^0$$
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+print(1.0/3.0)
+
+```
+
+Utilizando truncamiento...
+
+$$x=0.333333\times10^0$$
+
+:::
+
+:::
+
+$$x+y=0.104761\times10^{1}$$
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+print( "Error absoluto:", abs(((22.0/21.0) - (1.04761))) )
+print( "Error relativo:", abs(((22.0/21.0) - (1.04761))/((22.0/21.0))) )
+
+```

@@ -76,5 +76,8 @@
   },
   "Tutorials/TutorialPython.qmd": {
     "TutorialPython.html": "21a57323"
+  },
+  "code/MachineLearning/class001_EDA.ipynb": {
+    "class001_EDA.html": "89311919"
   }
 }

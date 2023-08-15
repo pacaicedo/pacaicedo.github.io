@@ -1649,21 +1649,21 @@
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-2",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/1)*(x-1))-((1/(2*(1**2)))*(x-1)**2)+ ((2/(6*(1**3)))*(x-1)**3)-((6/(24*(1**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.09530833333333343"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\nError en forma de lagrange\n\n\n\\[R_4\\left(1.1\\right) = \\frac{24\\xi^{-5}}{5!}\\left(1.1 - 1\\right)^{5}\\]\n\n\n\n\n\ndef error_taylor_expansion(x):\n    return ((24*x**(-5))/120)*(0.1**5)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-3",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-3",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\nError en forma de lagrange\n\n\n\\[R_4\\left(1.1\\right) = \\frac{24\\xi^{-5}}{5!}\\left(1.1 - 1\\right)^{5}\\]\n\n\n\n\n\ndef error_taylor_expansion(x):\n    return ((24*x**(-5))/120)*(0.1**5)"
+    "text": "Ejemplo de Error de truncamiento\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nv = np.arange(1,1.1,0.0001)\nerror = error_taylor_expansion(v)\nfig, ax = plt.subplots()\nax.plot(v,error)\nax.set_xlabel(\"Valor\")\nax.set_ylabel(\"Error de truncamiento\")\nplt.show()"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-4",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-4",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nv = np.arange(1,1.1,0.0001)\nerror = error_taylor_expansion(v)\nfig, ax = plt.subplots()\nax.plot(v,error)\nax.set_xlabel(\"Valor\")\nax.set_ylabel(\"Error de truncamiento\")\nplt.show()"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/1)*(x-1))-((1/(2*(1**2)))*(x-1)**2)+ ((2/(6*(1**3)))*(x-1)**3)-((6/(24*(1**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.09530833333333343\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-5",

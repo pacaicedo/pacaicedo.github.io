@@ -79,5 +79,12 @@
   },
   "code/MachineLearning/class001_EDA.ipynb": {
     "class001_EDA.html": "89311919"
+  },
+  "pres/QuartoLearning/learning01qmd.qmd": {
+    "learning01qmd.tex": "b2805b75",
+    "learning01qmd.html": "d0d81220"
+  },
+  "Tutorials/ExpansionTaylor.qmd": {
+    "ExpansionTaylor.html": "cdaf2919"
   }
 }

@@ -1,0 +1,13 @@
+---
+title: "Ejemplo de computación de seno y coseno usando expansión de Taylor"
+subtitle: "Tomado de Ciencia de Datos para Ciencias Naturale - Keilor Rojas"
+description: "Breve Tutorial de Python"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo R."
+date: "Febrero 6, 2023"
+date-modified: "Mayo 25, 2023"
+image: "../Img/machinelearning.png"
+---
+
+$$cos\left(x\right) = \sum_{n=0}^{\infty}{\frac{x^{2n}}{2n!}\left(-1\right)^{n}}$$
+$$sin\left(x\right) = \sum_{n=0}^{\infty}{\frac{\left(-1\right)^{n}}{\left(2n+1\right)!}x^{2n+1}}$$

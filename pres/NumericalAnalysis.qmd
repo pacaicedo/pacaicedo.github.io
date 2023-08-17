@@ -751,7 +751,7 @@ print( "Error relativo:", abs(((22.0/21.0) - (1.04761))/((22.0/21.0))) )
 
 ```
 
-<!-- TODO  -->
+<!-- TODO:algoritmos y convergencia-Seción 1.3 de Burden  -->
 
 ## Búsqueda de \"raíces\" de una función
 

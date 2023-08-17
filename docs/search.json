@@ -60,7 +60,7 @@
     "href": "index.html#tutoriales",
     "title": "La Guarida de los Datos",
     "section": "Tutoriales",
-    "text": "Tutoriales\n\n\n\n\n\n\n\n\n\n\nEjemplo de computación de seno y coseno usando expansión de Taylor\n\n\nBreve Tutorial de Python\n\n\n\n6 feb 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTutorial de Python\n\n\nBreve Tutorial de Python\n\n\n\n6 feb 2023\n\n\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Tutoriales\n\n\n\n\n\n\n\n\n\n\nComputación de seno y coseno usando expansión de Taylor\n\n\nUn ejemplo de clase del cálculo de una serie de Taylor sin uso de librerías especiales de Python\n\n\n\n6 feb 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTutorial de Python\n\n\nBreve Tutorial de Python\n\n\n\n6 feb 2023\n\n\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "index.html#clases",
@@ -1710,7 +1710,7 @@
   {
     "objectID": "Tutorials/ExpansionTaylor.html",
     "href": "Tutorials/ExpansionTaylor.html",
-    "title": "Ejemplo de computación de seno y coseno usando expansión de Taylor",
+    "title": "Computación de seno y coseno usando expansión de Taylor",
     "section": "",
     "text": "\\[cos\\left(x\\right) = \\sum_{n=0}^{\\infty}{\\frac{x^{2n}}{2n!}\\left(-1\\right)^{n}}\\] \\[sin\\left(x\\right) = \\sum_{n=0}^{\\infty}{\\frac{\\left(-1\\right)^{n}}{\\left(2n+1\\right)!}x^{2n+1}}\\]\n\ndef factorial(x):\n    output = 1\n    for k in range(1,x+1):\n        output = output*k\n    return output\n\n\ndef sin_taylor_expansion(x,n):\n    pi = 3.141592653589793238462643383279502884197169399375105820974944\n    x = pi*x/180\n    output = 0\n    for k in range(0, n):\n        term = (((-1)**k)/factorial(2*k + 1))*(x**(2*k+1))\n        output = output+term\n    return output\n\n\nv_est = sin_taylor_expansion(30,5)\n\nprint(v_est)\n\nprint(\"Error Relativo:\", abs(0.5-v_est)/0.5)\n\n0.5000000000202799\nError Relativo: 4.0559777758630844e-11"
   },

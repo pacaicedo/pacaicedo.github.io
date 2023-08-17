@@ -9,6 +9,8 @@ date-modified: "Mayo 25, 2023"
 image: "../Img/taylor_expansion.jpg"
 ---
 
+Las ecuaciones de las expansiones de Taylo fueron extraídas de la recopilación que hizo [Wikipedia](https://es.wikipedia.org/wiki/Serie_de_Taylor)
+
 $$cos\left(x\right) = \sum_{n=0}^{\infty}{\frac{x^{2n}}{2n!}\left(-1\right)^{n}}$$
 $$sin\left(x\right) = \sum_{n=0}^{\infty}{\frac{\left(-1\right)^{n}}{\left(2n+1\right)!}x^{2n+1}}$$
 

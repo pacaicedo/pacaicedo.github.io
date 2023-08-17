@@ -1,7 +1,7 @@
 ---
 title: "Computación de seno y coseno usando expansión de Taylor"
 subtitle: "Un ejemplo de clase"
-description: "Un ejemplo de clase del cálculo de una serie de Taylor sin uso de librerías especiales de Python"
+description: "Un ejemplo de clase del cálculo de una serie de Taylor sin uso de librerías especiales de Python -- En construcción --"
 lang: es
 author: "Ph.D. Pablo Eduardo Caicedo R."
 date: "Febrero 6, 2023"

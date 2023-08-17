@@ -6,7 +6,7 @@ lang: es
 author: "Ph.D. Pablo Eduardo Caicedo R."
 date: "Febrero 6, 2023"
 date-modified: "Mayo 25, 2023"
-image: "../Img/machinelearning.png"
+image: "../Img/python_programming.jpg"
 ---
 
 # Google Colab

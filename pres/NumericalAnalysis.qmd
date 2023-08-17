@@ -751,6 +751,67 @@ print( "Error relativo:", abs(((22.0/21.0) - (1.04761))/((22.0/21.0))) )
 
 ```
 
+<!-- TODO  -->
+
+## Búsqueda de \"raíces\" de una función
+
+::: {.callout-note title="Definicón" collapsible="false"}
+
+Las raíces o ceros de una función $f$ son aquellos valores $c$ tal que: $f\left(c\right)=0$
+
+:::
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.callout-warning title="Ejemplo 1" collapsible="false"}
+
+La raiz de la función $f\left(x\right) = 3x-4$ es $x=\frac{4}{3}$
+
+:::
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-warning title="Ejemplo 2" collapsible="false"}
+
+Los ceros de la función $f\left(x\right) = x^2 -x -6$ son $x=3$ y $x=-2$
+
+:::
+
+
+
+:::
+
+:::
+
+## Que pasa con funciones más complejas
+
+En muchas ecuaciones en ciencias e ingeniería, en las cuales no es posible aplicar un procedimiento para despejar la incógnita.
+
+::: columns
+
+:::{.column width="50%"}
+
+- $f\left(x\right) = x - $cos\left(x\right)$
+
+- $f\left(x\right)$ = e^{-x} - sin\left(x\right)$
+:::
+
+:::{.column width="50%"}
+
+- $f\left(x\right) = x - tan\left(x\right)$
+
+- $f\left(x\right) = e^{x} - x$
+
+:::
+
+:::
+
+
+
 
 ## Método de la bisección{.scrollable}
 

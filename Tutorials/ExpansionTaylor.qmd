@@ -11,3 +11,46 @@ image: "../Img/machinelearning.png"
 
 $$cos\left(x\right) = \sum_{n=0}^{\infty}{\frac{x^{2n}}{2n!}\left(-1\right)^{n}}$$
 $$sin\left(x\right) = \sum_{n=0}^{\infty}{\frac{\left(-1\right)^{n}}{\left(2n+1\right)!}x^{2n+1}}$$
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+def factorial(x):
+    output = 1
+    for k in range(1,x+1):
+        output = output*k
+    return output
+
+```
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+def sin_taylor_expansion(x,n):
+    pi = 3.141592653589793238462643383279502884197169399375105820974944
+    x = pi*x/180
+    output = 0
+    for k in range(0, n):
+        term = (((-1)**k)/factorial(2*k + 1))*(x**(2*k+1))
+        output = output+term
+    return output
+
+```
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+v_est = sin_taylor_expansion(30,5)
+
+print(v_est)
+
+print("Error Relativo:", abs(0.5-v_est)/0.5)
+
+```
+

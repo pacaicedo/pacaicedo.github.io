@@ -89,8 +89,12 @@
 
 .x_small_font{
   font-size: x-small;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .small_font{
   font-size: 65%;
+  text-align: justify;
+  text-justify: inter-word;
 }

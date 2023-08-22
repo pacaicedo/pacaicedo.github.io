@@ -990,7 +990,7 @@ En muchas ecuaciones en ciencias e ingeniería, en las cuales no es posible apli
 
 - $f\left(x\right) = x - $cos\left(x\right)$
 
-- $f\left(x\right)$ = e^{-x} - sin\left(x\right)$
+- $f\left(x\right) = e^{-x} - sin\left(x\right)$
 :::
 
 :::{.column width="50%"}
@@ -1089,6 +1089,55 @@ plt.show()
 :::
 
 
+## Soluciones de ecuaciones de una variable
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.callout-note title="Suponga que...." collapsible="false"}
+
+Suponga que, en un inicio, cierta población contiene $N\left(0\right)=1000000$ individuos, que $\upsilon=435000$ individuos inmigran a la comunidad durante el primer año y que existen N\left(1\right)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad $\lambda$ se requiere encontrar las raíces de
+
+:::{.small_font}
+
+$$1564000 = 1000000e^{\lambda} + \frac{435000}{\lambda}\left(e^{\lambda}-1\right)$$
+
+:::
+
+
+
+
+:::
+
+
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+lam = np.arange(0,0.2,0.0001)
+
+def f(l):
+    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000
+
+fig, ax = plt.subplots()
+ax.plot(lam, f(lam))
+ax.grid(True)
+plt.show()
+```
+
+:::
+
+:::
+
 
 ## Soluciones de ecuaciones de una variable
 
@@ -1100,7 +1149,11 @@ plt.show()
 
 Suponga que, en un inicio, cierta población contiene $N\left(0\right)=1000000$ individuos, que $\upsilon=435000$ individuos inmigran a la comunidad durante el primer año y que existen N\left(1\right)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad $\lambda$ se requiere encontrar las raíces de
 
+:::{.small_font}
+
 $$1564000 = 1000000e^{\lambda} + \frac{435000}{\lambda}\left(e^{\lambda}-1\right)$$
+
+:::
 
 :::
 
@@ -1110,7 +1163,23 @@ $$1564000 = 1000000e^{\lambda} + \frac{435000}{\lambda}\left(e^{\lambda}-1\right
 
 :::{.column width="50%"}
 
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+import numpy as np
+import matplotlib.pyplot as plt
 
+lam = np.arange(0,0.2,0.0001)
+
+def f(l):
+    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000
+
+fig, ax = plt.subplots()
+ax.plot(lam, f(lam))
+ax.grid(True)
+plt.show()
+```
 
 :::
 
@@ -1124,15 +1193,66 @@ $$1564000 = 1000000e^{\lambda} + \frac{435000}{\lambda}\left(e^{\lambda}-1\right
 
 :::{.column width="50%"}
 
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+lam = np.arange(0.05,0.2,0.0001)
+
+def f(l):
+    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000
+
+valor = np.array([0.05, 0.2])
+
+fig, ax = plt.subplots()
+ax.plot(lam, f(lam))
+ax.stem(valor, f(valor), linefmt=':')
+ax.grid(True)
+plt.show()
+
+```
+
 
 
 :::
 
 :::{.column width="50%"}
 
-![Seudo-código](./images/NumericalAnalysis/seudo_codigo_biseccion.jpg)
+![](./images/NumericalAnalysis/met_biseccion.jpg)
 
 :::
 
 :::
+
+## Método de la bisección
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+def met_bisectriz(a,b,tol,No):
+    i = 0
+    FA = f(a)
+    while i <= No:
+        p = a+ ((b-a)/2)
+
+        FP = f(p)
+        if (FP==0) or (((b-a)/2)<tol):
+            print("Lo logré, raíz en:", p, FP)
+            return p
+            break
+        i=i+1
+        if FA*FP > 0:
+            a=p
+            FA=FP
+        else:
+            b=p
+    print("Termine: ", i)
+
+```
 

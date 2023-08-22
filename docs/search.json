@@ -1726,7 +1726,7 @@
     "href": "pres/NumericalAnalysis.html#método-de-la-bisección",
     "title": "Análisis Numérico",
     "section": "Método de la bisección",
-    "text": "Método de la bisección\n\n\n\n\n\n\n\nSeudo-código\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Método de la bisección"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#algoritmos-y-convergencia",
@@ -1747,7 +1747,7 @@
     "href": "pres/NumericalAnalysis.html#que-pasa-con-funciones-más-complejas",
     "title": "Análisis Numérico",
     "section": "Que pasa con funciones más complejas",
-    "text": "Que pasa con funciones más complejas\nEn muchas ecuaciones en ciencias e ingeniería, en las cuales no es posible aplicar un procedimiento para despejar la incógnita.\n\n\n\n$f(x) = x - \\(cos\\left(x\\right)\\)\n\\(f\\left(x\\right)\\) = e^{-x} - sin(x)$\n\n\n\n\\(f\\left(x\\right) = x - tan\\left(x\\right)\\)\n\\(f\\left(x\\right) = e^{x} - x\\)"
+    "text": "Que pasa con funciones más complejas\nEn muchas ecuaciones en ciencias e ingeniería, en las cuales no es posible aplicar un procedimiento para despejar la incógnita.\n\n\n\n$f(x) = x - \\(cos\\left(x\\right)\\)\n\\(f\\left(x\\right) = e^{-x} - sin\\left(x\\right)\\)\n\n\n\n\\(f\\left(x\\right) = x - tan\\left(x\\right)\\)\n\\(f\\left(x\\right) = e^{x} - x\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#soluciones-de-ecuacione-de-una-variable",
@@ -1782,7 +1782,7 @@
     "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-2",
     "title": "Análisis Numérico",
     "section": "Soluciones de ecuaciones de una variable",
-    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]"
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.arange(0,0.2,0.0001)\n\ndef f(l):\n    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000\n\nfig, ax = plt.subplots()\nax.plot(lam, f(lam))\nax.grid(True)\nplt.show()"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-1",
@@ -1811,5 +1811,26 @@
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
     "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
+    "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
+    "title": "Análisis Numérico",
+    "section": "Soluciones de ecuaciones de una variable",
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#método-de-la-bisección-1",
+    "href": "pres/NumericalAnalysis.html#método-de-la-bisección-1",
+    "title": "Análisis Numérico",
+    "section": "Método de la bisección",
+    "text": "Método de la bisección\n\ndef met_bisectriz(a,b,tol,No):\n    i = 0\n    FA = f(a)\n    while i &lt;= No:\n        p = a+ ((b-a)/2)\n\n        FP = f(p)\n        if (FP==0) or (((b-a)/2)&lt;tol):\n            print(\"Lo logré, raíz en:\", p, FP)\n            return p\n            break\n        i=i+1\n        if FA*FP &gt; 0:\n            a=p\n            FA=FP\n        else:\n            b=p\n    print(\"Termine: \", i)\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "code/MachineLearning/class002_EDA.html",
+    "href": "code/MachineLearning/class002_EDA.html",
+    "title": "La guarida de los datos",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nfrom ast import literal_eval\n\n\ndata_tracks = pd.read_csv(\"/Users/pacaicedo/DatasetsVault/spotify/tracks.csv\")\ndata_artists = pd.read_csv(\"/Users/pacaicedo/DatasetsVault/spotify/artists.csv\")\n\n\ndata_artists.rename(columns={\"popularity\":\"art_popularity\"}, inplace=True)\ndata_tracks.rename(columns={\"popularity\":\"track_popularity\"}, inplace=True)\n\n\ndata_artists.isna().sum()\n\n\ndata_artists.dropna(inplace=True)\n\n\ndata_tracks.isna().sum()\n\n\ndata_tracks.dropna(inplace=True)\n\n\ndata_tracks[\"id_artists\"] = data_tracks[\"id_artists\"].apply(literal_eval)\n\n\ndf01 = data_tracks.explode(\"id_artists\")\n\n\ndata_artists.rename(columns={\"id\":\"id_artists\"}, inplace=True)\n\n\nresultado = pd.merge(df01, data_artists, how=\"inner\", on=\"id_artists\")\n\n\ndf02 = pd.concat([resultado.select_dtypes(np.number), resultado.id], axis=1)\n\n\ndf03=df02.groupby('id').agg(\n    {    \n    \"track_popularity\":'sum',\n    \"duration_ms\":\"mean\",\n    \"explicit\":\"max\",\n    \"danceability\":\"mean\",\n    \"energy\":\"mean\",\n    \"key\":pd.Series.mode,\n    \"loudness\":\"mean\",\n    \"mode\":\"max\",\n    \"speechiness\":\"mean\",\n    \"acousticness\":\"mean\",\n    \"instrumentalness\":\"mean\",\n    \"liveness\":\"mean\",\n    \"valence\":\"mean\",\n    \"tempo\":\"mean\",\n    \"time_signature\":\"max\",\n    \"followers\":'sum',\n    \"art_popularity\":'sum'\n    }\n)\n\n\ndf03.to_csv(\"/Users/pacaicedo/DatasetsVault/spotify/mixed_df.csv\")\n\n\nimport plotly.express as px\n\nfig=px.scatter(data_frame=df03, x=\"track_popularity\", y=\"art_popularity\", hover_data=[\"followers\"])\nfig.show()\n\n\nimport plotly.express as px\n\nfig=px.scatter(data_frame=df03, x=\"followers\", y=\"track_popularity\", log_x=True, log_y=True)\nfig.show()\n\n\ndf03[\"NewVariable01\"] = np.log(1+df03.followers)\nfig=px.scatter(data_frame=df03, x=\"NewVariable01\", y=\"track_popularity\")\nfig.show()\n\n\ndf03[\"NewVariable02\"] = np.sqrt(df03.followers)\nfig=px.scatter(data_frame=df03, x=\"NewVariable02\", y=\"track_popularity\")\nfig.show()\n\n\ndf03[\"NewVariable03\"] = 1/(1+np.exp(-df03.followers))\nfig=px.scatter(data_frame=df03, x=\"NewVariable03\", y=\"track_popularity\")\nfig.show()"
   }
 ]

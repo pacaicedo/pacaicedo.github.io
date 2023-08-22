@@ -1256,3 +1256,72 @@ def met_bisectriz(a,b,tol,No):
 
 ```
 
+## Método de Regula-Falsi
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+def g(x):
+    return np.sin(x+0.5)
+
+lam = np.arange(-np.pi/2,np.pi/2, 0.001)
+
+fig, ax = plt.subplots()
+a = -1.2
+b = 0.8
+ax.plot(lam, g(lam))
+ax.axhline(y=0, color="red")
+ax.stem([a, b], [g(a), g(b)], linefmt=':')
+ax.axline((a, g(a)), slope=(g(b)-g(a))/(b-a), color="black", linestyle='--')
+ax.grid(True)
+plt.show()
+
+```
+
+
+
+## Método de Newton-Raphson
+
+::: columns
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+def g(x):
+    return np.sin(x+0.5)
+
+def der_g(x):
+    return np.cos(x+0.5)
+
+lam = np.arange(-np.pi/2,np.pi/2, 0.001)
+p0 = 0.6
+p1 = p0 - ((g(p0))/(der_g(p0)))
+fig, ax = plt.subplots()
+ax.plot(lam, g(lam))
+ax.axhline(y=0, color="red")
+ax.stem(p0, g(p0), linefmt=':')
+ax.axline((p0, g(p0)), slope=der_g(p0), color="black", linestyle='--')
+ax.stem(p1, g(p1), linefmt=':')
+ax.axline((p1, g(p1)), slope=der_g(p1), color="green", linestyle='--')
+ax.grid(True)
+plt.show()
+
+```
+
+
+
+:::
+
+:::{.column width="50%"}
+
+![](./images/NumericalAnalysis/newton-raphson.jpg)
+
+:::
+
+:::
+

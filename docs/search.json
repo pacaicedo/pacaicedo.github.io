@@ -1824,7 +1824,7 @@
     "href": "pres/NumericalAnalysis.html#método-de-la-bisección-1",
     "title": "Análisis Numérico",
     "section": "Método de la bisección",
-    "text": "Método de la bisección\n\ndef met_bisectriz(a,b,tol,No):\n    i = 0\n    FA = f(a)\n    while i &lt;= No:\n        p = a+ ((b-a)/2)\n\n        FP = f(p)\n        if (FP==0) or (((b-a)/2)&lt;tol):\n            print(\"Lo logré, raíz en:\", p, FP)\n            return p\n            break\n        i=i+1\n        if FA*FP &gt; 0:\n            a=p\n            FA=FP\n        else:\n            b=p\n    print(\"Termine: \", i)\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Método de la bisección\n\ndef met_bisectriz(a,b,tol,No):\n    i = 0\n    FA = f(a)\n    while i &lt;= No:\n        p = a+ ((b-a)/2)\n\n        FP = f(p)\n        if (FP==0) or (((b-a)/2)&lt;tol):\n            print(\"Lo logré, raíz en:\", p, FP)\n            return p\n            break\n        i=i+1\n        if FA*FP &gt; 0:\n            a=p\n            FA=FP\n        else:\n            b=p\n    print(\"Termine: \", i)"
   },
   {
     "objectID": "code/MachineLearning/class002_EDA.html",
@@ -1832,5 +1832,19 @@
     "title": "La guarida de los datos",
     "section": "",
     "text": "import pandas as pd\nimport numpy as np\nfrom ast import literal_eval\n\n\ndata_tracks = pd.read_csv(\"/Users/pacaicedo/DatasetsVault/spotify/tracks.csv\")\ndata_artists = pd.read_csv(\"/Users/pacaicedo/DatasetsVault/spotify/artists.csv\")\n\n\ndata_artists.rename(columns={\"popularity\":\"art_popularity\"}, inplace=True)\ndata_tracks.rename(columns={\"popularity\":\"track_popularity\"}, inplace=True)\n\n\ndata_artists.isna().sum()\n\n\ndata_artists.dropna(inplace=True)\n\n\ndata_tracks.isna().sum()\n\n\ndata_tracks.dropna(inplace=True)\n\n\ndata_tracks[\"id_artists\"] = data_tracks[\"id_artists\"].apply(literal_eval)\n\n\ndf01 = data_tracks.explode(\"id_artists\")\n\n\ndata_artists.rename(columns={\"id\":\"id_artists\"}, inplace=True)\n\n\nresultado = pd.merge(df01, data_artists, how=\"inner\", on=\"id_artists\")\n\n\ndf02 = pd.concat([resultado.select_dtypes(np.number), resultado.id], axis=1)\n\n\ndf03=df02.groupby('id').agg(\n    {    \n    \"track_popularity\":'sum',\n    \"duration_ms\":\"mean\",\n    \"explicit\":\"max\",\n    \"danceability\":\"mean\",\n    \"energy\":\"mean\",\n    \"key\":pd.Series.mode,\n    \"loudness\":\"mean\",\n    \"mode\":\"max\",\n    \"speechiness\":\"mean\",\n    \"acousticness\":\"mean\",\n    \"instrumentalness\":\"mean\",\n    \"liveness\":\"mean\",\n    \"valence\":\"mean\",\n    \"tempo\":\"mean\",\n    \"time_signature\":\"max\",\n    \"followers\":'sum',\n    \"art_popularity\":'sum'\n    }\n)\n\n\ndf03.to_csv(\"/Users/pacaicedo/DatasetsVault/spotify/mixed_df.csv\")\n\n\nimport plotly.express as px\n\nfig=px.scatter(data_frame=df03, x=\"track_popularity\", y=\"art_popularity\", hover_data=[\"followers\"])\nfig.show()\n\n\nimport plotly.express as px\n\nfig=px.scatter(data_frame=df03, x=\"followers\", y=\"track_popularity\", log_x=True, log_y=True)\nfig.show()\n\n\ndf03[\"NewVariable01\"] = np.log(1+df03.followers)\nfig=px.scatter(data_frame=df03, x=\"NewVariable01\", y=\"track_popularity\")\nfig.show()\n\n\ndf03[\"NewVariable02\"] = np.sqrt(df03.followers)\nfig=px.scatter(data_frame=df03, x=\"NewVariable02\", y=\"track_popularity\")\nfig.show()\n\n\ndf03[\"NewVariable03\"] = 1/(1+np.exp(-df03.followers))\nfig=px.scatter(data_frame=df03, x=\"NewVariable03\", y=\"track_popularity\")\nfig.show()"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#método-de-regula-falsi",
+    "href": "pres/NumericalAnalysis.html#método-de-regula-falsi",
+    "title": "Análisis Numérico",
+    "section": "Método de Regula-Falsi",
+    "text": "Método de Regula-Falsi"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#método-de-newton-raphson",
+    "href": "pres/NumericalAnalysis.html#método-de-newton-raphson",
+    "title": "Análisis Numérico",
+    "section": "Método de Newton-Raphson",
+    "text": "Método de Newton-Raphson\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

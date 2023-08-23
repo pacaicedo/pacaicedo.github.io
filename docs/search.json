@@ -1404,7 +1404,7 @@
     "href": "pres/MachineLearning.html#import-dataset",
     "title": "Machine Learning",
     "section": "Import dataset",
-    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/tracks.csv\")\n\n\n\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
+    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/tracks.csv\")\n\n\n\ndata_spotify.head(5)\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
   },
   {
     "objectID": "Tutorials/TutorialPython.html",
@@ -1846,5 +1846,82 @@
     "title": "Análisis Numérico",
     "section": "Método de Newton-Raphson",
     "text": "Método de Newton-Raphson\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#linear-regression-python-preparation",
+    "href": "pres/MachineLearning.html#linear-regression-python-preparation",
+    "title": "Machine Learning",
+    "section": "Linear Regression, python preparation",
+    "text": "Linear Regression, python preparation\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport numpy as np\narchivoData = \"D:/DatasetsVault/Salario/data_for_class.csv\"\ndata = pd.read_csv(archivoData,delimiter=\",\", decimal=\".\")"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#salary-vs-years-of-experience-scatter-plot",
+    "href": "pres/MachineLearning.html#salary-vs-years-of-experience-scatter-plot",
+    "title": "Machine Learning",
+    "section": "Salary vs Years of experience scatter plot",
+    "text": "Salary vs Years of experience scatter plot\n\nax1 = sns.scatterplot(data=data, x=\"YearsExperience\", y=\"Salary\")\nax1.set(xlabel='x = YearsExperience', ylabel='y = Salary')\nplt.show()"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#salary-vs-years-of-experience-scatter-plot-1",
+    "href": "pres/MachineLearning.html#salary-vs-years-of-experience-scatter-plot-1",
+    "title": "Machine Learning",
+    "section": "Salary vs Years of experience scatter plot",
+    "text": "Salary vs Years of experience scatter plot"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#salary-histogram",
+    "href": "pres/MachineLearning.html#salary-histogram",
+    "title": "Machine Learning",
+    "section": "Salary histogram",
+    "text": "Salary histogram\n\nax2 = sns.displot(data=data, x=\"Salary\")\nplt.show()"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#salary-histogram-1",
+    "href": "pres/MachineLearning.html#salary-histogram-1",
+    "title": "Machine Learning",
+    "section": "Salary histogram",
+    "text": "Salary histogram"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#salary",
+    "href": "pres/MachineLearning.html#salary",
+    "title": "Machine Learning",
+    "section": "Salary",
+    "text": "Salary"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#linear-regression",
+    "href": "pres/MachineLearning.html#linear-regression",
+    "title": "Machine Learning",
+    "section": "Linear Regression",
+    "text": "Linear Regression"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#linear-regression-1",
+    "href": "pres/MachineLearning.html#linear-regression-1",
+    "title": "Machine Learning",
+    "section": "Linear Regression",
+    "text": "Linear Regression\nIn the example, in previous slide, data was modelled as a linear function. The difference (error) between the modelled data \\(\\left( \\hat{y}_n \\right)\\) and actual data \\(\\left( y_n \\right)\\) can be written as\n\n\n\n\n\n\nCost function\n\n\n\\[E = \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\hat{y}_n - y_n \\right)^2}\\]"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#some-other-examples-of-cost-function",
+    "href": "pres/MachineLearning.html#some-other-examples-of-cost-function",
+    "title": "Machine Learning",
+    "section": "Some other examples of cost function",
+    "text": "Some other examples of cost function\n\\[E = \\sqrt{\\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\hat{y}_n - y_n \\right)^2}}\\]\n\\[E = \\frac{1}{N} \\sum_{n=1}^{N}{\\left| \\hat{y}_n - y_n \\right| }\\]"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#gradient-descent-algorithm",
+    "href": "pres/MachineLearning.html#gradient-descent-algorithm",
+    "title": "Machine Learning",
+    "section": "Gradient Descent algorithm",
+    "text": "Gradient Descent algorithm\nLooking the cost surface, we notices that this surface has a global minimum. If we could have an algorithm which automatically finds it.\n\nCost Surface"
+  },
+  {
+    "objectID": "pres/MachineLearning.html#gradient-descent-algorithm-1",
+    "href": "pres/MachineLearning.html#gradient-descent-algorithm-1",
+    "title": "Machine Learning",
+    "section": "Gradient Descent algorithm",
+    "text": "Gradient Descent algorithm\nIndeed, there are multiples algorithms for minima searching. The most famous is the one named as least squares but in this course we will use the gradient descent algorithm.\nAssuming that the data model is a function \\(f\\left(\\theta_i, x_n, y_n\\right)\\), where \\(\\theta\\) is known as model parameter.\n\n\n\n\n\n\nThe gradient descent algorithm\n\n\n\\[\\mathbf{\\theta}_{i,j+1} =  \\mathbf{\\theta}_{i,j} - \\eta \\frac{\\partial E}{\\partial \\mathbf{\\theta}_{i}}\\]"
   }
 ]

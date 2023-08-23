@@ -251,9 +251,16 @@ data_spotify = pd.read_csv(path_to_data + "/tracks.csv")
 ``` 
 
 :::{.formateador_ouput}
-```{python carga_datos_spotify2}
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
 data_spotify.head(5)
-``` 
+
+```
+
+
 :::
 
 ## Preprocessing dataset.
@@ -315,15 +322,140 @@ data_spotify.size
 #| echo: true
 #| eval: true
 #| output: true
-#| 
+
 data_spotify.describe()
 ```
+
+:::
+
+# Problemas de regresión
+
+## Linear Regression, python preparation
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+archivoData = "D:/DatasetsVault/Salario/data_for_class.csv"
+data = pd.read_csv(archivoData,delimiter=",", decimal=".")
+
+```
+
+## Salary vs Years of experience scatter plot
+
+
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: false
+
+ax1 = sns.scatterplot(data=data, x="YearsExperience", y="Salary")
+ax1.set(xlabel='x = YearsExperience', ylabel='y = Salary')
+plt.show()
+
+```
+
+
+
+## Salary vs Years of experience scatter plot
+
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+ax1 = sns.scatterplot(data=data, x="YearsExperience", y="Salary")
+ax1.set(xlabel='x = YearsExperience', ylabel='y = Salary')
+plt.show()
+
+```
+
+## Salary histogram
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: false
+
+ax2 = sns.displot(data=data, x="Salary")
+plt.show()
+```
+
+## Salary histogram
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+ax2 = sns.displot(data=data, x="Salary")
+plt.show()
+
+```
+
+## Linear Regression
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+sns.scatterplot(data=data, x="YearsExperience", y="Salary", color='red')
+ax2 = sns.lineplot(data=data, x='YearsExperience', y='estimated_y', linestyle='dashed')
+ax2.set(xlabel='x = YearsExperience', ylabel='y = Salary')
+plt.plot([data.YearsExperience[17], data.YearsExperience[17]], [data.Salary[17], data.estimated_y[17]], linewidth=2, color='green', linestyle='dashed')
+
+```
+
+## Linear Regression
+
+In the example, in previous slide, data was modelled as a linear function. The difference (error) between the modelled data $\left( \hat{y}_n \right)$ and actual data $\left( y_n \right)$ can be written as
+
+::: {.callout-warning title="Cost function" collapsible="false"}
+
+$$E = \frac{1}{N} \sum_{n=1}^{N}{\left( \hat{y}_n - y_n \right)^2}$$
+
+:::
+
+
+## Some other examples of cost function
+
+$$E = \sqrt{\frac{1}{N} \sum_{n=1}^{N}{\left( \hat{y}_n - y_n \right)^2}}$$
+
+$$E = \frac{1}{N} \sum_{n=1}^{N}{\left| \hat{y}_n - y_n \right| }$$
+
+## Gradient Descent algorithm
+
+Looking the cost surface, we notices that this surface has a global minimum. If we could have an algorithm which automatically finds it.
+
+![Cost Surface](./Images/MachineLearning/CostSurface.png)
+
+## Gradient Descent algorithm
+
+Indeed, there are multiples algorithms for minima searching. The most famous is the one named as _least squares_ but in this course we will use the _gradient descent algorithm._
+
+Assuming that the data model is a function $f\left(\theta_i, x_n, y_n\right)$, where $\theta$ is known as model parameter.
+
+::: {.callout-important title="The gradient descent algorithm" collapsible="false"}
+
+$$\mathbf{\theta}_{i,j+1} =  \mathbf{\theta}_{i,j} - \eta \frac{\partial E}{\partial \mathbf{\theta}_{i}}$$
+  
+
+
 
 :::
 
 
 
 
-# Problemas de regresión
+
 
 # Tópicos avanzados en clasificación

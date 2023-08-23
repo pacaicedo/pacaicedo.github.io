@@ -8,6 +8,10 @@ date: "2023-08-01"
 format:
   revealjs: 
     code-tools: true
+    code-overflow: scroll
+    code-line-numbers: true
+    code-copy: false
+    fig-align: center
     self-contained: true
     theme: 
       - white

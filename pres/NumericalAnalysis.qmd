@@ -1239,16 +1239,16 @@ plt.show()
 #| eval: true
 #| output: true
 
-def met_bisectriz(a,b,tol,No):
+def met_bisectriz(a,b,tol,g,No):
     i = 0
-    FA = f(a)
+    FA = g(a)
     while i <= No:
         p = a+ ((b-a)/2)
 
-        FP = f(p)
+        FP = g(p)
         if (FP==0) or (((b-a)/2)<tol):
             print("Lo logré, raíz en:", p, FP)
-            return p
+            return p,i
             break
         i=i+1
         if FA*FP > 0:
@@ -1283,6 +1283,37 @@ ax.grid(True)
 plt.show()
 
 ```
+
+
+## Método de Regula-Falsi
+
+```{python}
+#| echo: true
+#| eval: true
+#| output: true
+
+def met_regula_falsi(a,b,tol,g,No):
+    i = 0
+    FA = g(a)
+    FB = g(b)
+    while i <= No:
+        p = a - ((FA*(b-a))/(FB-FA))
+        FP = g(p)
+        if (FP==0) or (((b-a)/2)<tol):
+            #print("Lo logré, raíz en:", p, FP)
+            return p,i
+            break
+        i=i+1
+        if FA*FP > 0:
+            a=p
+            FA=FP
+        else:
+            b=p
+            FB=FP
+    print("Termine: ", i)  
+
+```
+
 
 
 

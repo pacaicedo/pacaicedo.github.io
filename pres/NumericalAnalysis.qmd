@@ -1360,3 +1360,32 @@ plt.show()
 
 :::
 
+
+
+## Taller
+
+::: {.callout-note title="Pregunta 1/2" collapsible="false"}
+
+Dada la función $f\left(x\right) = 8 sin\left(x\right) e^{-x} - 1$ responda las siguientes cuestiones:
+
+1. Si se sabe que $x \in \left[0,3\right]$, encuentre una raíz de la función. ¿Es utilizable el método de la bisección en el cálculo de la raíz?
+
+2. Aplique Newton-Raphson para dos posibles valores iniciales: -5, 10. Cual es el resultado de la operación. Explique su resultado.
+
+:::
+
+## Taller
+
+::: {.callout-note title="Pregunta 2/2" collapsible="false"}
+
+La velocidad de un para caídista esta dada por la siguiente función:
+
+$$v=\frac{gm}{c}\left(1 - e^{-\frac{c}{m}t}\right)$$
+
+Sea la gravedad $g=9.8$, el coeficiente de rozamiento $c=14Kg/s$, responda:
+
+1. Cuál es el peso del paracaidista si se sabe que a los 7sg la velocidad de este era de $35m/s$ ?
+
+2. Utilizando una [calculadora de gravedad](https://www.sensorsone.com/local-gravity-calculator/), determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia.
+
+:::

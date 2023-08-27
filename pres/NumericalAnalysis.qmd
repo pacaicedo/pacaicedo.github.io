@@ -1389,3 +1389,4 @@ Sea la gravedad $g=9.8$, el coeficiente de rozamiento $c=14Kg/s$, responda:
 2. Utilizando una [calculadora de gravedad](https://www.sensorsone.com/local-gravity-calculator/), determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia.
 
 :::
+

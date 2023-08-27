@@ -1,0 +1,11 @@
+---
+title: "Consigna Calificativa: Búsqueda de raíces"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    toc-location: left
+    embed-resources: true
+---
+
+# Hola

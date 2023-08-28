@@ -28,8 +28,8 @@ resources:
 
 ```{python}
 #| echo: false
-#path_to_data = "D:/DatasetsVault" # For Windows
-path_to_data = "/Users/pacaicedo/DatasetsVault" #For MacOsX
+path_to_data = "D:/DatasetsVault" # For Windows
+#path_to_data = "/Users/pacaicedo/DatasetsVault" #For MacOsX
 ```
 
 # Presentación

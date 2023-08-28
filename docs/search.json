@@ -1817,7 +1817,7 @@
     "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
     "title": "Análisis Numérico",
     "section": "Soluciones de ecuaciones de una variable",
-    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\n/var/folders/47/yy19pxsn2mg5xhryg4kmp2tm0000gn/T/ipykernel_4338/3918670862.py:7: RuntimeWarning:\n\ndivide by zero encountered in divide\n\n/var/folders/47/yy19pxsn2mg5xhryg4kmp2tm0000gn/T/ipykernel_4338/3918670862.py:7: RuntimeWarning:\n\ninvalid value encountered in multiply"
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_23348\\3918670862.py:7: RuntimeWarning:\n\ndivide by zero encountered in divide\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_23348\\3918670862.py:7: RuntimeWarning:\n\ninvalid value encountered in multiply"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#método-de-la-bisección-1",
@@ -1880,7 +1880,7 @@
     "href": "pres/MachineLearning.html#salary-histogram-1",
     "title": "Machine Learning",
     "section": "Salary histogram",
-    "text": "Salary histogram\n\n\n/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:118: UserWarning:\n\nThe figure layout has changed to tight"
+    "text": "Salary histogram\n\n\nD:\\Python\\Lib\\site-packages\\seaborn\\axisgrid.py:118: UserWarning:\n\nThe figure layout has changed to tight"
   },
   {
     "objectID": "pres/MachineLearning.html#salary",

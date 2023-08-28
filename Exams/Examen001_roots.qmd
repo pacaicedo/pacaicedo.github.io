@@ -8,4 +8,49 @@ format:
     embed-resources: true
 ---
 
-# Hola
+# Condiciones
+
+1. Las interacciones entre estudiantes están permitidas
+
+2. Las interacciones con el docente están permitidas.
+
+3. La hora de entrega es fija y está completamente descrita en la plataforma MODDLE. NO ES NEGOCIABLE.
+
+4. La entrega es individual. Cada entrega debe constar de dos partes:
+    a. Cálculo preliminar a mano
+    b. Código solución del problema. 
+
+# Banco de preguntas
+
+:::{.panel-tabset}
+
+## Grupo de preguntas I
+
+1. (2.0puntos) El principio de arquímedes establece que el empuje que que esta sometido un cuerpo sumergido en un liquido es igual al peso del ﬂuido desplazado. Al plantear la condición de equilibrio para una esfera de radio 1 cm y densidad $\gamma = 0.75gm/cm^3$, se consigue la ecuación $h^3 −3h^2 + 3 = 0$, donde h es la altura de la parte de la esfera que está sumergida. Se pide aplicar el método de Newton-Raphson, modiﬁcado para estimar un valor aproximado h con 1 por ciento de error con respecto al valor anterior calculado.
+
+2. (3.0puntos) El método de la secante es una variación del método de Newton-Raphson. Implemente el código a partir del seudocódigo dado.
+
+![Seudocódigo pregunta 2](./Images/seudocodigo1.png)
+
+## Grupo de preguntas II
+
+![](./Images/output.png)
+
+1. (2.0puntos) Encuentre el valor de $L_1$ si se sabe que el error debe ser menor a $1\times10^{-5}$. Explique que tipo de error utilizó para el cálculo. Cual fue el algoritmo que utilizó?
+
+2. (3.0puntos) El método de la secante es una variación del método de Newton-Raphson. Implemente el código a partir del seudocódigo dado.
+
+![Seudocódigo pregunta 2](./Images/seudocodigo1.png)
+
+## Grupo de preguntas III
+
+![](./Images/output2.png)
+
+1. (2.0puntos) Encuentre el valor de $L_2$ si se sabe que el error debe ser menor a $1\times10^{-5}$. Explique que tipo de error utilizó para el cálculo. Cual fue el algoritmo que utilizó?
+
+2. (3.0puntos) El método de la secante es una variación del método de Newton-Raphson. Implemente el código a partir del seudocódigo dado.
+
+![Seudocódigo pregunta 2](./Images/seudocodigo1.png)
+
+:::
+

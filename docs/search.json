@@ -1817,7 +1817,7 @@
     "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
     "title": "Análisis Numérico",
     "section": "Soluciones de ecuaciones de una variable",
-    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_23348\\3918670862.py:7: RuntimeWarning:\n\ndivide by zero encountered in divide\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_23348\\3918670862.py:7: RuntimeWarning:\n\ninvalid value encountered in multiply"
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#método-de-la-bisección-1",
@@ -1978,7 +1978,7 @@
     "href": "pres/NumericalAnalysis.html#taller-1",
     "title": "Análisis Numérico",
     "section": "Taller",
-    "text": "Taller\n\n\n\n\n\n\nPregunta 2/2\n\n\nLa velocidad de un para caídista esta dada por la siguiente función:\n\\[v=\\frac{gm}{c}\\left(1 - e^{-\\frac{c}{m}t}\\right)\\]\nSea la gravedad \\(g=9.8\\), el coeficiente de rozamiento \\(c=14Kg/s\\), responda:\n\nCuál es el peso del paracaidista si se sabe que a los 7sg la velocidad de este era de \\(35m/s\\) ?\nUtilizando una calculadora de gravedad, determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia.\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Taller\n\n\n\n\n\n\nPregunta 2/2\n\n\nLa velocidad de un para caídista esta dada por la siguiente función:\n\\[v=\\frac{gm}{c}\\left(1 - e^{-\\frac{c}{m}t}\\right)\\]\nSea la gravedad \\(g=9.8\\), el coeficiente de rozamiento \\(c=14Kg/s\\), responda:\n\nCuál es el peso del paracaidista si se sabe que a los 7sg la velocidad de este era de \\(35m/s\\) ?\nUtilizando una calculadora de gravedad, determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia."
   },
   {
     "objectID": "Exams/Examen001_roots.html",
@@ -1986,5 +1986,61 @@
     "title": "Consigna Calificativa: Búsqueda de raíces",
     "section": "",
     "text": "Condiciones\n\nLas interacciones entre estudiantes están permitidas\nLas interacciones con el docente están permitidas.\nLa hora de entrega es fija y está completamente descrita en la plataforma MODDLE. NO ES NEGOCIABLE.\nLa entrega es individual. Cada entrega debe constar de dos partes:\n\nCálculo preliminar a mano\nCódigo solución del problema.\n\n\n\n\nBanco de preguntas\n\nGrupo de preguntas IGrupo de preguntas IIGrupo de preguntas III\n\n\n\n(2.0puntos) El principio de arquímedes establece que el empuje que que esta sometido un cuerpo sumergido en un liquido es igual al peso del ﬂuido desplazado. Al plantear la condición de equilibrio para una esfera de radio 1 cm y densidad \\gamma = 0.75gm/cm^3, se consigue la ecuación h^3 −3h^2 + 3 = 0, donde h es la altura de la parte de la esfera que está sumergida. Se pide aplicar el método de Newton-Raphson, modiﬁcado para estimar un valor aproximado h con 1 por ciento de error con respecto al valor anterior calculado.\n(3.0puntos) El método de la secante es una variación del método de Newton-Raphson. Implemente el código a partir del seudocódigo dado.\n\n\n\n\nSeudocódigo pregunta 2\n\n\n\n\n\n\n(2.0puntos) Encuentre el valor de L_1 si se sabe que el error debe ser menor a 1\\times10^{-5}. Explique que tipo de error utilizó para el cálculo. Cual fue el algoritmo que utilizó?\n(3.0puntos) El método de la secante es una variación del método de Newton-Raphson. Implemente el código a partir del seudocódigo dado.\n\n\n\n\nSeudocódigo pregunta 2\n\n\n\n\n\n\n(2.0puntos) Encuentre el valor de L_2 si se sabe que el error debe ser menor a 1\\times10^{-5}. Explique que tipo de error utilizó para el cálculo. Cual fue el algoritmo que utilizó?\n(3.0puntos) El método de la secante es una variación del método de Newton-Raphson. Implemente el código a partir del seudocódigo dado.\n\n\n\n\nSeudocódigo pregunta 2"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#problema",
+    "href": "pres/NumericalAnalysis.html#problema",
+    "title": "Análisis Numérico",
+    "section": "Problema",
+    "text": "Problema\n\n\n\n\n\n\n\n\nProblema\n\n\nUna empresa inmobiliaria tiene 4 terrenos a la venta. La relación entre precio y área se puede observar en la siguiente tabla:\n\n\n\nArea\nPrecio\n\n\n\n\n0.8\n10000\n\n\n2.3\n15000\n\n\n4.7\n40000\n\n\n7.1\n80000"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#problema-1",
+    "href": "pres/NumericalAnalysis.html#problema-1",
+    "title": "Análisis Numérico",
+    "section": "Problema",
+    "text": "Problema\n\n\n\n\n\n\nProblema\n\n\n¿Cuánto debe valer un terreno de 3.5ha, si el precio del terreno sigue las mismas condiciones de los anteriores?\n\n\n\n\n\n\n\n\n\n\n\nEnfoque exacto:\n\n\n\nPolinomios de Lagrange\nPolinomio de Newton\n\n\n\n\n\n\n\n\n\n\n\nEnfoque por Ajustes sucesivos:\n\n\n\nTrazadores cúbicos.\nMínimos cuadrados."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#polinomios-de-lagrange",
+    "href": "pres/NumericalAnalysis.html#polinomios-de-lagrange",
+    "title": "Análisis Numérico",
+    "section": "Polinomios de Lagrange",
+    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nInterpolación polinomial\n\n\nA partir de unos datos \\(\\left(x_0,y_0\\right),\\left(x_1,y_1\\right),\\left(x_2,y_2\\right),\\dots,\\left(x_n,y_n\\right)\\) generar un polinomio \\(\\left( P\\left(x\\right) \\right)\\) (del menor grado posible) que pase por todos los puntos.\n\\[P\\left(x\\right) = a_0 + a_1x + a_2x^2+\\dots+a_nx^n\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#polinomios-de-lagrange-1",
+    "href": "pres/NumericalAnalysis.html#polinomios-de-lagrange-1",
+    "title": "Análisis Numérico",
+    "section": "Polinomios de Lagrange",
+    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nAlgoritmo\n\n\n\nDeterminar un polinomios \\(\\gamma_i \\left(x\\right)\\), que pase por \\(\\left(x_i,1\\right)\\) y se anule para el resto de datos. \\[\\gamma_i\\left(x\\right) = \\prod_{j=0}^{n}\\frac{x-x_j}{x_i-x_j}\\]\n\nDonde \\(i \\neq j\\)\n\nDeterminar polinomio \\(P_i\\left(x\\right)\\)\n\n\\[P_i\\left(x\\right) = y_i \\gamma_i\\left(x\\right)\\]\n\nDeterminar polinomio \\(P\\left(x\\right)\\)\n\n\\[P\\left(x\\right) = \\sum_{i=0}^{n}P_i\\left(x\\right)\\]"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html#solución-al-problema",
+    "href": "pres/NumericalAnalysis.html#solución-al-problema",
+    "title": "Análisis Numérico",
+    "section": "Solución al problema",
+    "text": "Solución al problema\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "Exams/solucion_examenes02.html",
+    "href": "Exams/solucion_examenes02.html",
+    "title": "La guarida de los datos",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sympy import *\n\n\nx = Symbol('x')\nf1 = 5*exp(-10*x**3)\nx1 = 0.25\nx2 = 0.65\nxt = (x1+x2)/2\na = 4/((xt-x1)*(xt-x2))\n\nf2_est = a*(x-x1)*(x-x2)s\n\nf2 = -100*x**2+90*x-16.25\nf2 = f2.expand()\nf = f1-f2\nf_dot = f.diff()\n\n\nf_dot\n\n\\(\\displaystyle - 150 x^{2} e^{- 10 x^{3}} + 200 x - 90\\)\n\n\n\ndef NewtonRaphson(p0, tol, f, der_f, No):\n    i=1\n    salida=\"No lo logre\"\n    while i&lt;No:\n        p = p0 - ((f(p0))/(der_f(p0)))\n        if abs(p-p0) &lt; tol:\n            #print(\"Lo logre. La raíz esta: \", p)\n            salida = (p,i)\n            break\n        i = i+1\n        p0 = p\n    return salida\n\n\nf1_np = lambdify(x, f1, \"numpy\")\nf2_np = lambdify(x, f2, \"numpy\")\nf_np = lambdify(x, f, \"numpy\")\nf_dot_np = lambdify(x, f_dot, \"numpy\")\n\n\nL1, i1 = NewtonRaphson(0.2, 1e-5, f_np, f_dot_np, 1000)\nL2, i2 = NewtonRaphson(0.8, 1e-5, f_np, f_dot_np, 1000)\n\n\nt = np.arange(0,1,0.0001)\nfig, ax = plt.subplots()\nax.scatter([L1, L2], [f1_np(L1), f2_np(L2)], color=\"g\", zorder=10)\nax.plot(t, f1_np(t), label=r'$5 e^{- 10 x^{3}}$')\nax.plot(t, f2_np(t), label=r'$- 100 x^{2} + 90 x - 16.25$')\nax.set_ylim([-1, 6])\nax.grid(linestyle = '--', linewidth = 0.2)\nax.text(L1+0.01, f1_np(L1), r'$L_1$')\nax.text(L2+0.01, f2_np(L2)+0.1, r'$L_2$')\nax.legend()\n\n&lt;matplotlib.legend.Legend at 0x11934e150&gt;"
+  },
+  {
+    "objectID": "code/NumericalAnalysis/Tutoriales/polinomios_lagrangeg.html",
+    "href": "code/NumericalAnalysis/Tutoriales/polinomios_lagrangeg.html",
+    "title": "La guarida de los datos",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sympy import *\n\n\nA=[0.8, 2.3, 4.7, 7.1]\nB=[10000, 15000, 40000, 80000]\nfig02 = plt.figure()\nplt.stem(A,B, linefmt=\":\")\nplt.xlabel(\"Area (ha)\")\nplt.ylabel(\"Precio (US$)\")\nplt.grid()\n\n\n\n\n\nx=Symbol('x')\ngamma_0 = (x-A[1])*(x- A[2])*(x- A[3])\ngamma_0_np = lambdify(x, gamma_0, 'numpy')\ngamma_0 = gamma_0/gamma_0_np(A[0])\n\n\ngamma_1 = (x-A[0])*(x- A[2])*(x- A[3])\ngamma_1_np = lambdify(x, gamma_1, 'numpy')\ngamma_1 = gamma_1/gamma_1_np(A[1])\n\n\ngamma_2 = (x-A[1])*(x- A[0])*(x- A[3])\ngamma_2_np = lambdify(x, gamma_2, 'numpy')\ngamma_2 = gamma_2/gamma_2_np(A[2])\n\n\ngamma_3 = (x-A[1])*(x- A[2])*(x- A[0])\ngamma_3_np = lambdify(x, gamma_3, 'numpy')\ngamma_3 = gamma_3/gamma_3_np(A[3])\n\nP = B[0]*gamma_0+B[1]*gamma_1+B[2]*gamma_2+B[3]*gamma_3\nP_np = lambdify(x, P, 'numpy')\nprint(P.expand())\nP_np(3.5)\n\n-81.6120607787272*x**3 + 2452.81339031339*x**2 - 3636.26246438746*x + 11380.9947768281\n\n\n25201.923076923045\n\n\n\nx=Symbol('x')\ngamma_0 = (x-A[1])*(x- A[2])*(x- A[3])\ngamma_0_np = lambdify(x, gamma_0, 'numpy')\ngamma_0 = gamma_0/gamma_0_np(A[0])\n\n\ngamma_1 = (x-A[0])*(x- A[2])*(x- A[3])\ngamma_1_np = lambdify(x, gamma_1, 'numpy')\ngamma_1 = gamma_1/gamma_1_np(A[1])\n\n\ngamma_2 = (x-A[1])*(x- A[0])*(x- A[3])\ngamma_2_np = lambdify(x, gamma_2, 'numpy')\ngamma_2 = gamma_2/gamma_2_np(A[2])\n\n\ngamma_3 = (x-A[1])*(x- A[2])*(x- A[0])\ngamma_3_np = lambdify(x, gamma_3, 'numpy')\ngamma_3 = gamma_3/gamma_3_np(A[3])\n\nP = B[0]*gamma_0+B[1]*gamma_1+B[2]*gamma_2+B[3]*gamma_3\nP_np = lambdify(x, P, 'numpy')\n\nt = np.linspace(0.8, 7.1, 1000)\nA=[0.8, 2.3, 4.7, 7.1]\nB=[10000, 15000, 40000, 80000]\nfig02 = plt.figure()\nplt.plot(A,B,'o--', zorder=9)\nplt.plot(3.5, P_np(3.5), 'go', zorder = 10)\nplt.plot(t, P_np(t), 'r')\nplt.xlabel(\"Area (ha)\")\nplt.ylabel(\"Precio (US$)\")\nplt.grid()"
+  },
+  {
+    "objectID": "Exams/solucion_examenes01.html",
+    "href": "Exams/solucion_examenes01.html",
+    "title": "La guarida de los datos",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sympy import *\n\n\nx_n = np.arange(0.001, 2*np.pi, 0.001)\ny1 = ((2*np.sin(x_n))/x_n) + 2\ny2 = 2-(np.cos(x_n-1))\n\n\n\n\nx=Symbol('x')\nf = 2*(sin(x)/x)+cos(x-1)\nf_dot = f.diff()\ny1_s = 2*(sin(x)/x) + 2\ny2_s = 2-cos(x-1)\n\n\nf_np = lambdify(x, f, \"numpy\")\nf_dot_np = lambdify(x, f_dot, \"numpy\")\ny1_np = lambdify(x, y1_s, \"numpy\")\ny2_np = lambdify(x, y2_s, \"numpy\")\n\n\ndef NewtonRaphson(p0, tol, f, der_f, No):\n    i=1\n    salida=\"No lo logre\"\n    while i&lt;No:\n        p = p0 - ((f(p0))/(der_f(p0)))\n        if abs(p-p0) &lt; tol:\n            #print(\"Lo logre. La raíz esta: \", p)\n            salida = (p,i)\n            break\n        i = i+1\n        p0 = p\n    return salida\n\n\nL1, i1 = NewtonRaphson(np.pi/2, 1e-5, f_np, f_dot_np, 1000)\nL2, i2 = NewtonRaphson(6.3, 1e-5, f_np, f_dot_np, 1000)\n#print(f_np(L1))\n#print(L2)\n\n-2.498001805406602e-16\n5.85477841258161\n\n\n\nfig, ax = plt.subplots()\nax.scatter([L1, L2], [y1_np(L1), y2_np(L2)], color=\"g\", zorder=10)\nax.plot(x_n, y1, label=r'$2\\frac{\\sin(x)}{x} + 2$')\nax.plot(x_n, y2, label=r'$2 - \\cos(x-1)}$')\nax.text(2.7, 2.4, r'$L_1$')\nax.text(L2, y2_np(L2)+0.1, r'$L_2$')\nax.grid(linestyle = '--', linewidth = 0.2)\nax.legend()\n\n&lt;matplotlib.legend.Legend at 0x1292bcf90&gt;"
   }
 ]

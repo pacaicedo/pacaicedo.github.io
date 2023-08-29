@@ -1390,3 +1390,163 @@ Sea la gravedad $g=9.8$, el coeficiente de rozamiento $c=14Kg/s$, responda:
 
 :::
 
+# Interpolación
+
+## Problema{.scrollable}
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.callout-note title="Problema" collapsible="false"}
+
+Una empresa inmobiliaria tiene 4 terrenos a la venta. La relación entre precio y área se puede observar en la siguiente tabla:
+
+| Area   | Precio   |
+|:------:|:--------:|
+|  0.8   | 10000    |
+|  2.3   | 15000    |
+|  4.7   | 40000    |
+|  7.1   | 80000    |
+
+:::
+
+
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+A=[0.8, 2.3, 4.7, 7.1]
+B=[10000, 15000, 40000, 80000]
+fig02 = plt.figure()
+plt.stem(A,B, linefmt=":")
+plt.xlabel("Area (ha)")
+plt.ylabel("Precio (US$)")
+plt.grid()
+
+```
+
+
+
+:::
+
+:::
+
+## Problema
+
+::: {.callout-note title="Problema" collapsible="false"}
+
+¿Cuánto debe valer un terreno de 3.5ha, si el precio del terreno sigue las mismas condiciones de los anteriores?
+
+:::
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.callout-warning title="Enfoque exacto:" collapsible="false"}
+
+- Polinomios de Lagrange
+- Polinomio de Newton
+
+:::
+
+
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-warning title="Enfoque por Ajustes sucesivos:" collapsible="false"}
+
+- Trazadores cúbicos.
+- Mínimos cuadrados.
+
+:::
+
+:::
+
+:::
+
+## Polinomios de Lagrange
+
+::: {.callout-note title="Interpolación polinomial" collapsible="false"}
+
+A partir de unos datos $\left(x_0,y_0\right),\left(x_1,y_1\right),\left(x_2,y_2\right),\dots,\left(x_n,y_n\right)$ generar un polinomio $\left( P\left(x\right) \right)$ (del menor grado posible) que pase por todos los puntos.
+
+$$P\left(x\right) = a_0 + a_1x + a_2x^2+\dots+a_nx^n$$
+
+:::
+
+## Polinomios de Lagrange{.scrollable}
+
+::: {.callout-tip title="Algoritmo" collapsible="false"}
+
+1. Determinar un polinomios $\gamma_i \left(x\right)$, que pase por $\left(x_i,1\right)$ y se anule para el resto de datos.
+$$\gamma_i\left(x\right) = \prod_{j=0}^{n}\frac{x-x_j}{x_i-x_j}$$
+
+Donde $i \neq j$
+
+2. Determinar polinomio $P_i\left(x\right)$
+
+$$P_i\left(x\right) = y_i \gamma_i\left(x\right)$$
+
+3. Determinar polinomio $P\left(x\right)$
+
+$$P\left(x\right) = \sum_{i=0}^{n}P_i\left(x\right)$$
+
+:::
+
+## Solución al problema
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sympy import *
+
+x=Symbol('x')
+gamma_0 = (x-A[1])*(x- A[2])*(x- A[3])
+gamma_0_np = lambdify(x, gamma_0, 'numpy')
+gamma_0 = gamma_0/gamma_0_np(A[0])
+
+
+gamma_1 = (x-A[0])*(x- A[2])*(x- A[3])
+gamma_1_np = lambdify(x, gamma_1, 'numpy')
+gamma_1 = gamma_1/gamma_1_np(A[1])
+
+
+gamma_2 = (x-A[1])*(x- A[0])*(x- A[3])
+gamma_2_np = lambdify(x, gamma_2, 'numpy')
+gamma_2 = gamma_2/gamma_2_np(A[2])
+
+
+gamma_3 = (x-A[1])*(x- A[2])*(x- A[0])
+gamma_3_np = lambdify(x, gamma_3, 'numpy')
+gamma_3 = gamma_3/gamma_3_np(A[3])
+
+P = B[0]*gamma_0+B[1]*gamma_1+B[2]*gamma_2+B[3]*gamma_3
+P_np = lambdify(x, P, 'numpy')
+
+t = np.linspace(0.8, 7.1, 1000)
+A=[0.8, 2.3, 4.7, 7.1]
+B=[10000, 15000, 40000, 80000]
+fig02 = plt.figure()
+plt.plot(A,B,'o--', zorder=9)
+plt.plot(3.5, P_np(3.5), 'go', zorder = 10)
+plt.plot(t, P_np(t), 'r')
+plt.xlabel("Area (ha)")
+plt.ylabel("Precio (US$)")
+plt.grid()
+
+```
+

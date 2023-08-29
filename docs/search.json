@@ -1270,36 +1270,36 @@
     "objectID": "pres/MachineLearning.html#el-profesor",
     "href": "pres/MachineLearning.html#el-profesor",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería & Ciencias Naturales\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "El Profesor",
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería & Ciencias Naturales\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/MachineLearning.html#contenido-del-curso",
     "href": "pres/MachineLearning.html#contenido-del-curso",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Análisis exploratorio de datos\nProblemas de regresión\nTópicos avanzados en clasificación"
+    "section": "Contenido del curso",
+    "text": "Contenido del curso\n\n\n\n\n\nAnálisis exploratorio de datos\nProblemas de regresión\nTópicos avanzados en clasificación"
   },
   {
     "objectID": "pres/MachineLearning.html#evaluación",
     "href": "pres/MachineLearning.html#evaluación",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/MachineLearning.html#recursos",
     "href": "pres/MachineLearning.html#recursos",
     "title": "Machine Learning",
-    "section": "",
-    "text": "Lunes, Martes, Jueves y Viernes 11:00 – 13:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
+    "section": "Recursos",
+    "text": "Recursos\nClases\nLunes, Martes, Jueves y Viernes 11:00 – 13:00 Sala 504\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/MachineLearning.html#bibliografía",
     "href": "pres/MachineLearning.html#bibliografía",
     "title": "Machine Learning",
-    "section": "",
-    "text": "B. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.\nG. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.\nM. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.\nK. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.\nM. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.\nS. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.\nS. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2."
+    "section": "Bibliografía",
+    "text": "Bibliografía\n\nB. Boehmke y B. M. Greenwell, Hands-on machine learning with R. Boca Raton: CRC Press, 2019.\nG. Bonaccorso, Mastering machine learning algorithms: expert techniques to implement popular machine learning algorithms and fine-tune your models. 2018.\nM. Fenner, Machine learning in python for everyone. Boston, MA: Addison-Wesley, 2019.\nK. Kolodiazhnyi, Hands-On Machine Learning with C++ Build, Train, and Deploy End-To-end Machine Learning and Deep Learning Pipelines. Birmingham: Packt Publishing, Limited, 2020. Accedido: 28 de septiembre de 2021.\nM. Kubat, An Introduction to Machine Learning. Cham: Springer International Publishing, 2017. doi: 10.1007/978-3-319-63913-0.\nS. Raschka y V. Mirjalili, Python machine learning: machine learning and deep learning with Python, scikit-learn, and TensorFlow, Second edition, Fourth release,[fully revised and Updated]. Birmingham Mumbai: Packt Publishing, 04.\nS. Skansi, Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence. Cham: Springer International Publishing, 2018. doi: 10.1007/978-3-319-73004-2."
   },
   {
     "objectID": "pres/MachineLearning.html#revisión-cálculo-límites",
@@ -1362,7 +1362,7 @@
     "href": "pres/MachineLearning.html#exploratory-data-analysis-eda",
     "title": "Machine Learning",
     "section": "Exploratory Data Analysis (EDA)",
-    "text": "Exploratory Data Analysis (EDA)\n\nDefinition\nThe art of looking the underlying structure of the information through one or more datasets.\n\n\nDefinition by Diaconis, P.\nWe look at numbers or graphs and try to ﬁnd patterns. We pursue leads suggested by background information, imagination, patterns perceived, and experience with other data analyses."
+    "text": "Exploratory Data Analysis (EDA)\nDefinition\nThe art of looking the underlying structure of the information through one or more datasets.\nDefinition by Diaconis, P.\nWe look at numbers or graphs and try to ﬁnd patterns. We pursue leads suggested by background information, imagination, patterns perceived, and experience with other data analyses."
   },
   {
     "objectID": "pres/MachineLearning.html#exploratory-data-analysis-eda-1",
@@ -1376,21 +1376,21 @@
     "href": "pres/MachineLearning.html#learning-from-the-example",
     "title": "Machine Learning",
     "section": "Learning from the example",
-    "text": "Learning from the example\n\nSpotify\n“Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies” from wikipedia\n\n\nSpotify Dataset\nThe data set is located in the kaggle site. Dataset"
+    "text": "Learning from the example\nSpotify\n“Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies” from wikipedia\nSpotify Dataset\nThe data set is located in the kaggle site. Dataset"
   },
   {
     "objectID": "pres/MachineLearning.html#learning-from-the-examples",
     "href": "pres/MachineLearning.html#learning-from-the-examples",
     "title": "Machine Learning",
     "section": "Learning from the examples",
-    "text": "Learning from the examples\n\nGeneral Workflow\n\nImport dataset.\nPreprocessing dataset.\nEDA on the datasets.\nTrain the machine learning model.\nPredict the target using the trained model."
+    "text": "Learning from the examples\nGeneral Workflow\n\nImport dataset.\nPreprocessing dataset.\nEDA on the datasets.\nTrain the machine learning model.\nPredict the target using the trained model."
   },
   {
     "objectID": "pres/MachineLearning.html#import-dataset.",
     "href": "pres/MachineLearning.html#import-dataset.",
     "title": "Machine Learning",
     "section": "Import dataset.",
-    "text": "Import dataset.\n\nGeneral workflow for Importing a dataset in python\n\nInstall conda environment manager\nInstall a suitable conda environment.\nInstall python libraries. At least, a machine learning project without deployment needs:\n\nNumpy\nPandas\nMatplotlib\nSeaborn\nScikit-Learn\nJupyter\n\nInstall a suitable IDE software.\nScript, script, script."
+    "text": "Import dataset.\nGeneral workflow for Importing a dataset in python\n\nInstall conda environment manager\nInstall a suitable conda environment.\nInstall python libraries. At least, a machine learning project without deployment needs:\n\nNumpy\nPandas\nMatplotlib\nSeaborn\nScikit-Learn\nJupyter\n\nInstall a suitable IDE software.\nScript, script, script."
   },
   {
     "objectID": "pres/MachineLearning.html#import-dataset.-1",
@@ -1509,7 +1509,7 @@
     "href": "pres/MachineLearning.html#preprocessing-dataset.",
     "title": "Machine Learning",
     "section": "Preprocessing dataset.",
-    "text": "Preprocessing dataset.\n\nGeneral workflow for Preprocessing\n\nCheck the digital structure of the dataset\nCheck for digital information type\nCheck for nan\nCheck for outlier"
+    "text": "Preprocessing dataset.\nGeneral workflow for Preprocessing\n\nCheck the digital structure of the dataset\nCheck for digital information type\nCheck for nan\nCheck for outlier"
   },
   {
     "objectID": "pres/MachineLearning.html#preprocessing-dataset.-1",
@@ -1558,7 +1558,7 @@
     "href": "pres/MachineLearning.html#learning-from-the-example-1",
     "title": "Machine Learning",
     "section": "Learning from the example",
-    "text": "Learning from the example\n\nAnalysis Objective\nSpotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform."
+    "text": "Learning from the example\nAnalysis Objective\nSpotify wants to know if there is a relationship between the popularity of a song and the number of followers of its singers. The above to generate strategies to attract new singers to the platform."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-truncamiento",
@@ -1880,7 +1880,7 @@
     "href": "pres/MachineLearning.html#salary-histogram-1",
     "title": "Machine Learning",
     "section": "Salary histogram",
-    "text": "Salary histogram\n\n\nD:\\Python\\Lib\\site-packages\\seaborn\\axisgrid.py:118: UserWarning:\n\nThe figure layout has changed to tight"
+    "text": "Salary histogram"
   },
   {
     "objectID": "pres/MachineLearning.html#salary",
@@ -1901,7 +1901,7 @@
     "href": "pres/MachineLearning.html#linear-regression-1",
     "title": "Machine Learning",
     "section": "Linear Regression",
-    "text": "Linear Regression\nIn the example, in previous slide, data was modelled as a linear function. The difference (error) between the modelled data \\(\\left( \\hat{y}_n \\right)\\) and actual data \\(\\left( y_n \\right)\\) can be written as\n\n\n\n\n\n\nCost function\n\n\n\n\\[E = \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\hat{y}_n - y_n \\right)^2}\\]"
+    "text": "Linear Regression\nIn the example, in previous slide, data was modelled as a linear function. The difference (error) between the modelled data \\(\\left( \\hat{y}_n \\right)\\) and actual data \\(\\left( y_n \\right)\\) can be written as\n\n\n\n\n\n\nCost function\n\n\n\\[E = \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\hat{y}_n - y_n \\right)^2}\\]"
   },
   {
     "objectID": "pres/MachineLearning.html#some-other-examples-of-cost-function",
@@ -1915,35 +1915,35 @@
     "href": "pres/MachineLearning.html#gradient-descent-algorithm",
     "title": "Machine Learning",
     "section": "Gradient Descent algorithm",
-    "text": "Gradient Descent algorithm\nLooking the cost surface, we notices that this surface has a global minimum. If we could have an algorithm which automatically finds it.\n\n\n\nCost Surface"
+    "text": "Gradient Descent algorithm\nLooking the cost surface, we notices that this surface has a global minimum. If we could have an algorithm which automatically finds it.\n\nCost Surface"
   },
   {
     "objectID": "pres/MachineLearning.html#gradient-descent-algorithm-1",
     "href": "pres/MachineLearning.html#gradient-descent-algorithm-1",
     "title": "Machine Learning",
     "section": "Gradient Descent algorithm",
-    "text": "Gradient Descent algorithm\nIndeed, there are multiples algorithms for minima searching. The most famous is the one named as least squares but in this course we will use the gradient descent algorithm.\nAssuming that the data model is a function \\(f\\left(\\theta_i, x_n, y_n\\right)\\), where \\(\\theta\\) is known as model parameter.\n\n\n\n\n\n\nThe gradient descent algorithm\n\n\n\n\\[\\boldsymbol{\\theta}_{i,j+1} =  \\boldsymbol{\\theta}_{i,j} - \\eta \\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{i}}\\]"
+    "text": "Gradient Descent algorithm\nIndeed, there are multiples algorithms for minima searching. The most famous is the one named as least squares but in this course we will use the gradient descent algorithm.\nAssuming that the data model is a function \\(f\\left(\\theta_i, x_n, y_n\\right)\\), where \\(\\theta\\) is known as model parameter.\n\n\n\n\n\n\nThe gradient descent algorithm\n\n\n\\[\\boldsymbol{\\theta}_{i,j+1} =  \\boldsymbol{\\theta}_{i,j} - \\eta \\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{i}}\\]"
   },
   {
     "objectID": "pres/MachineLearning.html#gradient-descent-algorithm-2",
     "href": "pres/MachineLearning.html#gradient-descent-algorithm-2",
     "title": "Machine Learning",
     "section": "Gradient Descent algorithm",
-    "text": "Gradient Descent algorithm\n\n\n\n\n\n\nAssumptions\n\n\n\n\nLinear model for the Regression\nMean square error as cost function\n\\(\\eta = 1\\)\n\n\n\n\\[\\boldsymbol{\\theta}_i = \\left[ \\theta_1, \\theta_0 \\right]^T\\]\n\\[\\hat{y}_n  = \\theta_1 x_n + \\theta_0\\]\n\\[E = \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2}\\]"
+    "text": "Gradient Descent algorithm\n\n\n\n\n\n\nAssumptions\n\n\n\nLinear model for the Regression\nMean square error as cost function\n\\(\\eta = 1\\)\n\n\n\n\n\\[\\boldsymbol{\\theta}_i = \\left[ \\theta_1, \\theta_0 \\right]^T\\]\n\\[\\hat{y}_n  = \\theta_1 x_n + \\theta_0\\]\n\\[E = \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2}\\]"
   },
   {
     "objectID": "pres/MachineLearning.html#gradient-descent-algorithm-3",
     "href": "pres/MachineLearning.html#gradient-descent-algorithm-3",
     "title": "Machine Learning",
     "section": "Gradient Descent algorithm",
-    "text": "Gradient Descent algorithm\n\n\n\n\n\n\n\nFor \\(\\theta_1\\) estimation\n\n\n\n\\[\\boldsymbol{\\theta}_{1,j+1} = \\boldsymbol{\\theta}_{1,j} - \\eta \\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}} = \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{1}} \\left( \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}= \\frac{1}{N} \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{1}} \\left(  \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}= \\frac{1}{N}  \\sum_{n=1}^{N}{\\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{1}} \\left( \\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2\\right)}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}= \\frac{1}{N}  \\sum_{n=1}^{N}{2 \\left( \\theta_1 x_n + \\theta_0 - y_n \\right) x_n}\\]"
+    "text": "Gradient Descent algorithm\n\n\n\n\n\n\n\nFor \\(\\theta_1\\) estimation\n\n\n\\[\\boldsymbol{\\theta}_{1,j+1} = \\boldsymbol{\\theta}_{1,j} - \\eta \\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}} = \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{1}} \\left( \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}= \\frac{1}{N} \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{1}} \\left(  \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}= \\frac{1}{N}  \\sum_{n=1}^{N}{\\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{1}} \\left( \\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2\\right)}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}= \\frac{1}{N}  \\sum_{n=1}^{N}{2 \\left( \\theta_1 x_n + \\theta_0 - y_n \\right) x_n}\\]"
   },
   {
     "objectID": "pres/MachineLearning.html#gradient-descent-algorithm-4",
     "href": "pres/MachineLearning.html#gradient-descent-algorithm-4",
     "title": "Machine Learning",
     "section": "Gradient Descent algorithm",
-    "text": "Gradient Descent algorithm\n\n\n\n\n\n\n\nFor \\(\\theta_0\\) estimation\n\n\n\n\\[\\boldsymbol{\\theta}_{0,j+1} = \\boldsymbol{\\theta}_{0,j} - \\eta \\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}} = \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{0}} \\left( \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}}= \\frac{1}{N} \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{0}} \\left(  \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}}= \\frac{1}{N}  \\sum_{n=1}^{N}{\\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{0}} \\left( \\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2\\right)}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}}= \\frac{1}{N}  \\sum_{n=1}^{N}{2 \\left( \\theta_1 x_n + \\theta_0 - y_n \\right)}\\]"
+    "text": "Gradient Descent algorithm\n\n\n\n\n\n\n\nFor \\(\\theta_0\\) estimation\n\n\n\\[\\boldsymbol{\\theta}_{0,j+1} = \\boldsymbol{\\theta}_{0,j} - \\eta \\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{1}}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}} = \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{0}} \\left( \\frac{1}{N} \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}}= \\frac{1}{N} \\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{0}} \\left(  \\sum_{n=1}^{N}{\\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2} \\right) \\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}}= \\frac{1}{N}  \\sum_{n=1}^{N}{\\frac{\\partial}{\\partial \\boldsymbol{\\theta}_{0}} \\left( \\left( \\theta_1 x_n + \\theta_0 - y_n \\right)^2\\right)}\\]\n\\[\\frac{\\partial E}{\\partial \\boldsymbol{\\theta}_{0}}= \\frac{1}{N}  \\sum_{n=1}^{N}{2 \\left( \\theta_1 x_n + \\theta_0 - y_n \\right)}\\]"
   },
   {
     "objectID": "pres/MachineLearning.html#changing-the-cost-function-and-the-data-model",

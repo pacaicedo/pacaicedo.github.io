@@ -18,7 +18,7 @@ website:
 
 format:
   html:
-    theme: vapor
+    theme: cyborg
     css: styles.css
     toc: true
 

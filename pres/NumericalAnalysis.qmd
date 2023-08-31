@@ -1550,3 +1550,15 @@ plt.grid()
 
 ```
 
+## Polinomio de Newton{.scrollable}
+
+
+::: {.callout-note title="Nota" collapsible="false"}
+
+1. Construir el polinomio $P_0 \left(x\right)$ el cuál pasa por el punto $\left(x_0, y_0\right)$. La propuesta más simple es $P_0 \left(x\right) = y_0$
+
+2. Construir el polinomio $P_1 \left(x\right)$ el cuál pasa por el punto $\left(x_1, y_1\right)$, pero que parta de $P_0 \left(x\right)$. Una propuesta de este es $P_1 \left(x\right) = y_0+ c_1 \left(x-x_0\right)$
+
+3. Construir el polinomio $P_2 \left(x\right)$ el cuál pasa por el punto $\left(x_2, y_2\right)$, pero que parta de $P_1 \left(x\right)$. Una propuesta de este es $P_2 \left(x\right) = y_0 + c_1 \left(x-x_0\right) + c_2\left(x-x_0\right)\left(x-x_1\right)$
+:::
+

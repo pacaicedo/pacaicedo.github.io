@@ -107,5 +107,14 @@
   },
   "code/NumericalAnalysis/c009_SolucionConsigna2.ipynb": {
     "c009_SolucionConsigna2.html": "5623f680"
+  },
+  "code/MachineLearning/class004_MachineLearnig_Workflow.ipynb": {
+    "class004_MachineLearnig_Workflow.html": "5679dfc5"
+  },
+  "code/NumericalAnalysis/c007_polyLagrange.ipynb": {
+    "c007_polyLagrange.html": "46d0dc59"
+  },
+  "pres/Mathematics/maths_calc.ipynb": {
+    "maths_calc.html": "094d95a5"
   }
 }

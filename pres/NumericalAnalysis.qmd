@@ -1562,3 +1562,7 @@ plt.grid()
 3. Construir el polinomio $P_2 \left(x\right)$ el cuál pasa por el punto $\left(x_2, y_2\right)$, pero que parta de $P_1 \left(x\right)$. Una propuesta de este es $P_2 \left(x\right) = y_0 + c_1 \left(x-x_0\right) + c_2\left(x-x_0\right)\left(x-x_1\right)$
 :::
 
+<!-- TODO: Interpolación con splines lineales y cúbicos, mínimos cuadrados  -->
+
+# Integración y Diferenciación Numérica
+

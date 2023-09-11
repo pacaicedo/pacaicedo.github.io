@@ -116,5 +116,15 @@
   },
   "pres/Mathematics/maths_calc.ipynb": {
     "maths_calc.html": "094d95a5"
+  },
+  "Exams/Examen002_interpolation.qmd": {
+    "Examen002_interpolation.html": "ae4de492",
+    "Examen002_interpolation.tex": "3618ec6b"
+  },
+  "code/NumericalAnalysis/c008_PolyNewton_class.ipynb": {
+    "c008_PolyNewton_class.html": "9c128532"
+  },
+  "Exams/solucion_examenes03.ipynb": {
+    "solucion_examenes03.html": "af9b8586"
   }
 }

@@ -1,0 +1,23 @@
+---
+title: "Consigna Calificativa: Interpolación"
+format:
+  pdf:
+    pdf-engine: pdflatex
+  html:
+    toc: true
+    html-math-method: katex
+    toc-location: left
+    embed-resources: true
+---
+# Preguntas
+
+1. Teniendo en cuenta la siguiente tabla establezca que sistema de ecuaciones resuelve el problema de interpolación por trazadores (splines) cúbicos.
+
+| **X** | **Y** |
+|:-----:|:-----:|
+| 1     | -2    |
+| 4     | 3     |
+| 6     | 1     |
+
+2. Tengo una tabla con 1024 puntos (parejas ordenadas $\left(x,y\right)$). Cuantos trazadores cuadráticos requiero para hacer una interpolación?
+3. Suponga que se tiene una tabla con 5000 puntos (parejas ordenadas $\left(x,y\right)$). Se requiere realizar el ajuste de estos datos con un polinomio de segundo orden. Haciendo uso de la técnica de mínimos cuadrados, formule las ecuaciones respectivas para cada una de las incógnitas. 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>La guarida de los datos – solucion_examenes03</title>
+<title>La guarida de los datos - Solución Punto 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -61,6 +95,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -102,15 +138,285 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#condición-de-interpolación" id="toc-condición-de-interpolación" class="nav-link active" data-scroll-target="#condición-de-interpolación">Condición de interpolación</a></li>
+  <li><a href="#condición-de-la-primera-derivada" id="toc-condición-de-la-primera-derivada" class="nav-link" data-scroll-target="#condición-de-la-primera-derivada">Condición de la primera derivada</a></li>
+  <li><a href="#condición-de-la-segunda-derivada" id="toc-condición-de-la-segunda-derivada" class="nav-link" data-scroll-target="#condición-de-la-segunda-derivada">Condición de la segunda derivada</a></li>
+  <li><a href="#condición-de-la-frontera-natural" id="toc-condición-de-la-frontera-natural" class="nav-link" data-scroll-target="#condición-de-la-frontera-natural">Condición de la frontera natural</a></li>
+  <li><a href="#totalidad-de-ecuaciones-a-resolver" id="toc-totalidad-de-ecuaciones-a-resolver" class="nav-link" data-scroll-target="#totalidad-de-ecuaciones-a-resolver">Totalidad de ecuaciones a resolver</a></li>
+  <li><a href="#solución-punto-2" id="toc-solución-punto-2" class="nav-link" data-scroll-target="#solución-punto-2">Solución Punto 2</a></li>
+  <li><a href="#solución-punto-3" id="toc-solución-punto-3" class="nav-link" data-scroll-target="#solución-punto-3">Solución Punto 3</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Solución Punto 01</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Los datos describen dos intervalos de estudio <span class="math inline">\(\left[1,4\right]\)</span> y <span class="math inline">\(\left[4,6\right]\)</span>. Bajo esta consideración se tiene que:</p>
+<p><span class="math display">\[
+\begin{align*}
+\left[1,4\right] &amp; : &amp; s_0\left(x\right) = a_{0,0} + a_{0,1} x + a_{0,2}x^2 + a_{0,3}x^3\\
+\left[4,6\right] &amp; : &amp; s_1\left(x\right) = a_{1,0} + a_{1,1} x + a_{1,2}x^2 + a_{1,3}x^3
+\end{align*}
+\]</span></p>
+<p>Para construir los trazadores cúbicos, se deben tener en cuenta las primeras <span class="math inline">\(\dot{s}_i\left(x\right)\)</span> y segundas <span class="math inline">\(\ddot{s}_i\left(x\right)\)</span> derivadas de cada función en todos los intervalos. Las expresiones de las primeras derivadas son:</p>
+<p><span class="math display">\[
+\begin{align*}
+\left[1,4\right] &amp; : &amp; \dot{s}_0\left(x\right) = a_{0,1} + 2 a_{0,2}x + 3 a_{0,3}x^2\\
+\left[4,6\right] &amp; : &amp; \dot{s}_1\left(x\right) = a_{1,1} + 2 a_{1,2}x + 3 a_{1,3}x^2
+\end{align*}
+\]</span></p>
+<p>Las expresiones para la segunda derivadas son:</p>
+<p><span class="math display">\[
+\begin{align*}
+\left[1,4\right] &amp; : &amp; \ddot{s}_0\left(x\right) = 2 a_{0,2} + 6 a_{0,3}x\\
+\left[4,6\right] &amp; : &amp; \ddot{s}_1\left(x\right) = 2 a_{1,2} + 6 a_{1,3}x
+\end{align*}
+\]</span></p>
+<p>Para determinar los trazadores se deben cumplir las siguientes condiciones:</p>
+<section id="condición-de-interpolación" class="level2">
+<h2 class="anchored" data-anchor-id="condición-de-interpolación">Condición de interpolación</h2>
+<p><span class="math display">\[
+\begin{align*}
+s_0\left(1\right) &amp; = &amp; -2\\
+s_0\left(4\right) &amp; = &amp; 3\\
+s_1\left(4\right) &amp; = &amp; 3\\
+s_1\left(6\right) &amp; = &amp; 1
+\end{align*}
+\]</span></p>
+<p>Reemplazando las ecuaciones se tiene que:</p>
+<p><span class="math display">\[
+\begin{align*}
+s_0\left(1\right) &amp; = &amp; -2 &amp; = &amp; a_{0,0} + a_{0,1} + a_{0,2} + a_{0,3}\\
+s_0\left(4\right) &amp; = &amp; 3 &amp; = &amp; a_{0,0} + 4 a_{0,1} + 16 a_{0,2} + 64 a_{0,3}\\
+s_1\left(4\right) &amp; = &amp; 3 &amp; = &amp; a_{1,0} + 4 a_{1,1} + 16 a_{1,2} + 64 a_{1,3}\\
+s_1\left(6\right) &amp; = &amp; 1 &amp; = &amp; a_{1,0} + 6 a_{1,1} + 36 a_{1,2} + 216 a_{1,3}
+\end{align*}
+\]</span></p>
+</section>
+<section id="condición-de-la-primera-derivada" class="level2">
+<h2 class="anchored" data-anchor-id="condición-de-la-primera-derivada">Condición de la primera derivada</h2>
+<p>$$ <span class="math display">\[\begin{align*}
+\dot{s}_0\left( 4 \right) = \dot{s}_1\left( 4 \right) \\
+a_{0,1} + 8 a_{0,2} + 48 a_{0,3} = a_{1,1} +  8 a_{1,2} + 48 a_{1,3}\\
+a_{0,1} + 8 a_{0,2} + 48 a_{0,3} - a_{1,1} -  8 a_{1,2} - 48 a_{1,3} = 0 \\
+
+\end{align*}\]</span> $$</p>
+</section>
+<section id="condición-de-la-segunda-derivada" class="level2">
+<h2 class="anchored" data-anchor-id="condición-de-la-segunda-derivada">Condición de la segunda derivada</h2>
+<p><span class="math display">\[
+\begin{align*}
+\ddot{s}_0\left(4\right) = \ddot{s}_1\left(4\right)\\
+2 a_{0,2} + 24 a_{0,3} = 2 a_{1,2} + 24 a_{1,3}\\
+2 a_{0,2} + 24 a_{0,3} - 2 a_{1,2} - 24 a_{1,3} = 0
+\end{align*}
+\]</span></p>
+</section>
+<section id="condición-de-la-frontera-natural" class="level2">
+<h2 class="anchored" data-anchor-id="condición-de-la-frontera-natural">Condición de la frontera natural</h2>
+<p><span class="math display">\[
+\begin{align*}
+\ddot{s}_0\left(1\right) &amp;=&amp;0\\
+\ddot{s}_1\left(6\right) &amp;=&amp;0\\
+2 a_{0,2} + 6 a_{0,3}&amp;=&amp;0\\
+2 a_{1,2} + 36 a_{1,3}&amp;=&amp;0
+\end{align*}
+\]</span></p>
+</section>
+<section id="totalidad-de-ecuaciones-a-resolver" class="level2">
+<h2 class="anchored" data-anchor-id="totalidad-de-ecuaciones-a-resolver">Totalidad de ecuaciones a resolver</h2>
+<p>$$ <span class="math display">\[\begin{align*}
+
+a_{0,0} + a_{0,1} + a_{0,2} + a_{0,3} &amp; = &amp; -2\\
+a_{0,0} + 4 a_{0,1} + 16 a_{0,2} + 64 a_{0,3} &amp; = &amp; 3\\
+a_{1,0} + 4 a_{1,1} + 16 a_{1,2} + 64 a_{1,3} &amp; = &amp; 3\\
+a_{1,0} + 6 a_{1,1} + 36 a_{1,2} + 216 a_{1,3} &amp; = &amp; 1\\
+
+a_{0,1} + 8 a_{0,2} + 48 a_{0,3} - a_{1,1} -  8 a_{1,2} - 48 a_{1,3} &amp; = &amp; 0 \\
+2 a_{0,2} + 24 a_{0,3} - 2 a_{1,2} - 24 a_{1,3}&amp; = &amp;0\\
+2 a_{0,2} + 24 a_{0,3}&amp;=&amp;0\\
+2 a_{1,2} + 24 a_{1,3}&amp;=&amp;0
+\end{align*}\]</span> $$</p>
+<p>Reordenando en forma matricial las ecuaciones:</p>
+<p><span class="math display">\[
+\begin{align*}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1  &amp; 1  &amp; 0 &amp; 0  &amp; 0  &amp; 0   \\
+1 &amp; 4 &amp; 16 &amp; 64 &amp; 0 &amp; 0  &amp; 0  &amp; 0   \\
+0 &amp; 0 &amp; 0  &amp; 0  &amp; 1 &amp; 4  &amp; 16 &amp; 64  \\
+0 &amp; 0 &amp; 0  &amp; 0  &amp; 1 &amp; 6  &amp; 36 &amp; 216 \\
+0 &amp; 1 &amp; 8  &amp; 48 &amp; 0 &amp; -1 &amp; -8 &amp; -48 \\
+0 &amp; 0 &amp; 2  &amp; 24 &amp; 0 &amp; 0  &amp; -2 &amp; -24 \\
+0 &amp; 0 &amp; 2  &amp; 6  &amp; 0 &amp; 0  &amp; 0  &amp; 0   \\
+0 &amp; 0 &amp; 0  &amp; 0  &amp; 0 &amp; 0  &amp; 2  &amp; 36
+\end{bmatrix}
+\begin{bmatrix}
+a_{0,0}\\
+a_{0,1}\\
+a_{0,2}\\
+a_{0,3}\\
+a_{1,0}\\
+a_{1,1}\\
+a_{1,2}\\
+a_{1,3}
+\end{bmatrix}=
+\begin{bmatrix}
+-2\\3\\3\\1\\0\\0\\0\\0
+\end{bmatrix}
+\end{align*}
+\]</span></p>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">16</span>,<span class="dv">64</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">16</span>,<span class="dv">64</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">36</span>,<span class="dv">216</span>],[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">48</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">8</span>,<span class="op">-</span><span class="dv">48</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">24</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">24</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">36</span>]])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>])</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a00, a01, a02, a03, a10, a11, a12, a13 <span class="op">=</span> np.linalg.solve(a,b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spline(a,b,c,d,x):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b<span class="op">*</span>x <span class="op">+</span> c<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> d<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">1000</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> spline(a00, a01, a02, a03, x[x<span class="op">&lt;=</span><span class="dv">4</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> spline(a10, a11, a12, a13, x[x<span class="op">&gt;</span><span class="dv">4</span>])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.concatenate((y1,y2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>figura <span class="op">=</span> plt.figure()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">6</span>],[<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>],<span class="st">'o'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="solucion_examenes03_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="solución-punto-2" class="level1">
+<h1>Solución Punto 2</h1>
+<p>Si existen 1024 puntos, parejas ordenadas <span class="math inline">\(\left(x,y\right)\)</span>, en un conjuntos de datos, se requeriran 1023 trazadores cuadráticos para realizar la interpolación.</p>
+</section>
+<section id="solución-punto-3" class="level1">
+<h1>Solución Punto 3</h1>
+<p>Se supone los siguientes datos: <span class="math inline">\(N=5000\)</span> es el número de datos a ajustar, los cuales son parejas ordenadas <span class="math inline">\(\left(x_k,y_k\right)\)</span>, la salida del modelo de ajuste esta dado por la expresión <span class="math inline">\(\hat{y}_k=a_0 + a_1 x_k + a_2 x_k^2\)</span> y el error entre los datos de la tabla y el modelo de aproximación, <span class="math inline">\(e_c\)</span> es dado por la siguiente expresión matemática:</p>
+<p><span class="math display">\[
+\begin{align*}
+e_c &amp; =  \frac{1}{N}\sum_{k=1}^{N} e_k\\
+e_k &amp; =  \left(y_k - \hat{y}_k\right)^2\\
+e_k &amp; =  \left(y_k - a_0 - a_1 x_k - a_2 x_k^2\right)^2\\
+e_c &amp; =  \frac{1}{N}\sum_{k=1}^{N} e_k\\
+e_c &amp; = \frac{1}{N}\sum_{k=1}^{N} \left(- a_{0} - a_{1} {x}_{k} - a_{2} {x}_{k}^{2} + {y}_{k}\right)^{2}
+\end{align*}
+\]</span></p>
+<p>Dado que debemos encontrar el mínimo de la función se igualan las tres derivadas parciales a 0. La expresión matemática queda de la forma:</p>
+<p><span class="math display">\[
+\begin{align*}
+\frac{\partial e_c}{\partial a_0} &amp; = 0\\
+\frac{\partial e_c}{\partial a_1} &amp; = 0\\
+\frac{\partial e_c}{\partial a_2} &amp; = 0
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+\frac{\partial e_c}{\partial a_0} &amp; = \frac{\sum_{k=1}^{N} 2 a_{0}}{N} + \frac{\sum_{k=1}^{N} 2 a_{1} {x}_{k}}{N} + \frac{\sum_{k=1}^{N} 2 a_{2} {x}_{k}^{2}}{N} + \frac{\sum_{k=1}^{N} - 2 {y}_{k}}{N}\\
+\frac{\partial e_c}{\partial a_1} &amp; = \frac{\sum_{k=1}^{N} 2 a_{0} {x}_{k}}{N} + \frac{\sum_{k=1}^{N} 2 a_{1} {x}_{k}^{2}}{N} + \frac{\sum_{k=1}^{N} 2 a_{2} {x}_{k}^{3}}{N} + \frac{\sum_{k=1}^{N} - 2 {x}_{k} {y}_{k}}{N}\\
+\frac{\partial e_c}{\partial a_2} &amp; = \frac{\sum_{k=1}^{N} 2 a_{0} {x}_{k}^{2}}{N} + \frac{\sum_{k=1}^{N} 2 a_{1} {x}_{k}^{3}}{N} + \frac{\sum_{k=1}^{N} 2 a_{2} {x}_{k}^{4}}{N} + \frac{\sum_{k=1}^{N} - 2 {x}_{k}^{2} {y}_{k}}{N}
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+a_{0} N + a_{1} \sum_{k=1}^{N} {x}_{k} + a_{2} \sum_{k=1}^{N} {x}_{k}^{2} + \sum_{k=1}^{N} - {y}_{k} &amp;=0\\
+a_{0} \sum_{k=1}^{N} {x}_{k} + a_{1} \sum_{k=1}^{N} {x}_{k}^{2} + a_{2} \sum_{k=1}^{N} {x}_{k}^{3} + \sum_{k=1}^{N} - {x}_{k} {y}_{k} &amp;=0\\
+a_{0}\sum_{k=1}^{N} {x}_{k}^{2} + a_{1} \sum_{k=1}^{N} {x}_{k}^{3} + a_{2} \sum_{k=1}^{N} {x}_{k}^{4} + \sum_{k=1}^{N} - {x}_{k}^{2} {y}_{k} &amp;=0
+\end{align*}
+\]</span></p>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a0, a1, a2, k, N <span class="op">=</span> symbols(<span class="st">'a0 a1 a2 k N'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> IndexedBase(<span class="st">'x'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> IndexedBase(<span class="st">'y'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> a0<span class="op">+</span>a1<span class="op">*</span>x<span class="op">+</span>a2<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>e_c <span class="op">=</span> (<span class="dv">1</span><span class="op">/</span>N)<span class="op">*</span>summation((y[k] <span class="op">-</span> (a0<span class="op">+</span>a1<span class="op">*</span>x[k]<span class="op">+</span>a2<span class="op">*</span>x[k]<span class="op">**</span><span class="dv">2</span>))<span class="op">**</span><span class="dv">2</span>,(k, <span class="dv">1</span>, N))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>latex(e_c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="52">
+<pre><code>'\\frac{\\sum_{k=1}^{N} \\left(- a_{0} - a_{1} {x}_{k} - a_{2} {x}_{k}^{2} + {y}_{k}\\right)^{2}}{N}'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>latex(diff(e_c, a2).expand())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<pre><code>'\\frac{\\sum_{k=1}^{N} 2 a_{0} {x}_{k}^{2}}{N} + \\frac{\\sum_{k=1}^{N} 2 a_{1} {x}_{k}^{3}}{N} + \\frac{\\sum_{k=1}^{N} 2 a_{2} {x}_{k}^{4}}{N} + \\frac{\\sum_{k=1}^{N} - 2 {x}_{k}^{2} {y}_{k}}{N}'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>latex(diff(e_c, a1).expand())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="54">
+<pre><code>'\\frac{\\sum_{k=1}^{N} 2 a_{0} {x}_{k}}{N} + \\frac{\\sum_{k=1}^{N} 2 a_{1} {x}_{k}^{2}}{N} + \\frac{\\sum_{k=1}^{N} 2 a_{2} {x}_{k}^{3}}{N} + \\frac{\\sum_{k=1}^{N} - 2 {x}_{k} {y}_{k}}{N}'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>latex(diff(e_c, a0).expand())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<pre><code>'\\frac{\\sum_{k=1}^{N} 2 a_{0}}{N} + \\frac{\\sum_{k=1}^{N} 2 a_{1} {x}_{k}}{N} + \\frac{\\sum_{k=1}^{N} 2 a_{2} {x}_{k}^{2}}{N} + \\frac{\\sum_{k=1}^{N} - 2 {y}_{k}}{N}'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>latex(diff(e_c<span class="op">*</span>N<span class="op">/</span><span class="dv">2</span>, a2).simplify().expand())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<pre><code>'\\sum_{k=1}^{N} a_{0} {x}_{k}^{2} + \\sum_{k=1}^{N} a_{1} {x}_{k}^{3} + \\sum_{k=1}^{N} a_{2} {x}_{k}^{4} + \\sum_{k=1}^{N} - {x}_{k}^{2} {y}_{k}'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>latex(diff(e_c<span class="op">*</span>N<span class="op">/</span><span class="dv">2</span>, a1).simplify().expand())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>'\\sum_{k=1}^{N} a_{0} {x}_{k} + \\sum_{k=1}^{N} a_{1} {x}_{k}^{2} + \\sum_{k=1}^{N} a_{2} {x}_{k}^{3} + \\sum_{k=1}^{N} - {x}_{k} {y}_{k}'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>latex(diff(e_c<span class="op">*</span>N<span class="op">/</span><span class="dv">2</span>, a0).simplify().expand())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<pre><code>'N a_{0} + \\sum_{k=1}^{N} a_{1} {x}_{k} + \\sum_{k=1}^{N} a_{2} {x}_{k}^{2} + \\sum_{k=1}^{N} - {y}_{k}'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="op">/</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="59">
+<pre><code>1.6666666666666667</code></pre>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

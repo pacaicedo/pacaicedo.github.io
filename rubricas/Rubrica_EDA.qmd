@@ -1,0 +1,18 @@
+---
+title: "Rúbrica: Análisis Exploratorio de Datos"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    toc-location: left
+    embed-resources: true
+---
+| __Indicador__                       | __Bueno__                                                                                                                                     | __Suficiente__                                                                               | __Insuficiente__                                                                                          |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Limpieza del Dataset            | El dataset no presenta ni registros nulos, ni vacíos. Existe una estrategia para manejo de atípicos (100%)                                | El dataset no presenta ni registros nulos, ni vacíos (50%)                               | El dataset presenta registros nulos y/o vacíos. No existe una estrategia para manejo de atípicos (0%) |
+| Consumo de información          | Se consumen al menos 2 fuentes de datos provenientes de las sugerencias de los organizadores (100%)                                       | Se consume una fuente de datos proveniente de las sugerencias de los organizadores (50%) | No se consume ninguna fuente de datos conocida (0%)                                                   |
+| EDA sobre nuevas variables      | Se plantean correctamente las relaciones entre la variables y estas se demuestran a plenitud utilizando matemática y/o estadística (100%) | Se plantean dos relaciones entre las variables (50%)                                     | No se plantean las relaciones entre las variables (0%)                                                |
+| Uso de plantilla                | Usan la plantilla rmarkdown (100%)                                                                                                        |                                                                                          | No se usa la plantilla rmarkdown(0%)                                                                  |
+| Visualización de la informacion | La información de TODAS las gráficas se observa plenamente (100%)                                                                         | La información de las gráficas se observa parcialmente(50%)                              | La información de la gráfica no se observa (0%)                                                       |
+| Justificación del problema      | Existe una justificación del problema(100%)                                                                                               |                                                                                          | No Existe justificación al problema resuelto (0%)                                                     |
+| Ubicación del problema          | Se plantea correctamente la ubicación del problema 100%                                                                                   |                                                                                          | No se plantea correctamente la ubicación del problema 0%                                              |

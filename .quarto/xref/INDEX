@@ -126,5 +126,15 @@
   },
   "Exams/solucion_examenes03.ipynb": {
     "solucion_examenes03.html": "af9b8586"
+  },
+  "rubricas/Rubrica_EDA.qmd": {
+    "Rubrica_EDA.tex": "ca7b32d1",
+    "Rubrica_EDA.html": "e384e347"
+  },
+  "code/MachineLearning/class005_MultipleRegression.ipynb": {
+    "class005_MultipleRegression.html": "2abcbb3e"
+  },
+  "code/NumericalAnalysis/c010_MinimosCuadrados.ipynb": {
+    "c010_MinimosCuadrados.html": "14515af7"
   }
 }

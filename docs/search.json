@@ -759,8 +759,8 @@
     "objectID": "pres/NumericalAnalysis.html#el-profesor",
     "href": "pres/NumericalAnalysis.html#el-profesor",
     "title": "Análisis Numérico",
-    "section": "El Profesor",
-    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#el-profesor-1",
@@ -773,29 +773,29 @@
     "objectID": "pres/NumericalAnalysis.html#contenido-del-curso",
     "href": "pres/NumericalAnalysis.html#contenido-del-curso",
     "title": "Análisis Numérico",
-    "section": "Contenido del curso",
-    "text": "Contenido del curso\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
+    "section": "",
+    "text": "Introducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#evaluación",
     "href": "pres/NumericalAnalysis.html#evaluación",
     "title": "Análisis Numérico",
-    "section": "Evaluación",
-    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)\nConsigna 002. Diferenciación e integración numérica (25%)\nConsigna 003. Proyecto Final (40%)"
+    "section": "",
+    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)\nConsigna 002. Diferenciación e integración numérica (25%)\nConsigna 003. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#recursos",
     "href": "pres/NumericalAnalysis.html#recursos",
     "title": "Análisis Numérico",
-    "section": "Recursos",
-    "text": "Recursos\nClases\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Numpy.\nSeguimiento de Aprendizaje: Moodle"
+    "section": "",
+    "text": "Lunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Numpy.\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#bibliografía",
     "href": "pres/NumericalAnalysis.html#bibliografía",
     "title": "Análisis Numérico",
-    "section": "Bibliografía",
-    "text": "Bibliografía\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
+    "section": "",
+    "text": "Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#hello-there",
@@ -1481,21 +1481,21 @@
     "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones",
     "title": "Análisis Numérico",
     "section": "Errores y aproximaciones",
-    "text": "Errores y aproximaciones\n\n\nLas cantidades que se trabajan en la ingeniería tienen dos orígenes diferentes:\n\nMediciones sobre procesos físicos\nResultados de procesos matemáticos.\n\n\n\n\n\n\n\n\nPrimer Origen\n\n\nUn proceso de medición nunca arroja el valor verdadero de la medida, pues las mediciones se hacen con instrumentos que se encuentran limitados\n\n\n\n\n\n\n\n\n\nSegundo Origen\n\n\nLas operaciones aritméticas usualmente se ejecutan en un computador o una calculadora, y la limitación de espacio de estos dispositivos lleva a que algunas cifras no se puedan representar correctamente."
+    "text": "Errores y aproximaciones\n\n\nLas cantidades que se trabajan en la ingeniería tienen dos orígenes diferentes:\n\nMediciones sobre procesos físicos\nResultados de procesos matemáticos.\n\n\n\n\n\n\n\n\nPrimer Origen\n\n\n\n\n\nUn proceso de medición nunca arroja el valor verdadero de la medida, pues las mediciones se hacen con instrumentos que se encuentran limitados\n\n\n\n\n\n\n\n\n\nSegundo Origen\n\n\n\n\n\nLas operaciones aritméticas usualmente se ejecutan en un computador o una calculadora, y la limitación de espacio de estos dispositivos lleva a que algunas cifras no se puedan representar correctamente."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones-1",
     "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones-1",
     "title": "Análisis Numérico",
     "section": "Errores y aproximaciones",
-    "text": "Errores y aproximaciones\n\n\n\n\n\n\n\n\nImportante\n\n\nLos errores debido a estos orígenes es de naturaleza acumulativa, por ejemplo si se operan medidas reales con un procesador limitado la incertidumbre aumentará.\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\nMuchas veces resulta imposible siquiera expresar en términos algebraicos soluciones a ciertas ecuaciones, inclusive polinomiales.\n\n\n\n\n\n\n\n\n\n\n\nSiempre…\n\n\nCon lo anterior, es claro que el trabajo de ingeniería y ciencias se encuentra inevitablemente sujeto a error, y por tanto el tema de cuantificación de errores es de atención prioritaria en dichas áreas."
+    "text": "Errores y aproximaciones\n\n\n\n\n\n\n\n\nImportante\n\n\n\nLos errores debido a estos orígenes es de naturaleza acumulativa, por ejemplo si se operan medidas reales con un procesador limitado la incertidumbre aumentará.\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\nMuchas veces resulta imposible siquiera expresar en términos algebraicos soluciones a ciertas ecuaciones, inclusive polinomiales.\n\n\n\n\n\n\n\n\n\n\nSiempre…\n\n\n\nCon lo anterior, es claro que el trabajo de ingeniería y ciencias se encuentra inevitablemente sujeto a error, y por tanto el tema de cuantificación de errores es de atención prioritaria en dichas áreas."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones-2",
     "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones-2",
     "title": "Análisis Numérico",
     "section": "Errores y aproximaciones",
-    "text": "Errores y aproximaciones\n\n\nError Absoluto\n\\[\\varepsilon = \\left| x - \\bar{x} \\right|\\]\n\nError relativo\n\\[\\varepsilon_{\\gamma} = \\frac{\\left| x - \\bar{x} \\right|}{\\left| x \\right|}\\]\n\n\nError de aproximación\n\\[\\varepsilon_{ap} = {\\left| x_{actual} - x_{anterior} \\right|}\\]"
+    "text": "Errores y aproximaciones\n\n\n\nError Absoluto\n\\[\\varepsilon = \\left| x - \\bar{x} \\right|\\]\n\n\n\nError relativo\n\\[\\varepsilon_{\\gamma} = \\frac{\\left| x - \\bar{x} \\right|}{\\left| x \\right|}\\]\n\n\n\n\nError de aproximación\n\\[\\varepsilon_{ap} = {\\left| x_{actual} - x_{anterior} \\right|}\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#cifras-significativas",
@@ -1530,14 +1530,14 @@
     "href": "pres/NumericalAnalysis.html#cifras-significativas-1",
     "title": "Análisis Numérico",
     "section": "Cifras significativas",
-    "text": "Cifras significativas\n\n\n\n\n\n\nConsidere…\n\n\nUna región rectangular que tiene 20.5 cm de largo por 14.3 cm de ancho. Se requiere la medida del área de la región en centímetros cuadrados.\n\n\n\n\n\n\n\n\n\nDiferentes personas reportarían sin dudar los primeros dos dígitos, a saber el dos y el cero, que en este contexto se llamarán dígitos confiables.\nSe entenderá que esta medida en realidad es una cifra entre 20.5 cm y 20.6 cm con el tercer dígito llamado dígito de incertidumbre.\nLa cantidad de dígitos confiables más otro con incertidumbre, son las cifras significativas de una medición."
+    "text": "Cifras significativas\n\n\n\n\n\n\nConsidere…\n\n\n\nUna región rectangular que tiene 20.5 cm de largo por 14.3 cm de ancho. Se requiere la medida del área de la región en centímetros cuadrados.\n\n\n\n\n\n\n\n\nDiferentes personas reportarían sin dudar los primeros dos dígitos, a saber el dos y el cero, que en este contexto se llamarán dígitos confiables.\nSe entenderá que esta medida en realidad es una cifra entre 20.5 cm y 20.6 cm con el tercer dígito llamado dígito de incertidumbre.\nLa cantidad de dígitos confiables más otro con incertidumbre, son las cifras significativas de una medición."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#cifras-significativas-2",
     "href": "pres/NumericalAnalysis.html#cifras-significativas-2",
     "title": "Análisis Numérico",
     "section": "Cifras significativas",
-    "text": "Cifras significativas\n\n\n\n\n\n\n¿Que pasa con las operaciones?\n\n\nCuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas.\n\n\n\n\n\n\n\n\n\nHablando de errores\n\n\nCon el número de cifras significativas \\(\\left(n\\right)\\), se puede calcular la cota del error absoluto:\n\\[\\varepsilon = \\left( 0.5\\times10^{2-n} \\right) \\%\\]"
+    "text": "Cifras significativas\n\n\n\n\n\n\n¿Que pasa con las operaciones?\n\n\n\nCuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas.\n\n\n\n\n\n\n\n\nHablando de errores\n\n\n\nCon el número de cifras significativas \\(\\left(n\\right)\\), se puede calcular la cota del error absoluto:\n\\[\\varepsilon = \\left( 0.5\\times10^{2-n} \\right) \\%\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#que-pasa-en-los-computadores",
@@ -1565,14 +1565,14 @@
     "href": "pres/NumericalAnalysis.html#error-de-truncamiento",
     "title": "Análisis Numérico",
     "section": "Error de truncamiento",
-    "text": "Error de truncamiento\n\n\n\n\n\n\n\n\nImportante\n\n\nDentro de los números reales \\(\\left( \\mathbb{R} \\right)\\), existen dos conjuntos de números claramente diferenciables, los racionales \\(\\left( \\mathbb{Q} \\right)\\) y los irracionales \\(\\left( \\mathbb{I} \\right)\\). Los primeros son facilmente representables en un sistema computacional; sin embargo los segundo debido a que no pueden ser representados con un número finito de digitos deben ser cortados a unas cuantas cifras.\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nSin embargo, hay formas metódicas de obtener aproximaciones tan buenas como se quieran a estos números. Como por ejemplo las conocidas series de Taylor\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\nTodas las derivadas deben existir.\nFunción y derivadas en el intervalo \\(\\left(x,c\\right)\\)"
+    "text": "Error de truncamiento\n\n\n\n\n\n\n\n\nImportante\n\n\n\nDentro de los números reales \\(\\left( \\mathbb{R} \\right)\\), existen dos conjuntos de números claramente diferenciables, los racionales \\(\\left( \\mathbb{Q} \\right)\\) y los irracionales \\(\\left( \\mathbb{I} \\right)\\). Los primeros son facilmente representables en un sistema computacional; sin embargo los segundo debido a que no pueden ser representados con un número finito de digitos deben ser cortados a unas cuantas cifras.\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nSin embargo, hay formas metódicas de obtener aproximaciones tan buenas como se quieran a estos números. Como por ejemplo las conocidas series de Taylor\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\nTodas las derivadas deben existir.\nFunción y derivadas en el intervalo \\(\\left(x,c\\right)\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-truncamiento-1",
     "href": "pres/NumericalAnalysis.html#error-de-truncamiento-1",
     "title": "Análisis Numérico",
     "section": "Error de truncamiento",
-    "text": "Error de truncamiento\n\n\n\n\n\n\nForma de Langrange\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\nForma Integral\n\n\n\\[R_n\\left( x \\right) = \\int_{c}^{x}{\\frac{f^{\\left(n+1\\right)}\\left(t\\right)}{n!}\\left(x-t\\right)^{n}dt}\\]"
+    "text": "Error de truncamiento\n\n\n\n\n\n\nForma de Langrange\n\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\nForma Integral\n\n\n\n\\[R_n\\left( x \\right) = \\int_{c}^{x}{\\frac{f^{\\left(n+1\\right)}\\left(t\\right)}{n!}\\left(x-t\\right)^{n}dt}\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-binario",
@@ -1607,49 +1607,49 @@
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nEl bit más izquierdo en ambos casos es “0”, por lo tanto en los dos casos los numéros son positivos."
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nEl bit más izquierdo en ambos casos es “0”, por lo tanto en los dos casos los numéros son positivos."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-1",
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-1",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nEn el ambos casos el exponente es 10000000011 por lo tanto el valor c se calcula así:\n\n\\[ c = 1 \\cdot 2^{10} + 0 \\cdot 2^{9} + \\dots +1 \\cdot 2^{1} + 1 \\cdot 2^{0} = 1024+2+1=1027\\]"
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nEn el ambos casos el exponente es 10000000011 por lo tanto el valor c se calcula así:\n\n\\[ c = 1 \\cdot 2^{10} + 0 \\cdot 2^{9} + \\dots +1 \\cdot 2^{1} + 1 \\cdot 2^{0} = 1024+2+1=1027\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-2",
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-2",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nLa mantisa para el primer caso es:\n\n\\[1011100100010000000000000000000000000000000000000000\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} \\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625\\] \\[ f= 0.7229003906250000000000\\]"
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nLa mantisa para el primer caso es:\n\n\\[1011100100010000000000000000000000000000000000000000\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} \\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625\\] \\[ f= 0.7229003906250000000000\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-3",
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-3",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\nLa mantisa para el segundo caso es:\n\n\\[1011100100010000000000000000000000000000000000000001\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} + 1 \\cdot 2^{-52}\\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 + 2,220476049250313e-16\\] \\[f = 0.7229003906250002220446\\]"
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nLa mantisa para el segundo caso es:\n\n\\[1011100100010000000000000000000000000000000000000001\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} + 1 \\cdot 2^{-52}\\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 + 2,220476049250313e-16\\] \\[f = 0.7229003906250002220446\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\n\n\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\\[f\\left(x\\right)=ln\\left(x\\right)\\]\n\\[\\dot{f}\\left(x\\right) = \\frac{1}{x}\\]\n\\[\\ddot{f}\\left(x\\right) = -\\frac{1}{x^2}\\]\n\n\\[\\dddot{f}\\left(x\\right) = \\frac{2}{x^3}\\]\n\\[\\ddddot{f}\\left(x\\right) = -\\frac{6}{x^4}\\]"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\n\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\n\\[f\\left(x\\right)=ln\\left(x\\right)\\]\n\\[\\dot{f}\\left(x\\right) = \\frac{1}{x}\\]\n\\[\\ddot{f}\\left(x\\right) = -\\frac{1}{x^2}\\]\n\n\\[\\dddot{f}\\left(x\\right) = \\frac{2}{x^3}\\]\n\\[\\ddddot{f}\\left(x\\right) = -\\frac{6}{x^4}\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-1",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-1",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1.1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1.1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1.1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1.1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/x)*(x-1))-((1/(2*(x**2)))*(x-1)**2)+ ((2/(6*(x**3)))*(x-1)**3)-((6/(24*(x**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.08701022243471537"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1.1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1.1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1.1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1.1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/x)*(x-1))-((1/(2*(x**2)))*(x-1)**2)+ ((2/(6*(x**3)))*(x-1)**3)-((6/(24*(x**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.08701022243471537"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-2",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-2",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\nError en forma de lagrange\n\n\n\\[R_4\\left(1.1\\right) = \\frac{24\\xi^{-5}}{5!}\\left(1.1 - 1\\right)^{5}\\]\n\n\n\n\n\ndef error_taylor_expansion(x):\n    return ((24*x**(-5))/120)*(0.1**5)"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\nError en forma de lagrange\n\n\n\n\\[R_4\\left(1.1\\right) = \\frac{24\\xi^{-5}}{5!}\\left(1.1 - 1\\right)^{5}\\]\n\n\n\n\ndef error_taylor_expansion(x):\n    return ((24*x**(-5))/120)*(0.1**5)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-3",
@@ -1663,7 +1663,7 @@
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-4",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/1)*(x-1))-((1/(2*(1**2)))*(x-1)**2)+ ((2/(6*(1**3)))*(x-1)**3)-((6/(24*(1**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.09530833333333343"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/1)*(x-1))-((1/(2*(1**2)))*(x-1)**2)+ ((2/(6*(1**3)))*(x-1)**3)-((6/(24*(1**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.09530833333333343"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-5",
@@ -1677,14 +1677,14 @@
     "href": "pres/NumericalAnalysis.html#los-números-más-grande-y-más-pequeño",
     "title": "Análisis Numérico",
     "section": "Los números \"más grande\" y \"más pequeño\"",
-    "text": "Los números \"más grande\" y \"más pequeño\"\n\n\n\n\n\n\nImportante\n\n\n\nMás grande: Sucede cuando \\(s=0\\), \\(c=2046\\), \\(f=1-2^{-52}\\)\nMás pequeño: Sucede cuando \\(s=0\\), \\(c=1\\), \\(f=0\\)"
+    "text": "Los números \"más grande\" y \"más pequeño\"\n\n\n\n\n\n\nImportante\n\n\n\n\nMás grande: Sucede cuando \\(s=0\\), \\(c=2046\\), \\(f=1-2^{-52}\\)\nMás pequeño: Sucede cuando \\(s=0\\), \\(c=1\\), \\(f=0\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-redondeo",
     "href": "pres/NumericalAnalysis.html#error-de-redondeo",
     "title": "Análisis Numérico",
     "section": "Error de redondeo",
-    "text": "Error de redondeo\n\n\n\n\n\n\nSupongamos…\n\n\n\\[x=\\frac{5}{7}\\] \\[y = \\frac{1}{3}\\]\n\nCalcular x+y utilizando aritmética de digitos finitos, utilizando 6 cifras significativas, considerando:\n\nMétodo de truncamiento\nMétodo de redondeo\n\nCalcular el error para todos los casos anteriores"
+    "text": "Error de redondeo\n\n\n\n\n\n\nSupongamos…\n\n\n\n\\[x=\\frac{5}{7}\\] \\[y = \\frac{1}{3}\\]\n\nCalcular x+y utilizando aritmética de digitos finitos, utilizando 6 cifras significativas, considerando:\n\nMétodo de truncamiento\nMétodo de redondeo\n\nCalcular el error para todos los casos anteriores"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-redondeo-1",
@@ -1740,7 +1740,7 @@
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#que-pasa-con-funciones-más-complejas",
@@ -1782,42 +1782,42 @@
     "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-2",
     "title": "Análisis Numérico",
     "section": "Soluciones de ecuaciones de una variable",
-    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.arange(0,0.2,0.0001)\n\ndef f(l):\n    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000\n\nfig, ax = plt.subplots()\nax.plot(lam, f(lam))\nax.grid(True)\nplt.show()"
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.arange(0,0.2,0.0001)\n\ndef f(l):\n    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000\n\nfig, ax = plt.subplots()\nax.plot(lam, f(lam))\nax.grid(True)\nplt.show()"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-1",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-1",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.arange(0,2,0.01)\nf_x = 3*x-4\nfig, ax = plt.subplots()\nax.plot(x, f_x)\nplt.grid(True)\nplt.show()"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.arange(0,2,0.01)\nf_x = 3*x-4\nfig, ax = plt.subplots()\nax.plot(x, f_x)\nplt.grid(True)\nplt.show()"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-2",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-2",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-3",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-3",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(-3,4, 0.01)\nf_t = (t**2)-(t)-6\n\nfig, ax = plt.subplots()\nax.plot(t, f_t)\nplt.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(-3,4, 0.01)\nf_t = (t**2)-(t)-6\n\nfig, ax = plt.subplots()\nax.plot(t, f_t)\nplt.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-4",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-4",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
     "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
     "title": "Análisis Numérico",
     "section": "Soluciones de ecuaciones de una variable",
-    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_9348\\3918670862.py:7: RuntimeWarning:\n\ndivide by zero encountered in divide\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_9348\\3918670862.py:7: RuntimeWarning:\n\ninvalid value encountered in multiply"
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_21724\\3918670862.py:7: RuntimeWarning:\n\ndivide by zero encountered in divide\n\nC:\\Users\\SANDRA\\AppData\\Local\\Temp\\ipykernel_21724\\3918670862.py:7: RuntimeWarning:\n\ninvalid value encountered in multiply"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#método-de-la-bisección-1",
@@ -1971,14 +1971,14 @@
     "href": "pres/NumericalAnalysis.html#taller",
     "title": "Análisis Numérico",
     "section": "Taller",
-    "text": "Taller\n\n\n\n\n\n\nPregunta 1/2\n\n\nDada la función \\(f\\left(x\\right) = 8 sin\\left(x\\right) e^{-x} - 1\\) responda las siguientes cuestiones:\n\nSi se sabe que \\(x \\in \\left[0,3\\right]\\), encuentre una raíz de la función. ¿Es utilizable el método de la bisección en el cálculo de la raíz?\nAplique Newton-Raphson para dos posibles valores iniciales: -5, 10. Cual es el resultado de la operación. Explique su resultado."
+    "text": "Taller\n\n\n\n\n\n\nPregunta 1/2\n\n\n\nDada la función \\(f\\left(x\\right) = 8 sin\\left(x\\right) e^{-x} - 1\\) responda las siguientes cuestiones:\n\nSi se sabe que \\(x \\in \\left[0,3\\right]\\), encuentre una raíz de la función. ¿Es utilizable el método de la bisección en el cálculo de la raíz?\nAplique Newton-Raphson para dos posibles valores iniciales: -5, 10. Cual es el resultado de la operación. Explique su resultado."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#taller-1",
     "href": "pres/NumericalAnalysis.html#taller-1",
     "title": "Análisis Numérico",
     "section": "Taller",
-    "text": "Taller\n\n\n\n\n\n\nPregunta 2/2\n\n\nLa velocidad de un para caídista esta dada por la siguiente función:\n\\[v=\\frac{gm}{c}\\left(1 - e^{-\\frac{c}{m}t}\\right)\\]\nSea la gravedad \\(g=9.8\\), el coeficiente de rozamiento \\(c=14Kg/s\\), responda:\n\nCuál es el peso del paracaidista si se sabe que a los 7sg la velocidad de este era de \\(35m/s\\) ?\nUtilizando una calculadora de gravedad, determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia."
+    "text": "Taller\n\n\n\n\n\n\nPregunta 2/2\n\n\n\nLa velocidad de un para caídista esta dada por la siguiente función:\n\\[v=\\frac{gm}{c}\\left(1 - e^{-\\frac{c}{m}t}\\right)\\]\nSea la gravedad \\(g=9.8\\), el coeficiente de rozamiento \\(c=14Kg/s\\), responda:\n\nCuál es el peso del paracaidista si se sabe que a los 7sg la velocidad de este era de \\(35m/s\\) ?\nUtilizando una calculadora de gravedad, determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia."
   },
   {
     "objectID": "Exams/Examen001_roots.html",
@@ -1992,28 +1992,28 @@
     "href": "pres/NumericalAnalysis.html#problema",
     "title": "Análisis Numérico",
     "section": "Problema",
-    "text": "Problema\n\n\n\n\n\n\n\n\nProblema\n\n\nUna empresa inmobiliaria tiene 4 terrenos a la venta. La relación entre precio y área se puede observar en la siguiente tabla:\n\n\n\nArea\nPrecio\n\n\n\n\n0.8\n10000\n\n\n2.3\n15000\n\n\n4.7\n40000\n\n\n7.1\n80000"
+    "text": "Problema\n\n\n\n\n\n\n\n\nProblema\n\n\n\nUna empresa inmobiliaria tiene 4 terrenos a la venta. La relación entre precio y área se puede observar en la siguiente tabla:\n\n\n\nArea\nPrecio\n\n\n\n\n0.8\n10000\n\n\n2.3\n15000\n\n\n4.7\n40000\n\n\n7.1\n80000"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#problema-1",
     "href": "pres/NumericalAnalysis.html#problema-1",
     "title": "Análisis Numérico",
     "section": "Problema",
-    "text": "Problema\n\n\n\n\n\n\nProblema\n\n\n¿Cuánto debe valer un terreno de 3.5ha, si el precio del terreno sigue las mismas condiciones de los anteriores?\n\n\n\n\n\n\n\n\n\n\n\nEnfoque exacto:\n\n\n\nPolinomios de Lagrange\nPolinomio de Newton\n\n\n\n\n\n\n\n\n\n\n\nEnfoque por Ajustes sucesivos:\n\n\n\nTrazadores cúbicos.\nMínimos cuadrados."
+    "text": "Problema\n\n\n\n\n\n\nProblema\n\n\n\n¿Cuánto debe valer un terreno de 3.5ha, si el precio del terreno sigue las mismas condiciones de los anteriores?\n\n\n\n\n\n\n\n\n\n\nEnfoque exacto:\n\n\n\n\nPolinomios de Lagrange\nPolinomio de Newton\n\n\n\n\n\n\n\n\n\n\nEnfoque por Ajustes sucesivos:\n\n\n\n\nTrazadores cúbicos.\nMínimos cuadrados."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#polinomios-de-lagrange",
     "href": "pres/NumericalAnalysis.html#polinomios-de-lagrange",
     "title": "Análisis Numérico",
     "section": "Polinomios de Lagrange",
-    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nInterpolación polinomial\n\n\nA partir de unos datos \\(\\left(x_0,y_0\\right),\\left(x_1,y_1\\right),\\left(x_2,y_2\\right),\\dots,\\left(x_n,y_n\\right)\\) generar un polinomio \\(\\left( P\\left(x\\right) \\right)\\) (del menor grado posible) que pase por todos los puntos.\n\\[P\\left(x\\right) = a_0 + a_1x + a_2x^2+\\dots+a_nx^n\\]"
+    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nInterpolación polinomial\n\n\n\nA partir de unos datos \\(\\left(x_0,y_0\\right),\\left(x_1,y_1\\right),\\left(x_2,y_2\\right),\\dots,\\left(x_n,y_n\\right)\\) generar un polinomio \\(\\left( P\\left(x\\right) \\right)\\) (del menor grado posible) que pase por todos los puntos.\n\\[P\\left(x\\right) = a_0 + a_1x + a_2x^2+\\dots+a_nx^n\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#polinomios-de-lagrange-1",
     "href": "pres/NumericalAnalysis.html#polinomios-de-lagrange-1",
     "title": "Análisis Numérico",
     "section": "Polinomios de Lagrange",
-    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nAlgoritmo\n\n\n\nDeterminar un polinomios \\(\\gamma_i \\left(x\\right)\\), que pase por \\(\\left(x_i,1\\right)\\) y se anule para el resto de datos. \\[\\gamma_i\\left(x\\right) = \\prod_{j=0}^{n}\\frac{x-x_j}{x_i-x_j}\\]\n\nDonde \\(i \\neq j\\)\n\nDeterminar polinomio \\(P_i\\left(x\\right)\\)\n\n\\[P_i\\left(x\\right) = y_i \\gamma_i\\left(x\\right)\\]\n\nDeterminar polinomio \\(P\\left(x\\right)\\)\n\n\\[P\\left(x\\right) = \\sum_{i=0}^{n}P_i\\left(x\\right)\\]"
+    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nAlgoritmo\n\n\n\n\nDeterminar un polinomios \\(\\gamma_i \\left(x\\right)\\), que pase por \\(\\left(x_i,1\\right)\\) y se anule para el resto de datos. \\[\\gamma_i\\left(x\\right) = \\prod_{j=0}^{n}\\frac{x-x_j}{x_i-x_j}\\]\n\nDonde \\(i \\neq j\\)\n\nDeterminar polinomio \\(P_i\\left(x\\right)\\)\n\n\\[P_i\\left(x\\right) = y_i \\gamma_i\\left(x\\right)\\]\n\nDeterminar polinomio \\(P\\left(x\\right)\\)\n\n\\[P\\left(x\\right) = \\sum_{i=0}^{n}P_i\\left(x\\right)\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#solución-al-problema",
@@ -2055,21 +2055,21 @@
     "href": "code/MachineLearning/class003_Regresion.html",
     "title": "La guarida de los datos",
     "section": "",
-    "text": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport random\n\n\ndata = pd.read_csv(\"D:/DatasetsVault/Salario/data_for_class.csv\")\n\nx1 = data.YearsExperience.min()\nx2 = data.YearsExperience.max()\n\ny1 = data.Salary.min()\ny2 = data.Salary.max()\n\n\nfig = plt.figure()\nfigura01, = plt.plot([],[], 'o')\nplt.xlim(x1-0.5, x2+0.5)\nplt.ylim(y1-0.5, y2+0.5)\nfigura01, = plt.plot([],[], 'o')\nfigura02, = plt.plot([], [], 'k-', linewidth=3)\nplt.grid()\n\n\n\n\n\ninput01 = data.YearsExperience.values\noutput01 = data.Salary.values\n\n\ndef ModeloEstimacion(theta1, theta0, in01):\n    return theta1*in01 + theta0\n\n\ndef CambioErrorTheta1(x_n, y_n, theta1, theta0, modelo):\n    N = len(x_n)\n    return (2/N)*np.sum((modelo(theta1, theta0, x_n)-y_n)*x_n)\n\ndef CambioErrorTheta0(x_n, y_n, theta1, theta0, modelo):\n    N = len(x_n)\n    return (2/N)*np.sum((modelo(theta1, theta0, x_n)-y_n))\n\n\nk = 0\nK = 10000\n\ntet0 = 10*(random.random()-0.5)\ntet1 = 10*(random.random()-0.5)\neta = 0.026\nt1 = []\nt0 = []\ntol = 1e-5\nq0 = 0\n\nwhile k&lt;K:\n    k = k+1\n    tet01 = tet0 - eta*CambioErrorTheta0(input01, output01, tet1, tet0, ModeloEstimacion)\n    tet11 = tet1 - eta*CambioErrorTheta1(input01, output01, tet1, tet0, ModeloEstimacion)\n\n\n    if np.abs(tet01 - tet0) &lt; tol and np.abs(tet11 - tet1) &lt; tol:\n        print(k)\n        break\n\n    tet0 = tet01\n    tet1 = tet11\n\n    t0.append(tet0)\n    t1.append(tet1)\n\n1546\n\n\n\nfig01 = plt.figure()\naa1,  = plt.plot(input01, ModeloEstimacion(tet1,tet0, input01))\naa1,  = plt.plot(input01, output01, 'o')\nplt.grid()"
+    "text": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport random\n\n\ndata = pd.read_csv(\"D:/DatasetsVault/Salario/data_for_class.csv\")\n\nx1 = data.YearsExperience.min()\nx2 = data.YearsExperience.max()\n\ny1 = data.Salary.min()\ny2 = data.Salary.max()\n\n\nfig = plt.figure()\nfigura01, = plt.plot([],[], 'o')\nplt.xlim(x1-0.5, x2+0.5)\nplt.ylim(y1-0.5, y2+0.5)\nfigura01, = plt.plot([],[], 'o')\nfigura02, = plt.plot([], [], 'k-', linewidth=3)\nplt.grid()\n\n\n\n\n\ninput01 = data.YearsExperience.values\noutput01 = data.Salary.values\n\n\ndef ModeloEstimacion(theta1, theta0, in01):\n    return theta1*in01 + theta0\n\n\ndef CambioErrorTheta1(x_n, y_n, theta1, theta0, modelo):\n    N = len(x_n)\n    return (2/N)*np.sum((modelo(theta1, theta0, x_n)-y_n)*x_n)\n\ndef CambioErrorTheta0(x_n, y_n, theta1, theta0, modelo):\n    N = len(x_n)\n    return (2/N)*np.sum((modelo(theta1, theta0, x_n)-y_n))\n\n\nk = 0\nK = 10000\n\ntet0 = 10*(random.random()-0.5)\ntet1 = 10*(random.random()-0.5)\neta = 0.026\nt1 = []\nt0 = []\ntol = 1e-5\nq0 = 0\n\nwhile k&lt;K:\n    k = k+1\n    tet01 = tet0 - eta*CambioErrorTheta0(input01, output01, tet1, tet0, ModeloEstimacion)\n    tet11 = tet1 - eta*CambioErrorTheta1(input01, output01, tet1, tet0, ModeloEstimacion)\n\n\n    if np.abs(tet01 - tet0) &lt; tol and np.abs(tet11 - tet1) &lt; tol:\n        print(k)\n        break\n\n    tet0 = tet01\n    tet1 = tet11\n\n    t0.append(tet0)\n    t1.append(tet1)\n\n1546\n\n\n\nfig01 = plt.figure()\naa1,  = plt.plot(input01, ModeloEstimacion(tet1,tet0, input01))\naa1,  = plt.plot(input01, output01, 'o')\nplt.grid()\n\n\n\n\n\nfrom statsmodels.graphics.tsaplots import plot_acf\nfrom sklearn.metrics import r2_score \n\ny_pred = ModeloEstimacion(tet1, tet0, data.YearsExperience.values)\nError = y_pred - data.Salary.values\ncoeficiente_determinacion = r2_score(data.Salary.values, y_pred)\n\n\nfig01 = plt.figure()\naa1,  = plt.plot(Error,'o')\nplt.grid()\n\n\n\n\n\n\nplot_acf(Error, lags=29)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#polinomio-de-newton",
     "href": "pres/NumericalAnalysis.html#polinomio-de-newton",
     "title": "Análisis Numérico",
     "section": "Polinomio de Newton",
-    "text": "Polinomio de Newton\n\n\n\n\n\n\nNota\n\n\n\nConstruir el polinomio \\(P_0 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_0, y_0\\right)\\). La propuesta más simple es \\(P_0 \\left(x\\right) = y_0\\)\nConstruir el polinomio \\(P_1 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_1, y_1\\right)\\), pero que parta de \\(P_0 \\left(x\\right)\\). Una propuesta de este es \\(P_1 \\left(x\\right) = y_0+ c_1 \\left(x-x_0\\right)\\)\nConstruir el polinomio \\(P_2 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_2, y_2\\right)\\), pero que parta de \\(P_1 \\left(x\\right)\\). Una propuesta de este es \\(P_2 \\left(x\\right) = y_0 + c_1 \\left(x-x_0\\right) + c_2\\left(x-x_0\\right)\\left(x-x_1\\right)\\)\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Polinomio de Newton\n\n\n\n\n\n\nNota\n\n\n\n\nConstruir el polinomio \\(P_0 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_0, y_0\\right)\\). La propuesta más simple es \\(P_0 \\left(x\\right) = y_0\\)\nConstruir el polinomio \\(P_1 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_1, y_1\\right)\\), pero que parta de \\(P_0 \\left(x\\right)\\). Una propuesta de este es \\(P_1 \\left(x\\right) = y_0+ c_1 \\left(x-x_0\\right)\\)\nConstruir el polinomio \\(P_2 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_2, y_2\\right)\\), pero que parta de \\(P_1 \\left(x\\right)\\). Una propuesta de este es \\(P_2 \\left(x\\right) = y_0 + c_1 \\left(x-x_0\\right) + c_2\\left(x-x_0\\right)\\left(x-x_1\\right)\\)"
   },
   {
     "objectID": "code/MachineLearning/class004_MachineLearnig_Workflow.html",
     "href": "code/MachineLearning/class004_MachineLearnig_Workflow.html",
     "title": "La guarida de los datos",
     "section": "",
-    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as ply\nimport numpy as np\n\n\n# Url con los metadatos: https://www.kaggle.com/datasets/harlfoxem/housesalesprediction\n!kaggle datasets download -d harlfoxem/housesalesprediction -p \"D:/DatasetsVault/HouseSalesKingCounty\"\n\nhousesalesprediction.zip: Skipping, found more recently modified local copy (use --force to force download)\n\n\n\ndatos = pd.read_csv(\"D:/DatasetsVault/HouseSalesKingCounty/kc_house_data.csv\")\n\n\nnDatos = datos.select_dtypes(np.number)\n\n\nnDatos.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 21613 entries, 0 to 21612\nData columns (total 20 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   id             21613 non-null  int64  \n 1   price          21613 non-null  float64\n 2   bedrooms       21613 non-null  int64  \n 3   bathrooms      21613 non-null  float64\n 4   sqft_living    21613 non-null  int64  \n 5   sqft_lot       21613 non-null  int64  \n 6   floors         21613 non-null  float64\n 7   waterfront     21613 non-null  int64  \n 8   view           21613 non-null  int64  \n 9   condition      21613 non-null  int64  \n 10  grade          21613 non-null  int64  \n 11  sqft_above     21613 non-null  int64  \n 12  sqft_basement  21613 non-null  int64  \n 13  yr_built       21613 non-null  int64  \n 14  yr_renovated   21613 non-null  int64  \n 15  zipcode        21613 non-null  int64  \n 16  lat            21613 non-null  float64\n 17  long           21613 non-null  float64\n 18  sqft_living15  21613 non-null  int64  \n 19  sqft_lot15     21613 non-null  int64  \ndtypes: float64(5), int64(15)\nmemory usage: 3.3 MB"
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as ply\nimport numpy as np\n\n\n# Url con los metadatos: https://www.kaggle.com/datasets/harlfoxem/housesalesprediction\n#!kaggle datasets download -d harlfoxem/housesalesprediction -p \"D:/DatasetsVault/HouseSalesKingCounty\"\n\n\ndatos = pd.read_csv(\"D:/DatasetsVault/HouseSalesKingCounty/kc_house_data.csv\")\n\n\ndatos.info()\ndatos[\"zipcode\"] = datos[\"zipcode\"].apply(str)\ndatos[\"index_pablo\"] = datos.apply(lambda x: x[\"sqft_living\"]/x[\"sqft_lot\"], axis = 1)\ndatos[\"index_pablo15\"] = datos.apply(lambda x: x[\"sqft_living15\"]/x[\"sqft_lot15\"], axis = 1)\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 21613 entries, 0 to 21612\nData columns (total 21 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   id             21613 non-null  int64  \n 1   date           21613 non-null  object \n 2   price          21613 non-null  float64\n 3   bedrooms       21613 non-null  int64  \n 4   bathrooms      21613 non-null  float64\n 5   sqft_living    21613 non-null  int64  \n 6   sqft_lot       21613 non-null  int64  \n 7   floors         21613 non-null  float64\n 8   waterfront     21613 non-null  int64  \n 9   view           21613 non-null  int64  \n 10  condition      21613 non-null  int64  \n 11  grade          21613 non-null  int64  \n 12  sqft_above     21613 non-null  int64  \n 13  sqft_basement  21613 non-null  int64  \n 14  yr_built       21613 non-null  int64  \n 15  yr_renovated   21613 non-null  int64  \n 16  zipcode        21613 non-null  int64  \n 17  lat            21613 non-null  float64\n 18  long           21613 non-null  float64\n 19  sqft_living15  21613 non-null  int64  \n 20  sqft_lot15     21613 non-null  int64  \ndtypes: float64(5), int64(15), object(1)\nmemory usage: 3.5+ MB\n\n\n\nnDatos = datos.select_dtypes(np.number)\n\n\nnDatos.info()\nnDatos.drop(columns=[\"id\", \"lat\", \"long\"], inplace=True )\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 21613 entries, 0 to 21612\nData columns (total 21 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   id             21613 non-null  int64  \n 1   price          21613 non-null  float64\n 2   bedrooms       21613 non-null  int64  \n 3   bathrooms      21613 non-null  float64\n 4   sqft_living    21613 non-null  int64  \n 5   sqft_lot       21613 non-null  int64  \n 6   floors         21613 non-null  float64\n 7   waterfront     21613 non-null  int64  \n 8   view           21613 non-null  int64  \n 9   condition      21613 non-null  int64  \n 10  grade          21613 non-null  int64  \n 11  sqft_above     21613 non-null  int64  \n 12  sqft_basement  21613 non-null  int64  \n 13  yr_built       21613 non-null  int64  \n 14  yr_renovated   21613 non-null  int64  \n 15  lat            21613 non-null  float64\n 16  long           21613 non-null  float64\n 17  sqft_living15  21613 non-null  int64  \n 18  sqft_lot15     21613 non-null  int64  \n 19  index_pablo    21613 non-null  float64\n 20  index_pablo15  21613 non-null  float64\ndtypes: float64(7), int64(14)\nmemory usage: 3.5 MB\n\n\n\nnDatos.isna().sum()\n\nprice            0\nbedrooms         0\nbathrooms        0\nsqft_living      0\nsqft_lot         0\nfloors           0\nwaterfront       0\nview             0\ncondition        0\ngrade            0\nsqft_above       0\nsqft_basement    0\nyr_built         0\nyr_renovated     0\nsqft_living15    0\nsqft_lot15       0\nindex_pablo      0\nindex_pablo15    0\ndtype: int64\n\n\n\n#sns.pairplot(data=nDatos)\n\n\nnDatos.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 21613 entries, 0 to 21612\nData columns (total 18 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   price          21613 non-null  float64\n 1   bedrooms       21613 non-null  int64  \n 2   bathrooms      21613 non-null  float64\n 3   sqft_living    21613 non-null  int64  \n 4   sqft_lot       21613 non-null  int64  \n 5   floors         21613 non-null  float64\n 6   waterfront     21613 non-null  int64  \n 7   view           21613 non-null  int64  \n 8   condition      21613 non-null  int64  \n 9   grade          21613 non-null  int64  \n 10  sqft_above     21613 non-null  int64  \n 11  sqft_basement  21613 non-null  int64  \n 12  yr_built       21613 non-null  int64  \n 13  yr_renovated   21613 non-null  int64  \n 14  sqft_living15  21613 non-null  int64  \n 15  sqft_lot15     21613 non-null  int64  \n 16  index_pablo    21613 non-null  float64\n 17  index_pablo15  21613 non-null  float64\ndtypes: float64(5), int64(13)\nmemory usage: 3.0 MB\n\n\n\nimport plotly.express as px\n\nfigura = px.scatter_matrix(data_frame=nDatos, \n                           dimensions=[\"price\", \"bedrooms\", \"bathrooms\", \"sqft_living\" ])\nfigura.show()\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\nnDatos.drop(nDatos[nDatos[\"bedrooms\"]==33].index, inplace=True)\nnDatos.drop(nDatos[nDatos[\"sqft_living\"]&gt;=12050].index, inplace=True)\nnDatos.drop(nDatos[nDatos[\"bathrooms\"]&gt;=7.5].index, inplace=True)\n\n\nnDatos.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nIndex: 21608 entries, 0 to 21612\nData columns (total 18 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   price          21608 non-null  float64\n 1   bedrooms       21608 non-null  int64  \n 2   bathrooms      21608 non-null  float64\n 3   sqft_living    21608 non-null  int64  \n 4   sqft_lot       21608 non-null  int64  \n 5   floors         21608 non-null  float64\n 6   waterfront     21608 non-null  int64  \n 7   view           21608 non-null  int64  \n 8   condition      21608 non-null  int64  \n 9   grade          21608 non-null  int64  \n 10  sqft_above     21608 non-null  int64  \n 11  sqft_basement  21608 non-null  int64  \n 12  yr_built       21608 non-null  int64  \n 13  yr_renovated   21608 non-null  int64  \n 14  sqft_living15  21608 non-null  int64  \n 15  sqft_lot15     21608 non-null  int64  \n 16  index_pablo    21608 non-null  float64\n 17  index_pablo15  21608 non-null  float64\ndtypes: float64(5), int64(13)\nmemory usage: 3.1 MB\n\n\n\nfigura = px.scatter_matrix(data_frame=nDatos, \n                           dimensions=[\"price\", \"bedrooms\", \"bathrooms\", \"sqft_living\"])\nfigura.show()\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\n#sns.pairplot(data=nDatos)\n\n\nfigura = px.scatter_matrix(data_frame=nDatos, \n                           dimensions=[\"price\", \"yr_built\", \"sqft_lot\", \"sqft_lot15\"])\nfigura.show()\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\nnDatos[\"yr_built_log\"] = nDatos.apply(lambda x: np.log(1+x[\"yr_built\"]), axis=1)\nnDatos[\"sqft_lot_log\"] = nDatos.apply(lambda x: np.log(1+x[\"sqft_lot\"]), axis=1)\nnDatos[\"sqft_lot15_log\"] = nDatos.apply(lambda x: np.log(1+x[\"sqft_lot15\"]), axis=1)\n\n\nfigura = px.scatter_matrix(data_frame=nDatos, \n                           dimensions=[\"price\", \"yr_built\", \"sqft_lot\", \"sqft_lot15\", \"yr_built_log\", \"sqft_lot_log\", \"sqft_lot15_log\"])\nfigura.show()\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\nmatCorrelation = nDatos.corr()\n\n# Generate a mask for the upper triangle\nmask = np.triu(np.ones_like(matCorrelation, dtype=bool))\n\n\n# Set up the matplotlib figure\nf, ax = plt.subplots(figsize=(11, 9))\n\n# Generate a custom diverging colormap\ncmap = sns.diverging_palette(230, 20, as_cmap=True)\n\n# Draw the heatmap with the mask and correct aspect ratio\nsns.heatmap(matCorrelation, mask=mask, cmap=cmap, vmax=1, vmin=-1, center=0,\n            square=True, linewidths=.5, cbar_kws={\"shrink\": .5}, annot=True, \n            annot_kws={\"size\":8})\n\n&lt;Axes: &gt;\n\n\n\n\n\n\nfrom sklearn.preprocessing import OneHotEncoder\n\ncodificador = OneHotEncoder().fit(datos[[\"zipcode\", \"price\"]])\nzipcode01=codificador.fit_transform(datos.values.reshape(1, -1))\npd.DataFrame(zipcode01)\n\n\n\n\n\n\n\n\n0\n\n\n\n\n0\n(0, 0)\\t1.0\\n (0, 1)\\t1.0\\n (0, 2)\\t1.0\\n ...\n\n\n\n\n\n\n\n\nnDatos.info()\n\n\ninput = nDatos.loc[:, nDatos.columns != \"price\"]\noutput = nDatos[\"price\"]\n\n\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import r2_score\n\n#input = np.concatenate((input.values, zipcode), axis=1)\nx_train, x_test, y_train, y_test = train_test_split(input.values,output.values, test_size=0.3, random_state=54)\n\n\nimport torch\nimport torch.nn as nn\n\n\n# Creación de tensores\nhardware = \"cuda\"\nt_xtrain = torch.from_numpy(x_train).float().to(hardware)\nt_xtest = torch.from_numpy(x_test).float().to(hardware)\nt_ytrain = torch.from_numpy(y_train).float().to(hardware)\nt_ytest = torch.from_numpy(y_test).float().to(hardware)\n\n\nclass RedNeuronal(nn.Module):\n\n    def __init__(self, nentradas) -&gt; None:\n        super(RedNeuronal, self).__init__()\n        self.linear1 = nn.Linear(nentradas, 100)\n        self.linear2 = nn.Linear(100, 1400)\n        self.linear3 = nn.Linear(1400, 200)\n        self.linear4 = nn.Linear(200,1)\n\n    def forward(self, inputs):\n        pred_1 = torch.relu(input=self.linear1(inputs))\n        pred_2 = torch.relu(input=self.linear2(pred_1))\n        pred_3 = torch.relu(input=self.linear3(pred_2))\n        pred_4 = torch.relu(input=self.linear4(pred_3))\n        return pred_4\n\n\nlr = 0.001\nepochs = 2000\nestatus_print = 100\nn_entradas = t_xtrain.shape[1]\n\nmodelo = RedNeuronal(nentradas=n_entradas)\nmodelo = modelo.to(hardware)\nloss_fn = nn.L1Loss()\noptimizador = torch.optim.AdamW(params= modelo.parameters(), lr=lr )\nprint(\"Arquitectura del modelo: {}\".format(modelo))\nhistorico = pd.DataFrame()\n\n\nprint(\"Entrenando el modelo\")\nfor epoch in range(0, epochs):\n    y_pred = modelo(t_xtrain)\n    t_ytrain = torch.reshape(t_ytrain, y_pred.shape)\n    perdida = loss_fn(input=y_pred, target=t_ytrain)\n    perdida.backward()\n    optimizador.step()\n    optimizador.zero_grad()\n    if epoch % estatus_print == 0:\n        print(f\"\\nEpoch {epoch} \\t Loss: {round(perdida.item(), 4)}\")\n\n    with torch.no_grad():\n        y_pred = modelo(t_xtest)\n\n        r2score = 100 * r2_score(t_ytest.cpu().numpy(), y_pred.cpu().numpy())\n\n        if epoch % estatus_print == 0:\n            print(\"R2 score: {}\".format(r2score))\n\n\n    df_tmp = pd.DataFrame(data={\n        'Epoch': epoch,\n        'Loss': round(perdida.item(), 4),\n        'Accuracy': round(r2score, 4)\n    }, index=[0])\n    historico = pd.concat(objs=[historico, df_tmp], ignore_index=True, sort=False)\nprint(\"R2 Score final: {}\".format(round(r2score, 4)))\n\n\nimport matplotlib.pyplot as plt\n%matplotlib inline\n\nplt.figure(figsize=(10, 10))\nplt.plot(historico['Epoch'], historico['Loss'], label='Loss')\nplt.title(\"Loss\", fontsize=25)\nplt.xlabel(\"Epoch\", fontsize=12)\nplt.ylabel(\"Loss\", fontsize=12)\nplt.grid()\nplt.show()\n\n\nplt.figure(figsize=(10, 10))\nplt.plot(historico['Epoch'], historico['Accuracy'], label='Accuracy')\nplt.title(\"Accuracy\", fontsize=25)\nplt.xlabel(\"Epoch\", fontsize=12)\nplt.ylabel(\"Accuracy\", fontsize=12)\nplt.grid()\nplt.show()\n\n\nt_ytrain.shape"
   },
   {
     "objectID": "code/NumericalAnalysis/c007_polyLagrange.html",
@@ -2098,5 +2098,89 @@
     "title": "La guarida de los datos",
     "section": "",
     "text": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sympy import *\n\n\ndatos01 = np.array([[0.8, 10000], [2.3, 15000], [3.7, 40000], [7.1,80000], [7.2, 90000]])\n\n\ndatos01[2:4,:] # Muestreme las columnas de las filas 2 a la fila 4 (sin incluir la 4)\n\narray([[3.7e+00, 4.0e+04],\n       [7.1e+00, 8.0e+04]])\n\n\n\ndatos01[4,1] # Muestre el dato de la fila 4 y la columna 1\n\n90000.0\n\n\n\ndatos01[:, 1] # Muestre las filas de la columna 1\n\narray([10000., 15000., 40000., 80000., 90000.])\n\n\n\ndatos01[1,:] # Muestre las columnas de la fila 1\n\narray([2.3e+00, 1.5e+04])\n\n\n\n# Polinomio de Newton\n\nx = Symbol('x')\n\nP0 = datos01[0,1]\n\nc1 = (datos01[1,1]-datos01[0,1])/((datos01[1,0]-datos01[0,0]))\nP1 = P0 + c1*(x-datos01[0,0])\nP1_np = lambdify(x, P1, 'numpy')\n\nc2 = (datos01[2,1] - P1_np(datos01[2,0]))/((datos01[2,0]-datos01[0,0])*(datos01[2,0]-datos01[1,0]))\nP2 = P1 + c2*(x-datos01[0,0])*(x-datos01[1,0])\nP2_np = lambdify(x, P2, 'numpy')\n\nc3 = (datos01[3,1] - P2_np(datos01[3,0]))/((datos01[3,0]-datos01[0,0])*(datos01[3,0]-datos01[1,0])*(datos01[3,0]-datos01[2,0]))\nP3 = P2 + c3*(x-datos01[0,0])*(x-datos01[1,0])*(x-datos01[2,0])\nP3_np = lambdify(x, P3, 'numpy')\n\nc4 = (datos01[4,1] - P3_np(datos01[4,0]))/((datos01[4,0]-datos01[0,0])*(datos01[4,0]-datos01[1,0])*(datos01[4,0]-datos01[2,0])*(datos01[4,0]-datos01[3,0]))\nP4 = P3 + c4*(x-datos01[0,0])*(x-datos01[1,0])*(x-datos01[2,0])*(x-datos01[3,0])\nP4_np = lambdify(x, P4, 'numpy')\n\nP4_np(datos01[:,0])\n\narray([10000., 15000., 40000., 80000., 90000.])\n\n\n\nt=np.linspace(0, 8, 10000)\nfigura01 = plt.figure()\nplt.plot(datos01[:,0], datos01[:,1], 'o:')\nplt.plot(t, P1_np(t), label=\"P1\")\nplt.plot(t, P2_np(t), label=\"P2\")\nplt.plot(t, P3_np(t), label=\"P3\")\nplt.plot(t, P4_np(t), label=\"P4\")\nplt.xlabel(\"Area\")\nplt.ylabel(\"Precio\")\nplt.grid()\nplt.legend()\nplt\n\n&lt;module 'matplotlib.pyplot' from 'd:\\\\Python\\\\Lib\\\\site-packages\\\\matplotlib\\\\pyplot.py'&gt;\n\n\n\n\n\n\nprint(P1_np(3.5))\nprint(P2_np(3.5))\nprint(P3_np(3.5))\nprint(P4_np(3.5))\n\n18999.999999999985\n35226.60098522169\n35872.28339611708\n38205.218540618225"
+  },
+  {
+    "objectID": "rubricas/Rubrica_EDA.html",
+    "href": "rubricas/Rubrica_EDA.html",
+    "title": "Rúbrica: Análisis Exploratorio de Datos",
+    "section": "",
+    "text": "Indicador\nBueno\nSuficiente\nInsuficiente\n\n\n\n\nLimpieza del Dataset\nEl dataset no presenta ni registros nulos, ni vacíos. Existe una estrategia para manejo de atípicos (100%)\nEl dataset no presenta ni registros nulos, ni vacíos (50%)\nEl dataset presenta registros nulos y/o vacíos. No existe una estrategia para manejo de atípicos (0%)\n\n\nConsumo de información\nSe consumen al menos 2 fuentes de datos provenientes de las sugerencias de los organizadores (100%)\nSe consume una fuente de datos proveniente de las sugerencias de los organizadores (50%)\nNo se consume ninguna fuente de datos conocida (0%)\n\n\nEDA sobre nuevas variables\nSe plantean correctamente las relaciones entre la variables y estas se demuestran a plenitud utilizando matemática y/o estadística (100%)\nSe plantean dos relaciones entre las variables (50%)\nNo se plantean las relaciones entre las variables (0%)\n\n\nUso de plantilla\nUsan la plantilla rmarkdown (100%)\n\nNo se usa la plantilla rmarkdown(0%)\n\n\nVisualización de la informacion\nLa información de TODAS las gráficas se observa plenamente (100%)\nLa información de las gráficas se observa parcialmente(50%)\nLa información de la gráfica no se observa (0%)\n\n\nJustificación del problema\nExiste una justificación del problema(100%)\n\nNo Existe justificación al problema resuelto (0%)\n\n\nUbicación del problema\nSe plantea correctamente la ubicación del problema 100%\n\nNo se plantea correctamente la ubicación del problema 0%"
+  },
+  {
+    "objectID": "Exams/solucion_examenes03.html",
+    "href": "Exams/solucion_examenes03.html",
+    "title": "Solución Punto 01",
+    "section": "",
+    "text": "Los datos describen dos intervalos de estudio \\(\\left[1,4\\right]\\) y \\(\\left[4,6\\right]\\). Bajo esta consideración se tiene que:\n\\[\n\\begin{align*}\n\\left[1,4\\right] & : & s_0\\left(x\\right) = a_{0,0} + a_{0,1} x + a_{0,2}x^2 + a_{0,3}x^3\\\\\n\\left[4,6\\right] & : & s_1\\left(x\\right) = a_{1,0} + a_{1,1} x + a_{1,2}x^2 + a_{1,3}x^3\n\\end{align*}\n\\]\nPara construir los trazadores cúbicos, se deben tener en cuenta las primeras \\(\\dot{s}_i\\left(x\\right)\\) y segundas \\(\\ddot{s}_i\\left(x\\right)\\) derivadas de cada función en todos los intervalos. Las expresiones de las primeras derivadas son:\n\\[\n\\begin{align*}\n\\left[1,4\\right] & : & \\dot{s}_0\\left(x\\right) = a_{0,1} + 2 a_{0,2}x + 3 a_{0,3}x^2\\\\\n\\left[4,6\\right] & : & \\dot{s}_1\\left(x\\right) = a_{1,1} + 2 a_{1,2}x + 3 a_{1,3}x^2\n\\end{align*}\n\\]\nLas expresiones para la segunda derivadas son:\n\\[\n\\begin{align*}\n\\left[1,4\\right] & : & \\ddot{s}_0\\left(x\\right) = 2 a_{0,2} + 6 a_{0,3}x\\\\\n\\left[4,6\\right] & : & \\ddot{s}_1\\left(x\\right) = 2 a_{1,2} + 6 a_{1,3}x\n\\end{align*}\n\\]\nPara determinar los trazadores se deben cumplir las siguientes condiciones:"
+  },
+  {
+    "objectID": "Exams/solucion_examenes03.html#condición-de-interpolación",
+    "href": "Exams/solucion_examenes03.html#condición-de-interpolación",
+    "title": "Solución Punto 01",
+    "section": "Condición de interpolación",
+    "text": "Condición de interpolación\n\\[\n\\begin{align*}\ns_0\\left(1\\right) & = & -2\\\\\ns_0\\left(4\\right) & = & 3\\\\\ns_1\\left(4\\right) & = & 3\\\\\ns_1\\left(6\\right) & = & 1\n\\end{align*}\n\\]\nReemplazando las ecuaciones se tiene que:\n\\[\n\\begin{align*}\ns_0\\left(1\\right) & = & -2 & = & a_{0,0} + a_{0,1} + a_{0,2} + a_{0,3}\\\\\ns_0\\left(4\\right) & = & 3 & = & a_{0,0} + 4 a_{0,1} + 16 a_{0,2} + 64 a_{0,3}\\\\\ns_1\\left(4\\right) & = & 3 & = & a_{1,0} + 4 a_{1,1} + 16 a_{1,2} + 64 a_{1,3}\\\\\ns_1\\left(6\\right) & = & 1 & = & a_{1,0} + 6 a_{1,1} + 36 a_{1,2} + 216 a_{1,3}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "Exams/solucion_examenes03.html#condición-de-la-primera-derivada",
+    "href": "Exams/solucion_examenes03.html#condición-de-la-primera-derivada",
+    "title": "Solución Punto 01",
+    "section": "Condición de la primera derivada",
+    "text": "Condición de la primera derivada\n$$ \\[\\begin{align*}\n\\dot{s}_0\\left( 4 \\right) = \\dot{s}_1\\left( 4 \\right) \\\\\na_{0,1} + 8 a_{0,2} + 48 a_{0,3} = a_{1,1} +  8 a_{1,2} + 48 a_{1,3}\\\\\na_{0,1} + 8 a_{0,2} + 48 a_{0,3} - a_{1,1} -  8 a_{1,2} - 48 a_{1,3} = 0 \\\\\n\n\\end{align*}\\] $$"
+  },
+  {
+    "objectID": "Exams/solucion_examenes03.html#condición-de-la-segunda-derivada",
+    "href": "Exams/solucion_examenes03.html#condición-de-la-segunda-derivada",
+    "title": "Solución Punto 01",
+    "section": "Condición de la segunda derivada",
+    "text": "Condición de la segunda derivada\n\\[\n\\begin{align*}\n\\ddot{s}_0\\left(4\\right) = \\ddot{s}_1\\left(4\\right)\\\\\n2 a_{0,2} + 24 a_{0,3} = 2 a_{1,2} + 24 a_{1,3}\\\\\n2 a_{0,2} + 24 a_{0,3} - 2 a_{1,2} - 24 a_{1,3} = 0\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "Exams/solucion_examenes03.html#condición-de-la-frontera-natural",
+    "href": "Exams/solucion_examenes03.html#condición-de-la-frontera-natural",
+    "title": "Solución Punto 01",
+    "section": "Condición de la frontera natural",
+    "text": "Condición de la frontera natural\n\\[\n\\begin{align*}\n\\ddot{s}_0\\left(1\\right) &=&0\\\\\n\\ddot{s}_1\\left(6\\right) &=&0\\\\\n2 a_{0,2} + 6 a_{0,3}&=&0\\\\\n2 a_{1,2} + 36 a_{1,3}&=&0\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "Exams/solucion_examenes03.html#totalidad-de-ecuaciones-a-resolver",
+    "href": "Exams/solucion_examenes03.html#totalidad-de-ecuaciones-a-resolver",
+    "title": "Solución Punto 01",
+    "section": "Totalidad de ecuaciones a resolver",
+    "text": "Totalidad de ecuaciones a resolver\n$$ \\[\\begin{align*}\n\na_{0,0} + a_{0,1} + a_{0,2} + a_{0,3} & = & -2\\\\\na_{0,0} + 4 a_{0,1} + 16 a_{0,2} + 64 a_{0,3} & = & 3\\\\\na_{1,0} + 4 a_{1,1} + 16 a_{1,2} + 64 a_{1,3} & = & 3\\\\\na_{1,0} + 6 a_{1,1} + 36 a_{1,2} + 216 a_{1,3} & = & 1\\\\\n\na_{0,1} + 8 a_{0,2} + 48 a_{0,3} - a_{1,1} -  8 a_{1,2} - 48 a_{1,3} & = & 0 \\\\\n2 a_{0,2} + 24 a_{0,3} - 2 a_{1,2} - 24 a_{1,3}& = &0\\\\\n2 a_{0,2} + 24 a_{0,3}&=&0\\\\\n2 a_{1,2} + 24 a_{1,3}&=&0\n\\end{align*}\\] $$\nReordenando en forma matricial las ecuaciones:\n\\[\n\\begin{align*}\n\\begin{bmatrix}\n1 & 1 & 1  & 1  & 0 & 0  & 0  & 0   \\\\\n1 & 4 & 16 & 64 & 0 & 0  & 0  & 0   \\\\\n0 & 0 & 0  & 0  & 1 & 4  & 16 & 64  \\\\\n0 & 0 & 0  & 0  & 1 & 6  & 36 & 216 \\\\\n0 & 1 & 8  & 48 & 0 & -1 & -8 & -48 \\\\\n0 & 0 & 2  & 24 & 0 & 0  & -2 & -24 \\\\\n0 & 0 & 2  & 6  & 0 & 0  & 0  & 0   \\\\\n0 & 0 & 0  & 0  & 0 & 0  & 2  & 36\n\\end{bmatrix}\n\\begin{bmatrix}\na_{0,0}\\\\\na_{0,1}\\\\\na_{0,2}\\\\\na_{0,3}\\\\\na_{1,0}\\\\\na_{1,1}\\\\\na_{1,2}\\\\\na_{1,3}\n\\end{bmatrix}=\n\\begin{bmatrix}\n-2\\\\3\\\\3\\\\1\\\\0\\\\0\\\\0\\\\0\n\\end{bmatrix}\n\\end{align*}\n\\]\n\nimport numpy as np\n\na = np.array([[1,1,1,1,0,0,0,0],[1,4,16,64,0,0,0,0],[0,0,0,0,1,4,16,64],[0,0,0,0,1,6,36,216],[0,1,8,48,0,-1,-8,-48],[0,0,2,24,0,0,-2,-24],[0,0,2,6,0,0,0,0],[0,0,0,0,0,0,2,36]])\nb = np.array([-2,3,3,1,0,0,0,0])\na00, a01, a02, a03, a10, a11, a12, a13 = np.linalg.solve(a,b)\n\n\ndef spline(a,b,c,d,x):\n    return a + b*x + c*x**2 + d*x**3\n\n\nx = np.linspace(1,6,1000)\ny1 = spline(a00, a01, a02, a03, x[x&lt;=4])\ny2 = spline(a10, a11, a12, a13, x[x&gt;4])\ny = np.concatenate((y1,y2))\n\n\nimport matplotlib.pyplot as plt\n\nfigura = plt.figure()\nplt.plot(x,y)\nplt.plot([1,4,6],[-2,3,1],'o')\nplt.grid()\nplt.show()"
+  },
+  {
+    "objectID": "code/MachineLearning/class005_MultipleRegression.html",
+    "href": "code/MachineLearning/class005_MultipleRegression.html",
+    "title": "Condition",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as ply\nimport numpy as np\nhttps://selling-guide.fanniemae.com/Underwriting-Property-Projects/Appraisal-Requirements/Appraisal-Report-Assessment/Property-Condition-Construction-Quality/1104684711/What-are-the-property-condition-ratings-used-by-the-appraiser.htm\nMejor casa 5 peor 0"
+  },
+  {
+    "objectID": "code/MachineLearning/class005_MultipleRegression.html#grade",
+    "href": "code/MachineLearning/class005_MultipleRegression.html#grade",
+    "title": "Condition",
+    "section": "Grade",
+    "text": "Grade\nLeer https://www.yadkincountync.gov/DocumentCenter/View/776/Section-5?bidId=.\nMejor casa 13 peor 0"
+  },
+  {
+    "objectID": "code/MachineLearning/class005_MultipleRegression.html#view",
+    "href": "code/MachineLearning/class005_MultipleRegression.html#view",
+    "title": "Condition",
+    "section": "View",
+    "text": "View\nMejor casa max y peor casa min\n\ndatos = pd.read_csv(\"D:/DatasetsVault/HouseSalesKingCounty/kc_house_data.csv\")"
+  },
+  {
+    "objectID": "code/MachineLearning/class005_MultipleRegression.html#buscando-relaciones",
+    "href": "code/MachineLearning/class005_MultipleRegression.html#buscando-relaciones",
+    "title": "Condition",
+    "section": "Buscando relaciones",
+    "text": "Buscando relaciones\n\ndatos.drop(datos[datos.bedrooms==33].index, inplace=True) #Dato demasiado alejado de la dinámica de la relación\ndatos.drop(datos[datos.bathrooms&gt;=7.5].index, inplace=True)\ndatos.drop(datos[(datos.bathrooms==4.5) & (datos.price==7.0625e6)].index, inplace=True)\ndatos.drop(datos[datos.sqft_living&gt;=9200].index, inplace=True)\n\n\ndatos[(datos.bathrooms==4.5) & (datos.price==7.0625e6)]\n\n\n\n\n\n\n\n\nprice\nbedrooms\nbathrooms\nsqft_living\nsqft_lot\nfloors\nwaterfront\nview\ncondition\ngrade\nsqft_above\nsqft_basement\nyr_built\nyr_renovated\nzipcode\nsqft_living15\nsqft_lot15\n\n\n\n\n3914\n7062500.0\n5\n4.5\n10040\n37325\n2.0\n1\n2\n3\n11\n7680\n2360\n1940\n2001\n98004\n3930\n25449\n\n\n\n\n\n\n\n\nimport plotly.express as px\n\nfigura = px.scatter_matrix(data_frame=datos, \n                           dimensions=[\"price\", \"bedrooms\", \"bathrooms\", \"sqft_living\" ])\nfigura.show()\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\ndatos[\"log_sqft_living\"] = datos.sqft_living.apply(np.log10)\n\n\nfigura = px.scatter_matrix(data_frame=datos, \n                           dimensions=[\"price\", \"log_sqft_living\", \"chg_sqft_living\", \"sqft_living\" ])\nfigura.show()\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json"
+  },
+  {
+    "objectID": "code/NumericalAnalysis/c010_MinimosCuadrados.html",
+    "href": "code/NumericalAnalysis/c010_MinimosCuadrados.html",
+    "title": "La guarida de los datos",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\n\nhoras_estudio = [1,2,3,4,5]\ncalificacion = [60,70,75,85,90]"
   }
 ]

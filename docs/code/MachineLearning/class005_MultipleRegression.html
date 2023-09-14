@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>La guarida de los datos - Condition</title>
+<title>La guarida de los datos - Estimación de precio de casas en el condado de King</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,13 +143,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#grade" id="toc-grade" class="nav-link active" data-scroll-target="#grade">Grade</a></li>
+  <li><a href="#condition" id="toc-condition" class="nav-link active" data-scroll-target="#condition">Condition</a></li>
+  <li><a href="#grade" id="toc-grade" class="nav-link" data-scroll-target="#grade">Grade</a></li>
   <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view">View</a></li>
   <li><a href="#revisión-de-estructura-y-de-datos-nulos." id="toc-revisión-de-estructura-y-de-datos-nulos." class="nav-link" data-scroll-target="#revisión-de-estructura-y-de-datos-nulos.">Revisión de estructura y de datos nulos.</a></li>
   <li><a href="#eliminación-de-columnas" id="toc-eliminación-de-columnas" class="nav-link" data-scroll-target="#eliminación-de-columnas">Eliminación de columnas</a></li>
-  <li><a href="#búsqueda-de-datos-anómalos" id="toc-búsqueda-de-datos-anómalos" class="nav-link" data-scroll-target="#búsqueda-de-datos-anómalos">Búsqueda de datos anómalos</a>
-  <ul class="collapse">
+  <li><a href="#búsqueda-de-datos-anómalos" id="toc-búsqueda-de-datos-anómalos" class="nav-link" data-scroll-target="#búsqueda-de-datos-anómalos">Búsqueda de datos anómalos</a></li>
   <li><a href="#buscando-relaciones" id="toc-buscando-relaciones" class="nav-link" data-scroll-target="#buscando-relaciones">Buscando relaciones</a></li>
+  <li><a href="#seleccionar-variables-de-entrada" id="toc-seleccionar-variables-de-entrada" class="nav-link" data-scroll-target="#seleccionar-variables-de-entrada">Seleccionar variables de entrada</a>
+  <ul class="collapse">
+  <li><a href="#preprocesamiento-de-las-entradas-categóricas" id="toc-preprocesamiento-de-las-entradas-categóricas" class="nav-link" data-scroll-target="#preprocesamiento-de-las-entradas-categóricas">Preprocesamiento de las entradas categóricas</a></li>
+  <li><a href="#preprocesamiento-de-las-entradas-numéricas" id="toc-preprocesamiento-de-las-entradas-numéricas" class="nav-link" data-scroll-target="#preprocesamiento-de-las-entradas-numéricas">Preprocesamiento de las entradas numéricas</a></li>
+  <li><a href="#creación-del-conjunto-de-datos-de-entrada" id="toc-creación-del-conjunto-de-datos-de-entrada" class="nav-link" data-scroll-target="#creación-del-conjunto-de-datos-de-entrada">Creación del conjunto de datos de entrada</a></li>
+  <li><a href="#creación-de-conjuntos-de-entranamiento-y-prueba" id="toc-creación-de-conjuntos-de-entranamiento-y-prueba" class="nav-link" data-scroll-target="#creación-de-conjuntos-de-entranamiento-y-prueba">Creación de conjuntos de entranamiento y prueba</a></li>
+  </ul></li>
+  <li><a href="#creación-del-modelo-de-red-neuronal" id="toc-creación-del-modelo-de-red-neuronal" class="nav-link" data-scroll-target="#creación-del-modelo-de-red-neuronal">Creación del modelo de red neuronal</a></li>
+  <li><a href="#variables-de-preparación-para-entrenamiento" id="toc-variables-de-preparación-para-entrenamiento" class="nav-link" data-scroll-target="#variables-de-preparación-para-entrenamiento">Variables de preparación para entrenamiento</a>
+  <ul class="collapse">
+  <li><a href="#definición-de-máquina-de-procesamiento" id="toc-definición-de-máquina-de-procesamiento" class="nav-link" data-scroll-target="#definición-de-máquina-de-procesamiento">Definición de máquina de procesamiento</a></li>
+  <li><a href="#conversión-de-datos-a-tensores-pytorch" id="toc-conversión-de-datos-a-tensores-pytorch" class="nav-link" data-scroll-target="#conversión-de-datos-a-tensores-pytorch">Conversión de datos a tensores pytorch</a></li>
+  <li><a href="#definición-de-hiperparametros-para-el-entrenamiento-del-modelo" id="toc-definición-de-hiperparametros-para-el-entrenamiento-del-modelo" class="nav-link" data-scroll-target="#definición-de-hiperparametros-para-el-entrenamiento-del-modelo">Definición de hiperparametros para el entrenamiento del modelo</a></li>
+  </ul></li>
+  <li><a href="#entrenamiento" id="toc-entrenamiento" class="nav-link" data-scroll-target="#entrenamiento">Entrenamiento</a>
+  <ul class="collapse">
+  <li><a href="#inicialización-de-red-neuronal" id="toc-inicialización-de-red-neuronal" class="nav-link" data-scroll-target="#inicialización-de-red-neuronal">Inicialización de red neuronal</a></li>
+  <li><a href="#entrenamiento-del-modelo" id="toc-entrenamiento-del-modelo" class="nav-link" data-scroll-target="#entrenamiento-del-modelo">Entrenamiento del modelo</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -159,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Condition</h1>
+<h1 class="title">Estimación de precio de casas en el condado de King</h1>
 </div>
 
 
@@ -174,21 +192,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="137">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> ply</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder, StandardScaler</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="class005_MultipleRegression_files/figure-html/7066722e-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="class005_MultipleRegression_files/figure-html/429dfb7d-1-image.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
+<section id="condition" class="level2">
+<h2 class="anchored" data-anchor-id="condition">Condition</h2>
 <p>https://selling-guide.fanniemae.com/Underwriting-Property-Projects/Appraisal-Requirements/Appraisal-Report-Assessment/Property-Condition-Construction-Quality/1104684711/What-are-the-property-condition-ratings-used-by-the-appraiser.htm</p>
 <p>Mejor casa 5 peor 0</p>
+</section>
 <section id="grade" class="level2">
 <h2 class="anchored" data-anchor-id="grade">Grade</h2>
 <p>Leer https://www.yadkincountync.gov/DocumentCenter/View/776/Section-5?bidId=.</p>
@@ -197,16 +223,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="view" class="level2">
 <h2 class="anchored" data-anchor-id="view">View</h2>
 <p>Mejor casa max y peor casa min</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> pd.read_csv(<span class="st">"D:/DatasetsVault/HouseSalesKingCounty/kc_house_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="138">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>os <span class="op">=</span> platform.system()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Current OS: "</span>, os)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Current OS:  Darwin</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="139">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os <span class="op">==</span> <span class="st">"Darwin"</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"MAC"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    archivo <span class="op">=</span> <span class="st">"/Users/pacaicedo/DatasetsVault/HouseSalesKingCounty/kc_house_data.csv"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"WIN"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    archivo <span class="op">=</span> <span class="st">"D:/DatasetsVault/HouseSalesKingCounty/kc_house_data.csv"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> pd.read_csv(archivo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>MAC</code></pre>
+</div>
 </div>
 </section>
-<section id="revisión-de-estructura-y-de-datos-nulos." class="level1">
-<h1>Revisión de estructura y de datos nulos.</h1>
+<section id="revisión-de-estructura-y-de-datos-nulos." class="level2">
+<h2 class="anchored" data-anchor-id="revisión-de-estructura-y-de-datos-nulos.">Revisión de estructura y de datos nulos.</h2>
 <p>No hay datos nulos, y hay que tener cuidado con la representación de las variable yr_built y yr_renovated para evitar ambiguedades. Estas variables no son numéricas sino categóricas ordinales. La variable ZIPCODE es una variable categórica. Para reflejar esa naturaleza se propone un <strong>preprocesamiento</strong></p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>datos.isna().<span class="bu">sum</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>datos.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="140">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>datos.isna().<span class="bu">sum</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>datos.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 21613 entries, 0 to 21612
@@ -239,56 +283,57 @@ memory usage: 3.5+ MB</code></pre>
 </div>
 </div>
 </section>
-<section id="eliminación-de-columnas" class="level1">
-<h1>Eliminación de columnas</h1>
+<section id="eliminación-de-columnas" class="level2">
+<h2 class="anchored" data-anchor-id="eliminación-de-columnas">Eliminación de columnas</h2>
 <p>Le eliminan la column id por no presentar información relevante para el modelo. Las columnas “date”, “lat”, “long” se eliminan dado que no se pretende hacer un análisis de tipo serie temporal (date) ni un análisis espacial (Lat y long)</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>datos.drop(columns<span class="op">=</span>[<span class="st">"id"</span>, <span class="st">"date"</span>, <span class="st">"lat"</span>, <span class="st">"long"</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="141">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>datos.drop(columns<span class="op">=</span>[<span class="st">"id"</span>, <span class="st">"date"</span>, <span class="st">"lat"</span>, <span class="st">"long"</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="búsqueda-de-datos-anómalos" class="level1">
-<h1>Búsqueda de datos anómalos</h1>
+<section id="búsqueda-de-datos-anómalos" class="level2">
+<h2 class="anchored" data-anchor-id="búsqueda-de-datos-anómalos">Búsqueda de datos anómalos</h2>
 <ul>
 <li>Las variable binaria: waterfront deben ser analizadas para saber si solo tienen dos valores unicos.</li>
 <li>Variables ordinales: Condition, view y grade. Hay que estimar cuál es el orden de los valores. Dado que no existe la ayuda de un perito para valorar las variables se hace al ojo con gráficos de caja y bigotes</li>
 </ul>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(datos[<span class="st">"waterfront"</span>].unique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="142">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(datos[<span class="st">"waterfront"</span>].unique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0 1]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>figura01 <span class="op">=</span> plt.figure()</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>datos, x<span class="op">=</span><span class="st">"view"</span>, y<span class="op">=</span><span class="st">"price"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>figura02 <span class="op">=</span> plt.figure()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>datos, x<span class="op">=</span><span class="st">"condition"</span>, y<span class="op">=</span><span class="st">"price"</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>figura03 <span class="op">=</span> plt.figure()</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>datos, x<span class="op">=</span><span class="st">"grade"</span>, y<span class="op">=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell" data-execution_count="143">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>figura01 <span class="op">=</span> plt.figure()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>datos, x<span class="op">=</span><span class="st">"view"</span>, y<span class="op">=</span><span class="st">"price"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>figura02 <span class="op">=</span> plt.figure()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>datos, x<span class="op">=</span><span class="st">"condition"</span>, y<span class="op">=</span><span class="st">"price"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>figura03 <span class="op">=</span> plt.figure()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>datos, x<span class="op">=</span><span class="st">"grade"</span>, y<span class="op">=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="143">
 <pre><code>&lt;Axes: xlabel='grade', ylabel='price'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="class005_MultipleRegression_files/figure-html/cell-7-output-2.png" class="img-fluid"></p>
+<p><img src="class005_MultipleRegression_files/figure-html/cell-8-output-2.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="class005_MultipleRegression_files/figure-html/cell-7-output-3.png" class="img-fluid"></p>
+<p><img src="class005_MultipleRegression_files/figure-html/cell-8-output-3.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="class005_MultipleRegression_files/figure-html/cell-7-output-4.png" class="img-fluid"></p>
+<p><img src="class005_MultipleRegression_files/figure-html/cell-8-output-4.png" class="img-fluid"></p>
 </div>
 </div>
+</section>
 <section id="buscando-relaciones" class="level2">
 <h2 class="anchored" data-anchor-id="buscando-relaciones">Buscando relaciones</h2>
-<div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[datos.bedrooms<span class="op">==</span><span class="dv">33</span>].index, inplace<span class="op">=</span><span class="va">True</span>) <span class="co">#Dato demasiado alejado de la dinámica de la relación</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[datos.bathrooms<span class="op">&gt;=</span><span class="fl">7.5</span>].index, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[(datos.bathrooms<span class="op">==</span><span class="fl">4.5</span>) <span class="op">&amp;</span> (datos.price<span class="op">==</span><span class="fl">7.0625e6</span>)].index, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[datos.sqft_living<span class="op">&gt;=</span><span class="dv">9200</span>].index, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="144">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[datos.bedrooms<span class="op">==</span><span class="dv">33</span>].index, inplace<span class="op">=</span><span class="va">True</span>) <span class="co">#Dato demasiado alejado de la dinámica de la relación</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[datos.bathrooms<span class="op">&gt;=</span><span class="fl">7.5</span>].index, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[(datos.bathrooms<span class="op">==</span><span class="fl">4.5</span>) <span class="op">&amp;</span> (datos.price<span class="op">==</span><span class="fl">7.0625e6</span>)].index, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>datos.drop(datos[datos.sqft_living<span class="op">&gt;=</span><span class="dv">9200</span>].index, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>datos[(datos.bathrooms<span class="op">==</span><span class="fl">4.5</span>) <span class="op">&amp;</span> (datos.price<span class="op">==</span><span class="fl">7.0625e6</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell" data-execution_count="145">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>datos[(datos.bathrooms<span class="op">==</span><span class="fl">4.5</span>) <span class="op">&amp;</span> (datos.price<span class="op">==</span><span class="fl">7.0625e6</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="145">
 <div>
 
 
@@ -316,51 +361,201 @@ memory usage: 3.5+ MB</code></pre>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3914</td>
-<td>7062500.0</td>
-<td>5</td>
-<td>4.5</td>
-<td>10040</td>
-<td>37325</td>
-<td>2.0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>11</td>
-<td>7680</td>
-<td>2360</td>
-<td>1940</td>
-<td>2001</td>
-<td>98004</td>
-<td>3930</td>
-<td>25449</td>
-</tr>
 </tbody>
 </table>
 
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>figura <span class="op">=</span> px.scatter_matrix(data_frame<span class="op">=</span>datos, </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                           dimensions<span class="op">=</span>[<span class="st">"price"</span>, <span class="st">"bedrooms"</span>, <span class="st">"bathrooms"</span>, <span class="st">"sqft_living"</span> ])</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>figura.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="146">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>figura <span class="op">=</span> px.scatter_matrix(data_frame<span class="op">=</span>datos, </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                           dimensions<span class="op">=</span>[<span class="st">"price"</span>, <span class="st">"bedrooms"</span>, <span class="st">"bathrooms"</span>, <span class="st">"sqft_living"</span> ])</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>figura.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>datos[<span class="st">"log_sqft_living"</span>] <span class="op">=</span> datos.sqft_living.<span class="bu">apply</span>(np.log10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="147">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>datos[<span class="st">"log_sqft_living"</span>] <span class="op">=</span> datos.sqft_living.<span class="bu">apply</span>(np.log10)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>datos[<span class="st">"chg_sqft_living"</span>] <span class="op">=</span> np.<span class="bu">abs</span>(datos.sqft_living15<span class="op">-</span>datos.sqft_living)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>figura <span class="op">=</span> px.scatter_matrix(data_frame<span class="op">=</span>datos, </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                           dimensions<span class="op">=</span>[<span class="st">"price"</span>, <span class="st">"log_sqft_living"</span>, <span class="st">"chg_sqft_living"</span>, <span class="st">"sqft_living"</span> ])</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>figura.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="148">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>figura <span class="op">=</span> px.scatter_matrix(data_frame<span class="op">=</span>datos, </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                           dimensions<span class="op">=</span>[<span class="st">"price"</span>, <span class="st">"log_sqft_living"</span>, <span class="st">"chg_sqft_living"</span>, <span class="st">"sqft_living"</span> ])</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>figura.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="149">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>matCorrelation <span class="op">=</span> datos.corr()</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a mask for the upper triangle</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> np.triu(np.ones_like(matCorrelation, dtype<span class="op">=</span><span class="bu">bool</span>))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the matplotlib figure</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">9</span>))</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a custom diverging colormap</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> sns.diverging_palette(<span class="dv">230</span>, <span class="dv">20</span>, as_cmap<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw the heatmap with the mask and correct aspect ratio</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>sns.heatmap(matCorrelation, mask<span class="op">=</span>mask, cmap<span class="op">=</span>cmap, vmax<span class="op">=</span><span class="dv">1</span>, vmin<span class="op">=-</span><span class="dv">1</span>, center<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>            square<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="fl">.5</span>, cbar_kws<span class="op">=</span>{<span class="st">"shrink"</span>: <span class="fl">.5</span>}, annot<span class="op">=</span><span class="va">True</span>, </span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>            annot_kws<span class="op">=</span>{<span class="st">"size"</span>:<span class="dv">8</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="149">
+<pre><code>&lt;Axes: &gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="class005_MultipleRegression_files/figure-html/cell-14-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="seleccionar-variables-de-entrada" class="level2">
+<h2 class="anchored" data-anchor-id="seleccionar-variables-de-entrada">Seleccionar variables de entrada</h2>
+<div class="cell" data-execution_count="150">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>input_numerical_variables <span class="op">=</span> [<span class="st">"sqft_living"</span>, <span class="st">"sqft_lot"</span>, <span class="st">"sqft_above"</span>, <span class="st">"sqft_basement"</span>, </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"sqft_living15"</span>, <span class="st">"sqft_lot15"</span>, <span class="st">"log_sqft_living"</span>, <span class="st">"chg_sqft_living"</span>]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>input_num_data <span class="op">=</span> datos[input_numerical_variables]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>input_cat_data <span class="op">=</span> datos.drop(columns<span class="op">=</span>input_numerical_variables).drop(columns<span class="op">=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="preprocesamiento-de-las-entradas-categóricas" class="level3">
+<h3 class="anchored" data-anchor-id="preprocesamiento-de-las-entradas-categóricas">Preprocesamiento de las entradas categóricas</h3>
+<div class="cell" data-execution_count="151">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>dummy_encoder <span class="op">=</span> OneHotEncoder().fit(input_cat_data)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>enc_cat_data <span class="op">=</span> dummy_encoder.transform(input_cat_data).toarray()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="preprocesamiento-de-las-entradas-numéricas" class="level3">
+<h3 class="anchored" data-anchor-id="preprocesamiento-de-las-entradas-numéricas">Preprocesamiento de las entradas numéricas</h3>
+<div class="cell" data-execution_count="152">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>escalador <span class="op">=</span> StandardScaler().fit(input_num_data)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>scaled_num_data <span class="op">=</span> escalador.transform(input_num_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creación-del-conjunto-de-datos-de-entrada" class="level3">
+<h3 class="anchored" data-anchor-id="creación-del-conjunto-de-datos-de-entrada">Creación del conjunto de datos de entrada</h3>
+<div class="cell" data-execution_count="153">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>input_ds <span class="op">=</span> np.concatenate((enc_cat_data, scaled_num_data), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creación-de-conjuntos-de-entranamiento-y-prueba" class="level3">
+<h3 class="anchored" data-anchor-id="creación-de-conjuntos-de-entranamiento-y-prueba">Creación de conjuntos de entranamiento y prueba</h3>
+<div class="cell" data-execution_count="154">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x_train, x_test, y_train, y_test <span class="op">=</span> train_test_split(input_ds, datos.price.values, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">54</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="creación-del-modelo-de-red-neuronal" class="level2">
+<h2 class="anchored" data-anchor-id="creación-del-modelo-de-red-neuronal">Creación del modelo de red neuronal</h2>
+<div class="cell" data-execution_count="155">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RedNeuronal(nn.Module):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nentradas) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(RedNeuronal, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.linear1 <span class="op">=</span> nn.Linear(nentradas, <span class="dv">100</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.linear2 <span class="op">=</span> nn.Linear(<span class="dv">100</span>, <span class="dv">1400</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.linear3 <span class="op">=</span> nn.Linear(<span class="dv">1400</span>, <span class="dv">200</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.linear4 <span class="op">=</span> nn.Linear(<span class="dv">200</span>,<span class="dv">1</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, inputs):</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        pred_1 <span class="op">=</span> torch.relu(<span class="bu">input</span><span class="op">=</span><span class="va">self</span>.linear1(inputs))</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        pred_2 <span class="op">=</span> torch.relu(<span class="bu">input</span><span class="op">=</span><span class="va">self</span>.linear2(pred_1))</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        pred_3 <span class="op">=</span> torch.relu(<span class="bu">input</span><span class="op">=</span><span class="va">self</span>.linear3(pred_2))</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        pred_4 <span class="op">=</span> torch.relu(<span class="bu">input</span><span class="op">=</span><span class="va">self</span>.linear4(pred_3))</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pred_4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="variables-de-preparación-para-entrenamiento" class="level2">
+<h2 class="anchored" data-anchor-id="variables-de-preparación-para-entrenamiento">Variables de preparación para entrenamiento</h2>
+<section id="definición-de-máquina-de-procesamiento" class="level3">
+<h3 class="anchored" data-anchor-id="definición-de-máquina-de-procesamiento">Definición de máquina de procesamiento</h3>
+<div class="cell" data-execution_count="156">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>device</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="156">
+<pre><code>device(type='cpu')</code></pre>
+</div>
+</div>
+</section>
+<section id="conversión-de-datos-a-tensores-pytorch" class="level3">
+<h3 class="anchored" data-anchor-id="conversión-de-datos-a-tensores-pytorch">Conversión de datos a tensores pytorch</h3>
+<div class="cell" data-execution_count="157">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>txtrain <span class="op">=</span> torch.from_numpy(x_train).<span class="bu">float</span>().to(device)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>tytrain <span class="op">=</span> torch.from_numpy(y_train).<span class="bu">float</span>().to(device)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>txtest <span class="op">=</span> torch.from_numpy(x_test).<span class="bu">float</span>().to(device)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>tytest <span class="op">=</span> torch.from_numpy(y_test).<span class="bu">float</span>().to(device)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="definición-de-hiperparametros-para-el-entrenamiento-del-modelo" class="level3">
+<h3 class="anchored" data-anchor-id="definición-de-hiperparametros-para-el-entrenamiento-del-modelo">Definición de hiperparametros para el entrenamiento del modelo</h3>
+<div class="cell" data-execution_count="158">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> <span class="fl">0.001</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>epochs <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>estatus_print <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>n_entradas <span class="op">=</span> x_train.shape[<span class="dv">1</span>]</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>historico <span class="op">=</span> pd.DataFrame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="entrenamiento" class="level2">
+<h2 class="anchored" data-anchor-id="entrenamiento">Entrenamiento</h2>
+<section id="inicialización-de-red-neuronal" class="level3">
+<h3 class="anchored" data-anchor-id="inicialización-de-red-neuronal">Inicialización de red neuronal</h3>
+<div class="cell" data-execution_count="159">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> RedNeuronal(nentradas<span class="op">=</span>n_entradas)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>modelo.to(device<span class="op">=</span>device)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>loss_fn <span class="op">=</span> nn.L1Loss()</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>optimizador <span class="op">=</span> torch.optim.AdamW(params<span class="op">=</span> modelo.parameters(), lr<span class="op">=</span>lr )</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Arquitectura del modelo: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(modelo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Arquitectura del modelo: RedNeuronal(
+  (linear1): Linear(in_features=333, out_features=100, bias=True)
+  (linear2): Linear(in_features=100, out_features=1400, bias=True)
+  (linear3): Linear(in_features=1400, out_features=200, bias=True)
+  (linear4): Linear(in_features=200, out_features=1, bias=True)
+)</code></pre>
+</div>
+</div>
+</section>
+<section id="entrenamiento-del-modelo" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento-del-modelo">Entrenamiento del modelo</h3>
+<div class="cell" data-execution_count="160">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, epochs):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> modelo(txtrain)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    tytrain <span class="op">=</span> torch.reshape(tytrain, y_pred.shape)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    perdida <span class="op">=</span> loss_fn(<span class="bu">input</span><span class="op">=</span>y_pred, target<span class="op">=</span>tytrain)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    perdida.backward()</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    optimizador.step()</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    optimizador.zero_grad()</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> epoch <span class="op">%</span> estatus_print <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Epoch </span><span class="sc">{</span>epoch<span class="sc">}</span><span class="ss"> </span><span class="ch">\t</span><span class="ss"> Loss: </span><span class="sc">{</span><span class="bu">round</span>(perdida.item(), <span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>        y_pred <span class="op">=</span> modelo(txtest)</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>        r2score <span class="op">=</span> <span class="dv">100</span> <span class="op">*</span> r2_score(tytest.cpu().numpy(), y_pred.cpu().numpy())</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> epoch <span class="op">%</span> estatus_print <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"R2 score: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(r2score))</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>    df_tmp <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Epoch'</span>: epoch,</span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Loss'</span>: <span class="bu">round</span>(perdida.item(), <span class="dv">4</span>),</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Accuracy'</span>: <span class="bu">round</span>(r2score, <span class="dv">4</span>)</span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>    }, index<span class="op">=</span>[<span class="dv">0</span>])</span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>    historico <span class="op">=</span> pd.concat(objs<span class="op">=</span>[historico, df_tmp], ignore_index<span class="op">=</span><span class="va">True</span>, sort<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"R2 Score final: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="bu">round</span>(r2score, <span class="dv">4</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Epoch 0      Loss: 536634.1875
+R2 score: -218.69055752684923</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>KeyboardInterrupt: </code></pre>
 </div>
 </div>
 

@@ -4440,6 +4440,38 @@ vertical-align: -.125em;
   }
 }</script>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var head = document.getElementsByTagName("head")[0];
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
+      head.appendChild(link);
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js";
+      script.async = false;
+      script.addEventListener('load', function() {
+        var mathElements = document.getElementsByClassName("math");
+          var macros = [];
+          for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+              window.katex.render(texText.data, mathElements[i], {
+                displayMode: mathElements[i].classList.contains('display'),
+                throwOnError: false,
+                macros: macros,
+                fleqn: false
+              });
+            }
+          }
+      });
+      head.appendChild(script);
+    });
+  </script>
+  
 
 <style type="text/css">
 .navbar-brand {
@@ -4490,10 +4522,9 @@ background-repeat: no-repeat;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#condiciones" id="toc-condiciones" class="nav-link active" data-scroll-target="#condiciones">Condiciones</a></li>
-  <li><a href="#preguntas" id="toc-preguntas" class="nav-link" data-scroll-target="#preguntas">Preguntas</a></li>
+  <li><a href="#preguntas" id="toc-preguntas" class="nav-link active" data-scroll-target="#preguntas">Preguntas</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Examen002_interpolation.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -4519,19 +4550,6 @@ background-repeat: no-repeat;
 
 </header>
 
-<section id="condiciones" class="level1">
-<h1>Condiciones</h1>
-<ol type="1">
-<li><p>Las interacciones entre estudiantes están permitidas</p></li>
-<li><p>Las interacciones con el docente están permitidas.</p></li>
-<li><p>La hora de entrega es fija y está completamente descrita en la plataforma MODDLE. NO ES NEGOCIABLE.</p></li>
-<li><p>La entrega es individual. Cada entrega debe constar de dos partes:</p>
-<ol type="a">
-<li>Cálculo preliminar a mano</li>
-<li>Código solución del problema.</li>
-</ol></li>
-</ol>
-</section>
 <section id="preguntas" class="level1">
 <h1>Preguntas</h1>
 <ol type="1">
@@ -4559,6 +4577,10 @@ background-repeat: no-repeat;
 </tr>
 </tbody>
 </table>
+<ol start="2" type="1">
+<li>Tengo una tabla con 1024 puntos (parejas ordenadas <span class="math inline">\left(x,y\right)</span>). Cuantos trazadores cuadráticos requiero para hacer una interpolación?</li>
+<li>Suponga que se tiene una tabla con 5000 puntos (parejas ordenadas <span class="math inline">\left(x,y\right)</span>). Se requiere realizar el ajuste de estos datos con un polinomio de segundo orden. Haciendo uso de la técnica de mínimos cuadrados, formule las ecuaciones respectivas para cada una de las incógnitas.</li>
+</ol>
 
 
 </section>

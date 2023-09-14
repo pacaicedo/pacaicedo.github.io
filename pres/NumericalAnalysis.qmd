@@ -1566,3 +1566,5 @@ plt.grid()
 
 # Integración y Diferenciación Numérica
 
+<!-- TODO: Diferenciación numérica  4.2 de Arevalo Ovalle -->
+

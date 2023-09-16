@@ -1,0 +1,50 @@
+---
+title: "Rúbrica: Modelos de regresión"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    toc-location: left
+    embed-resources: true
+---
+
+:::{.panel-tabset}
+
+## Equipo 1
+
+**Integrantes**
+
+- Laura Bazante
+- Nicolás Panesso
+- Nicoll Arcos
+
+**Dataset:** [concreto](https://uniautonomaeduco.sharepoint.com/:u:/s/MachineLearning/EUkl1heAOoJMnio4oib0gjMBL0MChBleAA6RbcW80LhjXA?e=3shT8b)
+
+## Equipo 2
+
+**Integrantes**
+
+- Katherin Diaz
+- Heidy Fernández
+- Juan Muñoz
+
+**Dataset:** [Rendimiento](https://uniautonomaeduco.sharepoint.com/:u:/s/MachineLearning/EXCMes38MS1JgBb1U1141aUB_gunQuPDSfTxD8BgKtYYlA?e=sOUIst)
+
+:::
+
+
+
+
+|                                                  | Insuficiente<br>0%                                                                                                        | Aceptable<br>50%                                                                                                   | Superior<br>100%                                                                                                                                                       |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Objetivo análisis exploratorio de datos          | No hay un objetivo aparente                                                                                               | Existe un objetivo de análisis exploratorio de datos planteado pero este no se encuentra alineado con el modelo    | El objetivo del análisis exploratorio de datos planteado se alinea con la construcción del modelo se encuentra bien descrito                                           |
+| Contexto del Dataset                             | No es posible establecer el ámbito al cual pertenecen los datos utilizados para desarrollar el trabajo                    | Se hace una descripción muy básica de las características del dataset                                              | Se hace una descripción detallada de las características y las variables que componen el dataset                                                                       |
+| Justificación                                    | No existe una justificación aparente                                                                                      | Existe justificación pero esta se encuentra mal planteda                                                           | La justificación se encuentra bien planteada                                                                                                                           |
+| Preprocesamiento                                 | No se realizó preprocesamiento de los datos.  O no se argumenta de manera clara la razón de los procedimientos realizados | Al dataset se le aplicaron solo algunas operaciones de preprocesamiento y los datos no tienen la calidad requerida | Al dataset se le aplicaron las operaciones de preprocesamiento necesarias para mejorar su calidad y poder construir los modelos de clasificación                       |
+| Conexión entre el EDA y el modelo final          | Más de dos decisiones del modelo inicial fueron tomadas sin tener en cuenta el EDA                                        | Menos de dos decisiones del modelo inicial fueron tomadas sin tener en cuenta el EDA                               | Todas las decisiones para el modelo inicial fueron tomadas a partir del EDA                                                                                            |
+| Duración de la presentación                      | La presentación dura menos de 8 minutos o más de 13 minutos                                                               | La presentación dura menos de 9 minutos o más de 11 minutos                                                        | La presentación dura 10 minutos                                                                                                                                        |
+| Material de clase                                | No usa la plantilla RMARKDOWN                                                                                             |                                                                                                                    | Usa la plantilla  RMARKDOWN                                                                                                                                            |
+| Uso de gráficos                                  | No se usa ESTADÍSTICA para explicar todas las decisiones                                                                  |                                                                                                                    | Se usa ESTADÍSTICA para explicar todas las decisiones                                                                                                                  |
+| Justificación de las decisiones del modelo final | Más de dos decisiones del modelo final no están justificadas                                                              | Menos de dos decisiones del modelo final no están justificadas                                                     | Las decisiones del modelo final son justificadas.                                                                                                                      |
+| Evaluación del modelo                            | No hace evaluación del modelo                                                                                             | Usa el índice de determinación para evaluar el modelo                                                              | Usa el índice de determinación para evaluar el modelo y además hace análisis de residuos sobre la salida del modelo                                                    |
+| Modelo de regresión                              | No se construyó el modelo o el grupo no puede explicar de manera clara la razón de los procedimientos realizados          | Solo construyó un modelo o no hay claridad sobre las características del modelo elegido                            | Identificó el modelo de mayor precisión después de realizar varias pruebas, se exponen las características del modelo elegido.  El modelo se presenta de forma gráfica |

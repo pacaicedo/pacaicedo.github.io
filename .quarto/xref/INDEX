@@ -136,5 +136,8 @@
   },
   "code/NumericalAnalysis/c010_MinimosCuadrados.ipynb": {
     "c010_MinimosCuadrados.html": "14515af7"
+  },
+  "rubricas/Rubrica_ProyectoAnalisisNumerico.qmd": {
+    "Rubrica_ProyectoAnalisisNumerico.html": "a32c5d03"
   }
 }

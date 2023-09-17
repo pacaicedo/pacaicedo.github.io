@@ -1,0 +1,30 @@
+---
+title: "Rúbrica: Proyecto Final Análsis Numérico"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    toc-location: left
+    embed-resources: true
+---
+
+# Material de apoyo
+
+## Videos para apoyo a la generación de presentaciones 
+
+- [Cómo Preparar una Presentación | 5 PASOS para una CONFERENCIA EXITOSA](https://www.youtube.com/watch?v=zMFiosjNtj0) por Sebastián Lora.
+- [¿Cómo estructurar una presentación?](https://www.youtube.com/watch?v=pby4loMbpe8) por Espacio Ñ de la Universidad del Norte
+
+## Videos para la generación de dipostivas
+
+- [Cómo Hacer una Buena Presentación de Diapositivas (Tips)](https://www.youtube.com/watch?v=SzbvSulJMD0) por Javier Muñiz.
+- [Consejos para una buena presentación en POWER POINT](https://www.youtube.com/watch?v=F6FcF_Q2x-Q)  por NiboKids en el cole!.
+
+## Rúbrica de evaluación
+
+| Indicador                    | Inferior<br>0%                                                                                  | Medio<br>50%                                                                                  | Superior<br>100%                                                                                                                                                                          |
+| ---------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Calidad de la presentación   | No se siguen ninguno de los consejos de los videos adjuntos para la creación de la presentación | Se siguen algunos de los consejos de los videos adjuntos para la creación  de la presentación | Se siguen algunos consejos de los videos uno y dos para la creación  de la presentación                                                                                                   |
+| Calidad de los ejemplos      | No se describen los ejemplos utilizados en el proyecto                                          | Los ejemplos utilizados se encuentran descritos parcialmente                                  | Los ejemplos utilizados dentro del proyecto se encuentran descritos a cabalidad.                                                                                                          |
+| Codificación de los ejemplos | No se describe el código utilizado para los ejemplos                                            | Se describe parcialmente el código de los ejemplos                                            | Se describe a cabalidad el código de los ejemplos                                                                                                                                         |
+| Calidad del código           | Se utiliza al menos un algoritmo no desarrollado por los integrantes del equipo                 |                                                                                               | El código utilizado es completamente desarrollado por los estudiantes a excepción del manejo de datos (NUMPY array y las funciones matemáticas elementales) y la graficación (MATPLOTLIB) |

@@ -139,5 +139,14 @@
   },
   "rubricas/Rubrica_ProyectoAnalisisNumerico.qmd": {
     "Rubrica_ProyectoAnalisisNumerico.html": "a32c5d03"
+  },
+  "Class/Class_Statistics.qmd": {
+    "Class_Statistics.html": "d40fdccd"
+  },
+  "pres/CompProbabilityStatistics.qmd": {
+    "CompProbabilityStatistics.html": "e2e340cd"
+  },
+  "rubricas/Rubrica_Regression.qmd": {
+    "Rubrica_Regression.html": "1b635cb7"
   }
 }

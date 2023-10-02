@@ -1,0 +1,192 @@
+---
+title: "Probabilidad Computacional y Estadística"
+description: "Sitio de la asignatura Probabilidad Computacional y Estadística en la UniAutonoma del Cauca"
+subtitle: "Ingeniería de software y computación"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+date: "2023-08-01"
+format:
+  revealjs: 
+    code-tools: true
+    code-overflow: scroll
+    code-line-numbers: true
+    code-copy: false
+    fig-align: center
+    self-contained: true
+    theme: 
+      - white
+      - custom.scss
+    slide-number: true
+    preview-links: auto
+    logo: images/medes.png
+    css: styles.css
+    footer: <https://pacaicedo.github.io>
+    transition: fade
+resources:
+  - demo.pdf
+---
+
+# Probabilidad Computacional y Estadística
+
+## El Profesor{.scrollable}
+
+::: columns
+
+:::: column
+
+\scriptsize
+### Educación
+
+Doctor en Ciencias de la Electrónica.
+Magister en Ingeniería Electrónica y Telecomunicaciones
+Ingeniero en Electrónica y Telecomunicaciones
+
+### Intereses
+
+Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
+
+
+\normalsize
+
+::::
+
+:::: column
+
+\scriptsize
+
+### Desempeño
+
+Profesor de la Facultad de Ingeniería
+
+Invest. Línea de Percep. Avanz. y Robótica -- GITA
+
+Director Grupo de Investigación MEDES.
+
+\centering
+
+### Contacto:
+
+pablo.caicedo.r@uniautonoma.edu.co
+
+::::
+
+:::
+
+:::columns
+
+:::: column
+
+
+
+::::
+
+:::
+
+\normalsize
+
+
+
+
+
+## Contenido del curso
+
+:::columns
+
+:::: column
+
+![](./images/Statistics/WordCloudDS.png)
+
+::::
+
+:::: column
+
+1. Introducción a la probabilidad y la estadística.
+2. Análisis exploratorio de datos.
+3. Modelos básicos de representación estadística.
+
+::::
+
+:::
+
+## Evaluación
+
+:::columns
+
+:::: column
+
+\scriptsize
+
+1. Varios 001. Quices y talleres (15%) (Lo puedo cambiar!!!)
+3. Parcial 002. Probabilidad, conteo y funciones de densidad de probabilidad (20%)
+4. Parcial 003. Análisis de datos a partir de estadística descriptiva (20%)
+3. Consigna 004. Proyecto Final (45%)
+
+\normalsize
+
+::::
+
+:::: column
+
+![](./images/Statistics/Evaluacion.png)
+
+::::
+
+:::
+
+
+## Recursos
+
+:::columns
+
+:::: column
+
+\scriptsize
+
+### Clases
+Lunes, Miércoles y Viernes
+9:00 -- 11:00
+Sala 503
+
+### Grupo Teams
+
+
+
+::::
+
+:::: column
+
+\scriptsize
+
+### Software
+
+**Interpretes:** R.
+
+**IDE:** Visual Studio Code, Google Colaboratory [R](https://colab.to/r), RStudio, PyCharm, Dataspell
+
+**Seguimiento de Aprendizaje:** Moodle
+
+::::
+
+:::
+
+## Bibliografía{.scrollable}
+
+\tiny
+
+1. P. Dangeti, Statistics for Machine Learning. 2017.
+
+2. A. P. Field, J. Miles, and Z. Field, Discovering statistics using R. London; Thousand Oaks, Calif.: Sage, 2012.
+
+3. D. Forsyth, Probability and Statistics for Computer Science. Cham: Springer International Publishing, 2018.
+
+4. C. Guisande González, A. Vaamonde Liste, and A. Barreiro Felpeto, Tratamiento de datos con R, Statistica y SPSS. 2013.
+
+5. C. Heumann, M. Schomaker, and Shalabh, Introduction to Statistics and Data Analysis. Cham: Springer International Publishing, 2016.
+
+6. N. S. Matloff, Probability and statistics for data science: math + R + data. Boca Raton: CRC Press, Taylor & Francis Group, 2019.
+
+7. W. Menhenhall, R. Beaver, and B. Beaver, Introducción a la probabilidad y estadística. 2016.
+
+8. M. R. C. Rubio, Estadística con aplicaciones en R. Bogotá: Fundacion Universidad de Bogota Jorge Tadeo Lozano, 2019.
+
+9. P. Bruce, A. Bruce, y P. Gedeck, Practical Statistics for Data Scientists, Segunda Edición. Sebastopol, CA: O’Reilly, 2020.

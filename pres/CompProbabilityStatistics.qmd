@@ -26,6 +26,32 @@ resources:
   - demo.pdf
 ---
 
+```{r}
+#| echo: false
+#| eval: true
+#| output: false
+
+library("DiagrammeR")
+library("reticulate")
+library("xfun")
+library("kableExtra")
+library("tidyverse")
+library("knitr")
+library("cowplot")
+library("ggfx")
+knitr::opts_chunk$set(echo = FALSE)
+
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+
+
+```
+
+
+
 # Probabilidad Computacional y Estadística
 
 ## El Profesor{.scrollable}
@@ -145,7 +171,7 @@ pablo.caicedo.r@uniautonoma.edu.co
 ### Clases
 Lunes, Miércoles y Viernes
 9:00 -- 11:00
-Sala 503
+Sala 502
 
 ### Grupo Teams
 
@@ -190,3 +216,223 @@ Sala 503
 8. M. R. C. Rubio, Estadística con aplicaciones en R. Bogotá: Fundacion Universidad de Bogota Jorge Tadeo Lozano, 2019.
 
 9. P. Bruce, A. Bruce, y P. Gedeck, Practical Statistics for Data Scientists, Segunda Edición. Sebastopol, CA: O’Reilly, 2020.
+
+# Introducción a R
+
+## Que es R?
+
+```{r}
+mermaid("
+    graph LR
+    A[Que es R]
+    A-->B[Herramienta de gran versatilidad]
+    A-->C[Gran Popularidad entre la comunidad<br/>académica y científica]
+    B--Que hace?-->D1>Cálculos numéricos]
+    B--Que hace?-->D2>Gráficas y figuras de alta calidad]
+    B--Que es?-->D3>Lenguaje de Programación]
+    B--En que campos?-->D4>Ciencia, economía, ingeniería, etc]
+    C--Licenciamiento?-->E1>GNU GLP: Código Abierto]
+    C--Ampliaciones?-->E2>Numerosas librerías]
+    C--Ayuda?-->E3>Comunidades, foros, tutoriales, etc]
+    ", , height = '100%', width = '100%')
+```
+
+## Un poquito de historia y herramientas{.scrollable}
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+- Creado en 1993 por Robert Gentleman y Ross Ihaka  en la universidad de Auckland (Nueva Zelanda)
+- En la actualidad: miles de personas en todo el mundo que colaboran en su desarrollo
+- **Propósito:** contar con una plataforma libre y gratuita para desarrollar algoritmos numéricos y estadísticos
+
+:::
+
+
+
+::: columns
+
+:::: column
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+[RStudio](https://posit.co/download/rstudio-desktop/)
+
+Es un IDE (Entorno de Desarrollo Integrado): permite utilizar R de manera más cómoda en algunos aspectos
+
+
+:::
+
+::::
+
+:::: column
+
+![](./images/Statistics/RStudio.png)
+
+::::
+
+:::
+
+## Otro poquito de herramientas{.scrollable}
+
+::: columns
+
+:::: column
+
+::: {.block}
+
+\scriptsize
+
+### [Google Colaboratory R](https://colab.to/r)
+
+Permite escribir y ejecutar código de R en tu navegador, con
+
+- Sin configuración requerida
+- Acceso sin costo a GPU
+- Facilidad para compartir
+
+:::
+
+::::
+
+:::: column
+
+::: {.block}
+
+\scriptsize
+
+### [Deepnote](https://deepnote.com/)
+
+Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el trabajo colaborativo más fácilmente. Acceso a licencia educativa con su correo electrónico de la Universidad
+
+:::
+
+
+::::
+
+:::
+
+
+::: {.block}
+
+\scriptsize
+
+### [Instalación de R](https://cran.r-project.org/).... solo windows
+
+- [R](https://cran.r-project.org/bin/windows/base/R-4.2.3-win.exe)
+- [RTools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)
+- [RStudio](https://posit.co/download/rstudio-desktop/)
+
+:::
+
+
+## Operaciones básicas
+
+\scriptsize
+
+- <span style="color:orange;">Cursor por defecto en la consola:</span> símbolo "">"" indica que R está listo para recibir y ejecutar un comando.
+- \textcolor{orange}{Comentarios:} símbolo ""#""
+- \textcolor{orange}{Operaciones matemáticas elementales:} Suma(+), resta(-), división(/), multiplicación(*), potenciación(^), cociente entero(%/%), resto de la división(%%).
+- \textcolor{orange}{Operaciones lógicas elementales:} Menor que(<), Menor igual que(<=), Mayor que(>), Mayor igual que(>=), igual(==), distinto(!=).
+- \textcolor{orange}{Funciones:} conjunto de instrucciones que convierten las entradas (inputs) en resultados (outputs); pueden ser matemáticas, estadísticas, manejo de caracteres, etc.  Puede construir nuevas. Algunas son:
+
+::: columns
+
+:::: column
+
+\scriptsize
+
+- $e^x$: exp(x)
+- $ln\left( x \right)$: log(x)
+- $log_{n} \left( x \right)$: log(x,n)
+- $log_{10} \left( x \right)$: log10(x)
+- $\sqrt{x}$: sqrt(x)
+- $x!$: factorial(x)
+- Entero anterior a x: floor(x)
+- Próximo entero de x: ceiling(x)
+- Valor entero próximo a x, ubicado entre $\left[ 0,x \right]$: trunc(x)
+
+::::
+
+:::: column
+
+\scriptsize
+
+
+- Redondear el valor de x a 4 decimales: round(x, digits=4)
+- Valor de x en notación científica con 3 dígitos decimales: signif(x, digits=3)
+- $cos{x}$, x en radianes: cos(x)
+- $sin{x}$, x en radianes: sin(x)
+- $tan{x}$, x en radianes: tan(x)
+- $\lvert x \rvert$: abs(x)
+
+::::
+
+:::
+
+## Tipos de datos
+
+::: columns
+
+:::: column
+
+\tiny
+
+::: {.block}
+
+### \scriptsize Variable
+
+- Objeto que puede cambiar de valor se crea con el operador <-
+- Nombre: inicia con una letra, puede contener números, puntos
+- Diferencia entre mayúsculas y minúsculas
+- Después de hacer la asignación los valores pueden ser usados
+
+
+:::
+
+::: {.block}
+
+### \scriptsize Vector
+
+- Colección ordenada y modificable de elementos del mismo tipo
+- Cada elemento tiene un índice.
+- Varias formas de crearlos
+- Se pueden ejecutar operaciones sobre los elementos o entre vectores
+- Valores nulos : NA
+
+:::
+
+::::
+
+:::: column
+
+\tiny
+
+::: {.block}
+
+### \scriptsize Matriz
+
+- Vector multidimensional: filas y columnas
+- Estructura con forma rectangular
+- Contiene un sólo tipo de datos
+
+
+
+:::
+
+::: {.block}
+
+### \scriptsize Data Frame
+
+- Estructura de datos de dos dimensiones: puede contener datos de diferentes tipos
+- Objeto más habitual para almacenar datos en R
+- Las filas representan casos; las columnas representan atributos o variables
+- Usada para realizar análisis de datos
+
+
+:::
+
+
+
+::::
+
+:::

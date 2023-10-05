@@ -148,5 +148,11 @@
   },
   "rubricas/Rubrica_Regression.qmd": {
     "Rubrica_Regression.html": "1b635cb7"
+  },
+  "code/NumericalAnalysis/habilitacion002_Numerical_Analysis.ipynb": {
+    "habilitacion002_Numerical_Analysis.html": "a9a27951"
+  },
+  "code/NumericalAnalysis/habilitacion001_Numerical_Analysis.ipynb": {
+    "habilitacion001_Numerical_Analysis.html": "825dee21"
   }
 }

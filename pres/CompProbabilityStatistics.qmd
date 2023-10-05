@@ -325,15 +325,15 @@ Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el tr
 :::
 
 
-## Operaciones básicas
+## Operaciones básicas{.scrollable}
 
 \scriptsize
 
 - <span style="color:orange;">Cursor por defecto en la consola:</span> símbolo "">"" indica que R está listo para recibir y ejecutar un comando.
-- \textcolor{orange}{Comentarios:} símbolo ""#""
-- \textcolor{orange}{Operaciones matemáticas elementales:} Suma(+), resta(-), división(/), multiplicación(*), potenciación(^), cociente entero(%/%), resto de la división(%%).
-- \textcolor{orange}{Operaciones lógicas elementales:} Menor que(<), Menor igual que(<=), Mayor que(>), Mayor igual que(>=), igual(==), distinto(!=).
-- \textcolor{orange}{Funciones:} conjunto de instrucciones que convierten las entradas (inputs) en resultados (outputs); pueden ser matemáticas, estadísticas, manejo de caracteres, etc.  Puede construir nuevas. Algunas son:
+- <span style="color:orange;">Comentarios:</span> símbolo ""#""
+- <span style="color:orange;">Operaciones matemáticas elementales:</span> Suma(+), resta(-), división(/), multiplicación(*), potenciación(^), cociente entero(%/%), resto de la división(%%).
+- <span style="color:orange;">Operaciones lógicas elementales:</span> Menor que(<), Menor igual que(<=), Mayor que(>), Mayor igual que(>=), igual(==), distinto(!=).
+- <span style="color:orange;">Funciones:</span> conjunto de instrucciones que convierten las entradas (inputs) en resultados (outputs); pueden ser matemáticas, estadísticas, manejo de caracteres, etc.  Puede construir nuevas. Algunas son:
 
 ::: columns
 
@@ -369,17 +369,15 @@ Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el tr
 
 :::
 
-## Tipos de datos
+## Tipos de datos{.scrollable}
 
 ::: columns
 
 :::: column
 
-\tiny
+::: {.callout-tip title="Consejo" collapsible="false"}
 
-::: {.block}
-
-### \scriptsize Variable
+### Variable
 
 - Objeto que puede cambiar de valor se crea con el operador <-
 - Nombre: inicia con una letra, puede contener números, puntos
@@ -389,9 +387,9 @@ Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el tr
 
 :::
 
-::: {.block}
+::: {.callout-tip title="Consejo" collapsible="false"}
 
-### \scriptsize Vector
+### Vector
 
 - Colección ordenada y modificable de elementos del mismo tipo
 - Cada elemento tiene un índice.
@@ -405,11 +403,10 @@ Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el tr
 
 :::: column
 
-\tiny
 
-::: {.block}
+::: {.callout-tip title="Consejo" collapsible="false"}
 
-### \scriptsize Matriz
+### Matriz
 
 - Vector multidimensional: filas y columnas
 - Estructura con forma rectangular
@@ -419,9 +416,9 @@ Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el tr
 
 :::
 
-::: {.block}
+::: {.callout-tip title="Consejo" collapsible="false"}
 
-### \scriptsize Data Frame
+### Data Frame
 
 - Estructura de datos de dos dimensiones: puede contener datos de diferentes tipos
 - Objeto más habitual para almacenar datos en R
@@ -432,6 +429,34 @@ Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el tr
 :::
 
 
+
+::::
+
+:::
+
+<!--  -->
+
+# Introducción a la probabilidad
+
+## Que es la probabilidad?
+
+::: columns
+
+:::: column
+
+### Incertidumbre
+
+\scriptsize Toma de decisiones con información incompleta
+
+###  Ejemplo
+
+Juegos de azar. No hay forma clara para determinar un procedimiento que nos lleve a la victoria siempre.
+
+::::
+
+:::: column
+
+![](./images/Statistics/cruce.jpg)
 
 ::::
 

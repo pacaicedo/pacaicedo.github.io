@@ -221,8 +221,7 @@ Sala 502
 
 ## Que es R?
 
-```{r}
-mermaid("
+```{mermaid}
     graph LR
     A[Que es R]
     A-->B[Herramienta de gran versatilidad]
@@ -234,7 +233,6 @@ mermaid("
     C--Licenciamiento?-->E1>GNU GLP: Código Abierto]
     C--Ampliaciones?-->E2>Numerosas librerías]
     C--Ayuda?-->E3>Comunidades, foros, tutoriales, etc]
-    ", , height = '100%', width = '100%')
 ```
 
 ## Un poquito de historia y herramientas{.scrollable}
@@ -446,7 +444,7 @@ Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el tr
 
 ### Incertidumbre
 
-\scriptsize Toma de decisiones con información incompleta
+Toma de decisiones con información incompleta
 
 ###  Ejemplo
 
@@ -456,7 +454,129 @@ Juegos de azar. No hay forma clara para determinar un procedimiento que nos llev
 
 :::: column
 
-![](./images/Statistics/cruce.jpg)
+![](./images/Statistics/cruce.jpeg){.absolute top=100 right=0 height="500"}
+
+::::
+
+:::
+
+## Que es la probabilidad?
+
+::: columns
+
+:::: column
+
+\scriptsize
+
+- El azar no es más que la medida de la ignorancia.
+
+- Los fenómenos que consideramos al "azar" son aquellos en los que no tenemos toda la información o cuyas leyes
+ignoramos.
+
+::::
+
+:::: column
+
+![](./images/Statistics/incertidumbre2.jpg){.absolute top=150 right=0 width="500"}
+
+::::
+
+:::
+
+## Fuentes de incertidumbre.{.scrollable}
+
+::: {.callout-warning title="Datos" collapsible="false"}
+
+Debido a que nuestros instrumentos de medición tienen un margen de error, se presentan datos imperfectos e incompletos, por lo tanto hay incertidumbre en los datos.
+
+:::
+
+::: {.callout-tip title="Atributos del modelo" collapsible="false"}
+
+Atributos del modelo: Son variables que representan un subconjunto reducido de toda la realidad del problema, estas variables provienen de los datos y por lo tanto presentan cierto grado de incertidumbre.
+
+:::
+
+
+::: {.callout-note title="Arquitectura del modelo" collapsible="false"}
+
+Un modelo es una representación simplificada de la realidad y al ser así, por construcción, induce otra capa de incertidumbre, ya que al ser una representación simplificada se considera mucho menos información.
+
+:::
+
+
+## Que es la probabilidad y que estudia?
+
+::: columns
+
+:::: column
+
+![](./images/Statistics/probabilidad001.png)
+
+::::
+
+:::: column
+
+:::{.small_font}
+
+- El concepto intuitivo de probabilidad indica la posibilidad de la ocurrencia de un hecho o fenómeno.
+- Ejemplos:
+  - Tener un día soleado
+  - Contraer una infección
+  - Aprobar un examen de opción múltiple sin haber estudiado.
+- La probabilidad ES una medida de la incertidumbre
+
+:::
+
+::::
+
+:::
+
+
+
+## Que es la probabilidad y que estudia?
+
+::: columns
+
+:::: column
+
+![](./images/Statistics/probabilidad001.png)
+
+::::
+
+:::: column
+
+:::{.small_font}
+
+### Definiciones
+
+
+- Un **experimento aleatorio** es un proceso en el que el resultado no puede ser predecido con certeza y que depende del azar.
+- Un **Evento aleatorio o estocástico** es un subconjunto de los posibles resultados del experimento aleatorio.
+-  Una **variable aleatoria** es una función que asigna un valor a cada posible resultado de un experimento aleatorio.
+
+:::
+
+::::
+
+:::
+
+## Dos ejemplos fundamentales
+
+::: columns
+
+:::: column
+
+
+El <span style="color:orange;">experimento aleatorio </span> es lanzar un dado, la \textcolor{orange}{variable aleatoria} podría ser el número obtenido en el lanzamiento, que puede tomar valores de 1 a 6. El \textcolor{orange}{evento aleatorio} es obtener un número par, que incluiría los resultados 2, 4 y 6.
+
+::::
+
+:::: column
+
+\scriptsize
+
+\textcolor{red}{Se realiza la medición de alturas de los estudiantes de la Facultad de Ingeniería de la Corporación Universitaria Autónoma del Cauca.} \textcolor{blue}{Los valores registrados se encuentran entre 1.45m y 2.05m}. \textcolor{green}{Cuantos estudiantes superan una altura de 1.80m?}
 
 ::::
 

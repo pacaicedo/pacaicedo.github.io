@@ -154,5 +154,23 @@
   },
   "code/NumericalAnalysis/habilitacion001_Numerical_Analysis.ipynb": {
     "habilitacion001_Numerical_Analysis.html": "825dee21"
+  },
+  "Projects/Project_LearningAnalytics_SaberPro.qmd": {
+    "Project_LearningAnalytics_SaberPro.html": "bd3fac91"
+  },
+  "Projects/Project_LeaningAnalytics_EvalDoc01.qmd": {
+    "Project_LeaningAnalytics_EvalDoc01.html": "9330863d"
+  },
+  "Projects/Project_LearningAnalytics_ObsCiRe.qmd": {
+    "Project_LearningAnalytics_ObsCiRe.html": "c44143d9"
+  },
+  "code/NumericalAnalysis/c011_IntegracionNUmerica.ipynb": {
+    "c011_IntegracionNUmerica.html": "e69aed90"
+  },
+  "about.qmd": {
+    "about.html": "9633b2eb"
+  },
+  "CurriculumVitae.qmd": {
+    "CurriculumVitae.html": "389c142f"
   }
 }

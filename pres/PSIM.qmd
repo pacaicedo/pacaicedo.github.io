@@ -1,0 +1,583 @@
+---
+title: "Procesado de Señales e Imágenes Médicas"
+description: "Sitio de la asignatura Procesado de Señales e Imágenes Médicas"
+subtitle: "Ingeniería de software y computación"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+date: "2023-08-01"
+format:
+  revealjs: 
+    code-tools: true
+    code-overflow: scroll
+    code-line-numbers: true
+    code-copy: false
+    fig-align: center
+    self-contained: true
+    theme: 
+      - white
+      - custom.scss
+    slide-number: true
+    preview-links: auto
+    logo: images/medes.png
+    css: styles.css
+    footer: <https://pacaicedo.github.io>
+    transition: fade
+resources:
+  - demo.pdf
+---
+
+```{r}
+#| echo: false
+#| eval: true
+#| output: false
+
+library("DiagrammeR")
+library("reticulate")
+library("xfun")
+library("kableExtra")
+library("tidyverse")
+library("knitr")
+library("cowplot")
+library("ggfx")
+knitr::opts_chunk$set(echo = FALSE)
+
+def.chunk.hook <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+    x <- def.chunk.hook(x, options)
+    ifelse(options$size != "normalsize", paste0("\n \\", options$size, "\n\n", x, "\n\n \\normalsize"), x)
+})
+
+
+```
+
+
+
+# Probabilidad Computacional y Estadística
+
+## El Profesor{.scrollable}
+
+::: columns
+
+:::: column
+
+\scriptsize
+### Educación
+
+Doctor en Ciencias de la Electrónica.
+Magister en Ingeniería Electrónica y Telecomunicaciones
+Ingeniero en Electrónica y Telecomunicaciones
+
+### Intereses
+
+Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.
+
+
+\normalsize
+
+::::
+
+:::: column
+
+\scriptsize
+
+### Desempeño
+
+Profesor de la Facultad de Ingeniería
+
+Invest. Línea de Percep. Avanz. y Robótica -- GITA
+
+Director Grupo de Investigación MEDES.
+
+\centering
+
+### Contacto:
+
+pablo.caicedo.r@uniautonoma.edu.co
+
+::::
+
+:::
+
+:::columns
+
+:::: column
+
+
+
+::::
+
+:::
+
+\normalsize
+
+
+
+
+
+## Contenido del curso
+
+:::columns
+
+:::: column
+
+![](./images/Statistics/WordCloudDS.png)
+
+::::
+
+:::: column
+
+1. Introducción a la probabilidad y la estadística.
+2. Análisis exploratorio de datos.
+3. Modelos básicos de representación estadística.
+
+::::
+
+:::
+
+## Evaluación
+
+:::columns
+
+:::: column
+
+\scriptsize
+
+1. Varios 001. Quices y talleres (15%) (Lo puedo cambiar!!!)
+3. Parcial 002. Probabilidad, conteo y funciones de densidad de probabilidad (20%)
+4. Parcial 003. Análisis de datos a partir de estadística descriptiva (20%)
+3. Consigna 004. Proyecto Final (45%)
+
+\normalsize
+
+::::
+
+:::: column
+
+![](./images/Statistics/Evaluacion.png)
+
+::::
+
+:::
+
+
+## Recursos
+
+:::columns
+
+:::: column
+
+\scriptsize
+
+### Clases
+Lunes, Miércoles y Viernes
+9:00 -- 11:00
+Sala 502
+
+### Grupo Teams
+
+
+
+::::
+
+:::: column
+
+\scriptsize
+
+### Software
+
+**Interpretes:** R.
+
+**IDE:** Visual Studio Code, Google Colaboratory [R](https://colab.to/r), RStudio, PyCharm, Dataspell
+
+**Seguimiento de Aprendizaje:** Moodle
+
+::::
+
+:::
+
+## Bibliografía{.scrollable}
+
+\tiny
+
+1. P. Dangeti, Statistics for Machine Learning. 2017.
+
+2. A. P. Field, J. Miles, and Z. Field, Discovering statistics using R. London; Thousand Oaks, Calif.: Sage, 2012.
+
+3. D. Forsyth, Probability and Statistics for Computer Science. Cham: Springer International Publishing, 2018.
+
+4. C. Guisande González, A. Vaamonde Liste, and A. Barreiro Felpeto, Tratamiento de datos con R, Statistica y SPSS. 2013.
+
+5. C. Heumann, M. Schomaker, and Shalabh, Introduction to Statistics and Data Analysis. Cham: Springer International Publishing, 2016.
+
+6. N. S. Matloff, Probability and statistics for data science: math + R + data. Boca Raton: CRC Press, Taylor & Francis Group, 2019.
+
+7. W. Menhenhall, R. Beaver, and B. Beaver, Introducción a la probabilidad y estadística. 2016.
+
+8. M. R. C. Rubio, Estadística con aplicaciones en R. Bogotá: Fundacion Universidad de Bogota Jorge Tadeo Lozano, 2019.
+
+9. P. Bruce, A. Bruce, y P. Gedeck, Practical Statistics for Data Scientists, Segunda Edición. Sebastopol, CA: O’Reilly, 2020.
+
+# Introducción a R
+
+## Que es R?
+
+```{mermaid}
+    graph LR
+    A[Que es R]
+    A-->B[Herramienta de gran versatilidad]
+    A-->C[Gran Popularidad entre la comunidad<br/>académica y científica]
+    B--Que hace?-->D1>Cálculos numéricos]
+    B--Que hace?-->D2>Gráficas y figuras de alta calidad]
+    B--Que es?-->D3>Lenguaje de Programación]
+    B--En que campos?-->D4>Ciencia, economía, ingeniería, etc]
+    C--Licenciamiento?-->E1>GNU GLP: Código Abierto]
+    C--Ampliaciones?-->E2>Numerosas librerías]
+    C--Ayuda?-->E3>Comunidades, foros, tutoriales, etc]
+```
+
+## Un poquito de historia y herramientas{.scrollable}
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+- Creado en 1993 por Robert Gentleman y Ross Ihaka  en la universidad de Auckland (Nueva Zelanda)
+- En la actualidad: miles de personas en todo el mundo que colaboran en su desarrollo
+- **Propósito:** contar con una plataforma libre y gratuita para desarrollar algoritmos numéricos y estadísticos
+
+:::
+
+
+
+::: columns
+
+:::: column
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+[RStudio](https://posit.co/download/rstudio-desktop/)
+
+Es un IDE (Entorno de Desarrollo Integrado): permite utilizar R de manera más cómoda en algunos aspectos
+
+
+:::
+
+::::
+
+:::: column
+
+![](./images/Statistics/RStudio.png)
+
+::::
+
+:::
+
+## Otro poquito de herramientas{.scrollable}
+
+::: columns
+
+:::: column
+
+::: {.block}
+
+\scriptsize
+
+### [Google Colaboratory R](https://colab.to/r)
+
+Permite escribir y ejecutar código de R en tu navegador, con
+
+- Sin configuración requerida
+- Acceso sin costo a GPU
+- Facilidad para compartir
+
+:::
+
+::::
+
+:::: column
+
+::: {.block}
+
+\scriptsize
+
+### [Deepnote](https://deepnote.com/)
+
+Similar a [Google Colaboratory R](https://colab.to/r), sin embargo permite el trabajo colaborativo más fácilmente. Acceso a licencia educativa con su correo electrónico de la Universidad
+
+:::
+
+
+::::
+
+:::
+
+
+::: {.block}
+
+\scriptsize
+
+### [Instalación de R](https://cran.r-project.org/).... solo windows
+
+- [R](https://cran.r-project.org/bin/windows/base/R-4.2.3-win.exe)
+- [RTools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)
+- [RStudio](https://posit.co/download/rstudio-desktop/)
+
+:::
+
+
+## Operaciones básicas{.scrollable}
+
+\scriptsize
+
+- <span style="color:orange;">Cursor por defecto en la consola:</span> símbolo "">"" indica que R está listo para recibir y ejecutar un comando.
+- <span style="color:orange;">Comentarios:</span> símbolo ""#""
+- <span style="color:orange;">Operaciones matemáticas elementales:</span> Suma(+), resta(-), división(/), multiplicación(*), potenciación(^), cociente entero(%/%), resto de la división(%%).
+- <span style="color:orange;">Operaciones lógicas elementales:</span> Menor que(<), Menor igual que(<=), Mayor que(>), Mayor igual que(>=), igual(==), distinto(!=).
+- <span style="color:orange;">Funciones:</span> conjunto de instrucciones que convierten las entradas (inputs) en resultados (outputs); pueden ser matemáticas, estadísticas, manejo de caracteres, etc.  Puede construir nuevas. Algunas son:
+
+::: columns
+
+:::: column
+
+\scriptsize
+
+- $e^x$: exp(x)
+- $ln\left( x \right)$: log(x)
+- $log_{n} \left( x \right)$: log(x,n)
+- $log_{10} \left( x \right)$: log10(x)
+- $\sqrt{x}$: sqrt(x)
+- $x!$: factorial(x)
+- Entero anterior a x: floor(x)
+- Próximo entero de x: ceiling(x)
+- Valor entero próximo a x, ubicado entre $\left[ 0,x \right]$: trunc(x)
+
+::::
+
+:::: column
+
+\scriptsize
+
+
+- Redondear el valor de x a 4 decimales: round(x, digits=4)
+- Valor de x en notación científica con 3 dígitos decimales: signif(x, digits=3)
+- $cos{x}$, x en radianes: cos(x)
+- $sin{x}$, x en radianes: sin(x)
+- $tan{x}$, x en radianes: tan(x)
+- $\lvert x \rvert$: abs(x)
+
+::::
+
+:::
+
+## Tipos de datos{.scrollable}
+
+::: columns
+
+:::: column
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+### Variable
+
+- Objeto que puede cambiar de valor se crea con el operador <-
+- Nombre: inicia con una letra, puede contener números, puntos
+- Diferencia entre mayúsculas y minúsculas
+- Después de hacer la asignación los valores pueden ser usados
+
+
+:::
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+### Vector
+
+- Colección ordenada y modificable de elementos del mismo tipo
+- Cada elemento tiene un índice.
+- Varias formas de crearlos
+- Se pueden ejecutar operaciones sobre los elementos o entre vectores
+- Valores nulos : NA
+
+:::
+
+::::
+
+:::: column
+
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+### Matriz
+
+- Vector multidimensional: filas y columnas
+- Estructura con forma rectangular
+- Contiene un sólo tipo de datos
+
+
+
+:::
+
+::: {.callout-tip title="Consejo" collapsible="false"}
+
+### Data Frame
+
+- Estructura de datos de dos dimensiones: puede contener datos de diferentes tipos
+- Objeto más habitual para almacenar datos en R
+- Las filas representan casos; las columnas representan atributos o variables
+- Usada para realizar análisis de datos
+
+
+:::
+
+
+
+::::
+
+:::
+
+<!--  -->
+
+# Introducción a la probabilidad
+
+## Que es la probabilidad?
+
+::: columns
+
+:::: column
+
+### Incertidumbre
+
+Toma de decisiones con información incompleta
+
+###  Ejemplo
+
+Juegos de azar. No hay forma clara para determinar un procedimiento que nos lleve a la victoria siempre.
+
+::::
+
+:::: column
+
+![](./images/Statistics/cruce.jpeg){.absolute top=100 right=0 height="500"}
+
+::::
+
+:::
+
+## Que es la probabilidad?
+
+::: columns
+
+:::: column
+
+\scriptsize
+
+- El azar no es más que la medida de la ignorancia.
+
+- Los fenómenos que consideramos al "azar" son aquellos en los que no tenemos toda la información o cuyas leyes
+ignoramos.
+
+::::
+
+:::: column
+
+![](./images/Statistics/incertidumbre2.jpg){.absolute top=150 right=0 width="500"}
+
+::::
+
+:::
+
+## Fuentes de incertidumbre.{.scrollable}
+
+::: {.callout-warning title="Datos" collapsible="false"}
+
+Debido a que nuestros instrumentos de medición tienen un margen de error, se presentan datos imperfectos e incompletos, por lo tanto hay incertidumbre en los datos.
+
+:::
+
+::: {.callout-tip title="Atributos del modelo" collapsible="false"}
+
+Atributos del modelo: Son variables que representan un subconjunto reducido de toda la realidad del problema, estas variables provienen de los datos y por lo tanto presentan cierto grado de incertidumbre.
+
+:::
+
+
+::: {.callout-note title="Arquitectura del modelo" collapsible="false"}
+
+Un modelo es una representación simplificada de la realidad y al ser así, por construcción, induce otra capa de incertidumbre, ya que al ser una representación simplificada se considera mucho menos información.
+
+:::
+
+
+## Que es la probabilidad y que estudia?
+
+::: columns
+
+:::: column
+
+![](./images/Statistics/probabilidad001.png)
+
+::::
+
+:::: column
+
+:::{.small_font}
+
+- El concepto intuitivo de probabilidad indica la posibilidad de la ocurrencia de un hecho o fenómeno.
+- Ejemplos:
+  - Tener un día soleado
+  - Contraer una infección
+  - Aprobar un examen de opción múltiple sin haber estudiado.
+- La probabilidad ES una medida de la incertidumbre
+
+:::
+
+::::
+
+:::
+
+
+
+## Que es la probabilidad y que estudia?
+
+::: columns
+
+:::: column
+
+![](./images/Statistics/probabilidad001.png)
+
+::::
+
+:::: column
+
+:::{.small_font}
+
+### Definiciones
+
+
+- Un **experimento aleatorio** es un proceso en el que el resultado no puede ser predecido con certeza y que depende del azar.
+- Un **Evento aleatorio o estocástico** es un subconjunto de los posibles resultados del experimento aleatorio.
+-  Una **variable aleatoria** es una función que asigna un valor a cada posible resultado de un experimento aleatorio.
+
+:::
+
+::::
+
+:::
+
+## Dos ejemplos fundamentales
+
+::: columns
+
+:::: column
+
+
+El <span style="color:orange;">experimento aleatorio </span> es lanzar un dado, la \textcolor{orange}{variable aleatoria} podría ser el número obtenido en el lanzamiento, que puede tomar valores de 1 a 6. El \textcolor{orange}{evento aleatorio} es obtener un número par, que incluiría los resultados 2, 4 y 6.
+
+::::
+
+:::: column
+
+\scriptsize
+
+\textcolor{red}{Se realiza la medición de alturas de los estudiantes de la Facultad de Ingeniería de la Corporación Universitaria Autónoma del Cauca.} \textcolor{blue}{Los valores registrados se encuentran entre 1.45m y 2.05m}. \textcolor{green}{Cuantos estudiantes superan una altura de 1.80m?}
+
+::::
+
+:::

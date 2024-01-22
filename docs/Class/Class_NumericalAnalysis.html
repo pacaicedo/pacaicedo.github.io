@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ph.D.&nbsp;Pablo Eduardo Caicedo R.">
+<meta name="description" content="Sitio de la asignatura análisis numérico de la Uniautonoma del Cauca">
+
+<title>La guarida de los datos - Análisis Numérico</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Img/logo04.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../Img/logo05.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Principal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">Acerca</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#aplicaciones" id="toc-aplicaciones" class="nav-link" data-scroll-target="#aplicaciones">Aplicaciones</a>
+  <ul class="collapse">
+  <li><a href="#física" id="toc-física" class="nav-link" data-scroll-target="#física">Física</a>
+  <ul class="collapse">
+  <li><a href="#simulación-de-sistemas-dinámicos" id="toc-simulación-de-sistemas-dinámicos" class="nav-link" data-scroll-target="#simulación-de-sistemas-dinámicos">Simulación de sistemas dinámicos</a></li>
+  <li><a href="#resolución-de-problemas-de-transferencia-de-calor-y-fluidos" id="toc-resolución-de-problemas-de-transferencia-de-calor-y-fluidos" class="nav-link" data-scroll-target="#resolución-de-problemas-de-transferencia-de-calor-y-fluidos">Resolución de problemas de transferencia de calor y fluidos</a></li>
+  </ul></li>
+  <li><a href="#ingeniería" id="toc-ingeniería" class="nav-link" data-scroll-target="#ingeniería">Ingeniería</a>
+  <ul class="collapse">
+  <li><a href="#análisis-estructural-y-diseño-de-ingeniería" id="toc-análisis-estructural-y-diseño-de-ingeniería" class="nav-link" data-scroll-target="#análisis-estructural-y-diseño-de-ingeniería">Análisis estructural y diseño de ingeniería</a></li>
+  <li><a href="#simulación-y-modelado-en-ingeniería" id="toc-simulación-y-modelado-en-ingeniería" class="nav-link" data-scroll-target="#simulación-y-modelado-en-ingeniería">Simulación y modelado en ingeniería</a></li>
+  </ul></li>
+  <li><a href="#economía" id="toc-economía" class="nav-link" data-scroll-target="#economía">Economía</a>
+  <ul class="collapse">
+  <li><a href="#modelado-y-simulación-económica" id="toc-modelado-y-simulación-económica" class="nav-link" data-scroll-target="#modelado-y-simulación-económica">Modelado y simulación económica</a></li>
+  <li><a href="#valoración-de-activos-financieros" id="toc-valoración-de-activos-financieros" class="nav-link" data-scroll-target="#valoración-de-activos-financieros">Valoración de activos financieros</a></li>
+  </ul></li>
+  <li><a href="#biología" id="toc-biología" class="nav-link" data-scroll-target="#biología">Biología</a>
+  <ul class="collapse">
+  <li><a href="#modelado-de-sistemas-biológicos" id="toc-modelado-de-sistemas-biológicos" class="nav-link" data-scroll-target="#modelado-de-sistemas-biológicos">Modelado de sistemas biológicos</a></li>
+  <li><a href="#análisis-de-datos-biológicos" id="toc-análisis-de-datos-biológicos" class="nav-link" data-scroll-target="#análisis-de-datos-biológicos">Análisis de datos biológicos</a></li>
+  </ul></li>
+  <li><a href="#ciencia-de-datos" id="toc-ciencia-de-datos" class="nav-link" data-scroll-target="#ciencia-de-datos">Ciencia de datos</a>
+  <ul class="collapse">
+  <li><a href="#aprendizaje-automático-machine-learning" id="toc-aprendizaje-automático-machine-learning" class="nav-link" data-scroll-target="#aprendizaje-automático-machine-learning">Aprendizaje automático (Machine Learning)</a></li>
+  <li><a href="#análisis-exploratorio-de-datos-y-visualización" id="toc-análisis-exploratorio-de-datos-y-visualización" class="nav-link" data-scroll-target="#análisis-exploratorio-de-datos-y-visualización">Análisis exploratorio de datos y visualización</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#material-del-curso" id="toc-material-del-curso" class="nav-link" data-scroll-target="#material-del-curso">Material del curso</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Análisis Numérico</h1>
+</div>
+
+<div>
+  <div class="description">
+    Sitio de la asignatura análisis numérico de la Uniautonoma del Cauca
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ph.D.&nbsp;Pablo Eduardo Caicedo R. </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1 de julio de 2023</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">1 de agosto de 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="introducción" class="level1">
+<h1>Introducción</h1>
+<p>El análisis numérico es una rama de las matemáticas y la ciencia computacional que se enfoca en desarrollar algoritmos y técnicas para resolver problemas matemáticos mediante aproximaciones numéricas. Su objetivo es encontrar soluciones aproximadas a problemas que pueden ser difíciles o imposibles de resolver de manera exacta debido a su complejidad o naturaleza continua.</p>
+</section>
+<section id="aplicaciones" class="level1">
+<h1>Aplicaciones</h1>
+<p>Algunos de los campos de aplicación del análisis numéricos son:</p>
+<section id="física" class="level2">
+<h2 class="anchored" data-anchor-id="física">Física</h2>
+<section id="simulación-de-sistemas-dinámicos" class="level3">
+<h3 class="anchored" data-anchor-id="simulación-de-sistemas-dinámicos">Simulación de sistemas dinámicos</h3>
+<p>Muchos sistemas físicos son gobernados por ecuaciones diferenciales que describen su comportamiento en el tiempo. Sin embargo, en muchos casos, estas ecuaciones son demasiado complejas para obtener soluciones analíticas. Aquí es donde entra en juego el análisis numérico, que permite simular el comportamiento de estos sistemas mediante la resolución numérica de las ecuaciones diferenciales. Por ejemplo, en la mecánica clásica, se pueden simular sistemas de partículas bajo la influencia de fuerzas gravitacionales o electromagnéticas para estudiar movimientos planetarios, trayectorias de proyectiles, etc. También en la mecánica cuántica, se pueden simular sistemas de partículas subatómicas para comprender su comportamiento y propiedades.</p>
+</section>
+<section id="resolución-de-problemas-de-transferencia-de-calor-y-fluidos" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-de-problemas-de-transferencia-de-calor-y-fluidos">Resolución de problemas de transferencia de calor y fluidos</h3>
+<p>En la física, es común enfrentarse a problemas que involucran la transferencia de calor o el flujo de fluidos en sistemas complejos, como en la termodinámica, la hidrodinámica o la aerodinámica. Estos problemas a menudo están representados por ecuaciones diferenciales parciales, las cuales son difíciles o imposibles de resolver analíticamente. Aquí, el análisis numérico se convierte en una herramienta esencial para resolver estas ecuaciones y obtener soluciones aproximadas. Mediante técnicas como la simulación de Monte Carlo o los métodos de elementos finitos, es posible estudiar el comportamiento térmico y fluido de sistemas complejos, como la distribución de temperatura en un motor o la aerodinámica de un avión, lo que es crucial para el diseño y la optimización de muchos dispositivos y sistemas en la ingeniería y la industria.</p>
+</section>
+</section>
+<section id="ingeniería" class="level2">
+<h2 class="anchored" data-anchor-id="ingeniería">Ingeniería</h2>
+<section id="análisis-estructural-y-diseño-de-ingeniería" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-estructural-y-diseño-de-ingeniería">Análisis estructural y diseño de ingeniería</h3>
+<p>En la ingeniería civil y mecánica, el análisis numérico es fundamental para el análisis y diseño de estructuras como puentes, edificios, presas, aviones, automóviles, entre otros. El método de elementos finitos (MEF) es una de las técnicas más utilizadas en esta área. Permite dividir estructuras complejas en elementos más pequeños, como triángulos o tetraedros, y aproximadamente resolver las ecuaciones de equilibrio y comportamiento mecánico de cada elemento. Estos métodos numéricos permiten calcular deformaciones, tensiones y cargas en las estructuras, así como determinar su resistencia, estabilidad y seguridad, lo que es crucial para garantizar que las construcciones sean seguras y eficientes.</p>
+</section>
+<section id="simulación-y-modelado-en-ingeniería" class="level3">
+<h3 class="anchored" data-anchor-id="simulación-y-modelado-en-ingeniería">Simulación y modelado en ingeniería</h3>
+<p>Otra aplicación importante del análisis numérico en la ingeniería es la simulación y modelado de sistemas complejos. Por ejemplo, en la ingeniería aeroespacial, se utilizan técnicas numéricas para simular el flujo de aire alrededor de aviones o cohetes, lo que permite estudiar la aerodinámica y optimizar el diseño de las aeronaves. En la ingeniería eléctrica, el análisis numérico se emplea para simular circuitos electrónicos complejos y analizar su comportamiento en diferentes condiciones. En la ingeniería química, se utilizan métodos numéricos para simular procesos de transporte de masa y calor en reactores y separadores. Estas simulaciones numéricas permiten a los ingenieros comprender mejor el comportamiento de sistemas complejos, realizar experimentos virtuales y realizar cambios de diseño de manera más rápida y económica antes de pasar a la fase de construcción y producción.</p>
+</section>
+</section>
+<section id="economía" class="level2">
+<h2 class="anchored" data-anchor-id="economía">Economía</h2>
+<section id="modelado-y-simulación-económica" class="level3">
+<h3 class="anchored" data-anchor-id="modelado-y-simulación-económica">Modelado y simulación económica</h3>
+<p>El análisis numérico se utiliza extensamente para modelar y simular sistemas económicos complejos. Por ejemplo, en macroeconomía, se pueden desarrollar modelos computacionales que representen la interacción de múltiples variables económicas, como la inversión, el consumo, la inflación y el crecimiento económico. Estos modelos pueden ser sistemas de ecuaciones diferenciales o de diferencia que describen la dinámica de la economía a lo largo del tiempo. Mediante técnicas numéricas, como el método de Euler o métodos más sofisticados de resolución de ecuaciones diferenciales, se pueden realizar simulaciones para estudiar el comportamiento del sistema económico bajo diferentes condiciones y escenarios, lo que ayuda a los economistas a tomar decisiones informadas y entender mejor las implicaciones de las políticas económicas.</p>
+</section>
+<section id="valoración-de-activos-financieros" class="level3">
+<h3 class="anchored" data-anchor-id="valoración-de-activos-financieros">Valoración de activos financieros</h3>
+<p>En el ámbito financiero, el análisis numérico es esencial para la valoración de activos, como opciones, bonos y otros instrumentos financieros. Por ejemplo, en el mercado de opciones, los modelos de valoración de opciones, como el modelo Black-Scholes, implican resolver ecuaciones diferenciales parciales complejas. El análisis numérico permite calcular de manera eficiente los precios de las opciones y otros derivados financieros, lo que es crucial para los inversores, gestores de fondos y compañías que utilizan estos instrumentos para gestionar riesgos y tomar decisiones de inversión. Además, el análisis numérico es útil para calcular métricas financieras como el valor actual neto (VAN) y la tasa interna de retorno (TIR), que son fundamentales para la toma de decisiones en proyectos de inversión y evaluación de negocios.</p>
+</section>
+</section>
+<section id="biología" class="level2">
+<h2 class="anchored" data-anchor-id="biología">Biología</h2>
+<section id="modelado-de-sistemas-biológicos" class="level3">
+<h3 class="anchored" data-anchor-id="modelado-de-sistemas-biológicos">Modelado de sistemas biológicos</h3>
+<p>El análisis numérico se utiliza para desarrollar modelos matemáticos que describen el comportamiento y la dinámica de sistemas biológicos. Por ejemplo, en la ecología, se pueden crear modelos que describan las interacciones entre diferentes especies en un ecosistema, incluidas las tasas de crecimiento, la competencia por recursos y la depredación. Estos modelos pueden ser representados mediante ecuaciones diferenciales o sistemas de ecuaciones que reflejen las relaciones entre las variables biológicas relevantes. El análisis numérico permite simular el comportamiento de estos sistemas y estudiar cómo cambian con el tiempo o en respuesta a cambios en las condiciones ambientales. Además, en la biología molecular, se utilizan modelos numéricos para simular la dinámica de sistemas bioquímicos, como redes de reacciones enzimáticas o interacciones entre moléculas, lo que es crucial para comprender los mecanismos subyacentes de procesos biológicos complejos.</p>
+</section>
+<section id="análisis-de-datos-biológicos" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-de-datos-biológicos">Análisis de datos biológicos</h3>
+<p>En biología, se generan grandes cantidades de datos a partir de técnicas experimentales como la secuenciación genética, la microscopía y otros métodos de análisis molecular. El análisis numérico es esencial para procesar y analizar estos datos de manera eficiente y extraer información relevante. Por ejemplo, en bioinformática, se utilizan algoritmos numéricos para analizar secuencias de ADN y proteínas, identificar genes importantes, realizar análisis de expresión génica y buscar similitudes entre secuencias biológicas. Además, el análisis numérico se aplica en la imagenología médica para procesar imágenes de resonancia magnética (IRM), tomografía computarizada (TC) o imágenes microscópicas, lo que permite detectar patrones y características específicas en las imágenes que son relevantes para el diagnóstico y la investigación en biología y medicina.</p>
+</section>
+</section>
+<section id="ciencia-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="ciencia-de-datos">Ciencia de datos</h2>
+<section id="aprendizaje-automático-machine-learning" class="level3">
+<h3 class="anchored" data-anchor-id="aprendizaje-automático-machine-learning">Aprendizaje automático (Machine Learning)</h3>
+<p>El análisis numérico es esencial en el campo del aprendizaje automático, donde se utilizan algoritmos para entrenar modelos y hacer predicciones a partir de datos. En el aprendizaje supervisado, se utilizan técnicas numéricas para ajustar los parámetros de los modelos y minimizar la diferencia entre las predicciones y las salidas reales. Ejemplos de algoritmos de aprendizaje supervisado son las máquinas de soporte vectorial (SVM), regresión lineal, regresión logística, árboles de decisión, etc. Además, en el aprendizaje no supervisado, como el clustering y la reducción de dimensionalidad, se emplean técnicas numéricas para agrupar datos y encontrar estructuras ocultas en ellos. El análisis numérico permite realizar estos cálculos complejos de manera eficiente y precisa, lo que es crucial para el desarrollo y despliegue de modelos de aprendizaje automático en aplicaciones prácticas.</p>
+</section>
+<section id="análisis-exploratorio-de-datos-y-visualización" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-exploratorio-de-datos-y-visualización">Análisis exploratorio de datos y visualización</h3>
+<p>En el análisis de datos, es común realizar tareas de exploración y visualización para entender mejor las características y patrones presentes en los conjuntos de datos. El análisis numérico es esencial para calcular resúmenes estadísticos, como promedios, medianas, desviaciones estándar y cuartiles, que proporcionan información valiosa sobre la distribución de los datos. Además, las técnicas de visualización de datos, como gráficos y diagramas, también se basan en el análisis numérico para representar de manera efectiva la información contenida en los datos. Algoritmos numéricos como el muestreo, la interpolación y la aproximación se utilizan para generar gráficos y visualizaciones informativas que facilitan la comprensión y toma de decisiones basadas en datos.</p>
+</section>
+</section>
+</section>
+<section id="material-del-curso" class="level1">
+<h1>Material del curso</h1>
+<p><a href="../pres/NumericalAnalysis.html">Presentacion</a></p>
+</section>
+<section id="referencias" class="level1">
+<h1>Referencias</h1>
+<ol type="1">
+<li>Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.</li>
+<li>Burden, R. L., Faires, J. D., &amp; Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.</li>
+<li>Chapra, S. C., Canale, R. P., &amp; Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.</li>
+<li>Arévalo Ovalle, D., Bernal Yermanos, M. Á., &amp; Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.</li>
+<li>Corriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8</li>
+<li>Gilat, A., &amp; Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley &amp; Sons, Inc.</li>
+<li>Miles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter.</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

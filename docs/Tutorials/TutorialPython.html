@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ph.D.&nbsp;Pablo Eduardo Caicedo R.">
+<meta name="description" content="Breve Tutorial de Python">
+
+<title>La guarida de los datos - Tutorial de Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Img/logo04.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../Img/logo05.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Principal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">Acerca</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#google-colab" id="toc-google-colab" class="nav-link active" data-scroll-target="#google-colab">Google Colab</a>
+  <ul class="collapse">
+  <li><a href="#características" id="toc-características" class="nav-link" data-scroll-target="#características">Características</a></li>
+  <li><a href="#ventajas" id="toc-ventajas" class="nav-link" data-scroll-target="#ventajas">Ventajas</a></li>
+  <li><a href="#desventajas-de-colab" id="toc-desventajas-de-colab" class="nav-link" data-scroll-target="#desventajas-de-colab">Desventajas de Colab</a></li>
+  <li><a href="#tipos-de-celdas" id="toc-tipos-de-celdas" class="nav-link" data-scroll-target="#tipos-de-celdas">Tipos de celdas</a></li>
+  </ul></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#ventajas-1" id="toc-ventajas-1" class="nav-link" data-scroll-target="#ventajas-1">Ventajas</a></li>
+  <li><a href="#desventajas" id="toc-desventajas" class="nav-link" data-scroll-target="#desventajas">Desventajas</a></li>
+  <li><a href="#tipos-básicos-de-variables-en-python" id="toc-tipos-básicos-de-variables-en-python" class="nav-link" data-scroll-target="#tipos-básicos-de-variables-en-python">Tipos básicos de variables en Python</a></li>
+  <li><a href="#operaciones-con-variables-básicas" id="toc-operaciones-con-variables-básicas" class="nav-link" data-scroll-target="#operaciones-con-variables-básicas">Operaciones con variables básicas</a>
+  <ul class="collapse">
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
+  </ul></li>
+  <li><a href="#conversión-de-datos" id="toc-conversión-de-datos" class="nav-link" data-scroll-target="#conversión-de-datos">Conversión de Datos</a></li>
+  <li><a href="#operadores" id="toc-operadores" class="nav-link" data-scroll-target="#operadores">Operadores</a></li>
+  <li><a href="#estructura-de-datos" id="toc-estructura-de-datos" class="nav-link" data-scroll-target="#estructura-de-datos">Estructura de datos</a>
+  <ul class="collapse">
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
+  <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios">Diccionarios</a></li>
+  <li><a href="#tuplas" id="toc-tuplas" class="nav-link" data-scroll-target="#tuplas">Tuplas</a></li>
+  </ul></li>
+  <li><a href="#condicionales" id="toc-condicionales" class="nav-link" data-scroll-target="#condicionales">Condicionales</a></li>
+  <li><a href="#ciclos" id="toc-ciclos" class="nav-link" data-scroll-target="#ciclos">Ciclos</a></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones">Funciones</a></li>
+  <li><a href="#librerías-y-módulos" id="toc-librerías-y-módulos" class="nav-link" data-scroll-target="#librerías-y-módulos">Librerías y Módulos</a></li>
+  <li><a href="#manipulación-de-datos" id="toc-manipulación-de-datos" class="nav-link" data-scroll-target="#manipulación-de-datos">Manipulación de datos</a>
+  <ul class="collapse">
+  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">Numpy</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tutorial de Python</h1>
+<p class="subtitle lead">Tomado de Ciencia de Datos para Ciencias Naturale - Keilor Rojas</p>
+</div>
+
+<div>
+  <div class="description">
+    Breve Tutorial de Python
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ph.D.&nbsp;Pablo Eduardo Caicedo R. </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">6 de febrero de 2023</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">25 de mayo de 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="google-colab" class="level1">
+<h1>Google Colab</h1>
+<p>Tomado del libro <a href="https://bookdown.org/keilor_rojas/CienciaDatos/">Ciencia de Datos para Ciencias Naturales</a></p>
+<p>Si no tiene experiencia con el lenguaje Markdown utilice esta <a href="https://www.markdownguide.org/basic-syntax/">guía</a> para enriquecer sus celdas de texto.</p>
+<section id="características" class="level2">
+<h2 class="anchored" data-anchor-id="características">Características</h2>
+<ul>
+<li>Plataforma de Google Research.</li>
+<li>Permite a cualquier persona escribir y ejecutar código Python o R a través del navegador.</li>
+<li>Se base se basa en la interfase de Jupyter Notebook.</li>
+<li>Los documentos son denominados notebooks de Colab.</li>
+<li>Los entornos son interactivos.</li>
+<li>Permite la utilizar Python y R.</li>
+<li>Manejo de celdas de código</li>
+</ul>
+</section>
+<section id="ventajas" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas">Ventajas</h2>
+<ul>
+<li>No requiere configuración del programa.</li>
+<li>La mayoría de librerías y programas ya están preinstalados.</li>
+<li>Acceso gratuito a GPU, es decir, se ejecuta en los servidores de Google.</li>
+<li>Facilidad para compartir documentos.</li>
+</ul>
+</section>
+<section id="desventajas-de-colab" class="level2">
+<h2 class="anchored" data-anchor-id="desventajas-de-colab">Desventajas de Colab</h2>
+<ul>
+<li>No se ejecuta sin conexión.</li>
+<li>Conjuntos de datos que se importan al entorno sin ser montado desde Google Drive se perderán cuando la máquina virtual se apague.</li>
+<li>Experiencia más sencilla que otras opciones.</li>
+<li>Permite utilizar más lenguajes: Posgres, Julia.</li>
+</ul>
+</section>
+<section id="tipos-de-celdas" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-celdas">Tipos de celdas</h2>
+<ul>
+<li><strong>Código:</strong> Para abrir una celda de código simplemente haga click en la barra + Código. Para ejecutar el código puede presionar el símbolo de play a la izquierda de la celda o las teclas Cmd/Ctrl+Enter.</li>
+<li><strong>Texto:</strong> Para abrir una celda de texto simplemente haga click en la barra + Texto. Las celdas de texto utilizan la sintaxis de Markdown. Para ver el texto fuente de Markdown, haga doble click en una celda de texto.</li>
+</ul>
+</section>
+</section>
+<section id="python" class="level1">
+<h1>Python</h1>
+<p>Python es un lenguaje de programación de alto nivel, interpretado, multiparadigma y general-proposito. Su filosofia de diseno enfatiza la legibilidad del codigo. Es uno de los lenguajes de programacion mas populares en uso hoy en dia, y se utiliza para una amplia gama de aplicaciones, incluyendo desarrollo web, ciencia de datos, machine learning e inteligencia artificial.</p>
+</section>
+<section id="ventajas-1" class="level1">
+<h1>Ventajas</h1>
+<ul>
+<li>Python es un lenguaje de programación multiparadigma, lo que significa que puede ser utilizado para diferentes tipos de programación, como la programación orientada a objetos, la programación imperativa y la programación funcional.</li>
+<li>Python es un lenguaje de programación interpretado, lo que significa que no necesita ser compilado antes de ser ejecutado. Esto hace que Python sea muy rápido de desarrollar y depurar.</li>
+<li>Python es un lenguaje de programación muy portable, lo que significa que puede ser ejecutado en diferentes plataformas, como Windows, Mac OS X y Linux. También puede ser ejecutado en la nube.</li>
+<li>Python tiene una gran comunidad de usuarios y desarrolladores, lo que significa que hay muchos recursos disponibles para aprender y usar Python.</li>
+</ul>
+</section>
+<section id="desventajas" class="level1">
+<h1>Desventajas</h1>
+<ul>
+<li>Python puede ser un poco más lento que los lenguajes compilados, como C o C++.</li>
+<li>Python tiene una sintaxis un poco más compleja que algunos otros lenguajes de programación, como Java o JavaScript.</li>
+<li>Python puede no ser el mejor lenguaje de programación para ciertos tipos de aplicaciones, como las aplicaciones de juegos o las aplicaciones de alto rendimiento.</li>
+</ul>
+</section>
+<section id="tipos-básicos-de-variables-en-python" class="level1">
+<h1>Tipos básicos de variables en Python</h1>
+<table class="table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 12%">
+<col style="width: 39%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Tipo</strong></th>
+<th style="text-align: center;"><strong>Nombre</strong></th>
+<th style="text-align: center;"><strong>Uso común</strong></th>
+<th style="text-align: center;"><strong>Ejemplo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Entero o integer</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">Representar <br>números enteros</td>
+<td style="text-align: center;">1,2,-3,4,…</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Flotante</td>
+<td style="text-align: center;">float</td>
+<td style="text-align: center;">Representar<br>números decimales</td>
+<td style="text-align: center;">1.2,-3.1,4.5,…</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cadenas de<br>caracteres</td>
+<td style="text-align: center;">str</td>
+<td style="text-align: center;">Representar<br>palabras y caracteres</td>
+<td style="text-align: center;">“hola”,“PYTHON”,…</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Booleano</td>
+<td style="text-align: center;">bool</td>
+<td style="text-align: center;">Representar <br>datos binarios</td>
+<td style="text-align: center;">True, False</td>
+</tr>
+</tbody>
+</table>
+<p>La función <em>type()</em> permite determinar el tipo de variable.<br>
+La función <em>print()</em> muestra la variable.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El tipo de variable de X es:"</span>, <span class="bu">type</span>(x))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="op">-</span><span class="fl">5.1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El tipo de variable de Y es:"</span>, <span class="bu">type</span>(y))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="st">"HOLA"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El tipo de variable de W es:"</span>, <span class="bu">type</span>(w))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El tipo de variable de V es:"</span>, <span class="bu">type</span>(v))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El tipo de variable de X es: &lt;class 'int'&gt;
+El tipo de variable de Y es: &lt;class 'float'&gt;
+El tipo de variable de W es: &lt;class 'str'&gt;
+El tipo de variable de V es: &lt;class 'bool'&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="operaciones-con-variables-básicas" class="level1">
+<h1>Operaciones con variables básicas</h1>
+<section id="strings" class="level2">
+<h2 class="anchored" data-anchor-id="strings">Strings</h2>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cadena_caracteres <span class="op">=</span> <span class="st">" Diplomado en Analítica para la Banca "</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Tamaño de la cadena de caracteres</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(cadena_caracteres))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Corte de variable</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena_caracteres[<span class="dv">0</span>:<span class="dv">10</span>])</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena_caracteres[<span class="dv">20</span>:<span class="dv">30</span>])</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Convertir la variable a mayúsculas</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena_caracteres.upper())</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Convertir la variable a minúscula</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena_caracteres.lower())</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Contar cuantas veces aparece una cadena de caracteres</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena_caracteres.count(<span class="st">"ca"</span>))</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#Reemplazar en una cadena, una letra con otra</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena_caracteres.replace(<span class="st">"a"</span>, <span class="st">"0"</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#Partir la cadena de caracteres cada vez que se encuentre un caracter</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena_caracteres.split(<span class="st">" "</span>))</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#Concatenar dos cadenas de caracteres</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>cadena01 <span class="op">=</span> <span class="st">"Pablo Eduardo"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>cadena02 <span class="op">=</span> <span class="st">"Caicedo Rodríguez"</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadena01<span class="op">+</span><span class="st">" "</span><span class="op">+</span>cadena02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>38
+ Diplomado
+ica para l
+ DIPLOMADO EN ANALÍTICA PARA LA BANCA 
+ diplomado en analítica para la banca 
+2
+ Diplom0do en An0lític0 p0r0 l0 B0nc0 
+['', 'Diplomado', 'en', 'Analítica', 'para', 'la', 'Banca', '']
+Pablo Eduardo Caicedo Rodríguez</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="conversión-de-datos" class="level1">
+<h1>Conversión de Datos</h1>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Cuál es tu edad?"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tipo de la variable edad: </span><span class="sc">%s</span><span class="st">"</span>, <span class="bu">type</span>(edad))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">int</span>(edad)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tipo de la variable edad: </span><span class="sc">%s</span><span class="st">"</span>, <span class="bu">type</span>(edad))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="operadores" class="level1">
+<h1>Operadores</h1>
+<p>Son símbolos que indican al compilador o intérprete que es necesario ejecutar alguna manipulación de los datos. Existen operadores aritméticos (p.e. suma, resta, multiplicación), de comparación (p.e. menor que, mayor o igual que), lógicos (and, or, not) y de pertenencia (in, not in).</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="op">+</span><span class="dv">6</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hola'</span><span class="op">*</span><span class="dv">3</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&lt;=</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(((c <span class="op">&lt;</span> <span class="dv">90</span>) <span class="kw">or</span> (c <span class="op">&gt;</span> <span class="dv">60</span>)))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="st">"Pablo Eduardo"</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a"</span> <span class="kw">in</span> nombre)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>11
+HolaHolaHola
+True
+True</code></pre>
+</div>
+</div>
+</section>
+<section id="estructura-de-datos" class="level1">
+<h1>Estructura de datos</h1>
+<p>Las estructuras de datos son formas de organización de los datos que permiten leerlos, manipularlos y establecer relaciones entre ellos. Entre las formas más comunes tenemos <strong>listas</strong>, <strong>diccionarios</strong> y <strong>tuplas</strong>.</p>
+<p>Las <strong>listas</strong> se tratan de colecciones de valores encerrados entre paréntesis cuadrados []. Son estructuras muy utilizadas en Python porque tienen mucha versatilidad. Al igual que los strings, tienen posiciones asignadas donde se puede verificar o incluso modificar su contenido con una gran cantidad de funciones disponibles. Las listas pueden tener distintos tipos de datos y pueden ser cambiadas en cualquier momento de la ejecución del programa.</p>
+<p>Los <strong>diccionarios</strong> constituyen otra forma de organización de los datos donde existe una clave y un valor asociado. Para definirlos se usa el símbolo {} y para diferenciar entre clave y valor se usa el símbolo :. La mayoría de funciones utilizadas para modificar listas, también pueden ser utilizadas con diccionarios.</p>
+<p>Las <strong>tuplas</strong> son otra forma de organizar los datos. Sin embargo, a diferencia de las listas y los diccionarios son inmutables, es decir, no se pueden modificar. Se definen entre paréntesis (). Su procesamiento es más rápido.</p>
+<section id="listas" class="level2">
+<h2 class="anchored" data-anchor-id="listas">Listas</h2>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="st">"hora del cafe"</span>, <span class="st">"torta chilena"</span>, <span class="st">"pinto"</span>, <span class="st">"jugo"</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lista.append(<span class="st">"empanadita"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">"pinto"</span> <span class="kw">in</span> lista</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[3, 2, 1, 0.5, 'hora del cafe', 'torta chilena', 'pinto', 'jugo']
+[3, 2, 1, 0.5, 'hora del cafe', 'torta chilena', 'pinto', 'jugo', 'empanadita']</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="diccionarios" class="level2">
+<h2 class="anchored" data-anchor-id="diccionarios">Diccionarios</h2>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tel <span class="op">=</span> {<span class="st">'Maria'</span>: <span class="dv">4098</span>, <span class="st">'Jorge'</span>: <span class="dv">4139</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tel)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tel[<span class="st">"Maria"</span>])</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tel.keys())</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tel.values)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">'Maria'</span> <span class="kw">in</span> tel</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'Maria': 4098, 'Jorge': 4139}
+4098
+dict_keys(['Maria', 'Jorge'])
+&lt;built-in method values of dict object at 0x10d2db100&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="tuplas" class="level2">
+<h2 class="anchored" data-anchor-id="tuplas">Tuplas</h2>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> (<span class="st">'naranja'</span>, <span class="st">'mango'</span>, <span class="st">'sandia'</span>, <span class="st">'banano'</span>, <span class="st">'kiwi'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(frutas))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>frutas[<span class="dv">1</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'tuple'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>'mango'</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="condicionales" class="level1">
+<h1>Condicionales</h1>
+<p>Son bloques de código que dependiendo de una condición se ejecutan o no. Los test condicionales usan la palabra clave if que tienen como resultado un valor booleano de true o false.</p>
+<p>Por supuesto, se puede complementar con operadores lógicos (“and” y “or”) para evaluar múltiples condiciones.</p>
+<p>Un aspecto importante de la estructura de condicionales es la identación. Este término se refiere a un tipo de notación que delimita la estructura del programa estableciendo bloques de código. En sencillo, es la inclusión de algunos espacios (sangría) en la segunda parte de cada condicional.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> si la siguiente condición es verdad:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    realizar la siguiente acción</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#2</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> si la siguiente condición es verdad:</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    realizar esta acción</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  sino realizar una la siguiente alternativa</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> si la siguiente condición es verdad:</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  realizar esta acción</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> si esta otra condición es verdad:</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  realizar esta acción alternativa</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  sino realizar esta otra acción alternativa</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="dv">8</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> c<span class="op">&gt;</span><span class="dv">6</span>:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    c<span class="op">-=</span><span class="dv">3</span> <span class="co"># c = c-3</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="op">-</span><span class="dv">2</span> <span class="op">&lt;</span> c <span class="op">&lt;</span> <span class="dv">4</span>:</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    c<span class="op">**=</span><span class="dv">2</span> <span class="co"># c = c**2</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    c<span class="op">+=</span><span class="dv">2</span> <span class="co"># c = c+2</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>c</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>5</code></pre>
+</div>
+</div>
+</section>
+<section id="ciclos" class="level1">
+<h1>Ciclos</h1>
+<p>Los ciclos son bloques de código que se ejecutan iterativamente. En Python se usan las funciones <strong>while</strong> y <strong>for</strong> para llevar a cabo los ciclos, los cuales se ejecutan hasta que la condición especificada se cumpla. Las funciones while y for normalmente van acompañadas de un iterador conocida como contador y que se designa con la letra *i**, aunque en realidad puede ser cualquier otra letra.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="dv">5</span>:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+2
+3
+4</code></pre>
+</div>
+</div>
+<p>Dentro de while existen los argumentos <strong>break</strong> y <strong>continue</strong> que permiten detener el ciclo aún cuando la condición se cumple o detener la iteración actual y continuar con la siguiente.</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="dv">10</span>:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">9</span>:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5
+6
+7
+8
+9</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="dv">8</span>:</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">7</span>:</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>6
+8</code></pre>
+</div>
+</div>
+<p>Los ciclos (loops) que utilizan <strong>for</strong> son probablemente los más utilizados en Python y sirven para iterar sobre una secuencia (p.e. un string, estructura de datos, etc). La sintaxis se leería de la siguiente manera:</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>S<span class="op">=</span><span class="st">"Buenos dias"</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> S:</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>B
+u
+e
+n
+o
+s
+ 
+d
+i
+a
+s</code></pre>
+</div>
+</div>
+<p>También se puede iterar sobre números. Para esto se puede utilizar la función range(). Recordar que en Python siempre se empieza en cero.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, num<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0 0
+1 1
+2 4
+3 9
+4 16
+5 25
+6 36
+7 49
+8 64
+9 81</code></pre>
+</div>
+</div>
+</section>
+<section id="funciones" class="level1">
+<h1>Funciones</h1>
+<p>Las funciones son las estructuras esenciales de código en los lenguajes de programación. Constituyen un grupo de instrucciones para resolver un problema muy concreto.</p>
+<p>En Python, la definición de funciones se realiza mediante la instrucción <strong>def</strong> más un nombre descriptivo de la función, seguido de paréntesis y finalizando con dos puntos (:). El algoritmo que la compone, irá identado. Un parámetro es un valor que la función espera recibir a fin de ejecutar acciones específicas. Una función puede tener uno o más parámetros. La función es ejecutada hasta que sea invocada, es decir, llamada por su nombre, sea con <strong>print()</strong> o con <strong>return()</strong>.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Matarile(nombreviejo,nombrenuevo):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Usted ya no se llama </span><span class="sc">%s</span><span class="st">, ha elegido llamarse </span><span class="sc">%s</span><span class="st">.'</span> <span class="op">%</span>(nombreviejo,nombrenuevo))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>nombreviejo <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escriba su nombre: '</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>nombrenuevo <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Escriba cómo quiere llamarse: '</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>Matarile(nombreviejo, nombrenuevo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="librerías-y-módulos" class="level1">
+<h1>Librerías y Módulos</h1>
+<p>Una de las principales características de Python es que dispone de diferentes tipos de librerías o bibliotecas. En síntesis, una librería responde al conjunto de funcionalidades que permiten al usuario llevar a cabo nuevas tareas que antes no se podían realizar. Cada una de las librerías disponen de diferentes módulos que son los que le otorgan funciones específicas. Python posee una gran cantidad de librerías útiles en diferentes campos como la visualización, cienca de datos, cálculos numéricos, bioinformática o inteligencia artificial.</p>
+<p>Algunas utilizadas en ciencia de datos: - Numpy - Pandas - Matplotlib - Seaborn</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="co"># se importa módulo pyplot dentro de matplotlib</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy.random <span class="im">as</span> npr</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="manipulación-de-datos" class="level1">
+<h1>Manipulación de datos</h1>
+<section id="numpy" class="level2">
+<h2 class="anchored" data-anchor-id="numpy">Numpy</h2>
+<p><strong>NumPy</strong> (Numerical Python), es una biblioteca de Python que da soporte para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel. La funcionalidad principal de <strong>NumPy</strong> es su estructura de datos ndarray (arreglos), para una matriz de n dimensiones, sobre las cuales se pueden realizar operaciones matemátias de manera eficiente.</p>
+<p>Crearemos una lista usando código nativo de Python y lo convertiremos en una matriz unidimensional con la función np.array()</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">12</span>]</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>array1 <span class="op">=</span> np.array(list1)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(array1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 6  8 10 12]</code></pre>
+</div>
+</div>
+<p>Los <strong>ndarrays</strong> son estructuras de datos genéricas para almacenar datos homogéneos. Son equivalentes a las matrices y los vectores en álgebra, por lo que también se les puede aplicar operaciones matemáticas. Notar que las operaciones matemáticas se pueden realizar en todos los valores en un ndarray a la vez.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(array1 <span class="op">-</span> <span class="dv">2</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(array1 <span class="op">*</span> array1, <span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 4  6  8 10]
+[ 36  64 100 144] 
+
+</code></pre>
+</div>
+</div>
+<p>Los arreglos se encierran entre <strong>[]</strong>, pero al imprimirlos no están separados por comas. Hay diferentes formas de crear arreglos con propiedades específicas, lo que les provee bastante flexibilidad.</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crea una matriz con datos específicos</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.array([[<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">3</span>,<span class="dv">4</span>]]),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Crea una matriz con unos: tres filas y cuatro columnas</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.ones((<span class="dv">3</span>,<span class="dv">4</span>)),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crea una matriz con ceros: tres filas y cuatro columnas</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.zeros((<span class="dv">3</span>,<span class="dv">4</span>)),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Crea una matriz con un dato específico: tres filas y cuatro columnas</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.full((<span class="dv">3</span>,<span class="dv">4</span>), <span class="fl">7.3</span>),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crea un arreglo con datos seguidos: empieza en 10 termina en 30(sin incluir) con incrementos de 5.</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.arange(<span class="dv">10</span>,<span class="dv">30</span>,<span class="dv">5</span>),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="co"># # Crea un arreglo con inicio y fin y una cantidad de datos: arreglo de 6 datos entre 0 y 5/3 .</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linspace(<span class="dv">0</span>,<span class="dv">5</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">6</span>),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Crea una matriz con datos aleatorios entre 0 y 1: dos filas y tres columnas</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.random.rand(<span class="dv">2</span>,<span class="dv">3</span>),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1 2]
+ [3 4]] 
+
+[[1. 1. 1. 1.]
+ [1. 1. 1. 1.]
+ [1. 1. 1. 1.]] 
+
+[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]] 
+
+[[7.3 7.3 7.3 7.3]
+ [7.3 7.3 7.3 7.3]
+ [7.3 7.3 7.3 7.3]] 
+
+[10 15 20 25] 
+
+[0.         0.33333333 0.66666667 1.         1.33333333 1.66666667] 
+
+[[0.49396986 0.60759552 0.58765376]
+ [0.72949955 0.87955979 0.53650406]] 
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([np.arange(<span class="dv">0</span>,<span class="dv">5</span>), np.arange(<span class="dv">0</span>,<span class="dv">5</span>)<span class="op">*</span><span class="dv">5</span>])</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Arreglo</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Forma</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1.shape, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tamaño</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1.size, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de Dimensiones</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1.ndim, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Transpuesta</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1.T, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 0  1  2  3  4]
+ [ 0  5 10 15 20]] 
+
+(2, 5) 
+
+10 
+
+2 
+
+[[ 0  0]
+ [ 1  5]
+ [ 2 10]
+ [ 3 15]
+ [ 4 20]] 
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>])</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Porcionar</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr[<span class="dv">1</span>:<span class="dv">3</span>])<span class="co"># de 1 al 3 en índice</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr[<span class="dv">4</span>:])<span class="co"># de la posición 4 en adelante</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr[::<span class="dv">2</span>])<span class="co"># de uno por medio</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2 3]
+[5 6 7]
+[1 3 5 7]</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

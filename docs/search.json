@@ -1199,113 +1199,134 @@
   {
     "objectID": "pres/PSIM.html#el-profesor",
     "href": "pres/PSIM.html#el-profesor",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "El Profesor",
-    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nProcesamiento de Imágenes, Dispositivos para el análisis de movimiento humano, ciencia de los datos, IA.\n\nDesempeño\nProfesor del Centro de Estudios en Biomédica y Biotecnogía\nProfesor en la línea de Procesmiento de Señales e Imágenes\nContacto:\npablo.caicedo@escuelaing.edu.co"
   },
   {
     "objectID": "pres/PSIM.html#contenido-del-curso",
     "href": "pres/PSIM.html#contenido-del-curso",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Contenido del curso",
-    "text": "Contenido del curso\n\n\n\n\n\nIntroducción a la probabilidad y la estadística.\nAnálisis exploratorio de datos.\nModelos básicos de representación estadística."
+    "text": "Contenido del curso\n\n\n\n\n\n\nProbabilidad y Estadística\nElectrocardiografía\nElectroencefalografía\nElectromiografía\nProcesamiento de Imágenes"
   },
   {
     "objectID": "pres/PSIM.html#evaluación",
     "href": "pres/PSIM.html#evaluación",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Evaluación",
-    "text": "Evaluación\n\n\n\nVarios 001. Quices y talleres (15%) (Lo puedo cambiar!!!)\nParcial 002. Probabilidad, conteo y funciones de densidad de probabilidad (20%)\nParcial 003. Análisis de datos a partir de estadística descriptiva (20%)\nConsigna 004. Proyecto Final (45%)"
+    "text": "Evaluación\n\n\n\nExamen parcial 1 (15%)\nExamen parcial 2 (15%)\nExamen final (20%)\nLaboratorios (16%)\nProyecto Final (15%)\nTalleres y Quices (14%)\nPresentaciones (5%)\nBonos (Sin porcentaje definido)"
   },
   {
     "objectID": "pres/PSIM.html#recursos",
     "href": "pres/PSIM.html#recursos",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Recursos",
-    "text": "Recursos\n\n\nClases\nLunes, Miércoles y Viernes 9:00 – 11:00 Sala 502\nGrupo Teams\n\nSoftware\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell\nSeguimiento de Aprendizaje: Moodle"
+    "text": "Recursos\n\n\nClases\nMartes y Jueves\n11:30 - 13:00\nSalón F112\nLaboratorio\nLunes 13:00 - 14:30\nI1-304\n\nSoftware\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell"
   },
   {
     "objectID": "pres/PSIM.html#bibliografía",
     "href": "pres/PSIM.html#bibliografía",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Bibliografía",
-    "text": "Bibliografía\n\nP. Dangeti, Statistics for Machine Learning. 2017.\nA. P. Field, J. Miles, and Z. Field, Discovering statistics using R. London; Thousand Oaks, Calif.: Sage, 2012.\nD. Forsyth, Probability and Statistics for Computer Science. Cham: Springer International Publishing, 2018.\nC. Guisande González, A. Vaamonde Liste, and A. Barreiro Felpeto, Tratamiento de datos con R, Statistica y SPSS. 2013.\nC. Heumann, M. Schomaker, and Shalabh, Introduction to Statistics and Data Analysis. Cham: Springer International Publishing, 2016.\nN. S. Matloff, Probability and statistics for data science: math + R + data. Boca Raton: CRC Press, Taylor & Francis Group, 2019.\nW. Menhenhall, R. Beaver, and B. Beaver, Introducción a la probabilidad y estadística. 2016.\nM. R. C. Rubio, Estadística con aplicaciones en R. Bogotá: Fundacion Universidad de Bogota Jorge Tadeo Lozano, 2019.\nP. Bruce, A. Bruce, y P. Gedeck, Practical Statistics for Data Scientists, Segunda Edición. Sebastopol, CA: O’Reilly, 2020."
+    "text": "Bibliografía\n[1] «Medical Image Analysis and Informatics».\n[2] S. K. Zhou, D. Rueckert, y G. Fichtinger, Handbook of medical image computing and computer assisted intervention. en The Elsevier and MICCAI society book series. London: Academic press, 2020.\n[3] W. Zhao, Technology-Enabled Motion Sensing and Activity Tracking for Rehabilitation. Institution of Engineering and Technology, 2022. doi: 10.1049/PBHE037E.\n[4] S. K. Vasudevan, A. Baskar, M. Rajappa, y T. S. Murugesh, Digital Image Processing, 1.ª ed. Boca Raton: Chapman and Hall/CRC, 2023. doi: 10.1201/9781003217428.\n[5] J. Valente, J. António, C. Mora, y S. Jardim, «Developments in Image Processing Using Deep Learning and Reinforcement Learning», J. Imaging, vol. 9, n.º 10, p. 207, sep. 2023, doi: 10.3390/jimaging9100207.\n[6] T. T. Teoh, Convolutional Neural Networks for Medical Applications. en SpringerBriefs in Computer Science. Singapore: Springer Nature Singapore, 2023. doi: 10.1007/978-981-19-8814-1.\n[7] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[8] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[9] R. Splinter y K. Najarian, «Biomedical Signal and Image Processing, Second Edition».\n[10] P. Singhal, A. Verma, P. K. Srivastava, V. Ranga, y R. Kumar, Image Processing and Intelligent Computing Systems, 1.ª ed. Boca Raton: CRC Press, 2022. doi: 10.1201/9781003267782.\n[11] H. Singh, Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python. Berkeley, CA: Apress, 2019. doi: 10.1007/978-1-4842-4149-3.\n[12] J. L. Semmlow y B. Griffel, Biosignal and medical image processing, Third edition. Boca Raton: CRC Press, Taylor & Francis Group, CRC Press is an imprint of the Taylor & Francis Group, an Informa business, 2014.\n[13] S. Saxena y S. Paul, Eds., High-performance medical image processing, First edition. Palm Bay, FL, USA, Burlington, ON, Canada: Apple Academic Press ; CRC Press, 2022.\n[14] R. Raut, «Intelligent Systems for Rehabilitation Engineering».\n[15] R. M. Rangayyan, Biomedical signal analysis: a case-study approach. en IEEE Press series in biomedical engineering. New York, NY: Wiley-Interscience [u.a.], 2002.\n[16] R. M. Rangayyan, «Biomedical Signal Analysis».\n[17] K. Rabie, C. Karthik, S. Chowdhury, y P. K. Dutta, Eds., Deep learning in medical image processing and analysis. London, United Kingdom: Institution of Engineering and Technology, 2023.\n[18] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[19] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[20] L. Panigrahi, S. Biswal, A. K. Bhoi, A. Kalam, y P. Barsocchi, Eds., Machine Learning and AI Techniques in Interactive Medical Image Analysis: en Advances in Medical Technologies and Clinical Practice. IGI Global, 2022. doi: 10.4018/978-1-6684-4671-3.\n[21] G. R. Naik y W. P. D. Santos, Biomedical Signal Processing: A Modern Approach, 1.ª ed. Boca Raton: CRC Press, 2023. doi: 10.1201/9781003201137.\n[22] M. Morioka, «Artificial Intelligence, Robots, and Philosophy».\n[23] L. N. McKinnis, «Fundamentals of Musculoskeletal Imaging, Fifth Edition».\n[24] T. Malone, C. Hazle, y M. L. Grey, Imaging in rehabilitation. New York: McGraw-Hill Medical, 2008.\n[25] X. Liu et al., «Advances in Deep Learning-Based Medical Image Analysis», Health Data Sci, vol. 2021, p. 8786793, ene. 2021, doi: 10.34133/2021/8786793.\n[26] C.-P. Lim, A. Vaidya, Y.-W. Chen, T. Jain, y L. C. Jain, Eds., Artificial Intelligence and Machine Learning for Healthcare: Vol. 1: Image and Data Analytics, vol. 228. en Intelligent Systems Reference Library, vol. 228. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-11154-9.\n[27] A. Kulkarni, A. Shivananda, y N. R. Sharma, Computer Vision Projects with PyTorch: Design and Develop Production-Grade Models. Berkeley, CA: Apress, 2022. doi: 10.1007/978-1-4842-8273-1.\n[28] F. A. Gonzalez y E. Romero, Eds., Biomedical Image Analysis and Machine Learning Technologies: Applications and Techniques. en Advances in Bioinformatics and Biomedical Engineering. IGI Global, 2010. doi: 10.4018/978-1-60566-956-4.\n[29] T. M. Deserno, Ed., Biomedical Image Processing. en Biological and Medical Physics, Biomedical Engineering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. doi: 10.1007/978-3-642-15816-2.\n[30] D. Cudihins, Hands-on computer vision with Julia: build complex applications with advanced Julia packages for image processing, neural networks, and artificial intelligence. Birmingham, UK: Packt Publishing, 2018.\n[31] M. Charbit, Digital signal processing with Python programming. London, UK : Hoboken, NJ: ISTE ; Wiley, 2017.\n[32] M. Chappell, Principles of Medical Imaging for Engineers: From Signals to Images. Cham: Springer International Publishing, 2019. doi: 10.1007/978-3-030-30511-6.\n[33] L. Cai, J. Gao, y D. Zhao, «A review of the application of deep learning in medical image classification and segmentation», Ann Transl Med, vol. 8, n.º 11, pp. 713-713, jun. 2020, doi: 10.21037/atm.2020.02.44.\n[34] J. D. Bronzino, Ed., The biomedical engineering handbook, 3rd ed. en The electrical engineering handbook series. Boca Raton: CRC/Taylor & Francis, 2006."
   },
   {
     "objectID": "pres/PSIM.html#que-es-r",
     "href": "pres/PSIM.html#que-es-r",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Que es R?",
     "text": "Que es R?\n\n\n\n\n    graph LR\n    A[Que es R]\n    A--&gt;B[Herramienta de gran versatilidad]\n    A--&gt;C[Gran Popularidad entre la comunidad&lt;br/&gt;académica y científica]\n    B--Que hace?--&gt;D1&gt;Cálculos numéricos]\n    B--Que hace?--&gt;D2&gt;Gráficas y figuras de alta calidad]\n    B--Que es?--&gt;D3&gt;Lenguaje de Programación]\n    B--En que campos?--&gt;D4&gt;Ciencia, economía, ingeniería, etc]\n    C--Licenciamiento?--&gt;E1&gt;GNU GLP: Código Abierto]\n    C--Ampliaciones?--&gt;E2&gt;Numerosas librerías]\n    C--Ayuda?--&gt;E3&gt;Comunidades, foros, tutoriales, etc]"
   },
   {
     "objectID": "pres/PSIM.html#un-poquito-de-historia-y-herramientas",
     "href": "pres/PSIM.html#un-poquito-de-historia-y-herramientas",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Un poquito de historia y herramientas",
     "text": "Un poquito de historia y herramientas\n\n\n\n\n\n\nConsejo\n\n\n\nCreado en 1993 por Robert Gentleman y Ross Ihaka en la universidad de Auckland (Nueva Zelanda)\nEn la actualidad: miles de personas en todo el mundo que colaboran en su desarrollo\nPropósito: contar con una plataforma libre y gratuita para desarrollar algoritmos numéricos y estadísticos\n\n\n\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nRStudio\nEs un IDE (Entorno de Desarrollo Integrado): permite utilizar R de manera más cómoda en algunos aspectos"
   },
   {
     "objectID": "pres/PSIM.html#otro-poquito-de-herramientas",
     "href": "pres/PSIM.html#otro-poquito-de-herramientas",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Otro poquito de herramientas",
     "text": "Otro poquito de herramientas\n\n\n\nGoogle Colaboratory R\nPermite escribir y ejecutar código de R en tu navegador, con\n\nSin configuración requerida\nAcceso sin costo a GPU\nFacilidad para compartir\n\n\n\n\nDeepnote\nSimilar a Google Colaboratory R, sin embargo permite el trabajo colaborativo más fácilmente. Acceso a licencia educativa con su correo electrónico de la Universidad\n\n\n\n\nInstalación de R…. solo windows\n\nR\nRTools\nRStudio"
   },
   {
     "objectID": "pres/PSIM.html#operaciones-básicas",
     "href": "pres/PSIM.html#operaciones-básicas",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Operaciones básicas",
     "text": "Operaciones básicas\n\nCursor por defecto en la consola: símbolo ““&gt;”” indica que R está listo para recibir y ejecutar un comando.\nComentarios: símbolo ““#””\nOperaciones matemáticas elementales: Suma(+), resta(-), división(/), multiplicación(*), potenciación(^), cociente entero(%/%), resto de la división(%%).\nOperaciones lógicas elementales: Menor que(&lt;), Menor igual que(&lt;=), Mayor que(&gt;), Mayor igual que(&gt;=), igual(==), distinto(!=).\nFunciones: conjunto de instrucciones que convierten las entradas (inputs) en resultados (outputs); pueden ser matemáticas, estadísticas, manejo de caracteres, etc. Puede construir nuevas. Algunas son:\n\n\n\n\n\\(e^x\\): exp(x)\n\\(ln\\left( x \\right)\\): log(x)\n\\(log_{n} \\left( x \\right)\\): log(x,n)\n\\(log_{10} \\left( x \\right)\\): log10(x)\n\\(\\sqrt{x}\\): sqrt(x)\n\\(x!\\): factorial(x)\nEntero anterior a x: floor(x)\nPróximo entero de x: ceiling(x)\nValor entero próximo a x, ubicado entre \\(\\left[ 0,x \\right]\\): trunc(x)\n\n\n\nRedondear el valor de x a 4 decimales: round(x, digits=4)\nValor de x en notación científica con 3 dígitos decimales: signif(x, digits=3)\n\\(cos{x}\\), x en radianes: cos(x)\n\\(sin{x}\\), x en radianes: sin(x)\n\\(tan{x}\\), x en radianes: tan(x)\n\\(\\lvert x \\rvert\\): abs(x)"
   },
   {
     "objectID": "pres/PSIM.html#tipos-de-datos",
     "href": "pres/PSIM.html#tipos-de-datos",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Tipos de datos",
     "text": "Tipos de datos\n\n\n\n\n\n\n\n\nConsejo\n\n\nVariable\n\nObjeto que puede cambiar de valor se crea con el operador &lt;-\nNombre: inicia con una letra, puede contener números, puntos\nDiferencia entre mayúsculas y minúsculas\nDespués de hacer la asignación los valores pueden ser usados\n\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nVector\n\nColección ordenada y modificable de elementos del mismo tipo\nCada elemento tiene un índice.\nVarias formas de crearlos\nSe pueden ejecutar operaciones sobre los elementos o entre vectores\nValores nulos : NA\n\n\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nMatriz\n\nVector multidimensional: filas y columnas\nEstructura con forma rectangular\nContiene un sólo tipo de datos\n\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nData Frame\n\nEstructura de datos de dos dimensiones: puede contener datos de diferentes tipos\nObjeto más habitual para almacenar datos en R\nLas filas representan casos; las columnas representan atributos o variables\nUsada para realizar análisis de datos"
   },
   {
     "objectID": "pres/PSIM.html#que-es-la-probabilidad",
     "href": "pres/PSIM.html#que-es-la-probabilidad",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Que es la probabilidad?",
     "text": "Que es la probabilidad?\n\n\nIncertidumbre\nToma de decisiones con información incompleta\nEjemplo\nJuegos de azar. No hay forma clara para determinar un procedimiento que nos lleve a la victoria siempre."
   },
   {
     "objectID": "pres/PSIM.html#que-es-la-probabilidad-1",
     "href": "pres/PSIM.html#que-es-la-probabilidad-1",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Que es la probabilidad?",
     "text": "Que es la probabilidad?\n\n\n\nEl azar no es más que la medida de la ignorancia.\nLos fenómenos que consideramos al “azar” son aquellos en los que no tenemos toda la información o cuyas leyes ignoramos."
   },
   {
     "objectID": "pres/PSIM.html#fuentes-de-incertidumbre.",
     "href": "pres/PSIM.html#fuentes-de-incertidumbre.",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Fuentes de incertidumbre.",
     "text": "Fuentes de incertidumbre.\n\n\n\n\n\n\nDatos\n\n\nDebido a que nuestros instrumentos de medición tienen un margen de error, se presentan datos imperfectos e incompletos, por lo tanto hay incertidumbre en los datos.\n\n\n\n\n\n\n\n\n\nAtributos del modelo\n\n\nAtributos del modelo: Son variables que representan un subconjunto reducido de toda la realidad del problema, estas variables provienen de los datos y por lo tanto presentan cierto grado de incertidumbre.\n\n\n\n\n\n\n\n\n\nArquitectura del modelo\n\n\nUn modelo es una representación simplificada de la realidad y al ser así, por construcción, induce otra capa de incertidumbre, ya que al ser una representación simplificada se considera mucho menos información."
   },
   {
     "objectID": "pres/PSIM.html#que-es-la-probabilidad-y-que-estudia",
     "href": "pres/PSIM.html#que-es-la-probabilidad-y-que-estudia",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Que es la probabilidad y que estudia?",
     "text": "Que es la probabilidad y que estudia?\n\n\n\n\n\n\nEl concepto intuitivo de probabilidad indica la posibilidad de la ocurrencia de un hecho o fenómeno.\nEjemplos:\n\nTener un día soleado\nContraer una infección\nAprobar un examen de opción múltiple sin haber estudiado.\n\nLa probabilidad ES una medida de la incertidumbre"
   },
   {
     "objectID": "pres/PSIM.html#que-es-la-probabilidad-y-que-estudia-1",
     "href": "pres/PSIM.html#que-es-la-probabilidad-y-que-estudia-1",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Que es la probabilidad y que estudia?",
     "text": "Que es la probabilidad y que estudia?\n\n\n\n\n\nDefiniciones\n\nUn experimento aleatorio es un proceso en el que el resultado no puede ser predecido con certeza y que depende del azar.\nUn Evento aleatorio o estocástico es un subconjunto de los posibles resultados del experimento aleatorio.\nUna variable aleatoria es una función que asigna un valor a cada posible resultado de un experimento aleatorio."
   },
   {
     "objectID": "pres/PSIM.html#dos-ejemplos-fundamentales",
     "href": "pres/PSIM.html#dos-ejemplos-fundamentales",
-    "title": "Probabilidad Computacional y Estadística",
+    "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Dos ejemplos fundamentales",
     "text": "Dos ejemplos fundamentales\n\n\nEl experimento aleatorio  es lanzar un dado, la podría ser el número obtenido en el lanzamiento, que puede tomar valores de 1 a 6. El es obtener un número par, que incluiría los resultados 2, 4 y 6.\n\n . \n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM.html#estrategías-de-aprendizaje",
+    "href": "pres/PSIM.html#estrategías-de-aprendizaje",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Estrategías de Aprendizaje",
+    "text": "Estrategías de Aprendizaje\n\nClases magistrales\nDesarrollo de ejercicios en clase\nEvaluaciones parciales y una evaluación final\nPrácticas de laboratorio, donde se utilizarán herramientas computacionales y se aplicarán conocimientos y destrezas adquiridas en otros cursos\nLecturas de la temática a tratar, previas a las clases magistrales\nLecturas de artículos científicos de interés para el área de procesamiento de señales e imágenes\nDesarrollo de talleres fuera de la clase\nProyecto práctico de fin de curso"
+  },
+  {
+    "objectID": "pres/PSIM.html#evaluación-1",
+    "href": "pres/PSIM.html#evaluación-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\n\n\n\n\n\nPrimer tercio (30%)\nSegundo tercio (30%)\nTercer tercio (40%)\n\n\n\n\nTalleres y Quices (7%)\nTalleres y Quices (7%)\nPresentación (5%)\n\n\nLaboratorios (8%)\nLaboratorios (8%)\nProyecto final (15%)\n\n\nExamen Parcial 1 (15%)\nExamen Parcial 2 (15%)\nExamen final (20%)"
+  },
+  {
+    "objectID": "pres/PSIM.html#como-estamos",
+    "href": "pres/PSIM.html#como-estamos",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Como estamos?",
+    "text": "Como estamos?\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

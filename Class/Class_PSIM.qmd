@@ -20,3 +20,13 @@ El curso está dividido en 3 partes:
 # Material del Curso
 
 - [Presentación](../pres/PSIM.qmd)
+
+# Horario de atención
+
+Lunes: 15:00 - 17:00
+
+Jueves: 10:00 - 11:30
+
+::: {.column-margin}
+![](../Img/Escuela_Rosario_logo.png)
+:::

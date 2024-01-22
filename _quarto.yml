@@ -18,7 +18,9 @@ website:
 
 format:
   html:
-    theme: cyborg
+    theme: 
+      light: litera
+      dark: cyborg
     css: styles.css
     toc: true
 

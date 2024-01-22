@@ -302,10 +302,11 @@ I1-304
 1. Que es media?
 2. Que es mediana?
 3. Que es moda?
-4. Que es un histograma?
-5. Que es un valor atípico?
-6. Que es una variable aleatoria?
-7. Que es un espacio muestral?
-8. Que es un experimento aleatorio?
-9. Que es ruido blanco?
-10. Como se detecta el ruido blanco?
+4. Que es la varianza?
+5. Que es un histograma?
+6. Que es un valor atípico?
+7. Que es una variable aleatoria?
+8. Que es un espacio muestral?
+9. Que es un experimento aleatorio?
+10. Que es ruido blanco?
+11. Como se detecta el ruido blanco?

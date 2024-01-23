@@ -303,6 +303,13 @@ I1-304
 
 [37] Probability and Random Processes With Applications to Signal Processing and Communications. San Diego, CA, USA: Elsevier Science & Technology Books, 2012.
 
+[39] L. Wasserman, All of Statistics: A Concise Course in Statistical Inference. en Springer Texts in Statistics. New York, NY: Springer New York, 2004. doi: 10.1007/978-0-387-21736-9.
+
+[40] R. C. Gonzalez y R. E. Woods, Digital image processing. New York, NY: Pearson, 2018.
+
+[41] T. M. Apostol, Calculus. 1: One-variable calculus, with an introduction to linear algebra. New York: Wiley, 1980.
+
+
 
 ## Como estamos?{.scrollable}
 

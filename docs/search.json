@@ -32,7 +32,7 @@
     "href": "Class/Class_PSIM.html",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "",
-    "text": "Introducción\n“Un área de rápido crecimiento y variedad de aplicaciones en la ingeniería biomédica a nivel nacional y global es el procesamiento digital de señales e imágenes médicas. Es por eso, que a través de este curso se desea dar las herramientas necesarias para los graduados del programa puedan tener competencias básicas en las técnicas clásicas y algunas técnicas modernas de procesamiento de señales e imágenes. La primera parte del curso se encuentra enfocada al desarrollo de técnicas de procesamiento para señales biomédicas unidimensionales, exponiendo primero su origen fisiológico y siguiendo con la presentación de las principales técnicas para su análisis y procesamiento. La segunda parte del curso hace énfasis en el estudio de imágenes médicas, partiendo de una explicación de los principales métodos computacionales utilizados para procesamiento digital de imágenes y luego exponiendo brevemente el proceso de su formación. A través de prácticas de laboratorio con señales e imágenes médicas (reales o simuladas), el estudiante podrá aplicar y reforzar los conocimientos aprendidos en el curso” fragmento tomado del microcurriculo de la asignatura.\nEl curso está dividido en 3 partes: (i) Repaso de conceptos de probabilidad y estadística (ii) Aplicaciones al procesamiento de señales de origen fisiológico. (iii) Procesamiento de imágenes digitales\n\n\nMaterial del Curso\n\nPresentación\n\n\n\nHorario de atención\nLunes: 15:00 - 17:00\nJueves: 10:00 - 11:30"
+    "text": "“Un área de rápido crecimiento y variedad de aplicaciones en la ingeniería biomédica a nivel nacional y global es el procesamiento digital de señales e imágenes médicas. Es por eso, que a través de este curso se desea dar las herramientas necesarias para los graduados del programa puedan tener competencias básicas en las técnicas clásicas y algunas técnicas modernas de procesamiento de señales e imágenes. La primera parte del curso se encuentra enfocada al desarrollo de técnicas de procesamiento para señales biomédicas unidimensionales, exponiendo primero su origen fisiológico y siguiendo con la presentación de las principales técnicas para su análisis y procesamiento. La segunda parte del curso hace énfasis en el estudio de imágenes médicas, partiendo de una explicación de los principales métodos computacionales utilizados para procesamiento digital de imágenes y luego exponiendo brevemente el proceso de su formación. A través de prácticas de laboratorio con señales e imágenes médicas (reales o simuladas), el estudiante podrá aplicar y reforzar los conocimientos aprendidos en el curso” fragmento tomado del microcurriculo de la asignatura.\nEl curso está dividido en 3 partes: (i) Repaso de conceptos de probabilidad y estadística (ii) Aplicaciones al procesamiento de señales de origen fisiológico. (iii) Procesamiento de imágenes digitales"
   },
   {
     "objectID": "Exams/Examen001_roots.html",
@@ -1328,5 +1328,180 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Como estamos?",
     "text": "Como estamos?\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "Class/Class_PSIM.html#presentaciones",
+    "href": "Class/Class_PSIM.html#presentaciones",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Presentaciones",
+    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística"
+  },
+  {
+    "objectID": "pres/PSIM001.html#el-profesor",
+    "href": "pres/PSIM001.html#el-profesor",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "El Profesor",
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nProcesamiento de Imágenes, Dispositivos para el análisis de movimiento humano, ciencia de los datos, IA.\n\nDesempeño\nProfesor del Centro de Estudios en Biomédica y Biotecnogía\nProfesor en la línea de Procesmiento de Señales e Imágenes\nContacto:\npablo.caicedo@escuelaing.edu.co"
+  },
+  {
+    "objectID": "pres/PSIM001.html#contenido-del-curso",
+    "href": "pres/PSIM001.html#contenido-del-curso",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Contenido del curso",
+    "text": "Contenido del curso\n\n\n\n\n\n\nProbabilidad y Estadística\nElectrocardiografía\nElectroencefalografía\nElectromiografía\nProcesamiento de Imágenes"
+  },
+  {
+    "objectID": "pres/PSIM001.html#estrategías-de-aprendizaje",
+    "href": "pres/PSIM001.html#estrategías-de-aprendizaje",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Estrategías de Aprendizaje",
+    "text": "Estrategías de Aprendizaje\n\nClases magistrales\nDesarrollo de ejercicios en clase\nEvaluaciones parciales y una evaluación final\nPrácticas de laboratorio, donde se utilizarán herramientas computacionales y se aplicarán conocimientos y destrezas adquiridas en otros cursos\nLecturas de la temática a tratar, previas a las clases magistrales\nLecturas de artículos científicos de interés para el área de procesamiento de señales e imágenes\nDesarrollo de talleres fuera de la clase\nProyecto práctico de fin de curso"
+  },
+  {
+    "objectID": "pres/PSIM001.html#evaluación",
+    "href": "pres/PSIM001.html#evaluación",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nExamen parcial 1 (15%)\nExamen parcial 2 (15%)\nExamen final (20%)\nLaboratorios (16%)\nProyecto Final (15%)\nTalleres y Quices (14%)\nPresentaciones (5%)\nBonos (Sin porcentaje definido)"
+  },
+  {
+    "objectID": "pres/PSIM001.html#evaluación-1",
+    "href": "pres/PSIM001.html#evaluación-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\n\n\n\n\n\nPrimer tercio (30%)\nSegundo tercio (30%)\nTercer tercio (40%)\n\n\n\n\nTalleres y Quices (7%)\nTalleres y Quices (7%)\nPresentación (5%)\n\n\nLaboratorios (8%)\nLaboratorios (8%)\nProyecto final (15%)\n\n\nExamen Parcial 1 (15%)\nExamen Parcial 2 (15%)\nExamen final (20%)"
+  },
+  {
+    "objectID": "pres/PSIM001.html#recursos",
+    "href": "pres/PSIM001.html#recursos",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Recursos",
+    "text": "Recursos\n\n\nClases\nMartes y Jueves\n11:30 - 13:00\nSalón F112\nLaboratorio\nLunes 13:00 - 14:30\nI1-304\n\nSoftware\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell"
+  },
+  {
+    "objectID": "pres/PSIM001.html#bibliografía",
+    "href": "pres/PSIM001.html#bibliografía",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Bibliografía",
+    "text": "Bibliografía\n[1] «Medical Image Analysis and Informatics».\n[2] S. K. Zhou, D. Rueckert, y G. Fichtinger, Handbook of medical image computing and computer assisted intervention. en The Elsevier and MICCAI society book series. London: Academic press, 2020.\n[3] W. Zhao, Technology-Enabled Motion Sensing and Activity Tracking for Rehabilitation. Institution of Engineering and Technology, 2022. doi: 10.1049/PBHE037E.\n[4] S. K. Vasudevan, A. Baskar, M. Rajappa, y T. S. Murugesh, Digital Image Processing, 1.ª ed. Boca Raton: Chapman and Hall/CRC, 2023. doi: 10.1201/9781003217428.\n[5] J. Valente, J. António, C. Mora, y S. Jardim, «Developments in Image Processing Using Deep Learning and Reinforcement Learning», J. Imaging, vol. 9, n.º 10, p. 207, sep. 2023, doi: 10.3390/jimaging9100207.\n[6] T. T. Teoh, Convolutional Neural Networks for Medical Applications. en SpringerBriefs in Computer Science. Singapore: Springer Nature Singapore, 2023. doi: 10.1007/978-981-19-8814-1.\n[7] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[8] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[9] R. Splinter y K. Najarian, «Biomedical Signal and Image Processing, Second Edition».\n[10] P. Singhal, A. Verma, P. K. Srivastava, V. Ranga, y R. Kumar, Image Processing and Intelligent Computing Systems, 1.ª ed. Boca Raton: CRC Press, 2022. doi: 10.1201/9781003267782.\n[11] H. Singh, Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python. Berkeley, CA: Apress, 2019. doi: 10.1007/978-1-4842-4149-3.\n[12] J. L. Semmlow y B. Griffel, Biosignal and medical image processing, Third edition. Boca Raton: CRC Press, Taylor & Francis Group, CRC Press is an imprint of the Taylor & Francis Group, an Informa business, 2014.\n[13] S. Saxena y S. Paul, Eds., High-performance medical image processing, First edition. Palm Bay, FL, USA, Burlington, ON, Canada: Apple Academic Press ; CRC Press, 2022.\n[14] R. Raut, «Intelligent Systems for Rehabilitation Engineering».\n[15] R. M. Rangayyan, Biomedical signal analysis: a case-study approach. en IEEE Press series in biomedical engineering. New York, NY: Wiley-Interscience [u.a.], 2002.\n[16] R. M. Rangayyan, «Biomedical Signal Analysis».\n[17] K. Rabie, C. Karthik, S. Chowdhury, y P. K. Dutta, Eds., Deep learning in medical image processing and analysis. London, United Kingdom: Institution of Engineering and Technology, 2023.\n[18] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[19] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[20] L. Panigrahi, S. Biswal, A. K. Bhoi, A. Kalam, y P. Barsocchi, Eds., Machine Learning and AI Techniques in Interactive Medical Image Analysis: en Advances in Medical Technologies and Clinical Practice. IGI Global, 2022. doi: 10.4018/978-1-6684-4671-3.\n[21] G. R. Naik y W. P. D. Santos, Biomedical Signal Processing: A Modern Approach, 1.ª ed. Boca Raton: CRC Press, 2023. doi: 10.1201/9781003201137.\n[22] M. Morioka, «Artificial Intelligence, Robots, and Philosophy».\n[23] L. N. McKinnis, «Fundamentals of Musculoskeletal Imaging, Fifth Edition».\n[24] T. Malone, C. Hazle, y M. L. Grey, Imaging in rehabilitation. New York: McGraw-Hill Medical, 2008.\n[25] X. Liu et al., «Advances in Deep Learning-Based Medical Image Analysis», Health Data Sci, vol. 2021, p. 8786793, ene. 2021, doi: 10.34133/2021/8786793.\n[26] C.-P. Lim, A. Vaidya, Y.-W. Chen, T. Jain, y L. C. Jain, Eds., Artificial Intelligence and Machine Learning for Healthcare: Vol. 1: Image and Data Analytics, vol. 228. en Intelligent Systems Reference Library, vol. 228. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-11154-9.\n[27] A. Kulkarni, A. Shivananda, y N. R. Sharma, Computer Vision Projects with PyTorch: Design and Develop Production-Grade Models. Berkeley, CA: Apress, 2022. doi: 10.1007/978-1-4842-8273-1.\n[28] F. A. Gonzalez y E. Romero, Eds., Biomedical Image Analysis and Machine Learning Technologies: Applications and Techniques. en Advances in Bioinformatics and Biomedical Engineering. IGI Global, 2010. doi: 10.4018/978-1-60566-956-4.\n[29] T. M. Deserno, Ed., Biomedical Image Processing. en Biological and Medical Physics, Biomedical Engineering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. doi: 10.1007/978-3-642-15816-2.\n[30] D. Cudihins, Hands-on computer vision with Julia: build complex applications with advanced Julia packages for image processing, neural networks, and artificial intelligence. Birmingham, UK: Packt Publishing, 2018.\n[31] M. Charbit, Digital signal processing with Python programming. London, UK : Hoboken, NJ: ISTE ; Wiley, 2017.\n[32] M. Chappell, Principles of Medical Imaging for Engineers: From Signals to Images. Cham: Springer International Publishing, 2019. doi: 10.1007/978-3-030-30511-6.\n[33] L. Cai, J. Gao, y D. Zhao, «A review of the application of deep learning in medical image classification and segmentation», Ann Transl Med, vol. 8, n.º 11, pp. 713-713, jun. 2020, doi: 10.21037/atm.2020.02.44.\n[34] J. D. Bronzino, Ed., The biomedical engineering handbook, 3rd ed. en The electrical engineering handbook series. Boca Raton: CRC/Taylor & Francis, 2006.\n[35] J. D. Gibson, Fourier Transforms, Filtering, Probability and Random Processes: Introduction to Communication Systems. en Synthesis Lectures on Communications. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-19580-8.\n[36] G. R. Grimmett y D. R. Stirzaker, Probability and random processes fourth edition, 4.ª ed. NEW YORK: OXFORD UNIVERSITY PRESS, 2020.\n[37] Probability and Random Processes With Applications to Signal Processing and Communications. San Diego, CA, USA: Elsevier Science & Technology Books, 2012."
+  },
+  {
+    "objectID": "pres/PSIM001.html#como-estamos",
+    "href": "pres/PSIM001.html#como-estamos",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Como estamos?",
+    "text": "Como estamos?\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM002.html",
+    "href": "pres/PSIM002.html",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nProcesamiento de Imágenes, Dispositivos para el análisis de movimiento humano, ciencia de los datos, IA.\n\n\n\n\nProfesor del Centro de Estudios en Biomédica y Biotecnogía\nProfesor en la línea de Procesmiento de Señales e Imágenes\n\n\n\npablo.caicedo@escuelaing.edu.co\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProbabilidad y Estadística\nElectrocardiografía\nElectroencefalografía\nElectromiografía\nProcesamiento de Imágenes\n\n\n\n\n\n\n\n\nClases magistrales\nDesarrollo de ejercicios en clase\nEvaluaciones parciales y una evaluación final\nPrácticas de laboratorio, donde se utilizarán herramientas computacionales y se aplicarán conocimientos y destrezas adquiridas en otros cursos\nLecturas de la temática a tratar, previas a las clases magistrales\nLecturas de artículos científicos de interés para el área de procesamiento de señales e imágenes\nDesarrollo de talleres fuera de la clase\nProyecto práctico de fin de curso\n\n\n\n\n\n\n\nExamen parcial 1 (15%)\nExamen parcial 2 (15%)\nExamen final (20%)\nLaboratorios (16%)\nProyecto Final (15%)\nTalleres y Quices (14%)\nPresentaciones (5%)\nBonos (Sin porcentaje definido)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrimer tercio (30%)\nSegundo tercio (30%)\nTercer tercio (40%)\n\n\n\n\nTalleres y Quices (7%)\nTalleres y Quices (7%)\nPresentación (5%)\n\n\nLaboratorios (8%)\nLaboratorios (8%)\nProyecto final (15%)\n\n\nExamen Parcial 1 (15%)\nExamen Parcial 2 (15%)\nExamen final (20%)\n\n\n\n\n\n\n\n\n\n\nMartes y Jueves\n11:30 - 13:00\nSalón F112\n\n\n\nLunes 13:00 - 14:30\nI1-304\n\n\n\n\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell\n\n\n\n\n\n\n[1] «Medical Image Analysis and Informatics».\n[2] S. K. Zhou, D. Rueckert, y G. Fichtinger, Handbook of medical image computing and computer assisted intervention. en The Elsevier and MICCAI society book series. London: Academic press, 2020.\n[3] W. Zhao, Technology-Enabled Motion Sensing and Activity Tracking for Rehabilitation. Institution of Engineering and Technology, 2022. doi: 10.1049/PBHE037E.\n[4] S. K. Vasudevan, A. Baskar, M. Rajappa, y T. S. Murugesh, Digital Image Processing, 1.ª ed. Boca Raton: Chapman and Hall/CRC, 2023. doi: 10.1201/9781003217428.\n[5] J. Valente, J. António, C. Mora, y S. Jardim, «Developments in Image Processing Using Deep Learning and Reinforcement Learning», J. Imaging, vol. 9, n.º 10, p. 207, sep. 2023, doi: 10.3390/jimaging9100207.\n[6] T. T. Teoh, Convolutional Neural Networks for Medical Applications. en SpringerBriefs in Computer Science. Singapore: Springer Nature Singapore, 2023. doi: 10.1007/978-981-19-8814-1.\n[7] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[8] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[9] R. Splinter y K. Najarian, «Biomedical Signal and Image Processing, Second Edition».\n[10] P. Singhal, A. Verma, P. K. Srivastava, V. Ranga, y R. Kumar, Image Processing and Intelligent Computing Systems, 1.ª ed. Boca Raton: CRC Press, 2022. doi: 10.1201/9781003267782.\n[11] H. Singh, Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python. Berkeley, CA: Apress, 2019. doi: 10.1007/978-1-4842-4149-3.\n[12] J. L. Semmlow y B. Griffel, Biosignal and medical image processing, Third edition. Boca Raton: CRC Press, Taylor & Francis Group, CRC Press is an imprint of the Taylor & Francis Group, an Informa business, 2014.\n[13] S. Saxena y S. Paul, Eds., High-performance medical image processing, First edition. Palm Bay, FL, USA, Burlington, ON, Canada: Apple Academic Press ; CRC Press, 2022.\n[14] R. Raut, «Intelligent Systems for Rehabilitation Engineering».\n[15] R. M. Rangayyan, Biomedical signal analysis: a case-study approach. en IEEE Press series in biomedical engineering. New York, NY: Wiley-Interscience [u.a.], 2002.\n[16] R. M. Rangayyan, «Biomedical Signal Analysis».\n[17] K. Rabie, C. Karthik, S. Chowdhury, y P. K. Dutta, Eds., Deep learning in medical image processing and analysis. London, United Kingdom: Institution of Engineering and Technology, 2023.\n[18] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[19] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[20] L. Panigrahi, S. Biswal, A. K. Bhoi, A. Kalam, y P. Barsocchi, Eds., Machine Learning and AI Techniques in Interactive Medical Image Analysis: en Advances in Medical Technologies and Clinical Practice. IGI Global, 2022. doi: 10.4018/978-1-6684-4671-3.\n[21] G. R. Naik y W. P. D. Santos, Biomedical Signal Processing: A Modern Approach, 1.ª ed. Boca Raton: CRC Press, 2023. doi: 10.1201/9781003201137.\n[22] M. Morioka, «Artificial Intelligence, Robots, and Philosophy».\n[23] L. N. McKinnis, «Fundamentals of Musculoskeletal Imaging, Fifth Edition».\n[24] T. Malone, C. Hazle, y M. L. Grey, Imaging in rehabilitation. New York: McGraw-Hill Medical, 2008.\n[25] X. Liu et al., «Advances in Deep Learning-Based Medical Image Analysis», Health Data Sci, vol. 2021, p. 8786793, ene. 2021, doi: 10.34133/2021/8786793.\n[26] C.-P. Lim, A. Vaidya, Y.-W. Chen, T. Jain, y L. C. Jain, Eds., Artificial Intelligence and Machine Learning for Healthcare: Vol. 1: Image and Data Analytics, vol. 228. en Intelligent Systems Reference Library, vol. 228. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-11154-9.\n[27] A. Kulkarni, A. Shivananda, y N. R. Sharma, Computer Vision Projects with PyTorch: Design and Develop Production-Grade Models. Berkeley, CA: Apress, 2022. doi: 10.1007/978-1-4842-8273-1.\n[28] F. A. Gonzalez y E. Romero, Eds., Biomedical Image Analysis and Machine Learning Technologies: Applications and Techniques. en Advances in Bioinformatics and Biomedical Engineering. IGI Global, 2010. doi: 10.4018/978-1-60566-956-4.\n[29] T. M. Deserno, Ed., Biomedical Image Processing. en Biological and Medical Physics, Biomedical Engineering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. doi: 10.1007/978-3-642-15816-2.\n[30] D. Cudihins, Hands-on computer vision with Julia: build complex applications with advanced Julia packages for image processing, neural networks, and artificial intelligence. Birmingham, UK: Packt Publishing, 2018.\n[31] M. Charbit, Digital signal processing with Python programming. London, UK : Hoboken, NJ: ISTE ; Wiley, 2017.\n[32] M. Chappell, Principles of Medical Imaging for Engineers: From Signals to Images. Cham: Springer International Publishing, 2019. doi: 10.1007/978-3-030-30511-6.\n[33] L. Cai, J. Gao, y D. Zhao, «A review of the application of deep learning in medical image classification and segmentation», Ann Transl Med, vol. 8, n.º 11, pp. 713-713, jun. 2020, doi: 10.21037/atm.2020.02.44.\n[34] J. D. Bronzino, Ed., The biomedical engineering handbook, 3rd ed. en The electrical engineering handbook series. Boca Raton: CRC/Taylor & Francis, 2006.\n[35] J. D. Gibson, Fourier Transforms, Filtering, Probability and Random Processes: Introduction to Communication Systems. en Synthesis Lectures on Communications. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-19580-8.\n[36] G. R. Grimmett y D. R. Stirzaker, Probability and random processes fourth edition, 4.ª ed. NEW YORK: OXFORD UNIVERSITY PRESS, 2020.\n[37] Probability and Random Processes With Applications to Signal Processing and Communications. San Diego, CA, USA: Elsevier Science & Technology Books, 2012.\n\n\n\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?"
+  },
+  {
+    "objectID": "pres/PSIM002.html#el-profesor",
+    "href": "pres/PSIM002.html#el-profesor",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "El Profesor",
+    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nProcesamiento de Imágenes, Dispositivos para el análisis de movimiento humano, ciencia de los datos, IA.\n\nDesempeño\nProfesor del Centro de Estudios en Biomédica y Biotecnogía\nProfesor en la línea de Procesmiento de Señales e Imágenes\nContacto:\npablo.caicedo@escuelaing.edu.co"
+  },
+  {
+    "objectID": "pres/PSIM002.html#contenido-del-curso",
+    "href": "pres/PSIM002.html#contenido-del-curso",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Contenido del curso",
+    "text": "Contenido del curso\n\n\n\n\n\n\nProbabilidad y Estadística\nElectrocardiografía\nElectroencefalografía\nElectromiografía\nProcesamiento de Imágenes"
+  },
+  {
+    "objectID": "pres/PSIM002.html#estrategías-de-aprendizaje",
+    "href": "pres/PSIM002.html#estrategías-de-aprendizaje",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Estrategías de Aprendizaje",
+    "text": "Estrategías de Aprendizaje\n\nClases magistrales\nDesarrollo de ejercicios en clase\nEvaluaciones parciales y una evaluación final\nPrácticas de laboratorio, donde se utilizarán herramientas computacionales y se aplicarán conocimientos y destrezas adquiridas en otros cursos\nLecturas de la temática a tratar, previas a las clases magistrales\nLecturas de artículos científicos de interés para el área de procesamiento de señales e imágenes\nDesarrollo de talleres fuera de la clase\nProyecto práctico de fin de curso"
+  },
+  {
+    "objectID": "pres/PSIM002.html#evaluación",
+    "href": "pres/PSIM002.html#evaluación",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nExamen parcial 1 (15%)\nExamen parcial 2 (15%)\nExamen final (20%)\nLaboratorios (16%)\nProyecto Final (15%)\nTalleres y Quices (14%)\nPresentaciones (5%)\nBonos (Sin porcentaje definido)"
+  },
+  {
+    "objectID": "pres/PSIM002.html#evaluación-1",
+    "href": "pres/PSIM002.html#evaluación-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\n\n\n\n\n\nPrimer tercio (30%)\nSegundo tercio (30%)\nTercer tercio (40%)\n\n\n\n\nTalleres y Quices (7%)\nTalleres y Quices (7%)\nPresentación (5%)\n\n\nLaboratorios (8%)\nLaboratorios (8%)\nProyecto final (15%)\n\n\nExamen Parcial 1 (15%)\nExamen Parcial 2 (15%)\nExamen final (20%)"
+  },
+  {
+    "objectID": "pres/PSIM002.html#recursos",
+    "href": "pres/PSIM002.html#recursos",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Recursos",
+    "text": "Recursos\n\n\nClases\nMartes y Jueves\n11:30 - 13:00\nSalón F112\nLaboratorio\nLunes 13:00 - 14:30\nI1-304\n\nSoftware\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell"
+  },
+  {
+    "objectID": "pres/PSIM002.html#bibliografía",
+    "href": "pres/PSIM002.html#bibliografía",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Bibliografía",
+    "text": "Bibliografía\n[1] «Medical Image Analysis and Informatics».\n[2] S. K. Zhou, D. Rueckert, y G. Fichtinger, Handbook of medical image computing and computer assisted intervention. en The Elsevier and MICCAI society book series. London: Academic press, 2020.\n[3] W. Zhao, Technology-Enabled Motion Sensing and Activity Tracking for Rehabilitation. Institution of Engineering and Technology, 2022. doi: 10.1049/PBHE037E.\n[4] S. K. Vasudevan, A. Baskar, M. Rajappa, y T. S. Murugesh, Digital Image Processing, 1.ª ed. Boca Raton: Chapman and Hall/CRC, 2023. doi: 10.1201/9781003217428.\n[5] J. Valente, J. António, C. Mora, y S. Jardim, «Developments in Image Processing Using Deep Learning and Reinforcement Learning», J. Imaging, vol. 9, n.º 10, p. 207, sep. 2023, doi: 10.3390/jimaging9100207.\n[6] T. T. Teoh, Convolutional Neural Networks for Medical Applications. en SpringerBriefs in Computer Science. Singapore: Springer Nature Singapore, 2023. doi: 10.1007/978-981-19-8814-1.\n[7] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[8] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[9] R. Splinter y K. Najarian, «Biomedical Signal and Image Processing, Second Edition».\n[10] P. Singhal, A. Verma, P. K. Srivastava, V. Ranga, y R. Kumar, Image Processing and Intelligent Computing Systems, 1.ª ed. Boca Raton: CRC Press, 2022. doi: 10.1201/9781003267782.\n[11] H. Singh, Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python. Berkeley, CA: Apress, 2019. doi: 10.1007/978-1-4842-4149-3.\n[12] J. L. Semmlow y B. Griffel, Biosignal and medical image processing, Third edition. Boca Raton: CRC Press, Taylor & Francis Group, CRC Press is an imprint of the Taylor & Francis Group, an Informa business, 2014.\n[13] S. Saxena y S. Paul, Eds., High-performance medical image processing, First edition. Palm Bay, FL, USA, Burlington, ON, Canada: Apple Academic Press ; CRC Press, 2022.\n[14] R. Raut, «Intelligent Systems for Rehabilitation Engineering».\n[15] R. M. Rangayyan, Biomedical signal analysis: a case-study approach. en IEEE Press series in biomedical engineering. New York, NY: Wiley-Interscience [u.a.], 2002.\n[16] R. M. Rangayyan, «Biomedical Signal Analysis».\n[17] K. Rabie, C. Karthik, S. Chowdhury, y P. K. Dutta, Eds., Deep learning in medical image processing and analysis. London, United Kingdom: Institution of Engineering and Technology, 2023.\n[18] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[19] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[20] L. Panigrahi, S. Biswal, A. K. Bhoi, A. Kalam, y P. Barsocchi, Eds., Machine Learning and AI Techniques in Interactive Medical Image Analysis: en Advances in Medical Technologies and Clinical Practice. IGI Global, 2022. doi: 10.4018/978-1-6684-4671-3.\n[21] G. R. Naik y W. P. D. Santos, Biomedical Signal Processing: A Modern Approach, 1.ª ed. Boca Raton: CRC Press, 2023. doi: 10.1201/9781003201137.\n[22] M. Morioka, «Artificial Intelligence, Robots, and Philosophy».\n[23] L. N. McKinnis, «Fundamentals of Musculoskeletal Imaging, Fifth Edition».\n[24] T. Malone, C. Hazle, y M. L. Grey, Imaging in rehabilitation. New York: McGraw-Hill Medical, 2008.\n[25] X. Liu et al., «Advances in Deep Learning-Based Medical Image Analysis», Health Data Sci, vol. 2021, p. 8786793, ene. 2021, doi: 10.34133/2021/8786793.\n[26] C.-P. Lim, A. Vaidya, Y.-W. Chen, T. Jain, y L. C. Jain, Eds., Artificial Intelligence and Machine Learning for Healthcare: Vol. 1: Image and Data Analytics, vol. 228. en Intelligent Systems Reference Library, vol. 228. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-11154-9.\n[27] A. Kulkarni, A. Shivananda, y N. R. Sharma, Computer Vision Projects with PyTorch: Design and Develop Production-Grade Models. Berkeley, CA: Apress, 2022. doi: 10.1007/978-1-4842-8273-1.\n[28] F. A. Gonzalez y E. Romero, Eds., Biomedical Image Analysis and Machine Learning Technologies: Applications and Techniques. en Advances in Bioinformatics and Biomedical Engineering. IGI Global, 2010. doi: 10.4018/978-1-60566-956-4.\n[29] T. M. Deserno, Ed., Biomedical Image Processing. en Biological and Medical Physics, Biomedical Engineering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. doi: 10.1007/978-3-642-15816-2.\n[30] D. Cudihins, Hands-on computer vision with Julia: build complex applications with advanced Julia packages for image processing, neural networks, and artificial intelligence. Birmingham, UK: Packt Publishing, 2018.\n[31] M. Charbit, Digital signal processing with Python programming. London, UK : Hoboken, NJ: ISTE ; Wiley, 2017.\n[32] M. Chappell, Principles of Medical Imaging for Engineers: From Signals to Images. Cham: Springer International Publishing, 2019. doi: 10.1007/978-3-030-30511-6.\n[33] L. Cai, J. Gao, y D. Zhao, «A review of the application of deep learning in medical image classification and segmentation», Ann Transl Med, vol. 8, n.º 11, pp. 713-713, jun. 2020, doi: 10.21037/atm.2020.02.44.\n[34] J. D. Bronzino, Ed., The biomedical engineering handbook, 3rd ed. en The electrical engineering handbook series. Boca Raton: CRC/Taylor & Francis, 2006.\n[35] J. D. Gibson, Fourier Transforms, Filtering, Probability and Random Processes: Introduction to Communication Systems. en Synthesis Lectures on Communications. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-19580-8.\n[36] G. R. Grimmett y D. R. Stirzaker, Probability and random processes fourth edition, 4.ª ed. NEW YORK: OXFORD UNIVERSITY PRESS, 2020.\n[37] Probability and Random Processes With Applications to Signal Processing and Communications. San Diego, CA, USA: Elsevier Science & Technology Books, 2012."
+  },
+  {
+    "objectID": "pres/PSIM002.html#como-estamos",
+    "href": "pres/PSIM002.html#como-estamos",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Como estamos?",
+    "text": "Como estamos?\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM002.html#eventos-espacios-muestrales-experimentos",
+    "href": "pres/PSIM002.html#eventos-espacios-muestrales-experimentos",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Eventos, Espacios muestrales, Experimentos",
+    "text": "Eventos, Espacios muestrales, Experimentos\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM002.html#eventos-espacios-muestrales-experimentos-resultados",
+    "href": "pres/PSIM002.html#eventos-espacios-muestrales-experimentos-resultados",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Eventos, Espacios muestrales, Experimentos, Resultados",
+    "text": "Eventos, Espacios muestrales, Experimentos, Resultados\n\n\n\n\n\n\nDefinition\n\n\nAn experiment is a physical procedure that produces some kind of result.\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nAn event is a set of possible results\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM002.html#events-sample-space-experiments",
+    "href": "pres/PSIM002.html#events-sample-space-experiments",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Events, Sample Space, Experiments",
+    "text": "Events, Sample Space, Experiments\n\n\n\n\n\n\nDefinition\n\n\nAn experiment is a physical procedure that produces some kind of result.\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nAn event is a set of experiment’s possible results.\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nA sample space is the set of ALL possibles results of an experiment."
+  },
+  {
+    "objectID": "pres/PSIM002.html#events-sample-space-experiments-1",
+    "href": "pres/PSIM002.html#events-sample-space-experiments-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Events, Sample Space, Experiments",
+    "text": "Events, Sample Space, Experiments\n\nGraphCodeSample SpaceResultDataset\n\n\n\n\n\n\n\n\n\n\ndata = np.genfromtxt(path_ecg+\"/mitbih_train.csv\", delimiter=\",\")\necg1 = data[1, :-1]\ntime = np.array(range(0,len(ecg1)))/125\nfig = plt.figure()\nplt.plot(time, ecg1)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Normalized ECG\")\n\n\n\n\nprint(\"Maximun Value: \"+ str(ecg1.max()))\n\nMaximun Value: 1.0\n\nprint(\"Minimun Value: \"+ str(ecg1.min()))\n\nMinimun Value: 0.0\n\n\n\n\n\nprint(ecg1[np.random.choice(ecg1.shape[0], 1, replace=False)])\n\n[0.]\n\n\n\n\nName: ECG Heartbeat Categorization Dataset.\nURL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat?resource=download"
+  },
+  {
+    "objectID": "pres/PSIM002.html#probability-axioms",
+    "href": "pres/PSIM002.html#probability-axioms",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Probability Axioms",
+    "text": "Probability Axioms\nFor the given events A and B that are in a sample space S:\n\n\n\n\n\n\nAxioms\n\n\n\n\\(0 \\leq P_r \\left(A\\right) \\leq 1\\)\n\\(P_r\\left(S\\right) = 1\\)\nIf \\(A \\cap B = \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right)\\)\nIf \\(A \\cap B \\neq \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right) - P_r\\left(A \\cap B \\right)\\)\n\\(P_r\\left(\\bar{A}\\right) = 1-P_r \\left(A\\right)\\)\nIf \\(A\\subset B\\) then \\(P_r \\left(A\\right)\\leq P_r \\left(B\\right)\\)\n\\(P_r \\left(A|B\\right)=\\frac{P_r \\left(A\\cap B\\right)}{P_r \\left(B\\right)}\\)"
+  },
+  {
+    "objectID": "pres/PSIM002.html#random-variable",
+    "href": "pres/PSIM002.html#random-variable",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Random Variable",
+    "text": "Random Variable\n\n\n\n\n\n\nDefinition\n\n\nA random variable is a real valued function of the elements of a sample space, S . Given an experiment, E , with sample space, S, the random variable maps each possible outcome of E.\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nThe probability mass function (PMF), \\(P_X\\left(x\\right)\\), of a random variable, X, is a function that assigns a probability to each possible value of the random variable, X."
+  },
+  {
+    "objectID": "pres/PSIM002.html#random-variable-1",
+    "href": "pres/PSIM002.html#random-variable-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Random Variable",
+    "text": "Random Variable\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

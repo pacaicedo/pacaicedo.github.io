@@ -21,6 +21,8 @@
   padding: 20px;
   margin-bottom: 10px;
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .green-box {
@@ -29,6 +31,8 @@
   padding: 20px;
   margin-bottom: 10px;
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .red-box {
@@ -37,6 +41,8 @@
   padding: 20px;
   margin-bottom: 10px;
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .orange-box {
@@ -45,6 +51,8 @@
   padding: 20px;
   margin-bottom: 10px;
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .info-box {
@@ -54,31 +62,45 @@
   border-radius: 10px;
   background: #f5f5f5 5px center/3em no-repeat;
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .caution {
   background-image: url("Images/caution.png");
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .warning {
   background-image: url("Images/warning.png");
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .tip {
   background-image: url("Images/tip.png");
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .note {
   background-image: url("Images/note.png");
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .important {
   background-image: url("Images/important.png");
   box-shadow: 0 0 5px #000;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 

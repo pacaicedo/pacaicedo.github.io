@@ -19,7 +19,10 @@ El curso está dividido en 3 partes:
 
 # Material del Curso
 
-- [Presentación](../pres/PSIM.qmd)
+## Presentaciones
+
+- [Presentación del curso](../pres/PSIM001.qmd)
+- [ParteI: Probabilidad y Estadística](../pres/PSIM002.qmd)
 
 # Horario de atención
 

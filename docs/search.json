@@ -1502,6 +1502,48 @@
     "href": "pres/PSIM002.html#random-variable-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variable",
-    "text": "Random Variable\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Random Variable"
+  },
+  {
+    "objectID": "pres/PSIM002.html#random-variable-2",
+    "href": "pres/PSIM002.html#random-variable-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Random Variable",
+    "text": "Random Variable\nConditions\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sum_{\\chi \\in X}P_X\\left(\\chi \\right) = 1\\]\n\n\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\int_{-\\infty}^{\\infty}P_X\\left(\\chi \\right)d\\chi = 1\\]\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM002.html#random-variables",
+    "href": "pres/PSIM002.html#random-variables",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Random Variables",
+    "text": "Random Variables\nConditions\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sum_{\\chi \\in X}P_X\\left(\\chi \\right) = 1\\]\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\int_{-\\infty}^{\\infty}P_X\\left(\\chi \\right)d\\chi = 1\\]"
+  },
+  {
+    "objectID": "pres/PSIM002.html#random-variables-1",
+    "href": "pres/PSIM002.html#random-variables-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Random Variables",
+    "text": "Random Variables\nExpected Values\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\mu = \\sum_{\\chi \\in X}\\chi P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\mu=\\int_{-\\infty}^{\\infty}\\chi P_X\\left(\\chi \\right)d\\chi = 1\\]"
+  },
+  {
+    "objectID": "pres/PSIM002.html#random-variables-2",
+    "href": "pres/PSIM002.html#random-variables-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Random Variables",
+    "text": "Random Variables\nVariance\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sigma^2 = \\sum_{\\chi \\in X}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\sigma^2 = \\int_{-\\infty}^{\\infty}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)d\\chi = 1\\]"
+  },
+  {
+    "objectID": "pres/PSIM002.html#random-variables-3",
+    "href": "pres/PSIM002.html#random-variables-3",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Random Variables",
+    "text": "Random Variables\n\nGraph\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM002.html#pdf-estimation",
+    "href": "pres/PSIM002.html#pdf-estimation",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "PDF Estimation",
+    "text": "PDF Estimation\n\nGraphCodeExp. ValueVariance\n\n\n\n\n\n\n\n\n\n\ncounts01, bin_edges01 = np.histogram(ecg1, bins=10, density=True)\ncounts02, bin_edges02 = np.histogram(ecg1, bins=50, density=True)\ncounts03, bin_edges03 = np.histogram(ecg1, bins=100, density=True)\nfig01=plt.figure()\nplt.plot(bin_edges01[1:], counts01/sum(counts01), label=\"Estimation with 10 bins\")\nplt.plot(bin_edges02[1:], counts02/sum(counts02), label=\"Estimation with 50 bins\")\nplt.plot(bin_edges03[1:], counts03/sum(counts03), label=\"Estimation with 100 bins\")\nplt.legend()\nplt.grid()\nplt.xlabel(\"Normalised ECG Value\")\nplt.ylabel(\"Estimated PDF Value\")\n\n\n\n\n\n0.09001020772910533\n\n\n\n\n\n\n0.02551116143316462\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

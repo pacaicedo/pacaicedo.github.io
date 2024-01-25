@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-proyectos .list');
+    const listingTargetEl = window.document.querySelector('#listing-clases .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-proyectos'] = new List('listing-proyectos', options);
+    window['quarto-listings']['listing-clases'] = new List('listing-clases', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-clases .list');
+    const listingTargetEl = window.document.querySelector('#listing-proyectos .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-clases'] = new List('listing-clases', options);
+    window['quarto-listings']['listing-proyectos'] = new List('listing-proyectos', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -198,9 +198,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#proyectos" id="toc-proyectos" class="nav-link active" data-scroll-target="#proyectos">Proyectos</a></li>
+  <li><a href="#clases" id="toc-clases" class="nav-link active" data-scroll-target="#clases">Clases</a></li>
   <li><a href="#tutoriales" id="toc-tutoriales" class="nav-link" data-scroll-target="#tutoriales">Tutoriales</a></li>
-  <li><a href="#clases" id="toc-clases" class="nav-link" data-scroll-target="#clases">Clases</a></li>
+  <li><a href="#proyectos" id="toc-proyectos" class="nav-link" data-scroll-target="#proyectos">Proyectos</a></li>
   </ul>
 </nav>
     </div>
@@ -224,136 +224,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="proyectos" class="level2">
-<h2 class="anchored" data-anchor-id="proyectos">Proyectos</h2>
-<div id="listing-proyectos" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Projects/Project_LearningAnalytics_SaberPro.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/saberpro001.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Análisis de pruebas SABER PRO
-</h5>
-<div class="card-text listing-description">
-Análisis de resultados de pruebas Saber PRO en Colombia.
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Projects/Project_LearningAnalytics_ObsCiRe.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/popayan001.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Apoyo al Observatorio de Ciudad y Región
-</h5>
-<div class="card-text listing-description">
-Generación de resultados gráficos para el Observatorio de Ciudad y Región
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Projects/Project_LeaningAnalytics_EvalDoc01.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/profesor001.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Evaluación docente
-</h5>
-<div class="card-text listing-description">
-Proyecto para análisis de evaluación docente en la Corporación Universitaria Autónoma del Cauca
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div>
-</section>
-<section id="tutoriales" class="level2">
-<h2 class="anchored" data-anchor-id="tutoriales">Tutoriales</h2>
-<div id="listing-tutoriales" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1692626564239" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Tutorials/ExpansionTaylor.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/taylor_expansion.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Computación de seno y coseno usando expansión de Taylor
-</h5>
-<div class="card-text listing-description">
-Un ejemplo de clase del cálculo de una serie de Taylor sin uso de librerías especiales de Python – En construcción –
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1692626564240" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="11">
-<a href="./Tutorials/TutorialPython.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/python_programming.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Tutorial de Python
-</h5>
-<div class="card-text listing-description">
-Breve Tutorial de Python
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div>
-</section>
 <section id="clases" class="level2">
 <h2 class="anchored" data-anchor-id="clases">Clases</h2>
 <div id="listing-clases" class="quarto-listing quarto-listing-container-grid">
@@ -440,6 +310,136 @@ Sitio de la asignatura Procesado de Señales e Imágenes Médicas en la Escuela 
 <div class="card-attribution card-text-small end">
 <div class="listing-date">
 22 ene 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No hay resultados
+</div>
+</div>
+</section>
+<section id="tutoriales" class="level2">
+<h2 class="anchored" data-anchor-id="tutoriales">Tutoriales</h2>
+<div id="listing-tutoriales" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1692626564239" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
+<a href="./Tutorials/ExpansionTaylor.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Img/taylor_expansion.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Computación de seno y coseno usando expansión de Taylor
+</h5>
+<div class="card-text listing-description">
+Un ejemplo de clase del cálculo de una serie de Taylor sin uso de librerías especiales de Python – En construcción –
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+6 feb 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1692626564240" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="11">
+<a href="./Tutorials/TutorialPython.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Img/python_programming.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Tutorial de Python
+</h5>
+<div class="card-text listing-description">
+Breve Tutorial de Python
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+6 feb 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No hay resultados
+</div>
+</div>
+</section>
+<section id="proyectos" class="level2">
+<h2 class="anchored" data-anchor-id="proyectos">Proyectos</h2>
+<div id="listing-proyectos" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
+<a href="./Projects/Project_LearningAnalytics_SaberPro.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Img/saberpro001.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Análisis de pruebas SABER PRO
+</h5>
+<div class="card-text listing-description">
+Análisis de resultados de pruebas Saber PRO en Colombia.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+6 feb 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
+<a href="./Projects/Project_LearningAnalytics_ObsCiRe.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Img/popayan001.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Apoyo al Observatorio de Ciudad y Región
+</h5>
+<div class="card-text listing-description">
+Generación de resultados gráficos para el Observatorio de Ciudad y Región
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+6 feb 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
+<a href="./Projects/Project_LeaningAnalytics_EvalDoc01.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Img/profesor001.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Evaluación docente
+</h5>
+<div class="card-text listing-description">
+Proyecto para análisis de evaluación docente en la Corporación Universitaria Autónoma del Cauca
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+6 feb 2023
 </div>
 </div>
 </div>

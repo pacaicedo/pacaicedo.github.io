@@ -2,32 +2,33 @@
 title: "La Guarida de los Datos"
 lang: es
 listing:
-  - id: proyectos
-    contents: "Projects/*.qmd"
+  - id: clases
+    contents: "Class/*.qmd"
     fields: [image, date, title, description]
     type: grid
   - id: tutoriales
     contents: "Tutorials/*.qmd"
     fields: [image, date, title, description]
     type: grid
-  - id: clases
-    contents: "Class/*.qmd"
+  - id: proyectos
+    contents: "Projects/*.qmd"
     fields: [image, date, title, description]
     type: grid
 ---
 
+## Clases
 
-## Proyectos
-
-:::{#proyectos}
+:::{#clases}
 :::
+
 
 ## Tutoriales
 
 :::{#tutoriales}
 :::
 
-## Clases
 
-:::{#clases}
+## Proyectos
+
+:::{#proyectos}
 :::

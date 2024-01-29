@@ -1,0 +1,61 @@
+---
+title: "Laboratorio 01: Probabilidad y Estadística"
+description: "Primer Laboratorio de la materia probabilidad y estadística"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo R."
+date: "2024-01-29"
+date-modified: "2024-01-29"
+---
+
+# Introducción
+
+La estadística y la probabilidad, y en particular la estimación de las funciones de densidad de probabilidad, son fundamentales en el procesamiento de señales e imágenes, ya que permiten modelar la incertidumbre, evaluar la calidad de las predicciones y tomar decisiones informadas.
+
+# Objetivo
+
+Generar al estudiante la competencia de creación de código, utilizando formulaciones matemáticas como guía.
+
+# Rúbrica de evaluación
+
+|              **Indicador**             |                                  **Insuficiente** (0 ptos)                                  |                                             **Suficiente** (5 ptos)                                            |                                             **Excelente** (10 ptos)                                            |
+|:--------------------------------------:|:-------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|
+|                 Dataset                |                              No encuentra el dataset solicitado                             |                    Encuentra el dataset pero no reconoce el origen fisiológico de la señal                     |                        Encuentra el dataset y reconoce el origen fisiológico de la señal                       |
+|   Manejo básico de conjunto de datos   |          No reconoce ninguna de las características básicas de un conjunto de datos         |                     Reconoce algunas de las características básicas de un conjunto de datos                    |                      Reconoce ninguna las características básicas de un conjunto de datos                      |
+|          Trabajo entre equipos         |                           No comparte el trabajo entre los equipos                          |                                           ---------------------------                                          |                                Comparte su trabajo con el resto de los equipos.                                |
+|         Manejo básico de python        |                   No reconoce ninguna de las estructuras básicas de python                  |                                           ---------------------------                                          |                           Reconoce las estructuras básicas de programación en python                           |
+| Informes y comunicación de información | El informe no tiene coherencia, sin un buen manejo del español y presenta ideas incompletas | El informe presenta coherencia y un buen manejo del españo las ideas están completas pero supera las 6 páginas | El informe presenta coherencia y un buen manejo del españo las ideas están completas sin superar las 6 páginas |
+
+# Preguntas orientadoras
+
+1. Encuentre un dataset de señales de origen fisiológico. Para lo anterior puede utilizar portales tales como [kaggle](https://www.kaggle.com/) o [PhysioNet](https://physionet.org/). Una vez se elija el conjunto de datos publique en el espacio de teams __Espacio de publicación laboratorio 01__, el nombre y la url del conjunto de datos. Dos grupos no pueden tener el mismo dataset, en caso de existir una coincidencia entre dos o más equipos, el primer grupo que publique dentro del espacio, ganará el derecho de utilizar ese dataset, el resto deberán cambiarlo.
+2. Con el conjunto de datos seleccionado, identifique la siguiente información:
+   1. Como se origina la señal?
+   2. Número de muestras.
+   3. Tasa de muestreo.
+   4. Espacio Muestral
+   5. Elija dos señales aleatorias del conjunto de datos. Las señales se llamarán data01 y data02.
+3. Utilizando el siguiente código:
+   ```{python}
+   #| echo: true
+   #| eval: false
+   #| output: false
+   
+   counteos, grupos  = np.histogram(data01, bins=gr, density=den)
+   print(conteos)
+   print(grupos)
+   
+   ```
+   
+   Responda cual es la salida del código para los siguientes casos
+   1. gr=10, den = False
+   2. gr=100, den = False
+   3. gr=10, den = True
+   4. gr=100, den = True
+   5. Concluya sobre la naturaleza del código. ¿Que está sucediendo en cada ejecución del código?
+   
+4. Genere un flujo de trabajo para  comparar las dos señales. Sugerencia: utilice correlación y matrices de covarianza.
+5. Utilizando el artículo ["A COMPARATIVE STUDY OF VARIOUS PROBABILITY DENSITY ESTIMATION METHODS FOR DATA ANALYSIS"](../Articulos/PDF_Estimation_Survey.pdf) de Assenza et al. Generar una función que permita la estimación de la función de densidad de probabilidad utilizando alguno de los métodos presentado en el artículo.
+
+::: {.column-margin}
+![](../Img/Escuela_Rosario_logo.png)
+:::

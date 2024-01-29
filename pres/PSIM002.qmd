@@ -244,7 +244,7 @@ $$\mu = \sum_{\chi \in X}\chi P_X\left(\chi \right)$$
 
 ::: {.callout-tip title="Continuous" collapsible="false"}
 
-$$\mu=\int_{-\infty}^{\infty}\chi P_X\left(\chi \right)d\chi = 1$$
+$$\mu=\int_{-\infty}^{\infty}\chi P_X\left(\chi \right)d\chi$$
 
 :::
 
@@ -274,7 +274,7 @@ $$\sigma^2 = \sum_{\chi \in X}\left(\chi - \mu \right)^2 P_X\left(\chi \right)$$
 
 ::: {.callout-tip title="Continuous" collapsible="false"}
 
-$$\sigma^2 = \int_{-\infty}^{\infty}\left(\chi - \mu \right)^2 P_X\left(\chi \right)d\chi = 1$$
+$$\sigma^2 = \int_{-\infty}^{\infty}\left(\chi - \mu \right)^2 P_X\left(\chi \right)d\chi$$
 
 :::
 

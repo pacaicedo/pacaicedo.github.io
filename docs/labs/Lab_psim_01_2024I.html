@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ph.D.&nbsp;Pablo Eduardo Caicedo R.">
+<meta name="description" content="Primer Laboratorio de la materia probabilidad y estadística">
 
-<title>La guarida de los datos - La Guarida de los Datos</title>
+<title>La guarida de los datos - Laboratorio 01: Probabilidad y Estadística</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +22,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./Img/logo04.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Img/logo04.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,96 +98,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-clases .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-clases'] = new List('listing-clases', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-tutoriales .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-tutoriales'] = new List('listing-tutoriales', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-proyectos .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-proyectos'] = new List('listing-proyectos', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -163,8 +110,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Img/logo05.svg" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../Img/logo05.svg" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
@@ -174,11 +121,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Principal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">Acerca</span></a>
   </li>  
 </ul>
@@ -198,263 +145,150 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#clases" id="toc-clases" class="nav-link active" data-scroll-target="#clases">Clases</a></li>
-  <li><a href="#tutoriales" id="toc-tutoriales" class="nav-link" data-scroll-target="#tutoriales">Tutoriales</a></li>
-  <li><a href="#proyectos" id="toc-proyectos" class="nav-link" data-scroll-target="#proyectos">Proyectos</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
+  <li><a href="#rúbrica-de-evaluación" id="toc-rúbrica-de-evaluación" class="nav-link" data-scroll-target="#rúbrica-de-evaluación">Rúbrica de evaluación</a></li>
+  <li><a href="#preguntas-orientadoras" id="toc-preguntas-orientadoras" class="nav-link" data-scroll-target="#preguntas-orientadoras">Preguntas orientadoras</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">La Guarida de los Datos</h1>
+<h1 class="title">Laboratorio 01: Probabilidad y Estadística</h1>
 </div>
 
+<div>
+  <div class="description">
+    Primer Laboratorio de la materia probabilidad y estadística
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ph.D.&nbsp;Pablo Eduardo Caicedo R. </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">29 de enero de 2024</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">29 de enero de 2024</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-<section id="clases" class="level2">
-<h2 class="anchored" data-anchor-id="clases">Clases</h2>
-<div id="listing-clases" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1688187600000" data-listing-file-modified-sort="1690658288896" data-listing-date-modified-sort="1690866000000" data-listing-reading-time-sort="8">
-<a href="./Class/Class_NumericalAnalysis.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/numericalAnalysis.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Análisis Numérico
-</h5>
-<div class="card-text listing-description">
-Sitio de la asignatura análisis numérico de la Uniautonoma del Cauca
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-1 jul 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1691498028020" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="2">
-<a href="./Class/Class_ML.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/machinelearning.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Machine Learning
-</h5>
-<div class="card-text listing-description">
-Sitio de la asignatura Machine Learning de la Uniautonoma del Cauca
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1696425552955" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="3">
-<a href="./Class/Class_Statistics.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/estadistica.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Probabilidad Computacional &amp; Estadística
-</h5>
-<div class="card-text listing-description">
-Sitio de la asignatura Probabilidad computacional y estadística de la Uniautonoma del Cauca
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1705899600000" data-listing-file-modified-sort="1706482061427" data-listing-date-modified-sort="1705899600000" data-listing-reading-time-sort="2">
-<a href="./Class/Class_PSIM.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/PSIM01.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Procesado de Señales e Imágenes Médicas
-</h5>
-<div class="card-text listing-description">
-Sitio de la asignatura Procesado de Señales e Imágenes Médicas en la Escuela Colombiana de Ingeniería
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-22 ene 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div>
+<section id="introducción" class="level1">
+<h1>Introducción</h1>
+<p>La estadística y la probabilidad, y en particular la estimación de las funciones de densidad de probabilidad, son fundamentales en el procesamiento de señales e imágenes, ya que permiten modelar la incertidumbre, evaluar la calidad de las predicciones y tomar decisiones informadas.</p>
 </section>
-<section id="tutoriales" class="level2">
-<h2 class="anchored" data-anchor-id="tutoriales">Tutoriales</h2>
-<div id="listing-tutoriales" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1692626564239" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Tutorials/ExpansionTaylor.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/taylor_expansion.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Computación de seno y coseno usando expansión de Taylor
-</h5>
-<div class="card-text listing-description">
-Un ejemplo de clase del cálculo de una serie de Taylor sin uso de librerías especiales de Python – En construcción –
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1692626564240" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="11">
-<a href="./Tutorials/TutorialPython.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/python_programming.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Tutorial de Python
-</h5>
-<div class="card-text listing-description">
-Breve Tutorial de Python
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div>
+<section id="objetivo" class="level1">
+<h1>Objetivo</h1>
+<p>Generar al estudiante la competencia de creación de código, utilizando formulaciones matemáticas como guía.</p>
 </section>
-<section id="proyectos" class="level2">
-<h2 class="anchored" data-anchor-id="proyectos">Proyectos</h2>
-<div id="listing-proyectos" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Projects/Project_LearningAnalytics_SaberPro.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/saberpro001.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Análisis de pruebas SABER PRO
-</h5>
-<div class="card-text listing-description">
-Análisis de resultados de pruebas Saber PRO en Colombia.
+<section id="rúbrica-de-evaluación" class="level1">
+<h1>Rúbrica de evaluación</h1>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 26%">
+<col style="width: 31%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Indicador</strong></th>
+<th style="text-align: center;"><strong>Insuficiente</strong> (0 ptos)</th>
+<th style="text-align: center;"><strong>Suficiente</strong> (5 ptos)</th>
+<th style="text-align: center;"><strong>Excelente</strong> (10 ptos)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Dataset</td>
+<td style="text-align: center;">No encuentra el dataset solicitado</td>
+<td style="text-align: center;">Encuentra el dataset pero no reconoce el origen fisiológico de la señal</td>
+<td style="text-align: center;">Encuentra el dataset y reconoce el origen fisiológico de la señal</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Manejo básico de conjunto de datos</td>
+<td style="text-align: center;">No reconoce ninguna de las características básicas de un conjunto de datos</td>
+<td style="text-align: center;">Reconoce algunas de las características básicas de un conjunto de datos</td>
+<td style="text-align: center;">Reconoce ninguna las características básicas de un conjunto de datos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Trabajo entre equipos</td>
+<td style="text-align: center;">No comparte el trabajo entre los equipos</td>
+<td style="text-align: center;">—————————</td>
+<td style="text-align: center;">Comparte su trabajo con el resto de los equipos.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Manejo básico de python</td>
+<td style="text-align: center;">No reconoce ninguna de las estructuras básicas de python</td>
+<td style="text-align: center;">—————————</td>
+<td style="text-align: center;">Reconoce las estructuras básicas de programación en python</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Informes y comunicación de información</td>
+<td style="text-align: center;">El informe no tiene coherencia, sin un buen manejo del español y presenta ideas incompletas</td>
+<td style="text-align: center;">El informe presenta coherencia y un buen manejo del españo las ideas están completas pero supera las 6 páginas</td>
+<td style="text-align: center;">El informe presenta coherencia y un buen manejo del españo las ideas están completas sin superar las 6 páginas</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="preguntas-orientadoras" class="level1 page-columns page-full">
+<h1>Preguntas orientadoras</h1>
+<ol type="1">
+<li><p>Encuentre un dataset de señales de origen fisiológico. Para lo anterior puede utilizar portales tales como <a href="https://www.kaggle.com/">kaggle</a> o <a href="https://physionet.org/">PhysioNet</a>. Una vez se elija el conjunto de datos publique en el espacio de teams <strong>Espacio de publicación laboratorio 01</strong>, el nombre y la url del conjunto de datos. Dos grupos no pueden tener el mismo dataset, en caso de existir una coincidencia entre dos o más equipos, el primer grupo que publique dentro del espacio, ganará el derecho de utilizar ese dataset, el resto deberán cambiarlo.</p></li>
+<li><p>Con el conjunto de datos seleccionado, identifique la siguiente información:</p>
+<ol type="1">
+<li>Como se origina la señal?</li>
+<li>Número de muestras.</li>
+<li>Tasa de muestreo.</li>
+<li>Espacio Muestral</li>
+<li>Elija dos señales aleatorias del conjunto de datos. Las señales se llamarán data01 y data02.</li>
+</ol></li>
+<li><p>Utilizando el siguiente código:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>counteos, grupos  <span class="op">=</span> np.histogram(data01, bins<span class="op">=</span>gr, density<span class="op">=</span>den)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conteos)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grupos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Projects/Project_LearningAnalytics_ObsCiRe.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/popayan001.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Apoyo al Observatorio de Ciudad y Región
-</h5>
-<div class="card-text listing-description">
-Generación de resultados gráficos para el Observatorio de Ciudad y Región
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1675659600000" data-listing-file-modified-sort="1688656782284" data-listing-date-modified-sort="1684990800000" data-listing-reading-time-sort="1">
-<a href="./Projects/Project_LeaningAnalytics_EvalDoc01.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Img/profesor001.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Evaluación docente
-</h5>
-<div class="card-text listing-description">
-Proyecto para análisis de evaluación docente en la Corporación Universitaria Autónoma del Cauca
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-6 feb 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div>
+<p>Responda cual es la salida del código para los siguientes casos</p>
+<ol type="1">
+<li>gr=10, den = False</li>
+<li>gr=100, den = False</li>
+<li>gr=10, den = True</li>
+<li>gr=100, den = True</li>
+<li>Concluya sobre la naturaleza del código. ¿Que está sucediendo en cada ejecución del código?</li>
+</ol></li>
+<li><p>Genere un flujo de trabajo para comparar las dos señales. Sugerencia: utilice correlación y matrices de covarianza.</p></li>
+<li><p>Utilizando el artículo <a href="../Articulos/PDF_Estimation_Survey.pdf">“A COMPARATIVE STUDY OF VARIOUS PROBABILITY DENSITY ESTIMATION METHODS FOR DATA ANALYSIS”</a> de Assenza et al.&nbsp;Generar una función que permita la estimación de la función de densidad de probabilidad utilizando alguno de los métodos presentado en el artículo.</p></li>
+</ol>
 
 
 
-</section>
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="../Img/Escuela_Rosario_logo.png" class="img-fluid"></p>
+</div></div></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

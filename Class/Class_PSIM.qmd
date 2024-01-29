@@ -24,6 +24,10 @@ El curso está dividido en 3 partes:
 - [Presentación del curso](../pres/PSIM001.qmd)
 - [ParteI: Probabilidad y Estadística](../pres/PSIM002.qmd)
 
+## Laboratorios
+
+- [Laboratorio 01](../labs/Lab_psim_01_2024I.qmd)
+
 # Horario de atención
 
 Lunes: 15:00 - 17:00

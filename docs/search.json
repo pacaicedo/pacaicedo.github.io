@@ -1545,5 +1545,33 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "PDF Estimation",
     "text": "PDF Estimation\n\nGraphCodeExp. ValueVariance\n\n\n\n\n\n\n\n\n\n\ncounts01, bin_edges01 = np.histogram(ecg1, bins=10, density=True)\ncounts02, bin_edges02 = np.histogram(ecg1, bins=50, density=True)\ncounts03, bin_edges03 = np.histogram(ecg1, bins=100, density=True)\nfig01=plt.figure()\nplt.plot(bin_edges01[1:], counts01/sum(counts01), label=\"Estimation with 10 bins\")\nplt.plot(bin_edges02[1:], counts02/sum(counts02), label=\"Estimation with 50 bins\")\nplt.plot(bin_edges03[1:], counts03/sum(counts03), label=\"Estimation with 100 bins\")\nplt.legend()\nplt.grid()\nplt.xlabel(\"Normalised ECG Value\")\nplt.ylabel(\"Estimated PDF Value\")\n\n\n\n\n\n0.09001020772910533\n\n\n\n\n\n\n0.02551116143316462\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "labs/Lab_psim_01_2024I.html",
+    "href": "labs/Lab_psim_01_2024I.html",
+    "title": "Laboratorio 01: Probabilidad y Estadística",
+    "section": "",
+    "text": "Introducción\nLa estadística y la probabilidad, y en particular la estimación de las funciones de densidad de probabilidad, son fundamentales en el procesamiento de señales e imágenes, ya que permiten modelar la incertidumbre, evaluar la calidad de las predicciones y tomar decisiones informadas.\n\n\nObjetivo\nGenerar al estudiante la competencia de creación de código, utilizando formulaciones matemáticas como guía.\n\n\nRúbrica de evaluación\n\n\n\n\n\n\n\n\n\nIndicador\nInsuficiente (0 ptos)\nSuficiente (5 ptos)\nExcelente (10 ptos)\n\n\n\n\nDataset\nNo encuentra el dataset solicitado\nEncuentra el dataset pero no reconoce el origen fisiológico de la señal\nEncuentra el dataset y reconoce el origen fisiológico de la señal\n\n\nManejo básico de conjunto de datos\nNo reconoce ninguna de las características básicas de un conjunto de datos\nReconoce algunas de las características básicas de un conjunto de datos\nReconoce ninguna las características básicas de un conjunto de datos\n\n\nTrabajo entre equipos\nNo comparte el trabajo entre los equipos\n—————————\nComparte su trabajo con el resto de los equipos.\n\n\nManejo básico de python\nNo reconoce ninguna de las estructuras básicas de python\n—————————\nReconoce las estructuras básicas de programación en python\n\n\nInformes y comunicación de información\nEl informe no tiene coherencia, sin un buen manejo del español y presenta ideas incompletas\nEl informe presenta coherencia y un buen manejo del españo las ideas están completas pero supera las 6 páginas\nEl informe presenta coherencia y un buen manejo del españo las ideas están completas sin superar las 6 páginas\n\n\n\n\n\nPreguntas orientadoras\n\nEncuentre un dataset de señales de origen fisiológico. Para lo anterior puede utilizar portales tales como kaggle o PhysioNet. Una vez se elija el conjunto de datos publique en el espacio de teams Espacio de publicación laboratorio 01, el nombre y la url del conjunto de datos. Dos grupos no pueden tener el mismo dataset, en caso de existir una coincidencia entre dos o más equipos, el primer grupo que publique dentro del espacio, ganará el derecho de utilizar ese dataset, el resto deberán cambiarlo.\nCon el conjunto de datos seleccionado, identifique la siguiente información:\n\nComo se origina la señal?\nNúmero de muestras.\nTasa de muestreo.\nEspacio Muestral\nElija dos señales aleatorias del conjunto de datos. Las señales se llamarán data01 y data02.\n\nUtilizando el siguiente código:\n\ncounteos, grupos  = np.histogram(data01, bins=gr, density=den)\nprint(conteos)\nprint(grupos)\n\nResponda cual es la salida del código para los siguientes casos\n\ngr=10, den = False\ngr=100, den = False\ngr=10, den = True\ngr=100, den = True\nConcluya sobre la naturaleza del código. ¿Que está sucediendo en cada ejecución del código?\n\nGenere un flujo de trabajo para comparar las dos señales. Sugerencia: utilice correlación y matrices de covarianza.\nUtilizando el artículo “A COMPARATIVE STUDY OF VARIOUS PROBABILITY DENSITY ESTIMATION METHODS FOR DATA ANALYSIS” de Assenza et al. Generar una función que permita la estimación de la función de densidad de probabilidad utilizando alguno de los métodos presentado en el artículo."
+  },
+  {
+    "objectID": "labs/Lab_psim_01_2024I.html#presentaciones",
+    "href": "labs/Lab_psim_01_2024I.html#presentaciones",
+    "title": "Laboratorio 01: Probabilidad y Estadística",
+    "section": "Presentaciones",
+    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística"
+  },
+  {
+    "objectID": "labs/Lab_psim_01_2024I.html#laboratorios",
+    "href": "labs/Lab_psim_01_2024I.html#laboratorios",
+    "title": "Laboratorio 01: Probabilidad y Estadística",
+    "section": "Laboratorios",
+    "text": "Laboratorios\n\nLaboratorio 01"
+  },
+  {
+    "objectID": "Class/Class_PSIM.html#laboratorios",
+    "href": "Class/Class_PSIM.html#laboratorios",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Laboratorios",
+    "text": "Laboratorios\n\nLaboratorio 01"
   }
 ]

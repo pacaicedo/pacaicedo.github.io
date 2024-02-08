@@ -56,6 +56,8 @@ Generar al estudiante la competencia de creación de código, utilizando formula
 4. Genere un flujo de trabajo para  comparar las dos señales. Sugerencia: utilice correlación y matrices de covarianza.
 5. Utilizando el artículo ["A COMPARATIVE STUDY OF VARIOUS PROBABILITY DENSITY ESTIMATION METHODS FOR DATA ANALYSIS"](../Articulos/PDF_Estimation_Survey.pdf) de Assenza et al. Generar una función que permita la estimación de la función de densidad de probabilidad utilizando alguno de los métodos presentado en el artículo.
 
+__Fecha de entrega:__ Hasta el domingo 11 de febrero de 2024, 11:59pm.
+
 ::: {.column-margin}
 ![](../Img/Escuela_Rosario_logo.png)
 :::

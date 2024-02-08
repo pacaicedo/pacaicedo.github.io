@@ -98,7 +98,7 @@ A __sample space__ is the set of ALL possibles results of an experiment.
 #| eval: true
 #| output: true
 
-data = np.genfromtxt(path_ecg+"/mitbih_lecture.csv", delimiter=",")
+data = np.genfromtxt(path_ecg+"/Dataset1/mitbih_lecture.csv", delimiter=",")
 ecg1 = data[1, :-1]
 time = np.array(range(0,len(ecg1)))/125
 fig = plt.figure()

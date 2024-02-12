@@ -27,6 +27,7 @@ El curso está dividido en 3 partes:
 ## Laboratorios
 
 - [Laboratorio 01](../labs/Lab_psim_01_2024I.qmd)
+- [Laboratorio 02](../labs/Lab_psim_02_2024I.qmd)
 
 # Horario de atención
 

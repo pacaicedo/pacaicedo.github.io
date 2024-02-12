@@ -1,0 +1,48 @@
+---
+title: "Laboratorio 01: Probabilidad y Estadística"
+description: "Primer Laboratorio de la materia probabilidad y estadística"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo R."
+date: "2024-01-29"
+date-modified: "2024-01-29"
+---
+
+# Monitoría del Curso
+Melissa Tarquino Mendoza
+
+# Introducción
+
+El procesamiento de señales biomédicas es crucial para extraer información relevante de órganos o sistemas biomédicos, contribuyendo al diagnóstico de diversas condiciones. Investigadores en este campo aplican técnicas lineales y no lineales para caracterizar señales de origen cardiaco,
+
+# Objetivo
+
+Generar al estudiante la competencia de creación de aplicaciones a partir del procesamiento de señales y electrocardiografía
+
+# Dataset
+
+[A large scale 12-lead electrocardiogram database for arrhythmia study](https://physionet.org/content/ecg-arrhythmia/1.0.0/)
+
+# Rúbrica de evaluación
+
+|              **Indicador**             |                                  **Insuficiente** (0 ptos)                                  |                                             **Suficiente** (5 ptos)                                            |                                             **Excelente** (10 ptos)                                            |
+|:--------------------------------------:|:-------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|
+|                 Dataset                |                              No encuentra el dataset solicitado                             |                    Encuentra el dataset pero no reconoce el origen fisiológico de la señal                     |                        Encuentra el dataset y reconoce el origen fisiológico de la señal                       |
+|   Manejo básico de conjunto de datos   |          No reconoce ninguna de las características básicas de un conjunto de datos         |                     Reconoce algunas de las características básicas de un conjunto de datos                    |                      Reconoce ninguna las características básicas de un conjunto de datos                      |
+|              Presentación              |          Dentro de la evaluación oral no reconoce su propio código ni reconoce su solución  |                                           ---------------------------                                          |                                Dentro de la evaluación contesta todas las preguntas sobre ECG y progrmación    |
+|         Manejo básico de python        |                   No reconoce ninguna de las estructuras básicas de python                  |                                           ---------------------------                                          |                           Reconoce las estructuras básicas de programación en python                           |
+| Informes y comunicación de información | El informe no tiene coherencia, sin un buen manejo del español y presenta ideas incompletas | El informe presenta coherencia y un buen manejo del españo las ideas están completas pero supera las 6 páginas | El informe presenta coherencia y un buen manejo del españo las ideas están completas sin superar las 6 páginas |
+
+1. Busque información detallada de la base de datos y explique qué tipo de registros contiene. Utilice el articulo asociado a la base de datos.
+
+2. Investigue qué es la Variabilidad de Frecuencia Cardíaca (Heart Rate Variability HRV) y cómo calcularla.
+
+3. Implemente un algoritmo de detección de complejos QRS, que le permita hacer análisis de HRV.
+
+4. Para por lo menos 5 sujetos de la base de datos de cada grupo etario (5 jóvenes y 5 adultos mayores), realice un análisis de HRV comparando los resultados de manera cuantitativa. Utilice las métricas correspondientes.
+
+
+__Fecha de entrega:__ Hasta el ************, 11:59pm.
+
+::: {.column-margin}
+![](../Img/Escuela_Rosario_logo.png)
+:::

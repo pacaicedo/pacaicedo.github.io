@@ -40,8 +40,9 @@ Generar al estudiante la competencia de creación de aplicaciones a partir del p
 
 4. Para por lo menos 5 sujetos de la base de datos de cada grupo etario (5 jóvenes y 5 adultos mayores), realice un análisis de HRV comparando los resultados de manera cuantitativa. Utilice las métricas correspondientes.
 
+5. Existe relación entre la edad y la variabilidad de frecuencia cardíaca?.
 
-__Fecha de entrega:__ Hasta el ************, 11:59pm.
+__Fecha de entrega:__ Hasta el 29 de febrero de 2024. 11:59pm.
 
 ::: {.column-margin}
 ![](../Img/Escuela_Rosario_logo.png)

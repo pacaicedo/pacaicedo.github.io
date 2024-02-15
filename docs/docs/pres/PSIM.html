@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ph.D.&nbsp;Pablo Eduardo Caicedo Rodríguez">
+<meta name="description" content="Sitio de la asignatura Probabilidad Computacional y Estadística en la UniAutonoma del Cauca">
+
+<title>La guarida de los datos - Probabilidad Computacional y Estadística</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../Img/logo04.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../Img/logo05.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Principal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Acerca</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#probabilidad-computacional-y-estadística" id="toc-probabilidad-computacional-y-estadística" class="nav-link active" data-scroll-target="#probabilidad-computacional-y-estadística">Probabilidad Computacional y Estadística</a>
+  <ul class="collapse">
+  <li><a href="#el-profesor" id="toc-el-profesor" class="nav-link" data-scroll-target="#el-profesor">El Profesor</a></li>
+  <li><a href="#contenido-del-curso" id="toc-contenido-del-curso" class="nav-link" data-scroll-target="#contenido-del-curso">Contenido del curso</a></li>
+  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
+  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos</a></li>
+  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía">Bibliografía</a></li>
+  </ul></li>
+  <li><a href="#introducción-a-r" id="toc-introducción-a-r" class="nav-link" data-scroll-target="#introducción-a-r">Introducción a R</a>
+  <ul class="collapse">
+  <li><a href="#que-es-r" id="toc-que-es-r" class="nav-link" data-scroll-target="#que-es-r">Que es R?</a></li>
+  <li><a href="#un-poquito-de-historia-y-herramientas" id="toc-un-poquito-de-historia-y-herramientas" class="nav-link" data-scroll-target="#un-poquito-de-historia-y-herramientas">Un poquito de historia y herramientas</a></li>
+  <li><a href="#otro-poquito-de-herramientas" id="toc-otro-poquito-de-herramientas" class="nav-link" data-scroll-target="#otro-poquito-de-herramientas">Otro poquito de herramientas</a></li>
+  <li><a href="#operaciones-básicas" id="toc-operaciones-básicas" class="nav-link" data-scroll-target="#operaciones-básicas">Operaciones básicas</a></li>
+  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">Tipos de datos</a></li>
+  </ul></li>
+  <li><a href="#introducción-a-la-probabilidad" id="toc-introducción-a-la-probabilidad" class="nav-link" data-scroll-target="#introducción-a-la-probabilidad">Introducción a la probabilidad</a>
+  <ul class="collapse">
+  <li><a href="#que-es-la-probabilidad" id="toc-que-es-la-probabilidad" class="nav-link" data-scroll-target="#que-es-la-probabilidad">Que es la probabilidad?</a></li>
+  <li><a href="#que-es-la-probabilidad-1" id="toc-que-es-la-probabilidad-1" class="nav-link" data-scroll-target="#que-es-la-probabilidad-1">Que es la probabilidad?</a></li>
+  <li><a href="#fuentes-de-incertidumbre." id="toc-fuentes-de-incertidumbre." class="nav-link" data-scroll-target="#fuentes-de-incertidumbre.">Fuentes de incertidumbre.</a></li>
+  <li><a href="#que-es-la-probabilidad-y-que-estudia" id="toc-que-es-la-probabilidad-y-que-estudia" class="nav-link" data-scroll-target="#que-es-la-probabilidad-y-que-estudia">Que es la probabilidad y que estudia?</a></li>
+  <li><a href="#que-es-la-probabilidad-y-que-estudia-1" id="toc-que-es-la-probabilidad-y-que-estudia-1" class="nav-link" data-scroll-target="#que-es-la-probabilidad-y-que-estudia-1">Que es la probabilidad y que estudia?</a></li>
+  <li><a href="#dos-ejemplos-fundamentales" id="toc-dos-ejemplos-fundamentales" class="nav-link" data-scroll-target="#dos-ejemplos-fundamentales">Dos ejemplos fundamentales</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="PSIM.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Probabilidad Computacional y Estadística</h1>
+<p class="subtitle lead">Ingeniería de software y computación</p>
+</div>
+
+<div>
+  <div class="description">
+    Sitio de la asignatura Probabilidad Computacional y Estadística en la UniAutonoma del Cauca
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ph.D.&nbsp;Pablo Eduardo Caicedo Rodríguez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1 de agosto de 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="probabilidad-computacional-y-estadística" class="level1">
+<h1>Probabilidad Computacional y Estadística</h1>
+<section id="el-profesor" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="el-profesor">El Profesor</h2>
+<div class="columns">
+<div class="column">
+<section id="educación" class="level3">
+<h3 class="anchored" data-anchor-id="educación">Educación</h3>
+<p>Doctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones</p>
+</section>
+<section id="intereses" class="level3">
+<h3 class="anchored" data-anchor-id="intereses">Intereses</h3>
+<p>Biomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.</p>
+</section>
+</div><div class="column">
+<section id="desempeño" class="level3">
+<h3 class="anchored" data-anchor-id="desempeño">Desempeño</h3>
+<p>Profesor de la Facultad de Ingeniería</p>
+<p>Invest. Línea de Percep. Avanz. y Robótica – GITA</p>
+<p>Director Grupo de Investigación MEDES.</p>
+</section>
+<section id="contacto" class="level3">
+<h3 class="anchored" data-anchor-id="contacto">Contacto:</h3>
+<p>pablo.caicedo.r@uniautonoma.edu.co</p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+
+</div>
+</div>
+</section>
+<section id="contenido-del-curso" class="level2">
+<h2 class="anchored" data-anchor-id="contenido-del-curso">Contenido del curso</h2>
+<div class="columns">
+<div class="column">
+<p><img src="./images/Statistics/WordCloudDS.png" class="img-fluid"></p>
+</div><div class="column">
+<ol type="1">
+<li>Introducción a la probabilidad y la estadística.</li>
+<li>Análisis exploratorio de datos.</li>
+<li>Modelos básicos de representación estadística.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="evaluación" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación">Evaluación</h2>
+<div class="columns">
+<div class="column">
+<ol type="1">
+<li>Varios 001. Quices y talleres (15%) (Lo puedo cambiar!!!)</li>
+<li>Parcial 002. Probabilidad, conteo y funciones de densidad de probabilidad (20%)</li>
+<li>Parcial 003. Análisis de datos a partir de estadística descriptiva (20%)</li>
+<li>Consigna 004. Proyecto Final (45%)</li>
+</ol>
+</div><div class="column">
+<p><img src="./images/Statistics/Evaluacion.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="recursos" class="level2">
+<h2 class="anchored" data-anchor-id="recursos">Recursos</h2>
+<div class="columns">
+<div class="column">
+<section id="clases" class="level3">
+<h3 class="anchored" data-anchor-id="clases">Clases</h3>
+<p>Lunes, Miércoles y Viernes 9:00 – 11:00 Sala 502</p>
+</section>
+<section id="grupo-teams" class="level3">
+<h3 class="anchored" data-anchor-id="grupo-teams">Grupo Teams</h3>
+</section>
+</div><div class="column">
+<section id="software" class="level3">
+<h3 class="anchored" data-anchor-id="software">Software</h3>
+<p><strong>Interpretes:</strong> R.</p>
+<p><strong>IDE:</strong> Visual Studio Code, Google Colaboratory <a href="https://colab.to/r">R</a>, RStudio, PyCharm, Dataspell</p>
+<p><strong>Seguimiento de Aprendizaje:</strong> Moodle</p>
+</section>
+</div>
+</div>
+</section>
+<section id="bibliografía" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="bibliografía">Bibliografía</h2>
+<ol type="1">
+<li><p>P. Dangeti, Statistics for Machine Learning. 2017.</p></li>
+<li><p>A. P. Field, J. Miles, and Z. Field, Discovering statistics using R. London; Thousand Oaks, Calif.: Sage, 2012.</p></li>
+<li><p>D. Forsyth, Probability and Statistics for Computer Science. Cham: Springer International Publishing, 2018.</p></li>
+<li><p>C. Guisande González, A. Vaamonde Liste, and A. Barreiro Felpeto, Tratamiento de datos con R, Statistica y SPSS. 2013.</p></li>
+<li><p>C. Heumann, M. Schomaker, and Shalabh, Introduction to Statistics and Data Analysis. Cham: Springer International Publishing, 2016.</p></li>
+<li><p>N. S. Matloff, Probability and statistics for data science: math + R + data. Boca Raton: CRC Press, Taylor &amp; Francis Group, 2019.</p></li>
+<li><p>W. Menhenhall, R. Beaver, and B. Beaver, Introducción a la probabilidad y estadística. 2016.</p></li>
+<li><p>M. R. C. Rubio, Estadística con aplicaciones en R. Bogotá: Fundacion Universidad de Bogota Jorge Tadeo Lozano, 2019.</p></li>
+<li><p>P. Bruce, A. Bruce, y P. Gedeck, Practical Statistics for Data Scientists, Segunda Edición. Sebastopol, CA: O’Reilly, 2020.</p></li>
+</ol>
+</section>
+</section>
+<section id="introducción-a-r" class="level1">
+<h1>Introducción a R</h1>
+<section id="que-es-r" class="level2">
+<h2 class="anchored" data-anchor-id="que-es-r">Que es R?</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">    graph LR
+    A[Que es R]
+    A--&gt;B[Herramienta de gran versatilidad]
+    A--&gt;C[Gran Popularidad entre la comunidad&lt;br/&gt;académica y científica]
+    B--Que hace?--&gt;D1&gt;Cálculos numéricos]
+    B--Que hace?--&gt;D2&gt;Gráficas y figuras de alta calidad]
+    B--Que es?--&gt;D3&gt;Lenguaje de Programación]
+    B--En que campos?--&gt;D4&gt;Ciencia, economía, ingeniería, etc]
+    C--Licenciamiento?--&gt;E1&gt;GNU GLP: Código Abierto]
+    C--Ampliaciones?--&gt;E2&gt;Numerosas librerías]
+    C--Ayuda?--&gt;E3&gt;Comunidades, foros, tutoriales, etc]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="un-poquito-de-historia-y-herramientas" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="un-poquito-de-historia-y-herramientas">Un poquito de historia y herramientas</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Consejo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consejo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Creado en 1993 por Robert Gentleman y Ross Ihaka en la universidad de Auckland (Nueva Zelanda)</li>
+<li>En la actualidad: miles de personas en todo el mundo que colaboran en su desarrollo</li>
+<li><strong>Propósito:</strong> contar con una plataforma libre y gratuita para desarrollar algoritmos numéricos y estadísticos</li>
+</ul>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<div class="callout callout-style-default callout-tip callout-titled" title="Consejo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consejo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></p>
+<p>Es un IDE (Entorno de Desarrollo Integrado): permite utilizar R de manera más cómoda en algunos aspectos</p>
+</div>
+</div>
+</div><div class="column">
+<p><img src="./images/Statistics/RStudio.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="otro-poquito-de-herramientas" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="otro-poquito-de-herramientas">Otro poquito de herramientas</h2>
+<div class="columns">
+<div class="column">
+<div class="block">
+<section id="google-colaboratory-r" class="level3">
+<h3 class="anchored" data-anchor-id="google-colaboratory-r"><a href="https://colab.to/r">Google Colaboratory R</a></h3>
+<p>Permite escribir y ejecutar código de R en tu navegador, con</p>
+<ul>
+<li>Sin configuración requerida</li>
+<li>Acceso sin costo a GPU</li>
+<li>Facilidad para compartir</li>
+</ul>
+</section>
+</div>
+</div><div class="column">
+<div class="block">
+<section id="deepnote" class="level3">
+<h3 class="anchored" data-anchor-id="deepnote"><a href="https://deepnote.com/">Deepnote</a></h3>
+<p>Similar a <a href="https://colab.to/r">Google Colaboratory R</a>, sin embargo permite el trabajo colaborativo más fácilmente. Acceso a licencia educativa con su correo electrónico de la Universidad</p>
+</section>
+</div>
+</div>
+</div>
+<div class="block">
+<section id="instalación-de-r.-solo-windows" class="level3">
+<h3 class="anchored" data-anchor-id="instalación-de-r.-solo-windows"><a href="https://cran.r-project.org/">Instalación de R</a>…. solo windows</h3>
+<ul>
+<li><a href="https://cran.r-project.org/bin/windows/base/R-4.2.3-win.exe">R</a></li>
+<li><a href="https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html">RTools</a></li>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+</ul>
+</section>
+</div>
+</section>
+<section id="operaciones-básicas" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="operaciones-básicas">Operaciones básicas</h2>
+<ul>
+<li><span style="color:orange;">Cursor por defecto en la consola:</span> símbolo ““&gt;”” indica que R está listo para recibir y ejecutar un comando.</li>
+<li><span style="color:orange;">Comentarios:</span> símbolo ““#””</li>
+<li><span style="color:orange;">Operaciones matemáticas elementales:</span> Suma(+), resta(-), división(/), multiplicación(*), potenciación(^), cociente entero(%/%), resto de la división(%%).</li>
+<li><span style="color:orange;">Operaciones lógicas elementales:</span> Menor que(&lt;), Menor igual que(&lt;=), Mayor que(&gt;), Mayor igual que(&gt;=), igual(==), distinto(!=).</li>
+<li><span style="color:orange;">Funciones:</span> conjunto de instrucciones que convierten las entradas (inputs) en resultados (outputs); pueden ser matemáticas, estadísticas, manejo de caracteres, etc. Puede construir nuevas. Algunas son:</li>
+</ul>
+<div class="columns">
+<div class="column">
+<ul>
+<li><span class="math inline">\(e^x\)</span>: exp(x)</li>
+<li><span class="math inline">\(ln\left( x \right)\)</span>: log(x)</li>
+<li><span class="math inline">\(log_{n} \left( x \right)\)</span>: log(x,n)</li>
+<li><span class="math inline">\(log_{10} \left( x \right)\)</span>: log10(x)</li>
+<li><span class="math inline">\(\sqrt{x}\)</span>: sqrt(x)</li>
+<li><span class="math inline">\(x!\)</span>: factorial(x)</li>
+<li>Entero anterior a x: floor(x)</li>
+<li>Próximo entero de x: ceiling(x)</li>
+<li>Valor entero próximo a x, ubicado entre <span class="math inline">\(\left[ 0,x \right]\)</span>: trunc(x)</li>
+</ul>
+</div><div class="column">
+<ul>
+<li>Redondear el valor de x a 4 decimales: round(x, digits=4)</li>
+<li>Valor de x en notación científica con 3 dígitos decimales: signif(x, digits=3)</li>
+<li><span class="math inline">\(cos{x}\)</span>, x en radianes: cos(x)</li>
+<li><span class="math inline">\(sin{x}\)</span>, x en radianes: sin(x)</li>
+<li><span class="math inline">\(tan{x}\)</span>, x en radianes: tan(x)</li>
+<li><span class="math inline">\(\lvert x \rvert\)</span>: abs(x)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="tipos-de-datos" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="tipos-de-datos">Tipos de datos</h2>
+<div class="columns">
+<div class="column">
+<div class="callout callout-style-default callout-tip callout-titled" title="Consejo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consejo
+</div>
+</div>
+<section id="variable" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="variable">Variable</h3>
+<ul>
+<li>Objeto que puede cambiar de valor se crea con el operador &lt;-</li>
+<li>Nombre: inicia con una letra, puede contener números, puntos</li>
+<li>Diferencia entre mayúsculas y minúsculas</li>
+<li>Después de hacer la asignación los valores pueden ser usados</li>
+</ul>
+</section>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Consejo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consejo
+</div>
+</div>
+<section id="vector" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="vector">Vector</h3>
+<ul>
+<li>Colección ordenada y modificable de elementos del mismo tipo</li>
+<li>Cada elemento tiene un índice.</li>
+<li>Varias formas de crearlos</li>
+<li>Se pueden ejecutar operaciones sobre los elementos o entre vectores</li>
+<li>Valores nulos : NA</li>
+</ul>
+</section>
+</div>
+</div><div class="column">
+<div class="callout callout-style-default callout-tip callout-titled" title="Consejo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consejo
+</div>
+</div>
+<section id="matriz" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="matriz">Matriz</h3>
+<ul>
+<li>Vector multidimensional: filas y columnas</li>
+<li>Estructura con forma rectangular</li>
+<li>Contiene un sólo tipo de datos</li>
+</ul>
+</section>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Consejo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consejo
+</div>
+</div>
+<section id="data-frame" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="data-frame">Data Frame</h3>
+<ul>
+<li>Estructura de datos de dos dimensiones: puede contener datos de diferentes tipos</li>
+<li>Objeto más habitual para almacenar datos en R</li>
+<li>Las filas representan casos; las columnas representan atributos o variables</li>
+<li>Usada para realizar análisis de datos</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<!--  -->
+</section>
+</section>
+<section id="introducción-a-la-probabilidad" class="level1">
+<h1>Introducción a la probabilidad</h1>
+<section id="que-es-la-probabilidad" class="level2">
+<h2 class="anchored" data-anchor-id="que-es-la-probabilidad">Que es la probabilidad?</h2>
+<div class="columns">
+<div class="column">
+<section id="incertidumbre" class="level3">
+<h3 class="anchored" data-anchor-id="incertidumbre">Incertidumbre</h3>
+<p>Toma de decisiones con información incompleta</p>
+</section>
+<section id="ejemplo" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo">Ejemplo</h3>
+<p>Juegos de azar. No hay forma clara para determinar un procedimiento que nos lleve a la victoria siempre.</p>
+</section>
+</div><div class="column">
+<p><img src="./images/Statistics/cruce.jpeg" class="absolute" data-top="100" data-right="0" height="500"></p>
+</div>
+</div>
+</section>
+<section id="que-es-la-probabilidad-1" class="level2">
+<h2 class="anchored" data-anchor-id="que-es-la-probabilidad-1">Que es la probabilidad?</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>El azar no es más que la medida de la ignorancia.</p></li>
+<li><p>Los fenómenos que consideramos al “azar” son aquellos en los que no tenemos toda la información o cuyas leyes ignoramos.</p></li>
+</ul>
+</div><div class="column">
+<p><img src="./images/Statistics/incertidumbre2.jpg" class="absolute img-fluid" data-top="150" data-right="0" width="500"></p>
+</div>
+</div>
+</section>
+<section id="fuentes-de-incertidumbre." class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="fuentes-de-incertidumbre.">Fuentes de incertidumbre.</h2>
+<div class="callout callout-style-default callout-warning callout-titled" title="Datos" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Datos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Debido a que nuestros instrumentos de medición tienen un margen de error, se presentan datos imperfectos e incompletos, por lo tanto hay incertidumbre en los datos.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Atributos del modelo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Atributos del modelo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Atributos del modelo: Son variables que representan un subconjunto reducido de toda la realidad del problema, estas variables provienen de los datos y por lo tanto presentan cierto grado de incertidumbre.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Arquitectura del modelo" data-collapsible="false">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Arquitectura del modelo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un modelo es una representación simplificada de la realidad y al ser así, por construcción, induce otra capa de incertidumbre, ya que al ser una representación simplificada se considera mucho menos información.</p>
+</div>
+</div>
+</section>
+<section id="que-es-la-probabilidad-y-que-estudia" class="level2">
+<h2 class="anchored" data-anchor-id="que-es-la-probabilidad-y-que-estudia">Que es la probabilidad y que estudia?</h2>
+<div class="columns">
+<div class="column">
+<p><img src="./images/Statistics/probabilidad001.png" class="img-fluid"></p>
+</div><div class="column">
+<div class="small_font">
+<ul>
+<li>El concepto intuitivo de probabilidad indica la posibilidad de la ocurrencia de un hecho o fenómeno.</li>
+<li>Ejemplos:
+<ul>
+<li>Tener un día soleado</li>
+<li>Contraer una infección</li>
+<li>Aprobar un examen de opción múltiple sin haber estudiado.</li>
+</ul></li>
+<li>La probabilidad ES una medida de la incertidumbre</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="que-es-la-probabilidad-y-que-estudia-1" class="level2">
+<h2 class="anchored" data-anchor-id="que-es-la-probabilidad-y-que-estudia-1">Que es la probabilidad y que estudia?</h2>
+<div class="columns">
+<div class="column">
+<p><img src="./images/Statistics/probabilidad001.png" class="img-fluid"></p>
+</div><div class="column">
+<section id="definiciones" class="level3 small_font">
+<h3 class="anchored" data-anchor-id="definiciones">Definiciones</h3>
+<ul>
+<li>Un <strong>experimento aleatorio</strong> es un proceso en el que el resultado no puede ser predecido con certeza y que depende del azar.</li>
+<li>Un <strong>Evento aleatorio o estocástico</strong> es un subconjunto de los posibles resultados del experimento aleatorio.</li>
+<li>Una <strong>variable aleatoria</strong> es una función que asigna un valor a cada posible resultado de un experimento aleatorio.</li>
+</ul>
+</section>
+</div>
+</div>
+</section>
+<section id="dos-ejemplos-fundamentales" class="level2">
+<h2 class="anchored" data-anchor-id="dos-ejemplos-fundamentales">Dos ejemplos fundamentales</h2>
+<div class="columns">
+<div class="column">
+<p>El <span style="color:orange;">experimento aleatorio </span> es lanzar un dado, la podría ser el número obtenido en el lanzamiento, que puede tomar valores de 1 a 6. El es obtener un número par, que incluiría los resultados 2, 4 y 6.</p>
+</div><div class="column">
+<p> . </p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

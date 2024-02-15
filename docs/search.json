@@ -1334,7 +1334,7 @@
     "href": "Class/Class_PSIM.html#presentaciones",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Presentaciones",
-    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística\nParteII: Un ejemplo de ECG"
+    "text": "Presentaciones\n\nPresentación del curso"
   },
   {
     "objectID": "pres/PSIM001.html#el-profesor",
@@ -1390,7 +1390,7 @@
     "href": "pres/PSIM001.html#como-estamos",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Como estamos?",
-    "text": "Como estamos?\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Como estamos?\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?\n\n\n\n\n\nhttps://pacaicedo.github.io"
   },
   {
     "objectID": "pres/PSIM002.html",
@@ -1587,5 +1587,75 @@
     "title": "La guarida de los datos",
     "section": "",
     "text": "import numpy as np\nimport matplotlib.pyplot as plt\nimport scipy.io as sio\n\n\ndata = sio.loadmat(\"/Users/pacaicedo/DatasetsVault/ECG_DATASET/Dataset3/WFDBRecords/01/010/JS00001.mat\")\nvariables = data[\"val\"]\n\n\necg_all = np.array(variables)\necg_01 = ecg_all[10, :]\necg_02 = ecg_all[1, :]\n\nlenSignal = ecg_all.shape[1]\n\nfs = 500\n\ntime = np.arange(lenSignal)/fs\n\n\nfig0001 = plt.figure()\nplt.plot(time, ecg_01, label=\"10th lead\")\nplt.plot(time, ecg_02, label=\"9th lead\")\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"ECG amplitude (mv)\")\nplt.legend()\n\n&lt;matplotlib.legend.Legend at 0x134e235d0&gt;\n\n\n\n\n\n\necg_fft = np.fft.fft(ecg_01)\necg_psd = np.real(ecg_fft*np.conj(ecg_fft)/len(ecg_01))\nfig0002 = plt.figure()\nplt.plot(np.fft.fftfreq(lenSignal), ecg_psd, )\n\n\n\n\n\nfrom scipy import signal\n\nfcut = 50\nwcut = fcut/(fs/2)\n\nb, a = signal.butter(6, wcut, \"low\")\necg_filt = signal.filtfilt(b,a, ecg_01)\n\nfig0003 = plt.figure()\nplt.plot(time, ecg_01, label=\"Señal Original\")\nplt.plot(time, ecg_filt, label=\"Señal Filtrada\")\nplt.legend()\n\n&lt;matplotlib.legend.Legend at 0x126e81090&gt;\n\n\n\n\n\n\nimport statsmodels.api as sm\nfrom scipy.optimize import curve_fit\n\ndef nonlinearfunction(x, p1, p2, p3, p4, p5, p6):\n    return p1+ p2*x + p3*np.sin(p4*x) + p5*np.cos(p6*x)\n\npopt, pcov = curve_fit(nonlinearfunction, time, ecg_01)\n\n# Graficar los datos originales y la estimación LOESS\nplt.scatter(time, ecg_filt, label='Datos Originales')\nplt.plot(time, nonlinearfunction(time, *popt), color='red', label='Estimación No Lineal')\nplt.legend()\nplt.show()\n\n\necg_filt_trend1 = ecg_filt-nonlinearfunction(time, *popt)\nfig0005 = plt.figure()\n\nplt.plot(time, ecg_filt)\nplt.plot(time, ecg_filt_trend1)\n\n\n\n\n\n\n\n\n# Estimación LOESS\nlowess = sm.nonparametric.lowess(ecg_filt, time, frac=1/12)\n\n# Graficar los datos originales y la estimación LOESS\nplt.scatter(time, ecg_filt, label='Datos Originales')\nplt.plot(lowess[:, 0], lowess[:, 1], color='red', label='Estimación LOESS')\nplt.legend()\nplt.show()\n\n\necg_filt_trend2 = ecg_filt-lowess[:, 1]\nfig0004 = plt.figure()\n\nplt.plot(time, ecg_filt, label=\"Señal Original\")\nplt.plot(time, ecg_filt_trend2, 'g', label=\"Señal sin artefacto respiratorio\")\nplt.legend()\nplt.grid()\n\n\n\n\n\n\n\n\nfcut1 = 50\nfcut2 = 1\nwcut1 = fcut1/(fs/2)\nwcut2 = fcut2/(fs/2)\n\nb, a = signal.butter(6, [wcut2, wcut1], \"bandpass\")\necg_filt2 = signal.filtfilt(b,a, ecg_01)\n\nfig0005 = plt.figure()\nplt.plot(time, ecg_01, label=\"Señal Original\")\nplt.plot(time, ecg_filt2, label=\"Señal Filtrada\")\nplt.legend()\n\n&lt;matplotlib.legend.Legend at 0x134fb3510&gt;\n\n\n\n\n\n\nfig006 = plt.figure()\nplt.plot(time, ecg_filt_trend1, label=\"Usando regresión no lineal\")\nplt.plot(time, ecg_filt_trend2, label=\"Usando regresión por partes\")\nplt.plot(time, ecg_filt2, label=\"Usando Filtro pasabanda\")\nplt.legend()\nplt.grid()\n\n\n\n\n   Created in Deepnote"
+  },
+  {
+    "objectID": "rubricas/Rubrica_Regression.html",
+    "href": "rubricas/Rubrica_Regression.html",
+    "title": "Rúbrica: Modelos de regresión",
+    "section": "",
+    "text": "Equipo 1Equipo 2\n\n\nIntegrantes\n\nLaura Bazante\nNicolás Panesso\nNicoll Arcos\n\nDataset: concreto\n\n\nIntegrantes\n\nKatherin Diaz\nHeidy Fernández\nJuan Muñoz\n\nDataset: Rendimiento\n\n\n\n\n\n\n\n\n\n\n\n\n\nInsuficiente0%\nAceptable50%\nSuperior100%\n\n\n\n\nObjetivo análisis exploratorio de datos\nNo hay un objetivo aparente\nExiste un objetivo de análisis exploratorio de datos planteado pero este no se encuentra alineado con el modelo\nEl objetivo del análisis exploratorio de datos planteado se alinea con la construcción del modelo se encuentra bien descrito\n\n\nContexto del Dataset\nNo es posible establecer el ámbito al cual pertenecen los datos utilizados para desarrollar el trabajo\nSe hace una descripción muy básica de las características del dataset\nSe hace una descripción detallada de las características y las variables que componen el dataset\n\n\nJustificación\nNo existe una justificación aparente\nExiste justificación pero esta se encuentra mal planteda\nLa justificación se encuentra bien planteada\n\n\nPreprocesamiento\nNo se realizó preprocesamiento de los datos.  O no se argumenta de manera clara la razón de los procedimientos realizados\nAl dataset se le aplicaron solo algunas operaciones de preprocesamiento y los datos no tienen la calidad requerida\nAl dataset se le aplicaron las operaciones de preprocesamiento necesarias para mejorar su calidad y poder construir los modelos de clasificación\n\n\nConexión entre el EDA y el modelo final\nMás de dos decisiones del modelo inicial fueron tomadas sin tener en cuenta el EDA\nMenos de dos decisiones del modelo inicial fueron tomadas sin tener en cuenta el EDA\nTodas las decisiones para el modelo inicial fueron tomadas a partir del EDA\n\n\nDuración de la presentación\nLa presentación dura menos de 8 minutos o más de 13 minutos\nLa presentación dura menos de 9 minutos o más de 11 minutos\nLa presentación dura 10 minutos\n\n\nMaterial de clase\nNo usa la plantilla RMARKDOWN\n\nUsa la plantilla  RMARKDOWN\n\n\nUso de gráficos\nNo se usa ESTADÍSTICA para explicar todas las decisiones\n\nSe usa ESTADÍSTICA para explicar todas las decisiones\n\n\nJustificación de las decisiones del modelo final\nMás de dos decisiones del modelo final no están justificadas\nMenos de dos decisiones del modelo final no están justificadas\nLas decisiones del modelo final son justificadas.\n\n\nEvaluación del modelo\nNo hace evaluación del modelo\nUsa el índice de determinación para evaluar el modelo\nUsa el índice de determinación para evaluar el modelo y además hace análisis de residuos sobre la salida del modelo\n\n\nModelo de regresión\nNo se construyó el modelo o el grupo no puede explicar de manera clara la razón de los procedimientos realizados\nSolo construyó un modelo o no hay claridad sobre las características del modelo elegido\nIdentificó el modelo de mayor precisión después de realizar varias pruebas, se exponen las características del modelo elegido.  El modelo se presenta de forma gráfica"
+  },
+  {
+    "objectID": "rubricas/Rubrica_EDA.html",
+    "href": "rubricas/Rubrica_EDA.html",
+    "title": "Rúbrica: Análisis Exploratorio de Datos",
+    "section": "",
+    "text": "Indicador\nBueno\nSuficiente\nInsuficiente\n\n\n\n\nLimpieza del Dataset\nEl dataset no presenta ni registros nulos, ni vacíos. Existe una estrategia para manejo de atípicos (100%)\nEl dataset no presenta ni registros nulos, ni vacíos (50%)\nEl dataset presenta registros nulos y/o vacíos. No existe una estrategia para manejo de atípicos (0%)\n\n\nConsumo de información\nSe consumen al menos 2 fuentes de datos provenientes de las sugerencias de los organizadores (100%)\nSe consume una fuente de datos proveniente de las sugerencias de los organizadores (50%)\nNo se consume ninguna fuente de datos conocida (0%)\n\n\nEDA sobre nuevas variables\nSe plantean correctamente las relaciones entre la variables y estas se demuestran a plenitud utilizando matemática y/o estadística (100%)\nSe plantean dos relaciones entre las variables (50%)\nNo se plantean las relaciones entre las variables (0%)\n\n\nUso de plantilla\nUsan la plantilla rmarkdown (100%)\n\nNo se usa la plantilla rmarkdown(0%)\n\n\nVisualización de la informacion\nLa información de TODAS las gráficas se observa plenamente (100%)\nLa información de las gráficas se observa parcialmente(50%)\nLa información de la gráfica no se observa (0%)\n\n\nJustificación del problema\nExiste una justificación del problema(100%)\n\nNo Existe justificación al problema resuelto (0%)\n\n\nUbicación del problema\nSe plantea correctamente la ubicación del problema 100%\n\nNo se plantea correctamente la ubicación del problema 0%"
+  },
+  {
+    "objectID": "rubricas/Rubrica_ProyectoAnalisisNumerico.html",
+    "href": "rubricas/Rubrica_ProyectoAnalisisNumerico.html",
+    "title": "Rúbrica: Proyecto Final Análsis Numérico",
+    "section": "",
+    "text": "Cómo Preparar una Presentación | 5 PASOS para una CONFERENCIA EXITOSA por Sebastián Lora.\n¿Cómo estructurar una presentación? por Espacio Ñ de la Universidad del Norte\n\n\n\n\n\nCómo Hacer una Buena Presentación de Diapositivas (Tips) por Javier Muñiz.\nConsejos para una buena presentación en POWER POINT por NiboKids en el cole!.\n\n\n\n\n\n\n\n\n\n\n\n\n\nIndicador\nInferior0%\nMedio50%\nSuperior100%\n\n\n\n\nCalidad de la presentación\nNo se siguen ninguno de los consejos de los videos adjuntos para la creación de la presentación\nSe siguen algunos de los consejos de los videos adjuntos para la creación  de la presentación\nSe siguen todos los consejos de los videos adjuntos para la creación  de la presentación\n\n\nCalidad de los ejemplos\nNo se describen los ejemplos utilizados en el proyecto\nLos ejemplos utilizados se encuentran descritos parcialmente\nLos ejemplos utilizados dentro del proyecto se encuentran descritos a cabalidad.\n\n\nCodificación de los ejemplos\nNo se describe el código utilizado para los ejemplos\nSe describe parcialmente el código de los ejemplos\nSe describe a cabalidad el código de los ejemplos\n\n\nCalidad del código\nSe utiliza al menos un algoritmo no desarrollado por los integrantes del equipo\n\nEl código utilizado es completamente desarrollado por los estudiantes a excepción del manejo de datos (NUMPY array y las funciones matemáticas elementales) y la graficación (MATPLOTLIB)"
+  },
+  {
+    "objectID": "rubricas/Rubrica_ProyectoAnalisisNumerico.html#videos-para-apoyo-a-la-generación-de-presentaciones",
+    "href": "rubricas/Rubrica_ProyectoAnalisisNumerico.html#videos-para-apoyo-a-la-generación-de-presentaciones",
+    "title": "Rúbrica: Proyecto Final Análsis Numérico",
+    "section": "",
+    "text": "Cómo Preparar una Presentación | 5 PASOS para una CONFERENCIA EXITOSA por Sebastián Lora.\n¿Cómo estructurar una presentación? por Espacio Ñ de la Universidad del Norte"
+  },
+  {
+    "objectID": "rubricas/Rubrica_ProyectoAnalisisNumerico.html#videos-para-la-generación-de-dipostivas",
+    "href": "rubricas/Rubrica_ProyectoAnalisisNumerico.html#videos-para-la-generación-de-dipostivas",
+    "title": "Rúbrica: Proyecto Final Análsis Numérico",
+    "section": "",
+    "text": "Cómo Hacer una Buena Presentación de Diapositivas (Tips) por Javier Muñiz.\nConsejos para una buena presentación en POWER POINT por NiboKids en el cole!."
+  },
+  {
+    "objectID": "rubricas/Rubrica_ProyectoAnalisisNumerico.html#rúbrica-de-evaluación",
+    "href": "rubricas/Rubrica_ProyectoAnalisisNumerico.html#rúbrica-de-evaluación",
+    "title": "Rúbrica: Proyecto Final Análsis Numérico",
+    "section": "",
+    "text": "Indicador\nInferior0%\nMedio50%\nSuperior100%\n\n\n\n\nCalidad de la presentación\nNo se siguen ninguno de los consejos de los videos adjuntos para la creación de la presentación\nSe siguen algunos de los consejos de los videos adjuntos para la creación  de la presentación\nSe siguen todos los consejos de los videos adjuntos para la creación  de la presentación\n\n\nCalidad de los ejemplos\nNo se describen los ejemplos utilizados en el proyecto\nLos ejemplos utilizados se encuentran descritos parcialmente\nLos ejemplos utilizados dentro del proyecto se encuentran descritos a cabalidad.\n\n\nCodificación de los ejemplos\nNo se describe el código utilizado para los ejemplos\nSe describe parcialmente el código de los ejemplos\nSe describe a cabalidad el código de los ejemplos\n\n\nCalidad del código\nSe utiliza al menos un algoritmo no desarrollado por los integrantes del equipo\n\nEl código utilizado es completamente desarrollado por los estudiantes a excepción del manejo de datos (NUMPY array y las funciones matemáticas elementales) y la graficación (MATPLOTLIB)"
+  },
+  {
+    "objectID": "pres/PSIM004.html#what-is-digital-image-processing",
+    "href": "pres/PSIM004.html#what-is-digital-image-processing",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
+  },
+  {
+    "objectID": "pres/PSIM004.html#what-is-digital-image-processing-1",
+    "href": "pres/PSIM004.html#what-is-digital-image-processing-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
+  },
+  {
+    "objectID": "pres/PSIM004.html#what-is-digital-image-processing-2",
+    "href": "pres/PSIM004.html#what-is-digital-image-processing-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nColor Space\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
+  },
+  {
+    "objectID": "pres/PSIM004.html#what-is-digital-image-processing-3",
+    "href": "pres/PSIM004.html#what-is-digital-image-processing-3",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

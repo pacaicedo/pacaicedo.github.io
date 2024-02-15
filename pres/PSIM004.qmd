@@ -1,0 +1,230 @@
+---
+title: "Procesado de Señales e Imágenes Médicas"
+description: "Sitio de la asignatura Procesado de Señales e Imágenes Médicas"
+subtitle: "Ingeniería Biomédica"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+date: "2024-01-22"
+format:
+  revealjs: 
+    code-tools: true
+    code-overflow: scroll
+    code-line-numbers: true
+    code-copy: false
+    fig-align: center
+    self-contained: true
+    theme: 
+      - white
+      - custom.scss
+    slide-number: true
+    preview-links: auto
+    logo: images/Escuela_Rosario_logo.png
+    css: styles.css
+    footer: <https://pacaicedo.github.io>
+    transition: fade
+resources:
+  - demo.pdf
+---
+
+```{r}
+#| echo: false
+#| eval: true
+#| output: false
+
+library("DiagrammeR")
+library("reticulate")
+library("kableExtra")
+library("tidyverse")
+library("knitr")
+library("cowplot")
+library("ggfx")
+knitr::opts_chunk$set(echo = FALSE)
+
+def.chunk.hook <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+    x <- def.chunk.hook(x, options)
+    ifelse(options$size != "normalsize", paste0("\n \\", options$size, "\n\n", x, "\n\n \\normalsize"), x)
+})
+
+
+```
+
+
+
+# Procesamiento de imágenes
+
+## What is Digital Image Processing?
+
+::: {.callout-note title="Definition" collapsible="false"}
+
+- Two-dimensional function, f(x, y)
+- Where x and y are spatial coordinates.
+- The amplitude of f at any pair of coordinates (x, y) is called the intensity.
+
+:::
+
+::: {.callout-warning title="The digital image" collapsible="false"}
+
+If the coordinates and the intensity are discrete quantities the image turns into a digital image.
+
+:::
+
+## What is Digital Image Processing?
+
+::: {.callout-tip title="Definition" collapsible="false"}
+
+A digital image is composed by a finite number of elements called PIXEL.
+
+:::
+
+::: columns
+
+:::{.column width="50%"}
+
+![https://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469](./images/pixels.png)
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-tip title="Depth" collapsible="false"}
+
+:::{.small_font}
+
+A digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)
+
+- 1bpp. B/W image, monochrome.
+- 2bpp. CGA Image.
+- 4bpp. Minimun for VGA standard.
+- 8bpp. Super-VGA image.
+- 24bpp. Truecolor image.
+- 48bpp. Professional-level images.
+  
+
+:::
+
+:::
+
+
+
+:::
+
+:::
+
+## What is Digital Image Processing?
+
+::: {.callout-tip title="Definition" collapsible="false"}
+
+:::
+
+::: columns
+
+:::{.column width="50%"}
+
+![https://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469](./images/pixels.png)
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-tip title="Color Space" collapsible="false"}
+
+How can i represent the color
+
+- RGB.
+- CMYK.
+- HSV.
+- Among others.
+
+:::
+
+
+:::
+
+:::
+
+## What is Digital Image Processing?
+
+::: columns
+
+:::{.column width="50%"}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/image01.tif")
+fig001 = plt.figure()
+plt.imshow(img)
+
+```
+
+:::{.small_font}
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/image01.tif")
+fig001 = plt.figure()
+plt.imshow(img)
+
+```
+
+:::
+
+:::
+
+:::{.column width="50%"}
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/lena.tif")
+RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+fig002 = plt.figure()
+plt.imshow(RGB_img)
+
+```
+
+:::{.small_font}
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread("./images/lena.tif")
+RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+fig002 = plt.figure()
+plt.imshow(RGB_img)
+
+```
+
+:::
+
+:::
+
+:::
+
+
+
+
+

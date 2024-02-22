@@ -1334,7 +1334,7 @@
     "href": "Class/Class_PSIM.html#presentaciones",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Presentaciones",
-    "text": "Presentaciones\n\nPresentación del curso \nProcesamiento de imágenes"
+    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística\nParteII: Un ejemplo de ECG\nProcesamiento de imágenes"
   },
   {
     "objectID": "pres/PSIM001.html#el-profesor",
@@ -1474,28 +1474,28 @@
     "href": "pres/PSIM002.html#events-sample-space-experiments",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Events, Sample Space, Experiments",
-    "text": "Events, Sample Space, Experiments\n\n\n\n\n\n\nDefinition\n\n\nAn experiment is a physical procedure that produces some kind of result.\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nAn event is a set of experiment’s possible results.\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nA sample space is the set of ALL possibles results of an experiment."
+    "text": "Events, Sample Space, Experiments\n\n\n\n\n\n\n\nDefinition\n\n\nAn experiment is a physical procedure that produces some kind of result.\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nAn event is a set of experiment’s possible results.\n\n\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nA sample space is the set of ALL possibles results of an experiment."
   },
   {
     "objectID": "pres/PSIM002.html#events-sample-space-experiments-1",
     "href": "pres/PSIM002.html#events-sample-space-experiments-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Events, Sample Space, Experiments",
-    "text": "Events, Sample Space, Experiments\n\nGraphCodeSample SpaceResultDataset\n\n\n\n\n\n\n\n\n\n\ndata = np.genfromtxt(path_ecg+\"/mitbih_train.csv\", delimiter=\",\")\necg1 = data[1, :-1]\ntime = np.array(range(0,len(ecg1)))/125\nfig = plt.figure()\nplt.plot(time, ecg1)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Normalized ECG\")\n\n\n\n\nprint(\"Maximun Value: \"+ str(ecg1.max()))\n\nMaximun Value: 1.0\n\nprint(\"Minimun Value: \"+ str(ecg1.min()))\n\nMinimun Value: 0.0\n\n\n\n\n\nprint(ecg1[np.random.choice(ecg1.shape[0], 1, replace=False)])\n\n[0.]\n\n\n\n\nName: ECG Heartbeat Categorization Dataset.\nURL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat?resource=download"
+    "text": "Events, Sample Space, Experiments\n\nGraphCodeSample SpaceResultDataset\n\n\n\n\nText(0, 0.5, 'Normalized ECG')\n\n\n\n\n\n\n\n\n\n\n\n\ndata = np.genfromtxt(path_ecg+\"/mitbih_train.csv\", delimiter=\",\")\necg1 = data[1, :-1]\ntime = np.array(range(0,len(ecg1)))/125\nfig = plt.figure()\nplt.plot(time, ecg1)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Normalized ECG\")\n\n\n\n\nprint(\"Maximun Value: \"+ str(ecg1.max()))\nprint(\"Minimun Value: \"+ str(ecg1.min()))\n\nMaximun Value: 1.0\nMinimun Value: 0.0\n\n\n\n\n\nprint(ecg1[np.random.choice(ecg1.shape[0], 1, replace=False)])\n\n[0.]\n\n\n\n\nName: ECG Heartbeat Categorization Dataset.\nURL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat?resource=download"
   },
   {
     "objectID": "pres/PSIM002.html#probability-axioms",
     "href": "pres/PSIM002.html#probability-axioms",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Probability Axioms",
-    "text": "Probability Axioms\nFor the given events A and B that are in a sample space S:\n\n\n\n\n\n\nAxioms\n\n\n\n\\(0 \\leq P_r \\left(A\\right) \\leq 1\\)\n\\(P_r\\left(S\\right) = 1\\)\nIf \\(A \\cap B = \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right)\\)\nIf \\(A \\cap B \\neq \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right) - P_r\\left(A \\cap B \\right)\\)\n\\(P_r\\left(\\bar{A}\\right) = 1-P_r \\left(A\\right)\\)\nIf \\(A\\subset B\\) then \\(P_r \\left(A\\right)\\leq P_r \\left(B\\right)\\)\n\\(P_r \\left(A|B\\right)=\\frac{P_r \\left(A\\cap B\\right)}{P_r \\left(B\\right)}\\)"
+    "text": "Probability Axioms\nFor the given events A and B that are in a sample space S:\n\n\n\n\n\n\n\nAxioms\n\n\n\n\\(0 \\leq P_r \\left(A\\right) \\leq 1\\)\n\\(P_r\\left(S\\right) = 1\\)\nIf \\(A \\cap B = \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right)\\)\nIf \\(A \\cap B \\neq \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right) - P_r\\left(A \\cap B \\right)\\)\n\\(P_r\\left(\\bar{A}\\right) = 1-P_r \\left(A\\right)\\)\nIf \\(A\\subset B\\) then \\(P_r \\left(A\\right)\\leq P_r \\left(B\\right)\\)\n\\(P_r \\left(A|B\\right)=\\frac{P_r \\left(A\\cap B\\right)}{P_r \\left(B\\right)}\\)"
   },
   {
     "objectID": "pres/PSIM002.html#random-variable",
     "href": "pres/PSIM002.html#random-variable",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variable",
-    "text": "Random Variable\n\n\n\n\n\n\nDefinition\n\n\nA random variable is a real valued function of the elements of a sample space, S . Given an experiment, E , with sample space, S, the random variable maps each possible outcome of E.\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nThe probability mass function (PMF), \\(P_X\\left(x\\right)\\), of a random variable, X, is a function that assigns a probability to each possible value of the random variable, X."
+    "text": "Random Variable\n\n\n\n\n\n\n\nDefinition\n\n\nA random variable is a real valued function of the elements of a sample space, S . Given an experiment, E , with sample space, S, the random variable maps each possible outcome of E.\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nThe probability mass function (PMF), \\(P_X\\left(x\\right)\\), of a random variable, X, is a function that assigns a probability to each possible value of the random variable, X."
   },
   {
     "objectID": "pres/PSIM002.html#random-variable-1",
@@ -1516,21 +1516,21 @@
     "href": "pres/PSIM002.html#random-variables",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variables",
-    "text": "Random Variables\nConditions\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sum_{\\chi \\in X}P_X\\left(\\chi \\right) = 1\\]\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\int_{-\\infty}^{\\infty}P_X\\left(\\chi \\right)d\\chi = 1\\]"
+    "text": "Random Variables\nConditions\n\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sum_{\\chi \\in X}P_X\\left(\\chi \\right) = 1\\]\n\n\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\int_{-\\infty}^{\\infty}P_X\\left(\\chi \\right)d\\chi = 1\\]"
   },
   {
     "objectID": "pres/PSIM002.html#random-variables-1",
     "href": "pres/PSIM002.html#random-variables-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variables",
-    "text": "Random Variables\nExpected Values\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\mu = \\sum_{\\chi \\in X}\\chi P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\mu=\\int_{-\\infty}^{\\infty}\\chi P_X\\left(\\chi \\right)d\\chi\\]"
+    "text": "Random Variables\nExpected Values\n\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\mu = \\sum_{\\chi \\in X}\\chi P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\mu=\\int_{-\\infty}^{\\infty}\\chi P_X\\left(\\chi \\right)d\\chi\\]"
   },
   {
     "objectID": "pres/PSIM002.html#random-variables-2",
     "href": "pres/PSIM002.html#random-variables-2",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variables",
-    "text": "Random Variables\nVariance\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sigma^2 = \\sum_{\\chi \\in X}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\sigma^2 = \\int_{-\\infty}^{\\infty}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)d\\chi\\]"
+    "text": "Random Variables\nVariance\n\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sigma^2 = \\sum_{\\chi \\in X}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\sigma^2 = \\int_{-\\infty}^{\\infty}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)d\\chi\\]"
   },
   {
     "objectID": "pres/PSIM002.html#random-variables-3",
@@ -1544,7 +1544,7 @@
     "href": "pres/PSIM002.html#pdf-estimation",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "PDF Estimation",
-    "text": "PDF Estimation\n\nGraphCodeExp. ValueVariance\n\n\n\n\n\n\n\n\n\n\ncounts01, bin_edges01 = np.histogram(ecg1, bins=10, density=True)\ncounts02, bin_edges02 = np.histogram(ecg1, bins=50, density=True)\ncounts03, bin_edges03 = np.histogram(ecg1, bins=100, density=True)\nfig01=plt.figure()\nplt.plot(bin_edges01[1:], counts01/sum(counts01), label=\"Estimation with 10 bins\")\nplt.plot(bin_edges02[1:], counts02/sum(counts02), label=\"Estimation with 50 bins\")\nplt.plot(bin_edges03[1:], counts03/sum(counts03), label=\"Estimation with 100 bins\")\nplt.legend()\nplt.grid()\nplt.xlabel(\"Normalised ECG Value\")\nplt.ylabel(\"Estimated PDF Value\")\n\n\n\n\n\n0.09001020772910533\n\n\n\n\n\n\n0.02551116143316462\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "PDF Estimation\n\nGraphCodeExp. ValueVariance\n\n\n\n\nText(0, 0.5, 'Estimated PDF Value')\n\n\n\n\n\n\n\n\n\n\n\n\ncounts01, bin_edges01 = np.histogram(ecg1, bins=10, density=True)\ncounts02, bin_edges02 = np.histogram(ecg1, bins=50, density=True)\ncounts03, bin_edges03 = np.histogram(ecg1, bins=100, density=True)\nfig01=plt.figure()\nplt.plot(bin_edges01[1:], counts01/sum(counts01), label=\"Estimation with 10 bins\")\nplt.plot(bin_edges02[1:], counts02/sum(counts02), label=\"Estimation with 50 bins\")\nplt.plot(bin_edges03[1:], counts03/sum(counts03), label=\"Estimation with 100 bins\")\nplt.legend()\nplt.grid()\nplt.xlabel(\"Normalised ECG Value\")\nplt.ylabel(\"Estimated PDF Value\")\n\n\n\n\n\n0.09001020772910533\n\n\n\n\n\n\n0.02551116143316462\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   },
   {
     "objectID": "labs/Lab_psim_01_2024I.html",
@@ -1586,7 +1586,7 @@
     "href": "pres/PSIM003.html",
     "title": "La guarida de los datos",
     "section": "",
-    "text": "import numpy as np\nimport matplotlib.pyplot as plt\nimport scipy.io as sio\n\n\ndata = sio.loadmat(\"/Users/pacaicedo/DatasetsVault/ECG_DATASET/Dataset3/WFDBRecords/01/010/JS00001.mat\")\nvariables = data[\"val\"]\n\n\necg_all = np.array(variables)\necg_01 = ecg_all[10, :]\necg_02 = ecg_all[1, :]\n\nlenSignal = ecg_all.shape[1]\n\nfs = 500\n\ntime = np.arange(lenSignal)/fs\n\n\nfig0001 = plt.figure()\nplt.plot(time, ecg_01, label=\"10th lead\")\nplt.plot(time, ecg_02, label=\"9th lead\")\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"ECG amplitude (mv)\")\nplt.legend()\n\n&lt;matplotlib.legend.Legend at 0x134e235d0&gt;\n\n\n\n\n\n\necg_fft = np.fft.fft(ecg_01)\necg_psd = np.real(ecg_fft*np.conj(ecg_fft)/len(ecg_01))\nfig0002 = plt.figure()\nplt.plot(np.fft.fftfreq(lenSignal), ecg_psd, )\n\n\n\n\n\nfrom scipy import signal\n\nfcut = 50\nwcut = fcut/(fs/2)\n\nb, a = signal.butter(6, wcut, \"low\")\necg_filt = signal.filtfilt(b,a, ecg_01)\n\nfig0003 = plt.figure()\nplt.plot(time, ecg_01, label=\"Señal Original\")\nplt.plot(time, ecg_filt, label=\"Señal Filtrada\")\nplt.legend()\n\n&lt;matplotlib.legend.Legend at 0x126e81090&gt;\n\n\n\n\n\n\nimport statsmodels.api as sm\nfrom scipy.optimize import curve_fit\n\ndef nonlinearfunction(x, p1, p2, p3, p4, p5, p6):\n    return p1+ p2*x + p3*np.sin(p4*x) + p5*np.cos(p6*x)\n\npopt, pcov = curve_fit(nonlinearfunction, time, ecg_01)\n\n# Graficar los datos originales y la estimación LOESS\nplt.scatter(time, ecg_filt, label='Datos Originales')\nplt.plot(time, nonlinearfunction(time, *popt), color='red', label='Estimación No Lineal')\nplt.legend()\nplt.show()\n\n\necg_filt_trend1 = ecg_filt-nonlinearfunction(time, *popt)\nfig0005 = plt.figure()\n\nplt.plot(time, ecg_filt)\nplt.plot(time, ecg_filt_trend1)\n\n\n\n\n\n\n\n\n# Estimación LOESS\nlowess = sm.nonparametric.lowess(ecg_filt, time, frac=1/12)\n\n# Graficar los datos originales y la estimación LOESS\nplt.scatter(time, ecg_filt, label='Datos Originales')\nplt.plot(lowess[:, 0], lowess[:, 1], color='red', label='Estimación LOESS')\nplt.legend()\nplt.show()\n\n\necg_filt_trend2 = ecg_filt-lowess[:, 1]\nfig0004 = plt.figure()\n\nplt.plot(time, ecg_filt, label=\"Señal Original\")\nplt.plot(time, ecg_filt_trend2, 'g', label=\"Señal sin artefacto respiratorio\")\nplt.legend()\nplt.grid()\n\n\n\n\n\n\n\n\nfcut1 = 50\nfcut2 = 1\nwcut1 = fcut1/(fs/2)\nwcut2 = fcut2/(fs/2)\n\nb, a = signal.butter(6, [wcut2, wcut1], \"bandpass\")\necg_filt2 = signal.filtfilt(b,a, ecg_01)\n\nfig0005 = plt.figure()\nplt.plot(time, ecg_01, label=\"Señal Original\")\nplt.plot(time, ecg_filt2, label=\"Señal Filtrada\")\nplt.legend()\n\n&lt;matplotlib.legend.Legend at 0x134fb3510&gt;\n\n\n\n\n\n\nfig006 = plt.figure()\nplt.plot(time, ecg_filt_trend1, label=\"Usando regresión no lineal\")\nplt.plot(time, ecg_filt_trend2, label=\"Usando regresión por partes\")\nplt.plot(time, ecg_filt2, label=\"Usando Filtro pasabanda\")\nplt.legend()\nplt.grid()\n\n\n\n\n   Created in Deepnote"
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\nimport scipy.io as sio\nimport os\n\n\ndata = sio.loadmat(os.environ.get(\"DATASET_ECG\")+\"/Dataset3/WFDBRecords/01/010/JS00001.mat\")\nvariables = data[\"val\"]\n\n\necg_all = np.array(variables)\necg_01 = ecg_all[10, :]\necg_02 = ecg_all[1, :]\n\nlenSignal = ecg_all.shape[1]\n\nfs = 500\n\ntime = np.arange(lenSignal)/fs\n\n\nfig0001 = plt.figure()\nplt.plot(time, ecg_01, label=\"10th lead\")\nplt.plot(time, ecg_02, label=\"9th lead\")\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"ECG amplitude (mv)\")\nplt.legend()\n\n\n\n\n\n\n\n\n\necg_fft = np.fft.fft(ecg_01)\necg_psd = np.real(ecg_fft*np.conj(ecg_fft)/len(ecg_01))\nfig0002 = plt.figure()\nplt.plot(np.fft.fftfreq(lenSignal), ecg_psd, )\n\n\n\n\n\n\n\n\n\nfrom scipy import signal\n\nfcut = 50\nwcut = fcut/(fs/2)\n\nb, a = signal.butter(6, wcut, \"low\")\necg_filt = signal.filtfilt(b,a, ecg_01)\n\nfig0003 = plt.figure()\nplt.plot(time, ecg_01, label=\"Señal Original\")\nplt.plot(time, ecg_filt, label=\"Señal Filtrada\")\nplt.legend()\n\n\n\n\n\n\n\n\n\nimport statsmodels.api as sm\nfrom scipy.optimize import curve_fit\n\ndef nonlinearfunction(x, p1, p2, p3, p4, p5, p6):\n    return p1+ p2*x + p3*np.sin(p4*x) + p5*np.cos(p6*x)\n\npopt, pcov = curve_fit(nonlinearfunction, time, ecg_01)\n\n# Graficar los datos originales y la estimación LOESS\nplt.scatter(time, ecg_filt, label='Datos Originales')\nplt.plot(time, nonlinearfunction(time, *popt), color='red', label='Estimación No Lineal')\nplt.legend()\nplt.show()\n\n\necg_filt_trend1 = ecg_filt-nonlinearfunction(time, *popt)\nfig0005 = plt.figure()\n\nplt.plot(time, ecg_filt)\nplt.plot(time, ecg_filt_trend1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Estimación LOESS\nlowess = sm.nonparametric.lowess(ecg_filt, time, frac=1/12)\n\n# Graficar los datos originales y la estimación LOESS\nplt.scatter(time, ecg_filt, label='Datos Originales')\nplt.plot(lowess[:, 0], lowess[:, 1], color='red', label='Estimación LOESS')\nplt.legend()\nplt.show()\n\n\necg_filt_trend2 = ecg_filt-lowess[:, 1]\nfig0004 = plt.figure()\n\nplt.plot(time, ecg_filt, label=\"Señal Original\")\nplt.plot(time, ecg_filt_trend2, 'g', label=\"Señal sin artefacto respiratorio\")\nplt.legend()\nplt.grid()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfcut1 = 50\nfcut2 = 1\nwcut1 = fcut1/(fs/2)\nwcut2 = fcut2/(fs/2)\n\nb, a = signal.butter(6, [wcut2, wcut1], \"bandpass\")\necg_filt2 = signal.filtfilt(b,a, ecg_01)\n\nfig0005 = plt.figure()\nplt.plot(time, ecg_01, label=\"Señal Original\")\nplt.plot(time, ecg_filt2, label=\"Señal Filtrada\")\nplt.legend()\n\n\n\n\n\n\n\n\n\nfig006 = plt.figure()\nplt.plot(time, ecg_filt_trend1, label=\"Usando regresión no lineal\")\nplt.plot(time, ecg_filt_trend2, label=\"Usando regresión por partes\")\nplt.plot(time, ecg_filt2, label=\"Usando Filtro pasabanda\")\nplt.legend()\nplt.grid()\n\n\n\n\n\n\n\n\n   Created in Deepnote"
   },
   {
     "objectID": "rubricas/Rubrica_Regression.html",

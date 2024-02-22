@@ -22,8 +22,8 @@ El curso está dividido en 3 partes:
 ## Presentaciones
 
 - [Presentación del curso](../pres/PSIM001.qmd)
-<!-- - [ParteI: Probabilidad y Estadística](../pres/PSIM002.qmd)
-- [ParteII: Un ejemplo de ECG](../pres/PSIM003.qmd) -->
+- [ParteI: Probabilidad y Estadística](../pres/PSIM002.qmd)
+- [ParteII: Un ejemplo de ECG](../pres/PSIM003.qmd)
 - [Procesamiento de imágenes](../pres/PSIM004.qmd)
 
 ## Laboratorios

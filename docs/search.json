@@ -1656,6 +1656,6 @@
     "href": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
   }
 ]

@@ -225,6 +225,78 @@ plt.imshow(RGB_img)
 :::
 
 
+# Images and vision
+
+- The paradigm surrounding the conceptualization of light and perception has undergone significant evolution. 
+- Initially, the prevailing understanding within humanity posited that visual stimuli emanated from the eye itself. 
+- However, contemporary knowledge has elucidated that light originates from external sources, undergoes reflection from objects within the environment, and is subsequently captured by the eye.
+
+# Images and vision
+
+::: {.callout-note title="Important" collapsible="false"}
 
 
+We also understand that light is a type of electromagnetic radiation, and its wavelength falls within a range from 400 nanometers to 700 nanometers.
 
+:::
+
+
+![Taken from Corke 2023](./images/PSIM/ligh_spectrum.png){fig-align="center"}
+
+# Images and vision
+
+::: {.callout-note title="Important" collapsible="false"}
+
+- The most common way light is made is by something getting really hot. This makes energy that comes out as light.
+
+- Some important term are: 
+  - _Absortion:_ It is the fraction of light which a body absorbs depending on the wavelength.
+  - _Reflectance:_ It is the fraction of the incoming light which a body reflects. It's a number between 0 to 1 and also depends on wavelength.
+  - _Luminance:_ It is the fraction of the incoming light which a surface reflects. It's a function of absortion and reflectance, and because of that luminance depends on wavelength.
+
+:::
+
+# Images and vision
+
+::: {.callout-tip title="The eye" collapsible="false"}
+
+- Our eye has two types of cells. _Cones_ and _Rods_.
+- Cones are the most sensitive cells but above all these are color sensitive.
+- Rods responds only two intensity and they used on night, mostly.
+- Humans, like most primates, are trichomats. This means that humans have three types of cones (Long, Medium and shorts).
+  - 65% of longs (Sense red)
+  - 33% of mediums (Sense green)
+  - 2% of shortsv(Sense blue)
+
+:::
+
+# Images and vision
+
+::: {.callout-tip title="The artificial eye" collapsible="false"}
+
+![Taken from Corke 2023](./images/PSIM/CameraSensor.png){fig-align="center"}
+
+:::
+
+The currents from each sensor are function of the luminance and the spectral response filter.
+
+# Images and vision
+
+![Taken from https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf](./images/PSIM/pinhole.png){fig-align="center"  width=1000}
+
+# Images and vision
+
+![Taken from https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf](./images/PSIM/pinhole2.png){fig-align="center"  width=1000}
+
+# Images and vision
+
+![Taken from https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf](./images/PSIM/pinhole3.png){fig-align="center"  width=500}
+
+# Images and vision
+
+![Taken from https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf](./images/PSIM/CameraModel.png){fig-align="center"  width=1000}
+
+
+# Images and vision
+
+![Taken from https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf](./images/PSIM/CameraModel2.png){fig-align="center"  width=1000}

@@ -44,6 +44,18 @@ Generar al estudiante la competencia de creación de aplicaciones a partir del p
 
 __Fecha de entrega:__ Hasta el 29 de febrero de 2024. 11:59pm.
 
+# Presentaciones
+
+| **Grupo** |      **Horario**     |
+|:---------:|:--------------------:|
+|     A     | 2024-02-29   11:30am |
+|     B     | 2024-02-29   11:45am |
+|     C     | 2024-02-29   12:00pm |
+|     D     | 2024-02-29   12:15pm |
+|     E     | 2024-02-29   12:30pm |
+|     F     | 2024-02-29   12:45pm |
+|     G     | 2024-02-29   11:15am |
+
 ::: {.column-margin}
 ![](../Img/Escuela_Rosario_logo.png)
 :::

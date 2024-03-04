@@ -1,0 +1,81 @@
+---
+title: "Laboratorio 01: Probabilidad y Estadística"
+description: "Primer Laboratorio de la materia probabilidad y estadística"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo R."
+date: "2024-01-29"
+date-modified: "2024-01-29"
+---
+
+# Monitoría del Curso
+Melissa Tarquino Mendoza
+
+# Introducción
+
+El procesamiento de imágenes médicas es un campo interdisciplinario de la ciencia que juega un papel crucial en el diagnóstico, tratamiento y seguimiento de enfermedades en la práctica clínica contemporánea. Mediante el uso de diversas técnicas computacionales, este campo permite la extracción de información significativa a partir de imágenes médicas, tales como radiografías, tomografías computarizadas (TC), resonancias magnéticas (RM), entre otras modalidades. Estas imágenes proporcionan una representación visual detallada de estructuras anatómicas y procesos fisiológicos en el cuerpo humano, permitiendo a los profesionales de la salud realizar evaluaciones precisas y tomar decisiones informadas sobre el cuidado de los pacientes.
+
+En este contexto, la elección del formato de imagen médica adecuado es de suma importancia para garantizar la calidad y utilidad de los datos. Los formatos de imagen más comúnmente utilizados en el ámbito médico incluyen DICOM (Digital Imaging and Communications in Medicine) y NIfTI (Neuroimaging Informatics Technology Initiative). El formato DICOM es ampliamente utilizado en la adquisición y almacenamiento de imágenes médicas, ya que permite la integración y el intercambio de datos entre diferentes dispositivos y sistemas de imagen. Por otro lado, el formato NIfTI se utiliza principalmente en el campo de la neuroimagen para el análisis y procesamiento de imágenes de resonancia magnética funcional (fMRI) y otras modalidades relacionadas con la neurociencia. La elección adecuada del formato de imagen médica es esencial para garantizar la interoperabilidad, la precisión y la reproducibilidad de los resultados en el procesamiento de imágenes médicas.
+
+# Objetivo
+
+Generar al estudiante la competencia de creación de aplicaciones a partir del procesamiento imágenes biomédicas, resaltando la importancia en los formatos.
+
+# Datasets
+
+[Conjunto de imágenes decathlon](http://medicaldecathlon.com/dataaws/)
+
+[The UNIFESP X-Ray Body Part Classification Dataset](https://www.kaggle.com/datasets/felipekitamura/unifesp-xray-bodypart-classification)
+
+# Recursos
+[itk-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
+
+# Rúbrica de evaluación
+
+::: {.grid}
+
+::: {.g-col-7}
+
+|                    Indicador                    |                                                   Excelente (10 ptos)                                                   |                                          Suficiente (5 ptos)                                         |                                          Insuficiente (0 ptos)                                          |
+|:-----------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------:|
+| Conversión NIFTI-PNG                            | Explica de forma completa el algoritmo funcional que utilizaron para convertir de NIFTI a PNG                           | Genera un algoritmo funcional para la conversión de NIFTI a PNG                                      | No genera un algoritmo funcional para la conversión de NIFTI a PNG                                      |
+| Conversión DICOM-PNG                            | Explica de forma completa el algoritmo funcional que utilizaron para convertir de DICOM a PNG                           | Genera un algoritmo funcional para la conversión de DICOM a PNG                                      | No genera un algoritmo funcional para la conversión de DICOM a PNG                                      |
+| Formato DICOM-NIFTI                             | Explica claramente el formato DICOM y el formato NIFTI                                                                  |                                               ---------                                              |                              No explica el formato DICOM o el formato NIFTI                             |
+| Algoritmo Encriptacion/Desencriptación          | Explica de forma completa el algoritmo funcional que utilizaron para encriptar/desencriptar información en archivos png | Genera un algoritmo funcional que utilizaron para encriptar/desencriptar información en archivos png | No genera un algoritmo funcional que utilizaron para encriptar/desencriptar información en archivos png |
+| Aplicación para la implementación de algoritmos | Genera una aplicación en la que se implementan los algoritmos desarrollados.                                            |                                               ---------                                              | No genera una aplicación en la cual se implementen los algoritmos desarrollados.  
+
+:::
+:::
+
+# Flujo de trabajo
+
+1. Escoge una parte de los datos del conjunto de datos Decathlon. Después, elige al azar un archivo Nifti (NIFTI_FILE).
+
+2. Elige una imagen al azar (DICOM_FILE) del conjunto de datos _The UNIFESP X-Ray Body Part Classification Dataset_.
+
+3. Explique el formato NIFTI y el formato DICOM.
+
+4. Desarrolle un algoritmo que convierta a NIFTI_FILE en un conjunto de imágenes PNG. Elija una de esas imágenes para generar el archivo PNG_FILE_01.png
+
+5. Desarrolle un algoritmo que convierta a DICOM_FILE en una imagen PNG. A esta imagen se le conocerá como PNG_FILE_02.png
+
+6. Desarrolle algoritmo para encriptar/desencriptar una palabra dentro de la información binaria de los archivos PNG. Esteganografía.
+
+7. Desarrolle una aplicación que implemente el algoritmo de encriptación/desencriptación.
+
+__Fecha de entrega:__ Sesión de laboratorio Lunes 1 de abril de 2024.
+
+# Presentaciones
+
+| **Grupo** |      **Horario**     |
+|:---------:|:--------------------:|
+|     A     | 2024-04-01   ******* |
+|     B     | 2024-04-01   ******* |
+|     C     | 2024-04-01   ******* |
+|     D     | 2024-04-01   ******* |
+|     E     | 2024-04-01   ******* |
+|     F     | 2024-04-01   ******* |
+|     G     | 2024-04-01   ******* |
+
+::: {.column-margin}
+![](../Img/Escuela_Rosario_logo.png)
+:::

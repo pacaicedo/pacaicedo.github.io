@@ -1,9 +1,9 @@
 {
   "listingMap": {
     "index.qmd": [
-      "Projects/*.qmd",
+      "Class/*.qmd",
       "Tutorials/*.qmd",
-      "Class/*.qmd"
+      "Projects/*.qmd"
     ]
   }
 }

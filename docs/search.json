@@ -1440,5 +1440,12 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
     "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/pruebas.html",
+    "href": "pres/pruebas.html",
+    "title": "La guarida de los datos",
+    "section": "",
+    "text": "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nkirby = cv2.imread(\"./images/little_kirby.png\")\nRGB_kirby = cv2.cvtColor(kirby, cv2.COLOR_BGR2RGB)\nfig003 = plt.figure()\nplt.imshow(RGB_kirby)\n\n\n\n\n\n\n\n\n\nGray_Kirby = cv2.cvtColor(RGB_kirby, cv2.COLOR_RGB2GRAY)\nplt.imshow(Gray_Kirby, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nKirby_1bit = cv2.bitwise_and(Gray_Kirby, np.ones(Gray_Kirby.shape, dtype=\"uint8\"))\nprint(255*Kirby_1bit)\nplt.imshow(255*Kirby_1bit)\n\n[[255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255   0   0   0   0   0   0 255 255 255 255 255]\n [255 255 255 255   0 255 255 255 255 255 255   0 255 255 255 255]\n [255 255 255   0 255 255 255 255 255 255 255 255   0 255 255 255]\n [255 255 255   0 255 255   0 255 255   0 255 255   0 255 255 255]\n [255 255   0 255 255 255   0 255 255   0 255 255 255   0 255 255]\n [255 255   0 255 255 255 255 255 255 255 255 255 255   0 255 255]\n [255 255 255   0   0 255 255 255 255 255 255   0   0 255 255 255]\n [255 255 255   0   0   0   0   0   0   0   0   0   0 255 255 255]\n [255 255 255 255   0   0   0 255 255   0   0   0 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]]"
   }
 ]

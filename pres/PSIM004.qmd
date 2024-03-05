@@ -8,13 +8,13 @@ date: "2024-01-22"
 format:
   revealjs: 
     code-tools: true
-    code-overflow: scroll
+    code-overflow: wrap
     code-line-numbers: true
     code-copy: false
     fig-align: center
     self-contained: true
     theme: 
-      - white
+      - simple
       - custom.scss
     slide-number: true
     preview-links: auto
@@ -22,6 +22,8 @@ format:
     css: styles.css
     footer: <https://pacaicedo.github.io>
     transition: fade
+    progress: true
+    scrollable: true
 resources:
   - demo.pdf
 ---
@@ -300,3 +302,275 @@ The currents from each sensor are function of the luminance and the spectral res
 # Images and vision
 
 ![Taken from https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf](./images/PSIM/CameraModel2.png){fig-align="center"  width=1000}
+
+# Sampling and quantization
+
+::: {.callout-tip title="Definition" collapsible="false"}
+
+__Sampling:__ Digitalization of the spatial coordinates.
+
+:::
+
+::: {.callout-tip title="Definition" collapsible="false"}
+
+__Quantiazation:__ Digitalization of the light intensity (amplitude).
+
+:::
+
+
+# Sampling and quantization
+
+
+
+![Tomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.](./images/sampling_quantization_01.png){fig-align="center"  width=600}
+
+
+
+
+# Sampling and quantization
+
+:::{layout-nrow=2}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: loading image 1
+
+img = cv2.imread("./images/little_image.png")
+RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+fig002 = plt.figure()
+plt.imshow(RGB_img)
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: loading image 2
+
+plt.imshow(RGB_img[:,:,0], cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: loading image 3
+
+plt.imshow(RGB_img[:,:,1], cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: loading image 4
+
+plt.imshow(RGB_img[:,:,2], cmap="gray")
+
+```
+
+:::
+
+## Sampling and quantization
+
+:::{layout-ncol=2}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: Loading kirby
+
+kirby = cv2.imread("./images/little_kirby.png")
+RGB_kirby = cv2.cvtColor(kirby, cv2.COLOR_BGR2RGB)
+fig003 = plt.figure()
+plt.imshow(RGB_kirby)
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: Gray kirby
+
+Gray_Kirby = cv2.cvtColor(RGB_kirby, cv2.COLOR_RGB2GRAY)
+plt.imshow(Gray_Kirby, cmap="gray")
+
+```
+
+:::
+
+:::{layout-ncol=4}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 1bit kirby
+#| fig-cap: "1bit"
+
+import numpy as np
+
+Kirby_1bit = cv2.bitwise_and(Gray_Kirby, np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_1bit, cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 2bit kirby
+#| fig-cap: "2bit"
+
+import numpy as np
+
+Kirby_2bit = cv2.bitwise_and(Gray_Kirby, 2*np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_2bit, cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 3bit kirby
+#| fig-cap: "3bit"
+
+import numpy as np
+
+Kirby_3bit = cv2.bitwise_and(Gray_Kirby, 4*np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_3bit, cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 4bit kirby
+#| fig-cap: "4bit"
+
+import numpy as np
+
+Kirby_4bit = cv2.bitwise_and(Gray_Kirby, 8*np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_4bit, cmap="gray")
+
+```
+
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 5bit kirby
+#| fig-cap: "5bit"
+
+import numpy as np
+
+Kirby_5bit = cv2.bitwise_and(Gray_Kirby, 16*np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_5bit, cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 6bit kirby
+#| fig-cap: "6bit"
+
+
+import numpy as np
+
+Kirby_6bit = cv2.bitwise_and(Gray_Kirby, 32*np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_6bit, cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 7bit kirby
+#| fig-cap: "7bit"
+
+import numpy as np
+
+Kirby_7bit = cv2.bitwise_and(Gray_Kirby, 64*np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_7bit, cmap="gray")
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: 8bit kirby
+#| fig-cap: "8bit"
+
+import numpy as np
+
+Kirby_8bit = cv2.bitwise_and(Gray_Kirby, 128*np.ones(Gray_Kirby.shape, dtype="uint8"))
+plt.imshow(Kirby_8bit, cmap="gray")
+
+```
+
+:::
+
+## Sampling and quantization
+
+![Tomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.](./images/sampling_quantization_02.png){fig-align="center"  width=600}
+
+## Linear indexing
+
+![Tomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.](./images/linear_indexing.png){fig-align="center"  width=600}
+
+::: columns
+
+:::{.column width="50%"}
+
+::: {.callout-tip title="From normal to linear" collapsible="false"}
+
+$$\alpha = My+x$$
+
+:::
+
+
+
+:::
+
+:::{.column width="50%"}
+
+::: {.callout-tip title="From linear to normal" collapsible="false"}
+
+$$x = \alpha \bmod M$$
+
+$$y = \frac{\alpha - x}{M}$$
+
+:::
+
+
+
+:::
+
+:::
+
+## Spatial resolution
+
+![Tomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.](./images/dpi01.png){fig-align="center"  width=600}
+
+## Intensity resolution
+
+![Tomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.](./images/intensity_resolution.png){fig-align="center"  width=600}
+
+## Intensity resolution
+
+![Tomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.](./images/intensity_resolution_02.png){fig-align="center"  width=600}

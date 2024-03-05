@@ -1256,29 +1256,29 @@
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing",
     "href": "pres/PSIM004.html#what-is-digital-image-processing",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "Definition\n\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "Definition\n\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "Definition\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nColor Space\n\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nColor Space\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "import cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
   },
   {
     "objectID": "rubricas/Rubrica_EDA.html",
@@ -1384,5 +1384,61 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Laboratorios",
     "text": "Laboratorios\n\nLaboratorio 01\nLaboratorio 02\nLaboratorio 03"
+  },
+  {
+    "objectID": "pres/PSIM004.html#image",
+    "href": "pres/PSIM004.html#image",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Image",
+    "text": "Image\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM004.html#sampling-quantization",
+    "href": "pres/PSIM004.html#sampling-quantization",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Sampling & quantization",
+    "text": "Sampling & quantization\n#| echo: false #| eval: true #| output: true #| label: loading little kirby\nimg = cv2.imread(“./images/little_kirby.png”) RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) fig002 = plt.figure() plt.imshow(RGB_img)\n``\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM004.html#sampling-and-quantization-3",
+    "href": "pres/PSIM004.html#sampling-and-quantization-3",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Sampling and quantization",
+    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
+  },
+  {
+    "objectID": "pres/PSIM004.html#sampling-and-quantization-4",
+    "href": "pres/PSIM004.html#sampling-and-quantization-4",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Sampling and quantization",
+    "text": "Sampling and quantization\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+  },
+  {
+    "objectID": "pres/PSIM004.html#linear-indexing",
+    "href": "pres/PSIM004.html#linear-indexing",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Linear indexing",
+    "text": "Linear indexing\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
+  },
+  {
+    "objectID": "pres/PSIM004.html#spatial-resolution",
+    "href": "pres/PSIM004.html#spatial-resolution",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Spatial resolution",
+    "text": "Spatial resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+  },
+  {
+    "objectID": "pres/PSIM004.html#intensity-resolution",
+    "href": "pres/PSIM004.html#intensity-resolution",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Intensity resolution",
+    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+  },
+  {
+    "objectID": "pres/PSIM004.html#intensity-resolution-1",
+    "href": "pres/PSIM004.html#intensity-resolution-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Intensity resolution",
+    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

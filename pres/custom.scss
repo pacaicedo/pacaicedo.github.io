@@ -2,9 +2,9 @@
 
 $body-bg: #FFFFFF;
 $body-color: #000000;
-$link-color: #cc0000;
-$presentation-heading-color: #0000FF;
-$code-color: #cc0000;
+$link-color: #2f00ff;
+$presentation-heading-color: #a80000;
+$code-color: #027c1c;
 $code-block-bg: #ded9ca;
 $code-block-border-color: #000000;
 
@@ -30,7 +30,7 @@ $code-block-border-color: #000000;
 }
 
 .sectionhead {
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: center;
   color: $presentation-heading-color;
   font-family: $presentation-heading-font;

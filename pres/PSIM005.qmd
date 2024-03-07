@@ -1,0 +1,199 @@
+---
+title: "Procesado de Señales e Imágenes Médicas"
+description: "Sitio de la asignatura Procesado de Señales e Imágenes Médicas"
+subtitle: "Ingeniería Biomédica"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+date: "2024-01-22"
+format:
+  revealjs: 
+    code-tools: true
+    code-overflow: wrap
+    code-line-numbers: true
+    code-copy: false
+    fig-align: center
+    self-contained: true
+    theme: 
+      - simple
+      - custom.scss
+    slide-number: true
+    preview-links: auto
+    logo: images/Escuela_Rosario_logo.png
+    css: styles.css
+    footer: <https://pacaicedo.github.io>
+    transition: fade
+    progress: true
+    scrollable: false
+resources:
+  - demo.pdf
+---
+
+```{r}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: Loading R-Libraries
+
+library("DiagrammeR")
+library("reticulate")
+library("kableExtra")
+library("tidyverse")
+library("knitr")
+library("cowplot")
+library("ggfx")
+knitr::opts_chunk$set(echo = FALSE)
+
+def.chunk.hook <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+    x <- def.chunk.hook(x, options)
+    ifelse(options$size != "normalsize", paste0("\n \\", options$size, "\n\n", x, "\n\n \\normalsize"), x)
+})
+
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: Loading Python-Libraries
+
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+
+```
+
+
+
+# Procesamiento de imágenes
+
+## Relationships between pixels
+
+::: {.callout-tip title="Neighborhood" collapsible="false"}
+
+:::{#fig-neighborhoods layout-ncol=3}
+
+
+ ![N4-$N_4\left(p\right)$](./images/n4.png){fig-align="center" width=250} 
+
+ ![ND-$N_D\left(p\right)$](./images/nd.png){fig-align="center" width=250} 
+
+ ![N8-$N_8\left(p\right)$](./images/n8.png){fig-align="center" width=250} 
+
+Neighborhoods
+
+:::
+
+:::
+
+## Relationships between pixels
+
+::: {.callout-tip title="Rules for adjecency" collapsible="false"}
+
+- 4-Adjecncy: Two pixels p and q with values from V are 4-adjacent if q is in the set $N_4\left(p\right)$
+
+- 8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set $N_8\left(p\right)$
+
+- m-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if:
+    - q is in $N_4\left(p\right)$.
+    - q is in $N_D\left(p\right)$ and the set $N_4\left(p\right) \cap N_4\left(q\right)$ has no pixels whose values are from V.
+
+:::
+
+
+## Relationships between pixels
+
+ ![Adjacency](./images/Adjacency.png){fig-align="center" width=500} 
+
+## Relationships between pixels
+
+:::{layout="[[1,1], [1]]"}
+
+ ![A4](./images/a4.png){fig-align="center" width=250 .lightbox} 
+
+ ![A8](./images/a8.png){fig-align="center" width=250 .lightbox} 
+
+ ![A-m](./images/am.png){fig-align="center" width=250 .lightbox}
+
+:::
+
+## Relationships between pixels
+
+::: {.callout-tip title="Digital path" collapsible="false"}
+
+It is a sequence of adjacent pixels. 
+
+$$\left(x_0, y_0\right), \left(x_1, y_1\right), \left(x_2, y_2\right), \dots \left(x_n, y_n\right)$$
+
+If $\left(x_0, y_0\right)=\left(x_n, y_n\right)$ the path is known as closed path
+
+Let S represent a subset of pixels in an image. Two pixels p and q are said to be connected in S if there exists a path between them consisting entirely of pixels in S.
+
+:::
+
+## Relationships between pixels
+
+![](./images/connectedSet.png){fig-align="center" width=500 .lightbox}
+
+## Relationships between pixels
+
+![](./images/two_regions.png){fig-align="center" width=500 .lightbox}
+
+
+## Relationships between pixels
+
+![](./images/boundary.png){fig-align="center" width=500 .lightbox}
+
+## Relationships between pixels
+
+::: {.callout-tip title="Distance" collapsible="false"}
+
+::: columns
+
+:::{.column width="50%"}
+
+![](./images/city_block.png){fig-align="center" width=500 .lightbox}
+
+:::
+
+:::{.column width="50%"}
+
+- __City block distance__: $D_4\left(p,q\right) = \lvert x-u\rvert + \lvert y-v \rvert$
+- Chessboard distance: $D_8\left(p,q\right) = max \left(\lvert x-u\rvert , \lvert y-v \rvert \right)$
+- Euclidean distance: $D_e\left(p,q\right) = \sqrt{\left(x-u\right)^2 + \left(y-v\right)^2}$
+
+:::
+
+:::
+
+
+
+:::
+
+## Relationships between pixels
+
+::: {.callout-tip title="Distance" collapsible="false"}
+
+::: columns
+
+:::{.column width="50%"}
+
+![](./images/chessboard_distance.png){fig-align="center" width=500 .lightbox}
+
+:::
+
+:::{.column width="50%"}
+
+- City block distance: $D_4\left(p,q\right) = \lvert x-u\rvert + \lvert y-v \rvert$
+- __Chessboard distance__: $D_8\left(p,q\right) = max \left(\lvert x-u\rvert , \lvert y-v \rvert \right)$
+- Euclidean distance: $D_e\left(p,q\right) = \sqrt{\left(x-u\right)^2 + \left(y-v\right)^2}$
+
+:::
+
+:::
+
+
+
+:::
+

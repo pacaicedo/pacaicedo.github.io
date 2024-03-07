@@ -1256,29 +1256,29 @@
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing",
     "href": "pres/PSIM004.html#what-is-digital-image-processing",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
+    "section": "",
+    "text": "Definition\n\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
+    "section": "",
+    "text": "Definition\n\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nColor Space\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
+    "section": "",
+    "text": "Definition\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nColor Space\n\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
+    "section": "",
+    "text": "import cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
   },
   {
     "objectID": "rubricas/Rubrica_EDA.html",
@@ -1376,7 +1376,7 @@
     "href": "Class/Class_PSIM.html#presentaciones",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Presentaciones",
-    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística\nParteII: Un ejemplo de ECG\nProcesamiento de imágenes"
+    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística\nParteII: Un ejemplo de ECG\nProcesamiento de imágenes 1/2\nProcesamiento de imágenes 2/2"
   },
   {
     "objectID": "Class/Class_PSIM.html#laboratorios",
@@ -1404,42 +1404,42 @@
     "href": "pres/PSIM004.html#sampling-and-quantization-3",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
+    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
   },
   {
     "objectID": "pres/PSIM004.html#sampling-and-quantization-4",
     "href": "pres/PSIM004.html#sampling-and-quantization-4",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Sampling and quantization\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#linear-indexing",
     "href": "pres/PSIM004.html#linear-indexing",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Linear indexing",
-    "text": "Linear indexing\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
+    "text": "Linear indexing\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
   },
   {
     "objectID": "pres/PSIM004.html#spatial-resolution",
     "href": "pres/PSIM004.html#spatial-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Spatial resolution",
-    "text": "Spatial resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Spatial resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution",
     "href": "pres/PSIM004.html#intensity-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution-1",
     "href": "pres/PSIM004.html#intensity-resolution-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/pruebas.html",
@@ -1447,5 +1447,89 @@
     "title": "La guarida de los datos",
     "section": "",
     "text": "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nkirby = cv2.imread(\"./images/little_kirby.png\")\nRGB_kirby = cv2.cvtColor(kirby, cv2.COLOR_BGR2RGB)\nfig003 = plt.figure()\nplt.imshow(RGB_kirby)\n\n\n\n\n\n\n\n\n\nGray_Kirby = cv2.cvtColor(RGB_kirby, cv2.COLOR_RGB2GRAY)\nplt.imshow(Gray_Kirby, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nKirby_1bit = cv2.bitwise_and(Gray_Kirby, np.ones(Gray_Kirby.shape, dtype=\"uint8\"))\nprint(255*Kirby_1bit)\nplt.imshow(255*Kirby_1bit)\n\n[[255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255   0   0   0   0   0   0 255 255 255 255 255]\n [255 255 255 255   0 255 255 255 255 255 255   0 255 255 255 255]\n [255 255 255   0 255 255 255 255 255 255 255 255   0 255 255 255]\n [255 255 255   0 255 255   0 255 255   0 255 255   0 255 255 255]\n [255 255   0 255 255 255   0 255 255   0 255 255 255   0 255 255]\n [255 255   0 255 255 255 255 255 255 255 255 255 255   0 255 255]\n [255 255 255   0   0 255 255 255 255 255 255   0   0 255 255 255]\n [255 255 255   0   0   0   0   0   0   0   0   0   0 255 255 255]\n [255 255 255 255   0   0   0 255 255   0   0   0 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]]"
+  },
+  {
+    "objectID": "pres/PSIM004.html#relationships-between-pixels",
+    "href": "pres/PSIM004.html#relationships-between-pixels",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\n\nN4\n\n\n\n\n\n\n\nND\n\n\n\n\n\n\n\nN8\n\n\n\n\n\n\nFigura 1"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels",
+    "href": "pres/PSIM005.html#relationships-between-pixels",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\nN4-\\(N_4\\left(p\\right)\\)\n\n\n\n\n\n\n\nND-\\(N_D\\left(p\\right)\\)\n\n\n\n\n\n\n\nN8-\\(N_8\\left(p\\right)\\)\n\n\n\n\n\n\nFigura 1: Neighborhoods"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-1",
+    "href": "pres/PSIM005.html#relationships-between-pixels-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nRules for adjecency\n\n\n\n4-Adjecncy: Two pixels p and q with values from V are 4-adjacent if q is in the set \\(N_4\\left(p\\right)\\)\n8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set \\(N_8\\left(p\\right)\\)\nm-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if:\n\nq is in \\(N_4\\left(p\\right)\\).\nq is in \\(N_D\\left(p\\right)\\) and the set \\(N_4\\left(p\\right) \\cap N_4\\left(q\\right)\\) has no pixels whose values are from V."
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-2",
+    "href": "pres/PSIM005.html#relationships-between-pixels-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\nAdjacency"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-3",
+    "href": "pres/PSIM005.html#relationships-between-pixels-3",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\nA4\n\n\n\n\n\n\n\nA8\n\n\n\n\n\n\n\n\n\nA-m"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-4",
+    "href": "pres/PSIM005.html#relationships-between-pixels-4",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nDigital path\n\n\nIt is a sequence of adjacent pixels.\n\\[\\left(x_0, y_0\\right), \\left(x_1, y_1\\right), \\left(x_2, y_2\\right), \\dots \\left(x_n, y_n\\right)\\]\nIf \\(\\left(x_0, y_0\\right)=\\left(x_n, y_n\\right)\\) the path is known as closed path\nLet S represent a subset of pixels in an image. Two pixels p and q are said to be connected in S if there exists a path between them consisting entirely of pixels in S."
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-5",
+    "href": "pres/PSIM005.html#relationships-between-pixels-5",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-6",
+    "href": "pres/PSIM005.html#relationships-between-pixels-6",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-7",
+    "href": "pres/PSIM005.html#relationships-between-pixels-7",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-8",
+    "href": "pres/PSIM005.html#relationships-between-pixels-8",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-9",
+    "href": "pres/PSIM005.html#relationships-between-pixels-9",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io\n\n\n\nA4\nA8\nA-m"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-10",
+    "href": "pres/PSIM005.html#relationships-between-pixels-10",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels",
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io\n\n\n\nA4\nA8\nA-m"
   }
 ]

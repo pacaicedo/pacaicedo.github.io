@@ -574,3 +574,22 @@ $$y = \frac{\alpha - x}{M}$$
 ## Intensity resolution
 
 ![Tomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.](./images/intensity_resolution_02.png){fig-align="center"  width=600}
+
+## Relationships between pixels
+
+::: {.callout-tip title="Neighborhood" collapsible="false"}
+
+:::{#fig-neighborhoods layout-ncol=3}
+
+
+ ![N4](./images/n4.png){fig-align="center" width=250} 
+
+ ![ND](./images/nd.png){fig-align="center" width=250} 
+
+ ![N8](./images/n8.png){fig-align="center" width=250} 
+
+
+:::
+
+:::
+

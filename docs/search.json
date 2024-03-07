@@ -1460,21 +1460,21 @@
     "href": "pres/PSIM005.html#relationships-between-pixels",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\nN4-\\(N_4\\left(p\\right)\\)\n\n\n\n\n\n\n\nND-\\(N_D\\left(p\\right)\\)\n\n\n\n\n\n\n\nN8-\\(N_8\\left(p\\right)\\)\n\n\n\n\n\n\nFigura 1: Neighborhoods"
+    "text": "Relationships between pixels\n\nAdjacency"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-1",
     "href": "pres/PSIM005.html#relationships-between-pixels-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\n\n\n\n\n\n\nRules for adjecency\n\n\n\n4-Adjecncy: Two pixels p and q with values from V are 4-adjacent if q is in the set \\(N_4\\left(p\\right)\\)\n8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set \\(N_8\\left(p\\right)\\)\nm-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if:\n\nq is in \\(N_4\\left(p\\right)\\).\nq is in \\(N_D\\left(p\\right)\\) and the set \\(N_4\\left(p\\right) \\cap N_4\\left(q\\right)\\) has no pixels whose values are from V."
+    "text": "Relationships between pixels\n\n\n\n\n\n\nA4\n\n\n\n\n\n\n\nA8\n\n\n\n\n\n\n\n\n\nA-m"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-2",
     "href": "pres/PSIM005.html#relationships-between-pixels-2",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\nAdjacency"
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io\n\n\n\nA4\nA8\nA-m"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-3",
@@ -1531,5 +1531,54 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels",
     "text": "Relationships between pixels\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io\n\n\n\nA4\nA8\nA-m"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-neighborhood",
+    "href": "pres/PSIM005.html#relationships-between-pixels-neighborhood",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels – Neighborhood",
+    "text": "Relationships between pixels – Neighborhood\n\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\nN4-\\(N_4\\left(p\\right)\\)\n\n\n\n\n\n\n\nND-\\(N_D\\left(p\\right)\\)\n\n\n\n\n\n\n\nN8-\\(N_8\\left(p\\right)\\)\n\n\n\n\n\n\nFigura 1: Neighborhoods"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-adjacency",
+    "href": "pres/PSIM005.html#relationships-between-pixels-adjacency",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels – Adjacency",
+    "text": "Relationships between pixels – Adjacency\n\n\n\n\n\n\n\nRules for adjecency\n\n\n\n4-Adjecncy: Two pixels p and q with values from V are 4-adjacent if q is in the set \\(N_4\\left(p\\right)\\)\n8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set \\(N_8\\left(p\\right)\\)\nm-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if:\n\nq is in \\(N_4\\left(p\\right)\\).\nq is in \\(N_D\\left(p\\right)\\) and the set \\(N_4\\left(p\\right) \\cap N_4\\left(q\\right)\\) has no pixels whose values are from V."
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-path",
+    "href": "pres/PSIM005.html#relationships-between-pixels-path",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels – Path",
+    "text": "Relationships between pixels – Path\n\n\n\n\n\n\n\nDigital path\n\n\nIt is a sequence of adjacent pixels.\n\\[\\left(x_0, y_0\\right), \\left(x_1, y_1\\right), \\left(x_2, y_2\\right), \\dots \\left(x_n, y_n\\right)\\]\nIf \\(\\left(x_0, y_0\\right)=\\left(x_n, y_n\\right)\\) the path is known as closed path\nLet S represent a subset of pixels in an image. Two pixels p and q are said to be connected in S if there exists a path between them consisting entirely of pixels in S."
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-path-connected-subset",
+    "href": "pres/PSIM005.html#relationships-between-pixels-path-connected-subset",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels – Path, Connected Subset",
+    "text": "Relationships between pixels – Path, Connected Subset"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-regions",
+    "href": "pres/PSIM005.html#relationships-between-pixels-regions",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels – Regions",
+    "text": "Relationships between pixels – Regions"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-boundary",
+    "href": "pres/PSIM005.html#relationships-between-pixels-boundary",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels – Boundary",
+    "text": "Relationships between pixels – Boundary"
+  },
+  {
+    "objectID": "pres/PSIM005.html#relationships-between-pixels-distance",
+    "href": "pres/PSIM005.html#relationships-between-pixels-distance",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Relationships between pixels – Distance",
+    "text": "Relationships between pixels – Distance\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)"
   }
 ]

@@ -68,7 +68,7 @@ import matplotlib.pyplot as plt
 
 # Procesamiento de imágenes
 
-## Relationships between pixels
+## Relationships between pixels -- Neighborhood
 
 ::: {.callout-tip title="Neighborhood" collapsible="false"}
 
@@ -87,7 +87,7 @@ Neighborhoods
 
 :::
 
-## Relationships between pixels
+## Relationships between pixels -- Adjacency
 
 ::: {.callout-tip title="Rules for adjecency" collapsible="false"}
 
@@ -118,7 +118,7 @@ Neighborhoods
 
 :::
 
-## Relationships between pixels
+## Relationships between pixels -- Path
 
 ::: {.callout-tip title="Digital path" collapsible="false"}
 
@@ -132,20 +132,20 @@ Let S represent a subset of pixels in an image. Two pixels p and q are said to b
 
 :::
 
-## Relationships between pixels
+## Relationships between pixels -- Path, Connected Subset
 
 ![](./images/connectedSet.png){fig-align="center" width=500 .lightbox}
 
-## Relationships between pixels
+## Relationships between pixels -- Regions
 
 ![](./images/two_regions.png){fig-align="center" width=500 .lightbox}
 
 
-## Relationships between pixels
+## Relationships between pixels -- Boundary
 
 ![](./images/boundary.png){fig-align="center" width=500 .lightbox}
 
-## Relationships between pixels
+## Relationships between pixels -- Distance
 
 ::: {.callout-tip title="Distance" collapsible="false"}
 

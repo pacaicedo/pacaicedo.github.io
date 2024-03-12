@@ -1,0 +1,298 @@
+---
+title: "Procesado de Señales e Imágenes Médicas"
+description: "Sitio de la asignatura Procesado de Señales e Imágenes Médicas"
+subtitle: "Ingeniería Biomédica"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+date: "2024-01-22"
+format:
+  revealjs: 
+    code-tools: true
+    code-overflow: wrap
+    code-line-numbers: true
+    code-copy: false
+    fig-align: center
+    self-contained: true
+    theme: 
+      - simple
+      - custom.scss
+    slide-number: true
+    preview-links: auto
+    logo: images/Escuela_Rosario_logo.png
+    css: styles.css
+    footer: <https://pacaicedo.github.io>
+    transition: fade
+    progress: true
+    scrollable: false
+resources:
+  - demo.pdf
+---
+
+```{r}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: Loading R-Libraries
+
+library("DiagrammeR")
+library("reticulate")
+library("kableExtra")
+library("tidyverse")
+library("knitr")
+library("cowplot")
+library("ggfx")
+knitr::opts_chunk$set(echo = FALSE)
+
+def.chunk.hook <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+    x <- def.chunk.hook(x, options)
+    ifelse(options$size != "normalsize", paste0("\n \\", options$size, "\n\n", x, "\n\n \\normalsize"), x)
+})
+
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: Loading Python-Libraries
+
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: function declaration
+
+
+
+```
+
+
+
+# Procesamiento de imágenes
+
+
+## Basic Mathematic - Element-Wise Operation
+
+::: {.callout-tip title="Definition" collapsible="false"}
+
+Operation involving one or more images is carried out on a pixel-bypixel basis
+
+:::
+
+$$ 
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}  
+\end{bmatrix} \oplus \begin{bmatrix} b_{11} & b_{12} \\  b_{21} & b_{22}\end{bmatrix} = \begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\  a_{21}+b_{21} & a_{22}+b_{22}\end{bmatrix} $$
+
+$$ 
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}  
+\end{bmatrix} \odot \begin{bmatrix} b_{11} & b_{12} \\  b_{21} & b_{22}\end{bmatrix} = \begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\  a_{21}.b_{21} & a_{22}.b_{22}\end{bmatrix} $$
+
+## Basic Mathematic - Linear Operations{.scrollable}
+
+::: {.callout-tip title="Definition" collapsible="false"}
+
+Given two arbitrary constants, $\alpha_1$ and $\alpha_2$, and two arbitrary images $f_1\left(x,y\right)$ and $f_2\left(x,y\right)$, $\varkappa$ is said to be a linear operator if:
+
+$$ \begin{equation}\begin{split} \varkappa\left[\alpha_1 f_1\left(x,y\right) + \alpha_2 f_2\left(x,y\right)\right] & =  \alpha_1 \varkappa\left[ f_1\left(x,y\right)\right] + \alpha_2 \varkappa\left[f_2\left(x,y\right)\right] \\ & = \alpha_1 g_1\left(x,y\right) + \alpha_2 g_2\left(x,y\right) \end{split}\end{equation} $$
+
+:::
+
+Supose $\alpha_1 = 5$, $\alpha_2 = 2$, $\varkappa = max$ and consider:
+
+$$f_1 = \begin{bmatrix}0 & -1 \\2 & 4\end{bmatrix}$$, $$f_2 = \begin{bmatrix}30 & 4 \\-2 & -3\end{bmatrix}$$
+
+## Basic Mathematic - Adding
+
+
+ ![](images/female-chest-x-ray.jpg){fig-align="center" height=60%} 
+
+## Basic Mathematic - Adding {.scrollable}
+
+
+::: {.panel-tabset} 
+
+## Images
+
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| fig-align: "center"
+#| layout: [[45,-10, 45], [100]]
+#| label: xray-loading
+
+x_ray_chest = cv2.imread("images/female-chest-x-ray.jpg")
+plt.imshow(x_ray_chest, cmap="gray")
+plt.show()
+image_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))
+plt.imshow(image_synt1)
+plt.show()
+final_image = np.uint8(x_ray_chest+image_synt1)
+plt.imshow(final_image)
+plt.show()
+
+```
+
+## Code
+
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+#| fig-align: "center"
+#| label: xray-loading-text
+
+x_ray_chest = cv2.imread("images/female-chest-x-ray.jpg")
+plt.imshow(x_ray_chest, cmap="gray")
+plt.show()
+image_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))
+plt.imshow(image_synt1)
+plt.show()
+final_image = np.uint8(x_ray_chest+image_synt1)
+plt.imshow(final_image)
+plt.show()
+
+```
+
+:::
+
+## Basic Mathematic - Multiplying {.scrollable}
+
+
+
+::: {.panel-tabset} 
+
+## Images
+
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| fig-align: "center"
+#| layout: [[45,-10, 45], [100]]
+#| label: xray-loading-mult
+
+x_ray_chest = cv2.imread("images/female-chest-x-ray.jpg")
+mask = np.uint8(np.zeros(x_ray_chest.shape))
+mask[400:700, 250:600, :]=1
+plt.imshow(x_ray_chest)
+plt.show()
+plt.imshow(255*mask)
+plt.show()
+plt.imshow(np.multiply(x_ray_chest,mask))
+plt.show()
+
+```
+
+## Code
+
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+#| fig-align: "center"
+#| label: xray-loading-text-mult
+
+x_ray_chest = cv2.imread("images/female-chest-x-ray.jpg")
+mask = np.uint8(np.zeros(x_ray_chest.shape))
+mask[400:700, 250:600, :]=1
+plt.imshow(x_ray_chest)
+plt.show()
+plt.imshow(255*mask)
+plt.show()
+plt.imshow(np.multiply(x_ray_chest,mask))
+plt.show()
+
+```
+
+:::
+
+## Basic Mathematic - Pixel intensity {.scrollable}
+
+
+
+::: {.panel-tabset} 
+
+## Images
+
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| fig-align: "center"
+#| layout-ncol: 3
+#| label: xray-loading-pxinten
+#| fig-subcap: 
+#|  - "Original"
+#|  - "Exp=1.1"
+#|  - "Exp=1.2"
+#|  - "Exp=0.2"
+#|  - "Exp=0.30"
+#|  - "Exp=0.5"
+
+x_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)
+plt.imshow(x_ray_chest_gray, cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,1.1), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,1.2), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,0.2), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,0.3), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,0.5), cmap="gray")
+plt.show()
+
+```
+
+## Code
+
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+#| fig-align: "center"
+#| label: xray-loading-text-pxinten
+
+x_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)
+plt.imshow(x_ray_chest_gray, cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,1.1), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,1.2), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,0.2), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,0.3), cmap="gray")
+plt.show()
+plt.imshow(np.power(x_ray_chest_gray,0.5), cmap="gray")
+plt.show()
+
+```
+
+:::
+
+
+<!-- TODO: FALTAN MAS APLICACIONES DE LA MATEMATICA BASICA -->

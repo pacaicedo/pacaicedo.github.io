@@ -1256,29 +1256,29 @@
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing",
     "href": "pres/PSIM004.html#what-is-digital-image-processing",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "Definition\n\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "Definition\n\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "Definition\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nColor Space\n\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nColor Space\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "",
-    "text": "import cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
+    "section": "What is Digital Image Processing?",
+    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
   },
   {
     "objectID": "rubricas/Rubrica_EDA.html",
@@ -1404,42 +1404,42 @@
     "href": "pres/PSIM004.html#sampling-and-quantization-3",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
+    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
   },
   {
     "objectID": "pres/PSIM004.html#sampling-and-quantization-4",
     "href": "pres/PSIM004.html#sampling-and-quantization-4",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Sampling and quantization\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#linear-indexing",
     "href": "pres/PSIM004.html#linear-indexing",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Linear indexing",
-    "text": "Linear indexing\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
+    "text": "Linear indexing\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
   },
   {
     "objectID": "pres/PSIM004.html#spatial-resolution",
     "href": "pres/PSIM004.html#spatial-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Spatial resolution",
-    "text": "Spatial resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Spatial resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution",
     "href": "pres/PSIM004.html#intensity-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution-1",
     "href": "pres/PSIM004.html#intensity-resolution-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/pruebas.html",
@@ -1453,7 +1453,7 @@
     "href": "pres/PSIM004.html#relationships-between-pixels",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\n\nN4\n\n\n\n\n\n\n\nND\n\n\n\n\n\n\n\nN8\n\n\n\n\n\n\nFigura 1"
+    "text": "Relationships between pixels\n\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\nN4\n\n\n\n\n\n\n\nND\n\n\n\n\n\n\n\nN8\n\n\n\n\n\n\nFigura 1\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels",
@@ -1580,5 +1580,54 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels – Distance",
     "text": "Relationships between pixels – Distance\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---element-wise-operation",
+    "href": "pres/PSIM006.html#basic-mathematic---element-wise-operation",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Element-Wise Operation",
+    "text": "Basic Mathematic - Element-Wise Operation\n\n\n\n\n\n\n\nDefinition\n\n\nOperation involving one or more images is carried out on a pixel-bypixel basis\n\n\n\n\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\oplus \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\\\  a_{21}+b_{21} & a_{22}+b_{22}\\end{bmatrix} \\]\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\odot \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\\\  a_{21}.b_{21} & a_{22}.b_{22}\\end{bmatrix} \\]"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---linear-operations",
+    "href": "pres/PSIM006.html#basic-mathematic---linear-operations",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Linear Operations",
+    "text": "Basic Mathematic - Linear Operations\n\n\n\n\n\n\n\nDefinition\n\n\nGiven two arbitrary constants, \\(\\alpha_1\\) and \\(\\alpha_2\\), and two arbitrary images \\(f_1\\left(x,y\\right)\\) and \\(f_2\\left(x,y\\right)\\), \\(\\varkappa\\) is said to be a linear operator if:\n\\[ \\begin{equation}\\begin{split} \\varkappa\\left[\\alpha_1 f_1\\left(x,y\\right) + \\alpha_2 f_2\\left(x,y\\right)\\right] & =  \\alpha_1 \\varkappa\\left[ f_1\\left(x,y\\right)\\right] + \\alpha_2 \\varkappa\\left[f_2\\left(x,y\\right)\\right] \\\\ & = \\alpha_1 g_1\\left(x,y\\right) + \\alpha_2 g_2\\left(x,y\\right) \\end{split}\\end{equation} \\]\n\n\n\n\nSupose \\(\\alpha_1 = 5\\), \\(\\alpha_2 = 2\\), \\(\\varkappa = max\\) and consider:\n\\[f_1 = \\begin{bmatrix}0 & -1 \\\\2 & 4\\end{bmatrix}\\], \\[f_2 = \\begin{bmatrix}30 & 4 \\\\-2 & -3\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---adding",
+    "href": "pres/PSIM006.html#basic-mathematic---adding",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Adding",
+    "text": "Basic Mathematic - Adding"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---adding-1",
+    "href": "pres/PSIM006.html#basic-mathematic---adding-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Adding",
+    "text": "Basic Mathematic - Adding\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---adding-2",
+    "href": "pres/PSIM006.html#basic-mathematic---adding-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Adding",
+    "text": "Basic Mathematic - Adding\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---multiplying",
+    "href": "pres/PSIM006.html#basic-mathematic---multiplying",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Multiplying",
+    "text": "Basic Mathematic - Multiplying\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(x_ray_chest)\nplt.show()\nplt.imshow(255*mask)\nplt.show()\nplt.imshow(np.multiply(x_ray_chest,mask))\nplt.show()"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity",
+    "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Pixel intensity",
+    "text": "Basic Mathematic - Pixel intensity\n\nImagesCode\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

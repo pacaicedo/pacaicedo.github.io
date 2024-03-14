@@ -295,4 +295,232 @@ plt.show()
 :::
 
 
+## Basic Mathematic - Pixel intensity {.scrollable}
+
+![Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.](./images/intensity_light.png)
+
+## Basic Mathematic - Pixel intensity {.scrollable}
+
+![Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.](./images/intensity_light2.png)
+
 <!-- TODO: FALTAN MAS APLICACIONES DE LA MATEMATICA BASICA -->
+
+## Neighborhood operations
+
+![Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.](./images/convolution.png)
+
+## Neighborhood Operations
+
+:::{.small_font}
+
+  For example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on $\left(x,y\right)$. The coordinates of pixels in this region are the elements of set $S_{xy}$.
+
+:::
+
+
+
+
+::: {.panel-tabset} 
+
+## Images
+
+::: columns
+
+:::{.column width="50%"}
+
+```{python .small_font}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: elderly_load_nf
+#| fig-cap: "Elderly woman image"
+
+elderly = cv2.imread("./images/elderly.jpg")
+plt.imshow(elderly)
+
+```
+
+
+
+:::
+
+:::{.column width="50%"}
+
+
+```{python .small_font}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: elderly_load_nf_gray
+#| fig-cap: "Gray-scale image"
+
+elderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)
+plt.imshow(elderly_gray, cmap="gray")
+
+```
+
+:::
+
+:::
+
+## code
+
+
+```{python .x_small_font}
+#| echo: true
+#| eval: false
+#| output: false
+#| label: elderly_load_nf_b
+#| fig-cap: "Elderly woman image"
+#| 
+
+elderly = cv2.imread("./images/elderly.jpg")
+plt.imshow(elderly)
+elderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)
+plt.imshow(elderly_gray, cmap="gray")
+
+```
+
+
+
+:::
+
+## Neighborhood operations
+
+
+::: {.panel-tabset} 
+
+## Original
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: mean_filter_elderly_gray_a
+
+plt.imshow(elderly_gray, cmap="gray")
+
+N = 10
+
+kernel = np.ones((N,N),np.float32)/(N*N)
+dst = cv2.filter2D(elderly_gray,-1,kernel)
+
+
+```
+## Averaging
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: mean_filter_elderly_gray_b
+
+plt.imshow(dst, cmap="gray")
+```
+
+## Code
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+#| label: mean_filter_elderly_gray_c
+
+N = 10
+kernel = np.ones((N,N),np.float32)/(N*N)
+dst = cv2.filter2D(elderly_gray,-1,kernel)
+plt.imshow(dst, cmap="gray")
+```
+:::
+
+
+
+## Neighborhood operations
+
+
+::: {.panel-tabset} 
+
+## Original
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: median_filter_elderly_gray_a
+
+plt.imshow(elderly_gray, cmap="gray")
+
+N=11
+
+dst1 = cv2.medianBlur(elderly_gray, N)
+
+
+```
+## Median
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: median_filter_elderly_gray_b
+
+plt.imshow(dst1, cmap="gray")
+```
+
+## Code
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+#| label: median_filter_elderly_gray_c
+
+N=11
+
+dst1 = cv2.medianBlur(elderly_gray, N)
+plt.imshow(dst1, cmap="gray")
+
+```
+:::
+
+## Neighborhood operations
+
+
+::: {.panel-tabset} 
+
+## Mean
+
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: compare_Blur_filter_A
+
+plt.imshow(dst, cmap="gray")
+
+```
+## Median
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: compare_Blur_filter_B
+
+plt.imshow(dst1, cmap="gray")
+```
+
+:::
+
+## Neighborhood operations
+
+![Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.](./images/spatial_trasnformation.png)
+
+## Neighborhood operations
+
+![Taken from: http://datagenetics.com/blog/august32013/index.html](./images/spatial_aliasing.png)
+
+

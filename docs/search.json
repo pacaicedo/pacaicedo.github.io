@@ -1628,6 +1628,76 @@
     "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Basic Mathematic - Pixel intensity",
-    "text": "Basic Mathematic - Pixel intensity\n\nImagesCode\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Basic Mathematic - Pixel intensity\n\nImagesCode\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()"
+  },
+  {
+    "objectID": "pres/PSIM006.html#neighborhood-operations",
+    "href": "pres/PSIM006.html#neighborhood-operations",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Neighborhood operations",
+    "text": "Neighborhood operations\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+  },
+  {
+    "objectID": "pres/PSIM006.html#neighborhood-operations-1",
+    "href": "pres/PSIM006.html#neighborhood-operations-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Neighborhood Operations",
+    "text": "Neighborhood Operations\n\nFor example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on \\(\\left(x,y\\right)\\). The coordinates of pixels in this region are the elements of set \\(S_{xy}\\).\n\n\nImagescode\n\n\n\n\n\n\n\n\n\nElderly woman image\n\n\n\n\n\n\n\n\n\n\nGray-scale image\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")"
+  },
+  {
+    "objectID": "pres/PSIM006.html#averaging",
+    "href": "pres/PSIM006.html#averaging",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Averaging",
+    "text": "Averaging\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM006.html#neighborhood-operations-2",
+    "href": "pres/PSIM006.html#neighborhood-operations-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Neighborhood operations",
+    "text": "Neighborhood operations\n\nOriginalAveragingCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN = 10\nkernel = np.ones((N,N),np.float32)/(N*N)\ndst = cv2.filter2D(elderly_gray,-1,kernel)\nplt.imshow(dst, cmap=\"gray\")"
+  },
+  {
+    "objectID": "pres/PSIM006.html#neighborhood-operations-3",
+    "href": "pres/PSIM006.html#neighborhood-operations-3",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Neighborhood operations",
+    "text": "Neighborhood operations\n\nOriginalMedianCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN=11\n\ndst1 = cv2.medianBlur(elderly_gray, N)\nplt.imshow(dst1, cmap=\"gray\")"
+  },
+  {
+    "objectID": "pres/PSIM006.html#neighborhood-operations-4",
+    "href": "pres/PSIM006.html#neighborhood-operations-4",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Neighborhood operations",
+    "text": "Neighborhood operations\n\nMeanMedian"
+  },
+  {
+    "objectID": "pres/PSIM006.html#neighborhood-operations-5",
+    "href": "pres/PSIM006.html#neighborhood-operations-5",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Neighborhood operations",
+    "text": "Neighborhood operations\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity-1",
+    "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Pixel intensity",
+    "text": "Basic Mathematic - Pixel intensity\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+  },
+  {
+    "objectID": "pres/PSIM006.html#neighborhood-operations-6",
+    "href": "pres/PSIM006.html#neighborhood-operations-6",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Neighborhood operations",
+    "text": "Neighborhood operations\n\n\n\nTaken from: http://datagenetics.com/blog/august32013/index.html\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity-2",
+    "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Basic Mathematic - Pixel intensity",
+    "text": "Basic Mathematic - Pixel intensity\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   }
 ]

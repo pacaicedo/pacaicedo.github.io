@@ -524,3 +524,128 @@ plt.imshow(dst1, cmap="gray")
 ![Taken from: http://datagenetics.com/blog/august32013/index.html](./images/spatial_aliasing.png)
 
 
+## Edge dection{.scrollable}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: edge detector
+dst = cv2.Canny(elderly_gray, 100, 200)
+plt.imshow(dst, cmap="gray")
+
+```
+
+## Edge dection{.scrollable}
+
+
+![](./images/Bordes.png){fig-align="center"} 
+
+
+## Edge dection{.scrollable}
+
+
+::: {.panel-tabset} 
+
+## Images Grad Y
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: sobel detector Y
+dst = cv2.Sobel(elderly_gray, cv2.CV_16S, 0, 1,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)
+dst1 = np.uint8(255*dst/np.max(dst))
+plt.imshow(dst, cmap="gray")
+
+```
+
+## Images Grad X
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: sobel detector X
+dst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)
+dst1 = np.uint8(255*dst/np.max(dst))
+plt.imshow(dst, cmap="gray")
+
+```
+
+## Images Grad Trunc Y
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: sobel detector Y Trunc
+dst = cv2.Sobel(elderly_gray, cv2.CV_16S, 0, 1,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)
+dst1 = np.uint8(255*dst/np.max(dst))
+plt.imshow(dst1, cmap="gray")
+
+```
+
+## Images Trunc Grad X
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: sobel detector X Trunc
+dst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)
+dst1 = np.uint8(255*dst/np.max(dst))
+plt.imshow(dst1, cmap="gray")
+
+```
+
+## Code
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+#| label: sobel detector code
+dst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)
+dst1 = np.uint8(255*dst/np.max(dst))
+plt.imshow(dst1, cmap="gray")
+
+```
+
+
+:::
+
+## Histogram
+
+
+::: {.panel-tabset} 
+
+## Histogram
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: Histogram
+
+elderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])
+plt.plot(elderly_hist, color="gray")
+
+```
+
+## Code
+
+```{python}
+#| echo: true
+#| eval: false
+#| output: false
+#| label: Histogram Code
+
+elderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])
+plt.plot(elderly_hist, color="gray")
+
+```
+
+
+
+:::

@@ -1691,7 +1691,7 @@
     "href": "pres/PSIM006.html#neighborhood-operations-6",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\n\n\nTaken from: http://datagenetics.com/blog/august32013/index.html\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Neighborhood operations\n\nTaken from: http://datagenetics.com/blog/august32013/index.html"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity-2",
@@ -1699,5 +1699,40 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Basic Mathematic - Pixel intensity",
     "text": "Basic Mathematic - Pixel intensity\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+  },
+  {
+    "objectID": "pres/PSIM006.html#section",
+    "href": "pres/PSIM006.html#section",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "https://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM006.html#edge-dection",
+    "href": "pres/PSIM006.html#edge-dection",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Edge dection",
+    "text": "Edge dection"
+  },
+  {
+    "objectID": "pres/PSIM006.html#edge-dection-1",
+    "href": "pres/PSIM006.html#edge-dection-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Edge dection",
+    "text": "Edge dection"
+  },
+  {
+    "objectID": "pres/PSIM006.html#edge-dection-2",
+    "href": "pres/PSIM006.html#edge-dection-2",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Edge dection",
+    "text": "Edge dection\n\nImages Grad YImages Grad XImages Grad Trunc YImages Trunc Grad XCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst1, cmap=\"gray\")"
+  },
+  {
+    "objectID": "pres/PSIM006.html#histogram",
+    "href": "pres/PSIM006.html#histogram",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Histogram",
+    "text": "Histogram\n\nHistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   }
 ]

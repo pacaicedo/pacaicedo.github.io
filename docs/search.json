@@ -823,7 +823,7 @@
     "href": "pres/MachineLearning.html#import-dataset",
     "title": "Machine Learning",
     "section": "Import dataset",
-    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/spotify/tracks.csv\")\n\n\n\ndata_spotify.head(5)\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
+    "text": "Import dataset\n\nimport pandas as pd\ndata_spotify = pd.read_csv(path_to_data + \"/spotify/tracks.csv\")\n\n\n\ndata_spotify.head(5)\n\n\n\n\n\n\n\n\n\nid\nname\npopularity\nduration_ms\nexplicit\nartists\nid_artists\nrelease_date\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\n0\n35iwgR4jXetI318WEWsa1Q\nCarve\n6\n126903\n0\n['Uli']\n['45tIt06XoI0Iio4LBEVpls']\n1922-02-22\n0.645\n0.4450\n0\n-13.338\n1\n0.4510\n0.674\n0.7440\n0.151\n0.127\n104.851\n3\n\n\n1\n021ht4sdgPcrDgSk7JTbKY\nCapítulo 2.16 - Banquero Anarquista\n0\n98200\n0\n['Fernando Pessoa']\n['14jtPCOoNZwquk5wd9DxrY']\n1922-06-01\n0.695\n0.2630\n0\n-22.136\n1\n0.9570\n0.797\n0.0000\n0.148\n0.655\n102.009\n1\n\n\n2\n07A5yehtSnoedViJAZkNnc\nVivo para Quererte - Remasterizado\n0\n181640\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.434\n0.1770\n1\n-21.180\n1\n0.0512\n0.994\n0.0218\n0.212\n0.457\n130.418\n5\n\n\n3\n08FmqUhxtyLTn6pAh6bk45\nEl Prisionero - Remasterizado\n0\n176907\n0\n['Ignacio Corsini']\n['5LiOoJbxVSAMkBS2fUm3X2']\n1922-03-21\n0.321\n0.0946\n7\n-27.961\n1\n0.0504\n0.995\n0.9180\n0.104\n0.397\n169.980\n3\n\n\n4\n08y9GfoqCWfOGsKdwojr5e\nLady of the Evening\n0\n163080\n0\n['Dick Haymes']\n['3BiJGZsyX9sJchTqcSA7Su']\n1922\n0.402\n0.1580\n3\n-16.900\n0\n0.0390\n0.989\n0.1300\n0.311\n0.196\n103.220\n4"
   },
   {
     "objectID": "pres/MachineLearning.html#preprocessing-dataset.",
@@ -844,7 +844,7 @@
     "href": "pres/MachineLearning.html#preprocessing-dataset.-2",
     "title": "Machine Learning",
     "section": "Preprocessing dataset.",
-    "text": "Preprocessing dataset.\n\n\ndata_spotify.describe()\n\n\n\n\n\n\n\n\npopularity\nduration_ms\nexplicit\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\ncount\n586672.000000\n5.866720e+05\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n\n\nmean\n27.570053\n2.300512e+05\n0.044086\n0.563594\n0.542036\n5.221603\n-10.206067\n0.658797\n0.104864\n0.449863\n0.113451\n0.213935\n0.552292\n118.464857\n3.873382\n\n\nstd\n18.370642\n1.265261e+05\n0.205286\n0.166103\n0.251923\n3.519423\n5.089328\n0.474114\n0.179893\n0.348837\n0.266868\n0.184326\n0.257671\n29.764108\n0.473162\n\n\nmin\n0.000000\n3.344000e+03\n0.000000\n0.000000\n0.000000\n0.000000\n-60.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n\n\n25%\n13.000000\n1.750930e+05\n0.000000\n0.453000\n0.343000\n2.000000\n-12.891000\n0.000000\n0.034000\n0.096900\n0.000000\n0.098300\n0.346000\n95.600000\n4.000000\n\n\n50%\n27.000000\n2.148930e+05\n0.000000\n0.577000\n0.549000\n5.000000\n-9.243000\n1.000000\n0.044300\n0.422000\n0.000024\n0.139000\n0.564000\n117.384000\n4.000000\n\n\n75%\n41.000000\n2.638670e+05\n0.000000\n0.686000\n0.748000\n8.000000\n-6.482000\n1.000000\n0.076300\n0.785000\n0.009550\n0.278000\n0.769000\n136.321000\n4.000000\n\n\nmax\n100.000000\n5.621218e+06\n1.000000\n0.991000\n1.000000\n11.000000\n5.376000\n1.000000\n0.971000\n0.996000\n1.000000\n1.000000\n1.000000\n246.381000\n5.000000"
+    "text": "Preprocessing dataset.\n\n\ndata_spotify.describe()\n\n\n\n\n\n\n\n\n\npopularity\nduration_ms\nexplicit\ndanceability\nenergy\nkey\nloudness\nmode\nspeechiness\nacousticness\ninstrumentalness\nliveness\nvalence\ntempo\ntime_signature\n\n\n\n\ncount\n586672.000000\n5.866720e+05\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n586672.000000\n\n\nmean\n27.570053\n2.300512e+05\n0.044086\n0.563594\n0.542036\n5.221603\n-10.206067\n0.658797\n0.104864\n0.449863\n0.113451\n0.213935\n0.552292\n118.464857\n3.873382\n\n\nstd\n18.370642\n1.265261e+05\n0.205286\n0.166103\n0.251923\n3.519423\n5.089328\n0.474114\n0.179893\n0.348837\n0.266868\n0.184326\n0.257671\n29.764108\n0.473162\n\n\nmin\n0.000000\n3.344000e+03\n0.000000\n0.000000\n0.000000\n0.000000\n-60.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n0.000000\n\n\n25%\n13.000000\n1.750930e+05\n0.000000\n0.453000\n0.343000\n2.000000\n-12.891000\n0.000000\n0.034000\n0.096900\n0.000000\n0.098300\n0.346000\n95.600000\n4.000000\n\n\n50%\n27.000000\n2.148930e+05\n0.000000\n0.577000\n0.549000\n5.000000\n-9.243000\n1.000000\n0.044300\n0.422000\n0.000024\n0.139000\n0.564000\n117.384000\n4.000000\n\n\n75%\n41.000000\n2.638670e+05\n0.000000\n0.686000\n0.748000\n8.000000\n-6.482000\n1.000000\n0.076300\n0.785000\n0.009550\n0.278000\n0.769000\n136.321000\n4.000000\n\n\nmax\n100.000000\n5.621218e+06\n1.000000\n0.991000\n1.000000\n11.000000\n5.376000\n1.000000\n0.971000\n0.996000\n1.000000\n1.000000\n1.000000\n246.381000\n5.000000"
   },
   {
     "objectID": "pres/MachineLearning.html#linear-regression-python-preparation",
@@ -1026,7 +1026,7 @@
     "href": "pres/NumericalAnalysis_back.html#executable-code",
     "title": "Análisis Numérico",
     "section": "Executable Code",
-    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\nWarning: The following aesthetics were dropped during statistical transformation: colour\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\n\nLearn more: Executable Code"
+    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\n\nLearn more: Executable Code"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#latex-equations",
@@ -1103,7 +1103,7 @@
     "href": "pres/NumericalAnalysis_back.html#tabsets",
     "title": "Análisis Numérico",
     "section": "Tabsets",
-    "text": "Tabsets\n\nPlotData\n\n\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\nWarning: The following aesthetics were dropped during statistical transformation: colour\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::kable(mtcars)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160.0\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160.0\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108.0\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258.0\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360.0\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225.0\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\nDuster 360\n14.3\n8\n360.0\n245\n3.21\n3.570\n15.84\n0\n0\n3\n4\n\n\nMerc 240D\n24.4\n4\n146.7\n62\n3.69\n3.190\n20.00\n1\n0\n4\n2\n\n\nMerc 230\n22.8\n4\n140.8\n95\n3.92\n3.150\n22.90\n1\n0\n4\n2\n\n\nMerc 280\n19.2\n6\n167.6\n123\n3.92\n3.440\n18.30\n1\n0\n4\n4\n\n\nMerc 280C\n17.8\n6\n167.6\n123\n3.92\n3.440\n18.90\n1\n0\n4\n4\n\n\nMerc 450SE\n16.4\n8\n275.8\n180\n3.07\n4.070\n17.40\n0\n0\n3\n3\n\n\nMerc 450SL\n17.3\n8\n275.8\n180\n3.07\n3.730\n17.60\n0\n0\n3\n3\n\n\nMerc 450SLC\n15.2\n8\n275.8\n180\n3.07\n3.780\n18.00\n0\n0\n3\n3\n\n\nCadillac Fleetwood\n10.4\n8\n472.0\n205\n2.93\n5.250\n17.98\n0\n0\n3\n4\n\n\nLincoln Continental\n10.4\n8\n460.0\n215\n3.00\n5.424\n17.82\n0\n0\n3\n4\n\n\nChrysler Imperial\n14.7\n8\n440.0\n230\n3.23\n5.345\n17.42\n0\n0\n3\n4\n\n\nFiat 128\n32.4\n4\n78.7\n66\n4.08\n2.200\n19.47\n1\n1\n4\n1\n\n\nHonda Civic\n30.4\n4\n75.7\n52\n4.93\n1.615\n18.52\n1\n1\n4\n2\n\n\nToyota Corolla\n33.9\n4\n71.1\n65\n4.22\n1.835\n19.90\n1\n1\n4\n1\n\n\nToyota Corona\n21.5\n4\n120.1\n97\n3.70\n2.465\n20.01\n1\n0\n3\n1\n\n\nDodge Challenger\n15.5\n8\n318.0\n150\n2.76\n3.520\n16.87\n0\n0\n3\n2\n\n\nAMC Javelin\n15.2\n8\n304.0\n150\n3.15\n3.435\n17.30\n0\n0\n3\n2\n\n\nCamaro Z28\n13.3\n8\n350.0\n245\n3.73\n3.840\n15.41\n0\n0\n3\n4\n\n\nPontiac Firebird\n19.2\n8\n400.0\n175\n3.08\n3.845\n17.05\n0\n0\n3\n2\n\n\nFiat X1-9\n27.3\n4\n79.0\n66\n4.08\n1.935\n18.90\n1\n1\n4\n1\n\n\nPorsche 914-2\n26.0\n4\n120.3\n91\n4.43\n2.140\n16.70\n0\n1\n5\n2\n\n\nLotus Europa\n30.4\n4\n95.1\n113\n3.77\n1.513\n16.90\n1\n1\n5\n2\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.50\n0\n1\n5\n4\n\n\nFerrari Dino\n19.7\n6\n145.0\n175\n3.62\n2.770\n15.50\n0\n1\n5\n6\n\n\nMaserati Bora\n15.0\n8\n301.0\n335\n3.54\n3.570\n14.60\n0\n1\n5\n8\n\n\nVolvo 142E\n21.4\n4\n121.0\n109\n4.11\n2.780\n18.60\n1\n1\n4\n2\n\n\n\n\n\n\n\n\n\nLearn more: Tabsets"
+    "text": "Tabsets\n\nPlotData\n\n\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::kable(mtcars)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160.0\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160.0\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108.0\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258.0\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360.0\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225.0\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\nDuster 360\n14.3\n8\n360.0\n245\n3.21\n3.570\n15.84\n0\n0\n3\n4\n\n\nMerc 240D\n24.4\n4\n146.7\n62\n3.69\n3.190\n20.00\n1\n0\n4\n2\n\n\nMerc 230\n22.8\n4\n140.8\n95\n3.92\n3.150\n22.90\n1\n0\n4\n2\n\n\nMerc 280\n19.2\n6\n167.6\n123\n3.92\n3.440\n18.30\n1\n0\n4\n4\n\n\nMerc 280C\n17.8\n6\n167.6\n123\n3.92\n3.440\n18.90\n1\n0\n4\n4\n\n\nMerc 450SE\n16.4\n8\n275.8\n180\n3.07\n4.070\n17.40\n0\n0\n3\n3\n\n\nMerc 450SL\n17.3\n8\n275.8\n180\n3.07\n3.730\n17.60\n0\n0\n3\n3\n\n\nMerc 450SLC\n15.2\n8\n275.8\n180\n3.07\n3.780\n18.00\n0\n0\n3\n3\n\n\nCadillac Fleetwood\n10.4\n8\n472.0\n205\n2.93\n5.250\n17.98\n0\n0\n3\n4\n\n\nLincoln Continental\n10.4\n8\n460.0\n215\n3.00\n5.424\n17.82\n0\n0\n3\n4\n\n\nChrysler Imperial\n14.7\n8\n440.0\n230\n3.23\n5.345\n17.42\n0\n0\n3\n4\n\n\nFiat 128\n32.4\n4\n78.7\n66\n4.08\n2.200\n19.47\n1\n1\n4\n1\n\n\nHonda Civic\n30.4\n4\n75.7\n52\n4.93\n1.615\n18.52\n1\n1\n4\n2\n\n\nToyota Corolla\n33.9\n4\n71.1\n65\n4.22\n1.835\n19.90\n1\n1\n4\n1\n\n\nToyota Corona\n21.5\n4\n120.1\n97\n3.70\n2.465\n20.01\n1\n0\n3\n1\n\n\nDodge Challenger\n15.5\n8\n318.0\n150\n2.76\n3.520\n16.87\n0\n0\n3\n2\n\n\nAMC Javelin\n15.2\n8\n304.0\n150\n3.15\n3.435\n17.30\n0\n0\n3\n2\n\n\nCamaro Z28\n13.3\n8\n350.0\n245\n3.73\n3.840\n15.41\n0\n0\n3\n4\n\n\nPontiac Firebird\n19.2\n8\n400.0\n175\n3.08\n3.845\n17.05\n0\n0\n3\n2\n\n\nFiat X1-9\n27.3\n4\n79.0\n66\n4.08\n1.935\n18.90\n1\n1\n4\n1\n\n\nPorsche 914-2\n26.0\n4\n120.3\n91\n4.43\n2.140\n16.70\n0\n1\n5\n2\n\n\nLotus Europa\n30.4\n4\n95.1\n113\n3.77\n1.513\n16.90\n1\n1\n5\n2\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.50\n0\n1\n5\n4\n\n\nFerrari Dino\n19.7\n6\n145.0\n175\n3.62\n2.770\n15.50\n0\n1\n5\n6\n\n\nMaserati Bora\n15.0\n8\n301.0\n335\n3.54\n3.570\n14.60\n0\n1\n5\n8\n\n\nVolvo 142E\n21.4\n4\n121.0\n109\n4.11\n2.780\n18.60\n1\n1\n4\n2\n\n\n\n\n\n\n\n\n\nLearn more: Tabsets"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#interactive-slides",
@@ -1194,7 +1194,7 @@
     "href": "pres/PSIM002.html#events-sample-space-experiments-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Events, Sample Space, Experiments",
-    "text": "Events, Sample Space, Experiments\n\nGraphCodeSample SpaceResultDataset\n\n\n\n\nText(0, 0.5, 'Normalized ECG')\n\n\n\n\n\n\n\n\n\n\n\n\ndata = np.genfromtxt(path_ecg+\"/mitbih_train.csv\", delimiter=\",\")\necg1 = data[1, :-1]\ntime = np.array(range(0,len(ecg1)))/125\nfig = plt.figure()\nplt.plot(time, ecg1)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Normalized ECG\")\n\n\n\n\nprint(\"Maximun Value: \"+ str(ecg1.max()))\nprint(\"Minimun Value: \"+ str(ecg1.min()))\n\nMaximun Value: 1.0\nMinimun Value: 0.0\n\n\n\n\n\nprint(ecg1[np.random.choice(ecg1.shape[0], 1, replace=False)])\n\n[0.]\n\n\n\n\nName: ECG Heartbeat Categorization Dataset.\nURL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat?resource=download"
+    "text": "Events, Sample Space, Experiments\n\nGraphCodeSample SpaceResultDataset\n\n\n\n\nText(0, 0.5, 'Normalized ECG')\n\n\n\n\n\n\n\n\n\n\n\n\ndata = np.genfromtxt(path_ecg+\"/mitbih_train.csv\", delimiter=\",\")\necg1 = data[1, :-1]\ntime = np.array(range(0,len(ecg1)))/125\nfig = plt.figure()\nplt.plot(time, ecg1)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Normalized ECG\")\n\n\n\n\nprint(\"Maximun Value: \"+ str(ecg1.max()))\nprint(\"Minimun Value: \"+ str(ecg1.min()))\n\nMaximun Value: 1.0\nMinimun Value: 0.0\n\n\n\n\n\nprint(ecg1[np.random.choice(ecg1.shape[0], 1, replace=False)])\n\n[1.]\n\n\n\n\nName: ECG Heartbeat Categorization Dataset.\nURL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat?resource=download"
   },
   {
     "objectID": "pres/PSIM002.html#probability-axioms",
@@ -1256,29 +1256,29 @@
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing",
     "href": "pres/PSIM004.html#what-is-digital-image-processing",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
+    "section": "",
+    "text": "Definition\n\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
+    "section": "",
+    "text": "Definition\n\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nColor Space\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
+    "section": "",
+    "text": "Definition\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nColor Space\n\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
+    "section": "",
+    "text": "import cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
   },
   {
     "objectID": "rubricas/Rubrica_EDA.html",
@@ -1348,7 +1348,7 @@
     "href": "Tutorials/TutorialPython.html#diccionarios",
     "title": "Tutorial de Python",
     "section": "Diccionarios",
-    "text": "Diccionarios\n\ntel = {'Maria': 4098, 'Jorge': 4139}\nprint(tel)\nprint(tel[\"Maria\"])\nprint(tel.keys())\nprint(tel.values)\n'Maria' in tel\n\n{'Maria': 4098, 'Jorge': 4139}\n4098\ndict_keys(['Maria', 'Jorge'])\n&lt;built-in method values of dict object at 0x00000237150402C0&gt;\n\n\nTrue"
+    "text": "Diccionarios\n\ntel = {'Maria': 4098, 'Jorge': 4139}\nprint(tel)\nprint(tel[\"Maria\"])\nprint(tel.keys())\nprint(tel.values)\n'Maria' in tel\n\n{'Maria': 4098, 'Jorge': 4139}\n4098\ndict_keys(['Maria', 'Jorge'])\n&lt;built-in method values of dict object at 0x0000028C86DB2300&gt;\n\n\nTrue"
   },
   {
     "objectID": "Tutorials/TutorialPython.html#tuplas",
@@ -1362,7 +1362,7 @@
     "href": "Tutorials/TutorialPython.html#numpy",
     "title": "Tutorial de Python",
     "section": "Numpy",
-    "text": "Numpy\nNumPy (Numerical Python), es una biblioteca de Python que da soporte para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel. La funcionalidad principal de NumPy es su estructura de datos ndarray (arreglos), para una matriz de n dimensiones, sobre las cuales se pueden realizar operaciones matemátias de manera eficiente.\nCrearemos una lista usando código nativo de Python y lo convertiremos en una matriz unidimensional con la función np.array()\n\nimport numpy as np\n\nlist1 = [6,8,10,12]\narray1 = np.array(list1)\nprint(array1)\n\n[ 6  8 10 12]\n\n\nLos ndarrays son estructuras de datos genéricas para almacenar datos homogéneos. Son equivalentes a las matrices y los vectores en álgebra, por lo que también se les puede aplicar operaciones matemáticas. Notar que las operaciones matemáticas se pueden realizar en todos los valores en un ndarray a la vez.\n\nprint(array1 - 2)\nprint(array1 * array1, \"\\n\\n\")\n\n[ 4  6  8 10]\n[ 36  64 100 144] \n\n\n\n\nLos arreglos se encierran entre [], pero al imprimirlos no están separados por comas. Hay diferentes formas de crear arreglos con propiedades específicas, lo que les provee bastante flexibilidad.\n\n# Crea una matriz con datos específicos\nprint(np.array([[1,2],[3,4]]),'\\n')\n# Crea una matriz con unos: tres filas y cuatro columnas\nprint(np.ones((3,4)),'\\n')\n# Crea una matriz con ceros: tres filas y cuatro columnas\nprint(np.zeros((3,4)),'\\n')\n# Crea una matriz con un dato específico: tres filas y cuatro columnas\nprint(np.full((3,4), 7.3),'\\n')\n# Crea un arreglo con datos seguidos: empieza en 10 termina en 30(sin incluir) con incrementos de 5.\nprint(np.arange(10,30,5),'\\n')\n# # Crea un arreglo con inicio y fin y una cantidad de datos: arreglo de 6 datos entre 0 y 5/3 .\nprint(np.linspace(0,5/3,6),'\\n')\n# Crea una matriz con datos aleatorios entre 0 y 1: dos filas y tres columnas\nprint(np.random.rand(2,3),'\\n')\n\n[[1 2]\n [3 4]] \n\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]] \n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]] \n\n[[7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]] \n\n[10 15 20 25] \n\n[0.         0.33333333 0.66666667 1.         1.33333333 1.66666667] \n\n[[0.96702859 0.47747576 0.60757913]\n [0.79445179 0.20256549 0.57371097]] \n\n\n\n\narr1 = np.array([np.arange(0,5), np.arange(0,5)*5])\n#Arreglo\nprint(arr1, \"\\n\")\n# Forma\nprint(arr1.shape, \"\\n\")\n# Tamaño\nprint(arr1.size, \"\\n\")\n# Número de Dimensiones\nprint(arr1.ndim, \"\\n\")\n# Transpuesta\nprint(arr1.T, \"\\n\")\n\n[[ 0  1  2  3  4]\n [ 0  5 10 15 20]] \n\n(2, 5) \n\n10 \n\n2 \n\n[[ 0  0]\n [ 1  5]\n [ 2 10]\n [ 3 15]\n [ 4 20]] \n\n\n\n\narr = np.array([1,2,3,4,5,6,7])\n# Porcionar\nprint(arr[1:3])# de 1 al 3 en índice\nprint(arr[4:])# de la posición 4 en adelante\nprint(arr[::2])# de uno por medio\n\n[2 3]\n[5 6 7]\n[1 3 5 7]"
+    "text": "Numpy\nNumPy (Numerical Python), es una biblioteca de Python que da soporte para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel. La funcionalidad principal de NumPy es su estructura de datos ndarray (arreglos), para una matriz de n dimensiones, sobre las cuales se pueden realizar operaciones matemátias de manera eficiente.\nCrearemos una lista usando código nativo de Python y lo convertiremos en una matriz unidimensional con la función np.array()\n\nimport numpy as np\n\nlist1 = [6,8,10,12]\narray1 = np.array(list1)\nprint(array1)\n\n[ 6  8 10 12]\n\n\nLos ndarrays son estructuras de datos genéricas para almacenar datos homogéneos. Son equivalentes a las matrices y los vectores en álgebra, por lo que también se les puede aplicar operaciones matemáticas. Notar que las operaciones matemáticas se pueden realizar en todos los valores en un ndarray a la vez.\n\nprint(array1 - 2)\nprint(array1 * array1, \"\\n\\n\")\n\n[ 4  6  8 10]\n[ 36  64 100 144] \n\n\n\n\nLos arreglos se encierran entre [], pero al imprimirlos no están separados por comas. Hay diferentes formas de crear arreglos con propiedades específicas, lo que les provee bastante flexibilidad.\n\n# Crea una matriz con datos específicos\nprint(np.array([[1,2],[3,4]]),'\\n')\n# Crea una matriz con unos: tres filas y cuatro columnas\nprint(np.ones((3,4)),'\\n')\n# Crea una matriz con ceros: tres filas y cuatro columnas\nprint(np.zeros((3,4)),'\\n')\n# Crea una matriz con un dato específico: tres filas y cuatro columnas\nprint(np.full((3,4), 7.3),'\\n')\n# Crea un arreglo con datos seguidos: empieza en 10 termina en 30(sin incluir) con incrementos de 5.\nprint(np.arange(10,30,5),'\\n')\n# # Crea un arreglo con inicio y fin y una cantidad de datos: arreglo de 6 datos entre 0 y 5/3 .\nprint(np.linspace(0,5/3,6),'\\n')\n# Crea una matriz con datos aleatorios entre 0 y 1: dos filas y tres columnas\nprint(np.random.rand(2,3),'\\n')\n\n[[1 2]\n [3 4]] \n\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]] \n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]] \n\n[[7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]] \n\n[10 15 20 25] \n\n[0.         0.33333333 0.66666667 1.         1.33333333 1.66666667] \n\n[[0.37111298 0.70907147 0.61506359]\n [0.3262796  0.35320088 0.30175312]] \n\n\n\n\narr1 = np.array([np.arange(0,5), np.arange(0,5)*5])\n#Arreglo\nprint(arr1, \"\\n\")\n# Forma\nprint(arr1.shape, \"\\n\")\n# Tamaño\nprint(arr1.size, \"\\n\")\n# Número de Dimensiones\nprint(arr1.ndim, \"\\n\")\n# Transpuesta\nprint(arr1.T, \"\\n\")\n\n[[ 0  1  2  3  4]\n [ 0  5 10 15 20]] \n\n(2, 5) \n\n10 \n\n2 \n\n[[ 0  0]\n [ 1  5]\n [ 2 10]\n [ 3 15]\n [ 4 20]] \n\n\n\n\narr = np.array([1,2,3,4,5,6,7])\n# Porcionar\nprint(arr[1:3])# de 1 al 3 en índice\nprint(arr[4:])# de la posición 4 en adelante\nprint(arr[::2])# de uno por medio\n\n[2 3]\n[5 6 7]\n[1 3 5 7]"
   },
   {
     "objectID": "Class/Class_PSIM.html",
@@ -1376,14 +1376,14 @@
     "href": "Class/Class_PSIM.html#presentaciones",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Presentaciones",
-    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística\nParteII: Un ejemplo de ECG\nProcesamiento de imágenes 1/3\nProcesamiento de imágenes 2/3\nProcesamiento de imágenes 3/3"
+    "text": "Presentaciones\n\nPresentación del curso\nParteI: Probabilidad y Estadística\nParteII: Un ejemplo de ECG\nProcesamiento de imágenes 1/4\nProcesamiento de imágenes 2/4\nProcesamiento de imágenes 3/4\nProcesamiento de imágenes 4/4"
   },
   {
     "objectID": "Class/Class_PSIM.html#laboratorios",
     "href": "Class/Class_PSIM.html#laboratorios",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Laboratorios",
-    "text": "Laboratorios\n\nLaboratorio 01\nLaboratorio 02\nLaboratorio 03"
+    "text": "Laboratorios\n\nLaboratorio 01\nLaboratorio 02\nLaboratorio 03\nLaboratorio 04"
   },
   {
     "objectID": "pres/PSIM004.html#image",
@@ -1404,77 +1404,77 @@
     "href": "pres/PSIM004.html#sampling-and-quantization-3",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
+    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
   },
   {
     "objectID": "pres/PSIM004.html#sampling-and-quantization-4",
     "href": "pres/PSIM004.html#sampling-and-quantization-4",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Sampling and quantization\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#linear-indexing",
     "href": "pres/PSIM004.html#linear-indexing",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Linear indexing",
-    "text": "Linear indexing\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
+    "text": "Linear indexing\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
   },
   {
     "objectID": "pres/PSIM004.html#spatial-resolution",
     "href": "pres/PSIM004.html#spatial-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Spatial resolution",
-    "text": "Spatial resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Spatial resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution",
     "href": "pres/PSIM004.html#intensity-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution-1",
     "href": "pres/PSIM004.html#intensity-resolution-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/pruebas.html",
     "href": "pres/pruebas.html",
     "title": "La guarida de los datos",
     "section": "",
-    "text": "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nkirby = cv2.imread(\"./images/little_kirby.png\")\nRGB_kirby = cv2.cvtColor(kirby, cv2.COLOR_BGR2RGB)\nfig003 = plt.figure()\nplt.imshow(RGB_kirby, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nGray_Kirby = cv2.cvtColor(RGB_kirby, cv2.COLOR_RGB2GRAY)\nplt.imshow(Gray_Kirby, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nKirby_1bit = cv2.bitwise_and(Gray_Kirby, np.ones(Gray_Kirby.shape, dtype=\"uint8\"))\nprint(255*Kirby_1bit)\nplt.imshow(255*Kirby_1bit)\n\n[[255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255   0   0   0   0   0   0 255 255 255 255 255]\n [255 255 255 255   0 255 255 255 255 255 255   0 255 255 255 255]\n [255 255 255   0 255 255 255 255 255 255 255 255   0 255 255 255]\n [255 255 255   0 255 255   0 255 255   0 255 255   0 255 255 255]\n [255 255   0 255 255 255   0 255 255   0 255 255 255   0 255 255]\n [255 255   0 255 255 255 255 255 255 255 255 255 255   0 255 255]\n [255 255 255   0   0 255 255 255 255 255 255   0   0 255 255 255]\n [255 255 255   0   0   0   0   0   0   0   0   0   0 255 255 255]\n [255 255 255 255   0   0   0 255 255   0   0   0 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]]\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\n\n(1000, 800, 3)\n\n\n\n\n\n\n\n\n\n\nimage_synt1 = np.uint8(0.1*np.abs(np.random.normal(0, 1, x_ray_chest.shape[0:2])))\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nimage_synt = np.zeros(x_ray_chest.shape)\n#image_synt[:,:,0] = image_synt1\n#image_synt[:,:,1] = image_synt1\n#image_synt[:,:,2] = image_synt1\nplt.imshow(image_synt1)\n\nClipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).\n\n\n\n\n\n\n\n\n\n\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(mask)\n\nplt.imshow(np.multiply(x_ray_chest,mask))\n\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")"
+    "text": "import cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nkirby = cv2.imread(\"./images/little_kirby.png\")\nRGB_kirby = cv2.cvtColor(kirby, cv2.COLOR_BGR2RGB)\nfig003 = plt.figure()\nplt.imshow(RGB_kirby, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nGray_Kirby = cv2.cvtColor(RGB_kirby, cv2.COLOR_RGB2GRAY)\nplt.imshow(Gray_Kirby, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nKirby_1bit = cv2.bitwise_and(Gray_Kirby, np.ones(Gray_Kirby.shape, dtype=\"uint8\"))\nprint(255*Kirby_1bit)\nplt.imshow(255*Kirby_1bit)\n\n[[255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255   0   0   0   0   0   0 255 255 255 255 255]\n [255 255 255 255   0 255 255 255 255 255 255   0 255 255 255 255]\n [255 255 255   0 255 255 255 255 255 255 255 255   0 255 255 255]\n [255 255 255   0 255 255   0 255 255   0 255 255   0 255 255 255]\n [255 255   0 255 255 255   0 255 255   0 255 255 255   0 255 255]\n [255 255   0 255 255 255 255 255 255 255 255 255 255   0 255 255]\n [255 255 255   0   0 255 255 255 255 255 255   0   0 255 255 255]\n [255 255 255   0   0   0   0   0   0   0   0   0   0 255 255 255]\n [255 255 255 255   0   0   0 255 255   0   0   0 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]\n [255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255]]\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nimage_synt1 = np.uint8(0.1*np.abs(np.random.normal(0, 1, x_ray_chest.shape[0:2])))\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nimage_synt = np.zeros(x_ray_chest.shape)\n#image_synt[:,:,0] = image_synt1\n#image_synt[:,:,1] = image_synt1\n#image_synt[:,:,2] = image_synt1\nplt.imshow(image_synt1)\n\nClipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).\n\n\n\n\n\n\n\n\n\n\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(mask)\n\nplt.imshow(np.multiply(x_ray_chest,mask))\n\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 0, 1,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst, cmap=\"gray\")\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"red\")\n\n\n\n\n\n\n\n\n\nimg_lc = cv2.imread(\"./images/lowcontrast.jpg\")\nimg_lc = cv2.cvtColor(img_lc, cv2.COLOR_BGR2GRAY)\nprint(img_lc.shape)\nplt.imshow(img_lc, cmap=\"gray\")\n\n(256, 256)\n\n\n\n\n\n\n\n\n\n\nfrom tabulate import tabulate\narray = np.random.randint(4, size=(10,10))\ntabla = tabulate(array, tablefmt=\"grid\")\n\nprint(tabla)\n\n+---+---+---+---+---+---+---+---+---+---+\n| 3 | 3 | 2 | 2 | 1 | 1 | 0 | 3 | 0 | 1 |\n+---+---+---+---+---+---+---+---+---+---+\n| 2 | 2 | 2 | 3 | 2 | 2 | 0 | 2 | 2 | 1 |\n+---+---+---+---+---+---+---+---+---+---+\n| 0 | 3 | 2 | 0 | 1 | 1 | 3 | 1 | 1 | 1 |\n+---+---+---+---+---+---+---+---+---+---+\n| 3 | 0 | 2 | 0 | 2 | 3 | 1 | 0 | 2 | 1 |\n+---+---+---+---+---+---+---+---+---+---+\n| 2 | 2 | 0 | 0 | 3 | 1 | 3 | 1 | 3 | 1 |\n+---+---+---+---+---+---+---+---+---+---+\n| 3 | 3 | 2 | 0 | 3 | 0 | 3 | 2 | 0 | 3 |\n+---+---+---+---+---+---+---+---+---+---+\n| 3 | 3 | 1 | 1 | 2 | 3 | 0 | 3 | 1 | 3 |\n+---+---+---+---+---+---+---+---+---+---+\n| 3 | 1 | 3 | 3 | 2 | 0 | 3 | 0 | 2 | 1 |\n+---+---+---+---+---+---+---+---+---+---+\n| 2 | 1 | 1 | 3 | 3 | 1 | 3 | 2 | 2 | 1 |\n+---+---+---+---+---+---+---+---+---+---+\n| 0 | 3 | 2 | 2 | 1 | 1 | 0 | 0 | 0 | 0 |\n+---+---+---+---+---+---+---+---+---+---+"
   },
   {
     "objectID": "pres/PSIM004.html#relationships-between-pixels",
     "href": "pres/PSIM004.html#relationships-between-pixels",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\nN4\n\n\n\n\n\n\n\nND\n\n\n\n\n\n\n\nN8\n\n\n\n\n\n\nFigura 1\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Relationships between pixels\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\n\nN4\n\n\n\n\n\n\n\nND\n\n\n\n\n\n\n\nN8\n\n\n\n\n\n\nFigura 1"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels",
     "href": "pres/PSIM005.html#relationships-between-pixels",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\nAdjacency"
+    "section": "",
+    "text": "Adjacency"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-1",
     "href": "pres/PSIM005.html#relationships-between-pixels-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\n\n\n\n\n\nA4\n\n\n\n\n\n\n\nA8\n\n\n\n\n\n\n\n\n\nA-m"
+    "section": "",
+    "text": "A4\n\n\n\n\n\n\n\n\n\n\n\nA8\n\n\n\n\n\n\n\n\n\n\n\n\n\nA-m"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-2",
     "href": "pres/PSIM005.html#relationships-between-pixels-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io\n\n\n\nA4\nA8\nA-m"
+    "section": "",
+    "text": "Distance\n\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\nA4\nA8\nA-m"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-3",
@@ -1536,22 +1536,22 @@
     "objectID": "pres/PSIM005.html#relationships-between-pixels-neighborhood",
     "href": "pres/PSIM005.html#relationships-between-pixels-neighborhood",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Relationships between pixels – Neighborhood",
-    "text": "Relationships between pixels – Neighborhood\n\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\nN4-\\(N_4\\left(p\\right)\\)\n\n\n\n\n\n\n\nND-\\(N_D\\left(p\\right)\\)\n\n\n\n\n\n\n\nN8-\\(N_8\\left(p\\right)\\)\n\n\n\n\n\n\nFigura 1: Neighborhoods"
+    "section": "",
+    "text": "Neighborhood\n\n\n\n\n\n\n\n\n\n\n\nN4-\\(N_4\\left(p\\right)\\)\n\n\n\n\n\n\n\nND-\\(N_D\\left(p\\right)\\)\n\n\n\n\n\n\n\nN8-\\(N_8\\left(p\\right)\\)\n\n\n\n\n\n\nFigura 1: Neighborhoods"
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-adjacency",
     "href": "pres/PSIM005.html#relationships-between-pixels-adjacency",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Relationships between pixels – Adjacency",
-    "text": "Relationships between pixels – Adjacency\n\n\n\n\n\n\n\nRules for adjecency\n\n\n\n4-Adjecncy: Two pixels p and q with values from V are 4-adjacent if q is in the set \\(N_4\\left(p\\right)\\)\n8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set \\(N_8\\left(p\\right)\\)\nm-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if:\n\nq is in \\(N_4\\left(p\\right)\\).\nq is in \\(N_D\\left(p\\right)\\) and the set \\(N_4\\left(p\\right) \\cap N_4\\left(q\\right)\\) has no pixels whose values are from V."
+    "section": "",
+    "text": "Rules for adjecency\n\n\n\n\n4-Adjecncy: Two pixels p and q with values from V are 4-adjacent if q is in the set \\(N_4\\left(p\\right)\\)\n8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set \\(N_8\\left(p\\right)\\)\nm-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if:\n\nq is in \\(N_4\\left(p\\right)\\).\nq is in \\(N_D\\left(p\\right)\\) and the set \\(N_4\\left(p\\right) \\cap N_4\\left(q\\right)\\) has no pixels whose values are from V."
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-path",
     "href": "pres/PSIM005.html#relationships-between-pixels-path",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Relationships between pixels – Path",
-    "text": "Relationships between pixels – Path\n\n\n\n\n\n\n\nDigital path\n\n\nIt is a sequence of adjacent pixels.\n\\[\\left(x_0, y_0\\right), \\left(x_1, y_1\\right), \\left(x_2, y_2\\right), \\dots \\left(x_n, y_n\\right)\\]\nIf \\(\\left(x_0, y_0\\right)=\\left(x_n, y_n\\right)\\) the path is known as closed path\nLet S represent a subset of pixels in an image. Two pixels p and q are said to be connected in S if there exists a path between them consisting entirely of pixels in S."
+    "section": "",
+    "text": "Digital path\n\n\n\nIt is a sequence of adjacent pixels.\n\\[\\left(x_0, y_0\\right), \\left(x_1, y_1\\right), \\left(x_2, y_2\\right), \\dots \\left(x_n, y_n\\right)\\]\nIf \\(\\left(x_0, y_0\\right)=\\left(x_n, y_n\\right)\\) the path is known as closed path\nLet S represent a subset of pixels in an image. Two pixels p and q are said to be connected in S if there exists a path between them consisting entirely of pixels in S."
   },
   {
     "objectID": "pres/PSIM005.html#relationships-between-pixels-path-connected-subset",
@@ -1578,22 +1578,22 @@
     "objectID": "pres/PSIM005.html#relationships-between-pixels-distance",
     "href": "pres/PSIM005.html#relationships-between-pixels-distance",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Relationships between pixels – Distance",
-    "text": "Relationships between pixels – Distance\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)"
+    "section": "",
+    "text": "Distance\n\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---element-wise-operation",
     "href": "pres/PSIM006.html#basic-mathematic---element-wise-operation",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Element-Wise Operation",
-    "text": "Basic Mathematic - Element-Wise Operation\n\n\n\n\n\n\n\nDefinition\n\n\nOperation involving one or more images is carried out on a pixel-bypixel basis\n\n\n\n\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\oplus \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\\\  a_{21}+b_{21} & a_{22}+b_{22}\\end{bmatrix} \\]\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\odot \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\\\  a_{21}.b_{21} & a_{22}.b_{22}\\end{bmatrix} \\]"
+    "section": "",
+    "text": "Definition\n\n\n\nOperation involving one or more images is carried out on a pixel-bypixel basis\n\n\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\oplus \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\\\  a_{21}+b_{21} & a_{22}+b_{22}\\end{bmatrix} \\]\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\odot \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\\\  a_{21}.b_{21} & a_{22}.b_{22}\\end{bmatrix} \\]"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---linear-operations",
     "href": "pres/PSIM006.html#basic-mathematic---linear-operations",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Linear Operations",
-    "text": "Basic Mathematic - Linear Operations\n\n\n\n\n\n\n\nDefinition\n\n\nGiven two arbitrary constants, \\(\\alpha_1\\) and \\(\\alpha_2\\), and two arbitrary images \\(f_1\\left(x,y\\right)\\) and \\(f_2\\left(x,y\\right)\\), \\(\\varkappa\\) is said to be a linear operator if:\n\\[ \\begin{equation}\\begin{split} \\varkappa\\left[\\alpha_1 f_1\\left(x,y\\right) + \\alpha_2 f_2\\left(x,y\\right)\\right] & =  \\alpha_1 \\varkappa\\left[ f_1\\left(x,y\\right)\\right] + \\alpha_2 \\varkappa\\left[f_2\\left(x,y\\right)\\right] \\\\ & = \\alpha_1 g_1\\left(x,y\\right) + \\alpha_2 g_2\\left(x,y\\right) \\end{split}\\end{equation} \\]\n\n\n\n\nSupose \\(\\alpha_1 = 5\\), \\(\\alpha_2 = 2\\), \\(\\varkappa = max\\) and consider:\n\\[f_1 = \\begin{bmatrix}0 & -1 \\\\2 & 4\\end{bmatrix}\\], \\[f_2 = \\begin{bmatrix}30 & 4 \\\\-2 & -3\\end{bmatrix}\\]"
+    "section": "",
+    "text": "Definition\n\n\n\nGiven two arbitrary constants, \\(\\alpha_1\\) and \\(\\alpha_2\\), and two arbitrary images \\(f_1\\left(x,y\\right)\\) and \\(f_2\\left(x,y\\right)\\), \\(\\varkappa\\) is said to be a linear operator if:\n\\[ \\begin{equation}\\begin{split} \\varkappa\\left[\\alpha_1 f_1\\left(x,y\\right) + \\alpha_2 f_2\\left(x,y\\right)\\right] & =  \\alpha_1 \\varkappa\\left[ f_1\\left(x,y\\right)\\right] + \\alpha_2 \\varkappa\\left[f_2\\left(x,y\\right)\\right] \\\\ & = \\alpha_1 g_1\\left(x,y\\right) + \\alpha_2 g_2\\left(x,y\\right) \\end{split}\\end{equation} \\]\n\n\nSupose \\(\\alpha_1 = 5\\), \\(\\alpha_2 = 2\\), \\(\\varkappa = max\\) and consider:\n\\[f_1 = \\begin{bmatrix}0 & -1 \\\\2 & 4\\end{bmatrix}\\], \\[f_2 = \\begin{bmatrix}30 & 4 \\\\-2 & -3\\end{bmatrix}\\]"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---adding",
@@ -1606,8 +1606,8 @@
     "objectID": "pres/PSIM006.html#basic-mathematic---adding-1",
     "href": "pres/PSIM006.html#basic-mathematic---adding-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Adding",
-    "text": "Basic Mathematic - Adding\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()"
+    "section": "",
+    "text": "ImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---adding-2",
@@ -1620,29 +1620,29 @@
     "objectID": "pres/PSIM006.html#basic-mathematic---multiplying",
     "href": "pres/PSIM006.html#basic-mathematic---multiplying",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Multiplying",
-    "text": "Basic Mathematic - Multiplying\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(x_ray_chest)\nplt.show()\nplt.imshow(255*mask)\nplt.show()\nplt.imshow(np.multiply(x_ray_chest,mask))\nplt.show()"
+    "section": "",
+    "text": "ImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(x_ray_chest)\nplt.show()\nplt.imshow(255*mask)\nplt.show()\nplt.imshow(np.multiply(x_ray_chest,mask))\nplt.show()"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity",
     "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Pixel intensity",
-    "text": "Basic Mathematic - Pixel intensity\n\nImagesCode\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()"
+    "section": "",
+    "text": "ImagesCode\n\n\n\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations",
     "href": "pres/PSIM006.html#neighborhood-operations",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-1",
     "href": "pres/PSIM006.html#neighborhood-operations-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood Operations",
-    "text": "Neighborhood Operations\n\nFor example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on \\(\\left(x,y\\right)\\). The coordinates of pixels in this region are the elements of set \\(S_{xy}\\).\n\n\nImagescode\n\n\n\n\n\n\n\n\n\nElderly woman image\n\n\n\n\n\n\n\n\n\n\nGray-scale image\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")"
+    "section": "",
+    "text": "For example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on \\(\\left(x,y\\right)\\). The coordinates of pixels in this region are the elements of set \\(S_{xy}\\).\n\n\nImagescode\n\n\n\n\n\n\n\n\n\nElderly woman image\n\n\n\n\n\n\n\n\n\n\nGray-scale image\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#averaging",
@@ -1655,50 +1655,50 @@
     "objectID": "pres/PSIM006.html#neighborhood-operations-2",
     "href": "pres/PSIM006.html#neighborhood-operations-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nOriginalAveragingCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN = 10\nkernel = np.ones((N,N),np.float32)/(N*N)\ndst = cv2.filter2D(elderly_gray,-1,kernel)\nplt.imshow(dst, cmap=\"gray\")"
+    "section": "",
+    "text": "OriginalAveragingCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN = 10\nkernel = np.ones((N,N),np.float32)/(N*N)\ndst = cv2.filter2D(elderly_gray,-1,kernel)\nplt.imshow(dst, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-3",
     "href": "pres/PSIM006.html#neighborhood-operations-3",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nOriginalMedianCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN=11\n\ndst1 = cv2.medianBlur(elderly_gray, N)\nplt.imshow(dst1, cmap=\"gray\")"
+    "section": "",
+    "text": "OriginalMedianCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN=11\n\ndst1 = cv2.medianBlur(elderly_gray, N)\nplt.imshow(dst1, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-4",
     "href": "pres/PSIM006.html#neighborhood-operations-4",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nMeanMedian"
+    "section": "",
+    "text": "MeanMedian"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-5",
     "href": "pres/PSIM006.html#neighborhood-operations-5",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity-1",
     "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Pixel intensity",
-    "text": "Basic Mathematic - Pixel intensity\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-6",
     "href": "pres/PSIM006.html#neighborhood-operations-6",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nTaken from: http://datagenetics.com/blog/august32013/index.html"
+    "section": "",
+    "text": "Taken from: http://datagenetics.com/blog/august32013/index.html"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity-2",
     "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Pixel intensity",
-    "text": "Basic Mathematic - Pixel intensity\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#section",
@@ -1725,15 +1725,15 @@
     "objectID": "pres/PSIM006.html#edge-dection-2",
     "href": "pres/PSIM006.html#edge-dection-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Edge dection",
-    "text": "Edge dection\n\nImages Grad YImages Grad XImages Grad Trunc YImages Trunc Grad XCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst1, cmap=\"gray\")"
+    "section": "",
+    "text": "Images Grad YImages Grad XImages Grad Trunc YImages Trunc Grad XCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst1, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#histogram",
     "href": "pres/PSIM006.html#histogram",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Histogram",
-    "text": "Histogram\n\nHistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "section": "",
+    "text": "HistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")"
   },
   {
     "objectID": "pres/PSIM007.html#histogram",
@@ -1755,5 +1755,26 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Histogram",
     "text": "Histogram\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndef adjust_gamma(image, gamma=1.0):\n   invGamma = 1.0 / gamma\n   table = np.array([((i / 255.0) ** invGamma) * 255\n      for i in np.arange(0, 256)]).astype(\"uint8\")\n\n   return cv2.LUT(image, table)\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"red\")\nplt.show()\nelderly_gray_light = adjust_gamma(image=elderly_gray, gamma=2)\nplt.imshow(elderly_gray_light, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist_light = cv2.calcHist(elderly_gray_light, [0], None, [256], [0,256])\nplt.plot(elderly_hist_light, color=\"red\")\nplt.show()\nelderly_gray_dark = adjust_gamma(image=elderly_gray, gamma=0.3)\nplt.imshow(elderly_gray_dark, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist_dark = cv2.calcHist(elderly_gray_dark, [0], None, [256], [0,256])\nplt.plot(elderly_hist_dark, color=\"red\")\nplt.show()\nelderly_gray_lowcontrast=np.uint8(0.1*elderly_gray)+172\nplt.imshow(elderly_gray_lowcontrast, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist_lowcontrast = cv2.calcHist(elderly_gray_lowcontrast, [0], None, [256], [0,256])\nplt.plot(elderly_hist_lowcontrast, color=\"red\")\nplt.show()"
+  },
+  {
+    "objectID": "pres/PSIM005.html",
+    "href": "pres/PSIM005.html",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "Neighborhood\n\n\n\n\n\n\n\n\n\n\n\nN4-\\(N_4\\left(p\\right)\\)\n\n\n\n\n\n\n\nND-\\(N_D\\left(p\\right)\\)\n\n\n\n\n\n\n\nN8-\\(N_8\\left(p\\right)\\)\n\n\n\n\n\n\nFigura 1: Neighborhoods\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRules for adjecency\n\n\n\n\n4-Adjecncy: Two pixels p and q with values from V are 4-adjacent if q is in the set \\(N_4\\left(p\\right)\\)\n8-adjacency. Two pixels p and q with values from V are 8-adjacent if q is in the set \\(N_8\\left(p\\right)\\)\nm-adjacency (also called mixed adjacency). Two pixels p and q with values from V are m-adjacent if:\n\nq is in \\(N_4\\left(p\\right)\\).\nq is in \\(N_D\\left(p\\right)\\) and the set \\(N_4\\left(p\\right) \\cap N_4\\left(q\\right)\\) has no pixels whose values are from V.\n\n\n\n\n\n\n\n\n\n\nAdjacency\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA4\n\n\n\n\n\n\n\n\n\n\n\nA8\n\n\n\n\n\n\n\n\n\n\n\n\n\nA-m\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDigital path\n\n\n\nIt is a sequence of adjacent pixels.\n\\[\\left(x_0, y_0\\right), \\left(x_1, y_1\\right), \\left(x_2, y_2\\right), \\dots \\left(x_n, y_n\\right)\\]\nIf \\(\\left(x_0, y_0\\right)=\\left(x_n, y_n\\right)\\) the path is known as closed path\nLet S represent a subset of pixels in an image. Two pixels p and q are said to be connected in S if there exists a path between them consisting entirely of pixels in S.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistance\n\n\n\n\n\n\n\n\n\n\n\n\nCity block distance: \\(D_4\\left(p,q\\right) = \\lvert x-u\\rvert + \\lvert y-v \\rvert\\)\nChessboard distance: \\(D_8\\left(p,q\\right) = max \\left(\\lvert x-u\\rvert , \\lvert y-v \\rvert \\right)\\)\nEuclidean distance: \\(D_e\\left(p,q\\right) = \\sqrt{\\left(x-u\\right)^2 + \\left(y-v\\right)^2}\\)\n\n\n\n\n\n\n\n\nA4\nA8\nA-m"
+  },
+  {
+    "objectID": "labs/Lab_psim_04_2024I.html",
+    "href": "labs/Lab_psim_04_2024I.html",
+    "title": "Laboratorio 01: Probabilidad y Estadística",
+    "section": "",
+    "text": "Monitoría del Curso\nMelissa Tarquino Mendoza\n\n\nIntroducción\nEl procesamiento de imágenes médicas es un campo interdisciplinario de la ciencia que juega un papel crucial en el diagnóstico, tratamiento y seguimiento de enfermedades en la práctica clínica contemporánea. Mediante el uso de diversas técnicas computacionales, este campo permite la extracción de información significativa a partir de imágenes médicas, tales como radiografías, tomografías computarizadas (TC), resonancias magnéticas (RM), entre otras modalidades. Estas imágenes proporcionan una representación visual detallada de estructuras anatómicas y procesos fisiológicos en el cuerpo humano, permitiendo a los profesionales de la salud realizar evaluaciones precisas y tomar decisiones informadas sobre el cuidado de los pacientes.\nEn este contexto, la elección del formato de imagen médica adecuado es de suma importancia para garantizar la calidad y utilidad de los datos. Los formatos de imagen más comúnmente utilizados en el ámbito médico incluyen DICOM (Digital Imaging and Communications in Medicine) y NIfTI (Neuroimaging Informatics Technology Initiative). El formato DICOM es ampliamente utilizado en la adquisición y almacenamiento de imágenes médicas, ya que permite la integración y el intercambio de datos entre diferentes dispositivos y sistemas de imagen. Por otro lado, el formato NIfTI se utiliza principalmente en el campo de la neuroimagen para el análisis y procesamiento de imágenes de resonancia magnética funcional (fMRI) y otras modalidades relacionadas con la neurociencia. La elección adecuada del formato de imagen médica es esencial para garantizar la interoperabilidad, la precisión y la reproducibilidad de los resultados en el procesamiento de imágenes médicas.\n\n\nObjetivo\nGenerar al estudiante la competencia de creación de aplicaciones a partir del procesamiento imágenes biomédicas, resaltando la importancia en los formatos.\n\n\nDatasets\nConjunto de imágenes decathlon\nThe UNIFESP X-Ray Body Part Classification Dataset\n\n\nRecursos\nitk-SNAP\n\n\nRúbrica de evaluación\n\n\n\n\n\n\n\n\n\n\n\nIndicador\nExcelente (10 ptos)\nSuficiente (5 ptos)\nInsuficiente (0 ptos)\n\n\n\n\nConversión NIFTI-PNG\nExplica de forma completa el algoritmo funcional que utilizaron para convertir de NIFTI a PNG\nGenera un algoritmo funcional para la conversión de NIFTI a PNG\nNo genera un algoritmo funcional para la conversión de NIFTI a PNG\n\n\nConversión DICOM-PNG\nExplica de forma completa el algoritmo funcional que utilizaron para convertir de DICOM a PNG\nGenera un algoritmo funcional para la conversión de DICOM a PNG\nNo genera un algoritmo funcional para la conversión de DICOM a PNG\n\n\nFormato DICOM-NIFTI\nExplica claramente el formato DICOM y el formato NIFTI\n———\nNo explica el formato DICOM o el formato NIFTI\n\n\nAlgoritmo Encriptacion/Desencriptación\nExplica de forma completa el algoritmo funcional que utilizaron para encriptar/desencriptar información en archivos png\nGenera un algoritmo funcional que utilizaron para encriptar/desencriptar información en archivos png\nNo genera un algoritmo funcional que utilizaron para encriptar/desencriptar información en archivos png\n\n\nAplicación para la implementación de algoritmos\nGenera una aplicación en la que se implementan los algoritmos desarrollados.\n———\nNo genera una aplicación en la cual se implementen los algoritmos desarrollados.\n\n\n\n\n\n\n\nFlujo de trabajo\n\nEscoge una parte de los datos del conjunto de datos Decathlon. Después, elige al azar un archivo Nifti (NIFTI_FILE).\nElige una imagen al azar (DICOM_FILE) del conjunto de datos The UNIFESP X-Ray Body Part Classification Dataset.\nExplique el formato NIFTI y el formato DICOM.\nDesarrolle un algoritmo que convierta a NIFTI_FILE en un conjunto de imágenes PNG. Elija una de esas imágenes para generar el archivo PNG_FILE_01.png\nDesarrolle un algoritmo que convierta a DICOM_FILE en una imagen PNG. A esta imagen se le conocerá como PNG_FILE_02.png\nDesarrolle algoritmo para encriptar/desencriptar una palabra dentro de la información binaria de los archivos PNG. Esteganografía.\nDesarrolle una aplicación que implemente el algoritmo de encriptación/desencriptación.\n\nFecha de entrega: Sesión de laboratorio Lunes 1 de abril de 2024.\n\n\nPresentaciones\n\n\n\nGrupo\nHorario\n\n\n\n\nA\n2024-04-01 *******\n\n\nB\n2024-04-01 *******\n\n\nC\n2024-04-01 *******\n\n\nD\n2024-04-01 *******\n\n\nE\n2024-04-01 *******\n\n\nF\n2024-04-01 *******\n\n\nG\n2024-04-01 *******"
+  },
+  {
+    "objectID": "pres/PSIM006.html",
+    "href": "pres/PSIM006.html",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "Definition\n\n\n\nOperation involving one or more images is carried out on a pixel-bypixel basis\n\n\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\oplus \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\\\  a_{21}+b_{21} & a_{22}+b_{22}\\end{bmatrix} \\]\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\odot \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\\\  a_{21}.b_{21} & a_{22}.b_{22}\\end{bmatrix} \\]\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nGiven two arbitrary constants, \\(\\alpha_1\\) and \\(\\alpha_2\\), and two arbitrary images \\(f_1\\left(x,y\\right)\\) and \\(f_2\\left(x,y\\right)\\), \\(\\varkappa\\) is said to be a linear operator if:\n\\[ \\begin{equation}\\begin{split} \\varkappa\\left[\\alpha_1 f_1\\left(x,y\\right) + \\alpha_2 f_2\\left(x,y\\right)\\right] & =  \\alpha_1 \\varkappa\\left[ f_1\\left(x,y\\right)\\right] + \\alpha_2 \\varkappa\\left[f_2\\left(x,y\\right)\\right] \\\\ & = \\alpha_1 g_1\\left(x,y\\right) + \\alpha_2 g_2\\left(x,y\\right) \\end{split}\\end{equation} \\]\n\n\nSupose \\(\\alpha_1 = 5\\), \\(\\alpha_2 = 2\\), \\(\\varkappa = max\\) and consider:\n\\[f_1 = \\begin{bmatrix}0 & -1 \\\\2 & 4\\end{bmatrix}\\], \\[f_2 = \\begin{bmatrix}30 & 4 \\\\-2 & -3\\end{bmatrix}\\]\n\n\n\n\n\n\n\n\n\n\n\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()\n\n\n\n\n\n\n\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(x_ray_chest)\nplt.show()\nplt.imshow(255*mask)\nplt.show()\nplt.imshow(np.multiply(x_ray_chest,mask))\nplt.show()\n\n\n\n\n\n\n\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\nFor example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on \\(\\left(x,y\\right)\\). The coordinates of pixels in this region are the elements of set \\(S_{xy}\\).\n\n\nImagescode\n\n\n\n\n\n\n\n\n\nElderly woman image\n\n\n\n\n\n\n\n\n\n\nGray-scale image\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")\n\n\n\n\n\n\n\n\nOriginalAveragingCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN = 10\nkernel = np.ones((N,N),np.float32)/(N*N)\ndst = cv2.filter2D(elderly_gray,-1,kernel)\nplt.imshow(dst, cmap=\"gray\")\n\n\n\n\n\n\n\n\nOriginalMedianCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN=11\n\ndst1 = cv2.medianBlur(elderly_gray, N)\nplt.imshow(dst1, cmap=\"gray\")\n\n\n\n\n\n\n\n\nMeanMedian\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\n\n\nTaken from: http://datagenetics.com/blog/august32013/index.html\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages Grad YImages Grad XImages Grad Trunc YImages Trunc Grad XCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst1, cmap=\"gray\")\n\n\n\n\n\n\n\n\nHistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")"
   }
 ]

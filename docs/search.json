@@ -1734,5 +1734,26 @@
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Histogram",
     "text": "Histogram\n\nHistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM007.html#histogram",
+    "href": "pres/PSIM007.html#histogram",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Histogram",
+    "text": "Histogram\n\nFirst thing to doImageCodeRecommended Reading\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\n3\n2\n2\n1\n1\n0\n3\n0\n1\n\n\n2\n2\n2\n3\n2\n2\n0\n2\n2\n1\n\n\n0\n3\n2\n0\n1\n1\n3\n1\n1\n1\n\n\n3\n0\n2\n0\n2\n3\n1\n0\n2\n1\n\n\n2\n2\n0\n0\n3\n1\n3\n1\n3\n1\n\n\n3\n3\n2\n0\n3\n0\n3\n2\n0\n3\n\n\n3\n3\n1\n1\n2\n3\n0\n3\n1\n3\n\n\n3\n1\n3\n3\n2\n0\n3\n0\n2\n1\n\n\n2\n1\n1\n3\n3\n1\n3\n2\n2\n1\n\n\n0\n3\n2\n2\n1\n1\n0\n0\n0\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"red\")\nplt.show()\n\n\n\ncv2.calcHist(images, channels, mask, histSize, ranges)\nHelp Docs Opencv"
+  },
+  {
+    "objectID": "pres/PSIM007.html#histogram-equalization",
+    "href": "pres/PSIM007.html#histogram-equalization",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Histogram Equalization",
+    "text": "Histogram Equalization\n\nImagesCodeRecommended Reading\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nplt.imshow(elderly_gray_lowcontrast, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\n\nplt.plot(elderly_hist_lowcontrast, color=\"red\")\nplt.show()\n\nelderly_hist_equ = cv2.equalizeHist(elderly_gray_lowcontrast)\nplt.imshow(elderly_hist_equ, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\n\nelderly_hist_equ = cv2.calcHist(elderly_hist_equ, [0], None, [256], [0,256])\nplt.plot(elderly_hist_equ, color=\"red\")\nplt.show()\n\n\n\nHistogram Equalization OPENCV tutorial\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+  },
+  {
+    "objectID": "pres/PSIM007.html#histogram-1",
+    "href": "pres/PSIM007.html#histogram-1",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "Histogram",
+    "text": "Histogram\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndef adjust_gamma(image, gamma=1.0):\n   invGamma = 1.0 / gamma\n   table = np.array([((i / 255.0) ** invGamma) * 255\n      for i in np.arange(0, 256)]).astype(\"uint8\")\n\n   return cv2.LUT(image, table)\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"red\")\nplt.show()\nelderly_gray_light = adjust_gamma(image=elderly_gray, gamma=2)\nplt.imshow(elderly_gray_light, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist_light = cv2.calcHist(elderly_gray_light, [0], None, [256], [0,256])\nplt.plot(elderly_hist_light, color=\"red\")\nplt.show()\nelderly_gray_dark = adjust_gamma(image=elderly_gray, gamma=0.3)\nplt.imshow(elderly_gray_dark, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist_dark = cv2.calcHist(elderly_gray_dark, [0], None, [256], [0,256])\nplt.plot(elderly_hist_dark, color=\"red\")\nplt.show()\nelderly_gray_lowcontrast=np.uint8(0.1*elderly_gray)+172\nplt.imshow(elderly_gray_lowcontrast, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\nelderly_hist_lowcontrast = cv2.calcHist(elderly_gray_lowcontrast, [0], None, [256], [0,256])\nplt.plot(elderly_hist_lowcontrast, color=\"red\")\nplt.show()"
   }
 ]

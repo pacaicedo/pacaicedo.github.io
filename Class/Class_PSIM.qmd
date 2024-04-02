@@ -24,15 +24,17 @@ El curso está dividido en 3 partes:
 - [Presentación del curso](../pres/PSIM001.qmd)
 - [ParteI: Probabilidad y Estadística](../pres/PSIM002.qmd)
 - [ParteII: Un ejemplo de ECG](../pres/PSIM003.qmd)
-- [Procesamiento de imágenes 1/3](../pres/PSIM004.qmd)
-- [Procesamiento de imágenes 2/3](../pres/PSIM005.qmd)
-- [Procesamiento de imágenes 3/3](../pres/PSIM006.qmd)
+- [Procesamiento de imágenes 1/4](../pres/PSIM004.qmd)
+- [Procesamiento de imágenes 2/4](../pres/PSIM005.qmd)
+- [Procesamiento de imágenes 3/4](../pres/PSIM006.qmd)
+- [Procesamiento de imágenes 4/4](../pres/PSIM007.qmd)
 
 ## Laboratorios
 
 - [Laboratorio 01](../labs/Lab_psim_01_2024I.qmd)
 - [Laboratorio 02](../labs/Lab_psim_02_2024I.qmd)
 - [Laboratorio 03](../labs/Lab_psim_03_2024I.qmd)
+- [Laboratorio 04](../labs/Lab_psim_04_2024I.qmd)
 
 # Parciales
 

@@ -1,0 +1,33 @@
+---
+title: "EVALUACIÓN TALLER-PSIM: FUNDAMENTOS DE PROCESAMIENTO DE IMÁGENES"
+format: PrettyPDF-pdf
+---
+
+**NOMBRE:**_____________________________________________________
+
+Relacione cada una de las afirmaciones con su respectiva respuesta:
+
+- Este tipo de filtro hace uso de una técnica estadística para lograr una eliminación de ruido en una imagen; sin embargo presenta una buena respuesta ante los bordes. __________
+
+- Esta transformación permite cambiar el tamaño de un objeto a través de un factor ponderante o escala. __________
+
+- Convertir una imagen en escala de grises en una imagen binaria, es una tarea de: __________
+
+- La densidad de probabilidad de la intensidad de pixeles se determina a través de:
+
+- El ruido de sal y pimienta es eliminado utilizando un filtro: __________
+
+- El contraste es la cantidad de niveles de grises que se utilizan para representar las características, este se mejora a través de: __________
+
+1. Mediana
+2. Media
+3. Pasa-bajas
+4. Pasa-altas
+5. Rotación
+6. Escala
+7. Sesgado
+8. Traslación
+9. Histograma
+10. Umbralización
+11. Binarización
+12. Ecualización de histograma

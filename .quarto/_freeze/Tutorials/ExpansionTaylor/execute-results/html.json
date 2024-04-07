@@ -1,0 +1,12 @@
+{
+  "hash": "31a1f3add680d5a7ed2a74d9e22541ea",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Computación de seno y coseno usando expansión de Taylor\"\nsubtitle: \"Un ejemplo de clase\"\ndescription: \"Un ejemplo de clase del cálculo de una serie de Taylor sin uso de librerías especiales de Python -- En construcción --\"\nlang: es\nauthor: \"Ph.D. Pablo Eduardo Caicedo R.\"\ndate: \"Febrero 6, 2023\"\ndate-modified: \"Mayo 25, 2023\"\nimage: \"../Img/taylor_expansion.jpg\"\n---\n\nLas ecuaciones de las expansiones de Taylor (centradas en cero) fueron extraídas de la recopilación que hizo [Wikipedia](https://es.wikipedia.org/wiki/Serie_de_Taylor)\n\n$$cos\\left(x\\right) = \\sum_{n=0}^{\\infty}{\\frac{x^{2n}}{2n!}\\left(-1\\right)^{n}}$$\n$$sin\\left(x\\right) = \\sum_{n=0}^{\\infty}{\\frac{\\left(-1\\right)^{n}}{\\left(2n+1\\right)!}x^{2n+1}}$$\n\n::: {#4c08183e .cell execution_count=1}\n``` {.python .cell-code}\ndef factorial(x):\n    output = 1\n    for k in range(1,x+1):\n        output = output*k\n    return output\n```\n:::\n\n\n::: {#c1dcf1ad .cell execution_count=2}\n``` {.python .cell-code}\ndef sin_taylor_expansion(x,n):\n    pi = 3.141592653589793238462643383279502884197169399375105820974944\n    x = pi*x/180\n    output = 0\n    for k in range(0, n):\n        term = (((-1)**k)/factorial(2*k + 1))*(x**(2*k+1))\n        output = output+term\n    return output\n```\n:::\n\n\n::: {#0d50c25b .cell execution_count=3}\n``` {.python .cell-code}\nv_est = sin_taylor_expansion(30,5)\n\nprint(v_est)\n\nprint(\"Error Relativo:\", abs(0.5-v_est)/0.5)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n0.5000000000202799\nError Relativo: 4.0559777758630844e-11\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "ExpansionTaylor_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

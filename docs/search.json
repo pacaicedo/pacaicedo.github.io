@@ -101,15 +101,15 @@
     "objectID": "pres/PSIM006.html#basic-mathematic---element-wise-operation",
     "href": "pres/PSIM006.html#basic-mathematic---element-wise-operation",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Element-Wise Operation",
-    "text": "Basic Mathematic - Element-Wise Operation\n\n\n\n\n\n\n\nDefinition\n\n\nOperation involving one or more images is carried out on a pixel-bypixel basis\n\n\n\n\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\oplus \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\\\  a_{21}+b_{21} & a_{22}+b_{22}\\end{bmatrix} \\]\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\odot \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\\\  a_{21}.b_{21} & a_{22}.b_{22}\\end{bmatrix} \\]"
+    "section": "",
+    "text": "Definition\n\n\n\nOperation involving one or more images is carried out on a pixel-bypixel basis\n\n\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\oplus \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\\\  a_{21}+b_{21} & a_{22}+b_{22}\\end{bmatrix} \\]\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\odot \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\\\  a_{21}.b_{21} & a_{22}.b_{22}\\end{bmatrix} \\]"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---linear-operations",
     "href": "pres/PSIM006.html#basic-mathematic---linear-operations",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Linear Operations",
-    "text": "Basic Mathematic - Linear Operations\n\n\n\n\n\n\n\nDefinition\n\n\nGiven two arbitrary constants, \\(\\alpha_1\\) and \\(\\alpha_2\\), and two arbitrary images \\(f_1\\left(x,y\\right)\\) and \\(f_2\\left(x,y\\right)\\), \\(\\varkappa\\) is said to be a linear operator if:\n\\[ \\begin{equation}\\begin{split} \\varkappa\\left[\\alpha_1 f_1\\left(x,y\\right) + \\alpha_2 f_2\\left(x,y\\right)\\right] & =  \\alpha_1 \\varkappa\\left[ f_1\\left(x,y\\right)\\right] + \\alpha_2 \\varkappa\\left[f_2\\left(x,y\\right)\\right] \\\\ & = \\alpha_1 g_1\\left(x,y\\right) + \\alpha_2 g_2\\left(x,y\\right) \\end{split}\\end{equation} \\]\n\n\n\n\nSupose \\(\\alpha_1 = 5\\), \\(\\alpha_2 = 2\\), \\(\\varkappa = max\\) and consider:\n\\[f_1 = \\begin{bmatrix}0 & -1 \\\\2 & 4\\end{bmatrix}\\], \\[f_2 = \\begin{bmatrix}30 & 4 \\\\-2 & -3\\end{bmatrix}\\]"
+    "section": "",
+    "text": "Definition\n\n\n\nGiven two arbitrary constants, \\(\\alpha_1\\) and \\(\\alpha_2\\), and two arbitrary images \\(f_1\\left(x,y\\right)\\) and \\(f_2\\left(x,y\\right)\\), \\(\\varkappa\\) is said to be a linear operator if:\n\\[ \\begin{equation}\\begin{split} \\varkappa\\left[\\alpha_1 f_1\\left(x,y\\right) + \\alpha_2 f_2\\left(x,y\\right)\\right] & =  \\alpha_1 \\varkappa\\left[ f_1\\left(x,y\\right)\\right] + \\alpha_2 \\varkappa\\left[f_2\\left(x,y\\right)\\right] \\\\ & = \\alpha_1 g_1\\left(x,y\\right) + \\alpha_2 g_2\\left(x,y\\right) \\end{split}\\end{equation} \\]\n\n\nSupose \\(\\alpha_1 = 5\\), \\(\\alpha_2 = 2\\), \\(\\varkappa = max\\) and consider:\n\\[f_1 = \\begin{bmatrix}0 & -1 \\\\2 & 4\\end{bmatrix}\\], \\[f_2 = \\begin{bmatrix}30 & 4 \\\\-2 & -3\\end{bmatrix}\\]"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---adding",
@@ -122,85 +122,85 @@
     "objectID": "pres/PSIM006.html#basic-mathematic---adding-1",
     "href": "pres/PSIM006.html#basic-mathematic---adding-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Adding",
-    "text": "Basic Mathematic - Adding\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()"
+    "section": "",
+    "text": "ImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---multiplying",
     "href": "pres/PSIM006.html#basic-mathematic---multiplying",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Multiplying",
-    "text": "Basic Mathematic - Multiplying\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(x_ray_chest)\nplt.show()\nplt.imshow(255*mask)\nplt.show()\nplt.imshow(np.multiply(x_ray_chest,mask))\nplt.show()"
+    "section": "",
+    "text": "ImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(x_ray_chest)\nplt.show()\nplt.imshow(255*mask)\nplt.show()\nplt.imshow(np.multiply(x_ray_chest,mask))\nplt.show()"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity",
     "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Pixel intensity",
-    "text": "Basic Mathematic - Pixel intensity\n\nImagesCode\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()"
+    "section": "",
+    "text": "ImagesCode\n\n\n\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()"
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity-1",
     "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Pixel intensity",
-    "text": "Basic Mathematic - Pixel intensity\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#basic-mathematic---pixel-intensity-2",
     "href": "pres/PSIM006.html#basic-mathematic---pixel-intensity-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Basic Mathematic - Pixel intensity",
-    "text": "Basic Mathematic - Pixel intensity\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations",
     "href": "pres/PSIM006.html#neighborhood-operations",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-1",
     "href": "pres/PSIM006.html#neighborhood-operations-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood Operations",
-    "text": "Neighborhood Operations\n\nFor example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on \\(\\left(x,y\\right)\\). The coordinates of pixels in this region are the elements of set \\(S_{xy}\\).\n\n\nImagescode\n\n\n\n\n\n\n\n\n\nElderly woman image\n\n\n\n\n\n\n\n\n\n\nGray-scale image\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")"
+    "section": "",
+    "text": "For example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on \\(\\left(x,y\\right)\\). The coordinates of pixels in this region are the elements of set \\(S_{xy}\\).\n\n\nImagescode\n\n\n\n\n\n\n\n\n\nElderly woman image\n\n\n\n\n\n\n\n\n\n\nGray-scale image\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-2",
     "href": "pres/PSIM006.html#neighborhood-operations-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nOriginalAveragingCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN = 10\nkernel = np.ones((N,N),np.float32)/(N*N)\ndst = cv2.filter2D(elderly_gray,-1,kernel)\nplt.imshow(dst, cmap=\"gray\")"
+    "section": "",
+    "text": "OriginalAveragingCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN = 10\nkernel = np.ones((N,N),np.float32)/(N*N)\ndst = cv2.filter2D(elderly_gray,-1,kernel)\nplt.imshow(dst, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-3",
     "href": "pres/PSIM006.html#neighborhood-operations-3",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nOriginalMedianCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN=11\n\ndst1 = cv2.medianBlur(elderly_gray, N)\nplt.imshow(dst1, cmap=\"gray\")"
+    "section": "",
+    "text": "OriginalMedianCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN=11\n\ndst1 = cv2.medianBlur(elderly_gray, N)\nplt.imshow(dst1, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-4",
     "href": "pres/PSIM006.html#neighborhood-operations-4",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nMeanMedian"
+    "section": "",
+    "text": "MeanMedian"
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-5",
     "href": "pres/PSIM006.html#neighborhood-operations-5",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
+    "section": "",
+    "text": "Taken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018."
   },
   {
     "objectID": "pres/PSIM006.html#neighborhood-operations-6",
     "href": "pres/PSIM006.html#neighborhood-operations-6",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Neighborhood operations",
-    "text": "Neighborhood operations\n\nTaken from: http://datagenetics.com/blog/august32013/index.html"
+    "section": "",
+    "text": "Taken from: http://datagenetics.com/blog/august32013/index.html"
   },
   {
     "objectID": "pres/PSIM006.html#edge-dection",
@@ -220,99 +220,99 @@
     "objectID": "pres/PSIM006.html#edge-dection-2",
     "href": "pres/PSIM006.html#edge-dection-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Edge dection",
-    "text": "Edge dection\n\nImages Grad YImages Grad XImages Grad Trunc YImages Trunc Grad XCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst1, cmap=\"gray\")"
+    "section": "",
+    "text": "Images Grad YImages Grad XImages Grad Trunc YImages Trunc Grad XCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst1, cmap=\"gray\")"
   },
   {
     "objectID": "pres/PSIM006.html#histogram",
     "href": "pres/PSIM006.html#histogram",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Histogram",
-    "text": "Histogram\n\nHistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "section": "",
+    "text": "HistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")"
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing",
     "href": "pres/PSIM004.html#what-is-digital-image-processing",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
+    "section": "",
+    "text": "Definition\n\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
+    "section": "",
+    "text": "Definition\n\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-2",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\nDefinition\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\n\nColor Space\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
+    "section": "",
+    "text": "Definition\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nColor Space\n\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others."
   },
   {
     "objectID": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "href": "pres/PSIM004.html#what-is-digital-image-processing-3",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "What is Digital Image Processing?",
-    "text": "What is Digital Image Processing?\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
+    "section": "",
+    "text": "import cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
   },
   {
     "objectID": "pres/PSIM004.html#sampling-and-quantization-3",
     "href": "pres/PSIM004.html#sampling-and-quantization-3",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
+    "text": "Sampling and quantization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1bit\n\n\n\n\n\n\n\n\n\n2bit\n\n\n\n\n\n\n\n\n\n3bit\n\n\n\n\n\n\n\n\n\n4bit\n\n\n\n\n\n\n\n\n\n\n\n5bit\n\n\n\n\n\n\n\n\n\n6bit\n\n\n\n\n\n\n\n\n\n7bit\n\n\n\n\n\n\n\n\n\n8bit"
   },
   {
     "objectID": "pres/PSIM004.html#sampling-and-quantization-4",
     "href": "pres/PSIM004.html#sampling-and-quantization-4",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Sampling and quantization",
-    "text": "Sampling and quantization\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Sampling and quantization\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#linear-indexing",
     "href": "pres/PSIM004.html#linear-indexing",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Linear indexing",
-    "text": "Linear indexing\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
+    "text": "Linear indexing\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson.\n\n\n\n\n\n\n\n\n\n\nFrom normal to linear\n\n\n\n\\[\\alpha = My+x\\]\n\n\n\n\n\n\n\n\n\nFrom linear to normal\n\n\n\n\\[x = \\alpha \\bmod M\\]\n\\[y = \\frac{\\alpha - x}{M}\\]"
   },
   {
     "objectID": "pres/PSIM004.html#spatial-resolution",
     "href": "pres/PSIM004.html#spatial-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Spatial resolution",
-    "text": "Spatial resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Spatial resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution",
     "href": "pres/PSIM004.html#intensity-resolution",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#intensity-resolution-1",
     "href": "pres/PSIM004.html#intensity-resolution-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Intensity resolution",
-    "text": "Intensity resolution\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
+    "text": "Intensity resolution\n\n\n\nTomado de Gonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. New York, NY: Pearson."
   },
   {
     "objectID": "pres/PSIM004.html#relationships-between-pixels",
     "href": "pres/PSIM004.html#relationships-between-pixels",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Relationships between pixels",
-    "text": "Relationships between pixels\n\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\nN4\n\n\n\n\n\n\n\nND\n\n\n\n\n\n\n\nN8\n\n\n\n\n\n\nFigura 1\n\n\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "Relationships between pixels\n\n\n\n\n\n\nNeighborhood\n\n\n\n\n\n\n\n\n\n\n\nN4\n\n\n\n\n\n\n\nND\n\n\n\n\n\n\n\nN8\n\n\n\n\n\n\nFigura 1"
   },
   {
     "objectID": "pres/PSIM002.html#events-sample-space-experiments",
     "href": "pres/PSIM002.html#events-sample-space-experiments",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Events, Sample Space, Experiments",
-    "text": "Events, Sample Space, Experiments\n\n\n\n\n\n\n\nDefinition\n\n\nAn experiment is a physical procedure that produces some kind of result.\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nAn event is a set of experiment’s possible results.\n\n\n\n\n\n\n\n\n\n\n\nConsejo\n\n\nA sample space is the set of ALL possibles results of an experiment."
+    "text": "Events, Sample Space, Experiments\n\n\n\n\n\n\nDefinition\n\n\n\nAn experiment is a physical procedure that produces some kind of result.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nAn event is a set of experiment’s possible results.\n\n\n\n\n\n\n\n\nConsejo\n\n\n\nA sample space is the set of ALL possibles results of an experiment."
   },
   {
     "objectID": "pres/PSIM002.html#events-sample-space-experiments-1",
@@ -326,14 +326,14 @@
     "href": "pres/PSIM002.html#probability-axioms",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Probability Axioms",
-    "text": "Probability Axioms\nFor the given events A and B that are in a sample space S:\n\n\n\n\n\n\n\nAxioms\n\n\n\n\\(0 \\leq P_r \\left(A\\right) \\leq 1\\)\n\\(P_r\\left(S\\right) = 1\\)\nIf \\(A \\cap B = \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right)\\)\nIf \\(A \\cap B \\neq \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right) - P_r\\left(A \\cap B \\right)\\)\n\\(P_r\\left(\\bar{A}\\right) = 1-P_r \\left(A\\right)\\)\nIf \\(A\\subset B\\) then \\(P_r \\left(A\\right)\\leq P_r \\left(B\\right)\\)\n\\(P_r \\left(A|B\\right)=\\frac{P_r \\left(A\\cap B\\right)}{P_r \\left(B\\right)}\\)"
+    "text": "Probability Axioms\nFor the given events A and B that are in a sample space S:\n\n\n\n\n\n\nAxioms\n\n\n\n\n\\(0 \\leq P_r \\left(A\\right) \\leq 1\\)\n\\(P_r\\left(S\\right) = 1\\)\nIf \\(A \\cap B = \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right)\\)\nIf \\(A \\cap B \\neq \\emptyset\\) then \\(P_r\\left(A \\cup B \\right) = P_r \\left(A\\right) + P_r \\left(B\\right) - P_r\\left(A \\cap B \\right)\\)\n\\(P_r\\left(\\bar{A}\\right) = 1-P_r \\left(A\\right)\\)\nIf \\(A\\subset B\\) then \\(P_r \\left(A\\right)\\leq P_r \\left(B\\right)\\)\n\\(P_r \\left(A|B\\right)=\\frac{P_r \\left(A\\cap B\\right)}{P_r \\left(B\\right)}\\)"
   },
   {
     "objectID": "pres/PSIM002.html#random-variable",
     "href": "pres/PSIM002.html#random-variable",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variable",
-    "text": "Random Variable\n\n\n\n\n\n\n\nDefinition\n\n\nA random variable is a real valued function of the elements of a sample space, S . Given an experiment, E , with sample space, S, the random variable maps each possible outcome of E.\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\nThe probability mass function (PMF), \\(P_X\\left(x\\right)\\), of a random variable, X, is a function that assigns a probability to each possible value of the random variable, X."
+    "text": "Random Variable\n\n\n\n\n\n\nDefinition\n\n\n\nA random variable is a real valued function of the elements of a sample space, S . Given an experiment, E , with sample space, S, the random variable maps each possible outcome of E.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe probability mass function (PMF), \\(P_X\\left(x\\right)\\), of a random variable, X, is a function that assigns a probability to each possible value of the random variable, X."
   },
   {
     "objectID": "pres/PSIM002.html#random-variable-1",
@@ -347,28 +347,28 @@
     "href": "pres/PSIM002.html#random-variables",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variables",
-    "text": "Random Variables\nConditions\n\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sum_{\\chi \\in X}P_X\\left(\\chi \\right) = 1\\]\n\n\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\int_{-\\infty}^{\\infty}P_X\\left(\\chi \\right)d\\chi = 1\\]"
+    "text": "Random Variables\n\nConditions\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\n\\[\\sum_{\\chi \\in X}P_X\\left(\\chi \\right) = 1\\]\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\n\\[\\int_{-\\infty}^{\\infty}P_X\\left(\\chi \\right)d\\chi = 1\\]"
   },
   {
     "objectID": "pres/PSIM002.html#random-variables-1",
     "href": "pres/PSIM002.html#random-variables-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variables",
-    "text": "Random Variables\nExpected Values\n\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\mu = \\sum_{\\chi \\in X}\\chi P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\mu=\\int_{-\\infty}^{\\infty}\\chi P_X\\left(\\chi \\right)d\\chi\\]"
+    "text": "Random Variables\n\nExpected Values\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\n\\[\\mu = \\sum_{\\chi \\in X}\\chi P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\n\\[\\mu=\\int_{-\\infty}^{\\infty}\\chi P_X\\left(\\chi \\right)d\\chi\\]"
   },
   {
     "objectID": "pres/PSIM002.html#random-variables-2",
     "href": "pres/PSIM002.html#random-variables-2",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Random Variables",
-    "text": "Random Variables\nVariance\n\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\\[\\sigma^2 = \\sum_{\\chi \\in X}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\\[\\sigma^2 = \\int_{-\\infty}^{\\infty}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)d\\chi\\]"
+    "text": "Random Variables\n\nVariance\n\n\n\n\n\n\n\n\nDiscrete\n\n\n\n\\[\\sigma^2 = \\sum_{\\chi \\in X}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)\\]\n\n\n\n\n\n\n\n\n\nContinuous\n\n\n\n\\[\\sigma^2 = \\int_{-\\infty}^{\\infty}\\left(\\chi - \\mu \\right)^2 P_X\\left(\\chi \\right)d\\chi\\]"
   },
   {
     "objectID": "pres/PSIM002.html#pdf-estimation",
     "href": "pres/PSIM002.html#pdf-estimation",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "PDF Estimation",
-    "text": "PDF Estimation\n\nGraphCodeExp. ValueVariance\n\n\n\n\nText(0, 0.5, 'Estimated PDF Value')\n\n\n\n\n\n\n\n\n\n\n\n\ncounts01, bin_edges01 = np.histogram(ecg1, bins=10, density=True)\ncounts02, bin_edges02 = np.histogram(ecg1, bins=50, density=True)\ncounts03, bin_edges03 = np.histogram(ecg1, bins=100, density=True)\nfig01=plt.figure()\nplt.plot(bin_edges01[1:], counts01/sum(counts01), label=\"Estimation with 10 bins\")\nplt.plot(bin_edges02[1:], counts02/sum(counts02), label=\"Estimation with 50 bins\")\nplt.plot(bin_edges03[1:], counts03/sum(counts03), label=\"Estimation with 100 bins\")\nplt.legend()\nplt.grid()\nplt.xlabel(\"Normalised ECG Value\")\nplt.ylabel(\"Estimated PDF Value\")\n\n\n\n\n\n0.09001020772910533\n\n\n\n\n\n\n0.02551116143316462\n\n\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "PDF Estimation\n\nGraphCodeExp. ValueVariance\n\n\n\n\nText(0, 0.5, 'Estimated PDF Value')\n\n\n\n\n\n\n\n\n\n\n\n\ncounts01, bin_edges01 = np.histogram(ecg1, bins=10, density=True)\ncounts02, bin_edges02 = np.histogram(ecg1, bins=50, density=True)\ncounts03, bin_edges03 = np.histogram(ecg1, bins=100, density=True)\nfig01=plt.figure()\nplt.plot(bin_edges01[1:], counts01/sum(counts01), label=\"Estimation with 10 bins\")\nplt.plot(bin_edges02[1:], counts02/sum(counts02), label=\"Estimation with 50 bins\")\nplt.plot(bin_edges03[1:], counts03/sum(counts03), label=\"Estimation with 100 bins\")\nplt.legend()\nplt.grid()\nplt.xlabel(\"Normalised ECG Value\")\nplt.ylabel(\"Estimated PDF Value\")\n\n\n\n\n\n0.09001020772910533\n\n\n\n\n\n\n0.02551116143316462"
   },
   {
     "objectID": "pres/pruebas.html",
@@ -381,57 +381,57 @@
     "objectID": "pres/NumericalAnalysis.html#el-profesor",
     "href": "pres/NumericalAnalysis.html#el-profesor",
     "title": "Análisis Numérico",
-    "section": "El Profesor",
-    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#contenido-del-curso",
     "href": "pres/NumericalAnalysis.html#contenido-del-curso",
     "title": "Análisis Numérico",
-    "section": "Contenido del curso",
-    "text": "Contenido del curso\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
+    "section": "",
+    "text": "Introducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#evaluación",
     "href": "pres/NumericalAnalysis.html#evaluación",
     "title": "Análisis Numérico",
-    "section": "Evaluación",
-    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)\nConsigna 002. Diferenciación e integración numérica (25%)\nConsigna 003. Proyecto Final (40%)"
+    "section": "",
+    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)\nConsigna 002. Diferenciación e integración numérica (25%)\nConsigna 003. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#recursos",
     "href": "pres/NumericalAnalysis.html#recursos",
     "title": "Análisis Numérico",
-    "section": "Recursos",
-    "text": "Recursos\nClases\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Numpy.\nSeguimiento de Aprendizaje: Moodle"
+    "section": "",
+    "text": "Lunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Numpy.\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#bibliografía",
     "href": "pres/NumericalAnalysis.html#bibliografía",
     "title": "Análisis Numérico",
-    "section": "Bibliografía",
-    "text": "Bibliografía\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
+    "section": "",
+    "text": "Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones",
     "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones",
     "title": "Análisis Numérico",
     "section": "Errores y aproximaciones",
-    "text": "Errores y aproximaciones\n\n\nLas cantidades que se trabajan en la ingeniería tienen dos orígenes diferentes:\n\nMediciones sobre procesos físicos\nResultados de procesos matemáticos.\n\n\n\n\n\n\n\n\n\nPrimer Origen\n\n\nUn proceso de medición nunca arroja el valor verdadero de la medida, pues las mediciones se hacen con instrumentos que se encuentran limitados\n\n\n\n\n\n\n\n\n\n\n\nSegundo Origen\n\n\nLas operaciones aritméticas usualmente se ejecutan en un computador o una calculadora, y la limitación de espacio de estos dispositivos lleva a que algunas cifras no se puedan representar correctamente."
+    "text": "Errores y aproximaciones\n\n\nLas cantidades que se trabajan en la ingeniería tienen dos orígenes diferentes:\n\nMediciones sobre procesos físicos\nResultados de procesos matemáticos.\n\n\n\n\n\n\n\n\nPrimer Origen\n\n\n\n\n\nUn proceso de medición nunca arroja el valor verdadero de la medida, pues las mediciones se hacen con instrumentos que se encuentran limitados\n\n\n\n\n\n\n\n\n\nSegundo Origen\n\n\n\n\n\nLas operaciones aritméticas usualmente se ejecutan en un computador o una calculadora, y la limitación de espacio de estos dispositivos lleva a que algunas cifras no se puedan representar correctamente."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones-1",
     "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones-1",
     "title": "Análisis Numérico",
     "section": "Errores y aproximaciones",
-    "text": "Errores y aproximaciones\n\n\n\n\n\n\n\n\n\nImportante\n\n\nLos errores debido a estos orígenes es de naturaleza acumulativa, por ejemplo si se operan medidas reales con un procesador limitado la incertidumbre aumentará.\n\n\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\nMuchas veces resulta imposible siquiera expresar en términos algebraicos soluciones a ciertas ecuaciones, inclusive polinomiales.\n\n\n\n\n\n\n\n\n\n\n\n\n\nSiempre…\n\n\nCon lo anterior, es claro que el trabajo de ingeniería y ciencias se encuentra inevitablemente sujeto a error, y por tanto el tema de cuantificación de errores es de atención prioritaria en dichas áreas."
+    "text": "Errores y aproximaciones\n\n\n\n\n\n\n\n\nImportante\n\n\n\nLos errores debido a estos orígenes es de naturaleza acumulativa, por ejemplo si se operan medidas reales con un procesador limitado la incertidumbre aumentará.\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\nMuchas veces resulta imposible siquiera expresar en términos algebraicos soluciones a ciertas ecuaciones, inclusive polinomiales.\n\n\n\n\n\n\n\n\n\n\nSiempre…\n\n\n\nCon lo anterior, es claro que el trabajo de ingeniería y ciencias se encuentra inevitablemente sujeto a error, y por tanto el tema de cuantificación de errores es de atención prioritaria en dichas áreas."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#errores-y-aproximaciones-2",
     "href": "pres/NumericalAnalysis.html#errores-y-aproximaciones-2",
     "title": "Análisis Numérico",
     "section": "Errores y aproximaciones",
-    "text": "Errores y aproximaciones\n\n\nError Absoluto\n\\[\\varepsilon = \\left| x - \\bar{x} \\right|\\]\n\nError relativo\n\\[\\varepsilon_{\\gamma} = \\frac{\\left| x - \\bar{x} \\right|}{\\left| x \\right|}\\]\n\n\nError de aproximación\n\\[\\varepsilon_{ap} = {\\left| x_{actual} - x_{anterior} \\right|}\\]"
+    "text": "Errores y aproximaciones\n\n\n\nError Absoluto\n\\[\\varepsilon = \\left| x - \\bar{x} \\right|\\]\n\n\n\nError relativo\n\\[\\varepsilon_{\\gamma} = \\frac{\\left| x - \\bar{x} \\right|}{\\left| x \\right|}\\]\n\n\n\n\nError de aproximación\n\\[\\varepsilon_{ap} = {\\left| x_{actual} - x_{anterior} \\right|}\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#cifras-significativas",
@@ -445,14 +445,14 @@
     "href": "pres/NumericalAnalysis.html#cifras-significativas-1",
     "title": "Análisis Numérico",
     "section": "Cifras significativas",
-    "text": "Cifras significativas\n\n\n\n\n\n\n\nConsidere…\n\n\nUna región rectangular que tiene 20.5 cm de largo por 14.3 cm de ancho. Se requiere la medida del área de la región en centímetros cuadrados.\n\n\n\n\n\n\n\n\n\n\nDiferentes personas reportarían sin dudar los primeros dos dígitos, a saber el dos y el cero, que en este contexto se llamarán dígitos confiables.\nSe entenderá que esta medida en realidad es una cifra entre 20.5 cm y 20.6 cm con el tercer dígito llamado dígito de incertidumbre.\nLa cantidad de dígitos confiables más otro con incertidumbre, son las cifras significativas de una medición."
+    "text": "Cifras significativas\n\n\n\n\n\n\nConsidere…\n\n\n\nUna región rectangular que tiene 20.5 cm de largo por 14.3 cm de ancho. Se requiere la medida del área de la región en centímetros cuadrados.\n\n\n\n\n\n\n\n\nDiferentes personas reportarían sin dudar los primeros dos dígitos, a saber el dos y el cero, que en este contexto se llamarán dígitos confiables.\nSe entenderá que esta medida en realidad es una cifra entre 20.5 cm y 20.6 cm con el tercer dígito llamado dígito de incertidumbre.\nLa cantidad de dígitos confiables más otro con incertidumbre, son las cifras significativas de una medición."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#cifras-significativas-2",
     "href": "pres/NumericalAnalysis.html#cifras-significativas-2",
     "title": "Análisis Numérico",
     "section": "Cifras significativas",
-    "text": "Cifras significativas\n\n\n\n\n\n\n\n¿Que pasa con las operaciones?\n\n\nCuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas.\n\n\n\n\n\n\n\n\n\n\n\nHablando de errores\n\n\nCon el número de cifras significativas \\(\\left(n\\right)\\), se puede calcular la cota del error absoluto:\n\\[\\varepsilon = \\left( 0.5\\times10^{2-n} \\right) \\%\\]"
+    "text": "Cifras significativas\n\n\n\n\n\n\n¿Que pasa con las operaciones?\n\n\n\nCuando se operen números con cifras significativas, el resultado tendrá tantas cifras significativas como el factor con menos cifras significativas.\n\n\n\n\n\n\n\n\nHablando de errores\n\n\n\nCon el número de cifras significativas \\(\\left(n\\right)\\), se puede calcular la cota del error absoluto:\n\\[\\varepsilon = \\left( 0.5\\times10^{2-n} \\right) \\%\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#que-pasa-en-los-computadores",
@@ -466,70 +466,70 @@
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\n\nEl bit más izquierdo en ambos casos es “0”, por lo tanto en los dos casos los numéros son positivos."
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nEl bit más izquierdo en ambos casos es “0”, por lo tanto en los dos casos los numéros son positivos."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-1",
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-1",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\n\nEn el ambos casos el exponente es 10000000011 por lo tanto el valor c se calcula así:\n\n\\[ c = 1 \\cdot 2^{10} + 0 \\cdot 2^{9} + \\dots +1 \\cdot 2^{1} + 1 \\cdot 2^{0} = 1024+2+1=1027\\]"
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nEn el ambos casos el exponente es 10000000011 por lo tanto el valor c se calcula así:\n\n\\[ c = 1 \\cdot 2^{10} + 0 \\cdot 2^{9} + \\dots +1 \\cdot 2^{1} + 1 \\cdot 2^{0} = 1024+2+1=1027\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-2",
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-2",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\n\nLa mantisa para el primer caso es:\n\n\\[1011100100010000000000000000000000000000000000000000\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} \\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625\\] \\[ f= 0.7229003906250000000000\\]"
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nLa mantisa para el primer caso es:\n\n\\[1011100100010000000000000000000000000000000000000000\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} \\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625\\] \\[ f= 0.7229003906250000000000\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-3",
     "href": "pres/NumericalAnalysis.html#ejemplos-de-conversión-de-ieee-754-a-decimal-3",
     "title": "Análisis Numérico",
     "section": "Ejemplos de conversión de IEEE 754 a decimal",
-    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\n\n\nLa mantisa para el segundo caso es:\n\n\\[1011100100010000000000000000000000000000000000000001\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} + 1 \\cdot 2^{-52}\\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 + 2,220476049250313e-16\\] \\[f = 0.7229003906250002220446\\]"
+    "text": "Ejemplos de conversión de IEEE 754 a decimal\n\n\n\n\n\n\nDos numeros “diferentes”\n\n\n\n\n0 10000000011 1011100100010000000000000000000000000000000000000000\n0 10000000011 1011100100010000000000000000000000000000000000000001\n\n\n\nLa mantisa para el segundo caso es:\n\n\\[1011100100010000000000000000000000000000000000000001\\] \\[ f = 1 \\cdot 2^{-1} + 1 \\cdot 2^{-3} + 1\\cdot 2^{-4} +1 \\cdot 2^{-5} + 1 \\cdot 2^{-8} + 1 \\cdot 2^{-12} + 1 \\cdot 2^{-52}\\] \\[ f = 0.5 + 0.125 + 0.0625 + 0.03125 + 0.00390625 + 0.000244140625 + 2,220476049250313e-16\\] \\[f = 0.7229003906250002220446\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#los-números-más-grande-y-más-pequeño",
     "href": "pres/NumericalAnalysis.html#los-números-más-grande-y-más-pequeño",
     "title": "Análisis Numérico",
     "section": "Los números \"más grande\" y \"más pequeño\"",
-    "text": "Los números \"más grande\" y \"más pequeño\"\n\n\n\n\n\n\n\nImportante\n\n\n\nMás grande: Sucede cuando \\(s=0\\), \\(c=2046\\), \\(f=1-2^{-52}\\)\nMás pequeño: Sucede cuando \\(s=0\\), \\(c=1\\), \\(f=0\\)"
+    "text": "Los números \"más grande\" y \"más pequeño\"\n\n\n\n\n\n\nImportante\n\n\n\n\nMás grande: Sucede cuando \\(s=0\\), \\(c=2046\\), \\(f=1-2^{-52}\\)\nMás pequeño: Sucede cuando \\(s=0\\), \\(c=1\\), \\(f=0\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-truncamiento",
     "href": "pres/NumericalAnalysis.html#error-de-truncamiento",
     "title": "Análisis Numérico",
     "section": "Error de truncamiento",
-    "text": "Error de truncamiento\n\n\n\n\n\n\n\n\n\nImportante\n\n\nDentro de los números reales \\(\\left( \\mathbb{R} \\right)\\), existen dos conjuntos de números claramente diferenciables, los racionales \\(\\left( \\mathbb{Q} \\right)\\) y los irracionales \\(\\left( \\mathbb{I} \\right)\\). Los primeros son facilmente representables en un sistema computacional; sin embargo los segundo debido a que no pueden ser representados con un número finito de digitos deben ser cortados a unas cuantas cifras.\n\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\nSin embargo, hay formas metódicas de obtener aproximaciones tan buenas como se quieran a estos números. Como por ejemplo las conocidas series de Taylor\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\nTodas las derivadas deben existir.\nFunción y derivadas en el intervalo \\(\\left(x,c\\right)\\)"
+    "text": "Error de truncamiento\n\n\n\n\n\n\n\n\nImportante\n\n\n\nDentro de los números reales \\(\\left( \\mathbb{R} \\right)\\), existen dos conjuntos de números claramente diferenciables, los racionales \\(\\left( \\mathbb{Q} \\right)\\) y los irracionales \\(\\left( \\mathbb{I} \\right)\\). Los primeros son facilmente representables en un sistema computacional; sin embargo los segundo debido a que no pueden ser representados con un número finito de digitos deben ser cortados a unas cuantas cifras.\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nSin embargo, hay formas metódicas de obtener aproximaciones tan buenas como se quieran a estos números. Como por ejemplo las conocidas series de Taylor\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\nTodas las derivadas deben existir.\nFunción y derivadas en el intervalo \\(\\left(x,c\\right)\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-truncamiento-1",
     "href": "pres/NumericalAnalysis.html#error-de-truncamiento-1",
     "title": "Análisis Numérico",
     "section": "Error de truncamiento",
-    "text": "Error de truncamiento\n\n\n\n\n\n\n\nForma de Langrange\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\n\n\nForma Integral\n\n\n\\[R_n\\left( x \\right) = \\int_{c}^{x}{\\frac{f^{\\left(n+1\\right)}\\left(t\\right)}{n!}\\left(x-t\\right)^{n}dt}\\]"
+    "text": "Error de truncamiento\n\n\n\n\n\n\nForma de Langrange\n\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\nForma Integral\n\n\n\n\\[R_n\\left( x \\right) = \\int_{c}^{x}{\\frac{f^{\\left(n+1\\right)}\\left(t\\right)}{n!}\\left(x-t\\right)^{n}dt}\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\n\nRecordemos\n\n\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\n\n\n\n\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\\[f\\left(x\\right)=ln\\left(x\\right)\\]\n\\[\\dot{f}\\left(x\\right) = \\frac{1}{x}\\]\n\\[\\ddot{f}\\left(x\\right) = -\\frac{1}{x^2}\\]\n\n\\[\\dddot{f}\\left(x\\right) = \\frac{2}{x^3}\\]\n\\[\\ddddot{f}\\left(x\\right) = -\\frac{6}{x^4}\\]"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\n\n\\[f\\left( x \\right) = f\\left( c \\right) + \\dot{f}\\left( c \\right)\\left( x-c \\right) + \\frac{\\ddot{f}\\left( c \\right)}{2!}\\left( x-c \\right)^2 + \\frac{\\dddot{f}\\left( c \\right)}{3!}\\left( x-c \\right)^3 + \\dots + \\frac{f^{\\left(n\\right)}\\left( c \\right)}{n!}\\left( x-c \\right)^n\\]\n\n\n\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\n\\[f\\left(x\\right)=ln\\left(x\\right)\\]\n\\[\\dot{f}\\left(x\\right) = \\frac{1}{x}\\]\n\\[\\ddot{f}\\left(x\\right) = -\\frac{1}{x^2}\\]\n\n\\[\\dddot{f}\\left(x\\right) = \\frac{2}{x^3}\\]\n\\[\\ddddot{f}\\left(x\\right) = -\\frac{6}{x^4}\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-1",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-1",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1.1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1.1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1.1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1.1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/x)*(x-1))-((1/(2*(x**2)))*(x-1)**2)+ ((2/(6*(x**3)))*(x-1)**3)-((6/(24*(x**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.08701022243471537"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1.1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1.1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1.1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1.1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/x)*(x-1))-((1/(2*(x**2)))*(x-1)**2)+ ((2/(6*(x**3)))*(x-1)**3)-((6/(24*(x**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.08701022243471537"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-2",
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-2",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\n\nRecordemos\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\n\n\n\nError en forma de lagrange\n\n\n\\[R_4\\left(1.1\\right) = \\frac{24\\xi^{-5}}{5!}\\left(1.1 - 1\\right)^{5}\\]\n\n\n\n\n\n\ndef error_taylor_expansion(x):\n    return ((24*x**(-5))/120)*(0.1**5)"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nRecordemos\n\n\n\n\\[R_n\\left( x \\right) = \\frac{f^{\\left( n+1 \\right)}\\left( \\xi \\right)}{\\left( n+1 \\right)!}\\left( x-c \\right)^{n+1}\\]\n\n\n\n\n\n\n\n\nError en forma de lagrange\n\n\n\n\\[R_4\\left(1.1\\right) = \\frac{24\\xi^{-5}}{5!}\\left(1.1 - 1\\right)^{5}\\]\n\n\n\n\ndef error_taylor_expansion(x):\n    return ((24*x**(-5))/120)*(0.1**5)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-3",
@@ -543,14 +543,14 @@
     "href": "pres/NumericalAnalysis.html#ejemplo-de-error-de-truncamiento-4",
     "title": "Análisis Numérico",
     "section": "Ejemplo de Error de truncamiento",
-    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/1)*(x-1))-((1/(2*(1**2)))*(x-1)**2)+ ((2/(6*(1**3)))*(x-1)**3)-((6/(24*(1**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.09530833333333343"
+    "text": "Ejemplo de Error de truncamiento\n\n\n\n\n\n\nCalcular ln(1.1), centrado en c=1, y orden 4\n\n\n\n\n\\[f\\left(1.1\\right)=ln\\left(1\\right)+\\frac{1}{1}\\left(1.1 - 1\\right)-\\frac{1}{2\\cdot 1^2}\\left(1.1-1\\right)^2+\\frac{2}{6\\cdot 1^3}\\left(1.1 - 1\\right)^3 - \\frac{6}{24\\cdot 1^4}\\left(1.1 - 1\\right)^4\\]\n\n\n\n\n\ndef taylor_expansion_ln(x):\n    return ((1/1)*(x-1))-((1/(2*(1**2)))*(x-1)**2)+ ((2/(6*(1**3)))*(x-1)**3)-((6/(24*(1**4)))*(x-1)**4)\n\n\n\n\nprint(taylor_expansion_ln(1.1))\n\n0.09530833333333343"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-redondeo",
     "href": "pres/NumericalAnalysis.html#error-de-redondeo",
     "title": "Análisis Numérico",
     "section": "Error de redondeo",
-    "text": "Error de redondeo\n\n\n\n\n\n\n\nSupongamos…\n\n\n\\[x=\\frac{5}{7}\\] \\[y = \\frac{1}{3}\\]\n\nCalcular x+y utilizando aritmética de digitos finitos, utilizando 6 cifras significativas, considerando:\n\nMétodo de truncamiento\nMétodo de redondeo\n\nCalcular el error para todos los casos anteriores"
+    "text": "Error de redondeo\n\n\n\n\n\n\nSupongamos…\n\n\n\n\\[x=\\frac{5}{7}\\] \\[y = \\frac{1}{3}\\]\n\nCalcular x+y utilizando aritmética de digitos finitos, utilizando 6 cifras significativas, considerando:\n\nMétodo de truncamiento\nMétodo de redondeo\n\nCalcular el error para todos los casos anteriores"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#error-de-redondeo-1",
@@ -571,35 +571,35 @@
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-1",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-1",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.arange(0,2,0.01)\nf_x = 3*x-4\nfig, ax = plt.subplots()\nax.plot(x, f_x)\nplt.grid(True)\nplt.show()"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.arange(0,2,0.01)\nf_x = 3*x-4\nfig, ax = plt.subplots()\nax.plot(x, f_x)\nplt.grid(True)\nplt.show()"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-2",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-2",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\nEjemplo 1\n\n\n\nLa raiz de la función \\(f\\left(x\\right) = 3x-4\\) es \\(x=\\frac{4}{3}\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-3",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-3",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(-3,4, 0.01)\nf_t = (t**2)-(t)-6\n\nfig, ax = plt.subplots()\nax.plot(t, f_t)\nplt.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nt = np.arange(-3,4, 0.01)\nf_t = (t**2)-(t)-6\n\nfig, ax = plt.subplots()\nax.plot(t, f_t)\nplt.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-4",
     "href": "pres/NumericalAnalysis.html#búsqueda-de-raíces-de-una-función-4",
     "title": "Análisis Numérico",
     "section": "Búsqueda de \"raíces\" de una función",
-    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\n\nDefinicón\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
+    "text": "Búsqueda de \"raíces\" de una función\n\n\n\n\n\n\nDefinicón\n\n\n\nLas raíces o ceros de una función \\(f\\) son aquellos valores \\(c\\) tal que: \\(f\\left(c\\right)=0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEjemplo 2\n\n\n\nLos ceros de la función \\(f\\left(x\\right) = x^2 -x -6\\) son \\(x=3\\) y \\(x=-2\\)"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#que-pasa-con-funciones-más-complejas",
@@ -627,14 +627,14 @@
     "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-2",
     "title": "Análisis Numérico",
     "section": "Soluciones de ecuaciones de una variable",
-    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.arange(0,0.2,0.0001)\n\ndef f(l):\n    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000\n\nfig, ax = plt.subplots()\nax.plot(lam, f(lam))\nax.grid(True)\nplt.show()"
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.arange(0,0.2,0.0001)\n\ndef f(l):\n    return 1000000*np.exp(l) + ((435000)/(l)*((np.exp(l))-1)) - 1564000\n\nfig, ax = plt.subplots()\nax.plot(lam, f(lam))\nax.grid(True)\nplt.show()"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
     "href": "pres/NumericalAnalysis.html#soluciones-de-ecuaciones-de-una-variable-3",
     "title": "Análisis Numérico",
     "section": "Soluciones de ecuaciones de una variable",
-    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\n\nSuponga que….\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]"
+    "text": "Soluciones de ecuaciones de una variable\n\n\n\n\n\n\n\n\nSuponga que….\n\n\n\nSuponga que, en un inicio, cierta población contiene \\(N\\left(0\\right)=1000000\\) individuos, que \\(\\upsilon=435000\\) individuos inmigran a la comunidad durante el primer año y que existen N(1)=1564000 al finalizar el año. SI deseamos determinar el la tasa de natalidad \\(\\lambda\\) se requiere encontrar las raíces de\n\n\\[1564000 = 1000000e^{\\lambda} + \\frac{435000}{\\lambda}\\left(e^{\\lambda}-1\\right)\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#método-de-la-bisección",
@@ -676,42 +676,42 @@
     "href": "pres/NumericalAnalysis.html#taller",
     "title": "Análisis Numérico",
     "section": "Taller",
-    "text": "Taller\n\n\n\n\n\n\n\nPregunta 1/2\n\n\nDada la función \\(f\\left(x\\right) = 8 sin\\left(x\\right) e^{-x} - 1\\) responda las siguientes cuestiones:\n\nSi se sabe que \\(x \\in \\left[0,3\\right]\\), encuentre una raíz de la función. ¿Es utilizable el método de la bisección en el cálculo de la raíz?\nAplique Newton-Raphson para dos posibles valores iniciales: -5, 10. Cual es el resultado de la operación. Explique su resultado."
+    "text": "Taller\n\n\n\n\n\n\nPregunta 1/2\n\n\n\nDada la función \\(f\\left(x\\right) = 8 sin\\left(x\\right) e^{-x} - 1\\) responda las siguientes cuestiones:\n\nSi se sabe que \\(x \\in \\left[0,3\\right]\\), encuentre una raíz de la función. ¿Es utilizable el método de la bisección en el cálculo de la raíz?\nAplique Newton-Raphson para dos posibles valores iniciales: -5, 10. Cual es el resultado de la operación. Explique su resultado."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#taller-1",
     "href": "pres/NumericalAnalysis.html#taller-1",
     "title": "Análisis Numérico",
     "section": "Taller",
-    "text": "Taller\n\n\n\n\n\n\n\nPregunta 2/2\n\n\nLa velocidad de un para caídista esta dada por la siguiente función:\n\\[v=\\frac{gm}{c}\\left(1 - e^{-\\frac{c}{m}t}\\right)\\]\nSea la gravedad \\(g=9.8\\), el coeficiente de rozamiento \\(c=14Kg/s\\), responda:\n\nCuál es el peso del paracaidista si se sabe que a los 7sg la velocidad de este era de \\(35m/s\\) ?\nUtilizando una calculadora de gravedad, determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia."
+    "text": "Taller\n\n\n\n\n\n\nPregunta 2/2\n\n\n\nLa velocidad de un para caídista esta dada por la siguiente función:\n\\[v=\\frac{gm}{c}\\left(1 - e^{-\\frac{c}{m}t}\\right)\\]\nSea la gravedad \\(g=9.8\\), el coeficiente de rozamiento \\(c=14Kg/s\\), responda:\n\nCuál es el peso del paracaidista si se sabe que a los 7sg la velocidad de este era de \\(35m/s\\) ?\nUtilizando una calculadora de gravedad, determine la gravedad real, si el experimento se hace en la ciudad de Popayán, vuelva a determinar la masa del paracaidista. Explique la discrepancia."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#problema",
     "href": "pres/NumericalAnalysis.html#problema",
     "title": "Análisis Numérico",
     "section": "Problema",
-    "text": "Problema\n\n\n\n\n\n\n\n\n\nProblema\n\n\nUna empresa inmobiliaria tiene 4 terrenos a la venta. La relación entre precio y área se puede observar en la siguiente tabla:\n\n\n\nArea\nPrecio\n\n\n\n\n0.8\n10000\n\n\n2.3\n15000\n\n\n4.7\n40000\n\n\n7.1\n80000"
+    "text": "Problema\n\n\n\n\n\n\n\n\nProblema\n\n\n\nUna empresa inmobiliaria tiene 4 terrenos a la venta. La relación entre precio y área se puede observar en la siguiente tabla:\n\n\n\nArea\nPrecio\n\n\n\n\n0.8\n10000\n\n\n2.3\n15000\n\n\n4.7\n40000\n\n\n7.1\n80000"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#problema-1",
     "href": "pres/NumericalAnalysis.html#problema-1",
     "title": "Análisis Numérico",
     "section": "Problema",
-    "text": "Problema\n\n\n\n\n\n\n\nProblema\n\n\n¿Cuánto debe valer un terreno de 3.5ha, si el precio del terreno sigue las mismas condiciones de los anteriores?\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnfoque exacto:\n\n\n\nPolinomios de Lagrange\nPolinomio de Newton\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnfoque por Ajustes sucesivos:\n\n\n\nTrazadores cúbicos.\nMínimos cuadrados."
+    "text": "Problema\n\n\n\n\n\n\nProblema\n\n\n\n¿Cuánto debe valer un terreno de 3.5ha, si el precio del terreno sigue las mismas condiciones de los anteriores?\n\n\n\n\n\n\n\n\n\n\nEnfoque exacto:\n\n\n\n\nPolinomios de Lagrange\nPolinomio de Newton\n\n\n\n\n\n\n\n\n\n\nEnfoque por Ajustes sucesivos:\n\n\n\n\nTrazadores cúbicos.\nMínimos cuadrados."
   },
   {
     "objectID": "pres/NumericalAnalysis.html#polinomios-de-lagrange",
     "href": "pres/NumericalAnalysis.html#polinomios-de-lagrange",
     "title": "Análisis Numérico",
     "section": "Polinomios de Lagrange",
-    "text": "Polinomios de Lagrange\n\n\n\n\n\n\n\nInterpolación polinomial\n\n\nA partir de unos datos \\(\\left(x_0,y_0\\right),\\left(x_1,y_1\\right),\\left(x_2,y_2\\right),\\dots,\\left(x_n,y_n\\right)\\) generar un polinomio \\(\\left( P\\left(x\\right) \\right)\\) (del menor grado posible) que pase por todos los puntos.\n\\[P\\left(x\\right) = a_0 + a_1x + a_2x^2+\\dots+a_nx^n\\]"
+    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nInterpolación polinomial\n\n\n\nA partir de unos datos \\(\\left(x_0,y_0\\right),\\left(x_1,y_1\\right),\\left(x_2,y_2\\right),\\dots,\\left(x_n,y_n\\right)\\) generar un polinomio \\(\\left( P\\left(x\\right) \\right)\\) (del menor grado posible) que pase por todos los puntos.\n\\[P\\left(x\\right) = a_0 + a_1x + a_2x^2+\\dots+a_nx^n\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#polinomios-de-lagrange-1",
     "href": "pres/NumericalAnalysis.html#polinomios-de-lagrange-1",
     "title": "Análisis Numérico",
     "section": "Polinomios de Lagrange",
-    "text": "Polinomios de Lagrange\n\n\n\n\n\n\n\nAlgoritmo\n\n\n\nDeterminar un polinomios \\(\\gamma_i \\left(x\\right)\\), que pase por \\(\\left(x_i,1\\right)\\) y se anule para el resto de datos. \\[\\gamma_i\\left(x\\right) = \\prod_{j=0}^{n}\\frac{x-x_j}{x_i-x_j}\\]\n\nDonde \\(i \\neq j\\)\n\nDeterminar polinomio \\(P_i\\left(x\\right)\\)\n\n\\[P_i\\left(x\\right) = y_i \\gamma_i\\left(x\\right)\\]\n\nDeterminar polinomio \\(P\\left(x\\right)\\)\n\n\\[P\\left(x\\right) = \\sum_{i=0}^{n}P_i\\left(x\\right)\\]"
+    "text": "Polinomios de Lagrange\n\n\n\n\n\n\nAlgoritmo\n\n\n\n\nDeterminar un polinomios \\(\\gamma_i \\left(x\\right)\\), que pase por \\(\\left(x_i,1\\right)\\) y se anule para el resto de datos. \\[\\gamma_i\\left(x\\right) = \\prod_{j=0}^{n}\\frac{x-x_j}{x_i-x_j}\\]\n\nDonde \\(i \\neq j\\)\n\nDeterminar polinomio \\(P_i\\left(x\\right)\\)\n\n\\[P_i\\left(x\\right) = y_i \\gamma_i\\left(x\\right)\\]\n\nDeterminar polinomio \\(P\\left(x\\right)\\)\n\n\\[P\\left(x\\right) = \\sum_{i=0}^{n}P_i\\left(x\\right)\\]"
   },
   {
     "objectID": "pres/NumericalAnalysis.html#solución-al-problema",
@@ -725,7 +725,7 @@
     "href": "pres/NumericalAnalysis.html#polinomio-de-newton",
     "title": "Análisis Numérico",
     "section": "Polinomio de Newton",
-    "text": "Polinomio de Newton\n\n\n\n\n\n\n\nNota\n\n\n\nConstruir el polinomio \\(P_0 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_0, y_0\\right)\\). La propuesta más simple es \\(P_0 \\left(x\\right) = y_0\\)\nConstruir el polinomio \\(P_1 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_1, y_1\\right)\\), pero que parta de \\(P_0 \\left(x\\right)\\). Una propuesta de este es \\(P_1 \\left(x\\right) = y_0+ c_1 \\left(x-x_0\\right)\\)\nConstruir el polinomio \\(P_2 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_2, y_2\\right)\\), pero que parta de \\(P_1 \\left(x\\right)\\). Una propuesta de este es \\(P_2 \\left(x\\right) = y_0 + c_1 \\left(x-x_0\\right) + c_2\\left(x-x_0\\right)\\left(x-x_1\\right)\\)"
+    "text": "Polinomio de Newton\n\n\n\n\n\n\nNota\n\n\n\n\nConstruir el polinomio \\(P_0 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_0, y_0\\right)\\). La propuesta más simple es \\(P_0 \\left(x\\right) = y_0\\)\nConstruir el polinomio \\(P_1 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_1, y_1\\right)\\), pero que parta de \\(P_0 \\left(x\\right)\\). Una propuesta de este es \\(P_1 \\left(x\\right) = y_0+ c_1 \\left(x-x_0\\right)\\)\nConstruir el polinomio \\(P_2 \\left(x\\right)\\) el cuál pasa por el punto \\(\\left(x_2, y_2\\right)\\), pero que parta de \\(P_1 \\left(x\\right)\\). Una propuesta de este es \\(P_2 \\left(x\\right) = y_0 + c_1 \\left(x-x_0\\right) + c_2\\left(x-x_0\\right)\\left(x-x_1\\right)\\)"
   },
   {
     "objectID": "pres/Mathematics/maths_calc.html",
@@ -1466,36 +1466,36 @@
     "objectID": "pres/NumericalAnalysis_back.html#el-profesor",
     "href": "pres/NumericalAnalysis_back.html#el-profesor",
     "title": "Análisis Numérico",
-    "section": "El Profesor",
-    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\nDesempeño\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\nContacto:\npablo.caicedo.r@uniautonoma.edu.co"
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#contenido-del-curso",
     "href": "pres/NumericalAnalysis_back.html#contenido-del-curso",
     "title": "Análisis Numérico",
-    "section": "Contenido del curso",
-    "text": "Contenido del curso\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
+    "section": "",
+    "text": "Introducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#evaluación",
     "href": "pres/NumericalAnalysis_back.html#evaluación",
     "title": "Análisis Numérico",
-    "section": "Evaluación",
-    "text": "Evaluación\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
+    "section": "",
+    "text": "Comprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#recursos",
     "href": "pres/NumericalAnalysis_back.html#recursos",
     "title": "Análisis Numérico",
-    "section": "Recursos",
-    "text": "Recursos\nClases\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 505\nSala de teams\nSoftware\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
+    "section": "",
+    "text": "Lunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 505\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#bibliografía",
     "href": "pres/NumericalAnalysis_back.html#bibliografía",
     "title": "Análisis Numérico",
-    "section": "Bibliografía",
-    "text": "Bibliografía\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
+    "section": "",
+    "text": "Angarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#hello-there",
@@ -1530,7 +1530,7 @@
     "href": "pres/NumericalAnalysis_back.html#executable-code",
     "title": "Análisis Numérico",
     "section": "Executable Code",
-    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\n\n\nLearn more: Executable Code"
+    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\n\n\n\n\n\n\n\n\nLearn more: Executable Code"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#latex-equations",
@@ -1544,21 +1544,21 @@
     "href": "pres/NumericalAnalysis_back.html#column-layout",
     "title": "Análisis Numérico",
     "section": "Column Layout",
-    "text": "Column Layout\nArrange content into columns of varying widths:\n\n\nMotor Trend Car Road Tests\nThe data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\nwt\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.440\n\n\nValiant\n18.1\n6\n225\n105\n3.460\n\n\n\n\n\n\n\n\nLearn more: Multiple Columns"
+    "text": "Column Layout\nArrange content into columns of varying widths:\n\n\n\nMotor Trend Car Road Tests\nThe data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\nwt\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.440\n\n\nValiant\n18.1\n6\n225\n105\n3.460\n\n\n\n\n\n\n\n\nLearn more: Multiple Columns"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#incremental-lists",
     "href": "pres/NumericalAnalysis_back.html#incremental-lists",
     "title": "Análisis Numérico",
     "section": "Incremental Lists",
-    "text": "Incremental Lists\nLists can optionally be displayed incrementally:\n\n\nFirst item\nSecond item\nThird item\n\n\n\n Insert pauses to make other types of content display incrementally.\n\nLearn more: Incremental Lists"
+    "text": "Incremental Lists\nLists can optionally be displayed incrementally:\n\n\nFirst item\nSecond item\nThird item\n\n\n. . .\n Insert pauses to make other types of content display incrementally.\n\nLearn more: Incremental Lists"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#fragments",
     "href": "pres/NumericalAnalysis_back.html#fragments",
     "title": "Análisis Numérico",
     "section": "Fragments",
-    "text": "Fragments\nIncremental text display and animation with fragments:\n\n\nFade in\n\n\nSlide up while fading in\n\n\nSlide left while fading in\n\n\nFade in then semi out\n\n\n\nStrike\n\n\nHighlight red\n\n\nLearn more: Fragments"
+    "text": "Fragments\nIncremental text display and animation with fragments:\n\n\nFade in\n\n\nSlide up while fading in\n\n\nSlide left while fading in\n\n\nFade in then semi out\n\n. . .\n\nStrike\n\n\nHighlight red\n\n\nLearn more: Fragments"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#slide-backgrounds",
@@ -1614,7 +1614,7 @@
     "href": "pres/NumericalAnalysis_back.html#interactive-slides",
     "title": "Análisis Numérico",
     "section": "Interactive Slides",
-    "text": "Interactive Slides\nTurn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.\n\nLearn more: Jupyter widgets, htmlwidgets\n\n\n\nviewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"talent weight\" })\nviewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"looks weight\" })\nviewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: \"min fame\" })\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotActors } from './actors.js';\nplotActors(actors, talentWeight, looksWeight, minimum)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Observable, Shiny, Component Layout"
+    "text": "Interactive Slides\nTurn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.\n\nLearn more: Jupyter widgets, htmlwidgets\n\n\n\nviewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"talent weight\" })\nviewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"looks weight\" })\nviewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: \"min fame\" })\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotActors } from './actors.js';\nplotActors(actors, talentWeight, looksWeight, minimum)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Observable, Shiny, Component Layout"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#preview-links",
@@ -1628,21 +1628,21 @@
     "href": "pres/NumericalAnalysis_back.html#themes",
     "title": "Análisis Numérico",
     "section": "Themes",
-    "text": "Themes\n10 Built-in Themes (or create your own)\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Themes"
+    "text": "Themes\n10 Built-in Themes (or create your own)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Themes"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#easy-navigation",
     "href": "pres/NumericalAnalysis_back.html#easy-navigation",
     "title": "Análisis Numérico",
     "section": "Easy Navigation",
-    "text": "Easy Navigation\n\nQuickly jump to other parts of your presentation\n\n\n\n\n\n\n\nToggle the slide menu with the menu button (bottom left of slide) to go to other slides and access presentation tools.\n\n\n\nYou can also press m to toggle the menu open and closed.\n\nLearn more: Navigation"
+    "text": "Easy Navigation\n\nQuickly jump to other parts of your presentation\n\n\n\n\n\n\n\n\n\n\nToggle the slide menu with the menu button (bottom left of slide) to go to other slides and access presentation tools.\n\n\n\nYou can also press m to toggle the menu open and closed.\n\nLearn more: Navigation"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#chalkboard",
     "href": "pres/NumericalAnalysis_back.html#chalkboard",
     "title": "Análisis Numérico",
     "section": "Chalkboard",
-    "text": "Chalkboard\n\nFree form drawing and slide annotations\n\n\n\n\n\n\n\nUse the chalkboard button at the bottom left of the slide to toggle the chalkboard.\n\n\n\n\n\n\n\n\n\nUse the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.\n\n\n\nYou can also press b to toggle the chalkboard or c to toggle the notes canvas.\n\nLearn more: Chalkboard"
+    "text": "Chalkboard\n\nFree form drawing and slide annotations\n\n\n\n\n\n\n\n\n\n\nUse the chalkboard button at the bottom left of the slide to toggle the chalkboard.\n\n\n\n\n\n\n\n\n\n\n\n\nUse the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.\n\n\n\nYou can also press b to toggle the chalkboard or c to toggle the notes canvas.\n\nLearn more: Chalkboard"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#point-of-view",
@@ -1656,7 +1656,7 @@
     "href": "pres/NumericalAnalysis_back.html#speaker-view",
     "title": "Análisis Numérico",
     "section": "Speaker View",
-    "text": "Speaker View\nPress s (or use the presentation menu) to open speaker view\n\n\nLearn more: Speaker View"
+    "text": "Speaker View\nPress s (or use the presentation menu) to open speaker view\n\n\n\n\n\n\nLearn more: Speaker View"
   },
   {
     "objectID": "pres/NumericalAnalysis_back.html#authoring-tools",
@@ -1677,63 +1677,63 @@
     "href": "pres/NumericalAnalysis_back.html#and-more",
     "title": "Análisis Numérico",
     "section": "And More…",
-    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\nhttps://pacaicedo.github.io"
+    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations"
   },
   {
     "objectID": "pres/PSIM001.html#el-profesor",
     "href": "pres/PSIM001.html#el-profesor",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "El Profesor",
-    "text": "El Profesor\n\n\nEducación\nDoctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\nIntereses\nProcesamiento de Imágenes, Dispositivos para el análisis de movimiento humano, ciencia de los datos, IA.\n\nDesempeño\nProfesor del Centro de Estudios en Biomédica y Biotecnogía\nProfesor en la línea de Procesmiento de Señales e Imágenes\nContacto:\npablo.caicedo@escuelaing.edu.co"
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nProcesamiento de Imágenes, Dispositivos para el análisis de movimiento humano, ciencia de los datos, IA.\n\n\n\n\nProfesor del Centro de Estudios en Biomédica y Biotecnogía\nProfesor en la línea de Procesmiento de Señales e Imágenes\n\n\n\npablo.caicedo@escuelaing.edu.co"
   },
   {
     "objectID": "pres/PSIM001.html#contenido-del-curso",
     "href": "pres/PSIM001.html#contenido-del-curso",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Contenido del curso",
-    "text": "Contenido del curso\n\n\n\n\n\n\nProbabilidad y Estadística\nElectrocardiografía\nElectroencefalografía\nElectromiografía\nProcesamiento de Imágenes"
+    "section": "",
+    "text": "Probabilidad y Estadística\nElectrocardiografía\nElectroencefalografía\nElectromiografía\nProcesamiento de Imágenes"
   },
   {
     "objectID": "pres/PSIM001.html#estrategías-de-aprendizaje",
     "href": "pres/PSIM001.html#estrategías-de-aprendizaje",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Estrategías de Aprendizaje",
-    "text": "Estrategías de Aprendizaje\n\nClases magistrales\nDesarrollo de ejercicios en clase\nEvaluaciones parciales y una evaluación final\nPrácticas de laboratorio, donde se utilizarán herramientas computacionales y se aplicarán conocimientos y destrezas adquiridas en otros cursos\nLecturas de la temática a tratar, previas a las clases magistrales\nLecturas de artículos científicos de interés para el área de procesamiento de señales e imágenes\nDesarrollo de talleres fuera de la clase\nProyecto práctico de fin de curso"
+    "section": "",
+    "text": "Clases magistrales\nDesarrollo de ejercicios en clase\nEvaluaciones parciales y una evaluación final\nPrácticas de laboratorio, donde se utilizarán herramientas computacionales y se aplicarán conocimientos y destrezas adquiridas en otros cursos\nLecturas de la temática a tratar, previas a las clases magistrales\nLecturas de artículos científicos de interés para el área de procesamiento de señales e imágenes\nDesarrollo de talleres fuera de la clase\nProyecto práctico de fin de curso"
   },
   {
     "objectID": "pres/PSIM001.html#evaluación",
     "href": "pres/PSIM001.html#evaluación",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Evaluación",
-    "text": "Evaluación\n\n\n\nExamen parcial 1 (15%)\nExamen parcial 2 (15%)\nExamen final (20%)\nLaboratorios (16%)\nProyecto Final (15%)\nTalleres y Quices (14%)\nPresentaciones (5%)\nBonos (Sin porcentaje definido)"
+    "section": "",
+    "text": "Examen parcial 1 (15%)\nExamen parcial 2 (15%)\nExamen final (20%)\nLaboratorios (16%)\nProyecto Final (15%)\nTalleres y Quices (14%)\nPresentaciones (5%)\nBonos (Sin porcentaje definido)"
   },
   {
     "objectID": "pres/PSIM001.html#evaluación-1",
     "href": "pres/PSIM001.html#evaluación-1",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Evaluación",
-    "text": "Evaluación\n\n\n\n\n\n\n\n\nPrimer tercio (30%)\nSegundo tercio (30%)\nTercer tercio (40%)\n\n\n\n\nTalleres y Quices (7%)\nTalleres y Quices (7%)\nPresentación (5%)\n\n\nLaboratorios (8%)\nLaboratorios (8%)\nProyecto final (15%)\n\n\nExamen Parcial 1 (15%)\nExamen Parcial 2 (15%)\nExamen final (20%)"
+    "section": "",
+    "text": "Primer tercio (30%)\nSegundo tercio (30%)\nTercer tercio (40%)\n\n\n\n\nTalleres y Quices (7%)\nTalleres y Quices (7%)\nPresentación (5%)\n\n\nLaboratorios (8%)\nLaboratorios (8%)\nProyecto final (15%)\n\n\nExamen Parcial 1 (15%)\nExamen Parcial 2 (15%)\nExamen final (20%)"
   },
   {
     "objectID": "pres/PSIM001.html#recursos",
     "href": "pres/PSIM001.html#recursos",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Recursos",
-    "text": "Recursos\n\n\nClases\nMartes y Jueves\n11:30 - 13:00\nSalón F112\nLaboratorio\nLunes 13:00 - 14:30\nI1-304\n\nSoftware\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell"
+    "section": "",
+    "text": "Martes y Jueves\n11:30 - 13:00\nSalón F112\n\n\n\nLunes 13:00 - 14:30\nI1-304\n\n\n\n\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell"
   },
   {
     "objectID": "pres/PSIM001.html#bibliografía",
     "href": "pres/PSIM001.html#bibliografía",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Bibliografía",
-    "text": "Bibliografía\n[1] «Medical Image Analysis and Informatics».\n[2] S. K. Zhou, D. Rueckert, y G. Fichtinger, Handbook of medical image computing and computer assisted intervention. en The Elsevier and MICCAI society book series. London: Academic press, 2020.\n[3] W. Zhao, Technology-Enabled Motion Sensing and Activity Tracking for Rehabilitation. Institution of Engineering and Technology, 2022. doi: 10.1049/PBHE037E.\n[4] S. K. Vasudevan, A. Baskar, M. Rajappa, y T. S. Murugesh, Digital Image Processing, 1.ª ed. Boca Raton: Chapman and Hall/CRC, 2023. doi: 10.1201/9781003217428.\n[5] J. Valente, J. António, C. Mora, y S. Jardim, «Developments in Image Processing Using Deep Learning and Reinforcement Learning», J. Imaging, vol. 9, n.º 10, p. 207, sep. 2023, doi: 10.3390/jimaging9100207.\n[6] T. T. Teoh, Convolutional Neural Networks for Medical Applications. en SpringerBriefs in Computer Science. Singapore: Springer Nature Singapore, 2023. doi: 10.1007/978-981-19-8814-1.\n[7] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[8] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[9] R. Splinter y K. Najarian, «Biomedical Signal and Image Processing, Second Edition».\n[10] P. Singhal, A. Verma, P. K. Srivastava, V. Ranga, y R. Kumar, Image Processing and Intelligent Computing Systems, 1.ª ed. Boca Raton: CRC Press, 2022. doi: 10.1201/9781003267782.\n[11] H. Singh, Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python. Berkeley, CA: Apress, 2019. doi: 10.1007/978-1-4842-4149-3.\n[12] J. L. Semmlow y B. Griffel, Biosignal and medical image processing, Third edition. Boca Raton: CRC Press, Taylor & Francis Group, CRC Press is an imprint of the Taylor & Francis Group, an Informa business, 2014.\n[13] S. Saxena y S. Paul, Eds., High-performance medical image processing, First edition. Palm Bay, FL, USA, Burlington, ON, Canada: Apple Academic Press ; CRC Press, 2022.\n[14] R. Raut, «Intelligent Systems for Rehabilitation Engineering».\n[15] R. M. Rangayyan, Biomedical signal analysis: a case-study approach. en IEEE Press series in biomedical engineering. New York, NY: Wiley-Interscience [u.a.], 2002.\n[16] R. M. Rangayyan, «Biomedical Signal Analysis».\n[17] K. Rabie, C. Karthik, S. Chowdhury, y P. K. Dutta, Eds., Deep learning in medical image processing and analysis. London, United Kingdom: Institution of Engineering and Technology, 2023.\n[18] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[19] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[20] L. Panigrahi, S. Biswal, A. K. Bhoi, A. Kalam, y P. Barsocchi, Eds., Machine Learning and AI Techniques in Interactive Medical Image Analysis: en Advances in Medical Technologies and Clinical Practice. IGI Global, 2022. doi: 10.4018/978-1-6684-4671-3.\n[21] G. R. Naik y W. P. D. Santos, Biomedical Signal Processing: A Modern Approach, 1.ª ed. Boca Raton: CRC Press, 2023. doi: 10.1201/9781003201137.\n[22] M. Morioka, «Artificial Intelligence, Robots, and Philosophy».\n[23] L. N. McKinnis, «Fundamentals of Musculoskeletal Imaging, Fifth Edition».\n[24] T. Malone, C. Hazle, y M. L. Grey, Imaging in rehabilitation. New York: McGraw-Hill Medical, 2008.\n[25] X. Liu et al., «Advances in Deep Learning-Based Medical Image Analysis», Health Data Sci, vol. 2021, p. 8786793, ene. 2021, doi: 10.34133/2021/8786793.\n[26] C.-P. Lim, A. Vaidya, Y.-W. Chen, T. Jain, y L. C. Jain, Eds., Artificial Intelligence and Machine Learning for Healthcare: Vol. 1: Image and Data Analytics, vol. 228. en Intelligent Systems Reference Library, vol. 228. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-11154-9.\n[27] A. Kulkarni, A. Shivananda, y N. R. Sharma, Computer Vision Projects with PyTorch: Design and Develop Production-Grade Models. Berkeley, CA: Apress, 2022. doi: 10.1007/978-1-4842-8273-1.\n[28] F. A. Gonzalez y E. Romero, Eds., Biomedical Image Analysis and Machine Learning Technologies: Applications and Techniques. en Advances in Bioinformatics and Biomedical Engineering. IGI Global, 2010. doi: 10.4018/978-1-60566-956-4.\n[29] T. M. Deserno, Ed., Biomedical Image Processing. en Biological and Medical Physics, Biomedical Engineering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. doi: 10.1007/978-3-642-15816-2.\n[30] D. Cudihins, Hands-on computer vision with Julia: build complex applications with advanced Julia packages for image processing, neural networks, and artificial intelligence. Birmingham, UK: Packt Publishing, 2018.\n[31] M. Charbit, Digital signal processing with Python programming. London, UK : Hoboken, NJ: ISTE ; Wiley, 2017.\n[32] M. Chappell, Principles of Medical Imaging for Engineers: From Signals to Images. Cham: Springer International Publishing, 2019. doi: 10.1007/978-3-030-30511-6.\n[33] L. Cai, J. Gao, y D. Zhao, «A review of the application of deep learning in medical image classification and segmentation», Ann Transl Med, vol. 8, n.º 11, pp. 713-713, jun. 2020, doi: 10.21037/atm.2020.02.44.\n[34] J. D. Bronzino, Ed., The biomedical engineering handbook, 3rd ed. en The electrical engineering handbook series. Boca Raton: CRC/Taylor & Francis, 2006.\n[35] J. D. Gibson, Fourier Transforms, Filtering, Probability and Random Processes: Introduction to Communication Systems. en Synthesis Lectures on Communications. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-19580-8.\n[36] G. R. Grimmett y D. R. Stirzaker, Probability and random processes fourth edition, 4.ª ed. NEW YORK: OXFORD UNIVERSITY PRESS, 2020.\n[37] Probability and Random Processes With Applications to Signal Processing and Communications. San Diego, CA, USA: Elsevier Science & Technology Books, 2012.\n[39] L. Wasserman, All of Statistics: A Concise Course in Statistical Inference. en Springer Texts in Statistics. New York, NY: Springer New York, 2004. doi: 10.1007/978-0-387-21736-9.\n[40] R. C. Gonzalez y R. E. Woods, Digital image processing. New York, NY: Pearson, 2018.\n[41] T. M. Apostol, Calculus. 1: One-variable calculus, with an introduction to linear algebra. New York: Wiley, 1980."
+    "section": "",
+    "text": "[1] «Medical Image Analysis and Informatics».\n[2] S. K. Zhou, D. Rueckert, y G. Fichtinger, Handbook of medical image computing and computer assisted intervention. en The Elsevier and MICCAI society book series. London: Academic press, 2020.\n[3] W. Zhao, Technology-Enabled Motion Sensing and Activity Tracking for Rehabilitation. Institution of Engineering and Technology, 2022. doi: 10.1049/PBHE037E.\n[4] S. K. Vasudevan, A. Baskar, M. Rajappa, y T. S. Murugesh, Digital Image Processing, 1.ª ed. Boca Raton: Chapman and Hall/CRC, 2023. doi: 10.1201/9781003217428.\n[5] J. Valente, J. António, C. Mora, y S. Jardim, «Developments in Image Processing Using Deep Learning and Reinforcement Learning», J. Imaging, vol. 9, n.º 10, p. 207, sep. 2023, doi: 10.3390/jimaging9100207.\n[6] T. T. Teoh, Convolutional Neural Networks for Medical Applications. en SpringerBriefs in Computer Science. Singapore: Springer Nature Singapore, 2023. doi: 10.1007/978-981-19-8814-1.\n[7] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[8] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[9] R. Splinter y K. Najarian, «Biomedical Signal and Image Processing, Second Edition».\n[10] P. Singhal, A. Verma, P. K. Srivastava, V. Ranga, y R. Kumar, Image Processing and Intelligent Computing Systems, 1.ª ed. Boca Raton: CRC Press, 2022. doi: 10.1201/9781003267782.\n[11] H. Singh, Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python. Berkeley, CA: Apress, 2019. doi: 10.1007/978-1-4842-4149-3.\n[12] J. L. Semmlow y B. Griffel, Biosignal and medical image processing, Third edition. Boca Raton: CRC Press, Taylor & Francis Group, CRC Press is an imprint of the Taylor & Francis Group, an Informa business, 2014.\n[13] S. Saxena y S. Paul, Eds., High-performance medical image processing, First edition. Palm Bay, FL, USA, Burlington, ON, Canada: Apple Academic Press ; CRC Press, 2022.\n[14] R. Raut, «Intelligent Systems for Rehabilitation Engineering».\n[15] R. M. Rangayyan, Biomedical signal analysis: a case-study approach. en IEEE Press series in biomedical engineering. New York, NY: Wiley-Interscience [u.a.], 2002.\n[16] R. M. Rangayyan, «Biomedical Signal Analysis».\n[17] K. Rabie, C. Karthik, S. Chowdhury, y P. K. Dutta, Eds., Deep learning in medical image processing and analysis. London, United Kingdom: Institution of Engineering and Technology, 2023.\n[18] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[19] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[20] L. Panigrahi, S. Biswal, A. K. Bhoi, A. Kalam, y P. Barsocchi, Eds., Machine Learning and AI Techniques in Interactive Medical Image Analysis: en Advances in Medical Technologies and Clinical Practice. IGI Global, 2022. doi: 10.4018/978-1-6684-4671-3.\n[21] G. R. Naik y W. P. D. Santos, Biomedical Signal Processing: A Modern Approach, 1.ª ed. Boca Raton: CRC Press, 2023. doi: 10.1201/9781003201137.\n[22] M. Morioka, «Artificial Intelligence, Robots, and Philosophy».\n[23] L. N. McKinnis, «Fundamentals of Musculoskeletal Imaging, Fifth Edition».\n[24] T. Malone, C. Hazle, y M. L. Grey, Imaging in rehabilitation. New York: McGraw-Hill Medical, 2008.\n[25] X. Liu et al., «Advances in Deep Learning-Based Medical Image Analysis», Health Data Sci, vol. 2021, p. 8786793, ene. 2021, doi: 10.34133/2021/8786793.\n[26] C.-P. Lim, A. Vaidya, Y.-W. Chen, T. Jain, y L. C. Jain, Eds., Artificial Intelligence and Machine Learning for Healthcare: Vol. 1: Image and Data Analytics, vol. 228. en Intelligent Systems Reference Library, vol. 228. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-11154-9.\n[27] A. Kulkarni, A. Shivananda, y N. R. Sharma, Computer Vision Projects with PyTorch: Design and Develop Production-Grade Models. Berkeley, CA: Apress, 2022. doi: 10.1007/978-1-4842-8273-1.\n[28] F. A. Gonzalez y E. Romero, Eds., Biomedical Image Analysis and Machine Learning Technologies: Applications and Techniques. en Advances in Bioinformatics and Biomedical Engineering. IGI Global, 2010. doi: 10.4018/978-1-60566-956-4.\n[29] T. M. Deserno, Ed., Biomedical Image Processing. en Biological and Medical Physics, Biomedical Engineering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. doi: 10.1007/978-3-642-15816-2.\n[30] D. Cudihins, Hands-on computer vision with Julia: build complex applications with advanced Julia packages for image processing, neural networks, and artificial intelligence. Birmingham, UK: Packt Publishing, 2018.\n[31] M. Charbit, Digital signal processing with Python programming. London, UK : Hoboken, NJ: ISTE ; Wiley, 2017.\n[32] M. Chappell, Principles of Medical Imaging for Engineers: From Signals to Images. Cham: Springer International Publishing, 2019. doi: 10.1007/978-3-030-30511-6.\n[33] L. Cai, J. Gao, y D. Zhao, «A review of the application of deep learning in medical image classification and segmentation», Ann Transl Med, vol. 8, n.º 11, pp. 713-713, jun. 2020, doi: 10.21037/atm.2020.02.44.\n[34] J. D. Bronzino, Ed., The biomedical engineering handbook, 3rd ed. en The electrical engineering handbook series. Boca Raton: CRC/Taylor & Francis, 2006.\n[35] J. D. Gibson, Fourier Transforms, Filtering, Probability and Random Processes: Introduction to Communication Systems. en Synthesis Lectures on Communications. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-19580-8.\n[36] G. R. Grimmett y D. R. Stirzaker, Probability and random processes fourth edition, 4.ª ed. NEW YORK: OXFORD UNIVERSITY PRESS, 2020.\n[37] Probability and Random Processes With Applications to Signal Processing and Communications. San Diego, CA, USA: Elsevier Science & Technology Books, 2012.\n[39] L. Wasserman, All of Statistics: A Concise Course in Statistical Inference. en Springer Texts in Statistics. New York, NY: Springer New York, 2004. doi: 10.1007/978-0-387-21736-9.\n[40] R. C. Gonzalez y R. E. Woods, Digital image processing. New York, NY: Pearson, 2018.\n[41] T. M. Apostol, Calculus. 1: One-variable calculus, with an introduction to linear algebra. New York: Wiley, 1980."
   },
   {
     "objectID": "pres/PSIM001.html#como-estamos",
     "href": "pres/PSIM001.html#como-estamos",
     "title": "Procesado de Señales e Imágenes Médicas",
-    "section": "Como estamos?",
-    "text": "Como estamos?\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?\n\n\n\n\n\nhttps://pacaicedo.github.io"
+    "section": "",
+    "text": "Que es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?"
   },
   {
     "objectID": "pres/PSIM003.html",
@@ -1853,5 +1853,54 @@
     "title": "Computación de seno y coseno usando expansión de Taylor",
     "section": "",
     "text": "Las ecuaciones de las expansiones de Taylor (centradas en cero) fueron extraídas de la recopilación que hizo Wikipedia\n\\[cos\\left(x\\right) = \\sum_{n=0}^{\\infty}{\\frac{x^{2n}}{2n!}\\left(-1\\right)^{n}}\\] \\[sin\\left(x\\right) = \\sum_{n=0}^{\\infty}{\\frac{\\left(-1\\right)^{n}}{\\left(2n+1\\right)!}x^{2n+1}}\\]\n\ndef factorial(x):\n    output = 1\n    for k in range(1,x+1):\n        output = output*k\n    return output\n\n\ndef sin_taylor_expansion(x,n):\n    pi = 3.141592653589793238462643383279502884197169399375105820974944\n    x = pi*x/180\n    output = 0\n    for k in range(0, n):\n        term = (((-1)**k)/factorial(2*k + 1))*(x**(2*k+1))\n        output = output+term\n    return output\n\n\nv_est = sin_taylor_expansion(30,5)\n\nprint(v_est)\n\nprint(\"Error Relativo:\", abs(0.5-v_est)/0.5)\n\n0.5000000000202799\nError Relativo: 4.0559777758630844e-11"
+  },
+  {
+    "objectID": "rubricas/Rubrica_ProyectoFinal_PSIM.html",
+    "href": "rubricas/Rubrica_ProyectoFinal_PSIM.html",
+    "title": "Rúbrica: Modelos de regresión",
+    "section": "",
+    "text": "Equipo 1Equipo 2\n\n\nIntegrantes\n\nLaura Bazante\nNicolás Panesso\nNicoll Arcos\n\nDataset: concreto\n\n\nIntegrantes\n\nKatherin Diaz\nHeidy Fernández\nJuan Muñoz\n\nDataset: Rendimiento\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCriterio\nExcelente (100%)\nBueno (80%)\nRegular (60%)\nInsuficiente (40%)\nNo presentado (0%)\n\n\n\n\nUso de técnicas de procesamiento de imágenes o señales\nDemuestra un dominio profundo y una aplicación adecuada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto.\nDemuestra una comprensión sólida y una aplicación adecuada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto.\nDemuestra una comprensión básica y una aplicación limitada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto.\nDemuestra una comprensión deficiente y una aplicación inadecuada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto.\nNo se evidencia la aplicación de técnicas de procesamiento de imágenes o señales.\n\n\nCoherencia entre objetivos y resultados\nLos objetivos del proyecto están claramente definidos y alineados con los resultados obtenidos.\nLos objetivos del proyecto están definidos y alineados en gran medida con los resultados obtenidos.\nLos objetivos del proyecto están definidos, pero no se alinean completamente con los resultados obtenidos.\nLos objetivos del proyecto están poco definidos y no se alinean con los resultados obtenidos.\nNo se definen objetivos para el proyecto.\n\n\nTiempo de exposición\nLa exposición del proyecto es clara, concisa y organizada, permitiendo una comprensión completa del trabajo realizado.\nLa exposición del proyecto es clara y organizada, permitiendo una buena comprensión del trabajo realizado.\nLa exposición del proyecto es clara, pero con algunas deficiencias en la organización, lo que dificulta la comprensión completa del trabajo realizado.\nLa exposición del proyecto es poco clara y desorganizada, lo que dificulta la comprensión del trabajo realizado.\nNo se realiza una exposición del proyecto.\n\n\nPresentación\nLa presentación del proyecto es visualmente atractiva, profesional y utiliza recursos multimedia de manera efectiva para comunicar los resultados.\nLa presentación del proyecto es visualmente atractiva y profesional, utilizando algunos recursos multimedia para comunicar los resultados.\nLa presentación del proyecto es visualmente aceptable, pero con algunos errores o falta de recursos multimedia para comunicar los resultados.\nLa presentación del proyecto es poco visualmente atractiva, con errores y falta de recursos multimedia para comunicar los resultados.\nNo se realiza una presentación del proyecto.\n\n\nNivel de la codificación\nEl código está bien escrito, documentado, organizado y utiliza las mejores prácticas de programación.\nEl código está bien escrito, documentado y organizado.\nEl código está escrito, pero con algunas deficiencias en la documentación y organización.\nEl código está escrito de manera deficiente, con mala documentación y organización.\nEl código no está escrito o está escrito de manera no funcional.\n\n\nCreatividad en el algoritmo\nEl algoritmo utilizado en el proyecto es novedoso, original y efectivo para resolver el problema planteado.\nEl algoritmo utilizado en el proyecto es creativo, original y efectivo para resolver el problema planteado.\nEl algoritmo utilizado en el proyecto es creativo, pero con algunas limitaciones en su originalidad o efectividad.\nEl algoritmo utilizado en el proyecto es poco creativo, con limitaciones en su originalidad y efectividad.\nEl algoritmo utilizado en el proyecto no es creativo ni efectivo para resolver el problema planteado.\n\n\nTrabajo en equipo\nSe evidencia un trabajo en equipo efectivo, con una clara división de roles, comunicación constante y colaboración entre los miembros del equipo.\nSe evidencia un trabajo en equipo colaborativo, con una clara división de roles y comunicación entre los miembros del equipo.\nSe evidencia un trabajo en equipo con algunas dificultades en la colaboración o comunicación entre los miembros del equipo.\nSe evidencia un trabajo en equipo deficiente, con falta de colaboración y comunicación entre los miembros del equipo.\nNo se evidencia un trabajo en equipo.\n\n\nTrabajo individual\nCada miembro del equipo demuestra un alto nivel de compromiso, responsabilidad y contribución individual al proyecto.\nCada miembro del equipo demuestra un buen nivel de compromiso, responsabilidad y contribución individual al proyecto.\nCada miembro del equipo demuestra un nivel aceptable de compromiso, responsabilidad y contribución individual al proyecto.\nCada miembro del equipo demuestra un bajo nivel de compromiso, responsabilidad y contribución individual al proyecto.\nNo se evidencia el trabajo individual de los miembros del equipo."
+  },
+  {
+    "objectID": "pres/NumericalAnalysis_back.html",
+    "href": "pres/NumericalAnalysis_back.html",
+    "title": "Análisis Numérico",
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co\n\n\n\n\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias\n\n\n\n\n\n\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Análisis exploratorio de datos (25%)\nConsigna 002. Problemas de Regresión (25%)\nConsigna 002. Proyecto Final (40%)\n\n\n\n\n\n\n\n\n\n\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 505\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Pandas, Matplotlib, Seaborn, Keras, Tensorflow, Numpy, SciKit-Learn, SciPy\nSeguimiento de Aprendizaje: Moodle\n\n\n\n\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
+  },
+  {
+    "objectID": "pres/PSIM004.html",
+    "href": "pres/PSIM004.html",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "Definition\n\n\n\n\nTwo-dimensional function, f(x, y)\nWhere x and y are spatial coordinates.\nThe amplitude of f at any pair of coordinates (x, y) is called the intensity.\n\n\n\n\n\n\n\n\n\nThe digital image\n\n\n\nIf the coordinates and the intensity are discrete quantities the image turns into a digital image.\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nA digital image is composed by a finite number of elements called PIXEL.\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nDepth\n\n\n\n\nA digital image is composed by a finite number of elements called PIXEL. Bpp( Bits per pixel)\n\n1bpp. B/W image, monochrome.\n2bpp. CGA Image.\n4bpp. Minimun for VGA standard.\n8bpp. Super-VGA image.\n24bpp. Truecolor image.\n48bpp. Professional-level images.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.researchgate.net/figure/Digital-image-representation-by-pixels-vii_fig2_311806469\n\n\n\n\n\n\n\n\n\nColor Space\n\n\n\nHow can i represent the color\n\nRGB.\nCMYK.\nHSV.\nAmong others.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/image01.tif\")\nfig001 = plt.figure()\nplt.imshow(img)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg = cv2.imread(\"./images/lena.tif\")\nRGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\nfig002 = plt.figure()\nplt.imshow(RGB_img)"
+  },
+  {
+    "objectID": "pres/PSIM006.html",
+    "href": "pres/PSIM006.html",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "Definition\n\n\n\nOperation involving one or more images is carried out on a pixel-bypixel basis\n\n\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\oplus \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\\\  a_{21}+b_{21} & a_{22}+b_{22}\\end{bmatrix} \\]\n\\[\n\\begin{bmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}  \n\\end{bmatrix} \\odot \\begin{bmatrix} b_{11} & b_{12} \\\\  b_{21} & b_{22}\\end{bmatrix} = \\begin{bmatrix} a_{11}.b_{11} & a_{12}.b_{12} \\\\  a_{21}.b_{21} & a_{22}.b_{22}\\end{bmatrix} \\]\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nGiven two arbitrary constants, \\(\\alpha_1\\) and \\(\\alpha_2\\), and two arbitrary images \\(f_1\\left(x,y\\right)\\) and \\(f_2\\left(x,y\\right)\\), \\(\\varkappa\\) is said to be a linear operator if:\n\\[ \\begin{equation}\\begin{split} \\varkappa\\left[\\alpha_1 f_1\\left(x,y\\right) + \\alpha_2 f_2\\left(x,y\\right)\\right] & =  \\alpha_1 \\varkappa\\left[ f_1\\left(x,y\\right)\\right] + \\alpha_2 \\varkappa\\left[f_2\\left(x,y\\right)\\right] \\\\ & = \\alpha_1 g_1\\left(x,y\\right) + \\alpha_2 g_2\\left(x,y\\right) \\end{split}\\end{equation} \\]\n\n\nSupose \\(\\alpha_1 = 5\\), \\(\\alpha_2 = 2\\), \\(\\varkappa = max\\) and consider:\n\\[f_1 = \\begin{bmatrix}0 & -1 \\\\2 & 4\\end{bmatrix}\\], \\[f_2 = \\begin{bmatrix}30 & 4 \\\\-2 & -3\\end{bmatrix}\\]\n\n\n\n\n\n\n\n\n\n\n\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nplt.imshow(x_ray_chest, cmap=\"gray\")\nplt.show()\nimage_synt1 = 100*np.abs(np.random.normal(0, 1, x_ray_chest.shape))\nplt.imshow(image_synt1)\nplt.show()\nfinal_image = np.uint8(x_ray_chest+image_synt1)\nplt.imshow(final_image)\nplt.show()\n\n\n\n\n\n\n\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx_ray_chest = cv2.imread(\"images/female-chest-x-ray.jpg\")\nmask = np.uint8(np.zeros(x_ray_chest.shape))\nmask[400:700, 250:600, :]=1\nplt.imshow(x_ray_chest)\nplt.show()\nplt.imshow(255*mask)\nplt.show()\nplt.imshow(np.multiply(x_ray_chest,mask))\nplt.show()\n\n\n\n\n\n\n\n\nImagesCode\n\n\n\n\n\n\n\n\n\n\n\nOriginal\n\n\n\n\n\n\n\nExp=1.1\n\n\n\n\n\n\n\nExp=1.2\n\n\n\n\n\n\n\n\n\nExp=0.2\n\n\n\n\n\n\n\nExp=0.30\n\n\n\n\n\n\n\nExp=0.5\n\n\n\n\n\n\n\n\nx_ray_chest_gray = cv2.cvtColor(x_ray_chest, cv2.COLOR_BGR2GRAY)\nplt.imshow(x_ray_chest_gray, cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.1), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,1.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.2), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.3), cmap=\"gray\")\nplt.show()\nplt.imshow(np.power(x_ray_chest_gray,0.5), cmap=\"gray\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\nFor example, suppose that the specified operation is to compute the average value of the pixels in a rectangular neighborhood of size mn × centered on \\(\\left(x,y\\right)\\). The coordinates of pixels in this region are the elements of set \\(S_{xy}\\).\n\n\nImagescode\n\n\n\n\n\n\n\n\n\nElderly woman image\n\n\n\n\n\n\n\n\n\n\nGray-scale image\n\n\n\n\n\n\n\n\n\nelderly = cv2.imread(\"./images/elderly.jpg\")\nplt.imshow(elderly)\nelderly_gray = cv2.cvtColor(elderly, cv2.COLOR_BGR2GRAY)\nplt.imshow(elderly_gray, cmap=\"gray\")\n\n\n\n\n\n\n\n\nOriginalAveragingCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN = 10\nkernel = np.ones((N,N),np.float32)/(N*N)\ndst = cv2.filter2D(elderly_gray,-1,kernel)\nplt.imshow(dst, cmap=\"gray\")\n\n\n\n\n\n\n\n\nOriginalMedianCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nN=11\n\ndst1 = cv2.medianBlur(elderly_gray, N)\nplt.imshow(dst1, cmap=\"gray\")\n\n\n\n\n\n\n\n\nMeanMedian\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTaken from: Gonzalez, Rafael C., y Richard E. Woods. Digital Image Processing. New York, NY: Pearson, 2018.\n\n\n\n\n\n\n\n\nTaken from: http://datagenetics.com/blog/august32013/index.html\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages Grad YImages Grad XImages Grad Trunc YImages Trunc Grad XCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndst = cv2.Sobel(elderly_gray, cv2.CV_16S, 1, 0,  ksize=3, scale=1, delta=0, borderType= cv2.BORDER_DEFAULT)\ndst1 = np.uint8(255*dst/np.max(dst))\nplt.imshow(dst1, cmap=\"gray\")\n\n\n\n\n\n\n\n\nHistogramCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelderly_hist = cv2.calcHist(elderly_gray, [0], None, [256], [0,256])\nplt.plot(elderly_hist, color=\"gray\")"
+  },
+  {
+    "objectID": "pres/PSIM002.html",
+    "href": "pres/PSIM002.html",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "#| echo: false\n#| eval: true\n#| output: false\n#| label: r-packages-load\n\nlibrary(\"DiagrammeR\")\nlibrary(\"reticulate\")\nlibrary(\"xfun\")\nlibrary(\"kableExtra\")\nlibrary(\"tidyverse\")\nlibrary(\"knitr\")\nlibrary(\"cowplot\")\nlibrary(\"ggfx\")\nknitr::opts_chunk$set(echo = FALSE)\n\ndef.chunk.hook &lt;- knitr::knit_hooks$get(\"chunk\")\nknitr::knit_hooks$set(chunk = function(x, options) {\n    x &lt;- def.chunk.hook(x, options)\n    ifelse(options$size != \"normalsize\", paste0(\"\\n \\\\\", options$size, \"\\n\\n\", x, \"\\n\\n \\\\normalsize\"), x)\n})"
+  },
+  {
+    "objectID": "pres/PSIM001.html",
+    "href": "pres/PSIM001.html",
+    "title": "Procesado de Señales e Imágenes Médicas",
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magister en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nProcesamiento de Imágenes, Dispositivos para el análisis de movimiento humano, ciencia de los datos, IA.\n\n\n\n\nProfesor del Centro de Estudios en Biomédica y Biotecnogía\nProfesor en la línea de Procesmiento de Señales e Imágenes\n\n\n\npablo.caicedo@escuelaing.edu.co\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProbabilidad y Estadística\nElectrocardiografía\nElectroencefalografía\nElectromiografía\nProcesamiento de Imágenes\n\n\n\n\n\n\n\n\nClases magistrales\nDesarrollo de ejercicios en clase\nEvaluaciones parciales y una evaluación final\nPrácticas de laboratorio, donde se utilizarán herramientas computacionales y se aplicarán conocimientos y destrezas adquiridas en otros cursos\nLecturas de la temática a tratar, previas a las clases magistrales\nLecturas de artículos científicos de interés para el área de procesamiento de señales e imágenes\nDesarrollo de talleres fuera de la clase\nProyecto práctico de fin de curso\n\n\n\n\n\n\n\nExamen parcial 1 (15%)\nExamen parcial 2 (15%)\nExamen final (20%)\nLaboratorios (16%)\nProyecto Final (15%)\nTalleres y Quices (14%)\nPresentaciones (5%)\nBonos (Sin porcentaje definido)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrimer tercio (30%)\nSegundo tercio (30%)\nTercer tercio (40%)\n\n\n\n\nTalleres y Quices (7%)\nTalleres y Quices (7%)\nPresentación (5%)\n\n\nLaboratorios (8%)\nLaboratorios (8%)\nProyecto final (15%)\n\n\nExamen Parcial 1 (15%)\nExamen Parcial 2 (15%)\nExamen final (20%)\n\n\n\n\n\n\n\n\n\n\nMartes y Jueves\n11:30 - 13:00\nSalón F112\n\n\n\nLunes 13:00 - 14:30\nI1-304\n\n\n\n\nInterpretes: R.\nIDE: Visual Studio Code, Google Colaboratory R, RStudio, PyCharm, Dataspell\n\n\n\n\n\n\n[1] «Medical Image Analysis and Informatics».\n[2] S. K. Zhou, D. Rueckert, y G. Fichtinger, Handbook of medical image computing and computer assisted intervention. en The Elsevier and MICCAI society book series. London: Academic press, 2020.\n[3] W. Zhao, Technology-Enabled Motion Sensing and Activity Tracking for Rehabilitation. Institution of Engineering and Technology, 2022. doi: 10.1049/PBHE037E.\n[4] S. K. Vasudevan, A. Baskar, M. Rajappa, y T. S. Murugesh, Digital Image Processing, 1.ª ed. Boca Raton: Chapman and Hall/CRC, 2023. doi: 10.1201/9781003217428.\n[5] J. Valente, J. António, C. Mora, y S. Jardim, «Developments in Image Processing Using Deep Learning and Reinforcement Learning», J. Imaging, vol. 9, n.º 10, p. 207, sep. 2023, doi: 10.3390/jimaging9100207.\n[6] T. T. Teoh, Convolutional Neural Networks for Medical Applications. en SpringerBriefs in Computer Science. Singapore: Springer Nature Singapore, 2023. doi: 10.1007/978-981-19-8814-1.\n[7] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[8] J. S. Suri, D. L. Wilson, y S. Laxminarayan, Eds., Handbook of biomedical image analysis. en Biomedical engineering international book series. New York: Kluwer Academic/Plenum Publishers, 2005.\n[9] R. Splinter y K. Najarian, «Biomedical Signal and Image Processing, Second Edition».\n[10] P. Singhal, A. Verma, P. K. Srivastava, V. Ranga, y R. Kumar, Image Processing and Intelligent Computing Systems, 1.ª ed. Boca Raton: CRC Press, 2022. doi: 10.1201/9781003267782.\n[11] H. Singh, Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python. Berkeley, CA: Apress, 2019. doi: 10.1007/978-1-4842-4149-3.\n[12] J. L. Semmlow y B. Griffel, Biosignal and medical image processing, Third edition. Boca Raton: CRC Press, Taylor & Francis Group, CRC Press is an imprint of the Taylor & Francis Group, an Informa business, 2014.\n[13] S. Saxena y S. Paul, Eds., High-performance medical image processing, First edition. Palm Bay, FL, USA, Burlington, ON, Canada: Apple Academic Press ; CRC Press, 2022.\n[14] R. Raut, «Intelligent Systems for Rehabilitation Engineering».\n[15] R. M. Rangayyan, Biomedical signal analysis: a case-study approach. en IEEE Press series in biomedical engineering. New York, NY: Wiley-Interscience [u.a.], 2002.\n[16] R. M. Rangayyan, «Biomedical Signal Analysis».\n[17] K. Rabie, C. Karthik, S. Chowdhury, y P. K. Dutta, Eds., Deep learning in medical image processing and analysis. London, United Kingdom: Institution of Engineering and Technology, 2023.\n[18] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[19] C. Paunwala et al., Eds., Biomedical Signal and Image Processing with Artificial Intelligence. en EAI/Springer Innovations in Communication and Computing. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-15816-2.\n[20] L. Panigrahi, S. Biswal, A. K. Bhoi, A. Kalam, y P. Barsocchi, Eds., Machine Learning and AI Techniques in Interactive Medical Image Analysis: en Advances in Medical Technologies and Clinical Practice. IGI Global, 2022. doi: 10.4018/978-1-6684-4671-3.\n[21] G. R. Naik y W. P. D. Santos, Biomedical Signal Processing: A Modern Approach, 1.ª ed. Boca Raton: CRC Press, 2023. doi: 10.1201/9781003201137.\n[22] M. Morioka, «Artificial Intelligence, Robots, and Philosophy».\n[23] L. N. McKinnis, «Fundamentals of Musculoskeletal Imaging, Fifth Edition».\n[24] T. Malone, C. Hazle, y M. L. Grey, Imaging in rehabilitation. New York: McGraw-Hill Medical, 2008.\n[25] X. Liu et al., «Advances in Deep Learning-Based Medical Image Analysis», Health Data Sci, vol. 2021, p. 8786793, ene. 2021, doi: 10.34133/2021/8786793.\n[26] C.-P. Lim, A. Vaidya, Y.-W. Chen, T. Jain, y L. C. Jain, Eds., Artificial Intelligence and Machine Learning for Healthcare: Vol. 1: Image and Data Analytics, vol. 228. en Intelligent Systems Reference Library, vol. 228. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-11154-9.\n[27] A. Kulkarni, A. Shivananda, y N. R. Sharma, Computer Vision Projects with PyTorch: Design and Develop Production-Grade Models. Berkeley, CA: Apress, 2022. doi: 10.1007/978-1-4842-8273-1.\n[28] F. A. Gonzalez y E. Romero, Eds., Biomedical Image Analysis and Machine Learning Technologies: Applications and Techniques. en Advances in Bioinformatics and Biomedical Engineering. IGI Global, 2010. doi: 10.4018/978-1-60566-956-4.\n[29] T. M. Deserno, Ed., Biomedical Image Processing. en Biological and Medical Physics, Biomedical Engineering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. doi: 10.1007/978-3-642-15816-2.\n[30] D. Cudihins, Hands-on computer vision with Julia: build complex applications with advanced Julia packages for image processing, neural networks, and artificial intelligence. Birmingham, UK: Packt Publishing, 2018.\n[31] M. Charbit, Digital signal processing with Python programming. London, UK : Hoboken, NJ: ISTE ; Wiley, 2017.\n[32] M. Chappell, Principles of Medical Imaging for Engineers: From Signals to Images. Cham: Springer International Publishing, 2019. doi: 10.1007/978-3-030-30511-6.\n[33] L. Cai, J. Gao, y D. Zhao, «A review of the application of deep learning in medical image classification and segmentation», Ann Transl Med, vol. 8, n.º 11, pp. 713-713, jun. 2020, doi: 10.21037/atm.2020.02.44.\n[34] J. D. Bronzino, Ed., The biomedical engineering handbook, 3rd ed. en The electrical engineering handbook series. Boca Raton: CRC/Taylor & Francis, 2006.\n[35] J. D. Gibson, Fourier Transforms, Filtering, Probability and Random Processes: Introduction to Communication Systems. en Synthesis Lectures on Communications. Cham: Springer International Publishing, 2023. doi: 10.1007/978-3-031-19580-8.\n[36] G. R. Grimmett y D. R. Stirzaker, Probability and random processes fourth edition, 4.ª ed. NEW YORK: OXFORD UNIVERSITY PRESS, 2020.\n[37] Probability and Random Processes With Applications to Signal Processing and Communications. San Diego, CA, USA: Elsevier Science & Technology Books, 2012.\n[39] L. Wasserman, All of Statistics: A Concise Course in Statistical Inference. en Springer Texts in Statistics. New York, NY: Springer New York, 2004. doi: 10.1007/978-0-387-21736-9.\n[40] R. C. Gonzalez y R. E. Woods, Digital image processing. New York, NY: Pearson, 2018.\n[41] T. M. Apostol, Calculus. 1: One-variable calculus, with an introduction to linear algebra. New York: Wiley, 1980.\n\n\n\n\nQue es media?\nQue es mediana?\nQue es moda?\nQue es la varianza?\nQue es un histograma?\nQue es un valor atípico?\nQue es una variable aleatoria?\nQue es un espacio muestral?\nQue es un experimento aleatorio?\nQue es ruido blanco?\nComo se detecta el ruido blanco?"
+  },
+  {
+    "objectID": "pres/NumericalAnalysis.html",
+    "href": "pres/NumericalAnalysis.html",
+    "title": "Análisis Numérico",
+    "section": "",
+    "text": "Doctor en Ciencias de la Electrónica. Magíster en Ingeniería Electrónica y Telecomunicaciones Ingeniero en Electrónica y Telecomunicaciones\n\n\n\nBiomecánica, Dispositivos para el análisis de movimiento humano, ciencia de los datos.\n\n\n\n\nProfesor de la Facultad de Ingeniería\nInvest. Línea de Percep. Avanz. y Robótica – GITA\nDirector Grupo de Investigación MEDES.\nDirector del laboratorio de datos de la Uniautonoma.\n\n\n\n\n\npablo.caicedo.r@uniautonoma.edu.co\n\n\n\n\n\n\n\n\n\nIntroducción al análisis numérico\nSolución de ecuaciones\nInterpolación y aproximaciones lineales\nDiferenciación e integración numérica\nProblemas de valor inicial para solución de ecuaciones diferenciales ordinarias\n\n\n\n\n\n\n\n\n\nComprensión de lectura (Inglés) (10%)\nConsigna 001. Solución de ecuaciones - Interpolación y aproximaciones lineales (25%)\nConsigna 002. Diferenciación e integración numérica (25%)\nConsigna 003. Proyecto Final (40%)\n\n\n\n\n\n\n\n\n\n\nLunes, Martes, Miércoles y Jueves 9:00 – 11:00 Sala 504\nSala de teams\n\n\n\nInterpretes: Python, R, Latex(TEXLive), Anaconda.\nIDE: Visual Studio Code, Google Colaboratory (R, Python)\nLibrerías Numpy.\nSeguimiento de Aprendizaje: Moodle\n\n\n\n\n\nAngarita, A. (2013). Apuntes De Análisis Numérico. Departamento de Ciencias Básicas - Unidades Tecnológicas de Santander.\nBurden, R. L., Faires, J. D., & Burden, A. M. (2016). Análisis Numérico (Tenth edition). Cengage Learning.\nChapra, S. C., Canale, R. P., & Del Valle Sotelo, J. C. (2008). Métodos numéricos para ingenieros (5a ed). McGraw-Hill.\nArévalo Ovalle, D., Bernal Yermanos, M. Á., & Posada Restrepo, J. A. (2021). Métodos numéricos con Python. Editorial Politécnico Grancolombiano.\nCorriou, J.-P. (2021). Numerical Methods and Optimization: Theory and Practice for Engineers (Vol. 187). Springer International Publishing. https://doi.org/10.1007/978-3-030-89366-8\nGilat, A., & Subramaniam, V. (2014). Numerical methods for engineers and scientists: An introduction with applications using matlab (Third edition). John Wiley & Sons, Inc.\nMiles, W. (2023). Numerical Methods with Python: For the sciences (1st ed.). De Gruyter."
   }
 ]

@@ -1,0 +1,29 @@
+---
+title: "Procesado de Señales e Imágenes Médicas"
+description: "Sitio de la asignatura Procesado de Señales e Imágenes Médicas"
+subtitle: "Ingeniería Biomédica"
+lang: es
+author: "Ph.D. Pablo Eduardo Caicedo Rodríguez"
+date: "2024-01-22"
+format:
+  revealjs: 
+    code-tools: true
+    code-overflow: wrap
+    code-line-numbers: true
+    code-copy: false
+    fig-align: center
+    self-contained: true
+    theme: 
+      - simple
+      - custom.scss
+    slide-number: true
+    preview-links: auto
+    logo: images/Escuela_Rosario_logo.png
+    css: styles.css
+    footer: <https://pacaicedo.github.io>
+    transition: fade
+    progress: true
+    scrollable: true
+resources:
+  - demo.pdf
+---

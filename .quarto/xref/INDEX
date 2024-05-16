@@ -220,5 +220,17 @@
   },
   "Taller_Quiz/Quiz01_2024_abr_4/Quiz01_2024_abr_4.qmd": {
     "Quiz01_2024_abr_4.tex": "35aeffb6"
+  },
+  "Taller_Quiz/Quiz01_2024_abr_4/WORKSHEET_FourierWavelet.qmd": {
+    "WORKSHEET_FourierWavelet.tex": "54ca212e"
+  },
+  "rubricas/Rubrica_ProyectoFinal_PSIM.qmd": {
+    "Rubrica_ProyectoFinal_PSIM.html": "3f481002"
+  },
+  "pres/wavelet_explain.ipynb": {
+    "wavelet_explain.html": "2ce2d123"
+  },
+  "pres/tutorial_Faces.qmd": {
+    "tutorial_Faces.html": "c37370b3"
   }
 }

@@ -35,7 +35,7 @@ El curso está dividido en 3 partes:
 - [Laboratorio 02](../labs/Lab_psim_02_2024I.qmd)
 - [Laboratorio 03](../labs/Lab_psim_03_2024I.qmd)
 - [Laboratorio 04](../labs/Lab_psim_04_2024I.qmd)
-- [Proyecto Final](../rubricas/Rubrica_ProyectoFinal_PSIM.qmd)
+- [Proyecto Final](../labs/Proyecto_Final_2024-1.qmd)
 
 # Parciales
 

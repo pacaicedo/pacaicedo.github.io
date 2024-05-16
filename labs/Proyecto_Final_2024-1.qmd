@@ -1,6 +1,6 @@
 ---
-title: "Laboratorio 01: Probabilidad y Estadística"
-description: "Primer Laboratorio de la materia probabilidad y estadística"
+title: "Proyecto Final: PSIM 2024-1"
+description: "Proyecto final procesamiento de señales e imágenes médicas"
 lang: es
 author: "Ph.D. Pablo Eduardo Caicedo R."
 date: "2024-01-29"

@@ -6,10 +6,23 @@ author: "Ph.D. Pablo Eduardo Caicedo R."
 date: "2024-01-29"
 date-modified: "2024-01-29"
 ---
+# Horarios de Sustentación
+
+| Grupo | Horario |
+| ----- | ------- |
+| A     | 1:00pm  |
+| B     | 1:30pm  |
+| C     | 2:00pm  |
+| D     | 2:30pm  |
+| E     | 3:00pm  |
+| F     | 3:30pm  |
+| G     | 4:30pm  |
 
 # Monitoría del Curso
 Melissa Tarquino Mendoza
 
+
+# Rúbrica
 | Criterio                                               | Excelente (100%)                                                                                                                                   | Bueno (80%)                                                                                                                                           | Regular (60%)                                                                                                                                          | Insuficiente (40%)                                                                                                                                          | No presentado (0%)                                                                                    |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | Uso de técnicas de procesamiento de imágenes o señales | Demuestra un dominio profundo y una aplicación adecuada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto. | Demuestra una comprensión sólida y una aplicación adecuada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto. | Demuestra una comprensión básica y una aplicación limitada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto.  | Demuestra una comprensión deficiente y una aplicación inadecuada de técnicas de procesamiento de imágenes o señales para lograr los objetivos del proyecto. | No se evidencia la aplicación de técnicas de procesamiento de imágenes o señales.                     |

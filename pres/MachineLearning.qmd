@@ -26,10 +26,34 @@ resources:
   - demo.pdf
 ---
 
+```{r}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: Loading R-Libraries
+#install.packages(c("DiagrammeR", "reticulate", "kableExtra", "tidyverse", "knitr", "cowplot", "ggfx"))
+library("DiagrammeR")
+library("reticulate")
+library("kableExtra")
+library("tidyverse")
+library("knitr")
+library("cowplot")
+library("ggfx")
+knitr::opts_chunk$set(echo = FALSE)
+use_condaenv("pyImPro", required = TRUE)
+
+def.chunk.hook <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+    x <- def.chunk.hook(x, options)
+    ifelse(options$size != "normalsize", paste0("\n \\", options$size, "\n\n", x, "\n\n \\normalsize"), x)
+})
+```
+
 ```{python}
 #| echo: false
-path_to_data = "D:/Cloud Storage/Dropbox/DatasetsVault" # For Windows
+#path_to_data = "D:/Cloud Storage/Dropbox/DatasetsVault" # For Windows
 #path_to_data = "/Users/pacaicedo/DatasetsVault" #For MacOsX
+path_to_data = "/media/sylphild/Datos/Cloud Storage/DropboxNuevo/Dropbox/DatasetsVault"
 ```
 
 # Presentación

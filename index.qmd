@@ -1,5 +1,6 @@
 ---
 title: "La Guarida de los Datos"
+jupyter: python3
 lang: es
 listing:
   - id: clases

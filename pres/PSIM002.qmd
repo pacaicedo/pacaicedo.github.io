@@ -61,7 +61,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-path_ecg =  os.environ.get('DATASET_ECG')
+path_ecg =  os.environ.get('DATASETS')+"/ECG_DATASET"
 
 ```
 

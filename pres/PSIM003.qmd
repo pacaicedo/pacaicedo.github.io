@@ -22,7 +22,7 @@ import os
 #| execution_millis: 142
 #| execution_start: 1707236178096
 #| source_hash: null
-data = sio.loadmat(os.environ.get("DATASET_ECG")+"/Dataset3/WFDBRecords/01/010/JS00001.mat")
+data = sio.loadmat(os.environ.get("DATASETS")+"/ECG_DATASET/Dataset3/WFDBRecords/01/010/JS00001.mat")
 variables = data["val"]
 ```
 

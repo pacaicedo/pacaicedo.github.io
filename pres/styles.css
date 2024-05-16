@@ -69,35 +69,35 @@
 }
 
 .caution {
-  background-image: url("Images/caution.png");
+  background-image: url("images/caution.png");
   box-shadow: 0 0 5px #000;
   text-align: justify;
   text-justify: inter-word;
 }
 
 .warning {
-  background-image: url("Images/warning.png");
+  background-image: url("images/warning.png");
   box-shadow: 0 0 5px #000;
   text-align: justify;
   text-justify: inter-word;
 }
 
 .tip {
-  background-image: url("Images/tip.png");
+  background-image: url("images/tip.png");
   box-shadow: 0 0 5px #000;
   text-align: justify;
   text-justify: inter-word;
 }
 
 .note {
-  background-image: url("Images/note.png");
+  background-image: url("images/note.png");
   box-shadow: 0 0 5px #000;
   text-align: justify;
   text-justify: inter-word;
 }
 
 .important {
-  background-image: url("Images/important.png");
+  background-image: url("images/important.png");
   box-shadow: 0 0 5px #000;
   text-align: justify;
   text-justify: inter-word;

@@ -1,5 +1,5 @@
 ---
-title: "Procesado de Señales e Imágenes Médicas"
+title: "Sonrie!!! Como detectar tu sonrisa con Python"
 description: "Sitio de la asignatura Procesado de Señales e Imágenes Médicas"
 subtitle: "Ingeniería Biomédica"
 lang: es
@@ -27,3 +27,211 @@ format:
 resources:
   - demo.pdf
 ---
+
+# Procesamiento de Imágenes: Representación Computacional y Color
+
+## Introducción
+- **Definición de Procesamiento de Imágenes**
+  El procesamiento de imágenes es la técnica utilizada para mejorar, analizar y extraer información de las imágenes digitales.
+- **Breve historia y evolución**
+  Desde los primeros intentos de manipulación de imágenes en la década de 1960 hasta las sofisticadas técnicas actuales.
+- **Aplicaciones**
+  Medicina, seguridad, entretenimiento, y más.
+
+---
+
+## Representación Computacional de Imágenes
+### Formatos de Imágenes Digitales
+- **Bitmap (BMP)**
+  - Almacena imágenes en forma de mapa de bits sin compresión.
+- **JPEG**
+  - Utiliza compresión con pérdida para reducir el tamaño del archivo.
+- **PNG**
+  - Formato sin pérdida, ideal para gráficos con transparencia.
+- **GIF**
+  - Soporta animaciones y tiene una paleta limitada de colores.
+
+---
+
+## Representación Computacional de Imágenes
+### Matrices y Pixeles
+- **Concepto de píxel**
+  - Unidad mínima de una imagen digital.
+- **Representación en matrices**
+  - Las imágenes se representan como matrices 2D donde cada elemento es un píxel.
+- **Ejemplo**
+  ```plaintext
+  [255, 255, 255]  [0, 0, 0]
+  [0, 0, 0]        [255, 255, 255]
+  ```
+
+---
+
+## Representación Computacional de Imágenes
+### Resolución y Dimensiones
+- **Definición de resolución**
+  - Número de píxeles por unidad de área, generalmente píxeles por pulgada (PPI).
+- **Relación entre resolución y calidad**
+  - A mayor resolución, mayor calidad y detalle de la imagen.
+
+---
+
+## Representación Computacional de Imágenes
+### Compresión de Imágenes
+- **Compresión sin pérdida**
+  - Mantiene toda la información original (ej. PNG).
+- **Compresión con pérdida**
+  - Elimina parte de la información para reducir tamaño (ej. JPEG).
+- **Algoritmos comunes**
+  - Run-length encoding, DCT para JPEG.
+
+---
+
+## Teoría del Color
+### Modelos de Color
+- **RGB (Rojo, Verde, Azul)**
+  - Modelo aditivo usado en pantallas.
+- **CMYK (Cian, Magenta, Amarillo, Negro)**
+  - Modelo sustractivo usado en impresión.
+- **HSL (Tono, Saturación, Luminosidad)**
+  - Basado en percepción humana del color.
+- **YUV**
+  - Separación de luminancia y crominancia, usado en video.
+
+---
+
+## Teoría del Color
+### Percepción del Color
+- **Cómo percibimos el color**
+  - El ojo humano detecta la luz a través de conos sensibles a diferentes longitudes de onda.
+- **Influencia de la luz y el entorno**
+  - La percepción del color puede variar según la iluminación y el contexto.
+
+---
+
+## Teoría del Color
+### Espacios de Color
+- **Definición y propósito**
+  - Espacios matemáticos que describen cómo se representan los colores.
+- **Ejemplos de espacios de color**
+  - sRGB: Estándar para la web.
+  - Adobe RGB: Mayor gama de colores, usado en fotografía.
+
+---
+
+## Aplicaciones del Color en el Procesamiento de Imágenes
+### Ajuste de Color
+- **Balance de blancos**
+  - Corrección de colores para que los blancos sean verdaderamente blancos.
+- **Corrección de color**
+  - Ajuste de niveles y curvas para mejorar la imagen.
+- **Filtros de color**
+  - Aplicación de efectos específicos para alterar la apariencia.
+
+---
+
+## Aplicaciones del Color en el Procesamiento de Imágenes
+### Segmentación de Imágenes por Color
+- **Técnicas de segmentación**
+  - Dividir una imagen en regiones basadas en color.
+- **Uso de máscaras de color**
+  - Identificar y aislar objetos de interés.
+
+---
+
+## Aplicaciones del Color en el Procesamiento de Imágenes
+### Reconocimiento de Patrones y Objetos por Color
+- **Identificación de objetos específicos**
+  - Uso de color para detectar y seguir objetos.
+- **Uso en visión por computadora**
+  - Aplicaciones en robótica, seguridad y más.
+
+---
+
+## Herramientas y Software
+### Lenguajes de Programación y Librerías
+- **Python**
+  - OpenCV, PIL/Pillow, scikit-image.
+- **MATLAB**
+  - Image Processing Toolbox.
+
+---
+
+## Herramientas y Software
+### Software de Edición de Imágenes
+- **Adobe Photoshop**
+  - Herramienta profesional de edición de imágenes.
+- **GIMP**
+  - Alternativa gratuita y de código abierto.
+
+---
+
+## Ejemplos Prácticos y Casos de Estudio
+### Implementación Básica en Python
+- **Cargar y mostrar una imagen**
+  ```python
+  import cv2
+  import matplotlib.pyplot as plt
+  
+  imagen = cv2.imread('ruta/a/tu/imagen.jpg')
+  imagen_rgb = cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
+  plt.imshow(imagen_rgb)
+  plt.title('Imagen Original')
+  plt.show()
+  ```
+
+---
+
+## Ejemplos Prácticos y Casos de Estudio
+### Conversión de una Imagen a Escala de Grises
+- **Código en Python**
+  ```python
+  imagen_gris = cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
+  plt.imshow(imagen_gris, cmap='gray')
+  plt.title('Imagen en Escala de Grises')
+  plt.show()
+  ```
+
+---
+
+## Ejemplos Prácticos y Casos de Estudio
+### Aplicación de un Filtro de Color
+- **Código en Python**
+  ```python
+  filtro_rojo = imagen_rgb.copy()
+  filtro_rojo[:, :, 1] = 0  # Eliminar el canal verde
+  filtro_rojo[:, :, 2] = 0  # Eliminar el canal azul
+  plt.imshow(filtro_rojo)
+  plt.title('Filtro Rojo Aplicado')
+  plt.show()
+  ```
+
+---
+
+## Casos de Estudio
+### Procesamiento de Imágenes en Medicina
+- **Aplicaciones**
+  - Diagnóstico por imágenes, mejora de calidad de imágenes médicas.
+  - Identificación de anomalías.
+
+---
+
+## Casos de Estudio
+### Uso en Seguridad y Vigilancia
+- **Aplicaciones**
+  - Reconocimiento facial, detección de intrusos.
+  - Análisis de video en tiempo real.
+
+---
+
+## Conclusión
+### Resumen de Puntos Clave
+- Importancia del procesamiento de imágenes en diversas áreas.
+- Conceptos clave de representación computacional y color.
+- Aplicaciones prácticas y herramientas disponibles.
+
+---
+
+## Conclusión
+### Preguntas y Respuestas
+- **Espacio abierto para resolver dudas y ampliar temas de interés.**

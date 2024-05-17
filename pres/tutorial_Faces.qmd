@@ -24,46 +24,167 @@ format:
     transition: fade
     progress: true
     scrollable: true
+    highlight-style: github
 resources:
   - demo.pdf
 ---
 
-# Procesamiento de Imágenes: Representación Computacional y Color
+```{r}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: Loading R-Libraries
+#install.packages(c("DiagrammeR", "reticulate", "kableExtra", "tidyverse", "knitr", "cowplot", "ggfx"))
+library("DiagrammeR")
+library("reticulate")
+library("kableExtra")
+library("tidyverse")
+library("knitr")
+library("cowplot")
+library("ggfx")
+knitr::opts_chunk$set(echo = FALSE)
+use_condaenv("pyImPro", required = TRUE)
 
-## Introducción
-- **Definición de Procesamiento de Imágenes**
-  El procesamiento de imágenes es la técnica utilizada para mejorar, analizar y extraer información de las imágenes digitales.
-- **Breve historia y evolución**
-  Desde los primeros intentos de manipulación de imágenes en la década de 1960 hasta las sofisticadas técnicas actuales.
-- **Aplicaciones**
-  Medicina, seguridad, entretenimiento, y más.
+def.chunk.hook <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+    x <- def.chunk.hook(x, options)
+    ifelse(options$size != "normalsize", paste0("\n \\", options$size, "\n\n", x, "\n\n \\normalsize"), x)
+})
+```
 
----
+```{python}
+#| echo: false
+#| eval: true
+#| output: false
+#| label: Loading Python-Libraries
 
-## Representación Computacional de Imágenes
-### Formatos de Imágenes Digitales
-- **Bitmap (BMP)**
-  - Almacena imágenes en forma de mapa de bits sin compresión.
-- **JPEG**
-  - Utiliza compresión con pérdida para reducir el tamaño del archivo.
-- **PNG**
-  - Formato sin pérdida, ideal para gráficos con transparencia.
-- **GIF**
-  - Soporta animaciones y tiene una paleta limitada de colores.
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
 
----
+def adjust_gamma(image, gamma=1.0):
+   invGamma = 1.0 / gamma
+   table = np.array([((i / 255.0) ** invGamma) * 255
+      for i in np.arange(0, 256)]).astype("uint8")
+   return cv2.LUT(image, table)
 
-## Representación Computacional de Imágenes
-### Matrices y Pixeles
-- **Concepto de píxel**
-  - Unidad mínima de una imagen digital.
-- **Representación en matrices**
-  - Las imágenes se representan como matrices 2D donde cada elemento es un píxel.
-- **Ejemplo**
-  ```plaintext
-  [255, 255, 255]  [0, 0, 0]
-  [0, 0, 0]        [255, 255, 255]
-  ```
+def mostrarImagen(imagen):
+    fig = plt.imshow(imagen)
+    plt.axis("off")
+    plt.show
+```
+
+# Conceptos básicos
+
+# ¿Qué es una Imagen Digital?
+
+## Definición
+- **Imagen Digital:** Una imagen digital es una representación bidimensional de una escena o objeto real, creada a partir de un conjunto de datos numéricos que se almacenan y procesan electrónicamente.
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: Imagen Digital
+#| fig-align: center
+
+imagen = cv2.imread("images/deadpool.png")
+imagen = cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
+mostrarImagen(imagen)
+```
+
+## Tipos de Imágenes Digitales
+
+::::{.columns}
+
+::: {.column width='50%'}
+**Raster (Bitmap):** Formadas por una matriz de píxeles.
+
+**Algunos Formatos:** BMP, JPEG, PNG, GIF
+:::
+
+::: {.column width='50%'}
+**Vectoriales:** Formadas por ecuaciones matemáticas y gráficos vectoriales.
+
+**Algunos Formatos:** SVG, EPS, CDR, AI, PDF
+:::
+::::
+
+## Componentes
+- **Píxeles:** La unidad más pequeña de una imagen digital, cada píxel contiene información de color y brillo.
+- **Resolución:** La cantidad de píxeles en una imagen, comúnmente expresada como el número de píxeles horizontales por verticales (por ejemplo, 1920x1080).
+
+::::{.columns}
+
+::: {.column width='50%'}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: pixeles
+#| fig-align: center
+
+mostrarImagen(imagen)
+
+```
+
+
+
+:::
+
+::: {.column width='50%'}
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: pixeles 2
+#| fig-align: center
+(numfilas, numcolumnas, numcanales) = imagen.shape
+print(f"La resolución de la imagen es: {numcolumnas}x{numfilas}")
+print(f"El número de canales que tiene la imagen es: {numcanales}")
+
+```
+:::
+::::
+
+## Componentes
+- **Píxeles:** La unidad más pequeña de una imagen digital, cada píxel contiene información de color y brillo.
+- **Resolución:** La cantidad de píxeles en una imagen, comúnmente expresada como el número de píxeles horizontales por verticales (por ejemplo, 1920x1080).
+
+::::{.columns}
+
+::: {.column width='50%'}
+
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: pixeles 3
+#| fig-align: center
+
+mostrarImagen(imagen)
+
+```
+
+
+
+:::
+
+::: {.column width='50%'}
+```{python}
+#| echo: false
+#| eval: true
+#| output: true
+#| label: pixeles 4
+#| fig-align: center
+#| code-overflow: wrap
+
+print(imagen[:,:,0])
+
+```
+:::
+::::
 
 ---
 
@@ -116,122 +237,3 @@ resources:
 - **Ejemplos de espacios de color**
   - sRGB: Estándar para la web.
   - Adobe RGB: Mayor gama de colores, usado en fotografía.
-
----
-
-## Aplicaciones del Color en el Procesamiento de Imágenes
-### Ajuste de Color
-- **Balance de blancos**
-  - Corrección de colores para que los blancos sean verdaderamente blancos.
-- **Corrección de color**
-  - Ajuste de niveles y curvas para mejorar la imagen.
-- **Filtros de color**
-  - Aplicación de efectos específicos para alterar la apariencia.
-
----
-
-## Aplicaciones del Color en el Procesamiento de Imágenes
-### Segmentación de Imágenes por Color
-- **Técnicas de segmentación**
-  - Dividir una imagen en regiones basadas en color.
-- **Uso de máscaras de color**
-  - Identificar y aislar objetos de interés.
-
----
-
-## Aplicaciones del Color en el Procesamiento de Imágenes
-### Reconocimiento de Patrones y Objetos por Color
-- **Identificación de objetos específicos**
-  - Uso de color para detectar y seguir objetos.
-- **Uso en visión por computadora**
-  - Aplicaciones en robótica, seguridad y más.
-
----
-
-## Herramientas y Software
-### Lenguajes de Programación y Librerías
-- **Python**
-  - OpenCV, PIL/Pillow, scikit-image.
-- **MATLAB**
-  - Image Processing Toolbox.
-
----
-
-## Herramientas y Software
-### Software de Edición de Imágenes
-- **Adobe Photoshop**
-  - Herramienta profesional de edición de imágenes.
-- **GIMP**
-  - Alternativa gratuita y de código abierto.
-
----
-
-## Ejemplos Prácticos y Casos de Estudio
-### Implementación Básica en Python
-- **Cargar y mostrar una imagen**
-  ```python
-  import cv2
-  import matplotlib.pyplot as plt
-  
-  imagen = cv2.imread('ruta/a/tu/imagen.jpg')
-  imagen_rgb = cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
-  plt.imshow(imagen_rgb)
-  plt.title('Imagen Original')
-  plt.show()
-  ```
-
----
-
-## Ejemplos Prácticos y Casos de Estudio
-### Conversión de una Imagen a Escala de Grises
-- **Código en Python**
-  ```python
-  imagen_gris = cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
-  plt.imshow(imagen_gris, cmap='gray')
-  plt.title('Imagen en Escala de Grises')
-  plt.show()
-  ```
-
----
-
-## Ejemplos Prácticos y Casos de Estudio
-### Aplicación de un Filtro de Color
-- **Código en Python**
-  ```python
-  filtro_rojo = imagen_rgb.copy()
-  filtro_rojo[:, :, 1] = 0  # Eliminar el canal verde
-  filtro_rojo[:, :, 2] = 0  # Eliminar el canal azul
-  plt.imshow(filtro_rojo)
-  plt.title('Filtro Rojo Aplicado')
-  plt.show()
-  ```
-
----
-
-## Casos de Estudio
-### Procesamiento de Imágenes en Medicina
-- **Aplicaciones**
-  - Diagnóstico por imágenes, mejora de calidad de imágenes médicas.
-  - Identificación de anomalías.
-
----
-
-## Casos de Estudio
-### Uso en Seguridad y Vigilancia
-- **Aplicaciones**
-  - Reconocimiento facial, detección de intrusos.
-  - Análisis de video en tiempo real.
-
----
-
-## Conclusión
-### Resumen de Puntos Clave
-- Importancia del procesamiento de imágenes en diversas áreas.
-- Conceptos clave de representación computacional y color.
-- Aplicaciones prácticas y herramientas disponibles.
-
----
-
-## Conclusión
-### Preguntas y Respuestas
-- **Espacio abierto para resolver dudas y ampliar temas de interés.**

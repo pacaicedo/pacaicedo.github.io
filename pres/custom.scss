@@ -7,12 +7,14 @@ $presentation-heading-color: #a80000;
 $code-color: #027c1c;
 $code-block-bg: #ded9ca;
 $code-block-border-color: #000000;
+$code-background-color:#FFFFFF;
 
 /*-- scss:rules --*/
 
 .reveal .slide-number {
   color: $link-color;
 }
+
 
 .reveal .footer {
   font-size: 0.35em !important;
@@ -53,8 +55,8 @@ $code-block-border-color: #000000;
 /*-- scss:rules --*/
 
 .reveal pre code {
-  background-color: #232525;
-  color: #A9B7C6;
+  background-color: #FFFFFF;
+  color: #000000;
 }
 
 .reveal div.sourceCode pre code {

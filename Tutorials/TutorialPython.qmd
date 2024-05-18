@@ -15,6 +15,8 @@ Tomado del libro [Ciencia de Datos para Ciencias Naturales](https://bookdown.org
 
 Si no tiene experiencia con el lenguaje Markdown utilice esta [guía](https://www.markdownguide.org/basic-syntax/) para enriquecer sus celdas de texto.
 
+[Un tutorial de python para detectar sonrisas](../pres/tutorial_Faces.qmd)
+
 ## Características
 
 - Plataforma de Google Research.

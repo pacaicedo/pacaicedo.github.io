@@ -237,3 +237,12 @@ print(imagen[:,:,0])
 - **Ejemplos de espacios de color**
   - sRGB: Estándar para la web.
   - Adobe RGB: Mayor gama de colores, usado en fotografía.
+
+
+# Una época de las maravillas
+
+## Que conocieron mis papás
+![Dick Tracy por Chester Gould, 1931. Fuente: Amazon](./images/dick_tracy.jpg)
+
+## Que conocieron mis papás
+![Oxo por Sandy Douglas, 1952. Fuente: Livewire](./images/firstVideoGame.png)

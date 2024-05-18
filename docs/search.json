@@ -137,7 +137,7 @@
     "href": "Tutorials/TutorialPython.html",
     "title": "Tutorial de Python",
     "section": "",
-    "text": "Tomado del libro Ciencia de Datos para Ciencias Naturales\nSi no tiene experiencia con el lenguaje Markdown utilice esta guía para enriquecer sus celdas de texto.\n\n\n\nPlataforma de Google Research.\nPermite a cualquier persona escribir y ejecutar código Python o R a través del navegador.\nSe base se basa en la interfase de Jupyter Notebook.\nLos documentos son denominados notebooks de Colab.\nLos entornos son interactivos.\nPermite la utilizar Python y R.\nManejo de celdas de código\n\n\n\n\n\nNo requiere configuración del programa.\nLa mayoría de librerías y programas ya están preinstalados.\nAcceso gratuito a GPU, es decir, se ejecuta en los servidores de Google.\nFacilidad para compartir documentos.\n\n\n\n\n\nNo se ejecuta sin conexión.\nConjuntos de datos que se importan al entorno sin ser montado desde Google Drive se perderán cuando la máquina virtual se apague.\nExperiencia más sencilla que otras opciones.\nPermite utilizar más lenguajes: Posgres, Julia.\n\n\n\n\n\nCódigo: Para abrir una celda de código simplemente haga click en la barra + Código. Para ejecutar el código puede presionar el símbolo de play a la izquierda de la celda o las teclas Cmd/Ctrl+Enter.\nTexto: Para abrir una celda de texto simplemente haga click en la barra + Texto. Las celdas de texto utilizan la sintaxis de Markdown. Para ver el texto fuente de Markdown, haga doble click en una celda de texto."
+    "text": "Tomado del libro Ciencia de Datos para Ciencias Naturales\nSi no tiene experiencia con el lenguaje Markdown utilice esta guía para enriquecer sus celdas de texto.\nUn tutorial de python para detectar sonrisas\n\n\n\nPlataforma de Google Research.\nPermite a cualquier persona escribir y ejecutar código Python o R a través del navegador.\nSe base se basa en la interfase de Jupyter Notebook.\nLos documentos son denominados notebooks de Colab.\nLos entornos son interactivos.\nPermite la utilizar Python y R.\nManejo de celdas de código\n\n\n\n\n\nNo requiere configuración del programa.\nLa mayoría de librerías y programas ya están preinstalados.\nAcceso gratuito a GPU, es decir, se ejecuta en los servidores de Google.\nFacilidad para compartir documentos.\n\n\n\n\n\nNo se ejecuta sin conexión.\nConjuntos de datos que se importan al entorno sin ser montado desde Google Drive se perderán cuando la máquina virtual se apague.\nExperiencia más sencilla que otras opciones.\nPermite utilizar más lenguajes: Posgres, Julia.\n\n\n\n\n\nCódigo: Para abrir una celda de código simplemente haga click en la barra + Código. Para ejecutar el código puede presionar el símbolo de play a la izquierda de la celda o las teclas Cmd/Ctrl+Enter.\nTexto: Para abrir una celda de texto simplemente haga click en la barra + Texto. Las celdas de texto utilizan la sintaxis de Markdown. Para ver el texto fuente de Markdown, haga doble click en una celda de texto."
   },
   {
     "objectID": "Tutorials/TutorialPython.html#características",
@@ -186,7 +186,7 @@
     "href": "Tutorials/TutorialPython.html#diccionarios",
     "title": "Tutorial de Python",
     "section": "Diccionarios",
-    "text": "Diccionarios\n\ntel = {'Maria': 4098, 'Jorge': 4139}\nprint(tel)\nprint(tel[\"Maria\"])\nprint(tel.keys())\nprint(tel.values)\n'Maria' in tel\n\n{'Maria': 4098, 'Jorge': 4139}\n4098\ndict_keys(['Maria', 'Jorge'])\n&lt;built-in method values of dict object at 0x7bec44584440&gt;\n\n\nTrue"
+    "text": "Diccionarios\n\ntel = {'Maria': 4098, 'Jorge': 4139}\nprint(tel)\nprint(tel[\"Maria\"])\nprint(tel.keys())\nprint(tel.values)\n'Maria' in tel\n\n{'Maria': 4098, 'Jorge': 4139}\n4098\ndict_keys(['Maria', 'Jorge'])\n&lt;built-in method values of dict object at 0x784dba2cea80&gt;\n\n\nTrue"
   },
   {
     "objectID": "Tutorials/TutorialPython.html#tuplas",
@@ -200,7 +200,7 @@
     "href": "Tutorials/TutorialPython.html#numpy",
     "title": "Tutorial de Python",
     "section": "Numpy",
-    "text": "Numpy\nNumPy (Numerical Python), es una biblioteca de Python que da soporte para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel. La funcionalidad principal de NumPy es su estructura de datos ndarray (arreglos), para una matriz de n dimensiones, sobre las cuales se pueden realizar operaciones matemátias de manera eficiente.\nCrearemos una lista usando código nativo de Python y lo convertiremos en una matriz unidimensional con la función np.array()\n\nimport numpy as np\n\nlist1 = [6,8,10,12]\narray1 = np.array(list1)\nprint(array1)\n\n[ 6  8 10 12]\n\n\nLos ndarrays son estructuras de datos genéricas para almacenar datos homogéneos. Son equivalentes a las matrices y los vectores en álgebra, por lo que también se les puede aplicar operaciones matemáticas. Notar que las operaciones matemáticas se pueden realizar en todos los valores en un ndarray a la vez.\n\nprint(array1 - 2)\nprint(array1 * array1, \"\\n\\n\")\n\n[ 4  6  8 10]\n[ 36  64 100 144] \n\n\n\n\nLos arreglos se encierran entre [], pero al imprimirlos no están separados por comas. Hay diferentes formas de crear arreglos con propiedades específicas, lo que les provee bastante flexibilidad.\n\n# Crea una matriz con datos específicos\nprint(np.array([[1,2],[3,4]]),'\\n')\n# Crea una matriz con unos: tres filas y cuatro columnas\nprint(np.ones((3,4)),'\\n')\n# Crea una matriz con ceros: tres filas y cuatro columnas\nprint(np.zeros((3,4)),'\\n')\n# Crea una matriz con un dato específico: tres filas y cuatro columnas\nprint(np.full((3,4), 7.3),'\\n')\n# Crea un arreglo con datos seguidos: empieza en 10 termina en 30(sin incluir) con incrementos de 5.\nprint(np.arange(10,30,5),'\\n')\n# # Crea un arreglo con inicio y fin y una cantidad de datos: arreglo de 6 datos entre 0 y 5/3 .\nprint(np.linspace(0,5/3,6),'\\n')\n# Crea una matriz con datos aleatorios entre 0 y 1: dos filas y tres columnas\nprint(np.random.rand(2,3),'\\n')\n\n[[1 2]\n [3 4]] \n\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]] \n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]] \n\n[[7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]] \n\n[10 15 20 25] \n\n[0.         0.33333333 0.66666667 1.         1.33333333 1.66666667] \n\n[[0.03230763 0.5622075  0.76983442]\n [0.54003107 0.03867307 0.80898868]] \n\n\n\n\narr1 = np.array([np.arange(0,5), np.arange(0,5)*5])\n#Arreglo\nprint(arr1, \"\\n\")\n# Forma\nprint(arr1.shape, \"\\n\")\n# Tamaño\nprint(arr1.size, \"\\n\")\n# Número de Dimensiones\nprint(arr1.ndim, \"\\n\")\n# Transpuesta\nprint(arr1.T, \"\\n\")\n\n[[ 0  1  2  3  4]\n [ 0  5 10 15 20]] \n\n(2, 5) \n\n10 \n\n2 \n\n[[ 0  0]\n [ 1  5]\n [ 2 10]\n [ 3 15]\n [ 4 20]] \n\n\n\n\narr = np.array([1,2,3,4,5,6,7])\n# Porcionar\nprint(arr[1:3])# de 1 al 3 en índice\nprint(arr[4:])# de la posición 4 en adelante\nprint(arr[::2])# de uno por medio\n\n[2 3]\n[5 6 7]\n[1 3 5 7]"
+    "text": "Numpy\nNumPy (Numerical Python), es una biblioteca de Python que da soporte para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel. La funcionalidad principal de NumPy es su estructura de datos ndarray (arreglos), para una matriz de n dimensiones, sobre las cuales se pueden realizar operaciones matemátias de manera eficiente.\nCrearemos una lista usando código nativo de Python y lo convertiremos en una matriz unidimensional con la función np.array()\n\nimport numpy as np\n\nlist1 = [6,8,10,12]\narray1 = np.array(list1)\nprint(array1)\n\n[ 6  8 10 12]\n\n\nLos ndarrays son estructuras de datos genéricas para almacenar datos homogéneos. Son equivalentes a las matrices y los vectores en álgebra, por lo que también se les puede aplicar operaciones matemáticas. Notar que las operaciones matemáticas se pueden realizar en todos los valores en un ndarray a la vez.\n\nprint(array1 - 2)\nprint(array1 * array1, \"\\n\\n\")\n\n[ 4  6  8 10]\n[ 36  64 100 144] \n\n\n\n\nLos arreglos se encierran entre [], pero al imprimirlos no están separados por comas. Hay diferentes formas de crear arreglos con propiedades específicas, lo que les provee bastante flexibilidad.\n\n# Crea una matriz con datos específicos\nprint(np.array([[1,2],[3,4]]),'\\n')\n# Crea una matriz con unos: tres filas y cuatro columnas\nprint(np.ones((3,4)),'\\n')\n# Crea una matriz con ceros: tres filas y cuatro columnas\nprint(np.zeros((3,4)),'\\n')\n# Crea una matriz con un dato específico: tres filas y cuatro columnas\nprint(np.full((3,4), 7.3),'\\n')\n# Crea un arreglo con datos seguidos: empieza en 10 termina en 30(sin incluir) con incrementos de 5.\nprint(np.arange(10,30,5),'\\n')\n# # Crea un arreglo con inicio y fin y una cantidad de datos: arreglo de 6 datos entre 0 y 5/3 .\nprint(np.linspace(0,5/3,6),'\\n')\n# Crea una matriz con datos aleatorios entre 0 y 1: dos filas y tres columnas\nprint(np.random.rand(2,3),'\\n')\n\n[[1 2]\n [3 4]] \n\n[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]] \n\n[[0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]] \n\n[[7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]\n [7.3 7.3 7.3 7.3]] \n\n[10 15 20 25] \n\n[0.         0.33333333 0.66666667 1.         1.33333333 1.66666667] \n\n[[0.94189264 0.32546872 0.21731812]\n [0.89067547 0.28776545 0.32316229]] \n\n\n\n\narr1 = np.array([np.arange(0,5), np.arange(0,5)*5])\n#Arreglo\nprint(arr1, \"\\n\")\n# Forma\nprint(arr1.shape, \"\\n\")\n# Tamaño\nprint(arr1.size, \"\\n\")\n# Número de Dimensiones\nprint(arr1.ndim, \"\\n\")\n# Transpuesta\nprint(arr1.T, \"\\n\")\n\n[[ 0  1  2  3  4]\n [ 0  5 10 15 20]] \n\n(2, 5) \n\n10 \n\n2 \n\n[[ 0  0]\n [ 1  5]\n [ 2 10]\n [ 3 15]\n [ 4 20]] \n\n\n\n\narr = np.array([1,2,3,4,5,6,7])\n# Porcionar\nprint(arr[1:3])# de 1 al 3 en índice\nprint(arr[4:])# de la posición 4 en adelante\nprint(arr[::2])# de uno por medio\n\n[2 3]\n[5 6 7]\n[1 3 5 7]"
   },
   {
     "objectID": "rubricas/Rubrica_EDA.html",
@@ -686,11 +686,46 @@
     "text": "Histogram Equalization\n\nImagesCodeRecommended Reading\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nplt.imshow(elderly_gray_lowcontrast, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\n\nplt.plot(elderly_hist_lowcontrast, color=\"red\")\nplt.show()\n\nelderly_hist_equ = cv2.equalizeHist(elderly_gray_lowcontrast)\nplt.imshow(elderly_hist_equ, cmap=\"gray\", vmin=0, vmax=255)\nplt.show()\n\nelderly_hist_equ = cv2.calcHist(elderly_hist_equ, [0], None, [256], [0,256])\nplt.plot(elderly_hist_equ, color=\"red\")\nplt.show()\n\n\n\nHistogram Equalization OPENCV tutorial\n\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
   },
   {
-    "objectID": "pres/tutorial_Faces.html#introducción",
-    "href": "pres/tutorial_Faces.html#introducción",
+    "objectID": "pres/tutorial_Faces.html#que-conocieron-mis-papás",
+    "href": "pres/tutorial_Faces.html#que-conocieron-mis-papás",
     "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Introducción",
-    "text": "Introducción\n\nDefinición de Procesamiento de Imágenes El procesamiento de imágenes es la técnica utilizada para mejorar, analizar y extraer información de las imágenes digitales.\nBreve historia y evolución Desde los primeros intentos de manipulación de imágenes en la década de 1960 hasta las sofisticadas técnicas actuales.\nAplicaciones Medicina, seguridad, entretenimiento, y más."
+    "section": "Que conocieron mis papás",
+    "text": "Que conocieron mis papás\n\nDick Tracy por Chester Gould, 1931. Fuente: Amazon"
+  },
+  {
+    "objectID": "pres/tutorial_Faces.html#que-conocieron-mis-papás-1",
+    "href": "pres/tutorial_Faces.html#que-conocieron-mis-papás-1",
+    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
+    "section": "Que conocieron mis papás",
+    "text": "Que conocieron mis papás\n\nOxo por Sandy Douglas, 1952. Fuente: Livewire"
+  },
+  {
+    "objectID": "pres/tutorial_Faces.html#definición",
+    "href": "pres/tutorial_Faces.html#definición",
+    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
+    "section": "Definición",
+    "text": "Definición\n\nImagen Digital: Una imagen digital es una representación bidimensional de una escena o objeto real, creada a partir de un conjunto de datos numéricos que se almacenan y procesan electrónicamente."
+  },
+  {
+    "objectID": "pres/tutorial_Faces.html#tipos-de-imágenes-digitales",
+    "href": "pres/tutorial_Faces.html#tipos-de-imágenes-digitales",
+    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
+    "section": "Tipos de Imágenes Digitales",
+    "text": "Tipos de Imágenes Digitales\n\n\nRaster (Bitmap): Formadas por una matriz de píxeles.\nAlgunos Formatos: BMP, JPEG, PNG, GIF\n\nVectoriales: Formadas por ecuaciones matemáticas y gráficos vectoriales.\nAlgunos Formatos: SVG, EPS, CDR, AI, PDF"
+  },
+  {
+    "objectID": "pres/tutorial_Faces.html#componentes",
+    "href": "pres/tutorial_Faces.html#componentes",
+    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
+    "section": "Componentes",
+    "text": "Componentes\n\nPíxeles: La unidad más pequeña de una imagen digital, cada píxel contiene información de color y brillo.\nResolución: La cantidad de píxeles en una imagen, comúnmente expresada como el número de píxeles horizontales por verticales (por ejemplo, 1920x1080).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLa resolución de la imagen es: 30x30\n\n\nEl número de canales que tiene la imagen es: 3"
+  },
+  {
+    "objectID": "pres/tutorial_Faces.html#componentes-1",
+    "href": "pres/tutorial_Faces.html#componentes-1",
+    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
+    "section": "Componentes",
+    "text": "Componentes\n\nPíxeles: La unidad más pequeña de una imagen digital, cada píxel contiene información de color y brillo.\nResolución: La cantidad de píxeles en una imagen, comúnmente expresada como el número de píxeles horizontales por verticales (por ejemplo, 1920x1080).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[[109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109   0   0\n    0   0   0 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109   0   0 219 219\n  219 219 219   0   0 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109   0 219 219 219 219\n  219 219 219 219 219   0 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109   0   0 109 109   0 219 219 219 219 219\n  219 219 219 219   0 109 109 109   0   0 109 109]\n [109 109 109 109 109 109 109   0 146  73   0   0   0   0 219 219 219  73\n   73  73 219 219 219   0 109   0  73 146   0 109]\n [109 109 109 109 109 109 109   0  73 146  73   0   0 255  73 219  73 255\n  255  73 219 219 219   0   0  73 146  73   0 109]\n [109 109 109 109 109 109 109 109   0  73 146  73   0 255 255 219 255 255\n  255  73 219 219 219   0  73 146  73   0 109 109]\n [109 109 109   0   0   0   0   0   0   0  73 146   0  73  73 219  73  73\n   73  73 219 219   0  73 146  73   0 109 109 109]\n [109 109   0 182 182 182 182 182 182 182   0  73   0 219  73 219  73  73\n   73 219 219 219   0   0  73   0 109 109 109 109]\n [109 109   0 182 182 182 182 182 182 182   0   0   0   0 219 219 219 219\n  219 219 219   0  73  73   0   0 109 109 109 109]\n [109 109 109   0   0   0 182   0 219 219 219 219 219 219   0 219 219 219\n  219 219   0  73  73  73 219 219   0 109 109 109]\n [109 109 109 109 109 109   0 219   0 219 219 219 219 219 219   0   0   0\n    0   0 219  73   0 219 219 219   0 109 109 109]\n [109 109 109 109 109 109   0 219 182 219 219 219 219 219 219  73 219 219\n  219 219 219  73   0   0 219 219 219   0 109 109]\n [109 109 109 109 109 109 109   0 182 219   0   0   0   0   0  73  73 219\n  219 219  73  73   0   0   0 219 219   0 109 109]\n [109 109 109 109 109 109 109 109   0   0 109 109 109 109   0  73  73 219\n  219 219  73  73   0   0 219 219 219   0 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109   0 146   0 146\n  146   0 146 146   0   0 219 219 219   0 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109   0 146   0 146\n  146   0 146 146   0  73   0   0   0 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109   0  73 219 219 219\n  219 219 219  73  73   0  73  73   0 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109   0  73 219 219 219 219\n    0 219 219 219  73  73  73   0 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109   0  73 219 219 219 219   0\n  109   0 219 219 219 219  73   0 109 109 109 109]\n [109 109 109 109 109 109 109 109 109   0   0 219 219  73  73  73   0 109\n  109 109   0  73  73  73 219 219   0   0 109 109]\n [109 109 109 109 109 109 109 109   0  73  73  73 219 219 219 219   0 109\n  109 109   0 219 219 219 219  73  73  73   0 109]\n [109 109 109 109 109 109 109 109   0   0   0   0   0   0   0   0   0 109\n  109 109   0   0   0   0   0   0   0   0   0 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]]"
   },
   {
     "objectID": "pres/tutorial_Faces.html#representación-computacional-de-imágenes",
@@ -702,20 +737,6 @@
   {
     "objectID": "pres/tutorial_Faces.html#representación-computacional-de-imágenes-1",
     "href": "pres/tutorial_Faces.html#representación-computacional-de-imágenes-1",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Representación Computacional de Imágenes",
-    "text": "Representación Computacional de Imágenes\nCompresión de Imágenes\n\nCompresión sin pérdida\n\nMantiene toda la información original (ej. PNG).\n\nCompresión con pérdida\n\nElimina parte de la información para reducir tamaño (ej. JPEG).\n\nAlgoritmos comunes\n\nRun-length encoding, DCT para JPEG."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#representación-computacional-de-imágenes-2",
-    "href": "pres/tutorial_Faces.html#representación-computacional-de-imágenes-2",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Representación Computacional de Imágenes",
-    "text": "Representación Computacional de Imágenes\nCompresión de Imágenes\n\nCompresión sin pérdida\n\nMantiene toda la información original (ej. PNG).\n\nCompresión con pérdida\n\nElimina parte de la información para reducir tamaño (ej. JPEG).\n\nAlgoritmos comunes\n\nRun-length encoding, DCT para JPEG."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#representación-computacional-de-imágenes-3",
-    "href": "pres/tutorial_Faces.html#representación-computacional-de-imágenes-3",
     "title": "Sonrie!!! Como detectar tu sonrisa con Python",
     "section": "Representación Computacional de Imágenes",
     "text": "Representación Computacional de Imágenes\nCompresión de Imágenes\n\nCompresión sin pérdida\n\nMantiene toda la información original (ej. PNG).\n\nCompresión con pérdida\n\nElimina parte de la información para reducir tamaño (ej. JPEG).\n\nAlgoritmos comunes\n\nRun-length encoding, DCT para JPEG."
@@ -740,90 +761,6 @@
     "title": "Sonrie!!! Como detectar tu sonrisa con Python",
     "section": "Teoría del Color",
     "text": "Teoría del Color\nEspacios de Color\n\nDefinición y propósito\n\nEspacios matemáticos que describen cómo se representan los colores.\n\nEjemplos de espacios de color\n\nsRGB: Estándar para la web.\nAdobe RGB: Mayor gama de colores, usado en fotografía.\n\n\n\n\n\n\nhttps://pacaicedo.github.io"
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#aplicaciones-del-color-en-el-procesamiento-de-imágenes",
-    "href": "pres/tutorial_Faces.html#aplicaciones-del-color-en-el-procesamiento-de-imágenes",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Aplicaciones del Color en el Procesamiento de Imágenes",
-    "text": "Aplicaciones del Color en el Procesamiento de Imágenes\nAjuste de Color\n\nBalance de blancos\n\nCorrección de colores para que los blancos sean verdaderamente blancos.\n\nCorrección de color\n\nAjuste de niveles y curvas para mejorar la imagen.\n\nFiltros de color\n\nAplicación de efectos específicos para alterar la apariencia."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#aplicaciones-del-color-en-el-procesamiento-de-imágenes-1",
-    "href": "pres/tutorial_Faces.html#aplicaciones-del-color-en-el-procesamiento-de-imágenes-1",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Aplicaciones del Color en el Procesamiento de Imágenes",
-    "text": "Aplicaciones del Color en el Procesamiento de Imágenes\nSegmentación de Imágenes por Color\n\nTécnicas de segmentación\n\nDividir una imagen en regiones basadas en color.\n\nUso de máscaras de color\n\nIdentificar y aislar objetos de interés."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#aplicaciones-del-color-en-el-procesamiento-de-imágenes-2",
-    "href": "pres/tutorial_Faces.html#aplicaciones-del-color-en-el-procesamiento-de-imágenes-2",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Aplicaciones del Color en el Procesamiento de Imágenes",
-    "text": "Aplicaciones del Color en el Procesamiento de Imágenes\nReconocimiento de Patrones y Objetos por Color\n\nIdentificación de objetos específicos\n\nUso de color para detectar y seguir objetos.\n\nUso en visión por computadora\n\nAplicaciones en robótica, seguridad y más."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#herramientas-y-software",
-    "href": "pres/tutorial_Faces.html#herramientas-y-software",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Herramientas y Software",
-    "text": "Herramientas y Software\nLenguajes de Programación y Librerías\n\nPython\n\nOpenCV, PIL/Pillow, scikit-image.\n\nMATLAB\n\nImage Processing Toolbox."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#herramientas-y-software-1",
-    "href": "pres/tutorial_Faces.html#herramientas-y-software-1",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Herramientas y Software",
-    "text": "Herramientas y Software\nSoftware de Edición de Imágenes\n\nAdobe Photoshop\n\nHerramienta profesional de edición de imágenes.\n\nGIMP\n\nAlternativa gratuita y de código abierto."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#ejemplos-prácticos-y-casos-de-estudio",
-    "href": "pres/tutorial_Faces.html#ejemplos-prácticos-y-casos-de-estudio",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Ejemplos Prácticos y Casos de Estudio",
-    "text": "Ejemplos Prácticos y Casos de Estudio\nImplementación Básica en Python\n\nCargar y mostrar una imagen\nimport cv2\nimport matplotlib.pyplot as plt\n\nimagen = cv2.imread('ruta/a/tu/imagen.jpg')\nimagen_rgb = cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)\nplt.imshow(imagen_rgb)\nplt.title('Imagen Original')\nplt.show()"
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#ejemplos-prácticos-y-casos-de-estudio-1",
-    "href": "pres/tutorial_Faces.html#ejemplos-prácticos-y-casos-de-estudio-1",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Ejemplos Prácticos y Casos de Estudio",
-    "text": "Ejemplos Prácticos y Casos de Estudio\nConversión de una Imagen a Escala de Grises\n\nCódigo en Python\nimagen_gris = cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)\nplt.imshow(imagen_gris, cmap='gray')\nplt.title('Imagen en Escala de Grises')\nplt.show()"
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#ejemplos-prácticos-y-casos-de-estudio-2",
-    "href": "pres/tutorial_Faces.html#ejemplos-prácticos-y-casos-de-estudio-2",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Ejemplos Prácticos y Casos de Estudio",
-    "text": "Ejemplos Prácticos y Casos de Estudio\nAplicación de un Filtro de Color\n\nCódigo en Python\nfiltro_rojo = imagen_rgb.copy()\nfiltro_rojo[:, :, 1] = 0  # Eliminar el canal verde\nfiltro_rojo[:, :, 2] = 0  # Eliminar el canal azul\nplt.imshow(filtro_rojo)\nplt.title('Filtro Rojo Aplicado')\nplt.show()"
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#casos-de-estudio",
-    "href": "pres/tutorial_Faces.html#casos-de-estudio",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Casos de Estudio",
-    "text": "Casos de Estudio\nProcesamiento de Imágenes en Medicina\n\nAplicaciones\n\nDiagnóstico por imágenes, mejora de calidad de imágenes médicas.\nIdentificación de anomalías."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#casos-de-estudio-1",
-    "href": "pres/tutorial_Faces.html#casos-de-estudio-1",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Casos de Estudio",
-    "text": "Casos de Estudio\nUso en Seguridad y Vigilancia\n\nAplicaciones\n\nReconocimiento facial, detección de intrusos.\nAnálisis de video en tiempo real."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#conclusión",
-    "href": "pres/tutorial_Faces.html#conclusión",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Conclusión",
-    "text": "Conclusión\nResumen de Puntos Clave\n\nImportancia del procesamiento de imágenes en diversas áreas.\nConceptos clave de representación computacional y color.\nAplicaciones prácticas y herramientas disponibles."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#conclusión-1",
-    "href": "pres/tutorial_Faces.html#conclusión-1",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Conclusión",
-    "text": "Conclusión\nPreguntas y Respuestas\n\nEspacio abierto para resolver dudas y ampliar temas de interés.\n\n\n\n\n\nhttps://pacaicedo.github.io"
   },
   {
     "objectID": "pres/MachineLearning.html#el-profesor",
@@ -1369,7 +1306,7 @@
     "href": "pres/PSIM002.html#events-sample-space-experiments-1",
     "title": "Procesado de Señales e Imágenes Médicas",
     "section": "Events, Sample Space, Experiments",
-    "text": "Events, Sample Space, Experiments\n\nGraphCodeSample SpaceResultDataset\n\n\n\n\nText(0, 0.5, 'Normalized ECG')\n\n\n\n\n\n\n\n\n\n\n\n\ndata = np.genfromtxt(path_ecg+\"/mitbih_train.csv\", delimiter=\",\")\necg1 = data[1, :-1]\ntime = np.array(range(0,len(ecg1)))/125\nfig = plt.figure()\nplt.plot(time, ecg1)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Normalized ECG\")\n\n\n\n\nprint(\"Maximun Value: \"+ str(ecg1.max()))\nprint(\"Minimun Value: \"+ str(ecg1.min()))\n\nMaximun Value: 1.0\nMinimun Value: 0.0\n\n\n\n\n\nprint(ecg1[np.random.choice(ecg1.shape[0], 1, replace=False)])\n\n[0.22222222]\n\n\n\n\nName: ECG Heartbeat Categorization Dataset.\nURL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat?resource=download"
+    "text": "Events, Sample Space, Experiments\n\nGraphCodeSample SpaceResultDataset\n\n\n\n\nText(0, 0.5, 'Normalized ECG')\n\n\n\n\n\n\n\n\n\n\n\n\ndata = np.genfromtxt(path_ecg+\"/mitbih_train.csv\", delimiter=\",\")\necg1 = data[1, :-1]\ntime = np.array(range(0,len(ecg1)))/125\nfig = plt.figure()\nplt.plot(time, ecg1)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Normalized ECG\")\n\n\n\n\nprint(\"Maximun Value: \"+ str(ecg1.max()))\nprint(\"Minimun Value: \"+ str(ecg1.min()))\n\nMaximun Value: 1.0\nMinimun Value: 0.0\n\n\n\n\n\nprint(ecg1[np.random.choice(ecg1.shape[0], 1, replace=False)])\n\n[0.07407407]\n\n\n\n\nName: ECG Heartbeat Categorization Dataset.\nURL: https://www.kaggle.com/datasets/shayanfazeli/heartbeat?resource=download"
   },
   {
     "objectID": "pres/PSIM002.html#probability-axioms",
@@ -2007,33 +1944,5 @@
     "title": "Estimación de precio de casas en el condado de King",
     "section": "Entrenamiento",
     "text": "Entrenamiento\n\nInicialización de red neuronal\n\nmodelo = RedNeuronal(nentradas=n_entradas)\nmodelo.to(device=device)\nloss_fn = nn.L1Loss()\noptimizador = torch.optim.AdamW(params= modelo.parameters(), lr=lr )\nprint(\"Arquitectura del modelo: {}\".format(modelo))\n\nArquitectura del modelo: RedNeuronal(\n  (linear1): Linear(in_features=333, out_features=100, bias=True)\n  (linear2): Linear(in_features=100, out_features=1400, bias=True)\n  (linear3): Linear(in_features=1400, out_features=200, bias=True)\n  (linear4): Linear(in_features=200, out_features=1, bias=True)\n)\n\n\n\n\nEntrenamiento del modelo\n\nfor epoch in range(0, epochs):\n    y_pred = modelo(txtrain)\n    tytrain = torch.reshape(tytrain, y_pred.shape)\n    perdida = loss_fn(input=y_pred, target=tytrain)\n    perdida.backward()\n    optimizador.step()\n    optimizador.zero_grad()\n    if epoch % estatus_print == 0:\n        print(f\"\\nEpoch {epoch} \\t Loss: {round(perdida.item(), 4)}\")\n\n    with torch.no_grad():\n        y_pred = modelo(txtest)\n\n        r2score = 100 * r2_score(tytest.cpu().numpy(), y_pred.cpu().numpy())\n\n        if epoch % estatus_print == 0:\n            print(\"R2 score: {}\".format(r2score))\n\n\n    df_tmp = pd.DataFrame(data={\n        'Epoch': epoch,\n        'Loss': round(perdida.item(), 4),\n        'Accuracy': round(r2score, 4)\n    }, index=[0])\n    historico = pd.concat(objs=[historico, df_tmp], ignore_index=True, sort=False)\nprint(\"R2 Score final: {}\".format(round(r2score, 4)))\n\n\nEpoch 0      Loss: 536634.1875\nR2 score: -218.69052347899122\n\nEpoch 100    Loss: 427313.5938\nR2 score: -142.17188313253803\n\nEpoch 200    Loss: 141282.9844\nR2 score: 48.263244223910526\n\nEpoch 300    Loss: 108957.3828\nR2 score: 63.578877382200304\n\nEpoch 400    Loss: 92854.5\nR2 score: 70.46453537506754\n\nEpoch 500    Loss: 84930.5234\nR2 score: 74.86175748724364\n\nEpoch 600    Loss: 80068.0469\nR2 score: 78.241294191241\n\nEpoch 700    Loss: 76926.3203\nR2 score: 80.65634340937542\n\nEpoch 800    Loss: 74447.2734\nR2 score: 82.3184988002875\n\nEpoch 900    Loss: 72259.8828\nR2 score: 83.66143265363158\n\nEpoch 1000   Loss: 70605.4688\nR2 score: 84.44342619717709\n\nEpoch 1100   Loss: 69190.4375\nR2 score: 85.08345902896156\n\nEpoch 1200   Loss: 67910.6797\nR2 score: 85.52597509947984\n\nEpoch 1300   Loss: 66743.6719\nR2 score: 85.8862228073741\n\nEpoch 1400   Loss: 65652.8281\nR2 score: 86.12836556255073\n\nEpoch 1500   Loss: 64613.8281\nR2 score: 86.33372549037918\n\nEpoch 1600   Loss: 63536.3047\nR2 score: 86.56039551034893\n\nEpoch 1700   Loss: 62411.9336\nR2 score: 86.70976050928277\n\nEpoch 1800   Loss: 61307.1445\nR2 score: 86.80555973342223\n\nEpoch 1900   Loss: 60187.5508\nR2 score: 86.92787471411407\nR2 Score final: 87.0758"
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#definición",
-    "href": "pres/tutorial_Faces.html#definición",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Definición",
-    "text": "Definición\n\nImagen Digital: Una imagen digital es una representación bidimensional de una escena o objeto real, creada a partir de un conjunto de datos numéricos que se almacenan y procesan electrónicamente."
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#componentes",
-    "href": "pres/tutorial_Faces.html#componentes",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Componentes",
-    "text": "Componentes\n\nPíxeles: La unidad más pequeña de una imagen digital, cada píxel contiene información de color y brillo.\nResolución: La cantidad de píxeles en una imagen, comúnmente expresada como el número de píxeles horizontales por verticales (por ejemplo, 1920x1080).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLa resolución de la imagen es: 30x30\n\n\nEl número de canales que tiene la imagen es: 3"
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#tipos-de-imágenes-digitales",
-    "href": "pres/tutorial_Faces.html#tipos-de-imágenes-digitales",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Tipos de Imágenes Digitales",
-    "text": "Tipos de Imágenes Digitales\n\n\nRaster (Bitmap): Formadas por una matriz de píxeles.\nAlgunos Formatos: BMP, JPEG, PNG, GIF\n\nVectoriales: Formadas por ecuaciones matemáticas y gráficos vectoriales.\nAlgunos Formatos: SVG, EPS, CDR, AI, PDF"
-  },
-  {
-    "objectID": "pres/tutorial_Faces.html#componentes-1",
-    "href": "pres/tutorial_Faces.html#componentes-1",
-    "title": "Sonrie!!! Como detectar tu sonrisa con Python",
-    "section": "Componentes",
-    "text": "Componentes\n\nPíxeles: La unidad más pequeña de una imagen digital, cada píxel contiene información de color y brillo.\nResolución: La cantidad de píxeles en una imagen, comúnmente expresada como el número de píxeles horizontales por verticales (por ejemplo, 1920x1080).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[[109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109   0   0\n    0   0   0 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109   0   0 219 219\n  219 219 219   0   0 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109   0 219 219 219 219\n  219 219 219 219 219   0 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109   0   0 109 109   0 219 219 219 219 219\n  219 219 219 219   0 109 109 109   0   0 109 109]\n [109 109 109 109 109 109 109   0 146  73   0   0   0   0 219 219 219  73\n   73  73 219 219 219   0 109   0  73 146   0 109]\n [109 109 109 109 109 109 109   0  73 146  73   0   0 255  73 219  73 255\n  255  73 219 219 219   0   0  73 146  73   0 109]\n [109 109 109 109 109 109 109 109   0  73 146  73   0 255 255 219 255 255\n  255  73 219 219 219   0  73 146  73   0 109 109]\n [109 109 109   0   0   0   0   0   0   0  73 146   0  73  73 219  73  73\n   73  73 219 219   0  73 146  73   0 109 109 109]\n [109 109   0 182 182 182 182 182 182 182   0  73   0 219  73 219  73  73\n   73 219 219 219   0   0  73   0 109 109 109 109]\n [109 109   0 182 182 182 182 182 182 182   0   0   0   0 219 219 219 219\n  219 219 219   0  73  73   0   0 109 109 109 109]\n [109 109 109   0   0   0 182   0 219 219 219 219 219 219   0 219 219 219\n  219 219   0  73  73  73 219 219   0 109 109 109]\n [109 109 109 109 109 109   0 219   0 219 219 219 219 219 219   0   0   0\n    0   0 219  73   0 219 219 219   0 109 109 109]\n [109 109 109 109 109 109   0 219 182 219 219 219 219 219 219  73 219 219\n  219 219 219  73   0   0 219 219 219   0 109 109]\n [109 109 109 109 109 109 109   0 182 219   0   0   0   0   0  73  73 219\n  219 219  73  73   0   0   0 219 219   0 109 109]\n [109 109 109 109 109 109 109 109   0   0 109 109 109 109   0  73  73 219\n  219 219  73  73   0   0 219 219 219   0 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109   0 146   0 146\n  146   0 146 146   0   0 219 219 219   0 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109   0 146   0 146\n  146   0 146 146   0  73   0   0   0 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109   0  73 219 219 219\n  219 219 219  73  73   0  73  73   0 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109   0  73 219 219 219 219\n    0 219 219 219  73  73  73   0 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109   0  73 219 219 219 219   0\n  109   0 219 219 219 219  73   0 109 109 109 109]\n [109 109 109 109 109 109 109 109 109   0   0 219 219  73  73  73   0 109\n  109 109   0  73  73  73 219 219   0   0 109 109]\n [109 109 109 109 109 109 109 109   0  73  73  73 219 219 219 219   0 109\n  109 109   0 219 219 219 219  73  73  73   0 109]\n [109 109 109 109 109 109 109 109   0   0   0   0   0   0   0   0   0 109\n  109 109   0   0   0   0   0   0   0   0   0 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]\n [109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109 109\n  109 109 109 109 109 109 109 109 109 109 109 109]]"
   }
 ]

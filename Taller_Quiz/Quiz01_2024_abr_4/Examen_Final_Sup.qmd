@@ -1,0 +1,83 @@
+---
+title: "Examen Final: PSIM"
+format: PrettyPDF-pdf
+---
+
+**NOMBRE:**_____________________________________________________
+
+# La transformada de __________ y la transformada __________
+
+La transformada de __________ y la transformada __________ son herramientas matemáticas esenciales para el análisis de señales y datos en diversos campos como la ingeniería, la física y la imagenología. Aunque ambas técnicas sirven para descomponer señales en componentes más manejables, difieren significativamente en su enfoque y aplicaciones.
+
+## Transformada de __________
+
+La transformada de __________ es una técnica que convierte una señal en el dominio del tiempo a una representación en el __________. Fue desarrollada en el siglo XIX y se basa en la idea de que cualquier señal periódica puede descomponerse en una suma de funciones __________. La ecuación fundamental de la transformada de __________ es:
+
+__________
+
+donde __________ representa la señal en el __________, __________ es la señal en el dominio del tiempo, y __________ es la frecuencia angular.
+
+### Ventajas y Limitaciones
+
+Una de las principales ventajas de la transformada de __________ es su capacidad para identificar las diferentes frecuencias presentes en una señal y sus amplitudes correspondientes. Esto es particularmente útil en el análisis de señales estacionarias, donde las propiedades estadísticas de la señal no cambian con el tiempo.
+
+Sin embargo, la transformada de __________ tiene limitaciones significativas. Al proporcionar una representación global de la señal en el __________, pierde la información sobre cuándo ocurren las diferentes frecuencias. En otras palabras, no ofrece una buena resolución temporal. Esta falta de información temporal es una desventaja en el análisis de __________, como aquellas que cambian a lo largo del tiempo.
+
+## Transformada __________
+
+La transformada __________, desarrollada a finales del siglo XX, aborda algunas de las limitaciones de la transformada de __________. En lugar de descomponer una señal en funciones __________, la transformada __________ utiliza funciones llamadas "__________s" que son localizadas tanto en el tiempo como en la frecuencia. La ecuación general de la transformada __________ continua es:
+
+____________
+
+donde __________ es la __________ escalada por __________ y desplazada por __________.
+
+### Ventajas y Aplicaciones
+
+Una de las mayores ventajas de la transformada __________ es su capacidad de ofrecer una __________ de la señal. Esto significa que puede proporcionar detalles finos (__________) y capturar componentes de baja frecuencia (alta resolución frecuencial) simultáneamente. Esta propiedad es especialmente útil para el análisis de __________.
+
+La transformada __________ se aplica ampliamente en áreas como la compresión de imágenes, el análisis de series temporales y la detección de transitorios en señales de audio y electromagnéticas. Por ejemplo, en la compresión de imágenes, la transformada __________ puede representar eficientemente las estructuras de la imagen a múltiples escalas, permitiendo una compresión más eficaz que la basada en la transformada de __________.
+
+## Diferencias Clave
+
+1. **Representación Temporal vs. Frecuencial:**
+   - **Transformada __________:** Ofrece una representación en ambos dominios, tiempo y frecuencia, con diferentes resoluciones.
+   - **Transformada de __________:** Proporciona una representación global en el __________, sin información temporal.
+
+2. **Adecuación a Señales:**
+   - **Transformada __________:** Ideal para __________ con componentes de frecuencia que cambian con el tiempo.
+   - **Transformada de __________:** Mejor para señales estacionarias donde las frecuencias no cambian con el tiempo.
+
+3. **Funciones Base:**
+   - **Transformada de __________:** Utiliza senos y cosenos.
+   - **Transformada __________:** Utiliza __________s que son funciones oscilatorias de duración limitada.
+
+4. **Resolución:**
+   - **Transformada __________:** Proporciona una resolución variable, más detallada en tiempo para altas frecuencias y más detallada en frecuencia para bajas frecuencias.
+   - **Transformada de __________:** Ofrece una única resolución para toda la señal.
+
+## Conclusión
+
+Ambas transformadas son herramientas poderosas con sus propias fortalezas y limitaciones. La elección entre la transformada de __________ y la transformada __________ depende del tipo de señal y de la información que se busca extraer. Para señales estacionarias y análisis de frecuencia pura, la transformada de __________ es adecuada. Para __________ y análisis que requieren información temporal y frecuencial detallada, la transformada __________ es la mejor opción.
+
+# Preguntas
+
+Teniendo en cuenta el texto anterior, complete los espacios vacíos con los siguientes conceptos:
+
+1. Fourier
+2. Wavelet
+3. Wavelet Madre
+4. Representación multi-resolución
+5. Alta resolución temporal
+6. Señales no estacionarias
+7. Dominio de la frecuencia
+8. $W_{\psi}(a,b) = \int_{-\infty}^{\infty} f(t) \psi_{a,b}(t) \, dt$
+9. $F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-j\omega t} \, dt$
+10. $\psi_{a,b}(t)$
+11. $a$
+12. $b$
+13. $\omega$
+14. $F\left(\omega\right)$
+15. $f(t)$
+16. Seno y coseno
+
+Todos los conceptos deben ser utilizados al menos una vez.

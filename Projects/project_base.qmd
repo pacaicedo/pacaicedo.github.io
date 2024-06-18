@@ -2,6 +2,7 @@
 title: "A Quarto Page Layout Example"
 subtitle: "Inspired by Tufte Handout, Using Quarto"
 date: "`r Sys.Date()`"
+lang: es
 format:
     pdf: default
     html: 

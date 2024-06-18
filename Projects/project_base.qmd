@@ -1,8 +1,10 @@
 ---
 title: "A Quarto Page Layout Example"
 subtitle: "Inspired by Tufte Handout, Using Quarto"
-date: "`r Sys.Date()`"
 description: "Project Description"
+image: "../Img/PSIM01.jpeg"
+date: "2024-01-22"
+date-modified: "2024-01-22"
 lang: es
 format:
     pdf: default

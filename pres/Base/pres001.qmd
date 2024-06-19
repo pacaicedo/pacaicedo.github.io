@@ -15,11 +15,11 @@ format:
     self-contained: true
     theme: 
       - white
-      - custom.scss
+      - ../Resources/custom.scss
     slide-number: true
     preview-links: auto
-    logo: images/Escuela_Rosario_logo.png
-    css: styles.css
+    logo: ../Resources/Escuela_Rosario_logo.png
+    css: ../Resources/styles.css
     footer: <https://pacaicedo.github.io>
     transition: fade
 resources:

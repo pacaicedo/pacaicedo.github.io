@@ -1,0 +1,61 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"La Guarida de los Datos\"\n",
+        "jupyter: python3\n",
+        "lang: es\n",
+        "listing:\n",
+        "  - id: clases\n",
+        "    contents: \"Class/*.qmd\"\n",
+        "    fields: [image, date, title, description]\n",
+        "    type: grid\n",
+        "  - id: tutoriales\n",
+        "    contents: \"Tutorials/*.qmd\"\n",
+        "    fields: [image, date, title, description]\n",
+        "    type: grid\n",
+        "  - id: proyectos\n",
+        "    contents: \"Projects/*.qmd\"\n",
+        "    fields: [image, date, title, description]\n",
+        "    type: grid\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Clases\n",
+        "\n",
+        ":::{#clases}\n",
+        ":::\n",
+        "\n",
+        "\n",
+        "## Tutoriales\n",
+        "\n",
+        ":::{#tutoriales}\n",
+        "\n",
+        "\n",
+        ":::\n",
+        "\n",
+        "\n",
+        "## Proyectos\n",
+        "\n",
+        ":::{#proyectos}\n",
+        ":::"
+      ],
+      "id": "a8e8ab54"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\pacai\\.conda\\envs\\IASP\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

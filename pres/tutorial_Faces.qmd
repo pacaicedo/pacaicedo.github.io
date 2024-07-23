@@ -43,7 +43,7 @@ library("knitr")
 library("cowplot")
 library("ggfx")
 knitr::opts_chunk$set(echo = FALSE)
-use_condaenv("pyImPro", required = TRUE)
+use_condaenv("IASP", required = TRUE)
 
 def.chunk.hook <- knitr::knit_hooks$get("chunk")
 knitr::knit_hooks$set(chunk = function(x, options) {

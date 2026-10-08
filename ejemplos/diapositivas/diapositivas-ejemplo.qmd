@@ -1,0 +1,98 @@
+---
+title: "Del dato a la causa"
+subtitle: "Grafos causales para experimentos biomédicos"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+institute: "BioForge Experiment OS"
+date: 2026-10-06
+date-format: long
+lang: es
+filters:
+  - marca/caicedo.lua
+format:
+  revealjs:
+    theme: marca/caicedo-diapositivas.scss
+    width: 1280
+    height: 720
+    margin: 0
+    logo: marca/logo/isotipo-claro.svg
+    footer: "P. E. Caicedo-Rodríguez · Del dato a la causa"
+    slide-number: c/t
+    code-line-numbers: false
+    highlight-style: marca/caicedo-claro.theme
+    embed-resources: true
+  beamer:
+    aspectratio: 169
+    fontsize: 11pt
+    pdf-engine: lualatex
+    slide-level: 2
+    highlight-style: marca/caicedo-claro.theme
+    include-in-header:
+      text: |
+        \usepackage{marca/caicedo-diapositivas}
+        \renewcommand{\caicedopie}{P. E. Caicedo-Rodríguez · Del dato a la causa}
+---
+
+# Extraer
+
+## De la señal a la variable
+
+- Los datos crudos llegan de **marcha**, **sEMG** y **video**.
+- Cada fuente declara un *contrato de datos*.
+  - Tipo, unidades y frecuencia de muestreo.
+  - Código de comprobación del contrato.
+- La extracción produce variables con significado clínico.
+
+### Idea clave
+
+Una variable sin contrato no entra al modelo.
+
+## Código de extracción
+
+```python
+import torch
+
+def extraer_rms(senal: torch.Tensor, ventana: int = 200) -> torch.Tensor:
+    """RMS por ventanas de una señal sEMG (canales x muestras)."""
+    ventanas = senal.unfold(-1, ventana, ventana // 2)
+    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana
+```
+
+La función respeta el contrato: entra `float32 [C, N]` y sale `float32 [C, V]`.
+
+# Conectar
+
+## Variables como grafo
+
+:::: {.columns}
+::: {.column width="55%"}
+1. Nodos: variables extraídas.
+2. Aristas: dependencias observadas.
+3. Comunidades: subsistemas fisiológicos.
+
+[El grafo es el puente entre extracción y causalidad.]{.alert}
+:::
+::: {.column width="45%"}
+| Métrica       | Valor |
+|---------------|------:|
+| Nodos         |    42 |
+| Aristas       |   118 |
+| Densidad      |  0.14 |
+| Comunidades   |     5 |
+:::
+::::
+
+# Explicar
+
+## Del grafo a la causa
+
+> Correlación no es causalidad, pero un grafo bien construido dice qué hay que ajustar.
+
+::: {.callout-important}
+## Supuesto de identificación
+El confusor $Z$ debe medirse en la misma sesión que $X$ e $Y$.
+:::
+
+::: {.callout-tip}
+## Buena práctica
+Declara el DAG antes de mirar los resultados.
+:::

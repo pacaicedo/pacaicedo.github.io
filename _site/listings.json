@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/notas/grafos-causales/index.html",
+      "/notas/extraer-variables/index.html"
+    ]
+  },
+  {
+    "listing": "/notas/index.html",
+    "items": [
+      "/notas/grafos-causales/index.html",
+      "/notas/extraer-variables/index.html"
+    ]
+  }
+]

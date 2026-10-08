@@ -1,0 +1,20 @@
+---
+title: "Pablo Eduardo Caicedo-Rodríguez"
+subtitle: "Del dato a la causa"
+image: marca/logo/insignia.png
+about:
+  template: trestles
+  image-width: 12em
+  image-shape: rounded
+  links:
+    - text: Notas
+      href: notas/index.qmd
+    - text: Marca
+      href: marca.qmd
+---
+
+Construyo **BioForge Experiment OS**, una plataforma para experimentos biomédicos organizada
+alrededor de contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.
+
+Me interesa la [extracción de información]{.dato}, los [grafos]{.grafo} y la
+[causalidad]{.causa}: pasar de señales crudas a preguntas que se pueden responder con evidencia.

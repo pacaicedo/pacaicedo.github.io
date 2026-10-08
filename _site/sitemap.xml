@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.org/notas/grafos-causales/index.html</loc>
+    <lastmod>2026-10-07T01:52:48.474Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/notas/extraer-variables/index.html</loc>
+    <lastmod>2026-10-07T01:52:48.469Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/marca.html</loc>
+    <lastmod>2026-10-07T06:52:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/sobre-mi.html</loc>
+    <lastmod>2026-10-07T06:52:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/index.html</loc>
+    <lastmod>2026-10-08T14:57:10.782Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/notas/index.html</loc>
+    <lastmod>2026-10-07T06:52:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/ejemplos/documento/documento-ejemplo.html</loc>
+    <lastmod>2026-10-07T06:52:28.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/ejemplos/diapositivas/diapositivas-ejemplo.html</loc>
+    <lastmod>2026-10-07T06:52:04.000Z</lastmod>
+  </url>
+</urlset>

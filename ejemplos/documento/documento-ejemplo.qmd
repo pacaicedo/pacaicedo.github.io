@@ -1,0 +1,102 @@
+---
+title: "Extracción de información y grafos causales"
+subtitle: "Nota técnica de ejemplo con la marca P. E. Caicedo‑Rodríguez"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-10-06
+date-format: long
+lang: es
+abstract: |
+  Este documento muestra el tema de la marca en HTML y PDF: banda de título con la
+  red causal, encabezados numerados, código, tablas, citas y callouts. El mismo
+  archivo produce las dos salidas con el mismo aspecto.
+filters:
+  - marca/caicedo.lua
+format:
+  html:
+    theme: [cosmo, marca/caicedo-documento.scss]
+    title-block-banner: true
+    toc: true
+    toc-location: left
+    toc-title: "Contenido"
+    number-sections: true
+    highlight-style: marca/caicedo-claro.theme
+    embed-resources: true
+  pdf:
+    documentclass: scrartcl
+    papersize: a4
+    fontsize: 10pt
+    geometry:
+      - margin=2.2cm
+    pdf-engine: lualatex
+    toc: false
+    number-sections: true
+    highlight-style: marca/caicedo-claro.theme
+    include-in-header:
+      text: \usepackage{marca/caicedo-documento}
+---
+
+## Del dato a la variable
+
+La marca se apoya en tres ideas, cada una con su color: el [dato y su extracción]{.dato},
+el [grafo que conecta variables]{.grafo} y la [causa que explica el resultado]{.causa}.
+En BioForge Experiment OS esas ideas corresponden a preprocesamiento, modelado y evaluación,
+encadenados por **contratos de datos**.
+
+### Contrato de entrada
+
+Cada bloque de datos declara tipo, unidades y frecuencia. El código de comprobación
+rechaza cualquier archivo que no cumpla el contrato antes de que llegue al modelo.
+
+- Marcha: series de tiempo a 100 Hz.
+- sEMG: señales a 2 kHz, filtradas entre 20 y 450 Hz.
+  - Se guarda la envolvente RMS por ventana.
+- Video: 60 fps, con marcadores anatómicos.
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Contrato:
+    tipo: str          # "senal", "serie", "imagen", "tabular"
+    unidades: str
+    frecuencia_hz: float
+
+    def comprobar(self, frecuencia: float) -> bool:
+        return abs(frecuencia - self.frecuencia_hz) < 1e-6
+```
+
+## Del grafo a la causa
+
+> Un grafo causal no se descubre mirando los datos: se declara y luego se pone a prueba.
+
+| Proceso          | Entrada               | Salida                  |
+|------------------|-----------------------|-------------------------|
+| Preprocesamiento | Archivos crudos       | Variables con contrato  |
+| Modelado         | Variables             | Modelo entrenado        |
+| Evaluación       | Modelo y objetivo     | Evidencia reproducible  |
+
+: Los tres procesos y sus contratos encadenados.
+
+::: {.callout-note}
+## Nota
+El contrato de salida de cada proceso es el contrato de entrada del siguiente.
+:::
+
+::: {.callout-important}
+## Supuesto de identificación
+El confusor debe medirse en la misma sesión que el tratamiento y el desenlace.
+:::
+
+::: {.callout-tip}
+## Buena práctica
+Declara el DAG en el protocolo del experimento antes de ver los resultados.
+:::
+
+### Estimación del efecto
+
+Con el conjunto de ajuste $\{Z\}$, el efecto causal medio se estima como
+$$
+\mathbb{E}[Y \mid do(X = x)] = \sum_z \mathbb{E}[Y \mid X = x, Z = z]\, P(Z = z).
+$$
+
+Para más detalle, ver la [documentación de Quarto](https://quarto.org).

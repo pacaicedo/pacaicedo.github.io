@@ -1,0 +1,38 @@
+[project]
+name = "pacaicedo-github-io"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "dask>=2025.12.0",
+    "jupyter>=1.1.1",
+    "keras>=3.15.1",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.1",
+    "opencv-contrib-python>=4.11.0.86",
+    "opencv-python>=4.11.0.86",
+    "plotly>=6.5.2",
+    "pooch>=1.8.2",
+    "pywavelets>=1.9.0",
+    "quarto>=0.1.0",
+    "scikit-image>=0.26.0",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.0",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.6",
+    "sympy>=1.14.0",
+    "torch>=2.14.0",
+    "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = ["ipykernel>=7.1.0"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu132", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu132"
+url = "https://download.pytorch.org/whl/cu132"
+explicit = true

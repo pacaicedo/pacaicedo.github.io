@@ -1,0 +1,11 @@
+---
+title: "Notas"
+listing:
+  contents: "*/index.qmd"
+  type: grid
+  sort: "date desc"
+  categories: true
+title-block-banner: false
+toc: false
+number-sections: false
+---

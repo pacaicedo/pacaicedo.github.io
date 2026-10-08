@@ -10,16 +10,16 @@ abstract: |
   red causal, encabezados numerados, código, tablas, citas y callouts. El mismo
   archivo produce las dos salidas con el mismo aspecto.
 filters:
-  - marca/caicedo.lua
+  - ../../recursos/marca/caicedo.lua
 format:
   html:
-    theme: [cosmo, marca/caicedo-documento.scss]
+    theme: [cosmo, ../../recursos/marca/caicedo-documento.scss]
     title-block-banner: true
     toc: true
     toc-location: left
     toc-title: "Contenido"
     number-sections: true
-    highlight-style: marca/caicedo-claro.theme
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
     embed-resources: true
   pdf:
     documentclass: scrartcl
@@ -30,9 +30,11 @@ format:
     pdf-engine: lualatex
     toc: false
     number-sections: true
-    highlight-style: marca/caicedo-claro.theme
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
     include-in-header:
-      text: \usepackage{marca/caicedo-documento}
+      text: |
+        \newcommand{\caicedofuentes}{../../recursos/marca/fuentes/}
+        \usepackage{../../recursos/marca/caicedo-documento}
 ---
 
 ## Del dato a la variable

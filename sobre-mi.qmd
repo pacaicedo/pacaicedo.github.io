@@ -1,7 +1,7 @@
 ---
 title: "Pablo Eduardo Caicedo-Rodríguez"
 subtitle: "Del dato a la causa"
-image: marca/logo/insignia.png
+image: recursos/marca/logo/insignia.png
 about:
   template: trestles
   image-width: 12em

@@ -1,0 +1,450 @@
+% caicedo-documento.sty — Documentos PDF de la marca P. E. Caicedo-Rodríguez.
+% Gemelo visual de caicedo-documento.scss (HTML): misma paleta, fuentes,
+% banda de título con el motivo de red causal, encabezados, código, tablas,
+% citas y callouts. Comparte tokens con los otros cuatro archivos de la marca;
+% si cambias uno, cámbialo en todos.
+%
+% Uso en el qmd (rutas relativas a la raíz del proyecto; ajustar en subcarpetas):
+%   format:
+%     pdf:
+%       documentclass: scrartcl
+%       papersize: a4
+%       fontsize: 10pt
+%       pdf-engine: lualatex
+%       shift-heading-level-by: -1   # ## = \section (h2 del HTML)
+%       highlight-style: recursos/marca/caicedo-claro.theme
+%       include-in-header:
+%         text: \usepackage{recursos/marca/caicedo-documento}
+%
+% Requiere LuaLaTeX (o XeLaTeX), KOMA-Script y TikZ. Las fuentes se cargan por
+% ruta desde recursos/marca/fuentes/, así el PDF no depende de las fuentes del sistema.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{recursos/marca/caicedo-documento}[2026/10/06 v1.1 Marca P. E. Caicedo-Rodríguez: documentos]
+
+\RequirePackage{fontspec}
+\RequirePackage{xcolor}
+\RequirePackage{etoolbox}
+\RequirePackage{booktabs}
+\RequirePackage{colortbl}
+\RequirePackage{tikz}
+\usetikzlibrary{fadings}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{scrlayer-scrpage}
+\RequirePackage{enumitem}
+
+% Compatibilidad con KOMA-Script 3.49 y babel-spanish (incidencia #102).
+% Desde 3.49.1 KOMA registra este hook con códigos de caracteres normales.
+\ExplSyntaxOn
+\str_if_eq:eeT { \KOMAScriptVersion } { 2025/12/01~v3.49~KOMA-Script }
+  {
+    \hook_gremove_code:nn { begindocument/end } { \KOMAClassName }
+    \hook_gput_code:nnn { begindocument/end } { \KOMAClassName }
+      {
+        \cctab_begin:N \c_code_cctab
+        \exp_args:Nne
+        \hook_gput_code:nnn { cmd/@startsection/before } { \KOMAClassName }
+          {
+            \msg_warning:nnn { \KOMAClassName }
+              { sectioning-features-not-available } { \@startsection }
+          }
+        \cctab_end:
+      }
+  }
+\ExplSyntaxOff
+
+% ---------------------------------------------------------------- Paleta
+% Turquesa = dato y extracción, turquesa profundo = grafo y estructura, dorado = causa.
+\definecolor{cink}{HTML}{0B1824}      % fondo oscuro de marca
+\definecolor{csurface}{HTML}{123047}
+\definecolor{cnavy}{HTML}{315064}     % acero: líneas sobre tinta
+\definecolor{cdato}{HTML}{38D6CF}     % acento sobre oscuro
+\definecolor{cdatod}{HTML}{1A7C78}    % acento sobre claro
+\definecolor{cgrafo}{HTML}{2AA09B}
+\definecolor{cgrafod}{HTML}{1D6468}
+\definecolor{ccausa}{HTML}{F2B544}
+\definecolor{ccausad}{HTML}{97650A}
+\definecolor{caviso}{HTML}{FF7A5C}
+\definecolor{cavisod}{HTML}{C4432C}
+\definecolor{cpaper}{HTML}{F7FAFC}
+\definecolor{ctext}{HTML}{123047}
+\definecolor{cmuted}{HTML}{315064}
+\definecolor{crule}{HTML}{B8CAD6}
+\definecolor{clight}{HTML}{F7FAFC}
+\definecolor{cmuteddk}{HTML}{B8CAD6}
+
+% ---------------------------------------------------------------- Fuentes
+% DejaVu Sans (texto y títulos en negrita) y DejaVu Sans Mono (código y rótulos).
+% Licencia libre de Bitstream Vera / DejaVu (ver recursos/marca/fuentes/LICENSE-DejaVu.txt).
+\providecommand*{\caicedofuentes}{recursos/marca/fuentes/}
+\setmainfont{DejaVuSans}[
+  Path=\caicedofuentes, Extension=.ttf, Scale=1,
+  UprightFont=*, BoldFont=*-Bold,
+  ItalicFont=*-Oblique, BoldItalicFont=*-BoldOblique]
+\setsansfont{DejaVuSans}[
+  Path=\caicedofuentes, Extension=.ttf, Scale=1,
+  UprightFont=*, BoldFont=*-Bold,
+  ItalicFont=*-Oblique, BoldItalicFont=*-BoldOblique]
+\setmonofont{DejaVuSansMono}[
+  Path=\caicedofuentes, Extension=.ttf, Scale=0.92,
+  UprightFont=*, BoldFont=*-Bold,
+  ItalicFont=*-Oblique, BoldItalicFont=*-BoldOblique]
+\newfontfamily\caicedodisplay{DejaVuSans}[
+  Path=\caicedofuentes, Extension=.ttf, Scale=1,
+  UprightFont=*-Bold, BoldFont=*-Bold]
+\newfontfamily\caicedodisplayreg{DejaVuSans}[
+  Path=\caicedofuentes, Extension=.ttf, Scale=1,
+  UprightFont=*, BoldFont=*-Bold]
+\newfontfamily\caicedomono{DejaVuSansMono}[
+  Path=\caicedofuentes, Extension=.ttf, Scale=1, UprightFont=*, BoldFont=*-Bold]
+\color{ctext}
+
+% ---------------------------------------------------------------- Párrafos
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em plus 0.15em}
+\linespread{1.22}
+\setlength{\emergencystretch}{3em}
+
+% ---------------------------------------------------------------- Motivo e isotipo
+% Coordenadas en píxeles del SVG (recursos/marca/logo/red-causal.svg, 800 × 500).
+\newlength{\caicedo@u}
+\newcommand*{\caicedo@arte}{%
+\fill[ccausa,opacity=0.08] (742.0,330.0) circle (46);
+\fill[ccausa,opacity=0.13] (742.0,330.0) circle (30);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (87.5,103.4) -- (318.0,110.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (129.0,193.6) -- (392.0,205.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (31.3,222.1) -- (392.0,205.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (107.2,387.3) -- (362.0,420.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (147.0,438.0) -- (362.0,420.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (215.3,59.6) -- (318.0,110.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (52.3,89.5) -- (318.0,110.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (59.4,284.3) -- (300.0,300.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (131.4,66.4) -- (318.0,110.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (157.4,219.6) -- (392.0,205.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (112.8,165.9) -- (392.0,205.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (167.0,160.9) -- (318.0,110.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (53.8,245.4) -- (392.0,205.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (173.9,280.7) -- (300.0,300.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (188.6,436.8) -- (362.0,420.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (35.9,334.6) -- (300.0,300.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (99.6,320.8) -- (300.0,300.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (49.4,144.0) -- (318.0,110.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (131.7,411.0) -- (362.0,420.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (78.6,214.4) -- (392.0,205.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (211.7,103.4) -- (318.0,110.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (96.4,277.9) -- (300.0,300.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (125.0,299.4) -- (300.0,300.0);
+\draw[cdato,opacity=0.22,line width=1\caicedo@u] (200.3,367.6) -- (362.0,420.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (318.0,110.0) -- (392.0,205.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (392.0,205.0) -- (300.0,300.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (300.0,300.0) -- (428.0,330.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (428.0,330.0) -- (362.0,420.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (392.0,205.0) -- (470.0,128.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (470.0,128.0) -- (486.0,245.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (486.0,245.0) -- (428.0,330.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (392.0,205.0) -- (428.0,330.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (300.0,300.0) -- (362.0,420.0);
+\draw[cgrafo,opacity=0.55,line width=1.6\caicedo@u] (318.0,110.0) -- (470.0,128.0);
+\draw[cgrafo,opacity=0.55,line width=1.4\caicedo@u,dash pattern=on 5\caicedo@u off 6\caicedo@u] (470.0,128.0) -- (618.0,112.0);
+\draw[cgrafo,opacity=0.55,line width=1.4\caicedo@u,dash pattern=on 5\caicedo@u off 6\caicedo@u] (486.0,245.0) -- (572.0,338.0);
+\draw[cgrafo,opacity=0.55,line width=1.4\caicedo@u,dash pattern=on 5\caicedo@u off 6\caicedo@u] (428.0,330.0) -- (572.0,338.0);
+\draw[clight,opacity=0.75,line width=2.2\caicedo@u,line cap=round] (618.0,112.0) -- (577.2,312.5);
+\fill[clight,opacity=0.75] (575.2,322.3) -- (570.7,310.2) -- (584.1,312.9) -- cycle;
+\draw[clight,opacity=0.75,line width=2.2\caicedo@u,line cap=round] (618.0,112.0) -- (729.8,308.5);
+\fill[clight,opacity=0.75] (734.7,317.2) -- (723.4,311.0) -- (735.2,304.3) -- cycle;
+\draw[ccausa,opacity=1,line width=4.2\caicedo@u,line cap=round] (572.0,338.0) -- (699.0,332.0);
+\fill[ccausa,opacity=1] (713.0,331.4) -- (698.5,341.4) -- (697.6,322.8) -- cycle;
+\fill[cdato,opacity=0.39] (87.5,103.4) circle (3.5);
+\fill[cdato,opacity=0.65] (129.0,193.6) circle (2.3);
+\fill[cdato,opacity=0.40] (31.3,222.1) circle (2.3);
+\fill[cdato,opacity=0.48] (107.2,387.3) circle (2.4);
+\fill[cdato,opacity=0.59] (147.0,438.0) circle (3.4);
+\fill[cdato,opacity=0.52] (215.3,59.6) circle (3.9);
+\fill[cdato,opacity=0.84] (52.3,89.5) circle (2.8);
+\fill[cdato,opacity=0.57] (59.4,284.3) circle (3.5);
+\fill[cdato,opacity=0.47] (131.4,66.4) circle (2.3);
+\fill[cdato,opacity=0.70] (157.4,219.6) circle (2.8);
+\fill[cdato,opacity=0.77] (112.8,165.9) circle (3.8);
+\fill[cdato,opacity=0.42] (167.0,160.9) circle (4.2);
+\fill[cdato,opacity=0.75] (53.8,245.4) circle (2.3);
+\fill[cdato,opacity=0.54] (173.9,280.7) circle (4.0);
+\fill[cdato,opacity=0.75] (188.6,436.8) circle (3.1);
+\fill[cdato,opacity=0.95] (35.9,334.6) circle (3.5);
+\fill[cdato,opacity=0.63] (99.6,320.8) circle (2.2);
+\fill[cdato,opacity=0.87] (49.4,144.0) circle (3.0);
+\fill[cdato,opacity=0.87] (131.7,411.0) circle (3.8);
+\fill[cdato,opacity=0.88] (78.6,214.4) circle (2.9);
+\fill[cdato,opacity=0.49] (211.7,103.4) circle (2.6);
+\fill[cdato,opacity=0.76] (96.4,277.9) circle (4.1);
+\fill[cdato,opacity=0.38] (125.0,299.4) circle (3.6);
+\fill[cdato,opacity=0.83] (200.3,367.6) circle (3.9);
+\filldraw[fill=cink,draw=cgrafo,line width=2.6\caicedo@u] (318.0,110.0) circle (9);
+\filldraw[fill=cink,draw=cgrafo,line width=2.6\caicedo@u] (392.0,205.0) circle (9);
+\filldraw[fill=cink,draw=cgrafo,line width=2.6\caicedo@u] (300.0,300.0) circle (9);
+\filldraw[fill=cink,draw=cgrafo,line width=2.6\caicedo@u] (428.0,330.0) circle (9);
+\filldraw[fill=cink,draw=cgrafo,line width=2.6\caicedo@u] (362.0,420.0) circle (9);
+\filldraw[fill=cink,draw=cgrafo,line width=2.6\caicedo@u] (470.0,128.0) circle (9);
+\filldraw[fill=cink,draw=cgrafo,line width=2.6\caicedo@u] (486.0,245.0) circle (9);
+\fill[cgrafo] (618.0,112.0) circle (13);
+\fill[cdato] (572.0,338.0) circle (13);
+\fill[ccausa] (742.0,304.0) -- (736.5,324.5) -- (716.0,330.0) -- (736.5,335.5) -- (742.0,356.0) -- (747.5,335.5) -- (768.0,330.0) -- (747.5,324.5) -- cycle;
+}
+% \caicedoarte{alto}: la red causal como figura TikZ de ese alto.
+\newcommand*{\caicedoarte}[1]{%
+  \setlength{\caicedo@u}{\dimexpr #1/500\relax}%
+  \begin{tikzpicture}[x=\caicedo@u, y=-\caicedo@u]\caicedo@arte\end{tikzpicture}}
+
+\newlength{\caicedo@isosize}
+\newcommand*{\caicedo@isoedge}{cmuted}
+% \caicedoisotipo[color de aristas]{tamaño}
+\newcommand*{\caicedoisotipo}[2][cmuted]{%
+  \setlength{\caicedo@isosize}{#2}\renewcommand*{\caicedo@isoedge}{#1}%
+  \begin{tikzpicture}[x=#2, y=#2, baseline=(current bounding box.south)]
+\draw[\caicedo@isoedge,line width=0.0375\caicedo@isosize,line cap=round] (0.5000,-0.2031) -- (0.3060,-0.5708);
+\fill[\caicedo@isoedge] (0.2658,-0.6468) -- (0.2576,-0.5276) -- (0.3689,-0.5864) -- cycle;
+\draw[\caicedo@isoedge,line width=0.0375\caicedo@isosize,line cap=round] (0.5000,-0.2031) -- (0.7228,-0.6041);
+\fill[\caicedo@isoedge] (0.7645,-0.6792) -- (0.6601,-0.6210) -- (0.7702,-0.5599) -- cycle;
+\draw[ccausa,line width=0.0531\caicedo@isosize,line cap=round] (0.2031,-0.7656) -- (0.5141,-0.7656);
+\fill[ccausa] (0.6234,-0.7656) -- (0.4984,-0.8431) -- (0.4984,-0.6881) -- cycle;
+\fill[cgrafo] (0.5000,-0.2031) circle (0.1094);
+\fill[cdato] (0.2031,-0.7656) circle (0.1094);
+\fill[ccausa] (0.8125,-0.6016) -- (0.7777,-0.7308) -- (0.6484,-0.7656) -- (0.7777,-0.8004) -- (0.8125,-0.9297) -- (0.8473,-0.8004) -- (0.9766,-0.7656) -- (0.8473,-0.7308) -- cycle;
+  \end{tikzpicture}}
+
+% Filete degradado turquesa -> turquesa profundo -> dorado (firma de la marca).
+\newcommand*{\caicedofilete}[2]{% {ancho}{grueso}
+  \tikz[baseline]{\shade[left color=cdato, right color=ccausa, middle color=cgrafo] (0,0) rectangle (#1,#2);}}
+
+% ---------------------------------------------------------------- Banda de título
+% = .quarto-title-banner del HTML: tinta, motivo a la derecha, título blanco,
+% subtítulo turquesa, metadatos en gris y filete degradado al pie.
+% \caicedobanda es el alto mínimo; la banda crece si el título y el subtítulo no caben
+% con 16 mm arriba y abajo (en el HTML la banda también crece con su contenido).
+\newlength{\caicedobanda}
+\setlength{\caicedobanda}{78mm}
+\newlength{\caicedo@banda}
+\newlength{\caicedo@artey}
+\newsavebox{\caicedo@titulo}
+\renewcommand{\maketitle}{%
+  \thispagestyle{caicedoprimera}%
+  % El bloque de texto se compone antes para medirlo.
+  \sbox{\caicedo@titulo}{\begin{minipage}{0.62\paperwidth}%
+    % Bandera a la izquierda, espacios naturales de cada fuente y sin guiones.
+    \raggedright\spaceskip\z@\xspaceskip\z@\hyphenpenalty\@M\exhyphenpenalty\@M
+    {\caicedomono\fontsize{7.5}{9}\selectfont\color{cdato}\addfontfeature{LetterSpace=22}DEL DATO A LA CAUSA\par}%
+    \vspace{5mm}%
+    {\caicedodisplay\bfseries\fontsize{25}{28}\selectfont\addfontfeature{LetterSpace=-1.5}\color{white}\@title\par}%
+    \ifx\@subtitle\@empty\else\vspace{3mm}{\caicedodisplayreg\fontsize{13}{16}\selectfont\color{cdato}\@subtitle\par}\fi
+  \end{minipage}}%
+  \setlength{\caicedo@banda}{\dimexpr\ht\caicedo@titulo+\dp\caicedo@titulo+32mm\relax}%
+  \ifdim\caicedo@banda<\caicedobanda\setlength{\caicedo@banda}{\caicedobanda}\fi
+  % El motivo conserva su tamaño (88 % del alto mínimo) y se centra en el alto real.
+  \setlength{\caicedo@artey}{\dimexpr(\caicedo@banda-0.88\caicedobanda)/2\relax}%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[cink] (current page.north west) rectangle ([yshift=-\caicedo@banda]current page.north east);
+    \begin{scope}[shift={([xshift=-112mm, yshift=-\caicedo@artey]current page.north east)}]
+      \setlength{\caicedo@u}{\dimexpr 0.88\caicedobanda/500\relax}%
+      \begin{scope}[x=\caicedo@u, y=-\caicedo@u]\caicedo@arte\end{scope}
+    \end{scope}
+    \fill[cink, path fading=east] (current page.north west) rectangle ([xshift=-0.30\paperwidth, yshift=-\caicedo@banda]current page.north east);
+    \fill[cink] (current page.north west) rectangle ([xshift=0.45\paperwidth, yshift=-\caicedo@banda]current page.north west);
+    % middle color va al final: «right color» recalcula el centro como la media de los extremos.
+    \shade[left color=cdato, right color=ccausa, middle color=cgrafo]
+      ([yshift=-\caicedo@banda]current page.north west) rectangle ([yshift=-\caicedo@banda-1.1mm]current page.north east);
+    \node[anchor=west, inner sep=0pt]
+      at ([xshift=22mm, yshift=-0.5\caicedo@banda]current page.north west) {\usebox{\caicedo@titulo}};
+  \end{tikzpicture}\par
+  \vspace*{\dimexpr\caicedo@banda-\headheight-\headsep-\topskip-3mm\relax}%
+  \caicedo@metadatos
+  \vspace{5mm}\par}
+% Metadatos bajo la banda, como en el HTML: rótulo mono y valor, en dos columnas con calle.
+% Cada bloque sale solo si hay dato: sin author, LaTeX deja en \@author un aviso; sin date,
+% pandoc escribe \date{}. Con varios autores (\and), uno por línea y rótulo en plural.
+\newif\ifcaicedo@autor
+\newif\ifcaicedo@fecha
+\newcommand*{\caicedo@sinautor}{\@latex@warning@no@line{No \noexpand\author given}}
+\newcommand*{\caicedo@buscaand}{\in@\and}
+\newcommand*{\caicedo@metadatos}{%
+  \caicedo@autortrue\caicedo@fechatrue
+  \ifx\@author\@empty\caicedo@autorfalse\fi
+  \ifx\@author\caicedo@sinautor\caicedo@autorfalse\fi
+  \ifx\@date\@empty\caicedo@fechafalse\fi
+  \ifcaicedo@autor\expandafter\caicedo@buscaand\expandafter{\@author}\else\in@false\fi
+  \ifnum0\ifcaicedo@autor1\fi\ifcaicedo@fecha1\fi>0
+    {\setlength{\parskip}{0pt}\parfillskip\z@skip\noindent
+     \ifcaicedo@autor
+       \begin{minipage}[t]{0.46\linewidth}%
+         \caicedo@meta{\ifin@ AUTORES/AS\else AUTOR/A\fi}{{\let\and\par\@author}}%
+       \end{minipage}\hfill
+     \fi
+     \ifcaicedo@fecha
+       \begin{minipage}[t]{0.46\linewidth}\caicedo@meta{FECHA DE PUBLICACIÓN}{\@date}\end{minipage}%
+     \fi
+     \hfill\par}%
+  \fi}
+\newcommand{\caicedo@meta}[2]{% sin *: el valor puede llevar \par (un autor por línea)
+  % \leavevmode antes de \color: la primera línea es la referencia de la minipage [t]
+  % y las dos columnas quedan a la misma altura (con Ó o sin ella).
+  {\leavevmode\caicedomono\fontsize{6.8}{8}\selectfont\color{cmuted}\addfontfeature{LetterSpace=16}#1\par}%
+  \vspace{1.2mm}{\small\color{ctext}\raggedright#2\par}}
+
+% Resumen: rótulo mono como el HTML
+\renewenvironment{abstract}
+  {\par\noindent{\caicedomono\fontsize{7.5}{9}\selectfont\color{cdatod}\addfontfeature{LetterSpace=16}RESUMEN\par}\vspace{1mm}\small}
+  {\par\vspace{4mm}}
+
+% ---------------------------------------------------------------- Encabezados
+% H2 del qmd = \section: DejaVu Sans negrita en tinta, número mono turquesa, filete degradado.
+\setkomafont{disposition}{\caicedodisplay\color{cink}}
+\setkomafont{section}{\fontsize{16}{19}\selectfont}
+\setkomafont{subsection}{\fontsize{12.5}{15}\selectfont\color{cdatod}}
+\setkomafont{subsubsection}{\normalsize\color{cink}}
+\setkomafont{paragraph}{\caicedodisplay\color{cink}}
+% babel-spanish añade punto a los números de sección; se redefine al final del preámbulo.
+\newcommand*{\caicedo@seccnt}[1]{\csname #1format\endcsname}
+\AddToHook{begindocument/end}{%
+  \let\@seccntformat\caicedo@seccnt
+  \renewcommand*{\autodot}{}%
+  \renewcommand*{\sectionformat}{{\caicedomono\mdseries\color{cdatod}\thesection}\enskip}%
+  \renewcommand*{\subsectionformat}{{\caicedomono\mdseries\color{ccausad}\thesubsection}\enskip}%
+  \renewcommand*{\subsubsectionformat}{{\caicedomono\mdseries\color{cmuted}\thesubsubsection}\enskip}}
+\RedeclareSectionCommand[beforeskip=-2.6ex plus -0.6ex, afterskip=1.4ex]{section}
+\RedeclareSectionCommand[beforeskip=-1.9ex plus -0.4ex, afterskip=0.7ex]{subsection}
+\renewcommand{\sectionlinesformat}[4]{%
+  \ifstrequal{#1}{section}
+    {\parbox{\linewidth}{\@hangfrom{\hskip #2#3}{#4}\par\nointerlineskip\vspace{1.6mm}\hbox{\caicedofilete{12mm}{0.9pt}}}}
+    {\@hangfrom{\hskip #2#3}{#4}}}
+
+% Índice
+\setkomafont{sectionentry}{\caicedodisplay\color{cink}}
+\addtokomafont{sectionentrypagenumber}{\color{cdatod}}
+
+% ---------------------------------------------------------------- Texto
+\AtBeginDocument{\hypersetup{colorlinks=true,
+  linkcolor=cdatod, urlcolor=cdatod, citecolor=cdatod, filecolor=cdatod}}
+\renewcommand{\labelitemi}{\textcolor{cdatod}{\raisebox{0.18ex}{\scalebox{0.8}{$\bullet$}}}}
+\renewcommand{\labelitemii}{\textcolor{cgrafod}{\raisebox{0.18ex}{\scalebox{0.7}{$\bullet$}}}}
+\renewcommand{\labelitemiii}{\textcolor{ccausad}{\raisebox{0.18ex}{\scalebox{0.7}{$\bullet$}}}}
+% Números = ol li::marker del HTML: mono turquesa a .9 (\ttfamily ya va al 92 %).
+% Pandoc escribe \def\labelenumi dentro de cada lista, así que el formato va por enumitem.
+\setlist[enumerate]{font=\color{cdatod}\ttfamily}
+
+% ---------------------------------------------------------------- Código
+% Bloques: fondo papel, filo turquesa a la izquierda. En línea: dorado.
+% Entorno propio (\newtcolorbox): no pasa por \begin{tcolorbox} y el gancho de los
+% callouts no lo toca.
+\@ifundefined{shadecolor}{}{\colorlet{shadecolor}{cpaper}}
+\newtcolorbox{caicedocodigo}{breakable, enhanced, boxrule=0.4pt, colframe=crule,
+  colback=cpaper, colupper=ctext, arc=1.5pt, borderline west={2.2pt}{0pt}{cdatod},
+  left=8pt, right=6pt, top=4pt, bottom=4pt, fontupper=\small}
+\AtBeginDocument{%
+  \@ifundefined{Shaded}{}{%
+    \renewenvironment{Shaded}{\begin{caicedocodigo}}{\end{caicedocodigo}}}}
+\let\caicedo@texttt\texttt
+\renewcommand{\texttt}[1]{\textcolor{ccausad}{\caicedo@texttt{#1}}}
+
+% ---------------------------------------------------------------- Tablas
+\setlength{\heavyrulewidth}{1.4pt}
+\setlength{\lightrulewidth}{0.6pt}
+\renewcommand{\arraystretch}{1.3}
+\AtBeginEnvironment{longtable}{\small\arrayrulecolor{cink}}
+\AtBeginEnvironment{tabular}{\small\arrayrulecolor{cink}}
+% Encabezado = thead del HTML: negrita en tinta. Pandoc escribe la fila entre \toprule y
+% \midrule; mientras dura, el comienzo de cada celda (\d@llarbegin, que array deja sin
+% expandir en el preámbulo) añade la negrita. Las tablas con columnas p{} llevan el
+% encabezado en una minipage, que mira el mismo interruptor. \bottomrule y el final de
+% la tabla lo apagan siempre (tablas sin encabezado).
+\newif\ifcaicedo@cabecera
+\newcommand*{\caicedo@celdacab}{\begingroup\bfseries\color{cink}}
+\newcommand*{\caicedo@cabon}{\noalign{\global\caicedo@cabeceratrue\global\let\d@llarbegin\caicedo@celdacab}}
+\newcommand*{\caicedo@caboff}{\noalign{\global\caicedo@cabecerafalse\global\let\d@llarbegin\begingroup}}
+\AtBeginEnvironment{longtable}{%
+  \let\caicedo@toprule\toprule\def\toprule{\caicedo@cabon\caicedo@toprule}%
+  \let\caicedo@midrule\midrule\def\midrule{\caicedo@caboff\caicedo@midrule}%
+  \let\caicedo@bottomrule\bottomrule\def\bottomrule{\caicedo@caboff\caicedo@bottomrule}}
+\AddToHook{env/longtable/after}{\global\caicedo@cabecerafalse\global\let\d@llarbegin\begingroup}
+\AtBeginEnvironment{minipage}{\ifcaicedo@cabecera\bfseries\color{cink}\fi}
+% En el HTML solo las tablas con etiqueta (#tbl-…) llevan «Tabla n:» y gastan número.
+% longtable numera todas: aquí la leyenda sin \label sale sin rótulo y, al cerrar una tabla
+% sin leyenda numerada, se devuelve el número. Las anclas de hyperref de las longtable
+% usan su propio contador para no repetirse.
+\newif\ifcaicedo@LTnum
+\AtBeginEnvironment{longtable}{\global\caicedo@LTnumfalse}
+\AddToHook{env/longtable/after}{\ifcaicedo@LTnum\else\global\advance\c@table\m@ne\fi}
+\newcommand*{\caicedo@nombreLT}{longtable}
+\AtBeginDocument{\@ifpackageloaded{longtable}{%
+  \def\LT@capti@n{\@ifstar{\egroup\LT@c@ption\@gobble[]}{\caicedo@LTcap}}%
+  \long\def\caicedo@LTcap#1{\@ifnextchar\label
+    {\global\caicedo@LTnumtrue\egroup\LT@c@ption\@firstofone[{#1}]{#1}}
+    {\in@\label{#1}%
+     \ifin@\global\caicedo@LTnumtrue\egroup\LT@c@ption\@firstofone[{#1}]{#1}%
+     \else\egroup\LT@c@ption\@gobble[]{#1}\fi}}}{}}
+\AddToHook{begindocument/end}{\@ifpackageloaded{hyperref}{%
+  \def\theHtable{\ifx\@currenvir\caicedo@nombreLT LT.\the\numexpr\c@LT@tables+1\relax\else\arabic{table}\fi}}{}}
+
+% ---------------------------------------------------------------- Citas
+% Entorno propio, como el código: el gancho de los callouts no lo toca.
+\newtcolorbox{caicedocita}{breakable, enhanced, boxrule=0pt, frame hidden,
+  colback=ccausad!5!white, colupper=ctext, sharp corners, borderline west={2.4pt}{0pt}{ccausad},
+  left=10pt, right=8pt, top=6pt, bottom=6pt}
+\renewenvironment{quote}{\begin{caicedocita}}{\end{caicedocita}}
+
+% ---------------------------------------------------------------- Callouts de Quarto
+% = div.callout del HTML: marco fino gris, filo izquierdo del color del tipo, título en
+% negrita sobre un tinte del 10 % de ese color, texto en el color de texto.
+\AtBeginDocument{%
+  \definecolor{quarto-callout-note-color}{HTML}{1A7C78}\definecolor{quarto-callout-note-color-frame}{HTML}{1A7C78}%
+  \definecolor{quarto-callout-tip-color}{HTML}{1D6468}\definecolor{quarto-callout-tip-color-frame}{HTML}{1D6468}%
+  \definecolor{quarto-callout-important-color}{HTML}{97650A}\definecolor{quarto-callout-important-color-frame}{HTML}{97650A}%
+  \definecolor{quarto-callout-warning-color}{HTML}{C4432C}\definecolor{quarto-callout-warning-color-frame}{HTML}{C4432C}%
+  \definecolor{quarto-callout-caution-color}{HTML}{C4432C}\definecolor{quarto-callout-caution-color-frame}{HTML}{C4432C}%
+  \definecolor{quarto-callout-color}{HTML}{315064}\definecolor{quarto-callout-color-frame}{HTML}{315064}}
+% Quarto los escribe como \begin{tcolorbox}[…]. Al abrir cada una, estas opciones se
+% aplican después de las de Quarto (opciones tardías de tcolorbox) y solo a esa caja:
+% el código y las citas de dentro (entornos propios) conservan su aspecto.
+% El color del tipo se toma del colframe que pone Quarto.
+\newcommand*{\caicedo@callout}{%
+  colupper=ctext, coltitle=ctext, colback=white, opacityback=1, opacitybacktitle=1,
+  code={\colorlet{caicedocallout}{tcbcolframe}},
+  colframe=crule, colbacktitle=caicedocallout!10!white,
+  boxrule=0.4pt, titlerule=0pt, arc=1.5pt, boxsep=0pt,
+  borderline west={3pt}{0pt}{caicedocallout},
+  left=7pt, right=6pt, lefttitle=7pt, righttitle=6pt,
+  % Título con \strut: la franja mide lo mismo con o sin descendentes (= line-height del HTML).
+  before title=\strut, toptitle=2pt, bottomtitle=2pt, top=6.5pt, bottom=6.5pt,
+  before skip=10pt plus 2pt, after skip=10pt plus 2pt,
+  fonttitle=\caicedodisplay\small, fontupper=\small,
+  % Sin título (appearance="simple"): Quarto sube el texto 3 mm con \vspace{-3mm}.
+  code={\ifx\kvtcb@title\@empty\tcbset{top=\dimexpr3mm+5pt\relax, bottom=4pt}\fi}}
+\AddToHook{env/tcolorbox/begin}{\expandafter\tcbset@late@options\expandafter{\caicedo@callout}}
+% Iconos de los callouts = los del HTML (y de revealjs): trazados de Bootstrap Icons (info-circle, lightbulb,
+% exclamation-circle, exclamation-triangle, cone-striped) en lugar de los macizos de Font Awesome
+% que usa Quarto en PDF. \smash: no alteran el alto del título.
+\newcommand*{\caicedo@bi}[1]{\smash{\tikz[baseline=-0.944em, x=0.073em, y=-0.073em]{%
+  \useasboundingbox (0,0) rectangle (16,16); #1}}}
+\AtBeginDocument{\@ifpackageloaded{fontawesome5}{%
+  \renewcommand{\faInfo}{\caicedo@bi{\fill(8,15)..controls(4.13,15)and(1,11.87)..(1,8)..controls(1,4.13)and(4.13,1)..(8,1)..controls(11.87,1)and(15,4.13)..(15,8)..controls(15,11.87)and(11.87,15)..(8,15)--cycle(8,16)..controls(12.42,16)and(16,12.42)..(16,8)..controls(16,3.58)and(12.42,0)..(8,0)..controls(3.58,-0)and(0,3.58)..(0,8)..controls(-0,12.42)and(3.58,16)..(8,16)--cycle;\fill(8.93,6.59)--(6.64,6.88)--(6.56,7.25)--(7.01,7.34)..controls(7.3,7.41)and(7.36,7.51)..(7.3,7.81)--(6.56,11.28)..controls(6.36,12.17)and(6.66,12.59)..(7.37,12.59)..controls(7.91,12.59)and(8.54,12.34)..(8.83,12)--(8.92,11.58)..controls(8.72,11.76)and(8.43,11.83)..(8.23,11.83)..controls(7.96,11.83)and(7.86,11.63)..(7.93,11.29)--(8.93,6.59)--cycle(9,4.5)..controls(9,5.05)and(8.55,5.5)..(8,5.5)..controls(7.45,5.5)and(7,5.05)..(7,4.5)..controls(7,3.95)and(7.45,3.5)..(8,3.5)..controls(8.55,3.5)and(9,3.95)..(9,4.5)--cycle;}}%
+  \renewcommand{\faLightbulb}{\caicedo@bi{\fill(2,6)..controls(2,3.27)and(3.84,0.89)..(6.48,0.2)..controls(9.12,-0.5)and(11.89,0.68)..(13.23,3.06)..controls(14.57,5.43)and(14.13,8.41)..(12.17,10.31)..controls(11.97,10.51)and(11.81,10.71)..(11.72,10.93)--(10.96,12.7)..controls(10.88,12.88)and(10.7,13)..(10.5,13)..controls(10.78,13)and(11,13.22)..(11,13.5)..controls(11,13.78)and(10.78,14)..(10.5,14)..controls(10.78,14)and(11,14.22)..(11,14.5)..controls(11,14.78)and(10.78,15)..(10.5,15)--(10.28,15.45)..controls(10.11,15.79)and(9.76,16)..(9.38,16)--(6.62,16)..controls(6.24,16)and(5.89,15.79)..(5.72,15.45)--(5.5,15)..controls(5.22,15)and(5,14.78)..(5,14.5)..controls(5,14.22)and(5.22,14)..(5.5,14)..controls(5.22,14)and(5,13.78)..(5,13.5)..controls(5,13.22)and(5.22,13)..(5.5,13)..controls(5.3,13)and(5.12,12.88)..(5.04,12.7)--(4.28,10.93)..controls(4.17,10.69)and(4.02,10.48)..(3.83,10.31)..controls(2.66,9.18)and(2,7.63)..(2,6)--cycle(8,1)..controls(5.96,1)and(4.13,2.24)..(3.36,4.12)..controls(2.6,6.01)and(3.06,8.17)..(4.52,9.59)..controls(4.78,9.85)and(5.04,10.16)..(5.2,10.53)--(5.83,12)--(10.17,12)--(10.8,10.53)..controls(10.97,10.16)and(11.22,9.85)..(11.48,9.59)..controls(12.94,8.17)and(13.4,6.01)..(12.64,4.12)..controls(11.87,2.23)and(10.04,1)..(8,1)--cycle;}}%
+  \renewcommand{\faExclamation}{\caicedo@bi{\fill(8,15)..controls(4.13,15)and(1,11.87)..(1,8)..controls(1,4.13)and(4.13,1)..(8,1)..controls(11.87,1)and(15,4.13)..(15,8)..controls(15,11.87)and(11.87,15)..(8,15)--cycle(8,16)..controls(12.42,16)and(16,12.42)..(16,8)..controls(16,3.58)and(12.42,0)..(8,0)..controls(3.58,-0)and(0,3.58)..(0,8)..controls(-0,12.42)and(3.58,16)..(8,16)--cycle;\fill(7,11)..controls(7,10.64)and(7.19,10.31)..(7.5,10.13)..controls(7.81,9.96)and(8.19,9.96)..(8.5,10.13)..controls(8.81,10.31)and(9,10.64)..(9,11)..controls(9,11.55)and(8.55,12)..(8,12)..controls(7.45,12)and(7,11.55)..(7,11)--cycle(7.1,5)..controls(7.06,4.65)and(7.23,4.32)..(7.52,4.13)..controls(7.81,3.95)and(8.19,3.95)..(8.48,4.13)..controls(8.77,4.32)and(8.94,4.65)..(8.9,4.99)--(8.55,8.5)..controls(8.53,8.79)and(8.29,9.01)..(8,9.01)..controls(7.71,9.01)and(7.47,8.79)..(7.45,8.5)--(7.1,5)--cycle;}}%
+  \renewcommand{\faExclamationTriangle}{\caicedo@bi{\fill(7.94,2.02)..controls(7.96,2.01)and(7.98,2)..(8,2)..controls(8.02,2)and(8.05,2.01)..(8.06,2.02)..controls(8.09,2.03)and(8.11,2.05)..(8.12,2.07)--(14.98,13.74)..controls(15.01,13.8)and(15.01,13.86)..(14.98,13.92)..controls(14.97,13.95)and(14.95,13.97)..(14.92,13.98)..controls(14.9,14)and(14.88,14)..(14.86,14)--(1.15,14)..controls(1.12,14)and(1.1,14)..(1.08,13.98)..controls(1.06,13.97)and(1.04,13.95)..(1.03,13.92)..controls(0.99,13.87)and(0.99,13.8)..(1.03,13.74)--(7.88,2.07)..controls(7.9,2.05)and(7.92,2.03)..(7.94,2.02)--cycle(8.98,1.57)..controls(8.78,1.22)and(8.41,1)..(8,1)..controls(7.6,1)and(7.22,1.22)..(7.02,1.57)--(0.17,13.23)..controls(-0.29,14.01)and(0.26,15)..(1.15,15)--(14.86,15)..controls(15.75,15)and(16.3,14.01)..(15.84,13.23)--(8.98,1.57)--cycle;\fill(7,12)..controls(7,11.64)and(7.19,11.31)..(7.5,11.13)..controls(7.81,10.96)and(8.19,10.96)..(8.5,11.13)..controls(8.81,11.31)and(9,11.64)..(9,12)..controls(9,12.55)and(8.55,13)..(8,13)..controls(7.45,13)and(7,12.55)..(7,12)--cycle(7.1,6)..controls(7.06,5.65)and(7.23,5.32)..(7.52,5.13)..controls(7.81,4.95)and(8.19,4.95)..(8.48,5.13)..controls(8.77,5.32)and(8.94,5.65)..(8.9,5.99)--(8.55,9.5)..controls(8.53,9.79)and(8.29,10.01)..(8,10.01)..controls(7.71,10.01)and(7.47,9.79)..(7.45,9.5)--(7.1,6)--cycle;}}%
+  \renewcommand{\faFire}{\caicedo@bi{\fill(9.97,4.88)--(10.92,8.69)..controls(10.16,8.88)and(9.14,9)..(8,9)..controls(6.86,9)and(5.84,8.88)..(5.08,8.69)--(6.03,4.88)..controls(6.63,4.96)and(7.3,5)..(8,5)..controls(8.7,5)and(9.37,4.96)..(9.97,4.88)--cycle(9.73,3.9)--(8.97,0.88)..controls(8.72,-0.13)and(7.28,-0.13)..(7.03,0.88)--(6.27,3.9)..controls(6.8,3.96)and(7.38,4)..(8,4)..controls(8.62,4)and(9.2,3.96)..(9.72,3.9)--cycle(14.12,12.52)..controls(14.34,12.57)and(14.49,12.76)..(14.5,12.98)..controls(14.51,13.2)and(14.37,13.4)..(14.16,13.48)--(8.16,15.48)..controls(8.06,15.51)and(7.94,15.51)..(7.84,15.48)--(1.84,13.48)..controls(1.63,13.4)and(1.49,13.2)..(1.5,12.98)..controls(1.51,12.76)and(1.66,12.57)..(1.88,12.52)--(4.27,11.92)--(4.84,9.66)..controls(5.7,9.87)and(6.8,10)..(8,10)..controls(9.2,10)and(10.3,9.87)..(11.17,9.66)--(11.73,11.92)--(14.12,12.52)--cycle;}}%
+}{}}
+
+% ---------------------------------------------------------------- Figuras
+% «Figura n:» y «Tabla n:» en el mismo estilo que la leyenda, como en el HTML
+% (Quarto escribe el rótulo como texto llano dentro de figcaption).
+\addtokomafont{caption}{\small\color{cmuted}}
+\addtokomafont{captionlabel}{\color{cmuted}}
+
+% ---------------------------------------------------------------- Página
+% Pie: isotipo + nombre a la izquierda, número mono turquesa a la derecha.
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\ifoot*{\raisebox{-0.6ex}{\caicedoisotipo{3.2mm}}\hspace{1.6mm}{\caicedodisplay\fontsize{8}{10}\selectfont\color{cmuted}P. E. Caicedo-Rodríguez\hspace{1.2mm}{\color{crule}|}\hspace{1.2mm}\caicedomono\fontsize{7}{10}\selectfont\addfontfeature{LetterSpace=10}DEL DATO A LA CAUSA}}
+\ofoot*{\caicedomono\fontsize{8}{10}\selectfont\color{cdatod}\pagemark}
+\setkomafont{pagenumber}{}
+% Sin la cursiva (\slshape) que KOMA da al pie: las familias de marca no la tienen.
+\setkomafont{pageheadfoot}{\normalfont}
+\newpairofpagestyles[scrheadings]{caicedoprimera}{\clearpairofpagestyles
+  \ofoot*{\caicedomono\fontsize{8}{10}\selectfont\color{cdatod}\pagemark}}
+
+\endinput

@@ -1,9 +1,9 @@
 # Las notas son documentos: tema del sitio + capa de # Los cursos son documentos: tema del sitio + capa de documento.
 format:
   html:
-    theme: [cosmo, ../marca/caicedo-sitio.scss, ../marca/caicedo-documento.scss]
+    theme: [cosmo, ../recursos/marca/caicedo-sitio.scss, ../recursos/marca/caicedo-documento.scss]
     title-block-banner: true
     toc: true
     toc-title: "Contenido"
     number-sections: true
-    highlight-style: ../marca/caicedo-claro.theme
+    highlight-style: ../recursos/marca/caicedo-claro.theme

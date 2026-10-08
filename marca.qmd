@@ -31,15 +31,15 @@ de las diapositivas de BioForja.
 ## Logotipos
 
 ::: {.logos}
-<figure class="oscuro">![](marca/logo/logo-horizontal-oscuro.svg)</figure>
-<figure>![](marca/logo/logo-horizontal-claro.svg)</figure>
-<figure class="oscuro">![](marca/logo/isotipo-oscuro.svg)</figure>
-<figure>![](marca/logo/insignia.svg)</figure>
+<figure class="oscuro">![](recursos/marca/logo/logo-horizontal-oscuro.svg)</figure>
+<figure>![](recursos/marca/logo/logo-horizontal-claro.svg)</figure>
+<figure class="oscuro">![](recursos/marca/logo/isotipo-oscuro.svg)</figure>
+<figure>![](recursos/marca/logo/insignia.svg)</figure>
 :::
 
 Logo de BioForja, del que sale la chispa del isotipo:
 
-![](marca/logo/bioforja.png){width=220}
+![](recursos/marca/logo/bioforja.png){width=220}
 
 El motivo de fondo (`red-causal.svg`) va siempre sobre tinta, a la derecha y con un velo hacia el texto.
 
@@ -74,7 +74,7 @@ cada diapositiva y bajo la banda de título.
 [DejaVu Sans Mono · código, rótulos y pies]{style="font-family:'DejaVu Sans Mono'"}
 :::
 
-Tienen la licencia libre de Bitstream Vera / DejaVu. Los `.ttf` están en `marca/fuentes/` para el PDF y beamer;
+Tienen la licencia libre de Bitstream Vera / DejaVu. Los `.ttf` están en `recursos/marca/fuentes/` para el PDF y beamer;
 los temas HTML las llevan incrustadas (recortadas a latín, griego y símbolos) y usan las del sistema si ya están instaladas.
 
 ## Archivos

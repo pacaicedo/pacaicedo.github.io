@@ -7,28 +7,29 @@ date: 2026-10-06
 date-format: long
 lang: es
 filters:
-  - marca/caicedo.lua
+  - ../../recursos/marca/caicedo.lua
 format:
   revealjs:
-    theme: marca/caicedo-diapositivas.scss
+    theme: ../../recursos/marca/caicedo-diapositivas.scss
     width: 1280
     height: 720
     margin: 0
-    logo: marca/logo/isotipo-claro.svg
+    logo: ../../recursos/marca/logo/isotipo-claro.svg
     footer: "P. E. Caicedo-Rodríguez · Del dato a la causa"
     slide-number: c/t
     code-line-numbers: false
-    highlight-style: marca/caicedo-claro.theme
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
     embed-resources: true
   beamer:
     aspectratio: 169
     fontsize: 11pt
     pdf-engine: lualatex
     slide-level: 2
-    highlight-style: marca/caicedo-claro.theme
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
     include-in-header:
       text: |
-        \usepackage{marca/caicedo-diapositivas}
+        \newcommand{\caicedofuentes}{../../recursos/marca/fuentes/}
+        \usepackage{../../recursos/marca/caicedo-diapositivas}
         \renewcommand{\caicedopie}{P. E. Caicedo-Rodríguez · Del dato a la causa}
 ---
 

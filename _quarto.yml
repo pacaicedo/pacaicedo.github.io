@@ -2,15 +2,15 @@ project:
   type: website
   output-dir: docs
   resources:
-    - marca/logo/
+    - recursos/marca/logo/
 
 website:
   title: "P. E. Caicedo-Rodríguez"
   description: "Ars extrahendi informationem"
-  favicon: marca/logo/insignia.svg
+  favicon: recursos/marca/logo/insignia.svg
   site-url: https://example.org
   navbar:
-    logo: marca/logo/isotipo-oscuro.svg
+    logo: recursos/marca/logo/isotipo-oscuro.svg
     title: "P. E. Caicedo-Rodríguez"
     left:
       - href: index.qmd
@@ -25,12 +25,12 @@ website:
 
 lang: es
 filters:
-  - marca/caicedo.lua
+  - recursos/marca/caicedo.lua
 
 format:
   html:
     # Tema del sitio. Las notas largas superponen además caicedo-documento.scss
     # (ver notas/_metadata.yml).
-    theme: [cosmo, marca/caicedo-sitio.scss]
-    highlight-style: marca/caicedo-claro.theme
+    theme: [cosmo, recursos/marca/caicedo-sitio.scss]
+    highlight-style: recursos/marca/caicedo-claro.theme
     toc: false

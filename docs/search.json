@@ -151,7 +151,7 @@
     "href": "marca.html#tipografía",
     "title": "Manual de marca",
     "section": "Tipografía",
-    "text": "Tipografía\n\nDejaVu Sans negrita · títulos\nDejaVu Sans · texto corrido, con cursiva real\nDejaVu Sans Mono · código, rótulos y pies\n\nTienen la licencia libre de Bitstream Vera / DejaVu. Los .ttf están en marca/fuentes/ para el PDF y beamer; los temas HTML las llevan incrustadas (recortadas a latín, griego y símbolos) y usan las del sistema si ya están instaladas."
+    "text": "Tipografía\n\nDejaVu Sans negrita · títulos\nDejaVu Sans · texto corrido, con cursiva real\nDejaVu Sans Mono · código, rótulos y pies\n\nTienen la licencia libre de Bitstream Vera / DejaVu. Los .ttf están en recursos/marca/fuentes/ para el PDF y beamer; los temas HTML las llevan incrustadas (recortadas a latín, griego y símbolos) y usan las del sistema si ya están instaladas."
   },
   {
     "objectID": "marca.html#archivos",

@@ -1,0 +1,21 @@
+---
+title: "Estimación de prótesis para artroplastia de cadera"
+subtitle: "Aprendizaje profundo para el reemplazo total de cadera"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-09-01
+categories: [ia, imágenes]
+description: "Un modelo de aprendizaje profundo que estima el tamaño de la prótesis antes de la cirugía."
+---
+
+## Pregunta
+
+¿Qué tamaño de prótesis necesita cada paciente para el reemplazo total de cadera?
+
+## Enfoque
+
+Un modelo de aprendizaje profundo estima el tamaño de la prótesis a partir de los datos
+del paciente.
+
+## Datos y evaluación
+
+_Describe aquí las fuentes, sus contratos de datos y cómo se evalúa el modelo._

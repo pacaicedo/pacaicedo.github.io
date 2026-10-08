@@ -1,9 +1,23 @@
 [
   {
+    "listing": "/conferencias/index.html",
+    "items": [
+      "/conferencias/del-dato-a-la-causa/index.html",
+      "/conferencias/contratos-de-datos/index.html"
+    ]
+  },
+  {
     "listing": "/notas/index.html",
     "items": [
       "/notas/grafos-causales/index.html",
       "/notas/extraer-variables/index.html"
+    ]
+  },
+  {
+    "listing": "/proyectos/index.html",
+    "items": [
+      "/proyectos/bioforge/index.html",
+      "/proyectos/protesis-cadera/index.html"
     ]
   },
   {
@@ -19,7 +33,20 @@
       "/notas/grafos-causales/index.html",
       "/notas/extraer-variables/index.html",
       "/cursos/Aprendizaje/index.html",
-      "/cursos/Inferencia/index.html"
+      "/cursos/Inferencia/index.html",
+      "/tutoriales/primer-dag/index.html",
+      "/tutoriales/envolvente-semg/index.html",
+      "/proyectos/bioforge/index.html",
+      "/proyectos/protesis-cadera/index.html",
+      "/conferencias/del-dato-a-la-causa/index.html",
+      "/conferencias/contratos-de-datos/index.html"
+    ]
+  },
+  {
+    "listing": "/tutoriales/index.html",
+    "items": [
+      "/tutoriales/primer-dag/index.html",
+      "/tutoriales/envolvente-semg/index.html"
     ]
   }
 ]

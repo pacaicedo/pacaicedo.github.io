@@ -5,6 +5,18 @@
     <lastmod>2026-10-08T18:23:11.247Z</lastmod>
   </url>
   <url>
+    <loc>https://example.org/tutoriales/envolvente-semg/index.html</loc>
+    <lastmod>2026-10-08T18:44:15.352Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/conferencias/index.html</loc>
+    <lastmod>2026-10-08T18:44:09.200Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/conferencias/del-dato-a-la-causa/index.html</loc>
+    <lastmod>2026-10-08T18:47:03.344Z</lastmod>
+  </url>
+  <url>
     <loc>https://example.org/cursos/Aprendizaje/index.html</loc>
     <lastmod>2026-10-08T17:56:37.881Z</lastmod>
   </url>
@@ -13,11 +25,19 @@
     <lastmod>2026-10-08T17:58:23.497Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/ejemplos/diapositivas/diapositivas-ejemplo.html</loc>
+    <loc>https://example.org/proyectos/protesis-cadera/index.html</loc>
+    <lastmod>2026-10-08T18:44:22.294Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/ejemplos/documento/documento-ejemplo.html</loc>
+    <lastmod>2026-10-08T18:51:41.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/marca.html</loc>
     <lastmod>2026-10-08T18:23:11.247Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/notas/index.html</loc>
+    <loc>https://example.org/notas/extraer-variables/index.html</loc>
     <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
@@ -25,16 +45,20 @@
     <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/notas/extraer-variables/index.html</loc>
+    <loc>https://example.org/notas/index.html</loc>
     <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/marca.html</loc>
+    <loc>https://example.org/ejemplos/diapositivas/diapositivas-ejemplo.html</loc>
     <lastmod>2026-10-08T18:23:11.247Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/ejemplos/documento/documento-ejemplo.html</loc>
-    <lastmod>2026-10-08T18:23:11.247Z</lastmod>
+    <loc>https://example.org/proyectos/bioforge/index.html</loc>
+    <lastmod>2026-10-08T18:44:25.696Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/proyectos/index.html</loc>
+    <lastmod>2026-10-08T18:44:09.196Z</lastmod>
   </url>
   <url>
     <loc>https://example.org/cursos/index.html</loc>
@@ -42,6 +66,18 @@
   </url>
   <url>
     <loc>https://example.org/index.html</loc>
-    <lastmod>2026-10-08T18:04:38.270Z</lastmod>
+    <lastmod>2026-10-08T18:50:15.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/conferencias/contratos-de-datos/index.html</loc>
+    <lastmod>2026-10-08T18:44:41.390Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/tutoriales/primer-dag/index.html</loc>
+    <lastmod>2026-10-08T18:44:19.594Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/tutoriales/index.html</loc>
+    <lastmod>2026-10-08T18:44:09.193Z</lastmod>
   </url>
 </urlset>

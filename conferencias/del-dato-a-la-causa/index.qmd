@@ -1,0 +1,24 @@
+---
+title: "Del dato a la causa"
+subtitle: "Conferencia de ejemplo: cámbiala por una tuya"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-10-06
+categories: [causalidad, grafos]
+description: "Grafos causales para experimentos biomédicos: del contrato de datos al DAG."
+---
+
+## Evento
+
+| Evento            | Lugar  | Formato        |
+|-------------------|--------|----------------|
+| Evento de ejemplo | Ciudad | Charla, 30 min |
+
+## Resumen
+
+Cómo declarar un DAG en el protocolo, qué ajustar al estimar y por qué una variable sin
+contrato no entra al modelo.
+
+## Material
+
+- [Diapositivas](../../ejemplos/diapositivas/diapositivas-ejemplo.qmd) (HTML)
+- [Diapositivas en PDF](../../ejemplos/diapositivas/diapositivas-ejemplo.pdf)

@@ -1,0 +1,22 @@
+---
+title: "Contratos de datos para señales biomédicas"
+subtitle: "Conferencia de ejemplo: cámbiala por una tuya"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-06-12
+categories: [extracción, datos]
+description: "sEMG, marcha y video en un mismo experimento sin perder de dónde viene cada variable."
+---
+
+## Evento
+
+| Evento            | Lugar  | Formato     |
+|-------------------|--------|-------------|
+| Evento de ejemplo | Ciudad | Taller, 2 h |
+
+## Resumen
+
+Qué debe declarar cada fuente antes de entrar al modelo: tipo, unidades y frecuencia.
+
+## Material
+
+_Enlaza aquí las diapositivas o la grabación._

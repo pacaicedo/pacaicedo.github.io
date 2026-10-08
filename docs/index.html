@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e55322775af7e19282de0ecde340759f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3928dc7395e9c07d944a01450d089683.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5e8e42b2698cc06611ac32c71b888851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,6 +127,90 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-tutoriales .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-tutoriales'] = new List('listing-tutoriales', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-proyectos .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-proyectos'] = new List('listing-proyectos', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-conferencias .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-conferencias'] = new List('listing-conferencias', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -191,6 +275,22 @@ window.Quarto = {
 <span class="menu-text">Notas</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./cursos/index.html"> 
+<span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutoriales/index.html"> 
+<span class="menu-text">Tutoriales</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./proyectos/index.html"> 
+<span class="menu-text">Proyectos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./conferencias/index.html"> 
+<span class="menu-text">Conferencias</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./sobre-mi.html"> 
 <span class="menu-text">Sobre mí</span></a>
   </li>  
@@ -217,7 +317,7 @@ window.Quarto = {
 <section id="convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica" class="level2">
 <h2 class="anchored" data-anchor-id="convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica">Convirtiendo señales e imágenes biomédicas en evidencia clínica</h2>
 <p>Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.</p>
-<p><a href="./cursos/index.html" class="btn btn-marca">Ver cursos</a> <a href="./notas/index.html" class="btn btn-marca">Ver notas</a> <a href="./sobre-mi.html" class="btn btn-marca-borde">Sobre mí</a></p>
+<p><a href="./proyectos/index.html" class="btn btn-marca">Proyectos</a> <a href="./cursos/index.html" class="btn btn-marca">Cursos</a> <a href="./notas/index.html" class="btn btn-marca">Notas</a> <a href="./sobre-mi.html" class="btn btn-marca-borde">Sobre mí</a></p>
 </section>
 </div>
 <section id="ejes-de-trabajo" class="level2">
@@ -243,9 +343,10 @@ window.Quarto = {
 <section id="estimación-de-protesis-para-artroplastía-de-cadera" class="level3 banda">
 <h3 class="anchored" data-anchor-id="estimación-de-protesis-para-artroplastía-de-cadera">Estimación de protesis para artroplastía de cadera</h3>
 <p>Un modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera.</p>
+<p><a href="./proyectos/protesis-cadera/index.html">Ver proyecto</a></p>
 </section>
 </section>
-<div class="listados">
+<div class="listados tres">
 <section id="últimas-noticias" class="level2 listado">
 <h2 class="anchored" data-anchor-id="últimas-noticias">Últimas noticias</h2>
 <div id="listing-noticias" class="quarto-listing quarto-listing-container-default">
@@ -358,22 +459,197 @@ window.Quarto = {
 <div class="listing-no-matching d-none">No hay resultados</div>
 </div>
 </section>
+<section id="tutoriales" class="level2 listado">
+<h2 class="anchored" data-anchor-id="tutoriales">Tutoriales</h2>
+<div id="listing-tutoriales" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Y2F1c2FsaWRhZCUyQ2dyYWZvcw==" data-listing-date-sort="1791090000000" data-listing-file-modified-sort="1791485059594" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="90">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./tutoriales/primer-dag/index.html" class="no-external">Tu primer DAG en Python</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2F1c2FsaWRhZA=='); return false;">causalidad</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZm9z'); return false;">grafos</div>
+
+</div>
+<div class="delink listing-description"><a href="./tutoriales/primer-dag/index.html" class="no-external">
+<p>Declarar un grafo causal con NetworkX y leer de él qué ajustar.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./tutoriales/primer-dag/index.html" class="no-external">
+<div class="listing-date">
+4 oct 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="ZXh0cmFjY2klQzMlQjNuJTJDc2UlQzMlQjFhbGVz" data-listing-date-sort="1789880400000" data-listing-file-modified-sort="1791485055352" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="153">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./tutoriales/envolvente-semg/index.html" class="no-external">Envolvente de una señal sEMG con SciPy</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZXh0cmFjY2klQzMlQjNu'); return false;">extracción</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2UlQzMlQjFhbGVz'); return false;">señales</div>
+
+</div>
+<div class="delink listing-description"><a href="./tutoriales/envolvente-semg/index.html" class="no-external">
+<p>Filtrado pasa banda, rectificación y paso bajo, paso a paso y en Python.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./tutoriales/envolvente-semg/index.html" class="no-external">
+<div class="listing-date">
+20 sept 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+</section>
+</div>
+<div class="listados">
+<section id="proyectos" class="level2 listado">
+<h2 class="anchored" data-anchor-id="proyectos">Proyectos</h2>
+<div id="listing-proyectos" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="ZXh0cmFjY2klQzMlQjNuJTJDZGF0b3M=" data-listing-date-sort="1790830800000" data-listing-file-modified-sort="1791485065696" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./proyectos/bioforge/index.html" class="no-external">BioForge Experiment OS</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZXh0cmFjY2klQzMlQjNu'); return false;">extracción</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0b3M='); return false;">datos</div>
+
+</div>
+<div class="delink listing-description"><a href="./proyectos/bioforge/index.html" class="no-external">
+<p>Contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./proyectos/bioforge/index.html" class="no-external">
+<div class="listing-date">
+1 oct 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="aWElMkNpbSVDMyVBMWdlbmVz" data-listing-date-sort="1788238800000" data-listing-file-modified-sort="1791485062294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./proyectos/protesis-cadera/index.html" class="no-external">Estimación de prótesis para artroplastia de cadera</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aWE='); return false;">ia</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW0lQzMlQTFnZW5lcw=='); return false;">imágenes</div>
+
+</div>
+<div class="delink listing-description"><a href="./proyectos/protesis-cadera/index.html" class="no-external">
+<p>Un modelo de aprendizaje profundo que estima el tamaño de la prótesis antes de la cirugía.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./proyectos/protesis-cadera/index.html" class="no-external">
+<div class="listing-date">
+1 sept 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+</section>
+<section id="conferencias" class="level2 listado">
+<h2 class="anchored" data-anchor-id="conferencias">Conferencias</h2>
+<div id="listing-conferencias" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Y2F1c2FsaWRhZCUyQ2dyYWZvcw==" data-listing-date-sort="1791262800000" data-listing-file-modified-sort="1791485223344" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./conferencias/del-dato-a-la-causa/index.html" class="no-external">Del dato a la causa</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2F1c2FsaWRhZA=='); return false;">causalidad</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZm9z'); return false;">grafos</div>
+
+</div>
+<div class="delink listing-description"><a href="./conferencias/del-dato-a-la-causa/index.html" class="no-external">
+<p>Grafos causales para experimentos biomédicos: del contrato de datos al DAG.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./conferencias/del-dato-a-la-causa/index.html" class="no-external">
+<div class="listing-date">
+6 oct 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="ZXh0cmFjY2klQzMlQjNuJTJDZGF0b3M=" data-listing-date-sort="1781240400000" data-listing-file-modified-sort="1791485081390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./conferencias/contratos-de-datos/index.html" class="no-external">Contratos de datos para señales biomédicas</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZXh0cmFjY2klQzMlQjNu'); return false;">extracción</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0b3M='); return false;">datos</div>
+
+</div>
+<div class="delink listing-description"><a href="./conferencias/contratos-de-datos/index.html" class="no-external">
+<p>sEMG, marcha y video en un mismo experimento sin perder de dónde viene cada variable.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./conferencias/contratos-de-datos/index.html" class="no-external">
+<div class="listing-date">
+12 jun 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+</section>
 </div>
 <script>
-// Píldoras de categoría con dos listados en la portada: Quarto filtraría las dos columnas a la vez
-// (y dejaría una vacía), así que cada píldora abre el listado completo filtrado por esa categoría.
+// Carpeta de cada listado de la portada (id del listado → sección).
+var secciones = {noticias: "notas", cursos: "cursos", tutoriales: "tutoriales", proyectos: "proyectos", conferencias: "conferencias"};
+// Píldoras de categoría con varios listados en la portada: Quarto filtraría todas las columnas a la vez
+// (y dejaría vacías las demás), así que cada píldora abre el listado completo filtrado por esa categoría.
 document.addEventListener("click", function (e) {
   var p = e.target.closest(".listados .listing-category");
   if (!p) return;
   e.stopPropagation(); // fase de captura: se adelanta al onclick de Quarto
-  var destino = p.closest("#listing-cursos") ? "cursos/index.html" : "notas/index.html";
-  location.href = destino + "#category=" + encodeURIComponent(p.textContent.trim());
+  var id = p.closest(".quarto-listing-container-default").id.replace("listing-", "");
+  location.href = secciones[id] + "/index.html#category=" + encodeURIComponent(p.textContent.trim());
 }, true);
-// Las píldoras del encabezado de una nota o un curso enlazan a la portada (#category=...):
+// Las píldoras del encabezado de una página de sección enlazan a la portada (#category=...):
 // se reenvían a la página del listado correspondiente, que sí sabe filtrar.
 if (location.hash.indexOf("category=") >= 0) {
-  var origen = document.referrer.indexOf("/cursos/") >= 0 ? "cursos/" : "notas/";
-  location.replace(origen + "index.html" + location.hash);
+  var origen = "notas";
+  for (var id in secciones) {
+    if (document.referrer.indexOf("/" + secciones[id] + "/") >= 0) origen = secciones[id];
+  }
+  location.replace(origen + "/index.html" + location.hash);
 }
 </script>
 

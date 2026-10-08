@@ -129,6 +129,12 @@ a { transition: color .15s ease; }
   .nav-link:hover, .nav-link:focus { color: $c-dato; }
   .nav-link.active, .nav-item.active > .nav-link { color: #FFFFFF; box-shadow: inset 0 -2px 0 $c-causa; }
   .quarto-navbar-tools .quarto-navigation-tool { color: $c-light; }
+  .nav-link { white-space: nowrap; }
+  // De 992 a 1200 px las siete secciones caben en una línea si se aprieta el espaciado.
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .navbar-nav .nav-link { padding-left: .4rem; padding-right: .4rem; }
+    .navbar-title { font-size: 1.1rem; }
+  }
   // En teléfonos el nombre se parte en dos líneas en lugar de cortarse con «…».
   @media (max-width: 575.98px) {
     a.navbar-brand { white-space: normal; text-overflow: clip; }
@@ -316,6 +322,12 @@ div.quarto-post {
     }
     .listing-title { font-size: 1.25rem; }
   }
+}
+// Con tres listados ({.listados .tres}): tres columnas desde 992 px y una debajo de otra por
+// debajo, para que el tercero no quede solo en una segunda fila.
+.listados.tres {
+  grid-template-columns: minmax(0, 1fr);
+  @media (min-width: 992px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 // Bajo 992 px Quarto da 1rem al primer H2 de la página (section:first-of-type); así los títulos
 // de todos los listados quedan a la misma altura.

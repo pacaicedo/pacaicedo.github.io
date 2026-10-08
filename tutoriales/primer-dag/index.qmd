@@ -1,0 +1,34 @@
+---
+title: "Tu primer DAG en Python"
+subtitle: "Tutorial de ejemplo: cámbialo por uno tuyo"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-10-04
+categories: [causalidad, grafos]
+description: "Declarar un grafo causal con NetworkX y leer de él qué ajustar."
+---
+
+## Requisitos
+
+- Python con `networkx`.
+- Las variables del experimento: tratamiento $X$, desenlace $Y$, confusor $Z$ y mediador $M$.
+
+## Paso a paso
+
+1. Escribir cada flecha como una relación causal supuesta.
+2. Comprobar que el grafo no tiene ciclos.
+3. Ajustar por los padres de $X$: cumplen el criterio de la puerta trasera.
+
+```python
+import networkx as nx
+
+dag = nx.DiGraph([("Z", "X"), ("Z", "Y"), ("X", "M"), ("M", "Y")])
+assert nx.is_directed_acyclic_graph(dag)
+
+ajuste = set(dag.predecessors("X"))  # {"Z"}
+```
+
+::: {.callout-important}
+## No ajustes por el mediador
+$M$ está en el camino de $X$ a $Y$: ajustar por él borra parte del efecto que se quiere
+estimar.
+:::

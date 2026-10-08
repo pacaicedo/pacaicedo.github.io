@@ -1,0 +1,23 @@
+---
+title: "BioForge Experiment OS"
+subtitle: "Plataforma para experimentos biomédicos"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-10-01
+categories: [extracción, datos]
+description: "Contratos de datos y tres procesos: preprocesamiento, modelado y evaluación."
+---
+
+## Contratos de datos
+
+Cada fuente (sEMG, marcha, video) declara tipo, unidades y frecuencia antes de entrar al
+modelo. Más detalle en la nota [Extraer variables con contrato](../../notas/extraer-variables/index.qmd).
+
+## Tres procesos
+
+| Proceso            | Qué hace                                                |
+|--------------------|---------------------------------------------------------|
+| Preprocesamiento   | Lleva las señales crudas a variables con contrato.      |
+| Modelado           | Ajusta modelos estadísticos, causales y de aprendizaje. |
+| Evaluación         | Mide el desempeño y explica los resultados.             |
+
+: Procesos de BioForge.

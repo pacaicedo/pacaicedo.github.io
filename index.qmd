@@ -15,6 +15,24 @@ listing:
     sort: "date desc"
     max-items: 3
     fields: [title, description, date, categories]
+  - id: tutoriales
+    contents: "tutoriales/*/index.qmd"
+    type: default
+    sort: "date desc"
+    max-items: 3
+    fields: [title, description, date, categories]
+  - id: proyectos
+    contents: "proyectos/*/index.qmd"
+    type: default
+    sort: "date desc"
+    max-items: 3
+    fields: [title, description, date, categories]
+  - id: conferencias
+    contents: "conferencias/*/index.qmd"
+    type: default
+    sort: "date desc"
+    max-items: 3
+    fields: [title, description, date, categories]
 ---
 
 ::: {.hero}
@@ -24,7 +42,7 @@ listing:
 
 Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.
 
-[Ver cursos](cursos/index.qmd){.btn .btn-marca} [Ver notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
+[Proyectos](proyectos/index.qmd){.btn .btn-marca} [Cursos](cursos/index.qmd){.btn .btn-marca} [Notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
 :::
 
 ## Ejes de trabajo
@@ -55,10 +73,12 @@ Modelos estadísticos, de aprendizaje automático y profundo sobre Scikit Learn,
 ### Estimación de protesis para artroplastía de cadera
 
 Un modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera.
+
+[Ver proyecto](proyectos/protesis-cadera/index.qmd)
 :::
 
 
-::: {.listados}
+::: {.listados .tres}
 ::: {.listado}
 ## Últimas noticias
  
@@ -68,28 +88,56 @@ Un modelo de aprendizaje profundo para la estimación del tamaño de una protesi
  
 ::: {.listado}
 ## Cursos
- 
+
 ::: {#cursos}
 :::
 :::
+
+::: {.listado}
+## Tutoriales
+
+::: {#tutoriales}
 :::
- 
+:::
+:::
+
+::: {.listados}
+::: {.listado}
+## Proyectos
+
+::: {#proyectos}
+:::
+:::
+
+::: {.listado}
+## Conferencias
+
+::: {#conferencias}
+:::
+:::
+:::
+
 ```{=html}
 <script>
-// Píldoras de categoría con dos listados en la portada: Quarto filtraría las dos columnas a la vez
-// (y dejaría una vacía), así que cada píldora abre el listado completo filtrado por esa categoría.
+// Carpeta de cada listado de la portada (id del listado → sección).
+var secciones = {noticias: "notas", cursos: "cursos", tutoriales: "tutoriales", proyectos: "proyectos", conferencias: "conferencias"};
+// Píldoras de categoría con varios listados en la portada: Quarto filtraría todas las columnas a la vez
+// (y dejaría vacías las demás), así que cada píldora abre el listado completo filtrado por esa categoría.
 document.addEventListener("click", function (e) {
   var p = e.target.closest(".listados .listing-category");
   if (!p) return;
   e.stopPropagation(); // fase de captura: se adelanta al onclick de Quarto
-  var destino = p.closest("#listing-cursos") ? "cursos/index.html" : "notas/index.html";
-  location.href = destino + "#category=" + encodeURIComponent(p.textContent.trim());
+  var id = p.closest(".quarto-listing-container-default").id.replace("listing-", "");
+  location.href = secciones[id] + "/index.html#category=" + encodeURIComponent(p.textContent.trim());
 }, true);
-// Las píldoras del encabezado de una nota o un curso enlazan a la portada (#category=...):
+// Las píldoras del encabezado de una página de sección enlazan a la portada (#category=...):
 // se reenvían a la página del listado correspondiente, que sí sabe filtrar.
 if (location.hash.indexOf("category=") >= 0) {
-  var origen = document.referrer.indexOf("/cursos/") >= 0 ? "cursos/" : "notas/";
-  location.replace(origen + "index.html" + location.hash);
+  var origen = "notas";
+  for (var id in secciones) {
+    if (document.referrer.indexOf("/" + secciones[id] + "/") >= 0) origen = secciones[id];
+  }
+  location.replace(origen + "/index.html" + location.hash);
 }
 </script>
 ```

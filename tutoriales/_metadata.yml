@@ -1,4 +1,4 @@
-# Los cursos son documentos: tema del sitio + capa de documento.
+# Los tutoriales son documentos: tema del sitio + capa de documento.
 format:
   html:
     theme: [cosmo, ../recursos/marca/caicedo-sitio.scss, ../recursos/marca/caicedo-documento.scss]

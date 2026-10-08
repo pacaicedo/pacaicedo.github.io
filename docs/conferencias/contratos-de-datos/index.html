@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Pablo Eduardo Caicedo-Rodríguez">
+<meta name="description" content="sEMG, marcha y video en un mismo experimento sin perder de dónde viene cada variable.">
 
-<title>Pablo Eduardo Caicedo-Rodríguez – P. E. Caicedo-Rodríguez</title>
+<title>Contratos de datos para señales biomédicas – P. E. Caicedo-Rodríguez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./recursos/marca/logo/insignia.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e55322775af7e19282de0ecde340759f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5e8e42b2698cc06611ac32c71b888851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../recursos/marca/logo/insignia.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e55322775af7e19282de0ecde340759f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d4cd6422bbad7c78b62c1317c79e2aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,18 +75,18 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./recursos/marca/logo/isotipo-oscuro.svg" alt="" class="navbar-logo light-content">
-    <img src="./recursos/marca/logo/isotipo-oscuro.svg" alt="" class="navbar-logo dark-content">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../recursos/marca/logo/isotipo-oscuro.svg" alt="" class="navbar-logo light-content">
+    <img src="../../recursos/marca/logo/isotipo-oscuro.svg" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
     </a>
   </div>
@@ -94,31 +97,31 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notas/index.html"> 
+    <a class="nav-link" href="../../notas/index.html"> 
 <span class="menu-text">Notas</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cursos/index.html"> 
+    <a class="nav-link" href="../../cursos/index.html"> 
 <span class="menu-text">Cursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutoriales/index.html"> 
+    <a class="nav-link" href="../../tutoriales/index.html"> 
 <span class="menu-text">Tutoriales</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./proyectos/index.html"> 
+    <a class="nav-link" href="../../proyectos/index.html"> 
 <span class="menu-text">Proyectos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./conferencias/index.html"> 
+    <a class="nav-link" href="../../conferencias/index.html"> 
 <span class="menu-text">Conferencias</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./sobre-mi.html" aria-current="page"> 
+    <a class="nav-link" href="../../sobre-mi.html"> 
 <span class="menu-text">Sobre mí</span></a>
   </li>  
 </ul>
@@ -129,42 +132,105 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Contratos de datos para señales biomédicas</h1>
+            <p class="subtitle lead">Conferencia de ejemplo: cámbiala por una tuya</p>
+                  <div>
+        <div class="description">
+          sEMG, marcha y video en un mismo experimento sin perder de dónde viene cada variable.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">extracción</div>
+                <div class="quarto-category">datos</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p>Pablo Eduardo Caicedo-Rodríguez </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">12 de junio de 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#evento" id="toc-evento" class="nav-link active" data-scroll-target="#evento"><span class="header-section-number">1</span> Evento</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">2</span> Resumen</a></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material"><span class="header-section-number">3</span> Material</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="recursos/marca/logo/insignia.png" class="about-image
-  rounded " style="width: 12em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Pablo Eduardo Caicedo-Rodríguez</h1>
-<p class="subtitle lead">Del dato a la causa</p>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="/notas/index.html" class="about-link" rel="" target="">
-     <span class="about-link-text">Notas</span>
-  </a>
-  <a href="/marca.html" class="about-link" rel="" target="">
-     <span class="about-link-text">Marca</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Construyo <strong>BioForge Experiment OS</strong>, una plataforma para experimentos biomédicos organizada alrededor de contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.</p>
-<p>Me interesa la <span class="dato">extracción de información</span>, los <span class="grafo">grafos</span> y la <span class="causa">causalidad</span>: pasar de señales crudas a preguntas que se pueden responder con evidencia.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main></div>
-</div>
- <!-- /main -->
+
+
+
+<section id="evento" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="evento"><span class="header-section-number">1</span> Evento</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Evento</th>
+<th>Lugar</th>
+<th>Formato</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Evento de ejemplo</td>
+<td>Ciudad</td>
+<td>Taller, 2 h</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resumen" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="resumen"><span class="header-section-number">2</span> Resumen</h2>
+<p>Qué debe declarar cada fuente antes de entrar al modelo: tipo, unidades y frecuencia.</p>
+</section>
+<section id="material" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="material"><span class="header-section-number">3</span> Material</h2>
+<p><em>Enlaza aquí las diapositivas o la grabación.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

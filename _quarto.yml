@@ -17,6 +17,14 @@ website:
         text: Inicio
       - href: notas/index.qmd
         text: Notas
+      - href: cursos/index.qmd
+        text: Cursos
+      - href: tutoriales/index.qmd
+        text: Tutoriales
+      - href: proyectos/index.qmd
+        text: Proyectos
+      - href: conferencias/index.qmd
+        text: Conferencias
       - href: sobre-mi.qmd
         text: Sobre mí
   page-footer:

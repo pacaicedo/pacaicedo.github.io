@@ -1,0 +1,39 @@
+---
+title: "Envolvente de una señal sEMG con SciPy"
+subtitle: "Tutorial de ejemplo: cámbialo por uno tuyo"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-09-20
+categories: [extracción, señales]
+description: "Filtrado pasa banda, rectificación y paso bajo, paso a paso y en Python."
+---
+
+## Requisitos
+
+- Python con `numpy` y `scipy`.
+- Una señal sEMG cruda muestreada a 2000 Hz, como la declara el contrato de datos.
+
+## Paso a paso
+
+1. Quitar el movimiento y el ruido de alta frecuencia con un pasa banda de 20 a 450 Hz.
+2. Rectificar la señal (valor absoluto).
+3. Suavizar con un paso bajo de 6 Hz para obtener la envolvente.
+
+```python
+import numpy as np
+from scipy.signal import butter, sosfiltfilt
+
+FS = 2000  # Hz, según el contrato de datos
+
+def envolvente_semg(x: np.ndarray, fs: float = FS) -> np.ndarray:
+    """Pasa banda 20–450 Hz, rectificación y paso bajo a 6 Hz."""
+    banda = butter(4, [20, 450], btype="bandpass", fs=fs, output="sos")
+    rectificada = np.abs(sosfiltfilt(banda, x))
+    bajo = butter(4, 6, btype="lowpass", fs=fs, output="sos")
+    return sosfiltfilt(bajo, rectificada)
+```
+
+::: {.callout-tip}
+## Filtrado sin desfase
+`sosfiltfilt` filtra hacia delante y hacia atrás: la envolvente no se retrasa respecto a
+la marcha ni al video.
+:::

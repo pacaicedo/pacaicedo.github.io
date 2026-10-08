@@ -1,0 +1,18 @@
+---
+title: "Inferencia causal con grafos"
+subtitle: "Curso de ejemplo: cámbialo por uno tuyo"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-08-01
+categories: [causalidad, grafos]
+description: "Del DAG declarado en el protocolo a la estimación de efectos con datos observacionales."
+---
+
+## Contenido
+
+1. Grafos causales: confusores, mediadores y colisionadores.
+2. Conjuntos de ajuste y criterio de la puerta trasera.
+3. Estimación de efectos y análisis de sensibilidad.
+
+## Modalidad
+
+Seis sesiones con ejercicios en Python.

@@ -1,52 +1,122 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "P. E. Caicedo-Rodríguez",
+    "objectID": "sobre-mi.html",
+    "href": "sobre-mi.html",
+    "title": "Pablo Eduardo Caicedo-Rodríguez",
     "section": "",
-    "text": "Del dato a la causa\n\n\nDiseño plataformas que extraen información de marcha, sEMG y video, la conectan como grafos y la llevan hasta preguntas causales reproducibles.\nVer notas Sobre mí"
+    "text": "Construyo BioForge Experiment OS, una plataforma para experimentos biomédicos organizada alrededor de contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.\nMe interesa la extracción de información, los grafos y la causalidad: pasar de señales crudas a preguntas que se pueden responder con evidencia."
   },
   {
-    "objectID": "index.html#convierto-señales-biomédicas-en-evidencia-causal",
-    "href": "index.html#convierto-señales-biomédicas-en-evidencia-causal",
-    "title": "P. E. Caicedo-Rodríguez",
+    "objectID": "cursos/Aprendizaje/index.html",
+    "href": "cursos/Aprendizaje/index.html",
+    "title": "Aprendizaje profundo para imágenes médicas",
     "section": "",
-    "text": "Diseño plataformas que extraen información de marcha, sEMG y video, la conectan como grafos y la llevan hasta preguntas causales reproducibles.\nVer notas Sobre mí"
+    "text": "Preparación de imágenes y contratos de datos.\nRedes convolucionales con PyTorch.\nEvaluación y explicación de los modelos."
   },
   {
-    "objectID": "index.html#ejes-de-trabajo",
-    "href": "index.html#ejes-de-trabajo",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Ejes de trabajo",
-    "text": "Ejes de trabajo\n\n\nExtracción de información\nContratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.\n\n\nGrafos\nVariables y relaciones como grafos para encontrar estructura y comunidades.\n\n\nCausalidad\nDAG declarados en el protocolo, estimación de efectos y evaluación explicativa.\n\n\nIA\nModelos estadísticos, de aprendizaje automático y profundo sobre PyTorch y Tensorflow.\n\n\n\nBioForge Experiment OS\nUna plataforma donde el experimento es la unidad de información: objetivo, protocolo y datos con contrato, recorridos por tres procesos encadenados (preprocesamiento, modelado y evaluación)."
-  },
-  {
-    "objectID": "index.html#últimas-notas",
-    "href": "index.html#últimas-notas",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Últimas notas",
-    "text": "Últimas notas"
-  },
-  {
-    "objectID": "ejemplos/documento/documento-ejemplo.html",
-    "href": "ejemplos/documento/documento-ejemplo.html",
-    "title": "Extracción de información y grafos causales",
+    "objectID": "cursos/Aprendizaje/index.html#contenido",
+    "href": "cursos/Aprendizaje/index.html#contenido",
+    "title": "Aprendizaje profundo para imágenes médicas",
     "section": "",
-    "text": "La marca se apoya en tres ideas, cada una con su color: el dato y su extracción, el grafo que conecta variables y la causa que explica el resultado. En BioForge Experiment OS esas ideas corresponden a preprocesamiento, modelado y evaluación, encadenados por contratos de datos.\n\n\nCada bloque de datos declara tipo, unidades y frecuencia. El código de comprobación rechaza cualquier archivo que no cumpla el contrato antes de que llegue al modelo.\n\nMarcha: series de tiempo a 100 Hz.\nsEMG: señales a 2 kHz, filtradas entre 20 y 450 Hz.\n\nSe guarda la envolvente RMS por ventana.\n\nVideo: 60 fps, con marcadores anatómicos.\n\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Contrato:\n    tipo: str          # \"senal\", \"serie\", \"imagen\", \"tabular\"\n    unidades: str\n    frecuencia_hz: float\n\n    def comprobar(self, frecuencia: float) -&gt; bool:\n        return abs(frecuencia - self.frecuencia_hz) &lt; 1e-6"
+    "text": "Preparación de imágenes y contratos de datos.\nRedes convolucionales con PyTorch.\nEvaluación y explicación de los modelos."
   },
   {
-    "objectID": "ejemplos/documento/documento-ejemplo.html#del-dato-a-la-variable",
-    "href": "ejemplos/documento/documento-ejemplo.html#del-dato-a-la-variable",
-    "title": "Extracción de información y grafos causales",
+    "objectID": "cursos/Aprendizaje/index.html#modalidad",
+    "href": "cursos/Aprendizaje/index.html#modalidad",
+    "title": "Aprendizaje profundo para imágenes médicas",
+    "section": "2 Modalidad",
+    "text": "2 Modalidad\nOcho sesiones prácticas con cuadernos de Quarto."
+  },
+  {
+    "objectID": "cursos/Inferencia/index.html",
+    "href": "cursos/Inferencia/index.html",
+    "title": "Inferencia causal con grafos",
     "section": "",
-    "text": "La marca se apoya en tres ideas, cada una con su color: el dato y su extracción, el grafo que conecta variables y la causa que explica el resultado. En BioForge Experiment OS esas ideas corresponden a preprocesamiento, modelado y evaluación, encadenados por contratos de datos.\n\n\nCada bloque de datos declara tipo, unidades y frecuencia. El código de comprobación rechaza cualquier archivo que no cumpla el contrato antes de que llegue al modelo.\n\nMarcha: series de tiempo a 100 Hz.\nsEMG: señales a 2 kHz, filtradas entre 20 y 450 Hz.\n\nSe guarda la envolvente RMS por ventana.\n\nVideo: 60 fps, con marcadores anatómicos.\n\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Contrato:\n    tipo: str          # \"senal\", \"serie\", \"imagen\", \"tabular\"\n    unidades: str\n    frecuencia_hz: float\n\n    def comprobar(self, frecuencia: float) -&gt; bool:\n        return abs(frecuencia - self.frecuencia_hz) &lt; 1e-6"
+    "text": "Grafos causales: confusores, mediadores y colisionadores.\nConjuntos de ajuste y criterio de la puerta trasera.\nEstimación de efectos y análisis de sensibilidad."
   },
   {
-    "objectID": "ejemplos/documento/documento-ejemplo.html#del-grafo-a-la-causa",
-    "href": "ejemplos/documento/documento-ejemplo.html#del-grafo-a-la-causa",
-    "title": "Extracción de información y grafos causales",
-    "section": "2 Del grafo a la causa",
-    "text": "2 Del grafo a la causa\n\nUn grafo causal no se descubre mirando los datos: se declara y luego se pone a prueba.\n\n\nLos tres procesos y sus contratos encadenados.\n\n\nProceso\nEntrada\nSalida\n\n\n\n\nPreprocesamiento\nArchivos crudos\nVariables con contrato\n\n\nModelado\nVariables\nModelo entrenado\n\n\nEvaluación\nModelo y objetivo\nEvidencia reproducible\n\n\n\n\n\n\n\n\n\nNotaNota\n\n\n\nEl contrato de salida de cada proceso es el contrato de entrada del siguiente.\n\n\n\n\n\n\n\n\nImportanteSupuesto de identificación\n\n\n\nEl confusor debe medirse en la misma sesión que el tratamiento y el desenlace.\n\n\n\n\n\n\n\n\nTipBuena práctica\n\n\n\nDeclara el DAG en el protocolo del experimento antes de ver los resultados.\n\n\n\n2.1 Estimación del efecto\nCon el conjunto de ajuste \\(\\{Z\\}\\), el efecto causal medio se estima como \\[\n\\mathbb{E}[Y \\mid do(X = x)] = \\sum_z \\mathbb{E}[Y \\mid X = x, Z = z]\\, P(Z = z).\n\\]\nPara más detalle, ver la documentación de Quarto."
+    "objectID": "cursos/Inferencia/index.html#contenido",
+    "href": "cursos/Inferencia/index.html#contenido",
+    "title": "Inferencia causal con grafos",
+    "section": "",
+    "text": "Grafos causales: confusores, mediadores y colisionadores.\nConjuntos de ajuste y criterio de la puerta trasera.\nEstimación de efectos y análisis de sensibilidad."
+  },
+  {
+    "objectID": "cursos/Inferencia/index.html#modalidad",
+    "href": "cursos/Inferencia/index.html#modalidad",
+    "title": "Inferencia causal con grafos",
+    "section": "2 Modalidad",
+    "text": "2 Modalidad\nSeis sesiones con ejercicios en Python."
+  },
+  {
+    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
+    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
+    "title": "Del dato a la causa",
+    "section": "De la señal a la variable",
+    "text": "De la señal a la variable\n\nLos datos crudos llegan de marcha, sEMG y video.\nCada fuente declara un contrato de datos.\n\nTipo, unidades y frecuencia de muestreo.\nCódigo de comprobación del contrato.\n\nLa extracción produce variables con significado clínico.\n\nIdea clave\nUna variable sin contrato no entra al modelo."
+  },
+  {
+    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
+    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
+    "title": "Del dato a la causa",
+    "section": "Código de extracción",
+    "text": "Código de extracción\nimport torch\n\ndef extraer_rms(senal: torch.Tensor, ventana: int = 200) -&gt; torch.Tensor:\n    \"\"\"RMS por ventanas de una señal sEMG (canales x muestras).\"\"\"\n    ventanas = senal.unfold(-1, ventana, ventana // 2)\n    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana\nLa función respeta el contrato: entra float32 [C, N] y sale float32 [C, V]."
+  },
+  {
+    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#variables-como-grafo",
+    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#variables-como-grafo",
+    "title": "Del dato a la causa",
+    "section": "Variables como grafo",
+    "text": "Variables como grafo\n\n\n\nNodos: variables extraídas.\nAristas: dependencias observadas.\nComunidades: subsistemas fisiológicos.\n\nEl grafo es el puente entre extracción y causalidad.\n\n\n\n\nMétrica\nValor\n\n\n\n\nNodos\n42\n\n\nAristas\n118\n\n\nDensidad\n0.14\n\n\nComunidades\n5"
+  },
+  {
+    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#del-grafo-a-la-causa",
+    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#del-grafo-a-la-causa",
+    "title": "Del dato a la causa",
+    "section": "Del grafo a la causa",
+    "text": "Del grafo a la causa\n\nCorrelación no es causalidad, pero un grafo bien construido dice qué hay que ajustar.\n\n\n\n\n\n\n\nSupuesto de identificación\n\n\nEl confusor \\(Z\\) debe medirse en la misma sesión que \\(X\\) e \\(Y\\).\n\n\n\n\n\n\n\n\n\nBuena práctica\n\n\nDeclara el DAG antes de mirar los resultados."
+  },
+  {
+    "objectID": "notas/index.html",
+    "href": "notas/index.html",
+    "title": "Notas",
+    "section": "",
+    "text": "Grafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n6 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 oct 2026\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "notas/grafos-causales/index.html",
+    "href": "notas/grafos-causales/index.html",
+    "title": "Grafos causales para experimentos",
+    "section": "",
+    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+  },
+  {
+    "objectID": "notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
+    "href": "notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
+    "title": "Grafos causales para experimentos",
+    "section": "",
+    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+  },
+  {
+    "objectID": "notas/grafos-causales/index.html#estimación",
+    "href": "notas/grafos-causales/index.html#estimación",
+    "title": "Grafos causales para experimentos",
+    "section": "2 Estimación",
+    "text": "2 Estimación\nimport pandas as pd\n\ndef efecto_ajustado(df: pd.DataFrame) -&gt; float:\n    \"\"\"Estandarización por el confusor Z.\"\"\"\n    pesos = df[\"Z\"].value_counts(normalize=True)\n    medias = df.groupby([\"Z\", \"X\"])[\"Y\"].mean().unstack()\n    return float(((medias[1] - medias[0]) * pesos).sum())"
+  },
+  {
+    "objectID": "notas/extraer-variables/index.html",
+    "href": "notas/extraer-variables/index.html",
+    "title": "Extraer variables con contrato",
+    "section": "",
+    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
+  },
+  {
+    "objectID": "notas/extraer-variables/index.html#contratos-de-datos",
+    "href": "notas/extraer-variables/index.html#contratos-de-datos",
+    "title": "Extraer variables con contrato",
+    "section": "",
+    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
   },
   {
     "objectID": "marca.html",
@@ -98,87 +168,66 @@
     "text": "Clases de color\nEscribe [texto]{.dato}, [texto]{.grafo}, [texto]{.causa} o [texto]{.alert}: dato, grafo, causa."
   },
   {
-    "objectID": "notas/extraer-variables/index.html",
-    "href": "notas/extraer-variables/index.html",
-    "title": "Extraer variables con contrato",
+    "objectID": "ejemplos/documento/documento-ejemplo.html",
+    "href": "ejemplos/documento/documento-ejemplo.html",
+    "title": "Extracción de información y grafos causales",
     "section": "",
-    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
+    "text": "La marca se apoya en tres ideas, cada una con su color: el dato y su extracción, el grafo que conecta variables y la causa que explica el resultado. En BioForge Experiment OS esas ideas corresponden a preprocesamiento, modelado y evaluación, encadenados por contratos de datos.\n\n\nCada bloque de datos declara tipo, unidades y frecuencia. El código de comprobación rechaza cualquier archivo que no cumpla el contrato antes de que llegue al modelo.\n\nMarcha: series de tiempo a 100 Hz.\nsEMG: señales a 2 kHz, filtradas entre 20 y 450 Hz.\n\nSe guarda la envolvente RMS por ventana.\n\nVideo: 60 fps, con marcadores anatómicos.\n\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Contrato:\n    tipo: str          # \"senal\", \"serie\", \"imagen\", \"tabular\"\n    unidades: str\n    frecuencia_hz: float\n\n    def comprobar(self, frecuencia: float) -&gt; bool:\n        return abs(frecuencia - self.frecuencia_hz) &lt; 1e-6"
   },
   {
-    "objectID": "notas/extraer-variables/index.html#contratos-de-datos",
-    "href": "notas/extraer-variables/index.html#contratos-de-datos",
-    "title": "Extraer variables con contrato",
+    "objectID": "ejemplos/documento/documento-ejemplo.html#del-dato-a-la-variable",
+    "href": "ejemplos/documento/documento-ejemplo.html#del-dato-a-la-variable",
+    "title": "Extracción de información y grafos causales",
     "section": "",
-    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
+    "text": "La marca se apoya en tres ideas, cada una con su color: el dato y su extracción, el grafo que conecta variables y la causa que explica el resultado. En BioForge Experiment OS esas ideas corresponden a preprocesamiento, modelado y evaluación, encadenados por contratos de datos.\n\n\nCada bloque de datos declara tipo, unidades y frecuencia. El código de comprobación rechaza cualquier archivo que no cumpla el contrato antes de que llegue al modelo.\n\nMarcha: series de tiempo a 100 Hz.\nsEMG: señales a 2 kHz, filtradas entre 20 y 450 Hz.\n\nSe guarda la envolvente RMS por ventana.\n\nVideo: 60 fps, con marcadores anatómicos.\n\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Contrato:\n    tipo: str          # \"senal\", \"serie\", \"imagen\", \"tabular\"\n    unidades: str\n    frecuencia_hz: float\n\n    def comprobar(self, frecuencia: float) -&gt; bool:\n        return abs(frecuencia - self.frecuencia_hz) &lt; 1e-6"
   },
   {
-    "objectID": "notas/grafos-causales/index.html",
-    "href": "notas/grafos-causales/index.html",
-    "title": "Grafos causales para experimentos",
+    "objectID": "ejemplos/documento/documento-ejemplo.html#del-grafo-a-la-causa",
+    "href": "ejemplos/documento/documento-ejemplo.html#del-grafo-a-la-causa",
+    "title": "Extracción de información y grafos causales",
+    "section": "2 Del grafo a la causa",
+    "text": "2 Del grafo a la causa\n\nUn grafo causal no se descubre mirando los datos: se declara y luego se pone a prueba.\n\n\nLos tres procesos y sus contratos encadenados.\n\n\nProceso\nEntrada\nSalida\n\n\n\n\nPreprocesamiento\nArchivos crudos\nVariables con contrato\n\n\nModelado\nVariables\nModelo entrenado\n\n\nEvaluación\nModelo y objetivo\nEvidencia reproducible\n\n\n\n\n\n\n\n\n\nNotaNota\n\n\n\nEl contrato de salida de cada proceso es el contrato de entrada del siguiente.\n\n\n\n\n\n\n\n\nImportanteSupuesto de identificación\n\n\n\nEl confusor debe medirse en la misma sesión que el tratamiento y el desenlace.\n\n\n\n\n\n\n\n\nTipBuena práctica\n\n\n\nDeclara el DAG en el protocolo del experimento antes de ver los resultados.\n\n\n\n2.1 Estimación del efecto\nCon el conjunto de ajuste \\(\\{Z\\}\\), el efecto causal medio se estima como \\[\n\\mathbb{E}[Y \\mid do(X = x)] = \\sum_z \\mathbb{E}[Y \\mid X = x, Z = z]\\, P(Z = z).\n\\]\nPara más detalle, ver la documentación de Quarto."
+  },
+  {
+    "objectID": "cursos/index.html",
+    "href": "cursos/index.html",
+    "title": "Cursos",
     "section": "",
-    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+    "text": "Aprendizaje profundo para imágenes médicas\n\n\n\nia\n\nimágenes\n\n\n\nRedes convolucionales con PyTorch para clasificar y segmentar imágenes clínicas.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n15 sept 2026\n\n\n\n\n\n\n\n\n\n\n\nInferencia causal con grafos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nDel DAG declarado en el protocolo a la estimación de efectos con datos observacionales.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 ago 2026\n\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
-    "href": "notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
-    "title": "Grafos causales para experimentos",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "P. E. Caicedo-Rodríguez",
     "section": "",
-    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+    "text": "Del dato a la causa\n\n\nDiseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nVer cursos Ver notas Sobre mí"
   },
   {
-    "objectID": "notas/grafos-causales/index.html#estimación",
-    "href": "notas/grafos-causales/index.html#estimación",
-    "title": "Grafos causales para experimentos",
-    "section": "2 Estimación",
-    "text": "2 Estimación\nimport pandas as pd\n\ndef efecto_ajustado(df: pd.DataFrame) -&gt; float:\n    \"\"\"Estandarización por el confusor Z.\"\"\"\n    pesos = df[\"Z\"].value_counts(normalize=True)\n    medias = df.groupby([\"Z\", \"X\"])[\"Y\"].mean().unstack()\n    return float(((medias[1] - medias[0]) * pesos).sum())"
-  },
-  {
-    "objectID": "notas/index.html",
-    "href": "notas/index.html",
-    "title": "Notas",
+    "objectID": "index.html#convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica",
+    "href": "index.html#convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica",
+    "title": "P. E. Caicedo-Rodríguez",
     "section": "",
-    "text": "Grafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n6 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 oct 2026\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nVer cursos Ver notas Sobre mí"
   },
   {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html",
-    "title": "Del dato a la causa",
-    "section": "",
-    "text": "Los datos crudos llegan de marcha, sEMG y video.\nCada fuente declara un contrato de datos.\n\nTipo, unidades y frecuencia de muestreo.\nCódigo de comprobación del contrato.\n\nLa extracción produce variables con significado clínico.\n\n\n\nUna variable sin contrato no entra al modelo.\n\n\n\n\nimport torch\n\ndef extraer_rms(senal: torch.Tensor, ventana: int = 200) -&gt; torch.Tensor:\n    \"\"\"RMS por ventanas de una señal sEMG (canales x muestras).\"\"\"\n    ventanas = senal.unfold(-1, ventana, ventana // 2)\n    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana\nLa función respeta el contrato: entra float32 [C, N] y sale float32 [C, V]."
+    "objectID": "index.html#ejes-de-trabajo",
+    "href": "index.html#ejes-de-trabajo",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "Ejes de trabajo",
+    "text": "Ejes de trabajo\n\n\nExtracción\nContratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.\n\n\nInformación\nVariables y relaciones como conocimientos para encontrar estructura y comunidades.\n\n\nCausalidad\nDAG declarados en el protocolo, estimación de efectos y evaluación explicativa.\n\n\nIA\nModelos estadísticos, de aprendizaje automático y profundo sobre Scikit Learn, PyTorch y Tensorflow.\n\n\n\nEstimación de protesis para artroplastía de cadera\nUn modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera."
   },
   {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
-    "title": "Del dato a la causa",
-    "section": "",
-    "text": "Los datos crudos llegan de marcha, sEMG y video.\nCada fuente declara un contrato de datos.\n\nTipo, unidades y frecuencia de muestreo.\nCódigo de comprobación del contrato.\n\nLa extracción produce variables con significado clínico.\n\n\n\nUna variable sin contrato no entra al modelo."
+    "objectID": "index.html#últimas-noticias",
+    "href": "index.html#últimas-noticias",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "Últimas noticias",
+    "text": "Últimas noticias\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\n\n\n1 oct 2026\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
-    "title": "Del dato a la causa",
-    "section": "",
-    "text": "import torch\n\ndef extraer_rms(senal: torch.Tensor, ventana: int = 200) -&gt; torch.Tensor:\n    \"\"\"RMS por ventanas de una señal sEMG (canales x muestras).\"\"\"\n    ventanas = senal.unfold(-1, ventana, ventana // 2)\n    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana\nLa función respeta el contrato: entra float32 [C, N] y sale float32 [C, V]."
-  },
-  {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#variables-como-grafo",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#variables-como-grafo",
-    "title": "Del dato a la causa",
-    "section": "Variables como grafo",
-    "text": "Variables como grafo\n\n\n\nNodos: variables extraídas.\nAristas: dependencias observadas.\nComunidades: subsistemas fisiológicos.\n\nEl grafo es el puente entre extracción y causalidad.\n\n\n\n\nMétrica\nValor\n\n\n\n\nNodos\n42\n\n\nAristas\n118\n\n\nDensidad\n0.14\n\n\nComunidades\n5"
-  },
-  {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#del-grafo-a-la-causa",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#del-grafo-a-la-causa",
-    "title": "Del dato a la causa",
-    "section": "Del grafo a la causa",
-    "text": "Del grafo a la causa\n\nCorrelación no es causalidad, pero un grafo bien construido dice qué hay que ajustar.\n\n\n\n\n\n\n\nImportanteSupuesto de identificación\n\n\n\nEl confusor \\(Z\\) debe medirse en la misma sesión que \\(X\\) e \\(Y\\).\n\n\n\n\n\n\n\n\nTipBuena práctica\n\n\n\nDeclara el DAG antes de mirar los resultados."
-  },
-  {
-    "objectID": "sobre-mi.html",
-    "href": "sobre-mi.html",
-    "title": "Pablo Eduardo Caicedo-Rodríguez",
-    "section": "",
-    "text": "Construyo BioForge Experiment OS, una plataforma para experimentos biomédicos organizada alrededor de contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.\nMe interesa la extracción de información, los grafos y la causalidad: pasar de señales crudas a preguntas que se pueden responder con evidencia."
+    "objectID": "index.html#cursos",
+    "href": "index.html#cursos",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "Cursos",
+    "text": "Cursos\n\n\n\n\n\nAprendizaje profundo para imágenes médicas\n\n\n\nia\n\nimágenes\n\n\n\nRedes convolucionales con PyTorch para clasificar y segmentar imágenes clínicas.\n\n\n\n\n\n15 sept 2026\n\n\n\n\n\n\n\nInferencia causal con grafos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nDel DAG declarado en el protocolo a la estimación de efectos con datos observacionales.\n\n\n\n\n\n1 ago 2026\n\n\n\n\n\nNo hay resultados"
   }
 ]

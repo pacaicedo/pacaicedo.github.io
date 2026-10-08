@@ -1,16 +1,25 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/notas/index.html",
     "items": [
       "/notas/grafos-causales/index.html",
       "/notas/extraer-variables/index.html"
     ]
   },
   {
-    "listing": "/notas/index.html",
+    "listing": "/cursos/index.html",
+    "items": [
+      "/cursos/Aprendizaje/index.html",
+      "/cursos/Inferencia/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
     "items": [
       "/notas/grafos-causales/index.html",
-      "/notas/extraer-variables/index.html"
+      "/notas/extraer-variables/index.html",
+      "/cursos/Aprendizaje/index.html",
+      "/cursos/Inferencia/index.html"
     ]
   }
 ]

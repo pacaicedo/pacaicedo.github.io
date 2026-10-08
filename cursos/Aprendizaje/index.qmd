@@ -1,0 +1,18 @@
+---
+title: "Aprendizaje profundo para imágenes médicas"
+subtitle: "Curso de ejemplo: cámbialo por uno tuyo"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-09-15
+categories: [ia, imágenes]
+description: "Redes convolucionales con PyTorch para clasificar y segmentar imágenes clínicas."
+---
+
+## Contenido
+
+1. Preparación de imágenes y contratos de datos.
+2. Redes convolucionales con PyTorch.
+3. Evaluación y explicación de los modelos.
+
+## Modalidad
+
+Ocho sesiones prácticas con cuadernos de Quarto.

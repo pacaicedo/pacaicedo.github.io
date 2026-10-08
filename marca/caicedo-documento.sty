@@ -32,6 +32,26 @@
 \RequirePackage{scrlayer-scrpage}
 \RequirePackage{enumitem}
 
+% Compatibilidad con KOMA-Script 3.49 y babel-spanish (incidencia #102).
+% Desde 3.49.1 KOMA registra este hook con códigos de caracteres normales.
+\ExplSyntaxOn
+\str_if_eq:eeT { \KOMAScriptVersion } { 2025/12/01~v3.49~KOMA-Script }
+  {
+    \hook_gremove_code:nn { begindocument/end } { \KOMAClassName }
+    \hook_gput_code:nnn { begindocument/end } { \KOMAClassName }
+      {
+        \cctab_begin:N \c_code_cctab
+        \exp_args:Nne
+        \hook_gput_code:nnn { cmd/@startsection/before } { \KOMAClassName }
+          {
+            \msg_warning:nnn { \KOMAClassName }
+              { sectioning-features-not-available } { \@startsection }
+          }
+        \cctab_end:
+      }
+  }
+\ExplSyntaxOff
+
 % ---------------------------------------------------------------- Paleta
 % Turquesa = dato y extracción, turquesa profundo = grafo y estructura, dorado = causa.
 \definecolor{cink}{HTML}{0B1824}      % fondo oscuro de marca

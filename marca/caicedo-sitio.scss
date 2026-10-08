@@ -282,6 +282,45 @@ div.quarto-post {
 .quarto-listing-category-title, .quarto-listing-category .category { font-family: $c-font-display; }
 .quarto-listing-category .category.active { color: $c-causa-d; }
 
+// ================================================================ Listados lado a lado (portada)
+// En el YAML, listing: con un - id: por listado; en el cuerpo:
+// ::: {.listados}
+// ::: {.listado}  ## Últimas noticias  ::: {#noticias} :::  :::
+// ::: {.listado}  ## Cursos            ::: {#cursos} :::    :::
+// :::
+// Columnas de 20rem como mínimo: dos desde ~740 px (tres si caben), una debajo de otra en el móvil.
+// El aire de arriba lo pone el bloque anterior; entre listados apilados, 3rem (= entre secciones).
+.listados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 3rem;
+  align-items: start;
+  margin: 0 0 2rem;
+  > .listado { min-width: 0; }
+  // Quarto deja 2em libres a la derecha del listado y 1em debajo; aquí los pone la rejilla.
+  .quarto-listing-container-default { margin-right: 0; }
+  .quarto-listing { padding-bottom: 0; }
+  // En media columna la fecha va encima del título, como un antetítulo, y no en una columna aparte.
+  div.quarto-post {
+    flex-direction: column;
+    gap: .3rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0;
+    &:last-child { margin-bottom: 0; }
+    .metadata { order: 0; flex-basis: auto; margin-top: 0; padding-bottom: 0; }
+    .body { order: 1; flex-basis: auto; }
+    .thumbnail { order: 2; flex-basis: auto; img { max-height: 10rem; } }
+    .listing-date {
+      font-family: $c-font-mono; font-size: .75rem; letter-spacing: .08em;
+      text-transform: uppercase; color: $c-muted;
+    }
+    .listing-title { font-size: 1.25rem; }
+  }
+}
+// Bajo 992 px Quarto da 1rem al primer H2 de la página (section:first-of-type); así los títulos
+// de todos los listados quedan a la misma altura.
+#quarto-content .listados > section.listado > h2:first-child { margin-top: 0; }
+
 // ================================================================ Página "sobre mí" (about)
 // Selectores tan específicos como los de Quarto (div.quarto-about-<plantilla> .about-entity .about-link),
 // que si no imponen su azul y sus esquinas de 4 px.

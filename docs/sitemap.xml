@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.org/index.html</loc>
-    <lastmod>2026-10-08T15:40:28.268Z</lastmod>
-  </url>
-  <url>
-    <loc>https://example.org/ejemplos/documento/documento-ejemplo.html</loc>
-    <lastmod>2026-10-07T06:52:28.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://example.org/marca.html</loc>
+    <loc>https://example.org/sobre-mi.html</loc>
     <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/notas/extraer-variables/index.html</loc>
+    <loc>https://example.org/cursos/Aprendizaje/index.html</loc>
+    <lastmod>2026-10-08T17:56:37.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/cursos/Inferencia/index.html</loc>
+    <lastmod>2026-10-08T17:58:23.497Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/ejemplos/diapositivas/diapositivas-ejemplo.html</loc>
+    <lastmod>2026-10-07T06:52:04.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/notas/index.html</loc>
     <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
@@ -21,15 +25,23 @@
     <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/notas/index.html</loc>
+    <loc>https://example.org/notas/extraer-variables/index.html</loc>
     <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/ejemplos/diapositivas/diapositivas-ejemplo.html</loc>
-    <lastmod>2026-10-07T06:52:04.000Z</lastmod>
+    <loc>https://example.org/marca.html</loc>
+    <lastmod>2026-10-07T06:52:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://example.org/sobre-mi.html</loc>
-    <lastmod>2026-10-07T06:52:48.000Z</lastmod>
+    <loc>https://example.org/ejemplos/documento/documento-ejemplo.html</loc>
+    <lastmod>2026-10-08T18:10:07.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/cursos/index.html</loc>
+    <lastmod>2026-10-08T17:02:36.750Z</lastmod>
+  </url>
+  <url>
+    <loc>https://example.org/index.html</loc>
+    <lastmod>2026-10-08T18:04:38.270Z</lastmod>
   </url>
 </urlset>

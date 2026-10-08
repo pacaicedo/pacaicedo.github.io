@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e55322775af7e19282de0ecde340759f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a7dde5e90e695f8bdecc3e63e605ea9f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3928dc7395e9c07d944a01450d089683.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-noticias .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -87,7 +87,35 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-noticias'] = new List('listing-noticias', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-cursos .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-cursos'] = new List('listing-cursos', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -186,22 +214,22 @@ window.Quarto = {
 
 <div class="hero">
 <p><span class="hero-kicker">Del dato a la causa</span></p>
-<section id="convierto-señales-biomédicas-en-evidencia-causal" class="level2">
-<h2 class="anchored" data-anchor-id="convierto-señales-biomédicas-en-evidencia-causal">Convierto señales biomédicas en evidencia causal</h2>
-<p>Diseño plataformas que extraen información de marcha, sEMG y video, la conectan como grafos y la llevan hasta preguntas causales reproducibles.</p>
-<p><a href="./notas/index.html" class="btn btn-marca">Ver notas</a> <a href="./sobre-mi.html" class="btn btn-marca-borde">Sobre mí</a></p>
+<section id="convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica" class="level2">
+<h2 class="anchored" data-anchor-id="convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica">Convirtiendo señales e imágenes biomédicas en evidencia clínica</h2>
+<p>Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.</p>
+<p><a href="./cursos/index.html" class="btn btn-marca">Ver cursos</a> <a href="./notas/index.html" class="btn btn-marca">Ver notas</a> <a href="./sobre-mi.html" class="btn btn-marca-borde">Sobre mí</a></p>
 </section>
 </div>
 <section id="ejes-de-trabajo" class="level2">
 <h2 class="anchored" data-anchor-id="ejes-de-trabajo">Ejes de trabajo</h2>
 <div class="ejes">
-<section id="extracción-de-información" class="level3 eje dato">
-<h3 class="anchored" data-anchor-id="extracción-de-información">Extracción de información</h3>
+<section id="extracción" class="level3 eje dato">
+<h3 class="anchored" data-anchor-id="extracción">Extracción</h3>
 <p>Contratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.</p>
 </section>
-<section id="grafos" class="level3 eje grafo">
-<h3 class="anchored" data-anchor-id="grafos">Grafos</h3>
-<p>Variables y relaciones como grafos para encontrar estructura y comunidades.</p>
+<section id="información" class="level3 eje grafo">
+<h3 class="anchored" data-anchor-id="información">Información</h3>
+<p>Variables y relaciones como conocimientos para encontrar estructura y comunidades.</p>
 </section>
 <section id="causalidad" class="level3 eje causa">
 <h3 class="anchored" data-anchor-id="causalidad">Causalidad</h3>
@@ -209,25 +237,18 @@ window.Quarto = {
 </section>
 <section id="ia" class="level3 eje ia">
 <h3 class="anchored" data-anchor-id="ia">IA</h3>
-<p>Modelos estadísticos, de aprendizaje automático y profundo sobre PyTorch y Tensorflow.</p>
+<p>Modelos estadísticos, de aprendizaje automático y profundo sobre Scikit Learn, PyTorch y Tensorflow.</p>
 </section>
 </div>
-<section id="bioforge-experiment-os" class="level3 banda">
-<h3 class="anchored" data-anchor-id="bioforge-experiment-os">BioForge Experiment OS</h3>
-<p>Una plataforma donde el <strong>experimento</strong> es la unidad de información: objetivo, protocolo y datos con contrato, recorridos por tres procesos encadenados (preprocesamiento, modelado y evaluación).</p>
+<section id="estimación-de-protesis-para-artroplastía-de-cadera" class="level3 banda">
+<h3 class="anchored" data-anchor-id="estimación-de-protesis-para-artroplastía-de-cadera">Estimación de protesis para artroplastía de cadera</h3>
+<p>Un modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera.</p>
 </section>
 </section>
-<section id="últimas-notas" class="level2">
-<h2 class="anchored" data-anchor-id="últimas-notas">Últimas notas</h2>
-<div id="listing-listing">
-
-</div>
-
-
-
-</section>
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listados">
+<section id="últimas-noticias" class="level2 listado">
+<h2 class="anchored" data-anchor-id="últimas-noticias">Últimas noticias</h2>
+<div id="listing-noticias" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-categories="Y2F1c2FsaWRhZCUyQ2dyYWZvcw==" data-listing-date-sort="1791262800000" data-listing-file-modified-sort="1791355968000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
 <div class="body">
@@ -279,7 +300,87 @@ window.Quarto = {
 </div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>
-</div></main> <!-- /main -->
+</div>
+</section>
+<section id="cursos" class="level2 listado">
+<h2 class="anchored" data-anchor-id="cursos">Cursos</h2>
+<div id="listing-cursos" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="aWElMkNpbSVDMyVBMWdlbmVz" data-listing-date-sort="1789448400000" data-listing-file-modified-sort="1791482197881" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./cursos/Aprendizaje/index.html" class="no-external">Aprendizaje profundo para imágenes médicas</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aWE='); return false;">ia</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW0lQzMlQTFnZW5lcw=='); return false;">imágenes</div>
+
+</div>
+<div class="delink listing-description"><a href="./cursos/Aprendizaje/index.html" class="no-external">
+<p>Redes convolucionales con PyTorch para clasificar y segmentar imágenes clínicas.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./cursos/Aprendizaje/index.html" class="no-external">
+<div class="listing-date">
+15 sept 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Y2F1c2FsaWRhZCUyQ2dyYWZvcw==" data-listing-date-sort="1785560400000" data-listing-file-modified-sort="1791482303497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./cursos/Inferencia/index.html" class="no-external">Inferencia causal con grafos</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2F1c2FsaWRhZA=='); return false;">causalidad</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZm9z'); return false;">grafos</div>
+
+</div>
+<div class="delink listing-description"><a href="./cursos/Inferencia/index.html" class="no-external">
+<p>Del DAG declarado en el protocolo a la estimación de efectos con datos observacionales.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./cursos/Inferencia/index.html" class="no-external">
+<div class="listing-date">
+1 ago 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+</section>
+</div>
+<script>
+// Píldoras de categoría con dos listados en la portada: Quarto filtraría las dos columnas a la vez
+// (y dejaría una vacía), así que cada píldora abre el listado completo filtrado por esa categoría.
+document.addEventListener("click", function (e) {
+  var p = e.target.closest(".listados .listing-category");
+  if (!p) return;
+  e.stopPropagation(); // fase de captura: se adelanta al onclick de Quarto
+  var destino = p.closest("#listing-cursos") ? "cursos/index.html" : "notas/index.html";
+  location.href = destino + "#category=" + encodeURIComponent(p.textContent.trim());
+}, true);
+// Las píldoras del encabezado de una nota o un curso enlazan a la portada (#category=...):
+// se reenvían a la página del listado correspondiente, que sí sabe filtrar.
+if (location.hash.indexOf("category=") >= 0) {
+  var origen = document.referrer.indexOf("/cursos/") >= 0 ? "cursos/" : "notas/";
+  location.replace(origen + "index.html" + location.hash);
+}
+</script>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

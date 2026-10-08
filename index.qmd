@@ -3,35 +3,41 @@ pagetitle: "P. E. Caicedo-Rodríguez · Del dato a la causa"
 page-layout: full
 title-block-banner: false
 listing:
-  contents: "notas/*/index.qmd"
-  type: default
-  sort: "date desc"
-  max-items: 3
-  fields: [title, description, date, categories]
+  - id: noticias
+    contents: "notas/*/index.qmd"
+    type: default
+    sort: "date desc"
+    max-items: 3
+    fields: [title, description, date, categories]
+  - id: cursos
+    contents: "cursos/*/index.qmd"
+    type: default
+    sort: "date desc"
+    max-items: 3
+    fields: [title, description, date, categories]
 ---
 
 ::: {.hero}
 [Del dato a la causa]{.hero-kicker}
 
-## Convierto señales biomédicas en evidencia causal
+## Convirtiendo señales e imágenes biomédicas en evidencia clínica
 
-Diseño plataformas que extraen información de marcha, sEMG y video, la conectan como grafos
-y la llevan hasta preguntas causales reproducibles.
+Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.
 
-[Ver notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
+[Ver cursos](cursos/index.qmd){.btn .btn-marca} [Ver notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
 :::
 
 ## Ejes de trabajo
 
 ::: {.ejes}
 ::: {.eje .dato}
-### Extracción de información
+### Extracción
 Contratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.
 :::
 
 ::: {.eje .grafo}
-### Grafos
-Variables y relaciones como grafos para encontrar estructura y comunidades.
+### Información
+Variables y relaciones como conocimientos para encontrar estructura y comunidades.
 :::
 
 ::: {.eje .causa}
@@ -41,18 +47,49 @@ DAG declarados en el protocolo, estimación de efectos y evaluación explicativa
 
 ::: {.eje .ia}
 ### IA
-Modelos estadísticos, de aprendizaje automático y profundo sobre PyTorch y Tensorflow.
+Modelos estadísticos, de aprendizaje automático y profundo sobre Scikit Learn, PyTorch y Tensorflow.
 :::
 :::
 
 ::: {.banda}
-### BioForge Experiment OS
+### Estimación de protesis para artroplastía de cadera
 
-Una plataforma donde el **experimento** es la unidad de información: objetivo, protocolo y datos
-con contrato, recorridos por tres procesos encadenados (preprocesamiento, modelado y evaluación).
+Un modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera.
 :::
 
-## Últimas notas
 
-::: {#listing-listing}
+::: {.listados}
+::: {.listado}
+## Últimas noticias
+ 
+::: {#noticias}
 :::
+:::
+ 
+::: {.listado}
+## Cursos
+ 
+::: {#cursos}
+:::
+:::
+:::
+ 
+```{=html}
+<script>
+// Píldoras de categoría con dos listados en la portada: Quarto filtraría las dos columnas a la vez
+// (y dejaría una vacía), así que cada píldora abre el listado completo filtrado por esa categoría.
+document.addEventListener("click", function (e) {
+  var p = e.target.closest(".listados .listing-category");
+  if (!p) return;
+  e.stopPropagation(); // fase de captura: se adelanta al onclick de Quarto
+  var destino = p.closest("#listing-cursos") ? "cursos/index.html" : "notas/index.html";
+  location.href = destino + "#category=" + encodeURIComponent(p.textContent.trim());
+}, true);
+// Las píldoras del encabezado de una nota o un curso enlazan a la portada (#category=...):
+// se reenvían a la página del listado correspondiente, que sí sabe filtrar.
+if (location.hash.indexOf("category=") >= 0) {
+  var origen = document.referrer.indexOf("/cursos/") >= 0 ? "cursos/" : "notas/";
+  location.replace(origen + "index.html" + location.hash);
+}
+</script>
+```

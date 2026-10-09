@@ -1,0 +1,19 @@
+# Variante: el CI ejecuta el código Python del sitio en cada publicación.
+# Úsala solo si el código debe correr en el servidor (datos que cambian, etc.);
+# si no, prefiere freeze (05-freeze.yml) y la imagen oficial de Quarto.
+
+publicar-sitio:
+  image: python:3.12-slim
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  cache:
+    paths:
+      - .cache/pip
+  before_script:
+    - pip install quarto-cli==1.8.27 jupyter -r requirements.txt
+  script:
+    - quarto render
+  pages:
+    publish: _site
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

@@ -7,3 +7,9 @@ format:
     toc-title: "Contenido"
     number-sections: true
     highlight-style: ../recursos/marca/caicedo-claro.theme
+    embed-resources: true
+    smooth-scroll: true
+    anchor-sections: true
+    fig-cap-location: bottom
+    mermaid:
+      theme: neutral

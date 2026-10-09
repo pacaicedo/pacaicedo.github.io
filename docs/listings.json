@@ -31,7 +31,9 @@
     "listing": "/index.html",
     "items": [
       "/notas/grafos-causales/index.html",
+      "/tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html",
       "/notas/extraer-variables/index.html",
+      "/tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/extraer-variables/index.html",
       "/cursos/Aprendizaje/index.html",
       "/cursos/Inferencia/index.html",
       "/tutoriales/primer-dag/index.html",

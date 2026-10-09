@@ -1,0 +1,20 @@
+---
+title: "Extraer variables con contrato"
+subtitle: "sEMG, marcha y video en BioForge"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-10-01
+categories: [extracción, datos]
+description: "Cada fuente declara tipo, unidades y frecuencia antes de entrar al modelo."
+---
+
+## Contratos de datos
+
+| Fuente | Tipo           | Frecuencia |
+|--------|----------------|-----------:|
+| Marcha | serie de tiempo|     100 Hz |
+| sEMG   | señal          |    2000 Hz |
+| Video  | imagen         |     60 fps |
+
+: Fuentes de un experimento.
+
+> Una variable sin contrato no entra al modelo.

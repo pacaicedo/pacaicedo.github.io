@@ -248,15 +248,15 @@
     "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
     "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
     "title": "Del dato a la causa",
-    "section": "De la señal a la variable",
-    "text": "De la señal a la variable\n\nLos datos crudos llegan de marcha, sEMG y video.\nCada fuente declara un contrato de datos.\n\nTipo, unidades y frecuencia de muestreo.\nCódigo de comprobación del contrato.\n\nLa extracción produce variables con significado clínico.\n\nIdea clave\nUna variable sin contrato no entra al modelo."
+    "section": "",
+    "text": "Los datos crudos llegan de marcha, sEMG y video.\nCada fuente declara un contrato de datos.\n\nTipo, unidades y frecuencia de muestreo.\nCódigo de comprobación del contrato.\n\nLa extracción produce variables con significado clínico.\n\n\n\nUna variable sin contrato no entra al modelo."
   },
   {
     "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
     "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
     "title": "Del dato a la causa",
-    "section": "Código de extracción",
-    "text": "Código de extracción\nimport torch\n\ndef extraer_rms(senal: torch.Tensor, ventana: int = 200) -&gt; torch.Tensor:\n    \"\"\"RMS por ventanas de una señal sEMG (canales x muestras).\"\"\"\n    ventanas = senal.unfold(-1, ventana, ventana // 2)\n    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana\nLa función respeta el contrato: entra float32 [C, N] y sale float32 [C, V]."
+    "section": "",
+    "text": "import torch\n\ndef extraer_rms(senal: torch.Tensor, ventana: int = 200) -&gt; torch.Tensor:\n    \"\"\"RMS por ventanas de una señal sEMG (canales x muestras).\"\"\"\n    ventanas = senal.unfold(-1, ventana, ventana // 2)\n    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana\nLa función respeta el contrato: entra float32 [C, N] y sale float32 [C, V]."
   },
   {
     "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#variables-como-grafo",
@@ -270,7 +270,7 @@
     "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#del-grafo-a-la-causa",
     "title": "Del dato a la causa",
     "section": "Del grafo a la causa",
-    "text": "Del grafo a la causa\n\nCorrelación no es causalidad, pero un grafo bien construido dice qué hay que ajustar.\n\n\n\n\n\n\n\nSupuesto de identificación\n\n\nEl confusor \\(Z\\) debe medirse en la misma sesión que \\(X\\) e \\(Y\\).\n\n\n\n\n\n\n\n\n\nBuena práctica\n\n\nDeclara el DAG antes de mirar los resultados."
+    "text": "Del grafo a la causa\n\nCorrelación no es causalidad, pero un grafo bien construido dice qué hay que ajustar.\n\n\n\n\n\n\n\nImportanteSupuesto de identificación\n\n\n\nEl confusor \\(Z\\) debe medirse en la misma sesión que \\(X\\) e \\(Y\\).\n\n\n\n\n\n\n\n\nTipBuena práctica\n\n\n\nDeclara el DAG antes de mirar los resultados."
   },
   {
     "objectID": "proyectos/bioforge/index.html",
@@ -333,7 +333,7 @@
     "href": "index.html#últimas-noticias",
     "title": "P. E. Caicedo-Rodríguez",
     "section": "Últimas noticias",
-    "text": "Últimas noticias\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\n\n\n1 oct 2026\n\n\n\n\n\nNo hay resultados"
+    "text": "Últimas noticias\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\n\n\n1 oct 2026\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "index.html#cursos",
@@ -417,6 +417,321 @@
     "href": "tutoriales/index.html",
     "title": "Tutoriales",
     "section": "",
-    "text": "Tu primer DAG en Python\n\n\n\ncausalidad\n\ngrafos\n\n\n\nDeclarar un grafo causal con NetworkX y leer de él qué ajustar.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n4 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nEnvolvente de una señal sEMG con SciPy\n\n\n\nextracción\n\nseñales\n\n\n\nFiltrado pasa banda, rectificación y paso bajo, paso a paso y en Python.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n20 sept 2026\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Convierto señales biomédicas en evidencia causal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n6 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nTu primer DAG en Python\n\n\n\ncausalidad\n\ngrafos\n\n\n\nDeclarar un grafo causal con NetworkX y leer de él qué ajustar.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n4 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nEnvolvente de una señal sEMG con SciPy\n\n\n\nextracción\n\nseñales\n\n\n\nFiltrado pasa banda, rectificación y paso bajo, paso a paso y en Python.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n20 sept 2026\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "",
+    "text": "GitLab tiene su propio servicio de alojamiento estático, GitLab Pages, y un sitio Quarto es exactamente eso: una carpeta de HTML, CSS, imágenes y JavaScript. La pieza que une los dos es un archivo .gitlab-ci.yml en la raíz del repositorio. Cada vez que haces git push, GitLab arranca un contenedor con Quarto, ejecuta quarto render y publica la carpeta _site/ en una dirección https://….gitlab.io.\nEste tutorial cubre:\n\nCómo funciona GitLab Pages y qué dirección tendrá tu sitio.\nEl acceso SSH a GitLab sin pisar tu configuración de GitHub (github-personal), con un alias propio, gitlab-personal.\nPreparar el sitio: .gitignore, site-url y los enlaces que se rompen cuando el sitio vive en una subruta.\nEl .gitlab-ci.yml comentado línea a línea, con un job que comprueba los merge requests y otro que publica la rama principal.\nEl primer despliegue paso a paso y el flujo de trabajo diario.\nSitios con código Python o R, con freeze o ejecutando en el CI.\nLa alternativa sin render en el CI: subir el _site/ ya renderizado.\nExtras: dominio propio, acceso privado, publicar a la vez en GitHub y GitLab, errores comunes y una hoja de trucos.\n\n\n\n\n\n\n\nNotaCómo leer este documento\n\n\n\n\nSi solo quieres ver el sitio en línea, sigue las secciones Sección 3 a Sección 7 en orden: son unos quince minutos.\nLa Sección 6 explica cada línea del pipeline; vuelve a ella cuando quieras cambiar algo.\nLas secciones Sección 9 a Sección 11 son variantes y casos especiales.\nAl final hay errores comunes y una hoja de trucos.\n\n\n\n\n\n\n\n\n\nTipQué se verificó\n\n\n\nEl sitio de ejemplo (ejemplo/sitio-gitlab/, tu sitio de marca «Del dato a la causa» con el pipeline ya añadido) se clonó en una carpeta limpia y se renderizó con Quarto 1.8.27, la misma versión que fija el pipeline, con los mismos comandos que ejecuta el CI. Luego se sirvió bajo una subruta (/sitio-gitlab/), como lo haría GitLab con un sitio de proyecto, y se recorrieron sus 33 direcciones sin encontrar enlaces rotos. Los archivos YAML se validaron con un analizador YAML. Lo que no se pudo probar desde aquí es una ejecución real en los servidores de GitLab: la primera vez que hagas push, revisa el pipeline como se explica en la Sección 7.\n\n\n\n\nYa publicas tu sitio en GitHub Pages (pacaicedo/pacaicedo.github.io). La idea en GitLab es la misma; cambian los nombres y el lugar donde se configura.\n\nGitHub Pages frente a GitLab Pages\n\n\n\n\n\n\n\n\nGitHub Pages\nGitLab Pages\n\n\n\n\nDirección de usuario\nusuario.github.io\nusuario.gitlab.io\n\n\nDirección de proyecto\nusuario.github.io/proyecto/\nusuario.gitlab.io/proyecto/ o un dominio único proyecto-a1b2c3.gitlab.io\n\n\nQuién renderiza\nTú (quarto publish gh-pages) o una GitHub Action\nUn job del CI de GitLab\n\n\nArchivo de configuración\n.github/workflows/*.yml (opcional)\n.gitlab-ci.yml (obligatorio)\n\n\nquarto publish\nSí, destino gh-pages\nNo hay destino para GitLab; se publica con el CI\n\n\nDónde se ve la dirección\nSettings › Pages\nDeploy › Pages\n\n\nRepositorio privado con sitio público\nSolo en planes de pago\nSí, también en el plan gratuito\n\n\n\nLa diferencia práctica más importante: quarto publish no tiene un destino GitLab. En GitLab siempre publica el CI, y eso es una ventaja: el sitio se renderiza en un entorno limpio y reproducible, no en tu portátil.\n\n\n\n\nUna cuenta en gitlab.com (o en el GitLab de tu institución; ver Sección 11.4 si es una versión antigua).\nQuarto y git instalados en tu equipo. Comprueba tu versión de Quarto con quarto --version; la usarás en el pipeline.\nUn sitio Quarto (project: type: website). Puedes partir de ejemplo/sitio-gitlab/."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#github-pages-y-gitlab-pages",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#github-pages-y-gitlab-pages",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "",
+    "text": "Ya publicas tu sitio en GitHub Pages (pacaicedo/pacaicedo.github.io). La idea en GitLab es la misma; cambian los nombres y el lugar donde se configura.\n\nGitHub Pages frente a GitLab Pages\n\n\n\n\n\n\n\n\nGitHub Pages\nGitLab Pages\n\n\n\n\nDirección de usuario\nusuario.github.io\nusuario.gitlab.io\n\n\nDirección de proyecto\nusuario.github.io/proyecto/\nusuario.gitlab.io/proyecto/ o un dominio único proyecto-a1b2c3.gitlab.io\n\n\nQuién renderiza\nTú (quarto publish gh-pages) o una GitHub Action\nUn job del CI de GitLab\n\n\nArchivo de configuración\n.github/workflows/*.yml (opcional)\n.gitlab-ci.yml (obligatorio)\n\n\nquarto publish\nSí, destino gh-pages\nNo hay destino para GitLab; se publica con el CI\n\n\nDónde se ve la dirección\nSettings › Pages\nDeploy › Pages\n\n\nRepositorio privado con sitio público\nSolo en planes de pago\nSí, también en el plan gratuito\n\n\n\nLa diferencia práctica más importante: quarto publish no tiene un destino GitLab. En GitLab siempre publica el CI, y eso es una ventaja: el sitio se renderiza en un entorno limpio y reproducible, no en tu portátil."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#requisitos",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#requisitos",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "",
+    "text": "Una cuenta en gitlab.com (o en el GitLab de tu institución; ver Sección 11.4 si es una versión antigua).\nQuarto y git instalados en tu equipo. Comprueba tu versión de Quarto con quarto --version; la usarás en el pipeline.\nUn sitio Quarto (project: type: website). Puedes partir de ejemplo/sitio-gitlab/."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#qué-dirección-tendrá-tu-sitio",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#qué-dirección-tendrá-tu-sitio",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "2.1 Qué dirección tendrá tu sitio",
+    "text": "2.1 Qué dirección tendrá tu sitio\nGitLab decide la dirección según el nombre del proyecto:\n\nDirecciones de GitLab Pages en gitlab.com\n\n\n\n\n\n\nNombre del proyecto\nDirección\n\n\n\n\n&lt;usuario&gt;.gitlab.io\nhttps://&lt;usuario&gt;.gitlab.io/ (sitio de usuario, en la raíz)\n\n\ncualquier otro, con dominio único activado\nhttps://&lt;proyecto&gt;-&lt;id&gt;.gitlab.io/ (en la raíz)\n\n\ncualquier otro, con dominio único desactivado\nhttps://&lt;usuario&gt;.gitlab.io/&lt;proyecto&gt;/ (en una subruta)\n\n\n\nEl dominio único (Use unique domain) viene activado por defecto en los proyectos nuevos. GitLab lo usa para que dos proyectos del mismo usuario no compartan cookies. Se cambia en Deploy › Pages del proyecto.\n\n\n\n\n\n\nImportanteRecomendación\n\n\n\nPara tu sitio personal, crea el proyecto con el nombre &lt;usuario-gitlab&gt;.gitlab.io. Es el equivalente exacto de pacaicedo.github.io: el sitio vive en la raíz, la dirección es corta y no hay sorpresas con los enlaces. Si GitLab le asigna aun así un dominio único, desactívalo en Deploy › Pages."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#crear-una-clave-para-gitlab",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#crear-una-clave-para-gitlab",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "3.1 Crear una clave para GitLab",
+    "text": "3.1 Crear una clave para GitLab\nssh-keygen -t ed25519 -C \"gitlab personal\" -f ~/.ssh/id_ed25519_gitlab\nPon una frase de paso cuando la pida. Se crean dos archivos: ~/.ssh/id_ed25519_gitlab (privada, no sale de tu equipo) y ~/.ssh/id_ed25519_gitlab.pub (pública, la que se sube a GitLab)."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#registrar-la-clave-pública-en-gitlab",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#registrar-la-clave-pública-en-gitlab",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "3.2 Registrar la clave pública en GitLab",
+    "text": "3.2 Registrar la clave pública en GitLab\n\nCopia la clave pública:\ncat ~/.ssh/id_ed25519_gitlab.pub\nEn GitLab: tu avatar › Edit profile › SSH Keys › Add new key.\nPega la clave, ponle un título (por ejemplo, el nombre de tu equipo) y, en Usage type, deja Authentication & Signing."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#añadir-el-alias-gitlab-personal",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#añadir-el-alias-gitlab-personal",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "3.3 Añadir el alias gitlab-personal",
+    "text": "3.3 Añadir el alias gitlab-personal\nAñade este bloque a ~/.ssh/config, debajo del de github-personal (está en ejemplo/fragmentos/01-ssh-config):\n\n\n~/.ssh/config\n\nHost gitlab-personal\n    HostName gitlab.com\n    User git\n    IdentityFile ~/.ssh/id_ed25519_gitlab\n    IdentitiesOnly yes\n\n\nHost es el nombre que escribirás en los remotos.\nHostName es el servidor real.\nIdentitiesOnly yes obliga a SSH a ofrecer solo esa clave, sin probar las de GitHub."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#probar-la-conexión",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#probar-la-conexión",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "3.4 Probar la conexión",
+    "text": "3.4 Probar la conexión\nssh -T git@gitlab-personal\nLa respuesta esperada es Welcome to GitLab, @&lt;usuario-gitlab&gt;!. Si ves Permission denied (publickey), revisa la Sección 12.\nA partir de aquí, los remotos de GitLab se escriben así:\ngit@gitlab-personal:&lt;usuario-gitlab&gt;/&lt;proyecto&gt;.git"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#gitignore-la-salida-no-se-versiona",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#gitignore-la-salida-no-se-versiona",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "5.1 .gitignore: la salida no se versiona",
+    "text": "5.1 .gitignore: la salida no se versiona\nEl CI genera _site/ en cada publicación, así que no hace falta (ni conviene) subirlo al repositorio:\n\n\n.gitignore\n\n# Salida de Quarto: la genera el CI de GitLab, no se versiona.\n/_site/\n/public/\n/.quarto/\n\n# Si algún día usas código ejecutable con `freeze: auto`,\n# la carpeta _freeze/ SÍ se versiona (no la añadas aquí)."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#site-url-la-dirección-pública",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#site-url-la-dirección-pública",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "5.2 site-url: la dirección pública",
+    "text": "5.2 site-url: la dirección pública\nsite-url no afecta a la navegación, pero Quarto lo usa para el sitemap.xml, los feeds RSS de los listados y las tarjetas para redes sociales. Ponle la dirección que muestra Deploy › Pages:\n\n\n_quarto.yml (fragmento)\n\nwebsite:\n  # Dirección pública del sitio. Cópiala de Deploy &gt; Pages en GitLab, por ejemplo:\n  #   https://&lt;usuario-gitlab&gt;.gitlab.io/            (sitio de usuario)\n  #   https://&lt;usuario-gitlab&gt;.gitlab.io/sitio-gitlab/ (sitio de proyecto)\n  #   https://sitio-gitlab-a1b2c3.gitlab.io/          (dominio único, el valor por defecto)\n  site-url: https://usuario-gitlab.gitlab.io/sitio-gitlab/"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#enlaces-que-se-rompen-en-una-subruta",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#enlaces-que-se-rompen-en-una-subruta",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "5.3 Enlaces que se rompen en una subruta",
+    "text": "5.3 Enlaces que se rompen en una subruta\nQuarto escribe casi todos los enlaces como relativos (notas/index.html, ../marca.html), y por eso un mismo sitio funciona igual en la raíz de un dominio que en /sitio-gitlab/. Hay una excepción que aparece en tu sitio: los links: de una página About (la plantilla trestles de «Sobre mí»).\nCon esto en sobre-mi.qmd:\nabout:\n  template: trestles\n  links:\n    - text: Notas\n      href: notas/index.qmd\nQuarto 1.8.27 genera href=\"/notas/index.html\", un enlace absoluto desde la raíz del dominio. En usuario.gitlab.io/ funciona; en usuario.gitlab.io/sitio-gitlab/ lleva a usuario.gitlab.io/notas/, que no existe. Probé también notas/index.html y ../notas/index.html, y Quarto les antepone la barra igual.\nEn el ejemplo, los botones salen de links: y pasan al cuerpo de la página como enlaces normales, con las clases de botón de tu marca:\n\n\nsobre-mi.qmd (final)\n\n[Notas](notas/index.qmd){.btn .btn-marca} [Marca](marca.qmd){.btn .btn-marca-borde}\n\nSi publicas en la raíz (sitio de usuario o dominio único), los links: de About funcionan sin cambios; el arreglo solo es necesario en una subruta, aunque no estorba en ningún caso.\n\n\n\n\n\n\nTipCómo detectar enlaces absolutos\n\n\n\nDespués de quarto render, busca enlaces que empiecen por /:\ngrep -rn 'href=\"/\\|src=\"/' _site --include=*.html\nSi no sale nada, el sitio funciona en cualquier subruta."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#bloque-por-bloque",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#bloque-por-bloque",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "6.1 Bloque por bloque",
+    "text": "6.1 Bloque por bloque\n\ndefault: image:\n\nLa imagen Docker de todos los jobs. ghcr.io/quarto-dev/quarto es la imagen oficial del equipo de Quarto; tiene una etiqueta por versión (1.8.27, 1.10.19…) y latest. Fija una versión igual a la de tu equipo: con latest, una versión nueva de Quarto puede cambiar el HTML el día menos pensado, sin que tú hayas cambiado nada.\n\nstages:\n\nEl orden de las etapas. Aquí cada etapa tiene un solo job y nunca corren los dos en el mismo pipeline, pero nombrarlas deja el pipeline legible en la interfaz de GitLab.\n\ncomprobar\n\nCorre solo en los merge requests ($CI_PIPELINE_SOURCE == \"merge_request_event\"). Renderiza el sitio para detectar errores antes de fusionar y guarda _site/ durante una semana como artefacto: desde la página del job puedes descargarlo y abrirlo en tu equipo para revisar los cambios. No publica nada.\n\npublicar-sitio\n\nCorre solo en la rama por defecto ($CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH, normalmente main). Renderiza y, gracias a pages: publish: _site, GitLab toma esa carpeta y la publica.\n\npages: publish: _site\n\nEs la forma actual de declarar un despliegue de Pages: cualquier job con la propiedad pages: publica, y publish: dice qué carpeta. GitLab añade esa carpeta a los artefactos del job automáticamente, así que no hace falta escribir artifacts:. La forma antigua (un job llamado exactamente pages que deja el sitio en public/) está marcada como obsoleta; la necesitarás solo en un GitLab autogestionado antiguo (Sección 11.4)."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#por-qué-no-quarto-publish",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#por-qué-no-quarto-publish",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "6.2 ¿Por qué no quarto publish?",
+    "text": "6.2 ¿Por qué no quarto publish?\nquarto publish sabe publicar en GitHub Pages, Netlify, Quarto Pub, Posit Connect y Confluence, pero no en GitLab Pages. En GitLab el despliegue es siempre responsabilidad del CI, y el CI solo necesita quarto render."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#validar-el-archivo-antes-de-subirlo",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#validar-el-archivo-antes-de-subirlo",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "6.3 Validar el archivo antes de subirlo",
+    "text": "6.3 Validar el archivo antes de subirlo\nGitLab tiene un editor de pipelines que valida la sintaxis: en el proyecto, Build › Pipeline editor. Pega el contenido, mira la pestaña Validate y solo entonces haz commit. Un error de sangría en YAML es el fallo más común del primer intento."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#ajustar-site-url",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#ajustar-site-url",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "7.1 1. Ajustar site-url",
+    "text": "7.1 1. Ajustar site-url\nEdita _quarto.yml con la dirección que tendrá el sitio (Sección 2). Si aún no la conoces, déjala; la corregirás después del primer despliegue."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#comprobar-en-local",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#comprobar-en-local",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "7.2 2. Comprobar en local",
+    "text": "7.2 2. Comprobar en local\ncd ~/sitios/sitio-gitlab\nquarto --version          # anota la versión y úsala en .gitlab-ci.yml\nquarto render             # debe terminar con \"Output created: _site/index.html\"\nquarto preview            # opcional: revisar en el navegador\nSi falla aquí, fallará también en el CI. Corrige primero en local."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#crear-el-repositorio-y-subirlo",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#crear-el-repositorio-y-subirlo",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "7.3 3. Crear el repositorio y subirlo",
+    "text": "7.3 3. Crear el repositorio y subirlo\ngit init -b main\ngit add .\ngit status                # _site/ y .quarto/ NO deben aparecer\ngit commit -m \"Sitio Quarto con publicación en GitLab Pages\"\n\ngit remote add origin git@gitlab-personal:&lt;usuario-gitlab&gt;/&lt;proyecto&gt;.git\ngit push -u origin main"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#seguir-el-pipeline",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#seguir-el-pipeline",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "7.4 4. Seguir el pipeline",
+    "text": "7.4 4. Seguir el pipeline\nEn GitLab, Build › Pipelines. Verás un pipeline con dos elementos:\n\npublicar-sitio, tu job. Al abrirlo ves el registro: la descarga de la imagen, quarto --version y la lista de páginas renderizadas ([1/6] sobre-mi.qmd … Output created: _site/index.html).\npages:deploy, un job que GitLab añade solo y que copia el sitio al servidor de Pages.\n\nCon los dos en verde, el sitio está publicado."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#encontrar-la-dirección",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#encontrar-la-dirección",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "7.5 5. Encontrar la dirección",
+    "text": "7.5 5. Encontrar la dirección\nDeploy › Pages muestra la dirección del sitio y la casilla Use unique domain. Ábrela. Si es la primera publicación, el sitio puede tardar unos minutos en responder.\nSi la dirección no coincide con tu site-url, corrige _quarto.yml, haz commit y push: el pipeline vuelve a publicar."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#opción-recomendada-freeze",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#opción-recomendada-freeze",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "9.1 Opción recomendada: freeze",
+    "text": "9.1 Opción recomendada: freeze\nAñade a _quarto.yml (fragmento 05-freeze.yml):\n\n\n_quarto.yml (fragmento)\n\nexecute:\n  freeze: auto\n\nCon freeze: auto, cuando renderizas en tu equipo Quarto guarda el resultado de cada documento con código en _freeze/. Haz commit de _freeze/. En el CI, quarto render encuentra esos resultados y no ejecuta nada: reutiliza figuras y tablas, y la imagen de Quarto basta.\nLa regla es simple: renderiza en local antes de hacer push cada vez que cambies una nota con código, para que _freeze/ esté al día. Si un documento con código no tiene su entrada en _freeze/, el CI intentará ejecutarlo y fallará; el mensaje de error dirá qué archivo es."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#opción-alternativa-ejecutar-en-el-ci",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#opción-alternativa-ejecutar-en-el-ci",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "9.2 Opción alternativa: ejecutar en el CI",
+    "text": "9.2 Opción alternativa: ejecutar en el CI\nSi el código debe correr en el servidor (por ejemplo, descarga datos que cambian), usa una imagen de Python e instala Quarto con pip (fragmento 06-gitlab-ci-python.yml):\n\n\n.gitlab-ci.yml (variante)\n\npublicar-sitio:\n  image: python:3.12-slim\n  variables:\n    PIP_CACHE_DIR: \"$CI_PROJECT_DIR/.cache/pip\"\n  cache:\n    paths:\n      - .cache/pip\n  before_script:\n    - pip install quarto-cli==1.8.27 jupyter -r requirements.txt\n  script:\n    - quarto render\n  pages:\n    publish: _site\n  rules:\n    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH\n\nquarto-cli es el paquete oficial de Quarto en PyPI; trae el binario de Quarto completo. requirements.txt lista lo que usan tus notas (pandas, matplotlib…). La caché de pip evita descargar todo en cada publicación. Cada pipeline será más lento (instalar Quarto y Jupyter tarda unos minutos), así que prefiere freeze mientras puedas."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#sec-acceso",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#sec-acceso",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "11.1 Acceso privado",
+    "text": "11.1 Acceso privado\nEn gitlab.com el sitio es público por defecto, aunque el repositorio sea privado. Para que solo lo vean los miembros del proyecto (útil para un borrador o para documentación interna de BioForge):\n\nActiva Pages Access Control en Settings › General › Visibility, project features, permissions › Pages.\nElige Only Project Members.\n\nLos visitantes tendrán que iniciar sesión en GitLab."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#dominio-propio",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#dominio-propio",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "11.2 Dominio propio",
+    "text": "11.2 Dominio propio\nEn Deploy › Pages › New Domain añades, por ejemplo, caicedo.dev. GitLab te pide dos registros en tu proveedor de DNS: uno que apunta el dominio a GitLab Pages y un registro TXT que demuestra que el dominio es tuyo. Con Automatic certificate management using Let’s Encrypt activado, GitLab emite y renueva el certificado HTTPS. Después cambia site-url al dominio nuevo."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#publicar-en-github-y-en-gitlab-a-la-vez",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#publicar-en-github-y-en-gitlab-a-la-vez",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "11.3 Publicar en GitHub y en GitLab a la vez",
+    "text": "11.3 Publicar en GitHub y en GitLab a la vez\nSi quieres mantener pacaicedo.github.io y tener una copia en GitLab, no hace falta duplicar el repositorio: añade un segundo remoto (fragmento 07-dos-remotos.sh):\ngit remote -v                                   # origin -&gt; github-personal\ngit remote add gitlab git@gitlab-personal:&lt;usuario-gitlab&gt;/sitio-gitlab.git\ngit push -u gitlab main                         # primer envío a GitLab\ngit push origin main && git push gitlab main    # en adelante, a los dos\nGitHub ignora .gitlab-ci.yml y GitLab ignora .github/, así que conviven sin problema.\nLo único que cambia entre los dos es site-url. Resuélvelo con un perfil de Quarto: deja en _quarto.yml la dirección de GitHub y crea _quarto-gitlab.yml con la de GitLab:\n\n\n_quarto-gitlab.yml\n\nwebsite:\n  site-url: https://&lt;usuario-gitlab&gt;.gitlab.io/\n\nEn el pipeline de GitLab, renderiza con ese perfil:\n  script:\n    - quarto render --profile gitlab\nQuarto combina _quarto.yml con _quarto-gitlab.yml y el segundo gana donde coinciden. Comprobado con el ejemplo: el sitemap.xml sale con la dirección de GitLab con --profile gitlab y con la de _quarto.yml sin él."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#sec-clasico",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#sec-clasico",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "11.4 GitLab autogestionado anterior a 17.9",
+    "text": "11.4 GitLab autogestionado anterior a 17.9\nSi tu universidad tiene su propio GitLab y es antiguo, pages: publish: no existirá y el pipeline dará un error de sintaxis. Usa la forma clásica (fragmento 04-gitlab-ci-clasico.yml): el job se llama exactamente pages y el sitio debe quedar en public/:\n\n\n.gitlab-ci.yml (GitLab antiguo)\n\npages:\n  image: ghcr.io/quarto-dev/quarto:1.8.27\n  script:\n    - quarto render --output-dir public\n  artifacts:\n    paths:\n      - public\n  rules:\n    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH\n\n--output-dir public cambia la carpeta de salida solo para ese render, sin tocar _quarto.yml. La versión de GitLab aparece en Help › Help (el signo de interrogación). Pregunta también si la instancia tiene Pages activado y si los runners pueden descargar imágenes de ghcr.io; si no pueden, el administrador te dirá qué registro usar."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#archivos-de-este-tutorial",
+    "href": "tutoriales/tutorial-quarto-gitlab/tutorial-quarto-gitlab.html#archivos-de-este-tutorial",
+    "title": "Un sitio Quarto en GitLab Pages",
+    "section": "13.1 Archivos de este tutorial",
+    "text": "13.1 Archivos de este tutorial\n\nArchivos de ejemplo\n\n\n\n\n\n\nArchivo\nContenido\n\n\n\n\nejemplo/sitio-gitlab/\nTu sitio de marca listo para GitLab (pipeline, .gitignore, site-url, enlaces corregidos)\n\n\nejemplo/fragmentos/01-ssh-config\nBloque gitlab-personal para ~/.ssh/config\n\n\nejemplo/fragmentos/02-gitlab-ci-render.yml\nPipeline recomendado (render en el CI)\n\n\nejemplo/fragmentos/03-gitlab-ci-prerenderizado.yml\nPublicar _site/ renderizado en local\n\n\nejemplo/fragmentos/04-gitlab-ci-clasico.yml\nGitLab anterior a 17.9\n\n\nejemplo/fragmentos/05-freeze.yml\nfreeze: auto para sitios con código\n\n\nejemplo/fragmentos/06-gitlab-ci-python.yml\nEjecutar Python en el CI\n\n\nejemplo/fragmentos/07-dos-remotos.sh\nPublicar en GitHub y GitLab desde un repositorio"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html",
+    "title": "Grafos causales para experimentos",
+    "section": "",
+    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
+    "title": "Grafos causales para experimentos",
+    "section": "",
+    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html#estimación",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html#estimación",
+    "title": "Grafos causales para experimentos",
+    "section": "2 Estimación",
+    "text": "2 Estimación\nimport pandas as pd\n\ndef efecto_ajustado(df: pd.DataFrame) -&gt; float:\n    \"\"\"Estandarización por el confusor Z.\"\"\"\n    pesos = df[\"Z\"].value_counts(normalize=True)\n    medias = df.groupby([\"Z\", \"X\"])[\"Y\"].mean().unstack()\n    return float(((medias[1] - medias[0]) * pesos).sum())"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/index.html",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/index.html",
+    "title": "Notas",
+    "section": "",
+    "text": "Grafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n6 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 oct 2026\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html",
+    "title": "Manual de marca",
+    "section": "",
+    "text": "La marca cuenta un recorrido: los datos se extraen, se conectan como grafo y terminan en una causa. El isotipo es el triángulo causal clásico: el confusor \\(Z\\) (turquesa profundo) apunta al tratamiento \\(X\\) (turquesa) y al desenlace \\(Y\\), y la flecha dorada \\(X \\to Y\\) es el efecto que se quiere estimar. El desenlace es la chispa de cuatro puntas del yunque de BioForja. La paleta (tinta, turquesa y dorado) y las fuentes DejaVu son las de las diapositivas de BioForja."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#idea",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#idea",
+    "title": "Manual de marca",
+    "section": "",
+    "text": "La marca cuenta un recorrido: los datos se extraen, se conectan como grafo y terminan en una causa. El isotipo es el triángulo causal clásico: el confusor \\(Z\\) (turquesa profundo) apunta al tratamiento \\(X\\) (turquesa) y al desenlace \\(Y\\), y la flecha dorada \\(X \\to Y\\) es el efecto que se quiere estimar. El desenlace es la chispa de cuatro puntas del yunque de BioForja. La paleta (tinta, turquesa y dorado) y las fuentes DejaVu son las de las diapositivas de BioForja."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#logotipos",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#logotipos",
+    "title": "Manual de marca",
+    "section": "2 Logotipos",
+    "text": "2 Logotipos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLogo de BioForja, del que sale la chispa del isotipo:\n\nEl motivo de fondo (red-causal.svg) va siempre sobre tinta, a la derecha y con un velo hacia el texto."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#paleta",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#paleta",
+    "title": "Manual de marca",
+    "section": "3 Paleta",
+    "text": "3 Paleta\nCada acento tiene un significado. Sobre fondo claro se usa la variante oscura de cada uno.\n\nTinta#0B1824\nSuperficie · texto#123047\nTurquesa · dato#38D6CF / #1A7C78\nTurquesa profundo · grafo#2AA09B / #1D6468\nDorado · causa#F2B544 / #97650A\nAcero · tenue#315064\nNiebla · filetes#B8CAD6\nPapel#F7FAFC\nCoral · aviso#FF7A5C / #C4432C\n\nLa firma visual es el filete degradado turquesa → turquesa profundo → dorado: bajo los títulos de sección, al pie de cada diapositiva y bajo la banda de título."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#tipografía",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#tipografía",
+    "title": "Manual de marca",
+    "section": "4 Tipografía",
+    "text": "4 Tipografía\n\nDejaVu Sans negrita · títulos\nDejaVu Sans · texto corrido, con cursiva real\nDejaVu Sans Mono · código, rótulos y pies\n\nTienen la licencia libre de Bitstream Vera / DejaVu. Los .ttf están en marca/fuentes/ para el PDF y beamer; los temas HTML las llevan incrustadas (recortadas a latín, griego y símbolos) y usan las del sistema si ya están instaladas."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#archivos",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#archivos",
+    "title": "Manual de marca",
+    "section": "5 Archivos",
+    "text": "5 Archivos\n\n\n\n\n\n\n\nArchivo\nPara\n\n\n\n\ncaicedo-sitio.scss\nsitio Quarto (_quarto.yml)\n\n\ncaicedo-documento.scss\ndocumentos HTML, solos o encima del sitio\n\n\ncaicedo-diapositivas.scss\ndiapositivas revealjs\n\n\ncaicedo-documento.sty\ndocumentos PDF (scrartcl + LuaLaTeX)\n\n\ncaicedo-diapositivas.sty\ndiapositivas beamer, gemelas de revealjs\n\n\ncaicedo-claro.theme, caicedo-oscuro.theme\nresaltado de código claro y oscuro\n\n\ncaicedo.lua\nclases de color {.dato} {.grafo} {.causa} {.alert} en PDF y beamer"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#clases-de-color",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/marca.html#clases-de-color",
+    "title": "Manual de marca",
+    "section": "6 Clases de color",
+    "text": "6 Clases de color\nEscribe [texto]{.dato}, [texto]{.grafo}, [texto]{.causa} o [texto]{.alert}: dato, grafo, causa."
+  },
+  {
+    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html",
+    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html",
+    "title": "Del dato a la causa",
+    "section": "",
+    "text": "Los datos crudos llegan de marcha, sEMG y video.\nCada fuente declara un contrato de datos.\n\nTipo, unidades y frecuencia de muestreo.\nCódigo de comprobación del contrato.\n\nLa extracción produce variables con significado clínico.\n\n\n\nUna variable sin contrato no entra al modelo.\n\n\n\n\nimport torch\n\ndef extraer_rms(senal: torch.Tensor, ventana: int = 200) -&gt; torch.Tensor:\n    \"\"\"RMS por ventanas de una señal sEMG (canales x muestras).\"\"\"\n    ventanas = senal.unfold(-1, ventana, ventana // 2)\n    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana\nLa función respeta el contrato: entra float32 [C, N] y sale float32 [C, V]."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "",
+    "text": "Del dato a la causa\n\n\nDiseño plataformas que extraen información de marcha, sEMG y video, la conectan como grafos y la llevan hasta preguntas causales reproducibles.\nVer notas Sobre mí"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html#convierto-señales-biomédicas-en-evidencia-causal",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html#convierto-señales-biomédicas-en-evidencia-causal",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "",
+    "text": "Diseño plataformas que extraen información de marcha, sEMG y video, la conectan como grafos y la llevan hasta preguntas causales reproducibles.\nVer notas Sobre mí"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html#ejes-de-trabajo",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html#ejes-de-trabajo",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "2 Ejes de trabajo",
+    "text": "2 Ejes de trabajo\n\n\n2.1 Extracción de información\nContratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.\n\n\n2.2 Grafos\nVariables y relaciones como grafos para encontrar estructura y comunidades.\n\n\n2.3 Causalidad\nDAG declarados en el protocolo, estimación de efectos y evaluación explicativa.\n\n\n2.4 IA\nModelos estadísticos, de aprendizaje automático y profundo sobre PyTorch.\n\n\n\n2.5 BioForge Experiment OS\nUna plataforma donde el experimento es la unidad de información: objetivo, protocolo y datos con contrato, recorridos por tres procesos encadenados (preprocesamiento, modelado y evaluación)."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html#últimas-notas",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/index.html#últimas-notas",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "3 Últimas notas",
+    "text": "3 Últimas notas"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/sobre-mi.html",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/sobre-mi.html",
+    "title": "Pablo Eduardo Caicedo-Rodríguez",
+    "section": "",
+    "text": "Construyo BioForge Experiment OS, una plataforma para experimentos biomédicos organizada alrededor de contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.\nMe interesa la extracción de información, los grafos y la causalidad: pasar de señales crudas a preguntas que se pueden responder con evidencia.\nNotas Marca"
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/extraer-variables/index.html",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/extraer-variables/index.html",
+    "title": "Extraer variables con contrato",
+    "section": "",
+    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
+  },
+  {
+    "objectID": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/extraer-variables/index.html#contratos-de-datos",
+    "href": "tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/extraer-variables/index.html#contratos-de-datos",
+    "title": "Extraer variables con contrato",
+    "section": "",
+    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
   }
 ]

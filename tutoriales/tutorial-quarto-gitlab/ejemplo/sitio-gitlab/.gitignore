@@ -1,0 +1,7 @@
+# Salida de Quarto: la genera el CI de GitLab, no se versiona.
+/_site/
+/public/
+/.quarto/
+
+# Si algún día usas código ejecutable con `freeze: auto`,
+# la carpeta _freeze/ SÍ se versiona (no la añadas aquí).

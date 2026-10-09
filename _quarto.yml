@@ -8,7 +8,7 @@ website:
   title: "P. E. Caicedo-Rodríguez"
   description: "Ars extrahendi informationem"
   favicon: recursos/marca/logo/insignia.svg
-  site-url: https://example.org
+  site-url: https://pacaicedo.github.io
   navbar:
     logo: recursos/marca/logo/isotipo-oscuro.svg
     title: "P. E. Caicedo-Rodríguez"

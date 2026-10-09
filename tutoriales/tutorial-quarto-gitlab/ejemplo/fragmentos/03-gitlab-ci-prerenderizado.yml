@@ -1,0 +1,12 @@
+# Variante: el sitio se renderiza en tu equipo y _site/ se sube al repositorio.
+# El CI no instala Quarto: solo comprueba que _site/ existe y lo publica.
+# Recuerda quitar /_site/ del .gitignore.
+
+publicar-sitio:
+  image: alpine:3.20
+  script:
+    - test -f _site/index.html || (echo "Falta _site/: ejecuta quarto render y haz commit" && exit 1)
+  pages:
+    publish: _site
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

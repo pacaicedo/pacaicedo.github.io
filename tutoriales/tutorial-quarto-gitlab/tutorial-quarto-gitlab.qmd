@@ -1,0 +1,737 @@
+---
+title: "Un sitio Quarto en GitLab Pages"
+subtitle: "Del repositorio a la web con un pipeline de CI que renderiza y publica"
+author: "Ph.D. Pablo Eduardo Caicedo-Rodríguez"
+date: last-modified
+lang: es
+---
+
+# Introducción {#sec-intro}
+
+GitLab tiene su propio servicio de alojamiento estático,
+**GitLab Pages**, y un sitio Quarto es exactamente eso: una carpeta de HTML,
+CSS, imágenes y JavaScript. La pieza que une los dos es un archivo
+`.gitlab-ci.yml` en la raíz del repositorio. Cada vez que haces `git push`,
+GitLab arranca un contenedor con Quarto, ejecuta `quarto render` y publica la
+carpeta `_site/` en una dirección `https://….gitlab.io`.
+
+Este tutorial cubre:
+
+1. **Cómo funciona** GitLab Pages y qué dirección tendrá tu sitio.
+2. El **acceso SSH a GitLab** sin pisar tu configuración de GitHub
+   (`github-personal`), con un alias propio, `gitlab-personal`.
+3. **Preparar el sitio**: `.gitignore`, `site-url` y los enlaces que se rompen
+   cuando el sitio vive en una subruta.
+4. El **`.gitlab-ci.yml`** comentado línea a línea, con un job que comprueba
+   los *merge requests* y otro que publica la rama principal.
+5. El **primer despliegue** paso a paso y el flujo de trabajo diario.
+6. **Sitios con código** Python o R, con `freeze` o ejecutando en el CI.
+7. La **alternativa sin render en el CI**: subir el `_site/` ya renderizado.
+8. Extras: dominio propio, acceso privado, publicar a la vez en GitHub y GitLab,
+   errores comunes y una **hoja de trucos**.
+
+::: {.callout-note}
+## Cómo leer este documento
+- Si solo quieres ver el sitio en línea, sigue las secciones @sec-ssh a
+  @sec-despliegue en orden: son unos quince minutos.
+- La @sec-ci explica cada línea del pipeline; vuelve a ella cuando quieras
+  cambiar algo.
+- Las secciones @sec-codigo a @sec-extras son variantes y casos especiales.
+- Al final hay errores comunes y una **hoja de trucos**.
+:::
+
+::: {.callout-tip}
+## Qué se verificó
+El sitio de ejemplo (`ejemplo/sitio-gitlab/`, tu sitio de marca «Del dato a la
+causa» con el pipeline ya añadido) se clonó en una carpeta limpia y se
+renderizó con **Quarto 1.8.27**, la misma versión que fija el pipeline, con los
+mismos comandos que ejecuta el CI. Luego se sirvió bajo una subruta
+(`/sitio-gitlab/`), como lo haría GitLab con un sitio de proyecto, y se
+recorrieron sus 33 direcciones sin encontrar enlaces rotos. Los archivos YAML
+se validaron con un analizador YAML. Lo que no se pudo probar desde aquí es una
+ejecución real en los servidores de GitLab: la primera vez que hagas *push*,
+revisa el pipeline como se explica en la @sec-despliegue.
+:::
+
+## GitHub Pages y GitLab Pages
+
+Ya publicas tu sitio en GitHub Pages (`pacaicedo/pacaicedo.github.io`). La idea
+en GitLab es la misma; cambian los nombres y el lugar donde se configura.
+
+| | GitHub Pages | GitLab Pages |
+|---|---|---|
+| Dirección de usuario | `usuario.github.io` | `usuario.gitlab.io` |
+| Dirección de proyecto | `usuario.github.io/proyecto/` | `usuario.gitlab.io/proyecto/` o un dominio único `proyecto-a1b2c3.gitlab.io` |
+| Quién renderiza | Tú (`quarto publish gh-pages`) o una GitHub Action | Un job del CI de GitLab |
+| Archivo de configuración | `.github/workflows/*.yml` (opcional) | `.gitlab-ci.yml` (obligatorio) |
+| `quarto publish` | Sí, destino `gh-pages` | No hay destino para GitLab; se publica con el CI |
+| Dónde se ve la dirección | *Settings › Pages* | *Deploy › Pages* |
+| Repositorio privado con sitio público | Solo en planes de pago | Sí, también en el plan gratuito |
+
+: GitHub Pages frente a GitLab Pages {tbl-colwidths="[24,38,38]"}
+
+La diferencia práctica más importante: **`quarto publish` no tiene un destino
+GitLab**. En GitLab siempre publica el CI, y eso es una ventaja: el sitio se
+renderiza en un entorno limpio y reproducible, no en tu portátil.
+
+## Requisitos
+
+- Una cuenta en [gitlab.com](https://gitlab.com) (o en el GitLab de tu
+  institución; ver @sec-clasico si es una versión antigua).
+- Quarto y git instalados en tu equipo. Comprueba tu versión de Quarto con
+  `quarto --version`; la usarás en el pipeline.
+- Un sitio Quarto (`project: type: website`). Puedes partir de
+  `ejemplo/sitio-gitlab/`.
+
+# Cómo funciona GitLab Pages {#sec-como}
+
+```{mermaid}
+flowchart LR
+  A["git push<br/>rama main"] --> B["GitLab CI<br/>contenedor Quarto"]
+  B --> C["quarto render<br/>→ _site/"]
+  C --> D["GitLab Pages<br/>….gitlab.io"]
+```
+
+
+1. Haces `git push` a la rama principal.
+2. GitLab lee `.gitlab-ci.yml` y crea un **pipeline**: una lista de *jobs*.
+3. Cada job corre en un contenedor Docker. Usamos la imagen oficial de Quarto,
+   que ya trae Quarto instalado.
+4. El job ejecuta `quarto render`, que deja el sitio en `_site/`.
+5. La palabra clave `pages:` le dice a GitLab que ese job produce un sitio web y
+   que la carpeta a publicar es `_site/`.
+6. GitLab copia esa carpeta a su servidor de Pages y el sitio queda en línea.
+
+## Qué dirección tendrá tu sitio
+
+GitLab decide la dirección según el **nombre del proyecto**:
+
+| Nombre del proyecto | Dirección |
+|---|---|
+| `<usuario>.gitlab.io` | `https://<usuario>.gitlab.io/` (sitio de usuario, en la raíz) |
+| cualquier otro, con *dominio único* activado | `https://<proyecto>-<id>.gitlab.io/` (en la raíz) |
+| cualquier otro, con *dominio único* desactivado | `https://<usuario>.gitlab.io/<proyecto>/` (en una subruta) |
+
+: Direcciones de GitLab Pages en gitlab.com {tbl-colwidths="[40,60]"}
+
+El **dominio único** (*Use unique domain*) viene activado por defecto en los
+proyectos nuevos. GitLab lo usa para que dos proyectos del mismo usuario no
+compartan *cookies*. Se cambia en **Deploy › Pages** del proyecto.
+
+::: {.callout-important}
+## Recomendación
+Para tu sitio personal, crea el proyecto con el nombre
+**`<usuario-gitlab>.gitlab.io`**. Es el equivalente exacto de
+`pacaicedo.github.io`: el sitio vive en la raíz, la dirección es corta y no hay
+sorpresas con los enlaces. Si GitLab le asigna aun así un dominio único,
+desactívalo en **Deploy › Pages**.
+:::
+
+# Acceso SSH a GitLab sin tocar GitHub {#sec-ssh}
+
+En tu equipo ya tienes un alias `github-personal` en `~/.ssh/config` y tus
+remotos de GitHub son de la forma `git@github-personal:pacaicedo/<repo>.git`.
+Para GitLab haremos lo mismo con una clave y un alias propios. Así cada servicio
+usa su clave y nunca se mezclan.
+
+::: {.callout-warning}
+## No uses `git@gitlab.com:` directamente
+Con un `~/.ssh/config` como el tuyo, `git@gitlab.com:…` intentará con las claves
+por defecto y probablemente falle con `Permission denied (publickey)`. Usa
+siempre el alias `gitlab-personal` que vamos a crear.
+:::
+
+## Crear una clave para GitLab
+
+```{.bash}
+ssh-keygen -t ed25519 -C "gitlab personal" -f ~/.ssh/id_ed25519_gitlab
+```
+
+Pon una frase de paso cuando la pida. Se crean dos archivos:
+`~/.ssh/id_ed25519_gitlab` (privada, no sale de tu equipo) y
+`~/.ssh/id_ed25519_gitlab.pub` (pública, la que se sube a GitLab).
+
+## Registrar la clave pública en GitLab
+
+1. Copia la clave pública:
+
+   ```{.bash}
+   cat ~/.ssh/id_ed25519_gitlab.pub
+   ```
+
+2. En GitLab: tu avatar › **Edit profile** › **SSH Keys** › **Add new key**.
+3. Pega la clave, ponle un título (por ejemplo, el nombre de tu equipo) y,
+   en *Usage type*, deja **Authentication & Signing**.
+
+## Añadir el alias `gitlab-personal`
+
+Añade este bloque a `~/.ssh/config`, debajo del de `github-personal`
+(está en `ejemplo/fragmentos/01-ssh-config`):
+
+```{.ssh-config filename="~/.ssh/config"}
+Host gitlab-personal
+    HostName gitlab.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_gitlab
+    IdentitiesOnly yes
+```
+
+- `Host` es el nombre que escribirás en los remotos.
+- `HostName` es el servidor real.
+- `IdentitiesOnly yes` obliga a SSH a ofrecer solo esa clave, sin probar las de
+  GitHub.
+
+## Probar la conexión
+
+```{.bash}
+ssh -T git@gitlab-personal
+```
+
+La respuesta esperada es `Welcome to GitLab, @<usuario-gitlab>!`. Si ves
+`Permission denied (publickey)`, revisa la @sec-errores.
+
+A partir de aquí, los remotos de GitLab se escriben así:
+
+```
+git@gitlab-personal:<usuario-gitlab>/<proyecto>.git
+```
+
+# Crear el proyecto en GitLab {#sec-proyecto}
+
+1. En GitLab: **New project** › **Create blank project**.
+2. **Project name**: `<usuario-gitlab>.gitlab.io` para el sitio personal
+   (recomendado) o cualquier otro nombre, por ejemplo `sitio-gitlab`, para un
+   sitio de proyecto.
+3. **Visibility level**: puede ser **Private**. El código queda privado y el
+   sitio sigue siendo público (eso se controla aparte; ver @sec-acceso).
+4. **Desmarca** *Initialize repository with a README*. Vas a subir un
+   repositorio que ya existe en tu equipo y un README inicial obligaría a hacer
+   *pull* antes del primer *push*.
+5. **Create project**.
+
+::: {.callout-note}
+## Verificación de la cuenta
+La primera vez que un pipeline intenta correr en los *runners* compartidos de
+gitlab.com, GitLab puede pedirte verificar tu identidad (con un teléfono o una
+tarjeta). Es una medida contra el abuso del CI gratuito y solo se hace una vez.
+Si el pipeline queda detenido con un aviso de verificación, este es el motivo.
+:::
+
+# Preparar el sitio Quarto {#sec-sitio}
+
+El ejemplo `ejemplo/sitio-gitlab/` es tu sitio de marca con lo necesario para
+GitLab ya añadido:
+
+```
+sitio-gitlab/
+├── .gitignore          ← nuevo: no versiona _site/
+├── .gitlab-ci.yml      ← nuevo: el pipeline
+├── README.md           ← nuevo (Quarto no lo publica)
+├── _quarto.yml         ← site-url ajustado
+├── index.qmd
+├── marca.qmd
+├── sobre-mi.qmd        ← enlaces de la página «Sobre mí» corregidos
+├── notas/
+└── marca/              ← temas, fuentes y logos de la marca
+```
+
+## `.gitignore`: la salida no se versiona
+
+El CI genera `_site/` en cada publicación, así que no hace falta (ni conviene)
+subirlo al repositorio:
+
+```{.gitignore filename=".gitignore"}
+# Salida de Quarto: la genera el CI de GitLab, no se versiona.
+/_site/
+/public/
+/.quarto/
+
+# Si algún día usas código ejecutable con `freeze: auto`,
+# la carpeta _freeze/ SÍ se versiona (no la añadas aquí).
+```
+
+## `site-url`: la dirección pública
+
+`site-url` no afecta a la navegación, pero Quarto lo usa para el `sitemap.xml`,
+los *feeds* RSS de los listados y las tarjetas para redes sociales. Ponle la
+dirección que muestra **Deploy › Pages**:
+
+```{.yaml filename="_quarto.yml (fragmento)"}
+website:
+  # Dirección pública del sitio. Cópiala de Deploy > Pages en GitLab, por ejemplo:
+  #   https://<usuario-gitlab>.gitlab.io/            (sitio de usuario)
+  #   https://<usuario-gitlab>.gitlab.io/sitio-gitlab/ (sitio de proyecto)
+  #   https://sitio-gitlab-a1b2c3.gitlab.io/          (dominio único, el valor por defecto)
+  site-url: https://usuario-gitlab.gitlab.io/sitio-gitlab/
+```
+
+## Enlaces que se rompen en una subruta
+
+Quarto escribe casi todos los enlaces como **relativos**
+(`notas/index.html`, `../marca.html`), y por eso un mismo sitio funciona igual
+en la raíz de un dominio que en `/sitio-gitlab/`. Hay una excepción que
+aparece en tu sitio: los `links:` de una página **About** (la plantilla
+`trestles` de «Sobre mí»).
+
+Con esto en `sobre-mi.qmd`:
+
+```{.yaml}
+about:
+  template: trestles
+  links:
+    - text: Notas
+      href: notas/index.qmd
+```
+
+Quarto 1.8.27 genera `href="/notas/index.html"`, un enlace **absoluto** desde la
+raíz del dominio. En `usuario.gitlab.io/` funciona; en
+`usuario.gitlab.io/sitio-gitlab/` lleva a `usuario.gitlab.io/notas/`, que no
+existe. Probé también `notas/index.html` y `../notas/index.html`, y Quarto les
+antepone la barra igual.
+
+En el ejemplo, los botones salen de `links:` y pasan al cuerpo de la página
+como enlaces normales, con las clases de botón de tu marca:
+
+```{.markdown filename="sobre-mi.qmd (final)"}
+[Notas](notas/index.qmd){.btn .btn-marca} [Marca](marca.qmd){.btn .btn-marca-borde}
+```
+
+Si publicas en la raíz (sitio de usuario o dominio único), los `links:` de
+About funcionan sin cambios; el arreglo solo es necesario en una subruta,
+aunque no estorba en ningún caso.
+
+::: {.callout-tip}
+## Cómo detectar enlaces absolutos
+Después de `quarto render`, busca enlaces que empiecen por `/`:
+
+```{.bash}
+grep -rn 'href="/\|src="/' _site --include=*.html
+```
+
+Si no sale nada, el sitio funciona en cualquier subruta.
+:::
+
+# El archivo `.gitlab-ci.yml` {#sec-ci}
+
+Este es el pipeline completo del ejemplo (también en
+`ejemplo/fragmentos/02-gitlab-ci-render.yml`):
+
+```{.yaml filename=".gitlab-ci.yml"}
+# Publica este sitio Quarto en GitLab Pages.
+#
+#   merge request      -> job "comprobar": renderiza el sitio para verificar que compila
+#                         y guarda _site/ como artefacto descargable (no publica nada).
+#   rama por defecto   -> job "publicar-sitio": renderiza y publica _site/ en GitLab Pages.
+#
+# Requiere GitLab 17.9 o posterior (GitLab.com ya lo cumple) por la palabra clave pages.publish.
+
+default:
+  # Imagen oficial de Quarto. Fija la misma versión que usas en tu equipo
+  # (quarto --version) para que el CI y tu render local den el mismo HTML.
+  image: ghcr.io/quarto-dev/quarto:1.8.27
+
+stages:
+  - comprobar
+  - publicar
+
+comprobar:
+  stage: comprobar
+  script:
+    - quarto --version
+    - quarto render
+  artifacts:
+    paths:
+      - _site/
+    expire_in: 1 week
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+publicar-sitio:
+  stage: publicar
+  script:
+    - quarto --version
+    - quarto render
+  pages:
+    publish: _site      # carpeta que GitLab sirve como sitio web
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
+
+## Bloque por bloque
+
+`default: image:`
+:   La imagen Docker de todos los jobs. `ghcr.io/quarto-dev/quarto` es la imagen
+    oficial del equipo de Quarto; tiene una etiqueta por versión (`1.8.27`,
+    `1.10.19`…) y `latest`. **Fija una versión** igual a la de tu equipo: con
+    `latest`, una versión nueva de Quarto puede cambiar el HTML el día menos
+    pensado, sin que tú hayas cambiado nada.
+
+`stages:`
+:   El orden de las etapas. Aquí cada etapa tiene un solo job y nunca corren
+    los dos en el mismo pipeline, pero nombrarlas deja el pipeline legible en la
+    interfaz de GitLab.
+
+`comprobar`
+:   Corre solo en los *merge requests*
+    (`$CI_PIPELINE_SOURCE == "merge_request_event"`). Renderiza el sitio para
+    detectar errores **antes** de fusionar y guarda `_site/` durante una semana
+    como artefacto: desde la página del job puedes descargarlo y abrirlo en tu
+    equipo para revisar los cambios. No publica nada.
+
+`publicar-sitio`
+:   Corre solo en la rama por defecto
+    (`$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH`, normalmente `main`). Renderiza y,
+    gracias a `pages: publish: _site`, GitLab toma esa carpeta y la publica.
+
+`pages: publish: _site`
+:   Es la forma actual de declarar un despliegue de Pages: cualquier job con
+    la propiedad `pages:` publica, y `publish:` dice qué carpeta. GitLab añade
+    esa carpeta a los artefactos del job automáticamente, así que no hace falta
+    escribir `artifacts:`. La forma antigua (un job llamado exactamente `pages`
+    que deja el sitio en `public/`) está marcada como obsoleta; la necesitarás
+    solo en un GitLab autogestionado antiguo (@sec-clasico).
+
+## ¿Por qué no `quarto publish`?
+
+`quarto publish` sabe publicar en GitHub Pages, Netlify, Quarto Pub, Posit
+Connect y Confluence, pero **no en GitLab Pages**. En GitLab el despliegue es
+siempre responsabilidad del CI, y el CI solo necesita `quarto render`.
+
+## Validar el archivo antes de subirlo
+
+GitLab tiene un editor de pipelines que valida la sintaxis: en el proyecto,
+**Build › Pipeline editor**. Pega el contenido, mira la pestaña **Validate** y
+solo entonces haz *commit*. Un error de sangría en YAML es el fallo más común
+del primer intento.
+
+# Primer despliegue paso a paso {#sec-despliegue}
+
+Supón que tu sitio está en `~/sitios/sitio-gitlab` (o copia ahí el ejemplo).
+
+## 1. Ajustar `site-url`
+
+Edita `_quarto.yml` con la dirección que tendrá el sitio (@sec-como). Si aún
+no la conoces, déjala; la corregirás después del primer despliegue.
+
+## 2. Comprobar en local
+
+```{.bash}
+cd ~/sitios/sitio-gitlab
+quarto --version          # anota la versión y úsala en .gitlab-ci.yml
+quarto render             # debe terminar con "Output created: _site/index.html"
+quarto preview            # opcional: revisar en el navegador
+```
+
+Si falla aquí, fallará también en el CI. Corrige primero en local.
+
+## 3. Crear el repositorio y subirlo
+
+```{.bash}
+git init -b main
+git add .
+git status                # _site/ y .quarto/ NO deben aparecer
+git commit -m "Sitio Quarto con publicación en GitLab Pages"
+
+git remote add origin git@gitlab-personal:<usuario-gitlab>/<proyecto>.git
+git push -u origin main
+```
+
+## 4. Seguir el pipeline
+
+En GitLab, **Build › Pipelines**. Verás un pipeline con dos elementos:
+
+1. `publicar-sitio`, tu job. Al abrirlo ves el registro: la descarga de la
+   imagen, `quarto --version` y la lista de páginas renderizadas
+   (`[1/6] sobre-mi.qmd` … `Output created: _site/index.html`).
+2. `pages:deploy`, un job que GitLab añade solo y que copia el sitio al
+   servidor de Pages.
+
+Con los dos en verde, el sitio está publicado.
+
+## 5. Encontrar la dirección
+
+**Deploy › Pages** muestra la dirección del sitio y la casilla
+**Use unique domain**. Ábrela. Si es la primera publicación, el sitio puede
+tardar unos minutos en responder.
+
+Si la dirección no coincide con tu `site-url`, corrige `_quarto.yml`, haz
+*commit* y *push*: el pipeline vuelve a publicar.
+
+# Flujo de trabajo diario {#sec-flujo}
+
+Para cambios pequeños basta con trabajar en `main`:
+
+```{.bash}
+# editar notas, páginas, estilos…
+quarto preview
+git add -A && git commit -m "Nota: grafos causales"
+git push                  # el CI renderiza y publica
+```
+
+Para cambios grandes (un rediseño, una sección nueva), usa una rama y un
+*merge request*. El job `comprobar` renderiza la rama y, si algo falla, te
+enteras antes de que llegue al sitio público:
+
+```{.bash}
+git switch -c rediseno-portada
+# … cambios …
+git push -u origin rediseno-portada
+# GitLab muestra un enlace para crear el merge request
+```
+
+En el *merge request*, el job `comprobar` deja `_site/` como artefacto:
+**Download artifacts**, descomprime y abre `index.html` (o usa
+`python -m http.server` dentro de `_site/` para que funcione la búsqueda).
+Cuando fusionas, el pipeline de `main` publica.
+
+# Sitios con código Python o R {#sec-codigo}
+
+Tu sitio de marca no ejecuta código: solo tiene Markdown y HTML. Si una nota
+incluye celdas de Python o R (una figura de matplotlib, una tabla de pandas),
+la imagen de Quarto **no** tiene Python ni Jupyter y el render en el CI
+fallará. Hay dos soluciones.
+
+## Opción recomendada: `freeze`
+
+Añade a `_quarto.yml` (fragmento `05-freeze.yml`):
+
+```{.yaml filename="_quarto.yml (fragmento)"}
+execute:
+  freeze: auto
+```
+
+Con `freeze: auto`, cuando renderizas en tu equipo Quarto guarda el resultado
+de cada documento con código en `_freeze/`. Haz *commit* de `_freeze/`.
+En el CI, `quarto render` encuentra esos resultados y **no ejecuta nada**:
+reutiliza figuras y tablas, y la imagen de Quarto basta.
+
+La regla es simple: **renderiza en local antes de hacer *push*** cada vez que
+cambies una nota con código, para que `_freeze/` esté al día. Si un documento
+con código no tiene su entrada en `_freeze/`, el CI intentará ejecutarlo y
+fallará; el mensaje de error dirá qué archivo es.
+
+## Opción alternativa: ejecutar en el CI
+
+Si el código debe correr en el servidor (por ejemplo, descarga datos que
+cambian), usa una imagen de Python e instala Quarto con `pip`
+(fragmento `06-gitlab-ci-python.yml`):
+
+```{.yaml filename=".gitlab-ci.yml (variante)"}
+publicar-sitio:
+  image: python:3.12-slim
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  cache:
+    paths:
+      - .cache/pip
+  before_script:
+    - pip install quarto-cli==1.8.27 jupyter -r requirements.txt
+  script:
+    - quarto render
+  pages:
+    publish: _site
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
+
+`quarto-cli` es el paquete oficial de Quarto en PyPI; trae el binario de Quarto
+completo. `requirements.txt` lista lo que usan tus notas (pandas, matplotlib…).
+La caché de `pip` evita descargar todo en cada publicación. Cada pipeline será
+más lento (instalar Quarto y Jupyter tarda unos minutos), así que prefiere
+`freeze` mientras puedas.
+
+# Alternativa: publicar el sitio ya renderizado {#sec-prerenderizado}
+
+También puedes renderizar en tu equipo y subir `_site/` al repositorio; el CI
+solo lo publica. Es lo más parecido a lo que hace `quarto publish gh-pages`.
+
+1. Quita `/_site/` del `.gitignore`.
+2. Usa este pipeline (fragmento `03-gitlab-ci-prerenderizado.yml`):
+
+```{.yaml filename=".gitlab-ci.yml (variante)"}
+publicar-sitio:
+  image: alpine:3.20
+  script:
+    - test -f _site/index.html || (echo "Falta _site/: ejecuta quarto render y haz commit" && exit 1)
+  pages:
+    publish: _site
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
+
+3. Cada publicación es: `quarto render`, `git add -A`, `git commit`, `git push`.
+
+| | Render en el CI (recomendado) | `_site/` renderizado en local |
+|---|---|---|
+| Qué subes | Solo las fuentes | Fuentes y HTML |
+| Tamaño del repositorio | Pequeño | Crece con cada publicación |
+| Reproducibilidad | Entorno limpio y fijo | Depende de tu equipo |
+| Código Python/R | `freeze` o imagen con Python | Funciona sin más |
+| Tiempo de pipeline | Descarga de la imagen + render | Segundos |
+| Riesgo típico | Diferencia de versión de Quarto | Olvidar renderizar antes del *push* |
+
+: Las dos formas de publicar {tbl-colwidths="[24,38,38]"}
+
+La opción local es razonable si el sitio ejecuta código pesado o depende de
+algo que solo existe en tu equipo. Para un sitio como el tuyo, el render en el
+CI es más limpio.
+
+# Extras {#sec-extras}
+
+## Acceso privado {#sec-acceso}
+
+En gitlab.com el sitio es público por defecto, aunque el repositorio sea
+privado. Para que solo lo vean los miembros del proyecto (útil para un borrador
+o para documentación interna de BioForge):
+
+1. Activa *Pages Access Control* en **Settings › General › Visibility, project
+   features, permissions** › **Pages**.
+2. Elige **Only Project Members**.
+
+Los visitantes tendrán que iniciar sesión en GitLab.
+
+## Dominio propio
+
+En **Deploy › Pages › New Domain** añades, por ejemplo, `caicedo.dev`. GitLab
+te pide dos registros en tu proveedor de DNS: uno que apunta el dominio a
+GitLab Pages y un registro `TXT` que demuestra que el dominio es tuyo. Con
+*Automatic certificate management using Let's Encrypt* activado, GitLab emite
+y renueva el certificado HTTPS. Después cambia `site-url` al dominio nuevo.
+
+## Publicar en GitHub y en GitLab a la vez
+
+Si quieres mantener `pacaicedo.github.io` y tener una copia en GitLab, no hace
+falta duplicar el repositorio: añade un segundo remoto (fragmento
+`07-dos-remotos.sh`):
+
+```{.bash}
+git remote -v                                   # origin -> github-personal
+git remote add gitlab git@gitlab-personal:<usuario-gitlab>/sitio-gitlab.git
+git push -u gitlab main                         # primer envío a GitLab
+git push origin main && git push gitlab main    # en adelante, a los dos
+```
+
+GitHub ignora `.gitlab-ci.yml` y GitLab ignora `.github/`, así que conviven sin
+problema.
+
+Lo único que cambia entre los dos es `site-url`. Resuélvelo con un **perfil de
+Quarto**: deja en `_quarto.yml` la dirección de GitHub y crea
+`_quarto-gitlab.yml` con la de GitLab:
+
+```{.yaml filename="_quarto-gitlab.yml"}
+website:
+  site-url: https://<usuario-gitlab>.gitlab.io/
+```
+
+En el pipeline de GitLab, renderiza con ese perfil:
+
+```{.yaml}
+  script:
+    - quarto render --profile gitlab
+```
+
+Quarto combina `_quarto.yml` con `_quarto-gitlab.yml` y el segundo gana donde
+coinciden. Comprobado con el ejemplo: el `sitemap.xml` sale con la dirección de
+GitLab con `--profile gitlab` y con la de `_quarto.yml` sin él.
+
+## GitLab autogestionado anterior a 17.9 {#sec-clasico}
+
+Si tu universidad tiene su propio GitLab y es antiguo, `pages: publish:` no
+existirá y el pipeline dará un error de sintaxis. Usa la forma clásica
+(fragmento `04-gitlab-ci-clasico.yml`): el job se llama exactamente `pages` y
+el sitio debe quedar en `public/`:
+
+```{.yaml filename=".gitlab-ci.yml (GitLab antiguo)"}
+pages:
+  image: ghcr.io/quarto-dev/quarto:1.8.27
+  script:
+    - quarto render --output-dir public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
+
+`--output-dir public` cambia la carpeta de salida solo para ese render, sin
+tocar `_quarto.yml`. La versión de GitLab aparece en **Help › Help** (el signo
+de interrogación). Pregunta también si la instancia tiene Pages activado y si
+los *runners* pueden descargar imágenes de `ghcr.io`; si no pueden, el
+administrador te dirá qué registro usar.
+
+# Errores comunes {#sec-errores}
+
+| Síntoma | Causa probable | Solución |
+|---|---|---|
+| `Permission denied (publickey)` al hacer *push* | El remoto usa `gitlab.com` en vez del alias, o la clave no está en GitLab | `git remote set-url origin git@gitlab-personal:<usuario>/<proyecto>.git`; prueba `ssh -T git@gitlab-personal` |
+| El pipeline no arranca o queda *pending* | Falta verificar la cuenta para usar los *runners* compartidos | Sigue el aviso de verificación de GitLab |
+| No hay pipeline tras el *push* | `.gitlab-ci.yml` mal nombrado o fuera de la raíz | Debe llamarse exactamente `.gitlab-ci.yml` y estar en la raíz |
+| *This GitLab CI configuration is invalid* | Sangría o sintaxis YAML | **Build › Pipeline editor › Validate** |
+| `pages:publish` no reconocido | GitLab anterior a 17.9 | Forma clásica (@sec-clasico) |
+| El job corre pero no hay `pages:deploy` | Falta `pages:` en el job o la carpeta no coincide | `publish: _site` y que `quarto render` cree `_site/` |
+| `ERROR: … jupyter` o `python not found` en el CI | Una nota tiene código y no hay `_freeze/` | `freeze: auto` y *commit* de `_freeze/` (@sec-codigo) |
+| 404 en la dirección | Primer despliegue aún propagándose, o dirección equivocada | Espera unos minutos; copia la dirección de **Deploy › Pages** |
+| La portada carga pero algunos enlaces dan 404 | Enlaces absolutos (`/…`) en un sitio en subruta | @sec-sitio; `grep -rn 'href="/' _site` |
+| Estilos o fuentes no cargan | Archivos fuera del proyecto o no declarados | Todo debe estar dentro de la carpeta del sitio; usa `resources:` en `_quarto.yml` para lo que Quarto no detecta |
+| El HTML del CI difiere del local | Versiones distintas de Quarto | Misma versión en la imagen y en tu equipo |
+| `_site/` aparece en `git status` | Falta el `.gitignore` | Copia el del ejemplo y `git rm -r --cached _site` |
+
+: Errores comunes y soluciones {tbl-colwidths="[30,32,38]"}
+
+# Hoja de trucos {#sec-trucos}
+
+```{.bash}
+# SSH (una vez)
+ssh-keygen -t ed25519 -C "gitlab personal" -f ~/.ssh/id_ed25519_gitlab
+cat ~/.ssh/id_ed25519_gitlab.pub          # pegar en GitLab › Edit profile › SSH Keys
+ssh -T git@gitlab-personal                # Welcome to GitLab, @usuario!
+
+# Proyecto nuevo
+git init -b main && git add . && git commit -m "Sitio"
+git remote add origin git@gitlab-personal:<usuario-gitlab>/<usuario-gitlab>.gitlab.io.git
+git push -u origin main
+
+# Antes de cada push
+quarto render                             # si falla aquí, falla en el CI
+grep -rn 'href="/' _site --include=*.html # enlaces absolutos (debe salir vacío)
+
+# Con código: freeze
+#   _quarto.yml  ->  execute: { freeze: auto }
+git add _freeze && git commit -m "Actualizar freeze"
+```
+
+```{.yaml filename=".gitlab-ci.yml mínimo"}
+publicar-sitio:
+  image: ghcr.io/quarto-dev/quarto:1.8.27
+  script:
+    - quarto render
+  pages:
+    publish: _site
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
+
+| Dónde | Qué |
+|---|---|
+| **Build › Pipelines** | Estado y registro de cada publicación |
+| **Build › Pipeline editor** | Editar y validar `.gitlab-ci.yml` |
+| **Deploy › Pages** | Dirección del sitio, dominio único, dominios propios |
+| **Settings › General › Visibility** | Acceso público o privado al sitio |
+| **Edit profile › SSH Keys** | Claves SSH de tu cuenta |
+
+: Menús de GitLab que usarás {tbl-colwidths="[40,60]"}
+
+## Archivos de este tutorial
+
+| Archivo | Contenido |
+|---|---|
+| `ejemplo/sitio-gitlab/` | Tu sitio de marca listo para GitLab (pipeline, `.gitignore`, `site-url`, enlaces corregidos) |
+| `ejemplo/fragmentos/01-ssh-config` | Bloque `gitlab-personal` para `~/.ssh/config` |
+| `ejemplo/fragmentos/02-gitlab-ci-render.yml` | Pipeline recomendado (render en el CI) |
+| `ejemplo/fragmentos/03-gitlab-ci-prerenderizado.yml` | Publicar `_site/` renderizado en local |
+| `ejemplo/fragmentos/04-gitlab-ci-clasico.yml` | GitLab anterior a 17.9 |
+| `ejemplo/fragmentos/05-freeze.yml` | `freeze: auto` para sitios con código |
+| `ejemplo/fragmentos/06-gitlab-ci-python.yml` | Ejecutar Python en el CI |
+| `ejemplo/fragmentos/07-dos-remotos.sh` | Publicar en GitHub y GitLab desde un repositorio |
+
+: Archivos de ejemplo {tbl-colwidths="[45,55]"}

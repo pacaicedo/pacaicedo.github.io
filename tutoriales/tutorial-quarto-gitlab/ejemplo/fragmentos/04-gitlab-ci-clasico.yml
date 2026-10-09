@@ -1,0 +1,12 @@
+# Variante para un GitLab autogestionado anterior a 17.9 (sin pages.publish).
+# El job debe llamarse exactamente "pages" y el sitio debe quedar en public/.
+
+pages:
+  image: ghcr.io/quarto-dev/quarto:1.8.27
+  script:
+    - quarto render --output-dir public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

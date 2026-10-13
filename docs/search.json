@@ -312,14 +312,14 @@
     "href": "index.html",
     "title": "P. E. Caicedo-Rodríguez",
     "section": "",
-    "text": "Del dato a la causa\n\n\nDiseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nProyectos Cursos Notas Sobre mí"
+    "text": "Del dato a la causa\n\n\nDiseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nTutoriales Cursos Notas Sobre mí"
   },
   {
     "objectID": "index.html#convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica",
     "href": "index.html#convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica",
     "title": "P. E. Caicedo-Rodríguez",
     "section": "",
-    "text": "Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nProyectos Cursos Notas Sobre mí"
+    "text": "Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nTutoriales Cursos Notas Sobre mí"
   },
   {
     "objectID": "index.html#ejes-de-trabajo",
@@ -733,5 +733,12 @@
     "title": "Extraer variables con contrato",
     "section": "",
     "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
+  },
+  {
+    "objectID": "index.html#noticias",
+    "href": "index.html#noticias",
+    "title": "P. E. Caicedo-Rodríguez",
+    "section": "Noticias",
+    "text": "Noticias\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\n\n\n1 oct 2026\n\n\n\n\n\nNo hay resultados"
   }
 ]

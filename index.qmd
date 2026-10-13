@@ -42,7 +42,7 @@ listing:
 
 Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.
 
-[Proyectos](proyectos/index.qmd){.btn .btn-marca} [Cursos](cursos/index.qmd){.btn .btn-marca} [Notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
+[Tutoriales](tutoriales/index.qmd){.btn .btn-marca} [Cursos](cursos/index.qmd){.btn .btn-marca} [Notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
 :::
 
 ## Ejes de trabajo
@@ -80,7 +80,7 @@ Un modelo de aprendizaje profundo para la estimación del tamaño de una protesi
 
 ::: {.listados .tres}
 ::: {.listado}
-## Últimas noticias
+## Noticias
  
 ::: {#noticias}
 :::

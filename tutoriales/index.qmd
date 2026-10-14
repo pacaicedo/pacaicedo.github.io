@@ -1,7 +1,10 @@
 ---
 title: "Tutoriales"
 listing:
-  contents: "*/index.qmd"
+  contents:
+    # Solo estos dos documentos forman el listado de tutoriales.
+    - tutorial-dvc/index.qmd
+    - tutorial-quarto-gitlab/index.qmd
   type: grid
   sort: "date desc"
   categories: true

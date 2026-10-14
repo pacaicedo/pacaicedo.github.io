@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: docs
+  # Los ejemplos de los tutoriales (p. ej. un sitio Quarto completo con sus propias
+  # notas) no son páginas de este sitio: si se renderizan, los listados de la portada
+  # y de las secciones los recogen y se mezclan con las entradas reales.
+  render:
+    - "*.qmd"
+    - "!tutoriales/*/ejemplo/"
   resources:
     - recursos/marca/logo/
 

@@ -1,7 +1,29 @@
 [
   {
+    "listing": "/cursos/index.html",
+    "items": [
+      "/cursos/Aprendizaje/index.html",
+      "/cursos/Inferencia/index.html"
+    ]
+  },
+  {
     "listing": "/conferencias/index.html",
     "items": [
+      "/conferencias/del-dato-a-la-causa/index.html",
+      "/conferencias/contratos-de-datos/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/notas/grafos-causales/index.html",
+      "/notas/extraer-variables/index.html",
+      "/cursos/Aprendizaje/index.html",
+      "/cursos/Inferencia/index.html",
+      "/tutoriales/tutorial-dvc/index.html",
+      "/tutoriales/tutorial-quarto-gitlab/index.html",
+      "/proyectos/bioforge/index.html",
+      "/proyectos/protesis-cadera/index.html",
       "/conferencias/del-dato-a-la-causa/index.html",
       "/conferencias/contratos-de-datos/index.html"
     ]
@@ -18,37 +40,6 @@
     "items": [
       "/proyectos/bioforge/index.html",
       "/proyectos/protesis-cadera/index.html"
-    ]
-  },
-  {
-    "listing": "/cursos/index.html",
-    "items": [
-      "/cursos/Aprendizaje/index.html",
-      "/cursos/Inferencia/index.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/notas/grafos-causales/index.html",
-      "/tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/grafos-causales/index.html",
-      "/notas/extraer-variables/index.html",
-      "/tutoriales/tutorial-quarto-gitlab/ejemplo/sitio-gitlab/notas/extraer-variables/index.html",
-      "/cursos/Aprendizaje/index.html",
-      "/cursos/Inferencia/index.html",
-      "/tutoriales/primer-dag/index.html",
-      "/tutoriales/envolvente-semg/index.html",
-      "/proyectos/bioforge/index.html",
-      "/proyectos/protesis-cadera/index.html",
-      "/conferencias/del-dato-a-la-causa/index.html",
-      "/conferencias/contratos-de-datos/index.html"
-    ]
-  },
-  {
-    "listing": "/tutoriales/index.html",
-    "items": [
-      "/tutoriales/primer-dag/index.html",
-      "/tutoriales/envolvente-semg/index.html"
     ]
   }
 ]

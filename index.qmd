@@ -4,7 +4,10 @@ page-layout: full
 title-block-banner: false
 listing:
   - id: noticias
-    contents: "notas/*/index.qmd"
+    contents:
+      - "notas/*/index.qmd"
+      # El sitio de ejemplo del tutorial de GitLab trae su propia carpeta notas/.
+      - "!tutoriales/*/ejemplo/**"
     type: default
     sort: "date desc"
     max-items: 3

@@ -1,16 +1,28 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/herramientas-y-tutoriales/index.html",
     "items": [
-      "/notas/grafos-causales/index.html",
-      "/notas/extraer-variables/index.html"
+      "/herramientas-y-tutoriales/contraste.html",
+      "/herramientas-y-tutoriales/documentos/documento.html",
+      "/herramientas-y-tutoriales/de-una-senal-a-una-pregunta.html"
     ]
   },
   {
-    "listing": "/notas/index.html",
+    "listing": "/charlas-y-conferencias/index.html",
     "items": [
-      "/notas/grafos-causales/index.html",
-      "/notas/extraer-variables/index.html"
+      "/charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos/index.html",
+    "items": [
+      "/cursos/senales-biomedicas/index.html"
+    ]
+  },
+  {
+    "listing": "/proyectos/index.html",
+    "items": [
+      "/proyectos/valor-eficaz/index.html"
     ]
   }
 ]

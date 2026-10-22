@@ -1,0 +1,35 @@
+---
+title: "Laboratorio: valor eficaz de una señal"
+description: "Cálculo reproducible de RMS con cuatro observaciones sintéticas."
+---
+
+[Volver al curso](../index.qmd#laboratorios)
+
+## Objetivo
+
+Calcular el valor eficaz de una señal discreta y explicar qué información conserva esta medida.
+
+## Datos y procedimiento
+
+Usa la señal sintética `[0.2, -0.1, 0.4, -0.2]`. No se asignan unidades porque no procede de una medición física.
+
+1. Eleva cada observación al cuadrado.
+2. Calcula la media de los cuadrados.
+3. Obtén su raíz cuadrada.
+4. Compara tu resultado con el [proyecto de ejemplo](../../../proyectos/valor-eficaz/index.qmd).
+
+Descarga el [código de referencia](../../../proyectos/valor-eficaz/codigo/rms.py) y ejecútalo con Python 3:
+
+```bash
+python3 rms.py
+```
+
+## Entregables
+
+- El cálculo manual y el resultado del programa.
+- Una explicación de las unidades que tendría el RMS si la señal estuviera en voltios.
+- Una limitación de comparar valores de RMS entre protocolos diferentes.
+
+## Criterio de revisión
+
+El cálculo debe coincidir a tres decimales con `0.250`. La interpretación debe identificar los datos como sintéticos y relacionar las unidades con la medición original.

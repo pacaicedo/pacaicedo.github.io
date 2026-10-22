@@ -1,0 +1,44 @@
+## Una pregunta antes del modelo
+
+- ¿Qué se está midiendo?
+- ¿Qué decisión puede apoyar el resultado?
+- ¿Qué incertidumbre permanece?
+
+::: {.marca-nota title="Criterio"}
+Una predicción útil exige contexto y evaluación.
+:::
+
+## Tres operaciones, una responsabilidad
+
+| Operación | Evidencia necesaria |
+|:--|:--|
+| Medir | Protocolo y calidad de señal |
+| Modelar | Evaluación y generalización |
+| Interpretar | Supuestos y límites |
+
+## El procedimiento debe ser legible
+
+```python
+import numpy as np
+
+senal = np.array([0.2, -0.1, 0.4, -0.2])
+rms = np.sqrt(np.mean(senal ** 2))
+```
+
+Ejemplo sintético. La unidad procede de la medición.
+
+## Predecir no demuestra causalidad
+
+::: {.marca-alerta title="Límite"}
+Una asociación requiere supuestos adicionales para sostener una interpretación causal.
+:::
+
+[Dato]{.dato} · [Modelo]{.grafo} · [Interpretación]{.causa}
+
+## Ingeniería que hace comprensible la salud
+
+**Pablo Eduardo Caicedo-Rodríguez**
+
+IA · Imágenes biomédicas · Software para la salud
+
+BioForja / proyectos, laboratorios y conocimiento abierto

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Cursos, charlas, proyectos y tutoriales de ingeniería biomédica de Pablo Eduardo Caicedo-Rodríguez.">
 
-<title>P. E. Caicedo-Rodríguez · Del dato a la causa – P. E. Caicedo-Rodríguez</title>
+<title>Pablo Eduardo Caicedo-Rodríguez – P. E. Caicedo-Rodríguez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,20 +31,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./recursos/marca/logo/insignia.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="./recursos/marca/logos/insignia.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e55322775af7e19282de0ecde340759f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6b87496211af89a42e0b8524bfc2cf8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5e8e42b2698cc06611ac32c71b888851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-14c35794a34ca90a81a742761068a50c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -56,7 +54,6 @@ ul.task-list li input[type="checkbox"] {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -71,181 +68,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-noticias .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-noticias'] = new List('listing-noticias', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-cursos .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-cursos'] = new List('listing-cursos', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-tutoriales .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-tutoriales'] = new List('listing-tutoriales', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-proyectos .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-proyectos'] = new List('listing-proyectos', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-conferencias .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-conferencias'] = new List('listing-conferencias', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed pagina-inicio quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -253,8 +80,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./recursos/marca/logo/isotipo-oscuro.svg" alt="" class="navbar-logo light-content">
-    <img src="./recursos/marca/logo/isotipo-oscuro.svg" alt="" class="navbar-logo dark-content">
+    <img src="./recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo light-content">
+    <img src="./recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
@@ -268,31 +95,23 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Inicio</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./notas/index.html"> 
-<span class="menu-text">Notas</span></a>
+<span class="menu-text">Perfil</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./cursos/index.html"> 
 <span class="menu-text">Cursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutoriales/index.html"> 
-<span class="menu-text">Tutoriales</span></a>
+    <a class="nav-link" href="./charlas-y-conferencias/index.html"> 
+<span class="menu-text">Charlas y Conferencias</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./proyectos/index.html"> 
 <span class="menu-text">Proyectos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./conferencias/index.html"> 
-<span class="menu-text">Conferencias</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./sobre-mi.html"> 
-<span class="menu-text">Sobre mí</span></a>
+    <a class="nav-link" href="./herramientas-y-tutoriales/index.html"> 
+<span class="menu-text">Herramientas y Tutoriales</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -307,351 +126,104 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Pablo Eduardo Caicedo-Rodríguez</h1>
+</div>
+
+<div>
+  <div class="description">
+    Cursos, charlas, proyectos y tutoriales de ingeniería biomédica de Pablo Eduardo Caicedo-Rodríguez.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <div class="hero">
-<p><span class="hero-kicker">Del dato a la causa</span></p>
-<section id="convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica" class="level2">
-<h2 class="anchored" data-anchor-id="convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica">Convirtiendo señales e imágenes biomédicas en evidencia clínica</h2>
-<p>Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.</p>
-<p><a href="./tutoriales/index.html" class="btn btn-marca">Tutoriales</a> <a href="./cursos/index.html" class="btn btn-marca">Cursos</a> <a href="./notas/index.html" class="btn btn-marca">Notas</a> <a href="./sobre-mi.html" class="btn btn-marca-borde">Sobre mí</a></p>
-</section>
+<div>
+<div class="kicker">
+<p>Pablo Eduardo Caicedo-Rodríguez</p>
 </div>
-<section id="ejes-de-trabajo" class="level2">
-<h2 class="anchored" data-anchor-id="ejes-de-trabajo">Ejes de trabajo</h2>
-<div class="ejes">
-<section id="extracción" class="level3 eje dato">
-<h3 class="anchored" data-anchor-id="extracción">Extracción</h3>
-<p>Contratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.</p>
-</section>
-<section id="información" class="level3 eje grafo">
-<h3 class="anchored" data-anchor-id="información">Información</h3>
-<p>Variables y relaciones como conocimientos para encontrar estructura y comunidades.</p>
-</section>
-<section id="causalidad" class="level3 eje causa">
-<h3 class="anchored" data-anchor-id="causalidad">Causalidad</h3>
-<p>DAG declarados en el protocolo, estimación de efectos y evaluación explicativa.</p>
-</section>
-<section id="ia" class="level3 eje ia">
-<h3 class="anchored" data-anchor-id="ia">IA</h3>
-<p>Modelos estadísticos, de aprendizaje automático y profundo sobre Scikit Learn, PyTorch y Tensorflow.</p>
-</section>
+<h1 id="ingeniería-para-comprender.-software-para-cuidar."><span class="d-block">Ingeniería para</span> <span class="d-block">comprender.</span> Software para cuidar.</h1>
+<div class="lead">
+<p>Inteligencia artificial, señales e imágenes biomédicas y software para una salud más comprensible.</p>
 </div>
-<section id="estimación-de-protesis-para-artroplastía-de-cadera" class="level3 banda">
-<h3 class="anchored" data-anchor-id="estimación-de-protesis-para-artroplastía-de-cadera">Estimación de protesis para artroplastía de cadera</h3>
-<p>Un modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera.</p>
-<p><a href="./proyectos/protesis-cadera/index.html">Ver proyecto</a></p>
-</section>
-</section>
-<div class="listados tres">
-<section id="noticias" class="level2 listado">
-<h2 class="anchored" data-anchor-id="noticias">Noticias</h2>
-<div id="listing-noticias" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Y2F1c2FsaWRhZCUyQ2dyYWZvcw==" data-listing-date-sort="1791262800000" data-listing-file-modified-sort="1791355968000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notas/grafos-causales/index.html" class="no-external">Grafos causales para experimentos</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2F1c2FsaWRhZA=='); return false;">causalidad</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZm9z'); return false;">grafos</div>
-
+<p><a href="./cursos/index.html" class="btn btn-primary">Explorar los cursos</a></p>
 </div>
-<div class="delink listing-description"><a href="./notas/grafos-causales/index.html" class="no-external">
-<p>Cómo declarar un DAG en el protocolo y qué ajustar al estimar.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./notas/grafos-causales/index.html" class="no-external">
-<div class="listing-date">
-6 oct 2026
-</div>
-</a>
+<div class="hero-art">
+<p><img src="recursos/marca/logos/isotipo-claro.svg" class="img-fluid" style="width:100.0%" alt="Símbolo de Caicedo-Rodríguez: una C abierta, nodos y una dirección de trabajo"></p>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZXh0cmFjY2klQzMlQjNuJTJDZGF0b3M=" data-listing-date-sort="1790830800000" data-listing-file-modified-sort="1791355968000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="82">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notas/extraer-variables/index.html" class="no-external">Extraer variables con contrato</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZXh0cmFjY2klQzMlQjNu'); return false;">extracción</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0b3M='); return false;">datos</div>
-
+<div class="topic-section" role="region" aria-labelledby="bioforja">
+<div class="kicker">
+<p>BioForja · Conocimiento abierto</p>
 </div>
-<div class="delink listing-description"><a href="./notas/extraer-variables/index.html" class="no-external">
-<p>Cada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.</p>
-</a></div>
+<h2 id="bioforja">Aprender, compartir y construir</h2>
+<div class="topic-grid">
+<div class="topic-card" role="article">
+<p><span class="number">01 / FORMACIÓN</span></p>
+<h3 id="cursos"><a href="./cursos/index.html">Cursos</a></h3>
+<p>Resultados de aprendizaje, calendario, presentaciones y laboratorios en un mismo lugar.</p>
 </div>
-<div class="metadata">
-<a href="./notas/extraer-variables/index.html" class="no-external">
-<div class="listing-date">
-1 oct 2026
+<div class="topic-card" role="article">
+<p><span class="number">02 / ENCUENTROS</span></p>
+<h3 id="charlas-y-conferencias"><a href="./charlas-y-conferencias/index.html">Charlas y Conferencias</a></h3>
+<p>El contexto de cada evento, sus presentaciones y el código que las acompaña.</p>
 </div>
-</a>
+<div class="topic-card" role="article">
+<p><span class="number">03 / INVESTIGACIÓN Y DESARROLLO</span></p>
+<h3 id="proyectos"><a href="./proyectos/index.html">Proyectos</a></h3>
+<p>Del problema a los métodos y los resultados, con procedimientos reproducibles.</p>
+</div>
+<div class="topic-card" role="article">
+<p><span class="number">04 / PRÁCTICA</span></p>
+<h3 id="herramientas-y-tutoriales"><a href="./herramientas-y-tutoriales/index.html">Herramientas y Tutoriales</a></h3>
+<p>Guías, documentos y utilidades para trabajar con señales, modelos y comunicación técnica.</p>
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">No hay resultados</div>
+<div role="region" aria-label="Líneas de trabajo">
+<div class="section-row">
+<div class="number">
+<p>01</p>
 </div>
-</section>
-<section id="cursos" class="level2 listado">
-<h2 class="anchored" data-anchor-id="cursos">Cursos</h2>
-<div id="listing-cursos" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="aWElMkNpbSVDMyVBMWdlbmVz" data-listing-date-sort="1789448400000" data-listing-file-modified-sort="1791482197881" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./cursos/Aprendizaje/index.html" class="no-external">Aprendizaje profundo para imágenes médicas</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aWE='); return false;">ia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW0lQzMlQTFnZW5lcw=='); return false;">imágenes</div>
-
+<h3 id="medir-y-comprender">Medir y comprender</h3>
+<p>Señales, imágenes y biomecánica. Convertir datos complejos en preguntas que puedan investigarse.</p>
 </div>
-<div class="delink listing-description"><a href="./cursos/Aprendizaje/index.html" class="no-external">
-<p>Redes convolucionales con PyTorch para clasificar y segmentar imágenes clínicas.</p>
-</a></div>
+<div class="section-row">
+<div class="number">
+<p>02</p>
 </div>
-<div class="metadata">
-<a href="./cursos/Aprendizaje/index.html" class="no-external">
-<div class="listing-date">
-15 sept 2026
+<h3 id="modelar-con-evidencia">Modelar con evidencia</h3>
+<p>IA, grafos e inferencia causal. Explicar los supuestos, la incertidumbre y los límites de cada resultado.</p>
 </div>
-</a>
+<div class="section-row">
+<div class="number">
+<p>03</p>
+</div>
+<h3 id="construir-y-enseñar">Construir y enseñar</h3>
+<p>Software para la salud y materiales reproducibles. BioForja reúne proyectos, laboratorios y conocimiento abierto.</p>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Y2F1c2FsaWRhZCUyQ2dyYWZvcw==" data-listing-date-sort="1785560400000" data-listing-file-modified-sort="1791482303497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./cursos/Inferencia/index.html" class="no-external">Inferencia causal con grafos</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2F1c2FsaWRhZA=='); return false;">causalidad</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZm9z'); return false;">grafos</div>
-
-</div>
-<div class="delink listing-description"><a href="./cursos/Inferencia/index.html" class="no-external">
-<p>Del DAG declarado en el protocolo a la estimación de efectos con datos observacionales.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./cursos/Inferencia/index.html" class="no-external">
-<div class="listing-date">
-1 ago 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No hay resultados</div>
-</div>
-</section>
-<section id="tutoriales" class="level2 listado">
-<h2 class="anchored" data-anchor-id="tutoriales">Tutoriales</h2>
-<div id="listing-tutoriales" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1791996295000" data-listing-file-modified-sort="1791996295395" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4696">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./tutoriales/tutorial-dvc/index.html" class="no-external">Datos fuera de GitHub con DVC y Dropbox</a>
-</h3>
-<div class="delink listing-description"><a href="./tutoriales/tutorial-dvc/index.html" class="no-external">
-Un proyecto de investigación tiene dos tipos de material que envejecen de forma distinta. El <strong>código</strong> cambia todos los días, pesa poco y se lleva bien con Git y GitHub. Los <strong>dat…</strong>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./tutoriales/tutorial-dvc/index.html" class="no-external">
-<div class="listing-date">
-14 oct 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1791899655000" data-listing-file-modified-sort="1791899655932" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4352">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./tutoriales/tutorial-quarto-gitlab/index.html" class="no-external">Un sitio Quarto en GitLab Pages</a>
-</h3>
-<div class="delink listing-description"><a href="./tutoriales/tutorial-quarto-gitlab/index.html" class="no-external">
-GitLab tiene su propio servicio de alojamiento estático, <strong>GitLab Pages</strong>, y un sitio Quarto es exactamente eso: una carpeta de HTML, CSS, imágenes y JavaScript. La pieza que…<code></code><code></code><code></code><code></code><code></code>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./tutoriales/tutorial-quarto-gitlab/index.html" class="no-external">
-<div class="listing-date">
-13 oct 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No hay resultados</div>
-</div>
-</section>
-</div>
-<div class="listados">
-<section id="proyectos" class="level2 listado">
-<h2 class="anchored" data-anchor-id="proyectos">Proyectos</h2>
-<div id="listing-proyectos" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZXh0cmFjY2klQzMlQjNuJTJDZGF0b3M=" data-listing-date-sort="1790830800000" data-listing-file-modified-sort="1791485065696" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./proyectos/bioforge/index.html" class="no-external">BioForge Experiment OS</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZXh0cmFjY2klQzMlQjNu'); return false;">extracción</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0b3M='); return false;">datos</div>
-
-</div>
-<div class="delink listing-description"><a href="./proyectos/bioforge/index.html" class="no-external">
-<p>Contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./proyectos/bioforge/index.html" class="no-external">
-<div class="listing-date">
-1 oct 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="aWElMkNpbSVDMyVBMWdlbmVz" data-listing-date-sort="1788238800000" data-listing-file-modified-sort="1791485062294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./proyectos/protesis-cadera/index.html" class="no-external">Estimación de prótesis para artroplastia de cadera</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aWE='); return false;">ia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW0lQzMlQTFnZW5lcw=='); return false;">imágenes</div>
-
-</div>
-<div class="delink listing-description"><a href="./proyectos/protesis-cadera/index.html" class="no-external">
-<p>Un modelo de aprendizaje profundo que estima el tamaño de la prótesis antes de la cirugía.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./proyectos/protesis-cadera/index.html" class="no-external">
-<div class="listing-date">
-1 sept 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No hay resultados</div>
-</div>
-</section>
-<section id="conferencias" class="level2 listado">
-<h2 class="anchored" data-anchor-id="conferencias">Conferencias</h2>
-<div id="listing-conferencias" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Y2F1c2FsaWRhZCUyQ2dyYWZvcw==" data-listing-date-sort="1791262800000" data-listing-file-modified-sort="1791485223344" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferencias/del-dato-a-la-causa/index.html" class="no-external">Del dato a la causa</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2F1c2FsaWRhZA=='); return false;">causalidad</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZm9z'); return false;">grafos</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferencias/del-dato-a-la-causa/index.html" class="no-external">
-<p>Grafos causales para experimentos biomédicos: del contrato de datos al DAG.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferencias/del-dato-a-la-causa/index.html" class="no-external">
-<div class="listing-date">
-6 oct 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZXh0cmFjY2klQzMlQjNuJTJDZGF0b3M=" data-listing-date-sort="1781240400000" data-listing-file-modified-sort="1791485081390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferencias/contratos-de-datos/index.html" class="no-external">Contratos de datos para señales biomédicas</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZXh0cmFjY2klQzMlQjNu'); return false;">extracción</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0b3M='); return false;">datos</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferencias/contratos-de-datos/index.html" class="no-external">
-<p>sEMG, marcha y video en un mismo experimento sin perder de dónde viene cada variable.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferencias/contratos-de-datos/index.html" class="no-external">
-<div class="listing-date">
-12 jun 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No hay resultados</div>
-</div>
-</section>
-</div>
-<script>
-// Carpeta de cada listado de la portada (id del listado → sección).
-var secciones = {noticias: "notas", cursos: "cursos", tutoriales: "tutoriales", proyectos: "proyectos", conferencias: "conferencias"};
-// Píldoras de categoría con varios listados en la portada: Quarto filtraría todas las columnas a la vez
-// (y dejaría vacías las demás), así que cada píldora abre el listado completo filtrado por esa categoría.
-document.addEventListener("click", function (e) {
-  var p = e.target.closest(".listados .listing-category");
-  if (!p) return;
-  e.stopPropagation(); // fase de captura: se adelanta al onclick de Quarto
-  var id = p.closest(".quarto-listing-container-default").id.replace("listing-", "");
-  location.href = secciones[id] + "/index.html#category=" + encodeURIComponent(p.textContent.trim());
-}, true);
-// Las píldoras del encabezado de una página de sección enlazan a la portada (#category=...):
-// se reenvían a la página del listado correspondiente, que sí sabe filtrar.
-if (location.hash.indexOf("category=") >= 0) {
-  var origen = "notas";
-  for (var id in secciones) {
-    if (document.referrer.indexOf("/" + secciones[id] + "/") >= 0) origen = secciones[id];
-  }
-  location.replace(origen + "/index.html" + location.hash);
-}
-</script>
-
 
 
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -716,7 +288,7 @@ if (location.hash.indexOf("category=") >= 0) {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/pacaicedo\.github\.io");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -730,6 +302,11 @@ if (location.hash.indexOf("category=") >= 0) {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1047,13 +624,13 @@ if (location.hash.indexOf("category=") >= 0) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Pablo Eduardo Caicedo-Rodríguez</p>
+<p>Pablo Eduardo Caicedo-Rodríguez</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Del dato a la causa</p>
+<p>Ingeniería que hace comprensible la salud.</p>
 </div>
   </div>
 </footer>

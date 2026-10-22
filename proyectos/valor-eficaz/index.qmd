@@ -1,0 +1,39 @@
+---
+title: "Valor eficaz de una señal"
+subtitle: "Proyecto de ejemplo con datos sintéticos"
+description: "Un cálculo reproducible de RMS para conectar una señal discreta, su método y sus límites."
+categories: [Señales, Python, Docencia]
+---
+
+## Problema
+
+Una señal puede resumirse mediante su valor eficaz, pero ese resumen solo adquiere significado junto con las unidades, el protocolo y la pregunta de trabajo.
+
+Este ejemplo docente pregunta cómo calcular el RMS de cuatro observaciones y cómo comunicar el resultado sin atribuirle una interpretación clínica.
+
+## Métodos
+
+Se usa la señal sintética $x = [0.2, -0.1, 0.4, -0.2]$. El valor eficaz se define como:
+
+$$x_{\mathrm{RMS}} = \sqrt{\frac{1}{N}\sum_{n=0}^{N-1}x[n]^2}.$$
+
+El [programa de referencia](codigo/rms.py) utiliza únicamente la biblioteca estándar de Python 3. Descárgalo y ejecuta:
+
+```bash
+python3 rms.py
+```
+
+El [cuaderno original](../../herramientas-y-tutoriales/documentos/documento.qmd) muestra también una implementación equivalente con NumPy como fragmento ilustrativo.
+
+## Resultados
+
+| Magnitud | Valor |
+|:--|--:|
+| Número de observaciones | 4 |
+| Suma de cuadrados | 0.25 |
+| Media de cuadrados | 0.0625 |
+| Valor eficaz | 0.250 |
+
+El programa imprime `RMS: 0.250`. Son resultados del ejemplo sintético, sin unidades físicas asignadas ni validación clínica. La magnitud no permite establecer causalidad ni comparar condiciones medidas con protocolos incompatibles.
+
+Puedes reproducir el cálculo en el [laboratorio del curso](../../cursos/senales-biomedicas/laboratorios/valor-eficaz.qmd).

@@ -1,0 +1,39 @@
+toc: false
+search: false
+format-links: false
+title: "De la señal a la evidencia"
+subtitle: "Ingeniería que hace comprensible la salud"
+author: "P. E. Caicedo-Rodríguez"
+date: 2026-10-20
+date-format: long
+lang: es
+filters: [../../recursos/marca/caicedo.lua]
+format:
+  revealjs:
+    theme: [default, ../../recursos/marca/caicedo-diapositivas.scss]
+    toc: false
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
+    width: 1280
+    height: 720
+    margin: 0
+    center: false
+    slide-number: c/t
+    footer: "P. E. Caicedo-Rodríguez"
+    transition: none
+    controls: true
+    code-line-numbers: false
+    embed-resources: true
+  beamer:
+    pdf-engine: xelatex
+    aspectratio: 169
+    fontsize: 12pt
+    classoption: [t]
+    include-in-header:
+      text: |
+        \newcommand{\caicedoroot}{../../recursos/marca/}
+        \input{../../recursos/marca/caicedo-diapositivas.sty}
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
+    keep-tex: false
+    latex-auto-install: false
+execute:
+  enabled: false

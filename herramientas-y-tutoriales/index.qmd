@@ -1,0 +1,19 @@
+---
+title: "Herramientas y Tutoriales"
+subtitle: "Guías y utilidades de BioForja"
+toc: false
+aliases:
+  - /tutoriales/index.html
+listing:
+  contents:
+    - "*.qmd"
+    - "documentos/*.qmd"
+  type: default
+  categories: true
+  sort: title
+  fields: [title, description, categories]
+---
+
+Materiales que conectan medición, modelos y decisiones. Cada recurso explicita sus supuestos y distingue un ejemplo docente de una validación clínica.
+
+Aquí encontrarás el tutorial de lectura crítica, el cuaderno original y la herramienta para revisar el contraste de la identidad visual.

@@ -1,11 +1,13 @@
 ---
 title: "Proyectos"
+subtitle: "Del problema a la evidencia"
+toc: false
 listing:
   contents: "*/index.qmd"
-  type: grid
-  sort: "date desc"
+  type: default
   categories: true
-title-block-banner: false
-toc: false
-number-sections: false
+  sort: title
+  fields: [title, description, categories]
 ---
+
+Cada proyecto presenta el problema, los métodos y los resultados. El ejemplo disponible utiliza datos sintéticos y permite comprobar el procedimiento de los materiales docentes.

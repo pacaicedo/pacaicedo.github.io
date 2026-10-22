@@ -1,681 +1,247 @@
 [
   {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html",
-    "title": "Un sitio Quarto en GitLab Pages",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Pablo Eduardo Caicedo-Rodríguez",
     "section": "",
-    "text": "GitLab tiene su propio servicio de alojamiento estático, GitLab Pages, y un sitio Quarto es exactamente eso: una carpeta de HTML, CSS, imágenes y JavaScript. La pieza que une los dos es un archivo .gitlab-ci.yml en la raíz del repositorio. Cada vez que haces git push, GitLab arranca un contenedor con Quarto, ejecuta quarto render y publica la carpeta _site/ en una dirección https://….gitlab.io.\nEste tutorial cubre:\n\nCómo funciona GitLab Pages y qué dirección tendrá tu sitio.\nEl acceso SSH a GitLab sin pisar tu configuración de GitHub (github-personal), con un alias propio, gitlab-personal.\nPreparar el sitio: .gitignore, site-url y los enlaces que se rompen cuando el sitio vive en una subruta.\nEl .gitlab-ci.yml comentado línea a línea, con un job que comprueba los merge requests y otro que publica la rama principal.\nEl primer despliegue paso a paso y el flujo de trabajo diario.\nSitios con código Python o R, con freeze o ejecutando en el CI.\nLa alternativa sin render en el CI: subir el _site/ ya renderizado.\nExtras: dominio propio, acceso privado, publicar a la vez en GitHub y GitLab, errores comunes y una hoja de trucos.\n\n\n\n\n\n\n\nNotaCómo leer este documento\n\n\n\n\nSi solo quieres ver el sitio en línea, sigue las secciones Sección 3 a Sección 7 en orden: son unos quince minutos.\nLa Sección 6 explica cada línea del pipeline; vuelve a ella cuando quieras cambiar algo.\nLas secciones Sección 9 a Sección 11 son variantes y casos especiales.\nAl final hay errores comunes y una hoja de trucos.\n\n\n\n\n\n\n\n\n\nTipQué se verificó\n\n\n\nEl sitio de ejemplo (ejemplo/sitio-gitlab/, tu sitio de marca «Del dato a la causa» con el pipeline ya añadido) se clonó en una carpeta limpia y se renderizó con Quarto 1.8.27, la misma versión que fija el pipeline, con los mismos comandos que ejecuta el CI. Luego se sirvió bajo una subruta (/sitio-gitlab/), como lo haría GitLab con un sitio de proyecto, y se recorrieron sus 33 direcciones sin encontrar enlaces rotos. Los archivos YAML se validaron con un analizador YAML. Lo que no se pudo probar desde aquí es una ejecución real en los servidores de GitLab: la primera vez que hagas push, revisa el pipeline como se explica en la Sección 7.\n\n\n\n\nYa publicas tu sitio en GitHub Pages (pacaicedo/pacaicedo.github.io). La idea en GitLab es la misma; cambian los nombres y el lugar donde se configura.\n\nGitHub Pages frente a GitLab Pages\n\n\n\n\n\n\n\n\nGitHub Pages\nGitLab Pages\n\n\n\n\nDirección de usuario\nusuario.github.io\nusuario.gitlab.io\n\n\nDirección de proyecto\nusuario.github.io/proyecto/\nusuario.gitlab.io/proyecto/ o un dominio único proyecto-a1b2c3.gitlab.io\n\n\nQuién renderiza\nTú (quarto publish gh-pages) o una GitHub Action\nUn job del CI de GitLab\n\n\nArchivo de configuración\n.github/workflows/*.yml (opcional)\n.gitlab-ci.yml (obligatorio)\n\n\nquarto publish\nSí, destino gh-pages\nNo hay destino para GitLab; se publica con el CI\n\n\nDónde se ve la dirección\nSettings › Pages\nDeploy › Pages\n\n\nRepositorio privado con sitio público\nSolo en planes de pago\nSí, también en el plan gratuito\n\n\n\nLa diferencia práctica más importante: quarto publish no tiene un destino GitLab. En GitLab siempre publica el CI, y eso es una ventaja: el sitio se renderiza en un entorno limpio y reproducible, no en tu portátil.\n\n\n\n\nUna cuenta en gitlab.com (o en el GitLab de tu institución; ver Sección 11.4 si es una versión antigua).\nQuarto y git instalados en tu equipo. Comprueba tu versión de Quarto con quarto --version; la usarás en el pipeline.\nUn sitio Quarto (project: type: website). Puedes partir de ejemplo/sitio-gitlab/."
+    "text": "Pablo Eduardo Caicedo-Rodríguez\n\nIngeniería para comprender. Software para cuidar.\n\nInteligencia artificial, señales e imágenes biomédicas y software para una salud más comprensible.\n\nExplorar los cursos\n\n\n\n\n\n\n\nBioForja · Conocimiento abierto\n\nAprender, compartir y construir\n\n\n01 / FORMACIÓN\nCursos\nResultados de aprendizaje, calendario, presentaciones y laboratorios en un mismo lugar.\n\n\n02 / ENCUENTROS\nCharlas y Conferencias\nEl contexto de cada evento, sus presentaciones y el código que las acompaña.\n\n\n03 / INVESTIGACIÓN Y DESARROLLO\nProyectos\nDel problema a los métodos y los resultados, con procedimientos reproducibles.\n\n\n04 / PRÁCTICA\nHerramientas y Tutoriales\nGuías, documentos y utilidades para trabajar con señales, modelos y comunicación técnica.\n\n\n\n\n\n\n01\n\nMedir y comprender\nSeñales, imágenes y biomecánica. Convertir datos complejos en preguntas que puedan investigarse.\n\n\n\n02\n\nModelar con evidencia\nIA, grafos e inferencia causal. Explicar los supuestos, la incertidumbre y los límites de cada resultado.\n\n\n\n03\n\nConstruir y enseñar\nSoftware para la salud y materiales reproducibles. BioForja reúne proyectos, laboratorios y conocimiento abierto."
   },
   {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#github-pages-y-gitlab-pages",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#github-pages-y-gitlab-pages",
-    "title": "Un sitio Quarto en GitLab Pages",
+    "objectID": "herramientas-y-tutoriales/index.html",
+    "href": "herramientas-y-tutoriales/index.html",
+    "title": "Herramientas y Tutoriales",
     "section": "",
-    "text": "Ya publicas tu sitio en GitHub Pages (pacaicedo/pacaicedo.github.io). La idea en GitLab es la misma; cambian los nombres y el lugar donde se configura.\n\nGitHub Pages frente a GitLab Pages\n\n\n\n\n\n\n\n\nGitHub Pages\nGitLab Pages\n\n\n\n\nDirección de usuario\nusuario.github.io\nusuario.gitlab.io\n\n\nDirección de proyecto\nusuario.github.io/proyecto/\nusuario.gitlab.io/proyecto/ o un dominio único proyecto-a1b2c3.gitlab.io\n\n\nQuién renderiza\nTú (quarto publish gh-pages) o una GitHub Action\nUn job del CI de GitLab\n\n\nArchivo de configuración\n.github/workflows/*.yml (opcional)\n.gitlab-ci.yml (obligatorio)\n\n\nquarto publish\nSí, destino gh-pages\nNo hay destino para GitLab; se publica con el CI\n\n\nDónde se ve la dirección\nSettings › Pages\nDeploy › Pages\n\n\nRepositorio privado con sitio público\nSolo en planes de pago\nSí, también en el plan gratuito\n\n\n\nLa diferencia práctica más importante: quarto publish no tiene un destino GitLab. En GitLab siempre publica el CI, y eso es una ventaja: el sitio se renderiza en un entorno limpio y reproducible, no en tu portátil."
+    "text": "Materiales que conectan medición, modelos y decisiones. Cada recurso explicita sus supuestos y distingue un ejemplo docente de una validación clínica.\nAquí encontrarás el tutorial de lectura crítica, el cuaderno original y la herramienta para revisar el contraste de la identidad visual.\n\n\n\n\n\n\n\n\n\nAuditar el contraste de la paleta\n\n\n\nHerramientas\n\nPython\n\nAccesibilidad\n\n\n\nUna utilidad de Python para comprobar el contraste del texto y el código en los temas claro y oscuro.\n\n\n\n\n\n\n\n\n\n\nDe la señal a la evidencia\n\n\n\nDocumentos\n\nSeñales\n\n\n\nCuaderno de ejemplo con texto, tablas, código y fórmulas para comunicar evidencia.\n\n\n\n\n\n\n\n\n\n\nDe una señal a una pregunta\n\n\n\nSeñales\n\nIA\n\nDocencia\n\n\n\nUna guía breve para distinguir el fenómeno medido de los efectos del protocolo.\n\n\n\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#requisitos",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#requisitos",
-    "title": "Un sitio Quarto en GitLab Pages",
+    "objectID": "herramientas-y-tutoriales/de-una-senal-a-una-pregunta.html",
+    "href": "herramientas-y-tutoriales/de-una-senal-a-una-pregunta.html",
+    "title": "De una señal a una pregunta",
     "section": "",
-    "text": "Una cuenta en gitlab.com (o en el GitLab de tu institución; ver Sección 11.4 si es una versión antigua).\nQuarto y git instalados en tu equipo. Comprueba tu versión de Quarto con quarto --version; la usarás en el pipeline.\nUn sitio Quarto (project: type: website). Puedes partir de ejemplo/sitio-gitlab/."
+    "text": "El procesamiento de una señal puede revelar diferencias entre grupos. Determinar su utilidad exige revisar el protocolo, la población y la incertidumbre.\n\n\n\n\n\n\nNotaPregunta de trabajo\n\n\n\n¿Qué parte del cambio observado proviene del fenómeno y qué parte del proceso de medición?\n\n\n# Ejemplo de presentación; no ejecuta un análisis clínico.\nfrecuencia_muestreo = 1000"
   },
   {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#qué-dirección-tendrá-tu-sitio",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#qué-dirección-tendrá-tu-sitio",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "2.1 Qué dirección tendrá tu sitio",
-    "text": "2.1 Qué dirección tendrá tu sitio\nGitLab decide la dirección según el nombre del proyecto:\n\nDirecciones de GitLab Pages en gitlab.com\n\n\n\n\n\n\nNombre del proyecto\nDirección\n\n\n\n\n&lt;usuario&gt;.gitlab.io\nhttps://&lt;usuario&gt;.gitlab.io/ (sitio de usuario, en la raíz)\n\n\ncualquier otro, con dominio único activado\nhttps://&lt;proyecto&gt;-&lt;id&gt;.gitlab.io/ (en la raíz)\n\n\ncualquier otro, con dominio único desactivado\nhttps://&lt;usuario&gt;.gitlab.io/&lt;proyecto&gt;/ (en una subruta)\n\n\n\nEl dominio único (Use unique domain) viene activado por defecto en los proyectos nuevos. GitLab lo usa para que dos proyectos del mismo usuario no compartan cookies. Se cambia en Deploy › Pages del proyecto.\n\n\n\n\n\n\nImportanteRecomendación\n\n\n\nPara tu sitio personal, crea el proyecto con el nombre &lt;usuario-gitlab&gt;.gitlab.io. Es el equivalente exacto de pacaicedo.github.io: el sitio vive en la raíz, la dirección es corta y no hay sorpresas con los enlaces. Si GitLab le asigna aun así un dominio único, desactívalo en Deploy › Pages."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#crear-una-clave-para-gitlab",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#crear-una-clave-para-gitlab",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "3.1 Crear una clave para GitLab",
-    "text": "3.1 Crear una clave para GitLab\nssh-keygen -t ed25519 -C \"gitlab personal\" -f ~/.ssh/id_ed25519_gitlab\nPon una frase de paso cuando la pida. Se crean dos archivos: ~/.ssh/id_ed25519_gitlab (privada, no sale de tu equipo) y ~/.ssh/id_ed25519_gitlab.pub (pública, la que se sube a GitLab)."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#registrar-la-clave-pública-en-gitlab",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#registrar-la-clave-pública-en-gitlab",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "3.2 Registrar la clave pública en GitLab",
-    "text": "3.2 Registrar la clave pública en GitLab\n\nCopia la clave pública:\ncat ~/.ssh/id_ed25519_gitlab.pub\nEn GitLab: tu avatar › Edit profile › SSH Keys › Add new key.\nPega la clave, ponle un título (por ejemplo, el nombre de tu equipo) y, en Usage type, deja Authentication & Signing."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#añadir-el-alias-gitlab-personal",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#añadir-el-alias-gitlab-personal",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "3.3 Añadir el alias gitlab-personal",
-    "text": "3.3 Añadir el alias gitlab-personal\nAñade este bloque a ~/.ssh/config, debajo del de github-personal (está en ejemplo/fragmentos/01-ssh-config):\n\n\n~/.ssh/config\n\nHost gitlab-personal\n    HostName gitlab.com\n    User git\n    IdentityFile ~/.ssh/id_ed25519_gitlab\n    IdentitiesOnly yes\n\n\nHost es el nombre que escribirás en los remotos.\nHostName es el servidor real.\nIdentitiesOnly yes obliga a SSH a ofrecer solo esa clave, sin probar las de GitHub."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#probar-la-conexión",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#probar-la-conexión",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "3.4 Probar la conexión",
-    "text": "3.4 Probar la conexión\nssh -T git@gitlab-personal\nLa respuesta esperada es Welcome to GitLab, @&lt;usuario-gitlab&gt;!. Si ves Permission denied (publickey), revisa la Sección 12.\nA partir de aquí, los remotos de GitLab se escriben así:\ngit@gitlab-personal:&lt;usuario-gitlab&gt;/&lt;proyecto&gt;.git"
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#gitignore-la-salida-no-se-versiona",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#gitignore-la-salida-no-se-versiona",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "5.1 .gitignore: la salida no se versiona",
-    "text": "5.1 .gitignore: la salida no se versiona\nEl CI genera _site/ en cada publicación, así que no hace falta (ni conviene) subirlo al repositorio:\n\n\n.gitignore\n\n# Salida de Quarto: la genera el CI de GitLab, no se versiona.\n/_site/\n/public/\n/.quarto/\n\n# Si algún día usas código ejecutable con `freeze: auto`,\n# la carpeta _freeze/ SÍ se versiona (no la añadas aquí)."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#site-url-la-dirección-pública",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#site-url-la-dirección-pública",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "5.2 site-url: la dirección pública",
-    "text": "5.2 site-url: la dirección pública\nsite-url no afecta a la navegación, pero Quarto lo usa para el sitemap.xml, los feeds RSS de los listados y las tarjetas para redes sociales. Ponle la dirección que muestra Deploy › Pages:\n\n\n_quarto.yml (fragmento)\n\nwebsite:\n  # Dirección pública del sitio. Cópiala de Deploy &gt; Pages en GitLab, por ejemplo:\n  #   https://&lt;usuario-gitlab&gt;.gitlab.io/            (sitio de usuario)\n  #   https://&lt;usuario-gitlab&gt;.gitlab.io/sitio-gitlab/ (sitio de proyecto)\n  #   https://sitio-gitlab-a1b2c3.gitlab.io/          (dominio único, el valor por defecto)\n  site-url: https://usuario-gitlab.gitlab.io/sitio-gitlab/"
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#enlaces-que-se-rompen-en-una-subruta",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#enlaces-que-se-rompen-en-una-subruta",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "5.3 Enlaces que se rompen en una subruta",
-    "text": "5.3 Enlaces que se rompen en una subruta\nQuarto escribe casi todos los enlaces como relativos (notas/index.html, ../marca.html), y por eso un mismo sitio funciona igual en la raíz de un dominio que en /sitio-gitlab/. Hay una excepción que aparece en tu sitio: los links: de una página About (la plantilla trestles de «Sobre mí»).\nCon esto en sobre-mi.qmd:\nabout:\n  template: trestles\n  links:\n    - text: Notas\n      href: notas/index.qmd\nQuarto 1.8.27 genera href=\"/notas/index.html\", un enlace absoluto desde la raíz del dominio. En usuario.gitlab.io/ funciona; en usuario.gitlab.io/sitio-gitlab/ lleva a usuario.gitlab.io/notas/, que no existe. Probé también notas/index.html y ../notas/index.html, y Quarto les antepone la barra igual.\nEn el ejemplo, los botones salen de links: y pasan al cuerpo de la página como enlaces normales, con las clases de botón de tu marca:\n\n\nsobre-mi.qmd (final)\n\n[Notas](notas/index.qmd){.btn .btn-marca} [Marca](marca.qmd){.btn .btn-marca-borde}\n\nSi publicas en la raíz (sitio de usuario o dominio único), los links: de About funcionan sin cambios; el arreglo solo es necesario en una subruta, aunque no estorba en ningún caso.\n\n\n\n\n\n\nTipCómo detectar enlaces absolutos\n\n\n\nDespués de quarto render, busca enlaces que empiecen por /:\ngrep -rn 'href=\"/\\|src=\"/' _site --include=*.html\nSi no sale nada, el sitio funciona en cualquier subruta."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#bloque-por-bloque",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#bloque-por-bloque",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "6.1 Bloque por bloque",
-    "text": "6.1 Bloque por bloque\n\ndefault: image:\n\nLa imagen Docker de todos los jobs. ghcr.io/quarto-dev/quarto es la imagen oficial del equipo de Quarto; tiene una etiqueta por versión (1.8.27, 1.10.19…) y latest. Fija una versión igual a la de tu equipo: con latest, una versión nueva de Quarto puede cambiar el HTML el día menos pensado, sin que tú hayas cambiado nada.\n\nstages:\n\nEl orden de las etapas. Aquí cada etapa tiene un solo job y nunca corren los dos en el mismo pipeline, pero nombrarlas deja el pipeline legible en la interfaz de GitLab.\n\ncomprobar\n\nCorre solo en los merge requests ($CI_PIPELINE_SOURCE == \"merge_request_event\"). Renderiza el sitio para detectar errores antes de fusionar y guarda _site/ durante una semana como artefacto: desde la página del job puedes descargarlo y abrirlo en tu equipo para revisar los cambios. No publica nada.\n\npublicar-sitio\n\nCorre solo en la rama por defecto ($CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH, normalmente main). Renderiza y, gracias a pages: publish: _site, GitLab toma esa carpeta y la publica.\n\npages: publish: _site\n\nEs la forma actual de declarar un despliegue de Pages: cualquier job con la propiedad pages: publica, y publish: dice qué carpeta. GitLab añade esa carpeta a los artefactos del job automáticamente, así que no hace falta escribir artifacts:. La forma antigua (un job llamado exactamente pages que deja el sitio en public/) está marcada como obsoleta; la necesitarás solo en un GitLab autogestionado antiguo (Sección 11.4)."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#por-qué-no-quarto-publish",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#por-qué-no-quarto-publish",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "6.2 ¿Por qué no quarto publish?",
-    "text": "6.2 ¿Por qué no quarto publish?\nquarto publish sabe publicar en GitHub Pages, Netlify, Quarto Pub, Posit Connect y Confluence, pero no en GitLab Pages. En GitLab el despliegue es siempre responsabilidad del CI, y el CI solo necesita quarto render."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#validar-el-archivo-antes-de-subirlo",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#validar-el-archivo-antes-de-subirlo",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "6.3 Validar el archivo antes de subirlo",
-    "text": "6.3 Validar el archivo antes de subirlo\nGitLab tiene un editor de pipelines que valida la sintaxis: en el proyecto, Build › Pipeline editor. Pega el contenido, mira la pestaña Validate y solo entonces haz commit. Un error de sangría en YAML es el fallo más común del primer intento."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#ajustar-site-url",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#ajustar-site-url",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "7.1 1. Ajustar site-url",
-    "text": "7.1 1. Ajustar site-url\nEdita _quarto.yml con la dirección que tendrá el sitio (Sección 2). Si aún no la conoces, déjala; la corregirás después del primer despliegue."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#comprobar-en-local",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#comprobar-en-local",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "7.2 2. Comprobar en local",
-    "text": "7.2 2. Comprobar en local\ncd ~/sitios/sitio-gitlab\nquarto --version          # anota la versión y úsala en .gitlab-ci.yml\nquarto render             # debe terminar con \"Output created: _site/index.html\"\nquarto preview            # opcional: revisar en el navegador\nSi falla aquí, fallará también en el CI. Corrige primero en local."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#crear-el-repositorio-y-subirlo",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#crear-el-repositorio-y-subirlo",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "7.3 3. Crear el repositorio y subirlo",
-    "text": "7.3 3. Crear el repositorio y subirlo\ngit init -b main\ngit add .\ngit status                # _site/ y .quarto/ NO deben aparecer\ngit commit -m \"Sitio Quarto con publicación en GitLab Pages\"\n\ngit remote add origin git@gitlab-personal:&lt;usuario-gitlab&gt;/&lt;proyecto&gt;.git\ngit push -u origin main"
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#seguir-el-pipeline",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#seguir-el-pipeline",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "7.4 4. Seguir el pipeline",
-    "text": "7.4 4. Seguir el pipeline\nEn GitLab, Build › Pipelines. Verás un pipeline con dos elementos:\n\npublicar-sitio, tu job. Al abrirlo ves el registro: la descarga de la imagen, quarto --version y la lista de páginas renderizadas ([1/6] sobre-mi.qmd … Output created: _site/index.html).\npages:deploy, un job que GitLab añade solo y que copia el sitio al servidor de Pages.\n\nCon los dos en verde, el sitio está publicado."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#encontrar-la-dirección",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#encontrar-la-dirección",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "7.5 5. Encontrar la dirección",
-    "text": "7.5 5. Encontrar la dirección\nDeploy › Pages muestra la dirección del sitio y la casilla Use unique domain. Ábrela. Si es la primera publicación, el sitio puede tardar unos minutos en responder.\nSi la dirección no coincide con tu site-url, corrige _quarto.yml, haz commit y push: el pipeline vuelve a publicar."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#opción-recomendada-freeze",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#opción-recomendada-freeze",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "9.1 Opción recomendada: freeze",
-    "text": "9.1 Opción recomendada: freeze\nAñade a _quarto.yml (fragmento 05-freeze.yml):\n\n\n_quarto.yml (fragmento)\n\nexecute:\n  freeze: auto\n\nCon freeze: auto, cuando renderizas en tu equipo Quarto guarda el resultado de cada documento con código en _freeze/. Haz commit de _freeze/. En el CI, quarto render encuentra esos resultados y no ejecuta nada: reutiliza figuras y tablas, y la imagen de Quarto basta.\nLa regla es simple: renderiza en local antes de hacer push cada vez que cambies una nota con código, para que _freeze/ esté al día. Si un documento con código no tiene su entrada en _freeze/, el CI intentará ejecutarlo y fallará; el mensaje de error dirá qué archivo es."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#opción-alternativa-ejecutar-en-el-ci",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#opción-alternativa-ejecutar-en-el-ci",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "9.2 Opción alternativa: ejecutar en el CI",
-    "text": "9.2 Opción alternativa: ejecutar en el CI\nSi el código debe correr en el servidor (por ejemplo, descarga datos que cambian), usa una imagen de Python e instala Quarto con pip (fragmento 06-gitlab-ci-python.yml):\n\n\n.gitlab-ci.yml (variante)\n\npublicar-sitio:\n  image: python:3.12-slim\n  variables:\n    PIP_CACHE_DIR: \"$CI_PROJECT_DIR/.cache/pip\"\n  cache:\n    paths:\n      - .cache/pip\n  before_script:\n    - pip install quarto-cli==1.8.27 jupyter -r requirements.txt\n  script:\n    - quarto render\n  pages:\n    publish: _site\n  rules:\n    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH\n\nquarto-cli es el paquete oficial de Quarto en PyPI; trae el binario de Quarto completo. requirements.txt lista lo que usan tus notas (pandas, matplotlib…). La caché de pip evita descargar todo en cada publicación. Cada pipeline será más lento (instalar Quarto y Jupyter tarda unos minutos), así que prefiere freeze mientras puedas."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#sec-acceso",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#sec-acceso",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "11.1 Acceso privado",
-    "text": "11.1 Acceso privado\nEn gitlab.com el sitio es público por defecto, aunque el repositorio sea privado. Para que solo lo vean los miembros del proyecto (útil para un borrador o para documentación interna de BioForge):\n\nActiva Pages Access Control en Settings › General › Visibility, project features, permissions › Pages.\nElige Only Project Members.\n\nLos visitantes tendrán que iniciar sesión en GitLab."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#dominio-propio",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#dominio-propio",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "11.2 Dominio propio",
-    "text": "11.2 Dominio propio\nEn Deploy › Pages › New Domain añades, por ejemplo, caicedo.dev. GitLab te pide dos registros en tu proveedor de DNS: uno que apunta el dominio a GitLab Pages y un registro TXT que demuestra que el dominio es tuyo. Con Automatic certificate management using Let’s Encrypt activado, GitLab emite y renueva el certificado HTTPS. Después cambia site-url al dominio nuevo."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#publicar-en-github-y-en-gitlab-a-la-vez",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#publicar-en-github-y-en-gitlab-a-la-vez",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "11.3 Publicar en GitHub y en GitLab a la vez",
-    "text": "11.3 Publicar en GitHub y en GitLab a la vez\nSi quieres mantener pacaicedo.github.io y tener una copia en GitLab, no hace falta duplicar el repositorio: añade un segundo remoto (fragmento 07-dos-remotos.sh):\ngit remote -v                                   # origin -&gt; github-personal\ngit remote add gitlab git@gitlab-personal:&lt;usuario-gitlab&gt;/sitio-gitlab.git\ngit push -u gitlab main                         # primer envío a GitLab\ngit push origin main && git push gitlab main    # en adelante, a los dos\nGitHub ignora .gitlab-ci.yml y GitLab ignora .github/, así que conviven sin problema.\nLo único que cambia entre los dos es site-url. Resuélvelo con un perfil de Quarto: deja en _quarto.yml la dirección de GitHub y crea _quarto-gitlab.yml con la de GitLab:\n\n\n_quarto-gitlab.yml\n\nwebsite:\n  site-url: https://&lt;usuario-gitlab&gt;.gitlab.io/\n\nEn el pipeline de GitLab, renderiza con ese perfil:\n  script:\n    - quarto render --profile gitlab\nQuarto combina _quarto.yml con _quarto-gitlab.yml y el segundo gana donde coinciden. Comprobado con el ejemplo: el sitemap.xml sale con la dirección de GitLab con --profile gitlab y con la de _quarto.yml sin él."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#sec-clasico",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#sec-clasico",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "11.4 GitLab autogestionado anterior a 17.9",
-    "text": "11.4 GitLab autogestionado anterior a 17.9\nSi tu universidad tiene su propio GitLab y es antiguo, pages: publish: no existirá y el pipeline dará un error de sintaxis. Usa la forma clásica (fragmento 04-gitlab-ci-clasico.yml): el job se llama exactamente pages y el sitio debe quedar en public/:\n\n\n.gitlab-ci.yml (GitLab antiguo)\n\npages:\n  image: ghcr.io/quarto-dev/quarto:1.8.27\n  script:\n    - quarto render --output-dir public\n  artifacts:\n    paths:\n      - public\n  rules:\n    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH\n\n--output-dir public cambia la carpeta de salida solo para ese render, sin tocar _quarto.yml. La versión de GitLab aparece en Help › Help (el signo de interrogación). Pregunta también si la instancia tiene Pages activado y si los runners pueden descargar imágenes de ghcr.io; si no pueden, el administrador te dirá qué registro usar."
-  },
-  {
-    "objectID": "tutoriales/tutorial-quarto-gitlab/index.html#archivos-de-este-tutorial",
-    "href": "tutoriales/tutorial-quarto-gitlab/index.html#archivos-de-este-tutorial",
-    "title": "Un sitio Quarto en GitLab Pages",
-    "section": "13.1 Archivos de este tutorial",
-    "text": "13.1 Archivos de este tutorial\n\nArchivos de ejemplo\n\n\n\n\n\n\nArchivo\nContenido\n\n\n\n\nejemplo/sitio-gitlab/\nTu sitio de marca listo para GitLab (pipeline, .gitignore, site-url, enlaces corregidos)\n\n\nejemplo/fragmentos/01-ssh-config\nBloque gitlab-personal para ~/.ssh/config\n\n\nejemplo/fragmentos/02-gitlab-ci-render.yml\nPipeline recomendado (render en el CI)\n\n\nejemplo/fragmentos/03-gitlab-ci-prerenderizado.yml\nPublicar _site/ renderizado en local\n\n\nejemplo/fragmentos/04-gitlab-ci-clasico.yml\nGitLab anterior a 17.9\n\n\nejemplo/fragmentos/05-freeze.yml\nfreeze: auto para sitios con código\n\n\nejemplo/fragmentos/06-gitlab-ci-python.yml\nEjecutar Python en el CI\n\n\nejemplo/fragmentos/07-dos-remotos.sh\nPublicar en GitHub y GitLab desde un repositorio"
-  },
-  {
-    "objectID": "tutoriales/index.html",
-    "href": "tutoriales/index.html",
-    "title": "Tutoriales",
+    "objectID": "herramientas-y-tutoriales/de-una-senal-a-una-pregunta.html#medir-antes-de-interpretar",
+    "href": "herramientas-y-tutoriales/de-una-senal-a-una-pregunta.html#medir-antes-de-interpretar",
+    "title": "De una señal a una pregunta",
     "section": "",
-    "text": "Datos fuera de GitHub con DVC y Dropbox\n\n\n\n\n\n\nPh.D. Pablo Eduardo Caicedo-Rodríguez\n\n\n14 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nUn sitio Quarto en GitLab Pages\n\n\n\n\n\n\nPh.D. Pablo Eduardo Caicedo-Rodríguez\n\n\n13 oct 2026\n\n\n\n\n\n\nNo hay resultados"
+    "text": "El procesamiento de una señal puede revelar diferencias entre grupos. Determinar su utilidad exige revisar el protocolo, la población y la incertidumbre.\n\n\n\n\n\n\nNotaPregunta de trabajo\n\n\n\n¿Qué parte del cambio observado proviene del fenómeno y qué parte del proceso de medición?\n\n\n# Ejemplo de presentación; no ejecuta un análisis clínico.\nfrecuencia_muestreo = 1000"
   },
   {
-    "objectID": "proyectos/protesis-cadera/index.html",
-    "href": "proyectos/protesis-cadera/index.html",
-    "title": "Estimación de prótesis para artroplastia de cadera",
+    "objectID": "proyectos/valor-eficaz/index.html",
+    "href": "proyectos/valor-eficaz/index.html",
+    "title": "Valor eficaz de una señal",
     "section": "",
-    "text": "¿Qué tamaño de prótesis necesita cada paciente para el reemplazo total de cadera?"
+    "text": "Una señal puede resumirse mediante su valor eficaz, pero ese resumen solo adquiere significado junto con las unidades, el protocolo y la pregunta de trabajo.\nEste ejemplo docente pregunta cómo calcular el RMS de cuatro observaciones y cómo comunicar el resultado sin atribuirle una interpretación clínica."
   },
   {
-    "objectID": "proyectos/protesis-cadera/index.html#pregunta",
-    "href": "proyectos/protesis-cadera/index.html#pregunta",
-    "title": "Estimación de prótesis para artroplastia de cadera",
+    "objectID": "proyectos/valor-eficaz/index.html#problema",
+    "href": "proyectos/valor-eficaz/index.html#problema",
+    "title": "Valor eficaz de una señal",
     "section": "",
-    "text": "¿Qué tamaño de prótesis necesita cada paciente para el reemplazo total de cadera?"
+    "text": "Una señal puede resumirse mediante su valor eficaz, pero ese resumen solo adquiere significado junto con las unidades, el protocolo y la pregunta de trabajo.\nEste ejemplo docente pregunta cómo calcular el RMS de cuatro observaciones y cómo comunicar el resultado sin atribuirle una interpretación clínica."
   },
   {
-    "objectID": "proyectos/protesis-cadera/index.html#enfoque",
-    "href": "proyectos/protesis-cadera/index.html#enfoque",
-    "title": "Estimación de prótesis para artroplastia de cadera",
-    "section": "2 Enfoque",
-    "text": "2 Enfoque\nUn modelo de aprendizaje profundo estima el tamaño de la prótesis a partir de los datos del paciente."
+    "objectID": "proyectos/valor-eficaz/index.html#métodos",
+    "href": "proyectos/valor-eficaz/index.html#métodos",
+    "title": "Valor eficaz de una señal",
+    "section": "Métodos",
+    "text": "Métodos\nSe usa la señal sintética x=[0.2,−0.1,0.4,−0.2]x = [0.2, -0.1, 0.4, -0.2]. El valor eficaz se define como:\nxRMS=1N∑n=0N−1x[n]2.x_{\\mathrm{RMS}} = \\sqrt{\\frac{1}{N}\\sum_{n=0}^{N-1}x[n]^2}.\nEl programa de referencia utiliza únicamente la biblioteca estándar de Python 3. Descárgalo y ejecuta:\npython3 rms.py\nEl cuaderno original muestra también una implementación equivalente con NumPy como fragmento ilustrativo."
   },
   {
-    "objectID": "proyectos/protesis-cadera/index.html#datos-y-evaluación",
-    "href": "proyectos/protesis-cadera/index.html#datos-y-evaluación",
-    "title": "Estimación de prótesis para artroplastia de cadera",
-    "section": "3 Datos y evaluación",
-    "text": "3 Datos y evaluación\nDescribe aquí las fuentes, sus contratos de datos y cómo se evalúa el modelo."
+    "objectID": "proyectos/valor-eficaz/index.html#resultados",
+    "href": "proyectos/valor-eficaz/index.html#resultados",
+    "title": "Valor eficaz de una señal",
+    "section": "Resultados",
+    "text": "Resultados\n\n\n\nMagnitud\nValor\n\n\n\n\nNúmero de observaciones\n4\n\n\nSuma de cuadrados\n0.25\n\n\nMedia de cuadrados\n0.0625\n\n\nValor eficaz\n0.250\n\n\n\nEl programa imprime RMS: 0.250. Son resultados del ejemplo sintético, sin unidades físicas asignadas ni validación clínica. La magnitud no permite establecer causalidad ni comparar condiciones medidas con protocolos incompatibles.\nPuedes reproducir el cálculo en el laboratorio del curso."
   },
   {
-    "objectID": "proyectos/bioforge/index.html",
-    "href": "proyectos/bioforge/index.html",
-    "title": "BioForge Experiment OS",
+    "objectID": "charlas-y-conferencias/index.html",
+    "href": "charlas-y-conferencias/index.html",
+    "title": "Charlas y Conferencias",
     "section": "",
-    "text": "Cada fuente (sEMG, marcha, video) declara tipo, unidades y frecuencia antes de entrar al modelo. Más detalle en la nota Extraer variables con contrato."
+    "text": "Cada encuentro reúne la información del evento, la presentación y su código. La primera entrada conserva las diapositivas de muestra del proyecto y está identificada como material demostrativo.\n\n\n\n\n\n\n\n\n\nDe la señal a la evidencia\n\n\n\nSeñales\n\nIA\n\nDivulgación\n\n\n\nPresentación de ejemplo sobre medición, modelos y límites de interpretación, con código reproducible.\n\n\n\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "proyectos/bioforge/index.html#contratos-de-datos",
-    "href": "proyectos/bioforge/index.html#contratos-de-datos",
-    "title": "BioForge Experiment OS",
+    "objectID": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html",
+    "href": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html",
+    "title": "Laboratorio: valor eficaz de una señal",
     "section": "",
-    "text": "Cada fuente (sEMG, marcha, video) declara tipo, unidades y frecuencia antes de entrar al modelo. Más detalle en la nota Extraer variables con contrato."
+    "text": "Volver al curso"
   },
   {
-    "objectID": "proyectos/bioforge/index.html#tres-procesos",
-    "href": "proyectos/bioforge/index.html#tres-procesos",
-    "title": "BioForge Experiment OS",
-    "section": "2 Tres procesos",
-    "text": "2 Tres procesos\n\nProcesos de BioForge.\n\n\n\n\n\n\nProceso\nQué hace\n\n\n\n\nPreprocesamiento\nLleva las señales crudas a variables con contrato.\n\n\nModelado\nAjusta modelos estadísticos, causales y de aprendizaje.\n\n\nEvaluación\nMide el desempeño y explica los resultados."
+    "objectID": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#objetivo",
+    "href": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#objetivo",
+    "title": "Laboratorio: valor eficaz de una señal",
+    "section": "Objetivo",
+    "text": "Objetivo\nCalcular el valor eficaz de una señal discreta y explicar qué información conserva esta medida."
   },
   {
-    "objectID": "notas/grafos-causales/index.html",
-    "href": "notas/grafos-causales/index.html",
-    "title": "Grafos causales para experimentos",
-    "section": "",
-    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+    "objectID": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#datos-y-procedimiento",
+    "href": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#datos-y-procedimiento",
+    "title": "Laboratorio: valor eficaz de una señal",
+    "section": "Datos y procedimiento",
+    "text": "Datos y procedimiento\nUsa la señal sintética [0.2, -0.1, 0.4, -0.2]. No se asignan unidades porque no procede de una medición física.\n\nEleva cada observación al cuadrado.\nCalcula la media de los cuadrados.\nObtén su raíz cuadrada.\nCompara tu resultado con el proyecto de ejemplo.\n\nDescarga el código de referencia y ejecútalo con Python 3:\npython3 rms.py"
   },
   {
-    "objectID": "notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
-    "href": "notas/grafos-causales/index.html#el-dag-va-en-el-protocolo",
-    "title": "Grafos causales para experimentos",
-    "section": "",
-    "text": "Declarar el grafo antes de ver los datos evita ajustar por mediadores o colisionadores.\n\n\n\n\n\n\nImportanteSupuesto\n\n\n\nEl confusor \\(Z\\) se mide en la misma sesión que \\(X\\) e \\(Y\\)."
+    "objectID": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#entregables",
+    "href": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#entregables",
+    "title": "Laboratorio: valor eficaz de una señal",
+    "section": "Entregables",
+    "text": "Entregables\n\nEl cálculo manual y el resultado del programa.\nUna explicación de las unidades que tendría el RMS si la señal estuviera en voltios.\nUna limitación de comparar valores de RMS entre protocolos diferentes."
   },
   {
-    "objectID": "notas/grafos-causales/index.html#estimación",
-    "href": "notas/grafos-causales/index.html#estimación",
-    "title": "Grafos causales para experimentos",
-    "section": "2 Estimación",
-    "text": "2 Estimación\nimport pandas as pd\n\ndef efecto_ajustado(df: pd.DataFrame) -&gt; float:\n    \"\"\"Estandarización por el confusor Z.\"\"\"\n    pesos = df[\"Z\"].value_counts(normalize=True)\n    medias = df.groupby([\"Z\", \"X\"])[\"Y\"].mean().unstack()\n    return float(((medias[1] - medias[0]) * pesos).sum())"
-  },
-  {
-    "objectID": "marca.html",
-    "href": "marca.html",
-    "title": "Manual de marca",
-    "section": "",
-    "text": "La marca cuenta un recorrido: los datos se extraen, se conectan como grafo y terminan en una causa. El isotipo es el triángulo causal clásico: el confusor \\(Z\\) (turquesa profundo) apunta al tratamiento \\(X\\) (turquesa) y al desenlace \\(Y\\), y la flecha dorada \\(X \\to Y\\) es el efecto que se quiere estimar. El desenlace es la chispa de cuatro puntas del yunque de BioForja. La paleta (tinta, turquesa y dorado) y las fuentes DejaVu son las de las diapositivas de BioForja."
-  },
-  {
-    "objectID": "marca.html#idea",
-    "href": "marca.html#idea",
-    "title": "Manual de marca",
-    "section": "",
-    "text": "La marca cuenta un recorrido: los datos se extraen, se conectan como grafo y terminan en una causa. El isotipo es el triángulo causal clásico: el confusor \\(Z\\) (turquesa profundo) apunta al tratamiento \\(X\\) (turquesa) y al desenlace \\(Y\\), y la flecha dorada \\(X \\to Y\\) es el efecto que se quiere estimar. El desenlace es la chispa de cuatro puntas del yunque de BioForja. La paleta (tinta, turquesa y dorado) y las fuentes DejaVu son las de las diapositivas de BioForja."
-  },
-  {
-    "objectID": "marca.html#logotipos",
-    "href": "marca.html#logotipos",
-    "title": "Manual de marca",
-    "section": "Logotipos",
-    "text": "Logotipos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLogo de BioForja, del que sale la chispa del isotipo:\n\nEl motivo de fondo (red-causal.svg) va siempre sobre tinta, a la derecha y con un velo hacia el texto."
-  },
-  {
-    "objectID": "marca.html#paleta",
-    "href": "marca.html#paleta",
-    "title": "Manual de marca",
-    "section": "Paleta",
-    "text": "Paleta\nCada acento tiene un significado. Sobre fondo claro se usa la variante oscura de cada uno.\n\nTinta#0B1824\nSuperficie · texto#123047\nTurquesa · dato#38D6CF / #1A7C78\nTurquesa profundo · grafo#2AA09B / #1D6468\nDorado · causa#F2B544 / #97650A\nAcero · tenue#315064\nNiebla · filetes#B8CAD6\nPapel#F7FAFC\nCoral · aviso#FF7A5C / #C4432C\n\nLa firma visual es el filete degradado turquesa → turquesa profundo → dorado: bajo los títulos de sección, al pie de cada diapositiva y bajo la banda de título."
-  },
-  {
-    "objectID": "marca.html#tipografía",
-    "href": "marca.html#tipografía",
-    "title": "Manual de marca",
-    "section": "Tipografía",
-    "text": "Tipografía\n\nDejaVu Sans negrita · títulos\nDejaVu Sans · texto corrido, con cursiva real\nDejaVu Sans Mono · código, rótulos y pies\n\nTienen la licencia libre de Bitstream Vera / DejaVu. Los .ttf están en recursos/marca/fuentes/ para el PDF y beamer; los temas HTML las llevan incrustadas (recortadas a latín, griego y símbolos) y usan las del sistema si ya están instaladas."
-  },
-  {
-    "objectID": "marca.html#archivos",
-    "href": "marca.html#archivos",
-    "title": "Manual de marca",
-    "section": "Archivos",
-    "text": "Archivos\n\n\n\n\n\n\n\nArchivo\nPara\n\n\n\n\ncaicedo-sitio.scss\nsitio Quarto (_quarto.yml)\n\n\ncaicedo-documento.scss\ndocumentos HTML, solos o encima del sitio\n\n\ncaicedo-diapositivas.scss\ndiapositivas revealjs\n\n\ncaicedo-documento.sty\ndocumentos PDF (scrartcl + LuaLaTeX)\n\n\ncaicedo-diapositivas.sty\ndiapositivas beamer, gemelas de revealjs\n\n\ncaicedo-claro.theme, caicedo-oscuro.theme\nresaltado de código claro y oscuro\n\n\ncaicedo.lua\nclases de color {.dato} {.grafo} {.causa} {.alert} en PDF y beamer"
-  },
-  {
-    "objectID": "marca.html#clases-de-color",
-    "href": "marca.html#clases-de-color",
-    "title": "Manual de marca",
-    "section": "Clases de color",
-    "text": "Clases de color\nEscribe [texto]{.dato}, [texto]{.grafo}, [texto]{.causa} o [texto]{.alert}: dato, grafo, causa."
-  },
-  {
-    "objectID": "ejemplos/documento/documento-ejemplo.html",
-    "href": "ejemplos/documento/documento-ejemplo.html",
-    "title": "Extracción de información y grafos causales",
-    "section": "",
-    "text": "La marca se apoya en tres ideas, cada una con su color: el dato y su extracción, el grafo que conecta variables y la causa que explica el resultado. En BioForge Experiment OS esas ideas corresponden a preprocesamiento, modelado y evaluación, encadenados por contratos de datos.\n\n\nCada bloque de datos declara tipo, unidades y frecuencia. El código de comprobación rechaza cualquier archivo que no cumpla el contrato antes de que llegue al modelo.\n\nMarcha: series de tiempo a 100 Hz.\nsEMG: señales a 2 kHz, filtradas entre 20 y 450 Hz.\n\nSe guarda la envolvente RMS por ventana.\n\nVideo: 60 fps, con marcadores anatómicos.\n\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Contrato:\n    tipo: str          # \"senal\", \"serie\", \"imagen\", \"tabular\"\n    unidades: str\n    frecuencia_hz: float\n\n    def comprobar(self, frecuencia: float) -&gt; bool:\n        return abs(frecuencia - self.frecuencia_hz) &lt; 1e-6"
-  },
-  {
-    "objectID": "ejemplos/documento/documento-ejemplo.html#del-dato-a-la-variable",
-    "href": "ejemplos/documento/documento-ejemplo.html#del-dato-a-la-variable",
-    "title": "Extracción de información y grafos causales",
-    "section": "",
-    "text": "La marca se apoya en tres ideas, cada una con su color: el dato y su extracción, el grafo que conecta variables y la causa que explica el resultado. En BioForge Experiment OS esas ideas corresponden a preprocesamiento, modelado y evaluación, encadenados por contratos de datos.\n\n\nCada bloque de datos declara tipo, unidades y frecuencia. El código de comprobación rechaza cualquier archivo que no cumpla el contrato antes de que llegue al modelo.\n\nMarcha: series de tiempo a 100 Hz.\nsEMG: señales a 2 kHz, filtradas entre 20 y 450 Hz.\n\nSe guarda la envolvente RMS por ventana.\n\nVideo: 60 fps, con marcadores anatómicos.\n\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Contrato:\n    tipo: str          # \"senal\", \"serie\", \"imagen\", \"tabular\"\n    unidades: str\n    frecuencia_hz: float\n\n    def comprobar(self, frecuencia: float) -&gt; bool:\n        return abs(frecuencia - self.frecuencia_hz) &lt; 1e-6"
-  },
-  {
-    "objectID": "ejemplos/documento/documento-ejemplo.html#del-grafo-a-la-causa",
-    "href": "ejemplos/documento/documento-ejemplo.html#del-grafo-a-la-causa",
-    "title": "Extracción de información y grafos causales",
-    "section": "2 Del grafo a la causa",
-    "text": "2 Del grafo a la causa\n\nUn grafo causal no se descubre mirando los datos: se declara y luego se pone a prueba.\n\n\nLos tres procesos y sus contratos encadenados.\n\n\nProceso\nEntrada\nSalida\n\n\n\n\nPreprocesamiento\nArchivos crudos\nVariables con contrato\n\n\nModelado\nVariables\nModelo entrenado\n\n\nEvaluación\nModelo y objetivo\nEvidencia reproducible\n\n\n\n\n\n\n\n\n\nNotaNota\n\n\n\nEl contrato de salida de cada proceso es el contrato de entrada del siguiente.\n\n\n\n\n\n\n\n\nImportanteSupuesto de identificación\n\n\n\nEl confusor debe medirse en la misma sesión que el tratamiento y el desenlace.\n\n\n\n\n\n\n\n\nTipBuena práctica\n\n\n\nDeclara el DAG en el protocolo del experimento antes de ver los resultados.\n\n\n\n2.1 Estimación del efecto\nCon el conjunto de ajuste \\(\\{Z\\}\\), el efecto causal medio se estima como \\[\n\\mathbb{E}[Y \\mid do(X = x)] = \\sum_z \\mathbb{E}[Y \\mid X = x, Z = z]\\, P(Z = z).\n\\]\nPara más detalle, ver la documentación de Quarto."
+    "objectID": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#criterio-de-revisión",
+    "href": "cursos/senales-biomedicas/laboratorios/valor-eficaz.html#criterio-de-revisión",
+    "title": "Laboratorio: valor eficaz de una señal",
+    "section": "Criterio de revisión",
+    "text": "Criterio de revisión\nEl cálculo debe coincidir a tres decimales con 0.250. La interpretación debe identificar los datos como sintéticos y relacionar las unidades con la medición original."
   },
   {
     "objectID": "cursos/index.html",
     "href": "cursos/index.html",
     "title": "Cursos",
     "section": "",
-    "text": "Aprendizaje profundo para imágenes médicas\n\n\n\nia\n\nimágenes\n\n\n\nRedes convolucionales con PyTorch para clasificar y segmentar imágenes clínicas.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n15 sept 2026\n\n\n\n\n\n\n\n\n\n\n\nInferencia causal con grafos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nDel DAG declarado en el protocolo a la estimación de efectos con datos observacionales.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 ago 2026\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Cada curso reúne su introducción, resultados de aprendizaje, calendario, presentaciones, laboratorios, recursos y referentes.\nEl material disponible es un ejemplo docente construido a partir de los cuadernos de BioForja. Las fechas de una oferta académica se publicarán cuando estén definidas.\n\n\n\n\n\n\n\n\n\nIntroducción a las señales biomédicas\n\n\n\nSeñales\n\nDocencia\n\n\n\nUna ruta docente para formular preguntas, calcular el valor eficaz y comunicar los límites de una medición.\n\n\n\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "cursos/Aprendizaje/index.html",
-    "href": "cursos/Aprendizaje/index.html",
-    "title": "Aprendizaje profundo para imágenes médicas",
+    "objectID": "cursos/senales-biomedicas/index.html",
+    "href": "cursos/senales-biomedicas/index.html",
+    "title": "Introducción a las señales biomédicas",
     "section": "",
-    "text": "Preparación de imágenes y contratos de datos.\nRedes convolucionales con PyTorch.\nEvaluación y explicación de los modelos."
+    "text": "Una señal es el punto de partida de una pregunta. Este curso de ejemplo conecta la medición, el procesamiento y la interpretación mediante datos sintéticos y materiales reproducibles.\nEstá dirigido a quienes empiezan a trabajar con señales biomédicas. Se recomienda conocer operaciones con arreglos y las nociones básicas de Python."
   },
   {
-    "objectID": "cursos/Aprendizaje/index.html#contenido",
-    "href": "cursos/Aprendizaje/index.html#contenido",
-    "title": "Aprendizaje profundo para imágenes médicas",
+    "objectID": "cursos/senales-biomedicas/index.html#introducción",
+    "href": "cursos/senales-biomedicas/index.html#introducción",
+    "title": "Introducción a las señales biomédicas",
     "section": "",
-    "text": "Preparación de imágenes y contratos de datos.\nRedes convolucionales con PyTorch.\nEvaluación y explicación de los modelos."
+    "text": "Una señal es el punto de partida de una pregunta. Este curso de ejemplo conecta la medición, el procesamiento y la interpretación mediante datos sintéticos y materiales reproducibles.\nEstá dirigido a quienes empiezan a trabajar con señales biomédicas. Se recomienda conocer operaciones con arreglos y las nociones básicas de Python."
   },
   {
-    "objectID": "cursos/Aprendizaje/index.html#modalidad",
-    "href": "cursos/Aprendizaje/index.html#modalidad",
-    "title": "Aprendizaje profundo para imágenes médicas",
-    "section": "2 Modalidad",
-    "text": "2 Modalidad\nOcho sesiones prácticas con cuadernos de Quarto."
+    "objectID": "cursos/senales-biomedicas/index.html#resultados-de-aprendizaje",
+    "href": "cursos/senales-biomedicas/index.html#resultados-de-aprendizaje",
+    "title": "Introducción a las señales biomédicas",
+    "section": "Resultados de Aprendizaje",
+    "text": "Resultados de Aprendizaje\nAl completar las actividades, podrás:\n\nFormular una pregunta que distinga el fenómeno del proceso de medición.\nReconocer la frecuencia de muestreo, las unidades y los supuestos de un registro.\nCalcular e interpretar el valor eficaz de una señal discreta.\nComunicar un resultado junto con sus límites y un procedimiento reproducible."
   },
   {
-    "objectID": "conferencias/del-dato-a-la-causa/index.html",
-    "href": "conferencias/del-dato-a-la-causa/index.html",
-    "title": "Del dato a la causa",
+    "objectID": "cursos/senales-biomedicas/index.html#calendario-y-fechas-importantes",
+    "href": "cursos/senales-biomedicas/index.html#calendario-y-fechas-importantes",
+    "title": "Introducción a las señales biomédicas",
+    "section": "Calendario y fechas importantes",
+    "text": "Calendario y fechas importantes\nLa siguiente secuencia es orientativa. Este ejemplo no corresponde a una oferta con inscripciones o fechas confirmadas.\n\n\n\n\n\n\n\n\n\n\nMomento\nActividad\nEntrega\nFecha\n\n\n\n\nUnidad 1\nMedición y pregunta de trabajo\nPregunta y protocolo propuesto\nPor definir\n\n\nUnidad 2\nProcesamiento y valor eficaz\nLaboratorio de RMS\nPor definir\n\n\nUnidad 3\nInterpretación y comunicación\nInforme breve con límites\nPor definir"
+  },
+  {
+    "objectID": "cursos/senales-biomedicas/index.html#presentaciones",
+    "href": "cursos/senales-biomedicas/index.html#presentaciones",
+    "title": "Introducción a las señales biomédicas",
+    "section": "Presentaciones",
+    "text": "Presentaciones\n\nDe la señal a la evidencia: medición, modelos e interpretación.\nMaterial y contexto de la charla."
+  },
+  {
+    "objectID": "cursos/senales-biomedicas/index.html#laboratorios",
+    "href": "cursos/senales-biomedicas/index.html#laboratorios",
+    "title": "Introducción a las señales biomédicas",
+    "section": "Laboratorios",
+    "text": "Laboratorios\n\nLaboratorio: valor eficaz de una señal. Incluye objetivo, procedimiento y entregables.\nProyecto de ejemplo y resultados esperados."
+  },
+  {
+    "objectID": "cursos/senales-biomedicas/index.html#recursos-y-tutoriales",
+    "href": "cursos/senales-biomedicas/index.html#recursos-y-tutoriales",
+    "title": "Introducción a las señales biomédicas",
+    "section": "Recursos y tutoriales",
+    "text": "Recursos y tutoriales\n\nDe una señal a una pregunta.\nCuaderno: de la señal a la evidencia.\nCódigo del cálculo de RMS."
+  },
+  {
+    "objectID": "cursos/senales-biomedicas/index.html#referentes",
+    "href": "cursos/senales-biomedicas/index.html#referentes",
+    "title": "Introducción a las señales biomédicas",
+    "section": "Referentes",
+    "text": "Referentes\n\nCuaderno de BioForja: definición matemática y ejemplo de procedimiento.\nPresentación de BioForja: relación entre medición, evidencia y límites de interpretación."
+  },
+  {
+    "objectID": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html",
+    "href": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html",
+    "title": "De la señal a la evidencia",
     "section": "",
-    "text": "Evento\nLugar\nFormato\n\n\n\n\nEvento de ejemplo\nCiudad\nCharla, 30 min"
+    "text": "Material demostrativo de BioForja preparado el 20 de octubre de 2026. Las diapositivas originales no documentan una participación en un evento específico.\n\n\n\n\n\n\n\nInformación\nDetalle\n\n\n\n\nPonente\nPablo Eduardo Caicedo-Rodríguez\n\n\nTema\nMedición, modelos y comunicación de evidencia\n\n\nEvento, organización y lugar\nNo especificados en el material original\n\n\nFecha del evento\nSin confirmar"
   },
   {
-    "objectID": "conferencias/del-dato-a-la-causa/index.html#evento",
-    "href": "conferencias/del-dato-a-la-causa/index.html#evento",
-    "title": "Del dato a la causa",
+    "objectID": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html#evento",
+    "href": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html#evento",
+    "title": "De la señal a la evidencia",
     "section": "",
-    "text": "Evento\nLugar\nFormato\n\n\n\n\nEvento de ejemplo\nCiudad\nCharla, 30 min"
+    "text": "Material demostrativo de BioForja preparado el 20 de octubre de 2026. Las diapositivas originales no documentan una participación en un evento específico.\n\n\n\n\n\n\n\nInformación\nDetalle\n\n\n\n\nPonente\nPablo Eduardo Caicedo-Rodríguez\n\n\nTema\nMedición, modelos y comunicación de evidencia\n\n\nEvento, organización y lugar\nNo especificados en el material original\n\n\nFecha del evento\nSin confirmar"
   },
   {
-    "objectID": "conferencias/del-dato-a-la-causa/index.html#resumen",
-    "href": "conferencias/del-dato-a-la-causa/index.html#resumen",
-    "title": "Del dato a la causa",
-    "section": "2 Resumen",
-    "text": "2 Resumen\nCómo declarar un DAG en el protocolo, qué ajustar al estimar y por qué una variable sin contrato no entra al modelo."
+    "objectID": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html#presentación",
+    "href": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html#presentación",
+    "title": "De la señal a la evidencia",
+    "section": "Presentación",
+    "text": "Presentación\nSeis láminas para conectar una pregunta, el procedimiento y sus límites de interpretación.\n\nAbrir diapositivas claras.\nAbrir diapositivas oscuras.\nDescargar PDF claro · Descargar PDF oscuro.\nConsultar el cuaderno complementario."
   },
   {
-    "objectID": "conferencias/del-dato-a-la-causa/index.html#material",
-    "href": "conferencias/del-dato-a-la-causa/index.html#material",
-    "title": "Del dato a la causa",
-    "section": "3 Material",
-    "text": "3 Material\n\nDiapositivas (HTML)\nDiapositivas en PDF"
-  },
-  {
-    "objectID": "conferencias/contratos-de-datos/index.html",
-    "href": "conferencias/contratos-de-datos/index.html",
-    "title": "Contratos de datos para señales biomédicas",
-    "section": "",
-    "text": "Evento\nLugar\nFormato\n\n\n\n\nEvento de ejemplo\nCiudad\nTaller, 2 h"
-  },
-  {
-    "objectID": "conferencias/contratos-de-datos/index.html#evento",
-    "href": "conferencias/contratos-de-datos/index.html#evento",
-    "title": "Contratos de datos para señales biomédicas",
-    "section": "",
-    "text": "Evento\nLugar\nFormato\n\n\n\n\nEvento de ejemplo\nCiudad\nTaller, 2 h"
-  },
-  {
-    "objectID": "conferencias/contratos-de-datos/index.html#resumen",
-    "href": "conferencias/contratos-de-datos/index.html#resumen",
-    "title": "Contratos de datos para señales biomédicas",
-    "section": "2 Resumen",
-    "text": "2 Resumen\nQué debe declarar cada fuente antes de entrar al modelo: tipo, unidades y frecuencia."
-  },
-  {
-    "objectID": "conferencias/contratos-de-datos/index.html#material",
-    "href": "conferencias/contratos-de-datos/index.html#material",
-    "title": "Contratos de datos para señales biomédicas",
-    "section": "3 Material",
-    "text": "3 Material\nEnlaza aquí las diapositivas o la grabación."
-  },
-  {
-    "objectID": "conferencias/index.html",
-    "href": "conferencias/index.html",
-    "title": "Conferencias",
-    "section": "",
-    "text": "Del dato a la causa\n\n\n\ncausalidad\n\ngrafos\n\n\n\nGrafos causales para experimentos biomédicos: del contrato de datos al DAG.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n6 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nContratos de datos para señales biomédicas\n\n\n\nextracción\n\ndatos\n\n\n\nsEMG, marcha y video en un mismo experimento sin perder de dónde viene cada variable.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n12 jun 2026\n\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "cursos/Inferencia/index.html",
-    "href": "cursos/Inferencia/index.html",
-    "title": "Inferencia causal con grafos",
-    "section": "",
-    "text": "Grafos causales: confusores, mediadores y colisionadores.\nConjuntos de ajuste y criterio de la puerta trasera.\nEstimación de efectos y análisis de sensibilidad."
-  },
-  {
-    "objectID": "cursos/Inferencia/index.html#contenido",
-    "href": "cursos/Inferencia/index.html#contenido",
-    "title": "Inferencia causal con grafos",
-    "section": "",
-    "text": "Grafos causales: confusores, mediadores y colisionadores.\nConjuntos de ajuste y criterio de la puerta trasera.\nEstimación de efectos y análisis de sensibilidad."
-  },
-  {
-    "objectID": "cursos/Inferencia/index.html#modalidad",
-    "href": "cursos/Inferencia/index.html#modalidad",
-    "title": "Inferencia causal con grafos",
-    "section": "2 Modalidad",
-    "text": "2 Modalidad\nSeis sesiones con ejercicios en Python."
-  },
-  {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#de-la-señal-a-la-variable",
-    "title": "Del dato a la causa",
-    "section": "De la señal a la variable",
-    "text": "De la señal a la variable\n\nLos datos crudos llegan de marcha, sEMG y video.\nCada fuente declara un contrato de datos.\n\nTipo, unidades y frecuencia de muestreo.\nCódigo de comprobación del contrato.\n\nLa extracción produce variables con significado clínico.\n\nIdea clave\nUna variable sin contrato no entra al modelo."
-  },
-  {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#código-de-extracción",
-    "title": "Del dato a la causa",
-    "section": "Código de extracción",
-    "text": "Código de extracción\nimport torch\n\ndef extraer_rms(senal: torch.Tensor, ventana: int = 200) -&gt; torch.Tensor:\n    \"\"\"RMS por ventanas de una señal sEMG (canales x muestras).\"\"\"\n    ventanas = senal.unfold(-1, ventana, ventana // 2)\n    return ventanas.pow(2).mean(-1).sqrt()  # 1 valor por ventana\nLa función respeta el contrato: entra float32 [C, N] y sale float32 [C, V]."
-  },
-  {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#variables-como-grafo",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#variables-como-grafo",
-    "title": "Del dato a la causa",
-    "section": "Variables como grafo",
-    "text": "Variables como grafo\n\n\n\nNodos: variables extraídas.\nAristas: dependencias observadas.\nComunidades: subsistemas fisiológicos.\n\nEl grafo es el puente entre extracción y causalidad.\n\n\n\n\nMétrica\nValor\n\n\n\n\nNodos\n42\n\n\nAristas\n118\n\n\nDensidad\n0.14\n\n\nComunidades\n5"
-  },
-  {
-    "objectID": "ejemplos/diapositivas/diapositivas-ejemplo.html#del-grafo-a-la-causa",
-    "href": "ejemplos/diapositivas/diapositivas-ejemplo.html#del-grafo-a-la-causa",
-    "title": "Del dato a la causa",
-    "section": "Del grafo a la causa",
-    "text": "Del grafo a la causa\n\nCorrelación no es causalidad, pero un grafo bien construido dice qué hay que ajustar.\n\n\n\n\n\n\n\nSupuesto de identificación\n\n\nEl confusor \\(Z\\) debe medirse en la misma sesión que \\(X\\) e \\(Y\\).\n\n\n\n\n\n\n\n\n\nBuena práctica\n\n\nDeclara el DAG antes de mirar los resultados."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "",
-    "text": "Del dato a la causa\n\n\nDiseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nTutoriales Cursos Notas Sobre mí"
-  },
-  {
-    "objectID": "index.html#convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica",
-    "href": "index.html#convirtiendo-señales-e-imágenes-biomédicas-en-evidencia-clínica",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "",
-    "text": "Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.\nTutoriales Cursos Notas Sobre mí"
-  },
-  {
-    "objectID": "index.html#ejes-de-trabajo",
-    "href": "index.html#ejes-de-trabajo",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Ejes de trabajo",
-    "text": "Ejes de trabajo\n\n\nExtracción\nContratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.\n\n\nInformación\nVariables y relaciones como conocimientos para encontrar estructura y comunidades.\n\n\nCausalidad\nDAG declarados en el protocolo, estimación de efectos y evaluación explicativa.\n\n\nIA\nModelos estadísticos, de aprendizaje automático y profundo sobre Scikit Learn, PyTorch y Tensorflow.\n\n\n\nEstimación de protesis para artroplastía de cadera\nUn modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera.\nVer proyecto"
-  },
-  {
-    "objectID": "index.html#noticias",
-    "href": "index.html#noticias",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Noticias",
-    "text": "Noticias\n\n\n\n\n\nGrafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\n\n\n1 oct 2026\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "index.html#cursos",
-    "href": "index.html#cursos",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Cursos",
-    "text": "Cursos\n\n\n\n\n\nAprendizaje profundo para imágenes médicas\n\n\n\nia\n\nimágenes\n\n\n\nRedes convolucionales con PyTorch para clasificar y segmentar imágenes clínicas.\n\n\n\n\n\n15 sept 2026\n\n\n\n\n\n\n\nInferencia causal con grafos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nDel DAG declarado en el protocolo a la estimación de efectos con datos observacionales.\n\n\n\n\n\n1 ago 2026\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "index.html#tutoriales",
-    "href": "index.html#tutoriales",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Tutoriales",
-    "text": "Tutoriales\n\n\n\n\n\nDatos fuera de GitHub con DVC y Dropbox\n\n\n\n\n\n\n\n\n14 oct 2026\n\n\n\n\n\n\n\nUn sitio Quarto en GitLab Pages\n\n\n\n\n\n\n\n\n13 oct 2026\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "index.html#proyectos",
-    "href": "index.html#proyectos",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Proyectos",
-    "text": "Proyectos\n\n\n\n\n\nBioForge Experiment OS\n\n\n\nextracción\n\ndatos\n\n\n\nContratos de datos y tres procesos: preprocesamiento, modelado y evaluación.\n\n\n\n\n\n1 oct 2026\n\n\n\n\n\n\n\nEstimación de prótesis para artroplastia de cadera\n\n\n\nia\n\nimágenes\n\n\n\nUn modelo de aprendizaje profundo que estima el tamaño de la prótesis antes de la cirugía.\n\n\n\n\n\n1 sept 2026\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "index.html#conferencias",
-    "href": "index.html#conferencias",
-    "title": "P. E. Caicedo-Rodríguez",
-    "section": "Conferencias",
-    "text": "Conferencias\n\n\n\n\n\nDel dato a la causa\n\n\n\ncausalidad\n\ngrafos\n\n\n\nGrafos causales para experimentos biomédicos: del contrato de datos al DAG.\n\n\n\n\n\n6 oct 2026\n\n\n\n\n\n\n\nContratos de datos para señales biomédicas\n\n\n\nextracción\n\ndatos\n\n\n\nsEMG, marcha y video en un mismo experimento sin perder de dónde viene cada variable.\n\n\n\n\n\n12 jun 2026\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "notas/extraer-variables/index.html",
-    "href": "notas/extraer-variables/index.html",
-    "title": "Extraer variables con contrato",
-    "section": "",
-    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
-  },
-  {
-    "objectID": "notas/extraer-variables/index.html#contratos-de-datos",
-    "href": "notas/extraer-variables/index.html#contratos-de-datos",
-    "title": "Extraer variables con contrato",
-    "section": "",
-    "text": "Fuentes de un experimento.\n\n\nFuente\nTipo\nFrecuencia\n\n\n\n\nMarcha\nserie de tiempo\n100 Hz\n\n\nsEMG\nseñal\n2000 Hz\n\n\nVideo\nimagen\n60 fps\n\n\n\n\nUna variable sin contrato no entra al modelo."
-  },
-  {
-    "objectID": "notas/index.html",
-    "href": "notas/index.html",
-    "title": "Notas",
-    "section": "",
-    "text": "Grafos causales para experimentos\n\n\n\ncausalidad\n\ngrafos\n\n\n\nCómo declarar un DAG en el protocolo y qué ajustar al estimar.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n6 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nExtraer variables con contrato\n\n\n\nextracción\n\ndatos\n\n\n\nCada fuente declara tipo, unidades y frecuencia antes de entrar al modelo.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 oct 2026\n\n\n\n\n\n\nNo hay resultados"
+    "objectID": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html#código",
+    "href": "charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html#código",
+    "title": "De la señal a la evidencia",
+    "section": "Código",
+    "text": "Código\nEl ejemplo calcula el valor eficaz de cuatro observaciones sintéticas.\n\nDescargar el programa de Python.\nConsultar métodos y resultados.\n\nfrom math import sqrt\n\nsenal = [0.2, -0.1, 0.4, -0.2]\nrms = sqrt(sum(valor ** 2 for valor in senal) / len(senal))\nprint(f\"RMS: {rms:.3f}\")"
   },
   {
     "objectID": "proyectos/index.html",
     "href": "proyectos/index.html",
     "title": "Proyectos",
     "section": "",
-    "text": "BioForge Experiment OS\n\n\n\nextracción\n\ndatos\n\n\n\nContratos de datos y tres procesos: preprocesamiento, modelado y evaluación.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nEstimación de prótesis para artroplastia de cadera\n\n\n\nia\n\nimágenes\n\n\n\nUn modelo de aprendizaje profundo que estima el tamaño de la prótesis antes de la cirugía.\n\n\n\nPablo Eduardo Caicedo-Rodríguez\n\n\n1 sept 2026\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Cada proyecto presenta el problema, los métodos y los resultados. El ejemplo disponible utiliza datos sintéticos y permite comprobar el procedimiento de los materiales docentes.\n\n\n\n\n\n\n\n\n\nValor eficaz de una señal\n\n\n\nSeñales\n\nPython\n\nDocencia\n\n\n\nUn cálculo reproducible de RMS para conectar una señal discreta, su método y sus límites.\n\n\n\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "sobre-mi.html",
-    "href": "sobre-mi.html",
-    "title": "Pablo Eduardo Caicedo-Rodríguez",
+    "objectID": "herramientas-y-tutoriales/contraste.html",
+    "href": "herramientas-y-tutoriales/contraste.html",
+    "title": "Auditar el contraste de la paleta",
     "section": "",
-    "text": "Construyo BioForge Experiment OS, una plataforma para experimentos biomédicos organizada alrededor de contratos de datos y tres procesos: preprocesamiento, modelado y evaluación.\nMe interesa la extracción de información, los grafos y la causalidad: pasar de señales crudas a preguntas que se pueden responder con evidencia."
+    "text": "La herramienta calcula relaciones de contraste sRGB de la paleta de BioForja y de los colores de resaltado de código. Utiliza únicamente la biblioteca estándar de Python 3."
   },
   {
-    "objectID": "tutoriales/tutorial-dvc/index.html",
-    "href": "tutoriales/tutorial-dvc/index.html",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
+    "objectID": "herramientas-y-tutoriales/contraste.html#qué-revisa",
+    "href": "herramientas-y-tutoriales/contraste.html#qué-revisa",
+    "title": "Auditar el contraste de la paleta",
     "section": "",
-    "text": "Un proyecto de investigación tiene dos tipos de material que envejecen de forma distinta. El código cambia todos los días, pesa poco y se lleva bien con Git y GitHub. Los datos pesan gigas, cambian pocas veces y, cuando son de participantes, no deben salir de un almacenamiento controlado. Subirlos a GitHub no es opción: el límite por archivo es de 100 MB, el repositorio se vuelve lento y los datos quedan donde no deben.\nLa solución que propone este tutorial reparte el trabajo entre tres herramientas:\n\n\n\n\n\n\n\n\nHerramienta\nQué guarda\nCómo llega a tus otras máquinas\n\n\n\n\nGitHub\nCódigo, parámetros y archivos pequeños que describen los datos.\ngit push / git pull\n\n\nDVC\nEl registro de qué versión de los datos usa cada commit.\nViaja dentro de Git\n\n\nDropbox\nLos datos mismos, en una carpeta que DVC usa como almacén.\nLa sincronización de Dropbox\n\n\n\nDVC (Data Version Control) funciona encima de Git: en el repositorio solo queda un archivo pequeño con la huella de cada versión de los datos, y los datos van a una carpeta de Dropbox que DVC usa como almacén (un remote). Dropbox se encarga de copiar esa carpeta a tu portátil, al computador del laboratorio y a tus colaboradores. Así, cada commit del código apunta a la versión exacta de los datos con la que se obtuvo cada resultado, y nadie tiene que copiar discos a mano.\nEl tutorial sigue el orden en que harías las cosas la primera vez:\n\nEntender cómo funciona DVC y qué papel juega Dropbox.\nInstalar DVC con uv en Python 3.14.\nPreparar Dropbox: la carpeta del almacén y la opción disponible sin conexión.\nVersionar los datos de un proyecto con dvc add.\nConectar DVC con Dropbox y subir los datos con dvc push.\nBajar los datos en otra máquina con dvc pull, y compartirlos con tu equipo.\nVolver a versiones anteriores.\nDeclarar el pipeline de BioForge en dvc.yaml y lanzar experimentos.\nDatos sensibles, errores comunes y una hoja de trucos.\n\n\n\n\n\n\n\nNotaSobre el ejemplo\n\n\n\nTodas las salidas de este documento son reales: salen de ejecutar ejemplo/demo.sh con DVC 3.67.1 sobre Python 3.14. El ejemplo es un proyecto de riesgo de caída con señales sEMG sintéticas de 20 participantes, con la misma estructura de capas que usa BioForge (data/raw, data/curated, data/derived). En la demostración, la carpeta de Dropbox es una carpeta local y la sincronización entre máquinas se simula copiándola; con el cliente de Dropbox instalado, esa copia la hace Dropbox."
+    "text": "La herramienta calcula relaciones de contraste sRGB de la paleta de BioForja y de los colores de resaltado de código. Utiliza únicamente la biblioteca estándar de Python 3."
   },
   {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-intro",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-intro",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
+    "objectID": "herramientas-y-tutoriales/contraste.html#uso",
+    "href": "herramientas-y-tutoriales/contraste.html#uso",
+    "title": "Auditar el contraste de la paleta",
+    "section": "Uso",
+    "text": "Uso\nDesde la raíz del proyecto:\npython3 herramientas-y-tutoriales/codigo/auditar_contraste.py\nEl programa lee recursos/marca/paleta.json y los archivos .theme de la misma carpeta. Para usarlo en otro proyecto, conserva esta estructura de directorios.\n\nDescargar el script.\nConsultar la paleta."
+  },
+  {
+    "objectID": "herramientas-y-tutoriales/contraste.html#interpretación",
+    "href": "herramientas-y-tutoriales/contraste.html#interpretación",
+    "title": "Auditar el contraste de la paleta",
+    "section": "Interpretación",
+    "text": "Interpretación\nLa salida informa el contraste de cada combinación y los indicadores AA_normal y AAA_normal. El contraste calculado debe complementarse con una revisión de legibilidad en las condiciones reales de uso."
+  },
+  {
+    "objectID": "herramientas-y-tutoriales/contraste.html#materiales-relacionados",
+    "href": "herramientas-y-tutoriales/contraste.html#materiales-relacionados",
+    "title": "Auditar el contraste de la paleta",
+    "section": "Materiales relacionados",
+    "text": "Materiales relacionados\n\nCuaderno de ejemplo.\nPresentaciones claras y oscuras."
+  },
+  {
+    "objectID": "herramientas-y-tutoriales/documentos/documento.html",
+    "href": "herramientas-y-tutoriales/documentos/documento.html",
+    "title": "De la señal a la evidencia",
     "section": "",
-    "text": "Un proyecto de investigación tiene dos tipos de material que envejecen de forma distinta. El código cambia todos los días, pesa poco y se lleva bien con Git y GitHub. Los datos pesan gigas, cambian pocas veces y, cuando son de participantes, no deben salir de un almacenamiento controlado. Subirlos a GitHub no es opción: el límite por archivo es de 100 MB, el repositorio se vuelve lento y los datos quedan donde no deben.\nLa solución que propone este tutorial reparte el trabajo entre tres herramientas:\n\n\n\n\n\n\n\n\nHerramienta\nQué guarda\nCómo llega a tus otras máquinas\n\n\n\n\nGitHub\nCódigo, parámetros y archivos pequeños que describen los datos.\ngit push / git pull\n\n\nDVC\nEl registro de qué versión de los datos usa cada commit.\nViaja dentro de Git\n\n\nDropbox\nLos datos mismos, en una carpeta que DVC usa como almacén.\nLa sincronización de Dropbox\n\n\n\nDVC (Data Version Control) funciona encima de Git: en el repositorio solo queda un archivo pequeño con la huella de cada versión de los datos, y los datos van a una carpeta de Dropbox que DVC usa como almacén (un remote). Dropbox se encarga de copiar esa carpeta a tu portátil, al computador del laboratorio y a tus colaboradores. Así, cada commit del código apunta a la versión exacta de los datos con la que se obtuvo cada resultado, y nadie tiene que copiar discos a mano.\nEl tutorial sigue el orden en que harías las cosas la primera vez:\n\nEntender cómo funciona DVC y qué papel juega Dropbox.\nInstalar DVC con uv en Python 3.14.\nPreparar Dropbox: la carpeta del almacén y la opción disponible sin conexión.\nVersionar los datos de un proyecto con dvc add.\nConectar DVC con Dropbox y subir los datos con dvc push.\nBajar los datos en otra máquina con dvc pull, y compartirlos con tu equipo.\nVolver a versiones anteriores.\nDeclarar el pipeline de BioForge en dvc.yaml y lanzar experimentos.\nDatos sensibles, errores comunes y una hoja de trucos.\n\n\n\n\n\n\n\nNotaSobre el ejemplo\n\n\n\nTodas las salidas de este documento son reales: salen de ejecutar ejemplo/demo.sh con DVC 3.67.1 sobre Python 3.14. El ejemplo es un proyecto de riesgo de caída con señales sEMG sintéticas de 20 participantes, con la misma estructura de capas que usa BioForge (data/raw, data/curated, data/derived). En la demostración, la carpeta de Dropbox es una carpeta local y la sincronización entre máquinas se simula copiándola; con el cliente de Dropbox instalado, esa copia la hace Dropbox."
+    "text": "La identidad de Pablo Eduardo Caicedo-Rodríguez sitúa la ingeniería al servicio de la comprensión. Señales, imágenes biomédicas e inteligencia artificial comparten una exigencia: hacer visible la relación entre una medición, sus supuestos y la conclusión que permite sostener.\n\nCriterio de trabajo\nUn resultado predictivo no demuestra, por sí solo, una relación causal. La comunicación debe distinguir la observación, el modelo y la interpretación.\n\n\n\n\n\n\nSoporte\nPrioridad de diseño\n\n\n\n\nHTML y sitio\nLectura, navegación y referencias\n\n\nPDF\nJerarquía editorial y economía de tinta\n\n\nRevealjs y Beamer\nContraste, espacio y una idea por diapositiva"
   },
   {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-funcionamiento",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-funcionamiento",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "2 Cómo funciona DVC",
-    "text": "2 Cómo funciona DVC\nDVC separa qué datos usa el proyecto de dónde están guardados.\n\n\n\n\n\nflowchart LR\n    subgraph Equipo[\"Tu equipo\"]\n        W[\"Espacio de trabajo&lt;br/&gt;data/raw/ ...\"]\n        C[\".dvc/cache&lt;br/&gt;archivos por hash\"]\n    end\n    subgraph Git[\"GitHub\"]\n        G[\"código + raw.dvc&lt;br/&gt;dvc.yaml + dvc.lock\"]\n    end\n    R[(\"Dropbox&lt;br/&gt;~/Dropbox/beos-dvc\")]\n    N[\"Otras máquinas&lt;br/&gt;y colaboradores\"]\n    W -- \"dvc add\" --&gt; C\n    C -- \"dvc push\" --&gt; R\n    R -- \"dvc pull\" --&gt; C\n    C -- \"dvc checkout\" --&gt; W\n    W -- \"git push\" --&gt; G\n    R -. \"sincroniza\" .-&gt; N\n\n\n\n\n\n\nLas piezas son cuatro:\n\n\n\n\n\n\n\n\nPieza\nQué es\n¿Va a Git?\n\n\n\n\nEspacio de trabajo\nLos archivos tal como los usas: data/raw/P001_S01_T01.csv.\nNo (DVC los añade a .gitignore)\n\n\nCaché .dvc/cache\nCopia de cada versión de cada archivo, nombrada por su hash MD5.\nNo\n\n\nArchivo .dvc\nUnas pocas líneas con el hash, el tamaño y la ruta de lo que versionas.\nSí\n\n\nRemote (la carpeta de Dropbox)\nAlmacén compartido con la misma estructura que la caché.\nNo; solo su dirección, en .dvc/config\n\n\n\nPara DVC, la carpeta de Dropbox es una carpeta más del disco: dvc push copia archivos a ella y dvc pull los lee de ella. Lo que la convierte en almacén compartido es el cliente de Dropbox, que la sube a la nube y la replica en tus otras máquinas.\nLa idea clave es que el archivo .dvc es a los datos lo que un commit es al código. Cuando haces git checkout de un commit antiguo y luego dvc checkout, DVC lee los hashes de ese commit y pone en el espacio de trabajo los datos que correspondían."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-instalacion",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-instalacion",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "3 Instalación",
-    "text": "3 Instalación\nDVC es un paquete de Python. Tienes dos formas de instalarlo con uv:\nuv tool install \"dvc[ssh]\"       # herramienta global, disponible en cualquier carpeta\nuv add --dev \"dvc[ssh]\"          # dependencia de desarrollo del proyecto, fija en uv.lock\nTe recomiendo la segunda: la versión de DVC queda en uv.lock y todo el equipo usa la misma. Los extras dicen qué tipos de remote soportar: ssh, s3 (también MinIO), gdrive, azure, gs, webdav, o all. Comprueba la instalación con dvc version (salida recortada, instalado con dvc[ssh,s3,gdrive]):\nDVC version: 3.67.1 (pip)\n-------------------------\nPlatform: Python 3.14.0rc2 on Linux-6.18.44-x86_64-with-glibc2.39\nSupports:\n    gdrive (pydrive2 = 1.21.2),\n    http (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),\n    https (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),\n    s3 (s3fs = 2026.9.0),\n    ssh (sshfs = 2026.8.0)\n\n\n\n\n\n\nTipPython 3.14\n\n\n\nDVC 3.67 se instala y funciona con Python 3.14; el ejemplo completo de este tutorial se ejecutó así. Si usas el scaffold de BioForge con GPU, añádelo como dependencia de desarrollo: uv add --dev \"dvc[ssh]\"."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-dropbox",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-dropbox",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "4 Preparar Dropbox",
-    "text": "4 Preparar Dropbox\nEste paso se hace una sola vez por proyecto.\n\n4.1 Paso 1. Instalar el cliente de Dropbox\nDVC necesita ver el almacén como una carpeta del disco, así que usa la aplicación de escritorio de Dropbox, no la web. Instálala desde dropbox.com/install en macOS o Windows, o con el paquete de tu distribución en Linux, e inicia sesión. Por defecto crea la carpeta ~/Dropbox:\n\n\n\n\n\n\n\nSistema\nCarpeta habitual\n\n\n\n\nLinux\n/home/&lt;usuario&gt;/Dropbox\n\n\nmacOS\n/Users/&lt;usuario&gt;/Dropbox (o ~/Library/CloudStorage/Dropbox)\n\n\nWindows\nC:\\Users\\&lt;usuario&gt;\\Dropbox\n\n\nCuenta de la universidad (Business)\n~/Dropbox (Nombre de la institución)\n\n\n\n\n\n4.2 Paso 2. Crear la carpeta del almacén\nCrea una carpeta para todos los datos de DVC del proyecto, por ejemplo:\nmkdir -p ~/Dropbox/beos-dvc\nEsa carpeta es de DVC: no guardes ni edites nada en ella a mano. Por dentro tendrá subcarpetas con nombres de hash (files/md5/8c/38f9...), no tus archivos con su nombre original. Tus datos legibles siguen en el proyecto, en data/raw/.\n\n\n4.3 Paso 3. Hacerla disponible sin conexión\nEn macOS y Windows, Dropbox puede dejar archivos solo en línea: aparecen en la carpeta pero no están en el disco hasta que alguien los abre. DVC lee muchos archivos seguidos y funciona mucho mejor si están descargados. En el explorador de archivos, haz clic derecho sobre beos-dvc y elige Hacer disponible sin conexión (Make available offline).\nEn Linux, el cliente descarga todo lo que no hayas excluido con la sincronización selectiva; comprueba que beos-dvc no esté excluida.\n\n\n4.4 Paso 4. Compartirla con tu equipo (opcional)\nSi otras personas van a usar los datos, comparte la carpeta beos-dvc desde la web de Dropbox con permiso de edición (para que también puedan hacer dvc push). Cada colaborador acepta la invitación y la carpeta aparece en su propio Dropbox. No compartas la carpeta del proyecto con el código: el código se comparte por GitHub."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-primeros-pasos",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-primeros-pasos",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "5 Primer proyecto: versionar datos",
-    "text": "5 Primer proyecto: versionar datos\n\n5.1 Inicializar\nDVC vive dentro de un repositorio Git. En la raíz del proyecto:\n$ dvc init\nInitialized DVC repository.\n\nYou can now commit the changes to git.\n\nWhat's next?\n------------\n- Check out the documentation: &lt;https://dvc.org/doc&gt;\n- Get help and share ideas: &lt;https://dvc.org/chat&gt;\n- Star us on GitHub: &lt;https://github.com/treeverse/dvc&gt;\ndvc init crea la carpeta .dvc/ (configuración y caché) y el archivo .dvcignore. Las dos cosas se versionan con Git.\n\n\n5.2 Añadir datos\nLos datos crudos del ejemplo son 40 archivos CSV, dos pruebas por participante:\n$ ls data/raw | head -4\nP001_S01_T01.csv\nP001_S01_T02.csv\nP002_S01_T01.csv\nP002_S01_T02.csv\nPara ponerlos bajo DVC:\n$ dvc add data/raw\n\nTo track the changes with git, run:\n\n    git add data/raw.dvc data/.gitignore\n\nTo enable auto staging, run:\n\n    dvc config core.autostage true\nDVC hizo tres cosas: copió los archivos a la caché, creó data/raw.dvc y añadió data/raw a data/.gitignore, para que Git no los suba nunca por error.\n$ cat data/raw.dvc\nouts:\n- md5: 326f765e85eeab018ebcf289de322f13.dir\n  size: 11929272\n  nfiles: 40\n  hash: md5\n  path: raw\n$ cat data/.gitignore\n/raw\nEse archivo .dvc es todo lo que Git necesita saber de los datos: un hash para toda la carpeta (el sufijo .dir indica que es un directorio), su tamaño y el número de archivos. Lo añades y haces commit como cualquier archivo:\ngit add data/raw.dvc data/.gitignore .dvc .dvcignore\ngit commit -m \"Datos crudos sEMG bajo DVC\"\n\n\n\n\n\n\nTipAutostage\n\n\n\nCon dvc config core.autostage true, DVC ejecuta él mismo git add de los archivos que genera y te ahorras copiar los comandos que sugiere.\n\n\n\n\n5.3 Granularidad: ¿una carpeta o cada archivo?\nPara datos que llegan por lotes (un participante nuevo cada semana), versiona la carpeta: dvc add data/raw vuelve a calcular solo los archivos que cambiaron y el .dvc sigue siendo uno. Versiona archivos sueltos solo cuando son independientes entre sí, por ejemplo un modelo preentrenado que descargas una vez."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-remotes",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-remotes",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "6 Conectar DVC con Dropbox",
-    "text": "6 Conectar DVC con Dropbox\n\n6.1 Paso 5. Añadir la carpeta como remote\nLa carpeta de Dropbox se registra como remote una vez, y su dirección se guarda en .dvc/config:\n$ dvc remote add -d dropbox '~/Dropbox/beos-dvc' && cat .dvc/config\nSetting 'dropbox' as a default remote.\n[core]\n    remote = dropbox\n['remote \"dropbox\"']\n    url = ~/Dropbox/beos-dvc\nDos detalles importantes:\n\nLas comillas simples en '~/Dropbox/beos-dvc'. Sin comillas, la terminal cambia ~ por tu ruta completa (/home/pacaicedo/...) y esa ruta no existe en el Mac o el Windows de un colaborador. Con comillas, DVC guarda ~ tal cual y lo traduce a la carpeta personal de cada máquina al ejecutar.\n-d lo marca como remote por defecto, así no tienes que nombrarlo en cada comando.\n\n.dvc/config va a Git, de modo que quien clone el proyecto ya sabe dónde buscar los datos.\ngit add .dvc/config\ngit commit -m \"Dropbox como almacén de datos\"\n\n\n6.2 Paso 6. Subir los datos\n$ dvc push\n41 files pushed\nDVC copió a la carpeta de Dropbox todo lo que estaba en su caché. Lo que ves dentro son archivos nombrados por su hash:\n$ find ~/Dropbox/beos-dvc -type f | sort | sed -n 1,3p\n~/Dropbox/beos-dvc/files/md5/05/8412a219bd78717c277bab0663a076\n~/Dropbox/beos-dvc/files/md5/06/87b362f1a6ff9f9abd45bc57b4abec\n~/Dropbox/beos-dvc/files/md5/0f/04bd58128cd3d38f960fcde4812c3f\n$ find ~/Dropbox/beos-dvc -type f | wc -l\n41\nAhora Dropbox los sube a la nube en segundo plano.\n\n\n\n\n\n\nImportantedvc push termina antes que Dropbox\n\n\n\ndvc push termina cuando los archivos están en tu carpeta local de Dropbox, no cuando ya están en la nube. Antes de apagar el computador o de avisar a un colaborador, espera a que el icono de Dropbox diga Actualizado (Up to date). Con muchos datos, la primera subida puede tardar horas.\n\n\n\n\n6.3 Si tu carpeta de Dropbox tiene otro nombre\nCon una cuenta institucional la carpeta suele llamarse ~/Dropbox (Universidad) y en algunos Mac está en ~/Library/CloudStorage/Dropbox. No cambies .dvc/config, que es de todos: sobrescribe la ruta solo en tu máquina con --local, que la guarda en .dvc/config.local, un archivo que Git ignora:\ndvc remote modify --local dropbox url '~/Dropbox (Universidad)/beos-dvc'\n\n\n6.4 Otras opciones de almacén\nDropbox es cómodo porque ya lo tienes instalado, pero DVC admite otros remotes con los mismos comandos. Si el proyecto crece o los datos son sensibles, considera:\n\n\n\n\n\n\n\n\nRemote\nURL\nCuándo usarlo\n\n\n\n\nServidor por SSH\nssh://servidor-lab/datos/beos-dvc\nServidor de la universidad; el más adecuado para datos de participantes.\n\n\nS3 o MinIO\ns3://beos-dvc/riesgo-caida\nNube o MinIO del laboratorio.\n\n\nNAS montado\n/mnt/nas/beos-dvc\nDisco compartido en red."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-otra-maquina",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-otra-maquina",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "7 Trabajar en otra máquina",
-    "text": "7 Trabajar en otra máquina\n\n7.1 Paso 7. Bajar los datos en el portátil o en el servidor\nEn la otra máquina, primero espera a que Dropbox termine de sincronizar la carpeta beos-dvc. Luego clona el repositorio. Al principio solo tiene los archivos .dvc, no los datos:\n$ git clone -q riesgo-caida otra-maquina && cd otra-maquina && ls data\nderived\nraw.dvc\ndvc pull lee de ~/Dropbox/beos-dvc lo que corresponde al commit actual y lo coloca en su sitio:\n$ dvc pull\nA       data/curated/\nA       data/raw/\nA       data/derived/caracteristicas.csv\nA       data/derived/modelo.joblib\nA       data/derived/predicciones.csv\n85 files fetched and 83 files added\nSi dvc pull dice que faltan archivos, casi siempre es que Dropbox aún no terminó de descargarlos: espera y repite.\n\n\n7.2 El flujo diario\ngit pull && dvc pull                        # traer código y datos\ndvc add data/raw                            # después de añadir participantes nuevos\ngit add data/raw.dvc && git commit -m \"Participantes P021 a P030\"\ndvc push && git push                        # primero los datos, luego el código\n\n\n\n\n\n\nImportantePrimero dvc push, luego git push\n\n\n\nSi subes el commit antes que los datos, tus colaboradores verán un .dvc que apunta a un hash que todavía no está en Dropbox y dvc pull fallará con missing cache files.\n\n\n\n\n7.3 Servidores sin cliente de Dropbox\nEn un servidor con GPU sin escritorio puedes instalar el cliente de Dropbox para Linux en modo consola, o usar rclone, que habla con la API de Dropbox, para copiar la carpeta:\nrclone config                                         # crea un remote \"dropbox\" una vez\nrclone sync dropbox:beos-dvc ~/Dropbox/beos-dvc       # baja el almacén\ndvc pull\ndvc push && rclone sync ~/Dropbox/beos-dvc dropbox:beos-dvc   # sube lo nuevo\nAsí la carpeta tiene la misma ruta que en tus otras máquinas y .dvc/config no cambia."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-versiones",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-versiones",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "8 Volver a una versión anterior",
-    "text": "8 Volver a una versión anterior\nCada commit fija una versión de los datos. Para marcar las importantes, usa etiquetas de Git:\ngit tag -a datos-v1 -m \"Primeros 20 participantes\"\ngit push --tags\nPara recuperar los datos de esa versión:\ngit checkout datos-v1        # el código y los .dvc de esa versión\ndvc checkout                 # los datos que esos .dvc describen\ndvc checkout copia desde la caché local; si no están, usa dvc pull, que los lee de Dropbox. Para traer solo un archivo de una versión antigua sin cambiar de rama:\ndvc get . data/raw/P001_S01_T01.csv --rev datos-v1 -o P001_v1.csv\ndvc get y dvc import también funcionan con otros repositorios: es la forma de reutilizar un conjunto de datos de un proyecto en otro sin copiarlo."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-pipelines",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-pipelines",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "9 Pipelines: el flujo de BioForge en dvc.yaml",
-    "text": "9 Pipelines: el flujo de BioForge en dvc.yaml\nVersionar datos es la mitad de la historia. La otra mitad es saber cómo se obtuvo cada resultado. DVC permite declarar el flujo de un experimento como una serie de etapas con sus dependencias y salidas, igual que los procesos de BioForge con sus contratos encadenados.\n\n\n\n\n\nflowchart TB\n    R[(\"data/raw\")] --&gt; P[\"preprocesamiento&lt;br/&gt;pasabanda, notch, RMS\"]\n    P --&gt; C[(\"data/curated\")]\n    C --&gt; A[\"analisis&lt;br/&gt;características\"]\n    A --&gt; T[(\"caracteristicas.csv\")]\n    T --&gt; M[\"modelado&lt;br/&gt;bosque aleatorio\"]\n    M --&gt; Y[(\"predicciones.csv&lt;br/&gt;modelo.joblib\")]\n    Y --&gt; E[\"evaluacion&lt;br/&gt;AUC, ROC\"]\n    E --&gt; X[(\"metricas.json&lt;br/&gt;roc.csv\")]\n    PA[\"params.yaml\"] -.-&gt; P\n    PA -.-&gt; M\n\n\n\n\n\n\n\n9.1 Los parámetros\nTodo lo que quieras variar entre experimentos va en params.yaml:\nArchivo params.yaml:\npreprocesamiento:\n  fs_hz: 2000\n  pasabanda_hz: [20, 450]\n  notch_hz: 60\n  rms_ms: 100\nmodelado:\n  n_arboles: 200\n  profundidad: 3\n  pliegues: 4\n  semilla: 2026\nLos scripts los leen de ese archivo. Así queda el preprocesamiento:\nArchivo src/preprocesar.py:\n\"\"\"Preprocesamiento: pasabanda, notch y envolvente RMS de cada archivo.\"\"\"\n\nfrom pathlib import Path\n\nimport numpy as np\nimport pandas as pd\nimport yaml\nfrom scipy import signal\n\np = yaml.safe_load(open(\"params.yaml\"))[\"preprocesamiento\"]\nfs = p[\"fs_hz\"]\nb, a = signal.butter(4, [p[\"pasabanda_hz\"][0], p[\"pasabanda_hz\"][1]], btype=\"band\", fs=fs)\nbn, an = signal.iirnotch(p[\"notch_hz\"], 30, fs=fs)\nventana = int(p[\"rms_ms\"] * fs / 1000)\n\nsalida = Path(\"data/curated\")\nsalida.mkdir(parents=True, exist_ok=True)\nfor archivo in sorted(Path(\"data/raw\").glob(\"*.csv\")):\n    df = pd.read_csv(archivo)\n    x = signal.filtfilt(bn, an, signal.filtfilt(b, a, df[\"ta_mv\"].to_numpy()))\n    rms = np.sqrt(np.convolve(x**2, np.ones(ventana) / ventana, mode=\"same\"))\n    df.assign(ta_limpia=x, ta_rms=rms).to_parquet(salida / f\"{archivo.stem}.parquet\")\n\n\n9.2 El dvc.yaml\nCada etapa declara su comando (cmd), de qué depende (deps), qué parámetros usa (params) y qué produce (outs, metrics, plots):\nArchivo dvc.yaml:\nstages:\n  preprocesamiento:\n    cmd: python src/preprocesar.py\n    deps:\n      - src/preprocesar.py\n      - data/raw\n    params:\n      - preprocesamiento\n    outs:\n      - data/curated\n  analisis:\n    cmd: python src/caracteristicas.py\n    deps:\n      - src/caracteristicas.py\n      - data/curated\n    outs:\n      - data/derived/caracteristicas.csv\n  modelado:\n    cmd: python src/modelar.py\n    deps:\n      - src/modelar.py\n      - data/derived/caracteristicas.csv\n    params:\n      - modelado\n    outs:\n      - data/derived/predicciones.csv\n      - data/derived/modelo.joblib\n  evaluacion:\n    cmd: python src/evaluar.py\n    deps:\n      - src/evaluar.py\n      - data/derived/predicciones.csv\n    metrics:\n      - reports/metricas.json:\n          cache: false\n    plots:\n      - reports/roc.csv:\n          x: fpr\n          y: tpr\n          cache: false\nLa salida de una etapa es la dependencia de la siguiente: es la cadena de contratos de BioForge escrita de forma que DVC pueda comprobarla.\n\n\n9.3 Ejecutar\ndvc repro ejecuta las etapas necesarias en orden:\n$ dvc repro\n'data/raw.dvc' didn't change, skipping\nRunning stage 'preprocesamiento':\n&gt; python src/preprocesar.py\nGenerating lock file 'dvc.lock'\nUpdating lock file 'dvc.lock'\n\nRunning stage 'analisis':\n&gt; python src/caracteristicas.py\nUpdating lock file 'dvc.lock'\n\nRunning stage 'modelado':\n&gt; python src/modelar.py\nUpdating lock file 'dvc.lock'\n\nRunning stage 'evaluacion':\n&gt; python src/evaluar.py\nUpdating lock file 'dvc.lock'\n\nTo track the changes with git, run:\n\n    git add dvc.lock data/.gitignore data/derived/.gitignore\n\nTo enable auto staging, run:\n\n    dvc config core.autostage true\nUse `dvc push` to send your updates to remote storage.\nDVC guarda en dvc.lock el hash de cada dependencia, parámetro y salida. Ese archivo va a Git: es el acta de cómo se produjo cada resultado.\n$ dvc metrics show\nPath                   auc    exactitud\nreports/metricas.json  0.714  0.7\n\n\n9.4 Solo se rehace lo que cambió\nSi nada cambió, dvc repro no hace nada:\n$ dvc status\nData and pipelines are up to date.\nSi cambias la ventana RMS de 100 a 50 ms en params.yaml, DVC sabe exactamente qué etapa quedó obsoleta:\n$ dvc status\npreprocesamiento:\n    changed deps:\n        params.yaml:\n            modified:           preprocesamiento\n$ dvc repro\n'data/raw.dvc' didn't change, skipping\nRunning stage 'preprocesamiento':\n&gt; python src/preprocesar.py\nUpdating lock file 'dvc.lock'\n\nRunning stage 'analisis':\n&gt; python src/caracteristicas.py\nUpdating lock file 'dvc.lock'\n\nRunning stage 'modelado':\n&gt; python src/modelar.py\nUpdating lock file 'dvc.lock'\n\nRunning stage 'evaluacion':\n&gt; python src/evaluar.py\nUpdating lock file 'dvc.lock'\n\nTo track the changes with git, run:\n\n    git add dvc.lock\n\nTo enable auto staging, run:\n\n    dvc config core.autostage true\nUse `dvc push` to send your updates to remote storage.\nLa evaluación no se rehízo porque las predicciones no cambiaron. Para comparar con el último commit:\n$ dvc params diff\nPath         Param                    HEAD    workspace\nparams.yaml  preprocesamiento.rms_ms  100     50\n$ dvc metrics diff\nPath                   Metric    HEAD    workspace    Change\nreports/metricas.json  auc       0.714   0.69         -0.024\n\n\n\n\n\n\nTipEjecutar desde una etapa\n\n\n\ndvc repro modelado ejecuta esa etapa y las anteriores que hagan falta. dvc repro -s modelado ejecuta solo esa, sin mirar las anteriores. dvc dag dibuja el grafo de etapas en la terminal."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-experimentos",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-experimentos",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "10 Experimentos",
-    "text": "10 Experimentos\nCambiar params.yaml, ejecutar y hacer commit para cada prueba llena la historia de Git de ruido. dvc exp run ejecuta el pipeline con otros parámetros y guarda el resultado como un experimento, sin crear commits:\n$ dvc exp run -n arboles-500 --set-param modelado.n_arboles=500\nReproducing experiment 'arboles-500'\n'data/raw.dvc' didn't change, skipping\nStage 'preprocesamiento' didn't change, skipping\nStage 'analisis' didn't change, skipping\nRunning stage 'modelado':\n&gt; python src/modelar.py\nUpdating lock file 'dvc.lock'\n\nRunning stage 'evaluacion':\n&gt; python src/evaluar.py\nUpdating lock file 'dvc.lock'\n\nRan experiment(s): arboles-500\nExperiment results have been applied to your workspace.\ndvc exp run -n profundidad-1 -S modelado.n_arboles=200 -S modelado.profundidad=1\ndvc exp show los compara en una tabla:\ndvc exp show --no-pager \\\n    --drop 'Created|data/.*|src/.*|preprocesamiento.*|modelado.(pliegues|semilla)'\n\n\n\n\n\n\n\n\n\n\nExperiment\nauc\nexactitud\nmodelado.n_arboles\nmodelado.profundidad\n\n\n\n\nworkspace\n0.702\n0.6\n200\n1\n\n\nmain\n0.714\n0.7\n200\n3\n\n\n├── a2d0d05 [profundidad-1]\n0.702\n0.6\n200\n1\n\n\n└── 022bdce [arboles-500]\n0.714\n0.7\n500\n3\n\n\n\nLo que haces después con un experimento:\n\n\n\n\n\n\n\nComando\nQué hace\n\n\n\n\ndvc exp apply arboles-500\nPone sus parámetros y resultados en el espacio de trabajo, para hacer commit.\n\n\ndvc exp branch arboles-500 rama-500\nCrea una rama de Git con él.\n\n\ndvc exp push origin arboles-500\nLo comparte con el equipo a través de GitHub y del remote DVC.\n\n\ndvc exp remove profundidad-1\nLo descarta.\n\n\n\n\n\n\n\n\n\nNota¿Y la GPU?\n\n\n\nDVC no ejecuta nada en la GPU: lanza tus comandos. Si src/modelar.py usa PyTorch con CUDA, dvc repro en una máquina con GPU entrena en la GPU. Lo que DVC aporta es que el modelo entrenado en el servidor vuelve a tu portátil con dvc push y dvc pull, con la garantía de que corresponde a ese código y esos datos."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-graficos",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-graficos",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "11 Gráficos",
-    "text": "11 Gráficos\nLas salidas marcadas como plots en dvc.yaml se pueden dibujar y comparar entre versiones:\ndvc plots show                      # genera dvc_plots/index.html con la curva ROC\ndvc plots diff datos-v1 workspace   # superpone las curvas de dos versiones"
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-sensibles",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-sensibles",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "12 Datos sensibles",
-    "text": "12 Datos sensibles\nCon datos de participantes, DVC ayuda pero no sustituye la gestión de datos del protocolo, y Dropbox añade sus propias condiciones:\n\n¿Se pueden guardar en Dropbox? Dropbox cifra los archivos en sus servidores, pero con claves propias, y los datos quedan fuera de tu institución. Para datos identificables usa solo una cuenta institucional (Dropbox Business con acuerdo de tratamiento de datos) y siempre que el consentimiento y el comité de ética lo permitan. Una cuenta personal no es lugar para datos de participantes.\nSeudonimiza antes de dvc add. Los nombres de archivo del ejemplo (P001_S01_T01.csv) ya son seudónimos; la tabla de correspondencia vive fuera del proyecto y fuera de Dropbox.\nNingún dato identificable en Git. DVC garantiza que data/ no va a Git, pero no evita que un script escriba nombres o documentos en un archivo que sí versionas, como reports/ o params.yaml. Revisa lo que sale de cada etapa.\nComparte con permiso mínimo. Quien solo analiza puede tener la carpeta en modo lectura; no podrá hacer dvc push, pero sí dvc pull.\nBorrar de verdad. Si un participante retira su consentimiento, elimina sus archivos, haz dvc add y commit, y luego dvc gc --workspace --cloud para borrar del almacén las versiones antiguas. Ojo: gc borra todas las versiones que no use el espacio de trabajo actual, y Dropbox guarda los archivos borrados unos días en su papelera, que tendrás que vaciar también."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-beos",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-beos",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "13 DVC en BioForge Experiment OS",
-    "text": "13 DVC en BioForge Experiment OS\nEl workspace de BioForge ya tiene la forma que DVC necesita:\n\n\n\n\n\n\n\nCarpeta de BEOS\nCon DVC\n\n\n\n\ndata/raw/\ndvc add: datos originales, inmutables, con hash.\n\n\ndata/curated/\nSalida de la etapa de preprocesamiento.\n\n\ndata/derived/\nSalidas de análisis, modelado y producción.\n\n\ndata/evidence/, reports/\nMétricas y gráficos (cache: false, van a Git).\n\n\nexperimento.yaml\nSe puede traducir a dvc.yaml: un proceso por etapa.\n\n\nContratos\nSon las deps y outs de cada etapa.\n\n\n\nLa huella SHA-256 de BEOS y el MD5 de DVC conviven: BEOS comprueba la integridad de cada archivo contra su contrato, y DVC se encarga de moverlo y versionarlo."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-sitio",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-sitio",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "14 Publicarlo en tu sitio",
-    "text": "14 Publicarlo en tu sitio\nEste tutorial viene en dos versiones:\n\ntutorial-dvc-dropbox.qmd: documento independiente con la marca, que se renderiza a HTML y PDF con la carpeta marca/ al lado.\npara-el-sitio/notas/datos-con-dvc-dropbox/: la misma nota sin bloque format, lista para copiar a la carpeta notas/ de pacaicedo.github.io. Hereda el tema del sitio de notas/_metadata.yml, aparece en el listado de notas con su portada y sus categorías, y se publica con el quarto render de siempre.\n\ncp -r para-el-sitio/notas/datos-con-dvc-dropbox ~/ruta/a/pacaicedo.github.io/notas/\ncd ~/ruta/a/pacaicedo.github.io && quarto preview"
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-errores",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-errores",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "15 Errores comunes",
-    "text": "15 Errores comunes\n\n\n\n\n\n\n\n\nSíntoma\nCausa\nSolución\n\n\n\n\noutput 'data/raw' is already tracked by SCM\nLos datos ya estaban en Git.\ngit rm -r --cached data/raw y repite dvc add.\n\n\nMissing cache files en dvc pull\nAlguien hizo git push sin dvc push.\nQue esa persona ejecute dvc push.\n\n\ndvc repro rehace todo cada vez\nUna salida no está en outs o el script escribe con fecha.\nDeclara todas las salidas; evita marcas de tiempo en los archivos.\n\n\nMissing cache files en la otra máquina\nDropbox no terminó de sincronizar.\nEspera a que diga Actualizado y repite dvc pull.\n\n\ndvc pull muy lento en macOS o Windows\nArchivos solo en línea.\nMarca beos-dvc como disponible sin conexión.\n\n\nLa ruta del remote no existe en otra máquina\nSe guardó /home/... en vez de ~.\ndvc remote modify dropbox url '~/Dropbox/beos-dvc'.\n\n\nArchivos «copia en conflicto» en beos-dvc\nDos personas hicieron dvc push a la vez.\nSon copias idénticas por hash; se pueden borrar.\n\n\nLa caché ocupa demasiado\nMuchas versiones locales.\ndvc gc --workspace en tu máquina (el remote no se toca).\n\n\nArchivos duplicados en disco\nCaché y espacio de trabajo en copias.\ndvc config cache.type reflink,hardlink,symlink,copy."
-  },
-  {
-    "objectID": "tutoriales/tutorial-dvc/index.html#sec-trucos",
-    "href": "tutoriales/tutorial-dvc/index.html#sec-trucos",
-    "title": "Datos fuera de GitHub con DVC y Dropbox",
-    "section": "16 Hoja de trucos",
-    "text": "16 Hoja de trucos\n\n\n\n\n\n\n\nTarea\nComando\n\n\n\n\nEmpezar\ndvc init\n\n\nVersionar datos\ndvc add data/raw\n\n\nDropbox como remote\ndvc remote add -d dropbox '~/Dropbox/beos-dvc'\n\n\nRuta distinta solo en tu máquina\ndvc remote modify --local dropbox url 'RUTA'\n\n\nSubir / bajar\ndvc push / dvc pull\n\n\nDatos de otro commit\ngit checkout REV && dvc checkout\n\n\nUn archivo de otra versión\ndvc get . RUTA --rev REV\n\n\nDatos de otro repositorio\ndvc import URL-REPO RUTA\n\n\nEjecutar el pipeline\ndvc repro\n\n\n¿Qué cambió?\ndvc status, dvc params diff, dvc metrics diff\n\n\nExperimento\ndvc exp run -n NOMBRE -S param=valor\n\n\nComparar experimentos\ndvc exp show\n\n\nGráficos\ndvc plots show, dvc plots diff\n\n\nLimpiar caché\ndvc gc --workspace"
+    "objectID": "herramientas-y-tutoriales/documentos/documento.html#una-misma-pregunta-varios-soportes",
+    "href": "herramientas-y-tutoriales/documentos/documento.html#una-misma-pregunta-varios-soportes",
+    "title": "De la señal a la evidencia",
+    "section": "",
+    "text": "Soporte\nPrioridad de diseño\n\n\n\n\nHTML y sitio\nLectura, navegación y referencias\n\n\nPDF\nJerarquía editorial y economía de tinta\n\n\nRevealjs y Beamer\nContraste, espacio y una idea por diapositiva"
   }
 ]

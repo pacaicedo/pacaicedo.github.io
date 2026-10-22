@@ -1,0 +1,23 @@
+---
+title: "De una señal a una pregunta"
+subtitle: "Un ejemplo de lectura crítica"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+categories: [Señales, IA, Docencia]
+date: 2026-10-20
+description: "Una guía breve para distinguir el fenómeno medido de los efectos del protocolo."
+aliases: [/tutoriales/ejemplo.html]
+---
+
+## Medir antes de interpretar
+
+El procesamiento de una señal puede revelar diferencias entre grupos. Determinar su utilidad exige revisar el protocolo, la población y la incertidumbre.
+
+::: {.callout-note}
+## Pregunta de trabajo
+¿Qué parte del cambio observado proviene del fenómeno y qué parte del proceso de medición?
+:::
+
+```python
+# Ejemplo de presentación; no ejecuta un análisis clínico.
+frecuencia_muestreo = 1000
+```

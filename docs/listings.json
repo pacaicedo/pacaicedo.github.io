@@ -1,45 +1,28 @@
 [
   {
+    "listing": "/herramientas-y-tutoriales/index.html",
+    "items": [
+      "/herramientas-y-tutoriales/contraste.html",
+      "/herramientas-y-tutoriales/documentos/documento.html",
+      "/herramientas-y-tutoriales/de-una-senal-a-una-pregunta.html"
+    ]
+  },
+  {
+    "listing": "/charlas-y-conferencias/index.html",
+    "items": [
+      "/charlas-y-conferencias/de-la-senal-a-la-evidencia/index.html"
+    ]
+  },
+  {
     "listing": "/cursos/index.html",
     "items": [
-      "/cursos/Aprendizaje/index.html",
-      "/cursos/Inferencia/index.html"
-    ]
-  },
-  {
-    "listing": "/conferencias/index.html",
-    "items": [
-      "/conferencias/del-dato-a-la-causa/index.html",
-      "/conferencias/contratos-de-datos/index.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/notas/grafos-causales/index.html",
-      "/notas/extraer-variables/index.html",
-      "/cursos/Aprendizaje/index.html",
-      "/cursos/Inferencia/index.html",
-      "/tutoriales/tutorial-dvc/index.html",
-      "/tutoriales/tutorial-quarto-gitlab/index.html",
-      "/proyectos/bioforge/index.html",
-      "/proyectos/protesis-cadera/index.html",
-      "/conferencias/del-dato-a-la-causa/index.html",
-      "/conferencias/contratos-de-datos/index.html"
-    ]
-  },
-  {
-    "listing": "/notas/index.html",
-    "items": [
-      "/notas/grafos-causales/index.html",
-      "/notas/extraer-variables/index.html"
+      "/cursos/senales-biomedicas/index.html"
     ]
   },
   {
     "listing": "/proyectos/index.html",
     "items": [
-      "/proyectos/bioforge/index.html",
-      "/proyectos/protesis-cadera/index.html"
+      "/proyectos/valor-eficaz/index.html"
     ]
   }
 ]

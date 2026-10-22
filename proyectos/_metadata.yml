@@ -1,9 +1,1 @@
-# Los proyectos son documentos: tema del sitio + capa de documento.
-format:
-  html:
-    theme: [cosmo, ../recursos/marca/caicedo-sitio.scss, ../recursos/marca/caicedo-documento.scss]
-    title-block-banner: true
-    toc: true
-    toc-title: "Contenido"
-    number-sections: true
-    highlight-style: ../recursos/marca/caicedo-claro.theme
+toc: true

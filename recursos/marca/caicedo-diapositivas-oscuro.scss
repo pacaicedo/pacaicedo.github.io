@@ -1,0 +1,7 @@
+/*-- scss:defaults --*/
+$body-bg:#241F2B !default; $body-color:#FFFFFF !default;
+$presentation-heading-color:#FFFFFF !default; $link-color:#DFCBFA !default;
+$code-block-bg:#342D3E !default; $code-color:#DFCBFA !default;
+/*-- scss:rules --*/
+// Keep CSS rules in a Sass partial for compatibility with Quarto 1.8 analysis.
+@import "presentacion-oscura";

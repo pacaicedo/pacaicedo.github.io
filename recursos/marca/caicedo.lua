@@ -1,25 +1,30 @@
--- caicedo.lua: clases de color de la marca para salidas LaTeX (PDF y beamer).
--- En HTML y revealjs las clases ya tienen estilo en los .scss; este filtro
--- hace que [texto]{.alert}, {.dato}, {.grafo}, {.causa} y {.tenue} se vean
--- igual en el PDF. Uso en el qmd:  filters: [recursos/marca/caicedo.lua]
-
--- El PDF y el contenido de beamer van sobre blanco: se usan las variantes oscuras
--- de cada acento (las mismas que usan los .scss sobre fondo claro).
-local colores = {
-  dato = "cdatod", grafo = "cgrafod", causa = "ccausad", alert = "ccausad", tenue = "cmuted",
-}
-
+-- caicedo.lua v2. No dependence on Quarto's private callout internals.
+local colors={dato="cviolet",grafo="cviolet",causa="ccopper",alert="ccopper",tenue="cmuted",muted="cmuted"}
+local function tex() return FORMAT:match("latex") or FORMAT:match("beamer") end
 function Span(el)
-  if not FORMAT:match("latex") and not FORMAT:match("beamer") then return nil end
-  for _, clase in ipairs(el.classes) do
-    local color = colores[clase]
-    if color then
-      local abre = "\\textcolor{" .. color .. "}{"
-      if clase == "alert" and FORMAT:match("beamer") then abre = "\\alert{" end
-      local out = { pandoc.RawInline("latex", abre) }
-      for _, i in ipairs(el.content) do table.insert(out, i) end
-      table.insert(out, pandoc.RawInline("latex", "}"))
-      return out
-    end
+ if not tex() then return nil end
+ for _,c in ipairs(el.classes) do
+  if colors[c] then
+   local out={pandoc.RawInline("latex","\\textcolor{"..colors[c].."}{")}
+   for _,v in ipairs(el.content) do table.insert(out,v) end
+   table.insert(out,pandoc.RawInline("latex","}"));return out
   end
+ end
+end
+function Div(el)
+ local styles={['marca-nota']='cblockviolet',['marca-evidencia']='cblockviolet',['marca-alerta']='cblockcopper'}
+ for _,c in ipairs(el.classes) do
+  if styles[c] then
+   local title=el.attributes.title or (c=='marca-alerta' and 'Límite' or 'Idea clave')
+   if tex() then
+    local escaped=pandoc.write(pandoc.Pandoc({pandoc.Plain({pandoc.Str(title)})}),"latex"):gsub("%s+$","")
+    local out={pandoc.RawBlock("latex","\\begin{caicedonota}{"..styles[c].."}{"..escaped.."}")}
+    for _,v in ipairs(el.content) do table.insert(out,v) end
+    table.insert(out,pandoc.RawBlock("latex","\\end{caicedonota}"));return out
+   else
+    el.classes:insert('callout');el.classes:insert(c=='marca-alerta' and 'callout-important' or 'callout-note')
+    table.insert(el.content,1,pandoc.Para({pandoc.Strong({pandoc.Str(title)})}));return el
+   end
+  end
+ end
 end

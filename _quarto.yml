@@ -1,50 +1,49 @@
 project:
   type: website
   output-dir: docs
-  # Los ejemplos de los tutoriales (p. ej. un sitio Quarto completo con sus propias
-  # notas) no son páginas de este sitio: si se renderizan, los listados de la portada
-  # y de las secciones los recogen y se mezclan con las entradas reales.
   render:
-    - "*.qmd"
-    - "!tutoriales/*/ejemplo/"
+    - index.qmd
+    - cursos/**/*.qmd
+    - charlas-y-conferencias/**/*.qmd
+    - proyectos/**/*.qmd
+    - herramientas-y-tutoriales/**/*.qmd
   resources:
-    - recursos/marca/logo/
-
+    - recursos/marca/logos/
+    - recursos/marca/paleta.json
+    - proyectos/**/codigo/*.py
+    - herramientas-y-tutoriales/codigo/*.py
 website:
   title: "P. E. Caicedo-Rodríguez"
-  description: "Ars extrahendi informationem"
-  favicon: recursos/marca/logo/insignia.svg
-  site-url: https://pacaicedo.github.io
+  favicon: recursos/marca/logos/insignia.png
   navbar:
-    logo: recursos/marca/logo/isotipo-oscuro.svg
-    title: "P. E. Caicedo-Rodríguez"
+    logo: recursos/marca/logos/isotipo-claro.svg
     left:
       - href: index.qmd
-        text: Inicio
-      - href: notas/index.qmd
-        text: Notas
+        text: Perfil
       - href: cursos/index.qmd
         text: Cursos
-      - href: tutoriales/index.qmd
-        text: Tutoriales
+      - href: charlas-y-conferencias/index.qmd
+        text: Charlas y Conferencias
       - href: proyectos/index.qmd
         text: Proyectos
-      - href: conferencias/index.qmd
-        text: Conferencias
-      - href: sobre-mi.qmd
-        text: Sobre mí
+      - href: herramientas-y-tutoriales/index.qmd
+        text: Herramientas y Tutoriales
+  bread-crumbs: true
+  search:
+    location: navbar
+    type: overlay
   page-footer:
-    left: "© 2026 Pablo Eduardo Caicedo-Rodríguez"
-    right: "Del dato a la causa"
-
+    left: "Pablo Eduardo Caicedo-Rodríguez"
+    right: "Ingeniería que hace comprensible la salud."
 lang: es
-filters:
-  - recursos/marca/caicedo.lua
-
 format:
   html:
-    # Tema del sitio. Las notas largas superponen además caicedo-documento.scss
-    # (ver notas/_metadata.yml).
     theme: [cosmo, recursos/marca/caicedo-sitio.scss]
     highlight-style: recursos/marca/caicedo-claro.theme
-    toc: false
+    html-math-method: mathml
+    toc: true
+    toc-depth: 2
+    toc-title: "En esta página"
+    link-external-newwindow: true
+execute:
+  enabled: false

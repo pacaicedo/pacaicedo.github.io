@@ -1,146 +1,104 @@
 ---
-pagetitle: "P. E. Caicedo-Rodríguez · Del dato a la causa"
-page-layout: full
+title: "Pablo Eduardo Caicedo-Rodríguez"
 title-block-banner: false
-listing:
-  - id: noticias
-    contents:
-      - "notas/*/index.qmd"
-      # El sitio de ejemplo del tutorial de GitLab trae su propia carpeta notas/.
-      - "!tutoriales/*/ejemplo/**"
-    type: default
-    sort: "date desc"
-    max-items: 3
-    fields: [title, description, date, categories]
-  - id: cursos
-    contents: "cursos/*/index.qmd"
-    type: default
-    sort: "date desc"
-    max-items: 3
-    fields: [title, description, date, categories]
-  - id: tutoriales
-    contents: "tutoriales/*/index.qmd"
-    type: default
-    sort: "date desc"
-    max-items: 3
-    fields: [title, description, date, categories]
-  - id: proyectos
-    contents: "proyectos/*/index.qmd"
-    type: default
-    sort: "date desc"
-    max-items: 3
-    fields: [title, description, date, categories]
-  - id: conferencias
-    contents: "conferencias/*/index.qmd"
-    type: default
-    sort: "date desc"
-    max-items: 3
-    fields: [title, description, date, categories]
+page-layout: full
+body-classes: pagina-inicio
+toc: false
+section-divs: false
+anchor-sections: false
+description: "Cursos, charlas, proyectos y tutoriales de ingeniería biomédica de Pablo Eduardo Caicedo-Rodríguez."
 ---
 
-::: {.hero}
-[Del dato a la causa]{.hero-kicker}
-
-## Convirtiendo señales e imágenes biomédicas en evidencia clínica
-
-Diseño plataformas que extraen información biomédica y la llevan hasta preguntas causales reproducibles.
-
-[Tutoriales](tutoriales/index.qmd){.btn .btn-marca} [Cursos](cursos/index.qmd){.btn .btn-marca} [Notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
+::::: {.hero}
+:::: {}
+::: {.kicker}
+Pablo Eduardo Caicedo-Rodríguez
 :::
 
-## Ejes de trabajo
+# [Ingeniería para]{.d-block} [comprender.]{.d-block} Software para cuidar.
 
-::: {.ejes}
-::: {.eje .dato}
-### Extracción
-Contratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.
+::: {.lead}
+Inteligencia artificial, señales e imágenes biomédicas y software para una salud más comprensible.
 :::
 
-::: {.eje .grafo}
-### Información
-Variables y relaciones como conocimientos para encontrar estructura y comunidades.
+[Explorar los cursos](cursos/index.qmd){.btn .btn-primary}
+::::
+
+:::: {.hero-art}
+![](recursos/marca/logos/isotipo-claro.svg){width=100% fig-alt="Símbolo de Caicedo-Rodríguez: una C abierta, nodos y una dirección de trabajo"}
+::::
+:::::
+
+:::::: {.topic-section role="region" aria-labelledby="bioforja"}
+::: {.kicker}
+BioForja · Conocimiento abierto
 :::
 
-::: {.eje .causa}
-### Causalidad
-DAG declarados en el protocolo, estimación de efectos y evaluación explicativa.
+## Aprender, compartir y construir {#bioforja}
+
+::::: {.topic-grid}
+:::: {.topic-card role="article"}
+[01 / FORMACIÓN]{.number}
+
+### [Cursos](cursos/index.qmd)
+
+Resultados de aprendizaje, calendario, presentaciones y laboratorios en un mismo lugar.
+::::
+
+:::: {.topic-card role="article"}
+[02 / ENCUENTROS]{.number}
+
+### [Charlas y Conferencias](charlas-y-conferencias/index.qmd)
+
+El contexto de cada evento, sus presentaciones y el código que las acompaña.
+::::
+
+:::: {.topic-card role="article"}
+[03 / INVESTIGACIÓN Y DESARROLLO]{.number}
+
+### [Proyectos](proyectos/index.qmd)
+
+Del problema a los métodos y los resultados, con procedimientos reproducibles.
+::::
+
+:::: {.topic-card role="article"}
+[04 / PRÁCTICA]{.number}
+
+### [Herramientas y Tutoriales](herramientas-y-tutoriales/index.qmd)
+
+Guías, documentos y utilidades para trabajar con señales, modelos y comunicación técnica.
+::::
+:::::
+::::::
+
+::::: {role="region" aria-label="Líneas de trabajo"}
+:::: {.section-row}
+::: {.number}
+01
 :::
 
-::: {.eje .ia}
-### IA
-Modelos estadísticos, de aprendizaje automático y profundo sobre Scikit Learn, PyTorch y Tensorflow.
-:::
+### Medir y comprender
+
+Señales, imágenes y biomecánica. Convertir datos complejos en preguntas que puedan investigarse.
+::::
+
+:::: {.section-row}
+::: {.number}
+02
 :::
 
-::: {.banda}
-### Estimación de protesis para artroplastía de cadera
+### Modelar con evidencia
 
-Un modelo de aprendizaje profundo para la estimación del tamaño de una protesis para el reemplazo total de cadera.
+IA, grafos e inferencia causal. Explicar los supuestos, la incertidumbre y los límites de cada resultado.
+::::
 
-[Ver proyecto](proyectos/protesis-cadera/index.qmd)
-:::
-
-
-::: {.listados .tres}
-::: {.listado}
-## Noticias
- 
-::: {#noticias}
-:::
-:::
- 
-::: {.listado}
-## Cursos
-
-::: {#cursos}
-:::
+:::: {.section-row}
+::: {.number}
+03
 :::
 
-::: {.listado}
-## Tutoriales
+### Construir y enseñar
 
-::: {#tutoriales}
-:::
-:::
-:::
-
-::: {.listados}
-::: {.listado}
-## Proyectos
-
-::: {#proyectos}
-:::
-:::
-
-::: {.listado}
-## Conferencias
-
-::: {#conferencias}
-:::
-:::
-:::
-
-```{=html}
-<script>
-// Carpeta de cada listado de la portada (id del listado → sección).
-var secciones = {noticias: "notas", cursos: "cursos", tutoriales: "tutoriales", proyectos: "proyectos", conferencias: "conferencias"};
-// Píldoras de categoría con varios listados en la portada: Quarto filtraría todas las columnas a la vez
-// (y dejaría vacías las demás), así que cada píldora abre el listado completo filtrado por esa categoría.
-document.addEventListener("click", function (e) {
-  var p = e.target.closest(".listados .listing-category");
-  if (!p) return;
-  e.stopPropagation(); // fase de captura: se adelanta al onclick de Quarto
-  var id = p.closest(".quarto-listing-container-default").id.replace("listing-", "");
-  location.href = secciones[id] + "/index.html#category=" + encodeURIComponent(p.textContent.trim());
-}, true);
-// Las píldoras del encabezado de una página de sección enlazan a la portada (#category=...):
-// se reenvían a la página del listado correspondiente, que sí sabe filtrar.
-if (location.hash.indexOf("category=") >= 0) {
-  var origen = "notas";
-  for (var id in secciones) {
-    if (document.referrer.indexOf("/" + secciones[id] + "/") >= 0) origen = secciones[id];
-  }
-  location.replace(origen + "/index.html" + location.hash);
-}
-</script>
-```
+Software para la salud y materiales reproducibles. BioForja reúne proyectos, laboratorios y conocimiento abierto.
+::::
+:::::

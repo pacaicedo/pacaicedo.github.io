@@ -1,11 +1,15 @@
 ---
 title: "Cursos"
+subtitle: "Aprender a medir, modelar e interpretar"
+toc: false
 listing:
   contents: "*/index.qmd"
-  type: grid
-  sort: "date desc"
+  type: default
   categories: true
-title-block-banner: false
-toc: false
-number-sections: false
+  sort: title
+  fields: [title, description, categories]
 ---
+
+Cada curso reúne su introducción, resultados de aprendizaje, calendario, presentaciones, laboratorios, recursos y referentes.
+
+El material disponible es un ejemplo docente construido a partir de los cuadernos de BioForja. Las fechas de una oferta académica se publicarán cuando estén definidas.

@@ -1,0 +1,35 @@
+---
+title: "Nombre del curso"
+description: "Descripción breve del curso."
+categories: [Docencia]
+---
+
+## Introducción
+
+Presenta el propósito, los destinatarios y los requisitos del curso.
+
+## Resultados de Aprendizaje
+
+Describe lo que el estudiante podrá hacer y cómo se comprobará.
+
+## Calendario y fechas importantes
+
+| Actividad | Fecha | Entrega |
+|:--|:--|:--|
+| Inicio | Por definir | Por definir |
+
+## Presentaciones
+
+Añade enlaces relativos a las presentaciones del curso.
+
+## Laboratorios
+
+Añade las guías de laboratorio y sus entregables.
+
+## Recursos y tutoriales
+
+Enlaza los recursos que acompañan las actividades.
+
+## Referentes
+
+Incluye las fuentes utilizadas y sus enlaces.

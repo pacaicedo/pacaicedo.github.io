@@ -4,10 +4,11 @@ description: "Tutoriales paso a paso y herramientas para trabajar con señales, 
 toc: false
 listing:
   contents: "*/index.qmd"
-  type: default
+  type: grid
   sort: "date desc"
   categories: true
-  fields: [date, title, description, categories]
+  image-align: left
+  fields: [image, date, title, description, categories]
   date-format: "D MMM YYYY"
 ---
 

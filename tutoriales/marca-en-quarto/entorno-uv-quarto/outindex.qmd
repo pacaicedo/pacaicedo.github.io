@@ -1,0 +1,80 @@
+---
+title: "Entorno reproducible con uv y Quarto"
+description: "Instalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo."
+date: 2026-08-03
+categories: [Herramienta, PSIM, SYSB, TAU, Quarto]
+---
+
+## Qué se instala
+
+| Herramienta | Para qué |
+|:--|:--|
+| [uv](https://docs.astral.sh/uv/) | Instala Python y las bibliotecas en un entorno aislado por proyecto |
+| [Quarto](https://quarto.org/docs/get-started/) | Convierte los `.qmd` en páginas, diapositivas y PDF |
+| Una distribución de LaTeX | Solo para los PDF (guías y beamer): TeX Live o TinyTeX |
+| [VS Code](https://code.visualstudio.com) con la extensión de Quarto | Editar y previsualizar (opcional) |
+
+: Lo que hace falta.
+
+## Paso a paso
+
+### 1. Instalar uv
+
+En Linux y macOS, con el instalador oficial (o con el gestor de paquetes de tu distribución):
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+En Windows, las instrucciones están en la [documentación de uv](https://docs.astral.sh/uv/getting-started/installation/).
+
+### 2. Crear el entorno del proyecto
+
+En la carpeta del proyecto (la que tiene `pyproject.toml`):
+
+```bash
+uv sync          # instala Python si hace falta, crea .venv/ y escribe uv.lock
+```
+
+`pyproject.toml` dice qué bibliotecas se necesitan; `uv.lock` fija las versiones exactas. Los dos van al repositorio: así otra persona obtiene exactamente el mismo entorno con `uv sync`.
+
+```{.toml archivo="../../../pyproject.toml"}
+```
+
+### 3. Instalar Quarto y LaTeX
+
+Quarto se descarga de [quarto.org](https://quarto.org/docs/get-started/). Para los PDF hace falta LuaLaTeX: si no tienes TeX Live, Quarto puede instalar TinyTeX:
+
+```bash
+quarto install tinytex
+```
+
+### 4. Correr todo dentro del entorno
+
+```bash
+uv run python cursos/psim/figuras.py     # un script con las bibliotecas del entorno
+uv run quarto preview                    # el sitio en el navegador, se actualiza al guardar
+uv run quarto render                     # todo el sitio en _site/
+```
+
+Con `uv run`, Quarto usa el Python de `.venv/` también para los scripts previos al render (las figuras).
+
+### 5. Instalar las fuentes de la marca (para los PDF)
+
+Los PDF cargan Atkinson Hyperlegible desde `recursos/marca/fuentes/`, pero es más rápido y robusto tenerlas instaladas:
+
+```bash
+mkdir -p ~/.local/share/fonts/caicedo
+cp recursos/marca/fuentes/*.ttf ~/.local/share/fonts/caicedo/
+fc-cache -f
+```
+
+## Si algo falla
+
+| Síntoma | Causa probable |
+|:--|:--|
+| `ModuleNotFoundError` al renderizar | Quarto se lanzó fuera del entorno: usar `uv run quarto render` |
+| LuaLaTeX termina con `cannot find file ''` | Caché de fuentes vieja: `luaotfload-tool --cache=erase` |
+| Las figuras no se actualizan | `uv run python recursos/figuras.py --todo` |
+
+: Problemas frecuentes.

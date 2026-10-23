@@ -1,0 +1,64 @@
+---
+title: "Figuras con la marca en matplotlib"
+description: "El módulo caicedo_mpl: la letra, los colores y los tamaños de la marca en cada figura, en modo claro y oscuro, en SVG para la web y PDF para LaTeX."
+date: 2026-08-24
+categories: [Herramienta, Python, Marca]
+---
+
+## Para qué sirve
+
+Las figuras son la parte de la marca que más se ve en un documento o una diapositiva. El módulo `recursos/marca/python/caicedo_mpl.py` le pone a matplotlib la misma letra (Atkinson Hyperlegible), los mismos colores y el mismo tamaño de texto que el resto de la marca, sin repetir esos ajustes en cada script. Los colores salen de la misma tabla de tokens que los `.scss` y los `.sty`.
+
+## Uso
+
+```python
+import sys
+sys.path.insert(0, "recursos/marca/python")     # ruta desde la raíz del proyecto
+import matplotlib.pyplot as plt
+import caicedo_mpl as cm
+
+cm.usar()                                       # documento, fondo blanco
+fig, ax = plt.subplots()
+ax.plot(t, x, label="Señal")                    # primera serie: dato
+ax.plot(t, y, label="Filtrada")                 # segunda: grafo
+cm.guardar(fig, "fig/senal")                    # fig/senal.svg y fig/senal.pdf
+```
+
+En el qmd la figura se enlaza **sin extensión**: `![](fig/senal)`. La opción `default-image-extension` de cada formato elige el archivo: SVG en HTML y revealjs, PDF en PDF y beamer.
+
+| Llamada | Para |
+|:--|:--|
+| `cm.usar()` | Documentos HTML y PDF, y páginas del sitio |
+| `cm.usar("diapositiva")` | revealjs y beamer en modo claro: letra más grande y trazos más gruesos |
+| `cm.usar("diapositiva", modo="oscuro")` | El modo sala oscura |
+
+: Contextos y modos.
+
+## El mismo gráfico en los dos modos
+
+::: {layout-ncol=2}
+![Modo claro.](fig/ejemplo-claro)
+
+![Modo oscuro (sala).](fig/ejemplo-oscuro)
+:::
+
+## Reglas
+
+- **Series en orden fijo**: dato (turquesa), grafo (violeta) y causa (naranja). Con más de tres series, se agrupan («Otras») o se separan en paneles.
+- **El naranja es la causa**: si una serie es el efecto o la intervención, va en naranja (`cm.T["causa"]`).
+- **El texto no lleva el color de la serie**: etiquetas y leyendas van en tinta o tenue (`cm.TINTA`, `cm.TENUE`).
+- **Imágenes médicas en gris** (`cmap="gray"`, el predeterminado); magnitudes con `cm.CMAP_SECUENCIAL` y diferencias con signo con `cm.CMAP_DIVERGENTE`.
+- **Nada solo por color**: cuando dos grupos se comparan, cambian también el marcador o el relleno (lleno y vacío), como en las figuras de [riesgo de caída](../../../proyectos/riesgo-de-caida/index.qmd).
+
+## Figuras que se regeneran solas
+
+Cada página con figuras tiene su `figuras.py` al lado del qmd. El script `recursos/figuras.py` corre antes de cada `quarto render` (opción `pre-render` del `_quarto.yml`) y vuelve a ejecutar solo los `figuras.py` cuyas salidas son más viejas que el script, los datos de ejemplo o el estilo de la marca. Para forzarlas todas:
+
+```bash
+python3 recursos/figuras.py --todo
+```
+
+## Código de este ejemplo
+
+```{.python archivo="figuras.py"}
+```

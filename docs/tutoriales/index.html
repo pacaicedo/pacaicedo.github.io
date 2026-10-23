@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -133,7 +133,7 @@ window.Quarto = {
 
 <meta property="og:title" content="Herramientas y Tutoriales – P. E. Caicedo-Rodríguez">
 <meta property="og:description" content="Tutoriales paso a paso y herramientas para trabajar con señales, imágenes y Quarto.">
-<meta property="og:image" content="recursos/marca/logo/tarjeta-social.png">
+<meta property="og:image" content="../tutoriales/tutorial-quarto-gitlab/img/portada-tutorial-quarto-gitlab.png">
 <meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
 </head>
 
@@ -186,7 +186,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(8)</span></div><div class="category" data-category="QXByZW5kaXphamUlMjBhdXRvbSVDMyVBMXRpY28=">Aprendizaje automático <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0b3M=">datos <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGVzYXJyb2xsbw==">desarrollo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SGVycmFtaWVudGE=">Herramienta <span class="quarto-category-count">(3)</span></div><div class="category" data-category="aGVycmFtaWVudGFz">herramientas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==">Imágenes médicas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFyY2E=">Marca <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UFNJTQ==">PSIM <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UXVhcnRv">Quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U2UlQzMlQjFhbGVz">Señales <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U1lTQg==">SYSB <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VEFV">TAU <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(6)</span></div><div class="category" data-category="QXByZW5kaXphamUlMjBhdXRvbSVDMyVBMXRpY28=">Aprendizaje automático <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0b3M=">datos <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGVzYXJyb2xsbw==">desarrollo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SGVycmFtaWVudGE=">Herramienta <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGVycmFtaWVudGFz">herramientas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==">Imágenes médicas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UFNJTQ==">PSIM <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UXVhcnRv">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2UlQzMlQjFhbGVz">Señales <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U1lTQg==">SYSB <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VEFV">TAU <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -219,13 +219,18 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZGVzYXJyb2xsbyUyQ2hlcnJhbWllbnRhcw==" data-listing-date-sort="1792004039000" data-listing-file-modified-sort="1792004039838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4352">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/tutorial-quarto-gitlab/index.html" class="no-external">Un sitio Quarto en GitLab Pages</a>
-</h3>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="ZGVzYXJyb2xsbyUyQ2hlcnJhbWllbnRhcw==" data-listing-date-sort="1792766965000" data-listing-file-modified-sort="1792766965686" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4352">
+<a href="../tutoriales/tutorial-quarto-gitlab/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../tutoriales/tutorial-quarto-gitlab/img/portada-tutorial-quarto-gitlab.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Un sitio Quarto en GitLab Pages
+</h5>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('ZGVzYXJyb2xsbw=='); return false;">desarrollo</div>
@@ -233,23 +238,27 @@ window.Quarto = {
 <div class="listing-category" onclick="window.quartoListingCategory('aGVycmFtaWVudGFz'); return false;">herramientas</div>
 
 </div>
-<div class="delink listing-description"><a href="../tutoriales/tutorial-quarto-gitlab/index.html" class="no-external">
+<div class="card-text listing-description delink">
 GitLab tiene su propio servicio de alojamiento estático, <strong>GitLab Pages</strong>, y un sitio Quarto es exactamente eso: una carpeta de HTML, CSS, imágenes y JavaScript. La pieza que…<code></code><code></code><code></code><code></code><code></code>
-</a></div>
 </div>
-<div class="metadata">
-<a href="../tutoriales/tutorial-quarto-gitlab/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-14 oct 2026
-</div>
-</a>
+23 oct 2026
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZGVzYXJyb2xsbyUyQ2RhdG9zJTJDaGVycmFtaWVudGFz" data-listing-date-sort="1792003224000" data-listing-file-modified-sort="1792003224768" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4696">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/tutorial-dvc/index.html" class="no-external">Datos fuera de GitHub con DVC y Dropbox</a>
-</h3>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="ZGVzYXJyb2xsbyUyQ2RhdG9zJTJDaGVycmFtaWVudGFz" data-listing-date-sort="1792766830000" data-listing-file-modified-sort="1792766830822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4696">
+<a href="../tutoriales/tutorial-dvc/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../tutoriales/tutorial-dvc/img/portada-tutorial-dvc-dropbox.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Datos fuera de GitHub con DVC y Dropbox
+</h5>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('ZGVzYXJyb2xsbw=='); return false;">desarrollo</div>
@@ -259,23 +268,25 @@ GitLab tiene su propio servicio de alojamiento estático, <strong>GitLab Pages</
 <div class="listing-category" onclick="window.quartoListingCategory('aGVycmFtaWVudGFz'); return false;">herramientas</div>
 
 </div>
-<div class="delink listing-description"><a href="../tutoriales/tutorial-dvc/index.html" class="no-external">
+<div class="card-text listing-description delink">
 Un proyecto de investigación tiene dos tipos de material que envejecen de forma distinta. El <strong>código</strong> cambia todos los días, pesa poco y se lleva bien con Git y GitHub. Los <strong>dat…</strong>
-</a></div>
 </div>
-<div class="metadata">
-<a href="../tutoriales/tutorial-dvc/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-14 oct 2026
-</div>
-</a>
+23 oct 2026
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="VHV0b3JpYWwlMkNUQVUlMkNBcHJlbmRpemFqZSUyMGF1dG9tJUMzJUExdGljbw==" data-listing-date-sort="1791954000000" data-listing-file-modified-sort="1792628227000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="349">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/validacion-por-participante/index.html" class="no-external">Validación cruzada por participante</a>
-</h3>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="VHV0b3JpYWwlMkNUQVUlMkNBcHJlbmRpemFqZSUyMGF1dG9tJUMzJUExdGljbw==" data-listing-date-sort="1791954000000" data-listing-file-modified-sort="1792628227000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="349">
+<a href="../tutoriales/validacion-por-participante/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="validacion-por-participante/fig/fuga.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Validación cruzada por participante
+</h5>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
@@ -285,23 +296,25 @@ Un proyecto de investigación tiene dos tipos de material que envejecen de forma
 <div class="listing-category" onclick="window.quartoListingCategory('QXByZW5kaXphamUlMjBhdXRvbSVDMyVBMXRpY28='); return false;">Aprendizaje automático</div>
 
 </div>
-<div class="delink listing-description"><a href="../tutoriales/validacion-por-participante/index.html" class="no-external">
+<div class="card-text listing-description delink">
 <p>Cuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold.</p>
-</a></div>
 </div>
-<div class="metadata">
-<a href="../tutoriales/validacion-por-participante/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 14 oct 2026
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="VHV0b3JpYWwlMkNTWVNCJTJDU2UlQzMlQjFhbGVz" data-listing-date-sort="1791176400000" data-listing-file-modified-sort="1792628250000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="300">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/filtrado-fase-cero/index.html" class="no-external">Filtrado de fase cero en un ECG</a>
-</h3>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="VHV0b3JpYWwlMkNTWVNCJTJDU2UlQzMlQjFhbGVz" data-listing-date-sort="1791176400000" data-listing-file-modified-sort="1792628250000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="300">
+<a href="../tutoriales/filtrado-fase-cero/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="filtrado-fase-cero/fig/espectro.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Filtrado de fase cero en un ECG
+</h5>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
@@ -311,23 +324,25 @@ Un proyecto de investigación tiene dos tipos de material que envejecen de forma
 <div class="listing-category" onclick="window.quartoListingCategory('U2UlQzMlQjFhbGVz'); return false;">Señales</div>
 
 </div>
-<div class="delink listing-description"><a href="../tutoriales/filtrado-fase-cero/index.html" class="no-external">
+<div class="card-text listing-description delink">
 <p>Por qué lfilter retrasa la onda R y filtfilt no, y cuándo conviene cada uno.</p>
-</a></div>
 </div>
-<div class="metadata">
-<a href="../tutoriales/filtrado-fase-cero/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 5 oct 2026
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="VHV0b3JpYWwlMkNQU0lNJTJDSW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792628241000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="435">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/filtros-frecuenciales/index.html" class="no-external">Filtros en frecuencia: de Ideal a Gaussiano</a>
-</h3>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="VHV0b3JpYWwlMkNQU0lNJTJDSW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792628241000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="435">
+<a href="../tutoriales/filtros-frecuenciales/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="filtros-frecuenciales/fig/filtros-transferencia.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Filtros en frecuencia: de Ideal a Gaussiano
+</h5>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
@@ -337,75 +352,25 @@ Un proyecto de investigación tiene dos tipos de material que envejecen de forma
 <div class="listing-category" onclick="window.quartoListingCategory('SW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw=='); return false;">Imágenes médicas</div>
 
 </div>
-<div class="delink listing-description"><a href="../tutoriales/filtros-frecuenciales/index.html" class="no-external">
+<div class="card-text listing-description delink">
 <p>Transformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.</p>
-</a></div>
 </div>
-<div class="metadata">
-<a href="../tutoriales/filtros-frecuenciales/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 21 sep 2026
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="SGVycmFtaWVudGElMkNQeXRob24lMkNNYXJjYQ==" data-listing-date-sort="1787547600000" data-listing-file-modified-sort="1792628268000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="451">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/figuras-con-la-marca/index.html" class="no-external">Figuras con la marca en matplotlib</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SGVycmFtaWVudGE='); return false;">Herramienta</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFyY2E='); return false;">Marca</div>
-
+</div></a>
 </div>
-<div class="delink listing-description"><a href="../tutoriales/figuras-con-la-marca/index.html" class="no-external">
-<p>El módulo caicedo_mpl: la letra, los colores y los tamaños de la marca en cada figura, en modo claro y oscuro, en SVG para la web y PDF para LaTeX.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../tutoriales/figuras-con-la-marca/index.html" class="no-external">
-<div class="listing-date">
-24 ago 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="SGVycmFtaWVudGElMkNRdWFydG8lMkNNYXJjYQ==" data-listing-date-sort="1786338000000" data-listing-file-modified-sort="1792628332000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="597">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/marca-en-quarto/index.html" class="no-external">La marca en Quarto: documentos, diapositivas y sitio</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('SGVycmFtaWVudGE='); return false;">Herramienta</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFyY2E='); return false;">Marca</div>
-
-</div>
-<div class="delink listing-description"><a href="../tutoriales/marca-en-quarto/index.html" class="no-external">
-<p>Cómo está armado este sitio: qué archivo de la marca usa cada formato, cómo se comparten los ajustes por carpeta y qué bloques tiene el sitio para cursos, charlas y proyectos.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../tutoriales/marca-en-quarto/index.html" class="no-external">
-<div class="listing-date">
-10 ago 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="SGVycmFtaWVudGElMkNQU0lNJTJDU1lTQiUyQ1RBVSUyQ1F1YXJ0bw==" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792628300000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../tutoriales/entorno-uv-quarto/index.html" class="no-external">Entorno reproducible con uv y Quarto</a>
-</h3>
+<div class="g-col-1" data-index="5" data-categories="SGVycmFtaWVudGElMkNQU0lNJTJDU1lTQiUyQ1RBVSUyQ1F1YXJ0bw==" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792628300000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
+<a href="../tutoriales/entorno-uv-quarto/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Entorno reproducible con uv y Quarto
+</h5>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('SGVycmFtaWVudGE='); return false;">Herramienta</div>
@@ -419,17 +384,16 @@ Un proyecto de investigación tiene dos tipos de material que envejecen de forma
 <div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
 
 </div>
-<div class="delink listing-description"><a href="../tutoriales/entorno-uv-quarto/index.html" class="no-external">
+<div class="card-text listing-description delink">
 <p>Instalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo.</p>
-</a></div>
 </div>
-<div class="metadata">
-<a href="../tutoriales/entorno-uv-quarto/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 3 ago 2026
 </div>
-</a>
 </div>
+</div>
+</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>

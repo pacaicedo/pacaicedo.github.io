@@ -14,7 +14,7 @@ dependencies = [
     "typer>=0.27",
     "numpy>=2.3",
     "scipy>=1.16",
-    "polars>=1.35",                        # cudf-polars (motor GPU) aún exige polars < 1.45
+    "polars>=1.35",           # cudf-polars (motor GPU) aún exige polars < 1.45
     "pyarrow>=21.0",
     "torch>=2.14",
     "torchvision>=0.29",
@@ -22,7 +22,7 @@ dependencies = [
     "matplotlib>=3.8",
     "scikit-learn>=1.9.1",
     "scikit-image>=0.26.0",
-    "pycaret[anomaly,interpret]==4.0.0a8",
+    "pycaret[full]==4.0.0a8",
 ]
 
 [tool.uv]

@@ -5,7 +5,7 @@ author: "Ph.D. Pablo Eduardo Caicedo-Rodríguez"
 date: last-modified
 lang: es
 categories: [desarrollo, herramientas]
-img: img/portada-tutorial-quarto-gitlab.png
+image: img/portada-tutorial-quarto-gitlab.png
 ---
 
 # Introducción {#sec-intro}

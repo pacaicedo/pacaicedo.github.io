@@ -38,7 +38,7 @@ listing:
 
 Docencia e investigación en ingeniería biomédica: procesamiento de bioseñales e imágenes médicas, biomecánica y aprendizaje automático evaluado con honestidad.
 
-[Ver los cursos](cursos/index.qmd){.btn .btn-marca} [Proyectos](proyectos/index.qmd){.btn .btn-marca-borde}
+[Ver los cursos](cursos/index.qmd){.btn .btn-marca} [Proyectos](proyectos/index.qmd){.btn .btn-marca-borde} [Tutoriales](tutoriales/index.qmd){.btn .btn-marca}
 :::
 
 ::: {.ejes}

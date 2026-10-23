@@ -111,8 +111,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta property="og:title" content="Datos fuera de GitHub con DVC y Dropbox – P. E. Caicedo-Rodríguez">
 <meta property="og:description" content="Guía paso a paso para versionar, sincronizar y reproducir datos de investigación usando una carpeta de Dropbox">
-<meta property="og:image" content="img/portada-tutorial-dvc-dropbox.png">
+<meta property="og:image" content="https://pacaicedo.github.io/tutoriales/tutorial-dvc/img/portada-tutorial-dvc-dropbox.png">
 <meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
+<meta property="og:image:height" content="900">
+<meta property="og:image:width" content="1600">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -1323,7 +1325,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pacaicedo\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -128,7 +128,7 @@ div.csl-indent {
 
 <meta property="og:title" content="Validación cruzada por participante – P. E. Caicedo-Rodríguez">
 <meta property="og:description" content="Cuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold.">
-<meta property="og:image" content="fig/fuga.svg">
+<meta property="og:image" content="https://pacaicedo.github.io/tutoriales/validacion-por-participante/fig/fuga.svg">
 <meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
 </head>
 
@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pacaicedo\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

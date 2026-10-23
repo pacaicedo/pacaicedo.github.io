@@ -20,6 +20,7 @@ website:
   favicon: recursos/marca/logo/favicon.svg
   image: recursos/marca/logo/tarjeta-social.png
   open-graph: true
+  site-url: https://pacaicedo.github.io
   search:
     location: navbar
     type: overlay

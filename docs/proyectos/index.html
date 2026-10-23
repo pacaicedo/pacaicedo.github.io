@@ -133,8 +133,10 @@ window.Quarto = {
 
 <meta property="og:title" content="Proyectos – P. E. Caicedo-Rodríguez">
 <meta property="og:description" content="Proyectos de investigación en biomecánica, bioseñales y reproducibilidad.">
-<meta property="og:image" content="../proyectos/riesgo-de-caida/tarjeta.png">
+<meta property="og:image" content="https://pacaicedo.github.io/proyectos/riesgo-de-caida/tarjeta.png">
 <meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -346,7 +348,7 @@ Cuantificación de actividad muscular con sEMG
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pacaicedo\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

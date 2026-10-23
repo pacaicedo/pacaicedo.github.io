@@ -93,8 +93,10 @@ div.csl-indent {
 
 <meta property="og:title" content="Cuantificación de actividad muscular con sEMG – P. E. Caicedo-Rodríguez">
 <meta property="og:description" content="Un procesamiento de electromiografía de superficie que va del CSV del equipo a métricas de amplitud y frecuencia, con cada paso registrado.">
-<meta property="og:image" content="tarjeta.png">
+<meta property="og:image" content="https://pacaicedo.github.io/proyectos/espasticidad-semg/tarjeta.png">
 <meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -455,7 +457,7 @@ Merletti, Roberto, y Philip A. Parker, eds. 2004. <em>Electromyography: Physiolo
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pacaicedo\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

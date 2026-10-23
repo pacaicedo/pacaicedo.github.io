@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta property="og:title" content="Figuras con la marca en matplotlib – P. E. Caicedo-Rodríguez">
 <meta property="og:description" content="El módulo caicedo_mpl: la letra, los colores y los tamaños de la marca en cada figura, en modo claro y oscuro, en SVG para la web y PDF para LaTeX.">
-<meta property="og:image" content="fig/ejemplo-claro.svg">
+<meta property="og:image" content="https://pacaicedo.github.io/tutoriales/marca-en-quarto/figuras-con-la-marca/fig/ejemplo-claro.svg">
 <meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
 </head>
 
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pacaicedo\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

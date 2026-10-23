@@ -133,8 +133,10 @@ window.Quarto = {
 
 <meta property="og:title" content="Charlas y Conferencias – P. E. Caicedo-Rodríguez">
 <meta property="og:description" content="Presentaciones en eventos académicos, con las diapositivas y el código de cada una.">
-<meta property="og:image" content="../charlas/2026-ver-el-cuerpo-como-dato/tarjeta.png">
+<meta property="og:image" content="https://pacaicedo.github.io/charlas/2026-ver-el-cuerpo-como-dato/tarjeta.png">
 <meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -346,7 +348,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pacaicedo\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

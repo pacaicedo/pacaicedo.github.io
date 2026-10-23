@@ -1,0 +1,79 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/cursos/psim/index.html",
+      "/cursos/sysb/index.html",
+      "/cursos/tau/index.html",
+      "/charlas/2026-ver-el-cuerpo-como-dato/index.html",
+      "/charlas/2026-experimentos-reproducibles/index.html",
+      "/proyectos/riesgo-de-caida/index.html",
+      "/proyectos/bioforge/index.html",
+      "/proyectos/espasticidad-semg/index.html",
+      "/tutoriales/validacion-por-participante/index.html",
+      "/tutoriales/filtrado-fase-cero/index.html",
+      "/tutoriales/filtros-frecuenciales/index.html",
+      "/tutoriales/figuras-con-la-marca/index.html",
+      "/tutoriales/marca-en-quarto/index.html",
+      "/tutoriales/entorno-uv-quarto/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos/index.html",
+    "items": [
+      "/cursos/psim/index.html",
+      "/cursos/sysb/index.html",
+      "/cursos/tau/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos/sysb/index.html",
+    "items": [
+      "/cursos/sysb/presentaciones/01-senales-y-sistemas.html",
+      "/cursos/sysb/presentaciones/07-convolucion.html",
+      "/cursos/sysb/laboratorios/lab1-filtrado-ecg.html",
+      "/tutoriales/entorno-uv-quarto/index.html",
+      "/tutoriales/filtrado-fase-cero/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos/tau/index.html",
+    "items": [
+      "/cursos/tau/presentaciones/01-aprender-de-datos.html",
+      "/cursos/tau/presentaciones/05-componentes-principales.html",
+      "/cursos/tau/laboratorios/lab2-pca-y-kmeans.html",
+      "/tutoriales/entorno-uv-quarto/index.html",
+      "/tutoriales/validacion-por-participante/index.html"
+    ]
+  },
+  {
+    "listing": "/proyectos/index.html",
+    "items": [
+      "/proyectos/riesgo-de-caida/index.html",
+      "/proyectos/bioforge/index.html",
+      "/proyectos/espasticidad-semg/index.html"
+    ]
+  },
+  {
+    "listing": "/tutoriales/index.html",
+    "items": [
+      "/tutoriales/validacion-por-participante/index.html",
+      "/tutoriales/filtrado-fase-cero/index.html",
+      "/tutoriales/filtros-frecuenciales/index.html",
+      "/tutoriales/figuras-con-la-marca/index.html",
+      "/tutoriales/marca-en-quarto/index.html",
+      "/tutoriales/entorno-uv-quarto/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos/psim/index.html",
+    "items": [
+      "/cursos/psim/presentaciones/01-la-imagen-como-dato.html",
+      "/cursos/psim/presentaciones/08-filtrado-frecuencial.html",
+      "/cursos/psim/laboratorios/lab1-histograma-y-contraste.html",
+      "/cursos/psim/laboratorios/lab2-filtrado-frecuencial.html",
+      "/tutoriales/entorno-uv-quarto/index.html",
+      "/tutoriales/filtros-frecuenciales/index.html"
+    ]
+  }
+]

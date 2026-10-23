@@ -1,0 +1,3 @@
+# Ajustes comunes a las páginas de charlas: la fecha del encabezado es la de la charla.
+language:
+  title-block-published: "Fecha de la charla"

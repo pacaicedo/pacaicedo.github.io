@@ -1,0 +1,76 @@
+---
+title: "La imagen como dato"
+subtitle: "Muestreo, cuantización, unidades y ventana"
+description: "Qué guarda cada píxel, cómo se pasa a unidades Hounsfield y por qué la ventana cambia lo que vemos pero no el dato."
+rotulo: "Semana 1"
+date: 2026-08-03
+---
+
+# Representación
+
+## Una imagen es una función muestreada
+
+Una imagen continua $f(x, y)$ se convierte en una matriz al **muestrear** el espacio y **cuantizar** la intensidad.
+
+- El tamaño del píxel (`PixelSpacing`, en mm) fija la resolución espacial
+  - con él, las distancias se miden en milímetros y no en píxeles
+- La cuantización fija el rango dinámico: 12 bits dan 4096 niveles
+- En TC cada píxel se lleva a [unidades Hounsfield]{.dato} (UH)
+
+## Del archivo a las unidades físicas
+
+El archivo DICOM guarda enteros; la conversión está en el encabezado:
+
+$$
+\text{UH} = \text{valor} \times \texttt{RescaleSlope} + \texttt{RescaleIntercept}
+$$
+
+| Tejido         | UH aproximadas    |
+|:---------------|------------------:|
+| Aire           | −1000             |
+| Agua           | 0                 |
+| Cerebro        | 30 a 45           |
+| Hueso cortical | 700 a más de 1000 |
+
+## Ventana y nivel
+
+La pantalla muestra 256 grises. La **ventana** $W$ y el **nivel** $L$ eligen qué parte del rango se reparte en ellos:
+
+$$
+g = \min\!\Big(1, \max\!\big(0, \tfrac{\text{UH} - (L - W/2)}{W}\big)\Big)
+$$
+
+- Lo que queda por debajo de $L - W/2$ se ve negro; lo que pasa de $L + W/2$, blanco
+- Una ventana estrecha separa tejidos parecidos
+
+## Tres ventanas, el mismo dato
+
+![Cambia lo que vemos, [no el dato]{.causa}.](../fig/ventanas){width="88%"}
+
+## En NumPy
+
+```python
+import numpy as np
+
+def ventana(uh, ancho, nivel):
+    """Lleva el rango de la ventana a [0, 1]."""
+    return np.clip((uh - (nivel - ancho / 2)) / ancho, 0, 1)
+
+cerebro = ventana(uh, ancho=80, nivel=40)
+```
+
+# Histograma
+
+## El histograma cuenta píxeles
+
+![Con W 80 y L 40 se usa una franja estrecha del rango.](../fig/histograma-diapositiva){width="64%"}
+
+## Para esta semana
+
+::: {.callout-note}
+## Laboratorio 1
+Calcular el histograma del fantoma, elegir una ventana para cada estructura y justificarla con el histograma.
+:::
+
+- Leer el capítulo 3 de Gonzalez y Woods
+- Instalar el entorno con `uv` (ver el tutorial del sitio)

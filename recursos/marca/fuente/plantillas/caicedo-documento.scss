@@ -1,0 +1,261 @@
+/*-- scss:defaults --*/
+// caicedo-documento.scss: documentos HTML de la marca P. E. Caicedo-Rodríguez (v2).
+// Gemelo visual de caicedo-documento.sty (PDF).
+// Archivo generado por fuente/construir_marca.py desde fuente/plantillas/.
+//
+// Uso en un documento suelto (lleva el motivo sobre el título, como el PDF):
+//   format: html: theme: [cosmo, recursos/marca/caicedo-documento.scss]
+// Con banda de título en noche y el motivo:   title-block-banner: true
+// Dentro del sitio (hereda barra, pie y portada del sitio, sin el motivo sobre el título):
+//   format: html: theme: [cosmo, recursos/marca/caicedo-sitio.scss, recursos/marca/caicedo-documento.scss]
+//
+// Comparte tokens con los otros archivos de la marca (todos salen de la misma tabla).
+
+// ---------------------------------------------------------------- Tokens de color
+@@TOKENS@@
+
+// ---------------------------------------------------------------- Letra
+$c-fuente-texto: "Atkinson Hyperlegible Next", "Caicedo Respaldo", system-ui, sans-serif !default;
+$c-fuente-mono:  "Atkinson Hyperlegible Mono", "Caicedo Respaldo Mono", ui-monospace, monospace !default;
+// Compatibilidad v1
+$c-font-display: $c-fuente-texto !default;
+$c-font-text: $c-fuente-texto !default;
+$c-font-mono: $c-fuente-mono !default;
+
+// ---------------------------------------------------------------- Bootstrap / Quarto
+$body-bg: $c-blanco;
+$body-color: $c-texto;
+$primary: $c-dato-d;
+$link-color: $c-dato-d;
+$link-color-hover: $c-causa-d;
+$link-decoration: underline;
+$font-family-sans-serif: $c-fuente-texto;
+$font-family-base: $c-fuente-texto;
+$headings-font-family: $c-fuente-texto;
+$font-family-monospace: $c-fuente-mono;
+// Sin la Source Sans Pro de cosmo: ni se pide a Google Fonts ni se incrusta.
+$web-font-path: false;
+$font-size-root: 18px;          // Atkinson tiene la x baja: 18 px rinden como 16 px de DejaVu
+$line-height-base: 1.6;
+$headings-color: $c-tinta;
+$headings-font-weight: 800;
+$code-color: $c-texto;
+$code-bg: $c-papel;
+$code-block-bg: $c-papel;
+$code-block-border-left: $c-dato-d;
+$toc-color: $c-tenue;
+$toc-active-border: $c-dato-d;
+$toc-inactive-border: $c-filete;
+$border-radius: 4px;
+$table-border-color: $c-filete;
+
+$title-banner-bg: $c-noche;
+$title-banner-color: $c-luz;
+$title-banner-image: url("@@MOTIVO_NOCHE@@");
+
+$callout-color-note: $c-dato-d;
+$callout-color-tip: $c-grafo-d;
+$callout-color-important: $c-causa-d;
+$callout-color-caution: $c-aviso-d;
+$callout-color-warning: $c-aviso-d;
+
+// caicedo-sitio.scss pone $c-en-sitio: true y ya incrusta las fuentes; encima del sitio no
+// se repiten (Quarto junta los defaults de todas las capas) ni se pone el motivo sobre el título.
+$c-en-sitio: false !default;
+$c-fuentes-cargadas: false !default;
+
+/*-- scss:rules --*/
+@if not $c-fuentes-cargadas {
+@@FUENTES@@
+}
+
+body { font-feature-settings: "kern"; }
+h1, .h1, h2, .h2 { font-weight: 800; }
+
+// ================================================================ Bloque de título
+// Documento suelto, sin banda: el motivo «de x[n] a la causa» encabeza la página, como en el PDF.
+@if not $c-en-sitio {
+  #title-block-header.quarto-title-block.default::before {
+    content: ""; display: block; width: min(100%, 44rem); aspect-ratio: 1500 / 340;
+    margin: 0 0 1.6rem auto;
+    background: url("@@MOTIVO_CLARO@@") right top / contain no-repeat;
+  }
+}
+// Con title-block-banner: true -> banda en noche con el motivo abajo a la derecha.
+.quarto-title-banner {
+  background-size: min(46rem, 70%) auto;
+  background-position: right 1.5rem bottom 1.2rem;
+  background-repeat: no-repeat;
+  margin-bottom: 2.2rem;
+  padding: 3rem 0 calc(2rem + min(10.4rem, 16vw));
+  .quarto-title .title {
+    font-weight: 800; color: $c-luz; max-width: 18em;
+    font-size: clamp(2.1rem, 4.4vw, 3rem); line-height: 1.08;
+  }
+  .subtitle, .quarto-title .subtitle { font-weight: 500; color: $c-dato-luz; font-size: 1.3rem; padding-top: .35rem; max-width: 40rem; }
+  .quarto-categories .quarto-category {
+    font-size: .8rem; font-weight: 600; text-transform: none; letter-spacing: 0;
+    color: $c-luz; border: 1px solid rgba($c-luz, .45); border-radius: 999px; opacity: 1;
+  }
+  .description { color: $c-luz; }
+  a { color: $c-dato-luz; }
+  @media (max-width: 767.98px) {
+    background-size: 92% auto; background-position: center bottom 1rem;
+  }
+}
+// Categorías sin banda: la misma píldora de la marca, en minúscula de frase (Quarto las pone en
+// versalitas pequeñas, que no se leen a ese tamaño).
+.quarto-title .quarto-categories .quarto-category {
+  font-size: .78rem; font-weight: 600; text-transform: none; letter-spacing: 0; opacity: 1;
+  color: $c-dato-d; border: 1px solid $c-filete; border-radius: 999px; padding: .1rem .6rem;
+}
+.quarto-title-banner .quarto-title .quarto-categories .quarto-category { color: $c-luz; border-color: rgba($c-luz, .45); }
+// Sin banda: título en tinta, subtítulo en dato.
+.quarto-title .title { font-weight: 800; color: $c-tinta; line-height: 1.1; }
+.quarto-title-block .subtitle { font-weight: 500; color: $c-dato-d; }
+.quarto-title-banner .quarto-title .title { color: $c-luz; }
+.quarto-title-banner .quarto-title-block .subtitle, .quarto-title-banner .subtitle { color: $c-dato-luz; }
+// Metadatos: rótulo en negrita pequeña y minúscula de frase (sin versalitas espaciadas).
+.quarto-title-meta-heading {
+  font-size: .78rem !important; font-weight: 700; letter-spacing: 0 !important;
+  text-transform: none !important; color: $c-tenue;
+}
+.quarto-title-meta-heading::first-letter { text-transform: uppercase; }
+.quarto-title-meta-contents { color: $c-texto; }
+.abstract .block-title, .abstract-title,
+#title-block-header.quarto-title-block.default .abstract .abstract-title,
+#title-block-header.quarto-title-block.default .abstract .block-title { font-size: .9rem; font-weight: 700; letter-spacing: 0; text-transform: none; color: $c-dato-d; opacity: 1; }
+#title-block-header.quarto-title-block.default .abstract .block-title,
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading,
+.quarto-title-meta-heading { opacity: 1; }
+
+// ================================================================ Encabezados
+// H2 = \section del PDF: tinta extranegrita, número en dato, barra causal debajo.
+h2 {
+  font-size: 1.62rem;
+  margin-top: 2.6rem;
+  padding-bottom: .9rem;
+  border-bottom: 0 !important;
+  background-image: url("@@BARRA@@");
+  background-repeat: no-repeat;
+  background-size: 72px 9.6px;
+  background-position: left bottom;
+}
+h3 { font-size: 1.27rem; font-weight: 700; color: $c-dato-d; margin-top: 1.9rem; }
+h4 { font-size: 1.05rem; font-weight: 700; color: $c-tinta; }
+h3, .h3, h4, .h4 { opacity: 1; }
+.header-section-number { font-weight: 700; color: $c-dato-d; margin-right: .2em; font-variant-numeric: tabular-nums; }
+h3 .header-section-number, h4 .header-section-number { color: $c-tenue; }
+
+// ================================================================ Texto
+strong { color: $c-tinta; font-weight: 700; }
+#quarto-document-content {
+  p a, li a { text-decoration-thickness: .06em; text-decoration-color: rgba($c-dato-d, .55); text-underline-offset: .18em; }
+  p a:hover, li a:hover { text-decoration-color: $c-causa-d; }
+  nav[role="doc-toc"] a { text-decoration: none; }
+  // Viñetas por forma: disco (dato), círculo (grafo), cuadrado (tenue), como en el PDF.
+  ul { list-style-type: disc; }
+  ul ul { list-style-type: circle; }
+  ul ul ul { list-style-type: square; }
+  ul > li::marker { color: $c-dato-d; }
+  ul ul > li::marker { color: $c-grafo-d; }
+  ul ul ul > li::marker { color: $c-tenue; }
+  ol > li::marker { color: $c-dato-d; font-weight: 700; font-variant-numeric: tabular-nums; }
+}
+
+// ================================================================ Código
+// En línea: Mono sobre papel, sin color propio (el naranja queda para la causa).
+code { color: $c-texto; background: $c-papel; padding: .1em .3em; border-radius: 3px; font-size: .88em; }
+pre code { background: transparent; padding: 0; color: inherit; }
+div.sourceCode, pre.sourceCode {
+  background-color: $c-papel;
+  border: 0;
+  border-left: 4px solid $c-dato-d;
+  border-radius: 4px;
+  font-size: .86rem;
+}
+div.sourceCode > pre.sourceCode { border: 0; border-radius: 0; background-color: transparent; }
+.code-copy-button { color: $c-tenue; }
+
+// ================================================================ Tablas (booktabs)
+table, .table {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: .9rem;
+  font-variant-numeric: tabular-nums;
+  border-top: 2px solid $c-tinta;
+  border-bottom: 2px solid $c-tinta;
+  > thead > tr > th {
+    font-weight: 700; color: $c-tinta;
+    border-bottom: 1px solid $c-tinta !important;
+  }
+  > :not(caption) > * > * { border-bottom-width: 0; padding: .4rem .7rem; }
+  > thead > tr > th, > tbody > tr > td { text-align: left; }
+}
+caption, .table-caption, figcaption.quarto-float-caption-top.quarto-float-tbl {
+  color: $c-tenue; font-size: .88rem; text-align: center;
+}
+
+// ================================================================ Citas
+blockquote, .blockquote {
+  border-left: 4px solid $c-grafo-d;
+  background: $c-papel;
+  color: $c-texto;
+  font-size: 1rem;
+  padding: .7rem 1.1rem;
+  border-radius: 0 4px 4px 0;
+  > :last-child { margin-bottom: 0; }
+}
+
+// ================================================================ Callouts
+// Fondo papel, sin marco, filo izquierdo de 6 px y título en negrita del color del tipo.
+div.callout {
+  border: 0 !important;
+  border-left: 6px solid var(--c-callout, #{$c-dato-d}) !important;
+  border-radius: 4px;
+  background: $c-papel;
+  &.callout-style-default > div.callout-header { opacity: 1; background: transparent !important; border: 0; }
+  .callout-title-container { font-weight: 700; color: var(--c-callout, #{$c-dato-d}); }
+  .callout-body-container, .callout-body { color: $c-texto; }
+}
+div.callout-note { --c-callout: #{$c-dato-d}; }
+div.callout-tip { --c-callout: #{$c-grafo-d}; }
+div.callout-important { --c-callout: #{$c-causa-d}; }
+div.callout-warning, div.callout-caution { --c-callout: #{$c-aviso-d}; }
+
+// ================================================================ Figuras
+figcaption, .figure-caption { font-size: .88rem; color: $c-tenue; }
+// Imágenes médicas: sobre un recuadro neutro para que el fondo no altere la lectura de grises.
+.imagen-medica img, img.imagen-medica { background: #000; padding: 6px; border-radius: 4px; }
+
+// ================================================================ Índice
+#TOC, nav[role="doc-toc"] {
+  #toc-title, h2 { font-size: .9rem; font-weight: 700; letter-spacing: 0; text-transform: none; color: $c-tinta; background: none; padding: 0; }
+  .nav-link.active, a.active { color: $c-dato-d !important; border-left-color: $c-dato-d !important; font-weight: 600; }
+}
+
+// ================================================================ Separadores y notas
+hr { border: 0; height: 9.6px; width: 72px; margin: 2.4rem auto; background: url("@@BARRA@@") center / contain no-repeat; opacity: 1; }
+.footnotes, #footnotes { font-size: .88rem; color: $c-tenue; }
+// Bibliografía: aire entre referencias.
+#refs .csl-entry, div.csl-bib-body .csl-entry { margin-bottom: .55rem; }
+.footnotes h2, #footnotes h2, section.footnotes h2 { background-image: none; padding-bottom: 0; font-size: 1rem; }
+// Rótulos del margen (otros formatos, índice): sin barra causal.
+#quarto-margin-sidebar h2, .quarto-alternate-formats h2, .quarto-margin-sidebar h2 { background-image: none; padding-bottom: 0; font-size: .9rem; margin-top: 0; }
+
+// ================================================================ Utilidades de marca
+// Clases de color: [texto]{.dato} {.grafo} {.causa} {.alert} {.aviso} {.tenue}
+// (el filtro recursos/marca/caicedo.lua las lleva al PDF y a beamer)
+.dato  { color: $c-dato-d; }
+.grafo { color: $c-grafo-d; }
+.causa, .alert { color: $c-causa-d; }
+.aviso { color: $c-aviso-d; }
+.tenue { color: $c-tenue; }
+// [texto]{.alert} no debe heredar la caja de aviso de Bootstrap (.alert).
+span.alert { padding: 0; margin: 0; border: 0; border-radius: 0; background: none; }
+.texto-dato  { color: $c-dato-d; }
+.texto-grafo { color: $c-grafo-d; }
+.texto-causa { color: $c-causa-d; }
+// [rótulo]{.kicker}: antetítulo breve, en negrita de frase (sin versalitas espaciadas).
+.kicker { display: block; font-size: .9rem; font-weight: 700; color: $c-dato-d; margin-bottom: .2rem; }

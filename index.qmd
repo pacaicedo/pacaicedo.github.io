@@ -1,104 +1,108 @@
 ---
-title: "Pablo Eduardo Caicedo-Rodríguez"
-title-block-banner: false
-page-layout: full
-body-classes: pagina-inicio
+pagetitle: "P. E. Caicedo-Rodríguez"
+description: "Docencia e investigación en señales e imágenes biomédicas, biomecánica e inferencia causal."
 toc: false
-section-divs: false
-anchor-sections: false
-description: "Cursos, charlas, proyectos y tutoriales de ingeniería biomédica de Pablo Eduardo Caicedo-Rodríguez."
+page-layout: full
+title-block-style: none
+listing:
+  - id: ultimos-cursos
+    contents: cursos/*/index.qmd
+    type: default
+    fields: [title, description]
+    sort: "title"
+    max-items: 3
+  - id: ultimas-charlas
+    contents: charlas/*/index.qmd
+    type: default
+    fields: [date, title, description]
+    sort: "date desc"
+    max-items: 2
+  - id: ultimos-proyectos
+    contents: proyectos/*/index.qmd
+    type: default
+    fields: [title, description]
+    sort: "date desc"
+    max-items: 3
+  - id: ultimos-tutoriales
+    contents: tutoriales/*/index.qmd
+    type: default
+    fields: [date, title, description]
+    sort: "date desc"
+    max-items: 3
 ---
 
-::::: {.hero}
-:::: {}
-::: {.kicker}
-Pablo Eduardo Caicedo-Rodríguez
+::: {.hero}
+[Del dato a la causa]{.hero-kicker}
+
+# Señales, imágenes e inferencia causal para la salud {.unnumbered .unlisted}
+
+Docencia e investigación en ingeniería biomédica: procesamiento de bioseñales e imágenes médicas, biomecánica y aprendizaje automático evaluado con honestidad.
+
+[Ver los cursos](cursos/index.qmd){.btn .btn-marca} [Proyectos](proyectos/index.qmd){.btn .btn-marca-borde}
 :::
 
-# [Ingeniería para]{.d-block} [comprender.]{.d-block} Software para cuidar.
-
-::: {.lead}
-Inteligencia artificial, señales e imágenes biomédicas y software para una salud más comprensible.
+::: {.ejes}
+::: {.eje .dato}
+### Medir bien
+ECG, EMG, EEG e imágenes médicas procesados sin perder la trazabilidad del dato original.
 :::
 
-[Explorar los cursos](cursos/index.qmd){.btn .btn-primary}
-::::
-
-:::: {.hero-art}
-![](recursos/marca/logos/isotipo-claro.svg){width=100% fig-alt="Símbolo de Caicedo-Rodríguez: una C abierta, nodos y una dirección de trabajo"}
-::::
-:::::
-
-:::::: {.topic-section role="region" aria-labelledby="bioforja"}
-::: {.kicker}
-BioForja · Conocimiento abierto
+::: {.eje .grafo}
+### Estructurar
+Contratos de datos, grafos y modelos que dicen cómo se relacionan las variables.
 :::
 
-## Aprender, compartir y construir {#bioforja}
-
-::::: {.topic-grid}
-:::: {.topic-card role="article"}
-[01 / FORMACIÓN]{.number}
-
-### [Cursos](cursos/index.qmd)
-
-Resultados de aprendizaje, calendario, presentaciones y laboratorios en un mismo lugar.
-::::
-
-:::: {.topic-card role="article"}
-[02 / ENCUENTROS]{.number}
-
-### [Charlas y Conferencias](charlas-y-conferencias/index.qmd)
-
-El contexto de cada evento, sus presentaciones y el código que las acompaña.
-::::
-
-:::: {.topic-card role="article"}
-[03 / INVESTIGACIÓN Y DESARROLLO]{.number}
-
-### [Proyectos](proyectos/index.qmd)
-
-Del problema a los métodos y los resultados, con procedimientos reproducibles.
-::::
-
-:::: {.topic-card role="article"}
-[04 / PRÁCTICA]{.number}
-
-### [Herramientas y Tutoriales](herramientas-y-tutoriales/index.qmd)
-
-Guías, documentos y utilidades para trabajar con señales, modelos y comunicación técnica.
-::::
-:::::
-::::::
-
-::::: {role="region" aria-label="Líneas de trabajo"}
-:::: {.section-row}
-::: {.number}
-01
+::: {.eje .causa}
+### Preguntar por la causa
+Qué cambia si intervenimos y qué hay que ajustar para poder saberlo.
 :::
 
-### Medir y comprender
-
-Señales, imágenes y biomecánica. Convertir datos complejos en preguntas que puedan investigarse.
-::::
-
-:::: {.section-row}
-::: {.number}
-02
+::: {.eje .ia}
+### IA confiable
+Métricas que describen lo que miden, sin afirmar diagnósticos que los datos no sostienen.
+:::
 :::
 
-### Modelar con evidencia
+::: {.listados}
+::: {.listado}
+## Cursos
 
-IA, grafos e inferencia causal. Explicar los supuestos, la incertidumbre y los límites de cada resultado.
-::::
-
-:::: {.section-row}
-::: {.number}
-03
+::: {#ultimos-cursos}
 :::
 
-### Construir y enseñar
+[Todos los cursos →](cursos/index.qmd)
+:::
 
-Software para la salud y materiales reproducibles. BioForja reúne proyectos, laboratorios y conocimiento abierto.
-::::
-:::::
+::: {.listado}
+## Charlas y Conferencias
+
+::: {#ultimas-charlas}
+:::
+
+[Todas las charlas →](charlas/index.qmd)
+:::
+
+::: {.listado}
+## Proyectos
+
+::: {#ultimos-proyectos}
+:::
+
+[Todos los proyectos →](proyectos/index.qmd)
+:::
+
+::: {.listado}
+## Herramientas y Tutoriales
+
+::: {#ultimos-tutoriales}
+:::
+
+[Todos los tutoriales →](tutoriales/index.qmd)
+:::
+:::
+
+::: {.banda}
+## Material abierto y reproducible
+
+Todo lo que hay en este sitio —páginas, diapositivas, guías de laboratorio y figuras— se genera con [Quarto](https://quarto.org) y Python desde archivos de texto. Las figuras de cada página se vuelven a calcular con su propio `figuras.py`, y el contenido se publica con licencia [CC BY 4.0]{.dato}.
+:::

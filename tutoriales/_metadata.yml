@@ -1,0 +1,3 @@
+# Ajustes comunes a Herramientas y Tutoriales: las categorías del encabezado de cada página
+# llevan al listado de esta sección, filtrado por esa categoría.
+include-after-body: ../recursos/marca/categorias-tutoriales.html

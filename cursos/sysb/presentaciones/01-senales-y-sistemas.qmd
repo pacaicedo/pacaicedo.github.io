@@ -1,0 +1,48 @@
+---
+title: "Señales y sistemas biomédicos"
+subtitle: "Qué medimos y qué le pasa a la medición"
+description: "Señales continuas y discretas, anchos de banda del ECG, el EMG y el EEG, muestreo y por qué no todo lo que estorba es ruido."
+rotulo: "Semana 1"
+date: 2026-08-03
+---
+
+# Señales
+
+## Una señal es una medición en el tiempo
+
+- **Continua** $x(t)$: el potencial en la piel
+- **Discreta** $x[n] = x(n T_s)$: lo que guarda el computador
+- El muestreo conserva la información solo si $f_s > 2 f_{\max}$ (Nyquist)
+
+| Señal | Banda útil típica | Amplitud típica |
+|:------|------------------:|----------------:|
+| ECG   | 0,05 a 150 Hz     | 1 mV            |
+| EMG de superficie | 20 a 450 Hz | 0,1 a 5 mV |
+| EEG   | 0,5 a 70 Hz       | 10 a 100 μV     |
+
+## No todo lo que estorba es ruido
+
+![Un ECG sintético y dos de las componentes que lo contaminan.](../fig/ecg-componentes-diapositiva){width="66%"}
+
+## Tres componentes, tres tratamientos
+
+- **Deriva de línea base** (respiración, electrodos): lenta, < 1 Hz → pasa altos
+- **Interferencia de red**: 60 Hz y armónicos, estrecha → notch
+- **Artefactos de movimiento**: transitorios, se solapan con la señal → detectar y marcar, no solo filtrar
+
+::: {.callout-warning}
+## Cuidado
+Un filtro de 50 Hz no quita la interferencia de la red colombiana, que es de 60 Hz.
+:::
+
+# Sistemas
+
+## Un sistema transforma una señal en otra
+
+$$
+x[n] \;\longrightarrow\; \boxed{\;T\;} \;\longrightarrow\; y[n] = T\{x[n]\}
+$$
+
+- **Lineal**: $T\{a x_1 + b x_2\} = a T\{x_1\} + b T\{x_2\}$
+- **Invariante en el tiempo**: un retraso en la entrada solo retrasa la salida
+- Si es lineal e invariante (**LTI**), su respuesta al impulso lo describe por completo

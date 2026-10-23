@@ -1,0 +1,29 @@
+# Formatos de todas las presentaciones del curso: revealjs (HTML) y beamer (PDF), gemelos.
+# Las rutas son relativas a esta carpeta. Para el modo sala oscura, ver la charla
+# charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.qmd.
+author:
+  - name: "P. E. Caicedo-Rodríguez"
+    affiliation: "Centro de Estudios en Biomédica y Biotecnología"
+shorttitle: "SYSB · Sistemas y Señales Biomédicos"
+format:
+  revealjs:
+    theme: ../../../recursos/marca/caicedo-diapositivas.scss
+    width: 1280
+    height: 720
+    margin: 0
+    logo: ../../../recursos/marca/logo/firma-pie-claro.svg
+    footer: "SYSB · Sistemas y Señales Biomédicos"
+    slide-number: c/t
+    auto-stretch: false          # las imágenes miden lo que dice width=, igual que en beamer
+    code-line-numbers: false
+    highlight-style: ../../../recursos/marca/caicedo-claro.theme
+    default-image-extension: svg
+  beamer:
+    aspectratio: 169
+    fontsize: 12pt
+    pdf-engine: lualatex
+    slide-level: 2
+    highlight-style: ../../../recursos/marca/caicedo-claro.theme
+    default-image-extension: pdf
+    include-in-header:
+      text: \usepackage{../../../recursos/marca/caicedo-diapositivas}

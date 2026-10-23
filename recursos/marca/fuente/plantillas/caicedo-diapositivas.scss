@@ -1,0 +1,319 @@
+/*-- scss:defaults --*/
+// caicedo-diapositivas.scss: diapositivas Quarto + revealjs de la marca P. E. Caicedo-Rodríguez (v2).
+// Gemelo de caicedo-diapositivas.sty (beamer): mismas proporciones, colores, letra,
+// portada, separadores de sección, pie y modo sala oscura.
+//
+// Archivo generado por fuente/construir_marca.py desde fuente/plantillas/; los colores
+// salen de una sola tabla de tokens. Cambia la plantilla o los tokens y vuelve a construir.
+//
+// Uso (modo claro, el de siempre):
+//   format:
+//     revealjs:
+//       theme: recursos/marca/caicedo-diapositivas.scss
+//       width: 1280              # 16:9, igual que beamer aspectratio=169
+//       height: 720
+//       margin: 0
+//       logo: recursos/marca/logo/firma-pie-claro.svg   # cualquier logo: la marca pone su firma
+//       footer: "Título corto"
+//       slide-number: c/t
+//       auto-stretch: false      # las imágenes miden lo que dice width=, igual que en beamer
+//       code-line-numbers: false
+//       highlight-style: recursos/marca/caicedo-claro.theme
+//   filters: [recursos/marca/caicedo.lua]   # pinta los separadores de sección en noche
+//
+// Modo sala oscura (auditorio a oscuras): se añade una capa y se cambia el resaltado.
+//       theme: [recursos/marca/caicedo-diapositivas.scss, recursos/marca/caicedo-sala-oscura.scss]
+//       highlight-style: recursos/marca/caicedo-oscuro.theme
+//
+// Equivalencia con beamer: 720 px de alto = 90 mm, así que 1 mm = 8 px y 1 pt = 2.8125 px
+// (12 pt = 33.75 px). Si cambias un tamaño aquí, cámbialo también en el .sty.
+
+// ---------------------------------------------------------------- Tokens de color
+@@TOKENS@@
+
+// ---------------------------------------------------------------- Papeles (el modo sala oscura los reasigna)
+// $s-* son los colores según su función en la diapositiva.
+$s-fondo:          $c-blanco !default;    // fondo de las diapositivas
+$s-titulo:         $c-tinta !default;     // títulos y negrita
+$s-texto:          $c-tinta !default;     // texto corrido (tinta: máximo contraste para proyectar)
+$s-tenue:          $c-tenue !default;     // pie, leyendas, metadatos
+$s-dato:           $c-dato-d !default;    // acentos de texto y marcas pequeñas
+$s-grafo:          $c-grafo-d !default;
+$s-causa:          $c-causa-d !default;
+$s-aviso:          $c-aviso-d !default;
+$s-papel:          $c-papel !default;     // fondo de código, citas y callouts
+$s-regla:          $c-tinta !default;     // filetes de tablas
+$s-portada:        $c-blanco !default;    // fondo de la portada
+$s-motivo:         url("@@MOTIVO_CLARO@@") !default;
+$s-firma-oscura:   url("@@FIRMA_PIE_OSCURO@@") !default;   // firma del pie sobre fondos oscuros
+$s-firma-clara:    url("@@FIRMA_PIE_CLARO@@") !default;    // firma del pie sobre fondos claros
+$s-sala-oscura:    false !default;
+
+// ---------------------------------------------------------------- Letra
+$c-fuente-texto: "Atkinson Hyperlegible Next", "Caicedo Respaldo", system-ui, sans-serif !default;
+$c-fuente-mono:  "Atkinson Hyperlegible Mono", "Caicedo Respaldo Mono", ui-monospace, monospace !default;
+
+// ---------------------------------------------------------------- Variables de revealjs / Quarto
+$backgroundColor: $s-fondo !default;
+$body-bg: $s-fondo !default;
+$body-color: $s-texto !default;
+$mainColor: $s-texto !default;
+$link-color: $s-dato !default;
+$link-color-hover: $s-causa !default;
+$selection-bg: rgba($c-dato, .30) !default;
+$font-family-sans-serif: $c-fuente-texto;
+$font-family-monospace: $c-fuente-mono;
+$presentation-font-size-root: 33.75px;              // 12 pt
+$presentation-line-height: 1.35;
+$presentation-heading-font: $c-fuente-texto;
+$presentation-heading-color: $s-titulo !default;
+$presentation-heading-font-weight: 800;
+$presentation-heading-letter-spacing: 0;
+$presentation-heading-text-transform: none;
+$presentation-heading-line-height: 1.08;
+$presentation-h1-font-size: 2.1333em;               // 72 px = 25.6 pt (separadores)
+$presentation-h2-font-size: 1.6em;                  // 54 px = 19.2 pt (título de diapositiva)
+$presentation-h3-font-size: 1.15em;                 // 38.8 px = 13.8 pt
+$presentation-h4-font-size: 1em;
+$presentation-slide-text-align: left;
+$presentation-title-slide-text-align: left;
+$presentation-list-bullet-color: $s-dato !default;
+$code-block-bg: $s-papel !default;
+$code-block-border-color: $s-papel !default;
+$code-block-border-left: $s-dato !default;
+$code-color: $s-texto !default;
+$code-bg: $s-papel !default;
+$code-block-font-size: .8em;                        // 27 px = 9.6 pt
+$callout-color-note: $s-dato !default;
+$callout-color-tip: $s-grafo !default;
+$callout-color-important: $s-causa !default;
+$callout-color-caution: $s-aviso !default;
+$callout-color-warning: $s-aviso !default;
+
+/*-- scss:rules --*/
+// Atkinson Hyperlegible Next y Mono (Braille Institute, SIL OFL) van incrustadas como fuentes
+// variables; «Caicedo Respaldo» es un recorte de DejaVu con griego, flechas y símbolos.
+@@FUENTES@@
+
+// ================================================================ Lienzo
+// Márgenes: 64 px laterales (8 mm); abajo se reservan 72 px para el pie.
+.reveal .slides > section:not(.stack), .reveal .slides > section.stack > section {
+  box-sizing: border-box;
+  padding: 40px 64px 72px 64px !important;
+}
+.reveal { font-feature-settings: "kern"; font-weight: 500; }   // medio: el trazo resiste proyectores débiles
+.reveal .slides { text-align: left; }
+.reveal p { margin: 12px 0; }
+
+// La portada es siempre la primera diapositiva: su fondo cubre toda la ventana.
+.reveal .backgrounds > .slide-background:first-child { background-color: $s-portada; }
+
+// ================================================================ Título de diapositiva
+// Tinta, extranegrita; debajo la barra causal (dato -> causa), 6 px de alto y 108 px de largo.
+.reveal .slides section h2 {
+  margin: 0 0 28px 0;
+  padding-bottom: 24px;
+  background-image: url("@@BARRA@@");
+  background-repeat: no-repeat;
+  background-size: 108px 14.4px;
+  background-position: left bottom;
+}
+.reveal h3 { color: $s-dato; font-weight: 700; letter-spacing: 0; margin: 0 0 12px 0; }
+.reveal h4 { color: $s-grafo; font-weight: 700; letter-spacing: 0; margin: 0 0 12px 0; }
+
+// ================================================================ Texto
+.reveal strong, .reveal b { color: $s-titulo; font-weight: 800; }
+.reveal em { font-style: italic; }
+.reveal .alert, .reveal .causa { color: $s-causa; }
+.reveal .dato { color: $s-dato; }
+.reveal .grafo { color: $s-grafo; }
+.reveal .aviso { color: $s-aviso; }
+.reveal .tenue, .reveal .muted { color: $s-tenue; }
+.reveal a { color: $s-dato; text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .14em; }
+.reveal a:hover { color: $s-causa; }
+.reveal .smaller { font-size: .8em; }
+.reveal sup, .reveal sub { font-size: .7em; }
+.reveal .slides { font-variant-numeric: lining-nums; }
+
+// ================================================================ Listas
+// Las viñetas se distinguen por forma y no solo por color: disco (nivel 1),
+// anillo (nivel 2) y raya (nivel 3).
+.reveal ul, .reveal ul ul, .reveal ul ul ul { list-style: none; margin-left: 0; padding-left: 1.05em; }
+.reveal ul > li { position: relative; }
+.reveal .slides section li { margin: .4em 0 .2em; }   // = \itemsep del .sty (Quarto ya usa estos valores)
+.reveal ul > li::before {
+  content: ""; position: absolute; left: -.95em; top: .57em;
+  width: .38em; height: .38em; border-radius: 50%; background: $s-dato;
+}
+.reveal ul ul > li::before { width: .36em; height: .36em; top: .58em; background: transparent; border: .085em solid $s-grafo; box-sizing: border-box; }
+.reveal ul ul ul > li::before { width: .42em; height: .11em; top: .72em; border: 0; border-radius: 0; background: $s-tenue; }
+.reveal ul ul, .reveal ul ol, .reveal ol ol, .reveal ol ul { font-size: .9em; }
+.reveal ol { margin-left: 1.05em; padding-left: 0; }
+.reveal .slides ol ul { margin-left: 0; }
+.reveal .slides ol ol, .reveal .slides ul ol { margin-left: 1.05em; padding-left: 0; }
+.reveal ol > li::marker { color: $s-dato; font-weight: 800; font-variant-numeric: tabular-nums; }
+// Cada lista en su propio renglón (revealjs las hace inline-block).
+.reveal .slides ul { width: 100%; box-sizing: border-box; }
+.reveal .slides ol { width: calc(100% - 1.05em); box-sizing: border-box; }
+.reveal .slides :is(ul, ol) + :is(ul, ol) { margin-top: .4em; }
+.reveal .slides dl { display: block; margin: 0; }
+.reveal dt { font-weight: 800; color: $s-titulo; }
+.reveal dd { margin: 0 0 .4em 1.05em; }
+
+// ================================================================ Código
+.reveal pre, .reveal div.sourceCode {
+  border: 0 !important;
+  border-left: 6px solid $s-dato !important;
+  border-radius: 4px !important;
+  background: $s-papel !important;
+  box-shadow: none;
+}
+.reveal div.sourceCode pre { border-left: 0 !important; border-radius: 0 !important; }
+.reveal pre code { font-family: $c-fuente-mono; font-weight: 500; line-height: 1.4; max-height: 500px; padding: .5em .75em !important; background: transparent !important; color: $s-texto; font-size: 1em; }
+.reveal code { font-family: $c-fuente-mono; font-weight: 500; font-size: .88em; color: $s-texto; background: $s-papel; padding: .04em .22em; border-radius: 3px; font-variant-ligatures: none; }
+.reveal pre code { padding: .5em .75em; }
+.reveal pre code, .reveal div.sourceCode code { background: transparent; }
+
+// ================================================================ Tablas (booktabs)
+.reveal table { font-size: .8em; border-collapse: collapse; border-top: 3px solid $s-regla; border-bottom: 3px solid $s-regla; font-variant-numeric: tabular-nums; }
+.reveal table th { font-weight: 800; color: $s-titulo; border-bottom: 1.5px solid $s-regla !important; }
+.reveal table th, .reveal table td { padding: .2em .7em; border-bottom: 0; }
+.reveal table { margin-left: 0 !important; margin-right: auto !important; }
+.reveal table th:first-child, .reveal table td:first-child { padding-left: 0; }
+.reveal table th:last-child, .reveal table td:last-child { padding-right: 0; }
+
+// ================================================================ Citas
+.reveal blockquote {
+  width: auto; margin: .6em 0; padding: .45em .9em;
+  background: $s-papel; border-left: 6px solid $s-grafo;
+  box-shadow: none; font-style: normal; color: $s-texto;
+  > p { margin: 0 !important; display: block !important; }
+  > p + p { margin-top: 12px !important; }
+}
+
+// ================================================================ Callouts = bloques de beamer
+// Fondo papel, filo izquierdo de 8 px del color del tipo y título en negrita del mismo color.
+.reveal .slides section div.callout {
+  font-size: .9em;
+  margin: .6em 0;
+  background: $s-papel !important;
+  border: 0 !important; border-left: 8px solid var(--c-callout, #{$s-dato}) !important;
+  border-radius: 4px; box-shadow: none; color: $s-texto;
+  div.callout-body, div.callout-title, div.callout-content, p { font-size: 1em !important; line-height: 1.3; }
+  div.callout-body { padding: 0 !important; margin: 0 !important; }
+  .callout-icon-container { margin-top: 0 !important; }
+  div.callout-title {
+    background: transparent !important;
+    border: 0 !important; padding: .3em .5em 0 !important; margin: 0 !important; min-height: 0 !important;
+    opacity: 1 !important;
+    p, strong { font-weight: 800; color: var(--c-callout, #{$s-dato}); margin: 0; }
+  }
+  .callout-icon::before { margin-top: 0 !important; }
+  div.callout-content { padding: .2em .5em .35em !important; margin: 0 !important;
+    p, > :last-child { margin: 0 !important; padding: 0 !important; } }
+  div.callout-title .callout-icon-container { height: 1.3em !important; display: flex; align-items: center; }
+}
+.reveal div.callout-note { --c-callout: #{$s-dato}; }
+.reveal div.callout-tip { --c-callout: #{$s-grafo}; }
+.reveal div.callout-important { --c-callout: #{$s-causa}; }
+.reveal div.callout-warning, .reveal div.callout-caution { --c-callout: #{$s-aviso}; }
+
+// ================================================================ Portada
+// Texto arriba a la izquierda; el motivo «de x[n] a la causa» abajo a la derecha.
+.reveal .slides section#title-slide {
+  top: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 72px 64px 72px 64px !important;
+  background-color: $s-portada;
+  background-image: $s-motivo;
+  background-repeat: no-repeat;
+  background-size: 980px auto;
+  background-position: right 44px bottom 66px;
+  h1.title {
+    font-size: 78.75px; font-weight: 800; color: $s-titulo; max-width: 1152px;   // todo el ancho: el motivo va abajo, no a la derecha
+    margin: 0 0 18px 0; line-height: 1.04; letter-spacing: 0;
+    background: none; padding: 0;
+  }
+  .subtitle { font-size: 37.1px; line-height: 1.2; font-weight: 500; color: $s-dato; max-width: 1152px; margin: 0 0 34px 0; }
+  .quarto-title-authors { display: block; text-align: left; margin: 0; }
+  .quarto-title-author { padding: 0; }
+  .quarto-title-author-name { font-size: 30px; font-weight: 800; color: $s-titulo; }
+  .quarto-title-affiliation { font-size: 25.3px; font-weight: 500; color: $s-tenue; margin-top: 2px; }
+  .date { font-size: 25.3px; font-weight: 500; color: $s-tenue; margin-top: 6px; }
+  p { margin: 0; }
+}
+
+// ================================================================ Separador de sección (# Título)
+// Con el filtro caicedo.lua el separador va sobre noche (campo de marca), en los dos modos.
+// Sin el filtro queda sobre el fondo normal, con el mismo trazado.
+.reveal .slides section.title-slide.level1:not(#title-slide) {
+  text-align: left;
+  h1 {
+    font-size: 72px; font-weight: 800; color: $s-titulo; text-align: left; max-width: 1152px;
+    margin: 0; padding: 0 0 34px 0; line-height: 1.05; letter-spacing: 0;
+    background-image: url("@@BARRA@@");
+    background-repeat: no-repeat; background-size: 144px 19.2px; background-position: left bottom;
+  }
+}
+.reveal .slides section.title-slide.level1.has-dark-background:not(#title-slide) h1 { color: $c-luz; }
+.reveal .slides section.has-dark-background {
+  color: $c-luz;
+  h1, h2, h3, strong, b { color: $c-luz; }
+  .dato { color: $c-dato-luz; } .grafo { color: $c-grafo-luz; } .causa, .alert { color: $c-causa-luz; } .aviso { color: $c-aviso-luz; }
+  .tenue { color: $c-tenue-luz; } a { color: $c-dato-luz; }
+}
+
+// ================================================================ Pie: firma, título corto y número
+// La firma (isotipo + nombre) reemplaza al logo que se indique: la marca queda igual en todas
+// las presentaciones. El texto de footer: va a la derecha, junto al número.
+.reveal .slide-logo {
+  content: $s-firma-clara;
+  left: 24px !important; right: auto !important; bottom: 18px !important; margin: 0 !important;
+  height: 32px !important; max-height: 32px !important; width: auto; max-width: none !important;
+}
+.reveal .footer, .reveal .footer.footer-default {
+  left: auto !important; right: 132px !important; bottom: 22px !important; width: auto !important; max-width: 760px;
+  text-align: right !important;
+  font-size: 21px !important; font-weight: 500; color: $s-tenue; line-height: 1.2;
+  a { color: $s-tenue; text-decoration: none; }
+}
+.reveal .slide-number {
+  top: auto !important; right: 28px !important; bottom: 22px !important; left: auto !important;
+  background: transparent !important; color: $s-titulo !important; padding: 0 !important;
+  font-family: $c-fuente-texto; font-size: 21px !important; font-weight: 800; line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  a, span, .slide-number-a, .slide-number-b { color: $s-titulo !important; text-decoration: none !important; font-weight: 800; }
+  .slide-number-delimiter { margin: 0 .15em; font-weight: 500 !important; color: $s-tenue !important; }
+}
+// Sobre fondos oscuros (portada en sala oscura, separadores) el pie usa las variantes luz.
+.reveal.has-dark-background {
+  .slide-logo { content: $s-firma-oscura; }
+  .footer, .footer a { color: $c-tenue-luz !important; }
+  .slide-number, .slide-number a, .slide-number span, .slide-number .slide-number-a, .slide-number .slide-number-b { color: $c-luz !important; }
+  .slide-number .slide-number-delimiter { color: $c-tenue-luz !important; }
+}
+.reveal.has-light-background {
+  .slide-logo { content: $s-firma-clara; }
+}
+// El botón del menú se oculta para dejar la firma sola (el menú sigue con la tecla «m»).
+.reveal .slide-menu-button { display: none; }
+.reveal .progress { color: $c-causa; height: 5px; }
+
+// ================================================================ Figuras
+// Figura centrada y leyenda centrada debajo, pequeña y tenue, sin «Figura n:» (= caption del
+// .sty). Sin auto-stretch las imágenes miden lo que dice width= en los dos formatos.
+.reveal .slides .quarto-figure, .reveal .slides figure { text-align: center; }
+.reveal .slides figure figcaption, .reveal .slides .quarto-figure figcaption {
+  font-size: .7em; line-height: 1.35; color: $s-tenue; text-align: center; margin-top: .35em;
+}
+.reveal .slides .quarto-figure-center > figure > p, .reveal .slides .quarto-figure > figure > p { margin: 0; }
+
+// ================================================================ Utilidades
+// [texto]{.kicker}: rótulo breve sobre un título, en minúscula de frase (sin versalitas espaciadas).
+.reveal .kicker { display: block; font-size: .7em; font-weight: 700; color: $s-dato; margin-bottom: .3em; }
+.reveal .panel { background: $s-papel; border-radius: 4px; padding: .6em .9em; }
+// Imágenes médicas: sobre un recuadro neutro para que el fondo no altere la lectura de grises.
+.reveal .imagen-medica { background: #000; padding: 6px; border-radius: 4px; display: inline-block; }

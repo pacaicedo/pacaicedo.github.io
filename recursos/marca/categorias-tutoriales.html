@@ -1,0 +1,37 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var lista = window["quarto-listings"] && window["quarto-listings"]["listing-listing"];
+  if (lista) {
+    // Atrás puede volver a una URL sin categoría; Quarto conserva el filtro anterior.
+    window.addEventListener("hashchange", function () {
+      if (new URLSearchParams(location.hash.slice(1)).get("category")) return;
+      lista.filter();
+      document.querySelectorAll(".quarto-listing-category .category").forEach(function (categoria) {
+        categoria.classList.toggle("active", categoria.getAttribute("data-category") === "");
+      });
+    });
+  }
+
+  var encabezado = document.querySelector("header.quarto-title-block");
+  if (!encabezado || !encabezado.querySelector(".quarto-category")) return;
+
+  var offset = document.querySelector('meta[name="quarto:offset"]');
+  var raiz = new URL(offset ? offset.content : "./", location.href);
+  var listado = new URL("tutoriales/index.html", raiz);
+
+  function actualizarEnlaces() {
+    encabezado.querySelectorAll(".quarto-category a").forEach(function (enlace) {
+      var categoria = enlace.closest(".quarto-category").textContent.trim();
+      enlace.href = listado.href + "#category=" + encodeURIComponent(categoria);
+    });
+  }
+
+  // Quarto crea los enlaces después de consultar listings.json.
+  // Dirigirlos al listado de tutoriales también al abrirlos en otra pestaña.
+  new MutationObserver(actualizarEnlaces).observe(encabezado, {
+    childList: true,
+    subtree: true
+  });
+  actualizarEnlaces();
+});
+</script>

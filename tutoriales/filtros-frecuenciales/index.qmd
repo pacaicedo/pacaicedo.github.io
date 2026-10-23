@@ -1,0 +1,74 @@
+---
+title: "Filtros en frecuencia: de Ideal a Gaussiano"
+description: "Transformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy."
+date: 2026-09-21
+categories: [Tutorial, PSIM, Imágenes médicas]
+---
+
+## La idea
+
+Filtrar en frecuencia es multiplicar: se lleva la imagen al dominio de la frecuencia con la transformada de Fourier 2D, se multiplica su espectro por una máscara $H(u, v)$ y se vuelve al espacio con la transformada inversa. Es equivalente a convolucionar con un núcleo en el espacio, pero permite diseñar el filtro pensando directamente en qué frecuencias se quieren conservar.
+
+$$
+g(x, y) = \mathcal{F}^{-1}\big\{ H(u, v)\, \mathcal{F}\{f(x, y)\} \big\}
+$$
+
+## La distancia al centro del espectro
+
+Con el espectro centrado (`np.fft.fftshift`), la distancia de cada punto al centro es
+
+$$
+D(u, v) = \sqrt{u^2 + v^2}
+$$
+
+y, con `np.fft.fftfreq`, queda en **ciclos por píxel**, entre 0 y 0,5. Si se conoce el tamaño del píxel (`PixelSpacing` en el encabezado DICOM, en mm), las frecuencias se pueden expresar en **ciclos por milímetro** pasando `d=` a `fftfreq`, y el filtro deja de depender de la resolución de la imagen.
+
+```python
+import numpy as np
+
+def distancia(n, espaciado=1.0):
+    """D(u, v) del espectro centrado: ciclos/píxel (espaciado=1) o ciclos/mm."""
+    f = np.fft.fftshift(np.fft.fftfreq(n, d=espaciado))
+    u, v = np.meshgrid(f, f)
+    return np.hypot(u, v)
+```
+
+## Tres pasa bajos con el mismo corte
+
+| Filtro | $H(D)$ | Transición |
+|:--|:--|:--|
+| Ideal | $1$ si $D \le D_0$, $0$ si no | Abrupta |
+| Butterworth de orden $n$ | $\dfrac{1}{1 + (D/D_0)^{2n}}$ | Ajustable con $n$ |
+| Gaussiano | $e^{-D^2 / 2D_0^2}$ | Suave, sin rebote |
+
+: Tres pasa bajos; el pasa altos correspondiente es $1 - H$.
+
+![Las tres funciones de transferencia con $D_0 = 0{,}08$ ciclos/píxel.](fig/filtros-transferencia){#fig-transferencia width="80%"}
+
+```python
+def aplicar(img, h):
+    F = np.fft.fftshift(np.fft.fft2(img))
+    return np.real(np.fft.ifft2(np.fft.ifftshift(F * h)))
+
+d = distancia(256)
+ideal = (d <= 0.08).astype(float)
+butterworth = 1 / (1 + (d / 0.08) ** 4)          # orden 2
+gaussiano = np.exp(-(d ** 2) / (2 * 0.08 ** 2))
+```
+
+## Qué le hacen a la imagen
+
+![El fantoma de Shepp-Logan filtrado con los tres pasa bajos.](fig/filtros-imagenes){#fig-imagenes width="100%"}
+
+A simple vista los tres suavizan. La diferencia aparece al mirar un perfil: el corte abrupto del filtro ideal hace que la imagen oscile junto a los bordes (efecto Gibbs), y esas oscilaciones se ven como anillos.
+
+![Perfil de la fila central: el ideal oscila junto a los bordes; el Gaussiano, no.](fig/filtros-perfil){#fig-perfil width="80%"}
+
+## Lo que sigue
+
+La misma estructura sirve para los filtros que vienen después en el curso: el **pasa-banda** (producto de un pasa bajos y un pasa altos) y el **notch**, que anula un punto del espectro y su simétrico para quitar un patrón periódico. En cada caso conviene comparar las mismas tres cosas: el espectro, la máscara y la imagen reconstruida.
+
+## Código de las figuras
+
+```{.python archivo="figuras.py"}
+```

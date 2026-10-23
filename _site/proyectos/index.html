@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Proyectos de investigación en biomecánica, bioseñales y reproducibilidad.">
 
 <title>Proyectos – P. E. Caicedo-Rodríguez</title>
 <style>
@@ -30,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../recursos/marca/logos/insignia.png" rel="icon" type="image/png">
+<link href="../recursos/marca/logo/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -40,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-6b87496211af89a42e0b8524bfc2cf8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5d5b01eeb7a5f7a711eacd0f92cb5dbe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3ea025ca51a21a1d1a970835ebe5fd04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -100,10 +101,43 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Proyectos – P. E. Caicedo-Rodríguez">
+<meta property="og:description" content="Proyectos de investigación en biomecánica, bioseñales y reproducibilidad.">
+<meta property="og:image" content="../proyectos/riesgo-de-caida/tarjeta.png">
+<meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -111,8 +145,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo light-content">
-    <img src="../recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo dark-content">
+    <img src="../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo light-content">
+    <img src="../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
@@ -125,15 +159,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Perfil</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../cursos/index.html"> 
 <span class="menu-text">Cursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../charlas-y-conferencias/index.html"> 
+    <a class="nav-link" href="../charlas/index.html"> 
 <span class="menu-text">Charlas y Conferencias</span></a>
   </li>  
   <li class="nav-item">
@@ -141,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Proyectos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../herramientas-y-tutoriales/index.html"> 
+    <a class="nav-link" href="../tutoriales/index.html"> 
 <span class="menu-text">Herramientas y Tutoriales</span></a>
   </li>  
 </ul>
@@ -155,17 +185,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RG9jZW5jaWE=">Docencia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2UlQzMlQjFhbGVz">Señales <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Proyectos</h1>
-<p class="subtitle lead">Del problema a la evidencia</p>
 </div>
 
+<div>
+  <div class="description">
+    Proyectos de investigación en biomecánica, bioseñales y reproducibilidad.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -180,35 +213,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Cada proyecto presenta el problema, los métodos y los resultados. El ejemplo disponible utiliza datos sintéticos y permite comprobar el procedimiento de los materiales docentes.</p>
+<p>Cada proyecto se presenta en tres partes: el <strong>problema</strong>, los <strong>métodos</strong> y los <strong>resultados</strong>. Cuando los resultados vienen de datos simulados (para mostrar el análisis antes de tener los datos reales), la página lo dice al comienzo de esa sección.</p>
 
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U2UlQzMlQjFhbGVzJTJDUHl0aG9uJTJDRG9jZW5jaWE=" data-listing-file-modified-sort="1792586430235" data-listing-reading-time-sort="1" data-listing-word-count-sort="156">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../proyectos/valor-eficaz/index.html" class="no-external">Valor eficaz de una señal</a>
-</h3>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="QmlvbWVjJUMzJUExbmljYSUyQ01hcmNoYSUyQ0luZmVyZW5jaWE=" data-listing-date-sort="1790139600000" data-listing-file-modified-sort="1792628119000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="536">
+<a href="../proyectos/riesgo-de-caida/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../proyectos/riesgo-de-caida/tarjeta.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Riesgo de caída a partir de parámetros de marcha
+</h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('U2UlQzMlQjFhbGVz'); return false;">Señales</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QmlvbWVjJUMzJUExbmljYQ=='); return false;">Biomecánica</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TWFyY2hh'); return false;">Marcha</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('RG9jZW5jaWE='); return false;">Docencia</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SW5mZXJlbmNpYQ=='); return false;">Inferencia</div>
 
 </div>
-<div class="delink listing-description"><a href="../proyectos/valor-eficaz/index.html" class="no-external">
-<p>Un cálculo reproducible de RMS para conectar una señal discreta, su método y sus límites.</p>
-</a></div>
+<div class="card-text listing-description delink">
+<p>Análisis de 13 parámetros de marcha medidos con captura de movimiento en 44 participantes: repetibilidad, asociación con el riesgo de caída y control de comparaciones…</p>
 </div>
-<div class="metadata">
-<a href="../proyectos/valor-eficaz/index.html" class="no-external">
-</a>
 </div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="UmVwcm9kdWNpYmlsaWRhZCUyQ1NvZnR3YXJl" data-listing-date-sort="1788238800000" data-listing-file-modified-sort="1792628151000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="467">
+<a href="../proyectos/bioforge/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../proyectos/bioforge/tarjeta.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+BioForge Experiment OS
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVwcm9kdWNpYmlsaWRhZA=='); return false;">Reproducibilidad</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U29mdHdhcmU='); return false;">Software</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Separar el dato original, el curado, el derivado y la evidencia, con contratos versionados, seudonimización y manifiestos SHA-256.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Qmlvc2UlQzMlQjFhbGVzJTJDRU1HJTJDUmVwcm9kdWNpYmlsaWRhZA==" data-listing-date-sort="1787202000000" data-listing-file-modified-sort="1792628158000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="470">
+<a href="../proyectos/espasticidad-semg/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../proyectos/espasticidad-semg/tarjeta.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Cuantificación de actividad muscular con sEMG
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Qmlvc2UlQzMlQjFhbGVz'); return false;">Bioseñales</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RU1H'); return false;">EMG</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVwcm9kdWNpYmlsaWRhZA=='); return false;">Reproducibilidad</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Un procesamiento de electromiografía de superficie que va del CSV del equipo a métricas de amplitud y frecuencia, con cada paso registrado.</p>
+</div>
+</div>
+</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>
@@ -300,11 +383,6 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -622,13 +700,13 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Pablo Eduardo Caicedo-Rodríguez</p>
+<p>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Ingeniería que hace comprensible la salud.</p>
+<p>Del dato a la causa · Hecho con <a href="https://quarto.org">Quarto</a></p>
 </div>
   </div>
 </footer>

@@ -1,15 +1,13 @@
 ---
 title: "Cursos"
-subtitle: "Aprender a medir, modelar e interpretar"
+description: "Asignaturas de ingeniería biomédica: señales, imágenes médicas y aprendizaje automático."
 toc: false
 listing:
   contents: "*/index.qmd"
-  type: default
-  categories: true
-  sort: title
-  fields: [title, description, categories]
+  type: grid
+  grid-columns: 3
+  sort: "title"
+  fields: [image, title, subtitle, description]
 ---
 
-Cada curso reúne su introducción, resultados de aprendizaje, calendario, presentaciones, laboratorios, recursos y referentes.
-
-El material disponible es un ejemplo docente construido a partir de los cuadernos de BioForja. Las fechas de una oferta académica se publicarán cuando estén definidas.
+Cada curso tiene la misma estructura: **introducción**, **resultados de aprendizaje**, **calendario y fechas importantes**, **presentaciones**, **laboratorios**, **recursos y tutoriales** y **referentes**. Las presentaciones se publican en HTML (revealjs) y en PDF (beamer), y las guías de laboratorio en HTML y PDF.

@@ -1,0 +1,40 @@
+<%
+// materiales.ejs — listado de materiales de un curso (presentaciones, laboratorios) con un
+// botón por formato. Marca P. E. Caicedo-Rodríguez v2.1 (generado por fuente/construir_marca.py).
+//
+//   listing:
+//     - id: presentaciones
+//       contents: presentaciones/*.qmd
+//       sort: rotulo
+//       template: ../../recursos/marca/sitio/materiales.ejs
+//       template-params:
+//         html: Diapositivas      # texto del botón del HTML (revealjs o página)
+//         pdf: PDF                # texto del botón del PDF (beamer o documento); false = sin botón
+//
+// Campos del front matter de cada material: title, description, date y rotulo (p. ej.
+// "Semana 3" o "Lab 2"). pdf: false en un material quita su botón de PDF.
+// En las plantillas propias Quarto entrega items, metadataAttrs y templateParams.
+const p = (typeof templateParams !== 'undefined' && templateParams) || {};
+const textoHtml = p.html || 'Ver';
+const textoPdf = p.pdf === false ? null : (p.pdf || 'PDF');
+%>
+```{=html}
+<ol class="materiales">
+<% for (const item of items) {
+     const ruta = item.path || '';
+     const pdf = ruta.replace(/\.html$/, '.pdf');
+     const conPdf = textoPdf && item.pdf !== false; %>
+  <li class="material" <%= metadataAttrs(item) %>>
+    <div class="material-rotulo"><%= item.rotulo || item.date || '' %></div>
+    <div class="material-cuerpo">
+      <a class="material-titulo no-external" href="<%- ruta %>"><%= item.title %></a>
+      <% if (item.description) { %><p class="material-desc"><%= item.description %></p><% } %>
+    </div>
+    <div class="material-formatos">
+      <a class="formato-html no-external" href="<%- ruta %>"><%= textoHtml %></a>
+      <% if (conPdf) { %><a class="formato-pdf no-external" href="<%- pdf %>"><%= textoPdf %></a><% } %>
+    </div>
+  </li>
+<% } %>
+</ol>
+```

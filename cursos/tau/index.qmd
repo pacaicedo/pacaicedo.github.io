@@ -1,0 +1,140 @@
+---
+title: "Técnicas de Aprendizaje Automático"
+subtitle: "TAU · semestre 2026-2"
+description: "Aprendizaje automático clásico: explorar, reducir dimensión, agrupar y clasificar, con validación honesta."
+image: tarjeta.png
+title-block-banner: true
+categories: [TAU, Aprendizaje automático]
+bibliography: referentes.bib
+nocite: |
+  @*
+include-after-body: ../../recursos/marca/sitio/calendario.html
+listing:
+  - id: presentaciones
+    contents: presentaciones/*.qmd
+    sort: date
+    template: ../../recursos/marca/sitio/materiales.ejs
+    template-params:
+      html: Diapositivas
+      pdf: PDF
+  - id: laboratorios
+    contents: laboratorios/*.qmd
+    sort: date
+    template: ../../recursos/marca/sitio/materiales.ejs
+    template-params:
+      html: Guía
+      pdf: PDF
+  - id: tutoriales-tau
+    contents: ../../tutoriales/*/index.qmd
+    include:
+      categories: TAU
+    type: default
+    fields: [title, description]
+    sort: title
+---
+
+## Introducción
+
+Aprender de datos es hacer tres preguntas distintas: qué hay en la tabla (exploración), qué estructura tiene sin decirle qué buscar (aprendizaje no supervisado) y qué tan bien predice una variable a partir de las demás (aprendizaje supervisado). El curso recorre las tres con técnicas clásicas —PCA, k-means, agrupamiento jerárquico, regresión logística, k vecinos, máquinas de soporte vectorial y árboles— sobre datos tabulares [@james2023; @hastie2009].
+
+El núcleo es el aprendizaje automático clásico. El aprendizaje profundo y el procesamiento especializado de señales e imágenes quedan fuera: se ven en otras asignaturas. A cambio, el curso insiste en lo que suele fallar en la práctica: la fuga de información entre entrenamiento y prueba, la unidad de análisis y las métricas que dicen más de lo que el modelo sabe [@kapoor2023].
+
+::: {.ficha}
+Código
+: TAU
+
+Semestre
+: 2026-2
+
+Horario
+: miércoles, 14:00–18:00
+
+Intensidad
+: 4 horas por semana
+
+Evaluación
+: 3 laboratorios (50 %), parcial (25 %) y proyecto (25 %)
+:::
+
+## Resultados de Aprendizaje
+
+Al terminar el curso, cada estudiante podrá:
+
+::: {.ra}
+1. **Explorar** un conjunto de datos tabular: describir cada variable, detectar faltantes y atípicos, y decidir qué hacer con ellos sin imputar ni descartar a ciegas.
+2. **Reducir** la dimensión con PCA a partir de variables estandarizadas, e interpretar la varianza explicada y las cargas de cada componente.
+3. **Agrupar** observaciones con k-means y agrupamiento jerárquico, elegir el número de grupos con criterios explícitos (silueta, codo) y no confundir un grupo con una clase.
+4. **Entrenar y comparar** clasificadores (regresión logística, k vecinos, SVM y árboles) con validación cruzada que respete la unidad de análisis.
+5. **Informar** el desempeño con métricas adecuadas al problema y sus intervalos, diciendo qué mide el modelo y qué no.
+:::
+
+## Calendario y fechas importantes
+
+### Fechas importantes
+
+::: {.fechas}
+| Fecha      | Entrega o evaluación                                    | Peso |
+|:-----------|:--------------------------------------------------------|-----:|
+| 2026-08-26 | Laboratorio 1: exploración de datos                      | 15 % |
+| 2026-09-30 | Laboratorio 2: PCA y k-means                             | 20 % |
+| 2026-10-14 | Parcial                                                  | 25 % |
+| 2026-10-28 | Propuesta del proyecto                                   |  5 % |
+| 2026-11-11 | Laboratorio 3: clasificación con validación por participante | 15 % |
+| 2026-11-25 | Proyecto final                                           | 20 % |
+:::
+
+### Semana a semana
+
+::: {.calendario}
+| Semana | Lunes      | Tema                                                   | Material |
+|-------:|:-----------|:-------------------------------------------------------|:---------|
+| 1  | 2026-08-03 | Aprender de datos: tres preguntas distintas             | Presentación 1 |
+| 2  | 2026-08-10 | Exploración y visualización                             | Laboratorio 1 |
+| 3  | 2026-08-17 | Faltantes, atípicos y unidad de análisis                | |
+| 4  | 2026-08-24 | Escalamiento y distancias                               | |
+| 5  | 2026-08-31 | Componentes principales                                 | Presentación 5 |
+| 6  | 2026-09-07 | Interpretar las componentes: cargas y biplot            | Laboratorio 2 |
+| 7  | 2026-09-14 | k-means                                                 | |
+| 8  | 2026-09-21 | Agrupamiento jerárquico y DBSCAN                        | |
+| 9  | 2026-09-28 | Validar un agrupamiento: silueta y estabilidad          | |
+| 10 | 2026-10-05 | Clasificación: regresión logística y k vecinos          | |
+| 11 | 2026-10-12 | Parcial y máquinas de soporte vectorial                 | |
+| 12 | 2026-10-19 | Árboles y bosques aleatorios                            | |
+| 13 | 2026-10-26 | Validación cruzada y fuga de información                | Laboratorio 3 |
+| 14 | 2026-11-02 | Métricas: matriz de confusión, sensibilidad y curva ROC | |
+| 15 | 2026-11-09 | Interpretar y reportar un modelo                        | |
+| 16 | 2026-11-16 | Proyecto final                                          | |
+:::
+
+## Presentaciones
+
+Cada presentación tiene una versión en línea (revealjs) y un PDF (beamer) con la misma composición.
+
+::: {#presentaciones}
+:::
+
+## Laboratorios
+
+Las guías se publican la semana en que empieza cada laboratorio.
+
+::: {#laboratorios}
+:::
+
+## Recursos y tutoriales
+
+### Tutoriales del sitio
+
+::: {#tutoriales-tau}
+:::
+
+### Software y datos
+
+- [scikit-learn](https://scikit-learn.org/stable/user_guide.html): todos los modelos del curso, con la misma interfaz `fit` / `predict` [@pedregosa2011].
+- [pandas](https://pandas.pydata.org/docs/): leer, limpiar y resumir tablas.
+- [UCI Machine Learning Repository](https://archive.ics.uci.edu): conjuntos de datos públicos para practicar y para el proyecto.
+- [Datos de ejemplo del sitio](../../recursos/python/datos_ejemplo.py): parámetros de marcha simulados de 44 participantes, 5 marchas cada uno.
+
+## Referentes
+
+::: {#refs}
+:::

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Asignaturas de ingeniería biomédica: señales, imágenes médicas y aprendizaje automático.">
 
 <title>Cursos – P. E. Caicedo-Rodríguez</title>
 <style>
@@ -30,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../recursos/marca/logos/insignia.png" rel="icon" type="image/png">
+<link href="../recursos/marca/logo/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -40,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-6b87496211af89a42e0b8524bfc2cf8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5d5b01eeb7a5f7a711eacd0f92cb5dbe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3ea025ca51a21a1d1a970835ebe5fd04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-subtitle','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -100,10 +101,43 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Cursos – P. E. Caicedo-Rodríguez">
+<meta property="og:description" content="Asignaturas de ingeniería biomédica: señales, imágenes médicas y aprendizaje automático.">
+<meta property="og:image" content="../cursos/psim/tarjeta.png">
+<meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -111,8 +145,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo light-content">
-    <img src="../recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo dark-content">
+    <img src="../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo light-content">
+    <img src="../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
@@ -125,15 +159,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Perfil</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="../cursos/index.html" aria-current="page"> 
 <span class="menu-text">Cursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../charlas-y-conferencias/index.html"> 
+    <a class="nav-link" href="../charlas/index.html"> 
 <span class="menu-text">Charlas y Conferencias</span></a>
   </li>  
   <li class="nav-item">
@@ -141,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Proyectos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../herramientas-y-tutoriales/index.html"> 
+    <a class="nav-link" href="../tutoriales/index.html"> 
 <span class="menu-text">Herramientas y Tutoriales</span></a>
   </li>  
 </ul>
@@ -155,17 +185,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RG9jZW5jaWE=">Docencia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2UlQzMlQjFhbGVz">Señales <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Cursos</h1>
-<p class="subtitle lead">Aprender a medir, modelar e interpretar</p>
 </div>
 
+<div>
+  <div class="description">
+    Asignaturas de ingeniería biomédica: señales, imágenes médicas y aprendizaje automático.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -180,34 +213,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Cada curso reúne su introducción, resultados de aprendizaje, calendario, presentaciones, laboratorios, recursos y referentes.</p>
-<p>El material disponible es un ejemplo docente construido a partir de los cuadernos de BioForja. Las fechas de una oferta académica se publicarán cuando estén definidas.</p>
+<p>Cada curso tiene la misma estructura: <strong>introducción</strong>, <strong>resultados de aprendizaje</strong>, <strong>calendario y fechas importantes</strong>, <strong>presentaciones</strong>, <strong>laboratorios</strong>, <strong>recursos y tutoriales</strong> y <strong>referentes</strong>. Las presentaciones se publican en HTML (revealjs) y en PDF (beamer), y las guías de laboratorio en HTML y PDF.</p>
 
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U2UlQzMlQjFhbGVzJTJDRG9jZW5jaWE=" data-listing-file-modified-sort="1792587001759" data-listing-reading-time-sort="2" data-listing-word-count-sort="254">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../cursos/senales-biomedicas/index.html" class="no-external">Introducción a las señales biomédicas</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U2UlQzMlQjFhbGVz'); return false;">Señales</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RG9jZW5jaWE='); return false;">Docencia</div>
-
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="UFNJTSUyQ0ltJUMzJUExZ2VuZXMlMjBtJUMzJUE5ZGljYXM=" data-listing-file-modified-sort="1792591626000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1109">
+<a href="../cursos/psim/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../cursos/psim/tarjeta.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Procesamiento Digital de Imágenes Médicas
+</h5>
+<div class="card-subtitle listing-subtitle">
+PSIM · semestre 2026-2
 </div>
-<div class="delink listing-description"><a href="../cursos/senales-biomedicas/index.html" class="no-external">
-<p>Una ruta docente para formular preguntas, calcular el valor eficaz y comunicar los límites de una medición.</p>
-</a></div>
+<div class="card-text listing-description delink">
+<p>Fundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.</p>
 </div>
-<div class="metadata">
-<a href="../cursos/senales-biomedicas/index.html" class="no-external">
-</a>
 </div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="U1lTQiUyQ1NlJUMzJUIxYWxlcw==" data-listing-file-modified-sort="1792592392000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1034">
+<a href="../cursos/sysb/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../cursos/sysb/tarjeta.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Sistemas y Señales Biomédicos
+</h5>
+<div class="card-subtitle listing-subtitle">
+SYSB · semestre 2026-2
+</div>
+<div class="card-text listing-description delink">
+<p>Señales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="VEFVJTJDQXByZW5kaXphamUlMjBhdXRvbSVDMyVBMXRpY28=" data-listing-file-modified-sort="1792615230000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1242">
+<a href="../cursos/tau/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../cursos/tau/tarjeta.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Técnicas de Aprendizaje Automático
+</h5>
+<div class="card-subtitle listing-subtitle">
+TAU · semestre 2026-2
+</div>
+<div class="card-text listing-description delink">
+<p>Aprendizaje automático clásico: explorar, reducir dimensión, agrupar y clasificar, con validación honesta.</p>
+</div>
+</div>
+</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>
@@ -299,11 +367,6 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -621,13 +684,13 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Pablo Eduardo Caicedo-Rodríguez</p>
+<p>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Ingeniería que hace comprensible la salud.</p>
+<p>Del dato a la causa · Hecho con <a href="https://quarto.org">Quarto</a></p>
 </div>
   </div>
 </footer>

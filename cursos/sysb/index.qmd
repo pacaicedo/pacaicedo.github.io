@@ -1,0 +1,135 @@
+---
+title: "Sistemas y Señales Biomédicos"
+subtitle: "SYSB · semestre 2026-2"
+description: "Señales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python."
+image: tarjeta.png
+title-block-banner: true
+categories: [SYSB, Señales]
+bibliography: referentes.bib
+nocite: |
+  @*
+include-after-body: ../../recursos/marca/sitio/calendario.html
+listing:
+  - id: presentaciones
+    contents: presentaciones/*.qmd
+    sort: date
+    template: ../../recursos/marca/sitio/materiales.ejs
+    template-params:
+      html: Diapositivas
+      pdf: PDF
+  - id: laboratorios
+    contents: laboratorios/*.qmd
+    sort: date
+    template: ../../recursos/marca/sitio/materiales.ejs
+    template-params:
+      html: Guía
+      pdf: PDF
+  - id: tutoriales-sysb
+    contents: ../../tutoriales/*/index.qmd
+    include:
+      categories: SYSB
+    type: default
+    fields: [title, description]
+    sort: title
+---
+
+## Introducción
+
+Las señales biomédicas —el ECG, el EMG, el EEG— son mediciones con estructura: tienen un ancho de banda, una forma y unas componentes no deseadas que no son todas «ruido». La deriva de línea base, la interferencia de la red eléctrica y los artefactos de movimiento tienen orígenes distintos y piden tratamientos distintos [@rangayyan2015].
+
+El curso va de los fundamentos (señales, muestreo, sistemas lineales e invariantes en el tiempo) al análisis en frecuencia y el diseño de filtros digitales, con ejemplos en Python sobre `numpy` y `scipy.signal` [@oppenheim2010].
+
+::: {.ficha}
+Código
+: SYSB
+
+Semestre
+: 2026-2
+
+Horario
+: martes y viernes, 9:00–11:00
+
+Intensidad
+: 4 horas por semana
+
+Evaluación
+: 2 parciales (40 %), laboratorios (40 %) y proyecto (20 %)
+:::
+
+## Resultados de Aprendizaje
+
+Al terminar el curso, cada estudiante podrá:
+
+::: {.ra}
+1. **Clasificar** señales y sistemas (continuos o discretos, lineales, invariantes, causales) y justificar la clasificación.
+2. **Elegir** una frecuencia de muestreo a partir del ancho de banda de la señal y explicar el aliasing.
+3. **Calcular** la salida de un sistema LTI por convolución y por su respuesta en frecuencia.
+4. **Distinguir** la deriva de línea base, la interferencia de red y los artefactos de movimiento, y proponer un tratamiento para cada una.
+5. **Diseñar y aplicar** filtros digitales en Python, incluido el filtrado de fase cero, y verificar su efecto en el tiempo y en la frecuencia.
+:::
+
+## Calendario y fechas importantes
+
+### Fechas importantes
+
+::: {.fechas}
+| Fecha      | Entrega o evaluación                    | Peso |
+|:-----------|:----------------------------------------|-----:|
+| 2026-08-28 | Laboratorio 0: entorno y primeras señales |  5 % |
+| 2026-09-18 | Parcial 1                               | 20 % |
+| 2026-10-02 | Laboratorio 1: filtrado de un ECG        | 15 % |
+| 2026-10-30 | Laboratorio 2: análisis espectral de EMG | 20 % |
+| 2026-11-13 | Parcial 2                               | 20 % |
+| 2026-11-27 | Proyecto final                          | 20 % |
+:::
+
+### Semana a semana
+
+::: {.calendario}
+| Semana | Lunes      | Tema                                              | Material |
+|-------:|:-----------|:--------------------------------------------------|:---------|
+| 1  | 2026-08-03 | Señales biomédicas y sistemas                     | Presentación 1 |
+| 2  | 2026-08-10 | Operaciones con señales; energía y potencia      | |
+| 3  | 2026-08-17 | Muestreo y aliasing                               | |
+| 4  | 2026-08-24 | Análisis en el tiempo                             | |
+| 5  | 2026-08-31 | Introducción a Fourier                            | |
+| 6  | 2026-09-07 | Adquisición: amplificación y conversión A/D       | |
+| 7  | 2026-09-14 | Sistemas LTI y convolución                        | Presentación 7 |
+| 8  | 2026-09-21 | Respuesta en frecuencia                           | Laboratorio 1 |
+| 9  | 2026-09-28 | Filtros digitales FIR e IIR                       | |
+| 10 | 2026-10-05 | Filtrado de fase cero                             | |
+| 11 | 2026-10-12 | Transformada Z                                    | |
+| 12 | 2026-10-19 | Análisis espectral: Welch y ventanas              | Laboratorio 2 |
+| 13 | 2026-10-26 | Respuesta temporal de sistemas                    | |
+| 14 | 2026-11-02 | Señales de EMG: envolvente y frecuencia media     | |
+| 15 | 2026-11-09 | Señales de EEG: bandas y potencia                 | |
+| 16 | 2026-11-16 | Proyecto final                                    | |
+:::
+
+## Presentaciones
+
+::: {#presentaciones}
+:::
+
+## Laboratorios
+
+::: {#laboratorios}
+:::
+
+## Recursos y tutoriales
+
+### Tutoriales del sitio
+
+::: {#tutoriales-sysb}
+:::
+
+### Software y datos
+
+- [SciPy, módulo `signal`](https://docs.scipy.org/doc/scipy/reference/signal.html): diseño y aplicación de filtros, análisis espectral.
+- [PhysioNet](https://physionet.org): bases de datos públicas de señales fisiológicas (ECG, EMG, EEG).
+- [Datos de ejemplo del sitio](../../recursos/python/datos_ejemplo.py): ECG y sEMG sintéticos con componentes no deseadas conocidas.
+
+## Referentes
+
+::: {#refs}
+:::

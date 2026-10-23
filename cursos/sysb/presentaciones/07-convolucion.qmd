@@ -1,0 +1,51 @@
+---
+title: "Convolución y sistemas LTI"
+subtitle: "La respuesta al impulso lo dice todo"
+description: "Convolución discreta paso a paso, su cálculo en NumPy y la relación con la respuesta en frecuencia."
+rotulo: "Semana 7"
+date: 2026-09-14
+---
+
+# Convolución
+
+## La salida de un sistema LTI
+
+Si $h[n]$ es la respuesta al impulso, la salida para cualquier entrada es
+
+$$
+y[n] = (x * h)[n] = \sum_{k=-\infty}^{\infty} x[k]\, h[n-k]
+$$
+
+- Cada muestra de la entrada «dispara» una copia de $h$, escalada y desplazada
+- La salida es la suma de todas esas copias
+
+## Un ejemplo que se puede hacer a mano
+
+Con $x = [1, 2, 1]$ y $h = [1, 1]$:
+
+![](../fig/convolucion-diapositiva){width="70%"}
+
+## En NumPy y en SciPy
+
+```python
+import numpy as np
+from scipy import signal
+
+y = np.convolve([1, 2, 1], [1, 1])   # [1, 3, 3, 1]
+
+b, a = signal.butter(4, 40, fs=500)  # pasa bajos IIR
+y = signal.lfilter(b, a, x)          # causal: con retraso
+y0 = signal.filtfilt(b, a, x)        # fase cero: sin él
+```
+
+# Fase
+
+## El retraso importa en el ECG
+
+![La onda R filtrada con lfilter llega tarde; con filtfilt, no.](../../../tutoriales/filtrado-fase-cero/fig/fase-cero-diapositiva){width="68%"}
+
+## Para medir intervalos, fase cero
+
+- `filtfilt` aplica el filtro hacia adelante y hacia atrás: la fase se cancela
+- El orden efectivo se duplica y el filtro deja de ser causal
+- Sirve para análisis fuera de línea, no para monitoreo en tiempo real

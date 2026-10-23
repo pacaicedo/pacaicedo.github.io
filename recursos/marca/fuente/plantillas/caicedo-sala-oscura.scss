@@ -1,0 +1,31 @@
+/*-- scss:defaults --*/
+// caicedo-sala-oscura.scss: modo «sala oscura» de las diapositivas revealjs (v2).
+// Capa que va DESPUÉS de caicedo-diapositivas.scss y solo reasigna los papeles de color:
+//
+//   format:
+//     revealjs:
+//       theme: [recursos/marca/caicedo-diapositivas.scss, recursos/marca/caicedo-sala-oscura.scss]
+//       highlight-style: recursos/marca/caicedo-oscuro.theme
+//
+// Para auditorios a oscuras: fondo neutro casi negro (no tiñe las imágenes médicas en gris),
+// texto luz ligeramente apagado (el blanco puro deslumbra en la penumbra) y acentos -luz,
+// todos a 7:1 o más. En salas con luz o ventanas, mejor el modo claro.
+// Archivo generado por fuente/construir_marca.py: valores literales a propósito (Quarto
+// pone los defaults de esta capa antes que los de la base).
+
+$s-fondo:          @@sala@@;
+$s-titulo:         @@luz@@;
+$s-texto:          @@luz@@;
+$s-tenue:          @@tenue-luz@@;
+$s-dato:           @@dato-luz@@;
+$s-grafo:          @@grafo-luz@@;
+$s-causa:          @@causa-luz@@;
+$s-aviso:          @@aviso-luz@@;
+$s-papel:          @@sala-2@@;
+$s-regla:          @@tenue-luz@@;
+$s-portada:        @@sala@@;
+$s-motivo:         url("@@MOTIVO_OSCURO@@");
+$s-firma-clara:    url("@@FIRMA_PIE_OSCURO@@");
+$s-firma-oscura:   url("@@FIRMA_PIE_OSCURO@@");
+$s-sala-oscura:    true;
+$selection-bg:     rgba(@@dato-luz@@, .35);

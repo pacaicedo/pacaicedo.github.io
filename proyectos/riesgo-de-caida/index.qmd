@@ -1,0 +1,76 @@
+---
+title: "Riesgo de caída a partir de parámetros de marcha"
+subtitle: "Qué parámetro de la marcha se asocia más con el riesgo derivado del SPPB"
+description: "Análisis de 13 parámetros de marcha medidos con captura de movimiento en 44 participantes: repetibilidad, asociación con el riesgo de caída y control de comparaciones múltiples."
+date: 2026-09-23
+image: tarjeta.png
+title-block-banner: true
+categories: [Biomecánica, Marcha, Inferencia]
+bibliography: referencias.bib
+---
+
+::: {.ficha}
+Estado
+: [En curso]{.etiqueta .en-curso}
+
+Participantes
+: 44 registrados, 42 analizables
+
+Datos
+: Captura de movimiento (Vicon), 5 marchas por persona
+
+Desenlace
+: Riesgo de caída derivado del SPPB
+
+Infraestructura
+: [BioForge Experiment OS](../bioforge/index.qmd)
+:::
+
+## Problema
+
+Las caídas en personas mayores tienen consecuencias graves y se pueden anticipar en parte con pruebas de desempeño físico como la Short Physical Performance Battery (SPPB) [@guralnik1994]. La captura de movimiento mide la marcha con mucho más detalle: velocidad, cadencia, longitudes y tiempos de paso y de zancada, fases de apoyo. La pregunta del proyecto es concreta: **¿qué parámetro de la marcha se asocia más con el riesgo de caída derivado del SPPB?**
+
+Es una pregunta de asociación, no de causa ni de diagnóstico. Un parámetro asociado con el riesgo puede ayudar a orientar una evaluación, pero no basta para clasificar a una persona ni dice qué intervenir.
+
+## Métodos
+
+### Participantes y desenlace
+
+Se registraron 44 participantes. El desenlace binario sale del SPPB: 16 con riesgo, 26 sin riesgo y 2 sin clasificación, que quedan fuera del análisis. La **unidad de análisis es el participante**: las cinco marchas de cada persona son mediciones repetidas, no observaciones independientes.
+
+### Parámetros
+
+Trece familias de parámetros del bloque *Gait Cycle Parameters* de la exportación de Vicon. Los archivos originales se conservan con su huella SHA-256 y se normalizan con un contrato versionado; los valores faltantes no se imputan.
+
+### Análisis
+
+1. **Repetibilidad**: ICC(2,1) de cada parámetro entre las cinco marchas [@shrout1979], interpretado con los umbrales de Koo y Li [@koo2016].
+2. **Un valor por participante**: el promedio de las cinco marchas, estandarizado (media 0, desviación estándar 1).
+3. **Asociación**: regresión logística con la penalización de Firth [@firth1993; @heinze2002], un parámetro a la vez. Con 42 participantes, la penalización evita estimaciones infinitas cuando un parámetro separa casi por completo los grupos. El efecto se informa como razón de probabilidades (OR) por cada desviación estándar.
+4. **Incertidumbre**: intervalo de confianza del 95 % por bootstrap de participantes (2000 remuestreos) y valor p por razón de verosimilitud penalizada.
+5. **Comparaciones múltiples**: corrección de Benjamini-Hochberg sobre los 13 parámetros [@benjamini1995].
+
+El código completo del análisis está en `figuras.py`, junto a esta página.
+
+## Resultados
+
+[Datos simulados]{.etiqueta .aviso}
+
+::: {.callout-warning}
+## Esta sección usa datos simulados
+El análisis con los datos reales está en curso. Para fijar el flujo antes de mirar los datos reales, aquí se corre completo sobre datos **simulados** con la misma estructura: 44 participantes, 5 marchas, 13 parámetros y el mismo reparto del desenlace (16, 26 y 2). Ningún número de esta sección describe a los participantes del estudio.
+:::
+
+### Repetibilidad
+
+![Repetibilidad de cada parámetro entre las cinco marchas (datos simulados).](fig/fiabilidad){#fig-fiabilidad width="82%"}
+
+La mayoría de los parámetros simulados tiene una repetibilidad buena o excelente. El índice de cojera queda por debajo de 0,5: su asociación con el desenlace se interpreta con cautela, porque buena parte de su variación es ruido entre marchas.
+
+### Asociación con el riesgo de caída
+
+![Razón de probabilidades por desviación estándar, con su intervalo bootstrap (datos simulados).](fig/asociaciones){#fig-asociaciones width="90%"}
+
+{{< include _tabla-resultados.md >}}
+
+En la simulación, solo la longitud de paso y la de zancada mantienen un q menor que 0,05 después de la corrección: una zancada más larga se asocia con menos probabilidad de riesgo. La velocidad de marcha queda cerca del umbral. Con los datos reales, la @tbl-resultados y las dos figuras se regeneran sin cambiar nada más que la fuente de los datos.

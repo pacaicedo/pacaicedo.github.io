@@ -1,0 +1,49 @@
+---
+title: "Validación cruzada por participante"
+description: "Cuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold."
+date: 2026-10-14
+categories: [Tutorial, TAU, Aprendizaje automático]
+bibliography: ../../cursos/tau/referentes.bib
+---
+
+## El problema
+
+En biomecánica y en bioseñales cada participante suele aportar varias mediciones: cinco marchas, diez contracciones, varios minutos de ECG. Esas mediciones se parecen mucho entre sí porque vienen de la misma persona. Si la validación cruzada reparte **mediciones** al azar entre entrenamiento y prueba, el modelo ve en el entrenamiento a las mismas personas que luego evalúa, y aprende a reconocerlas en lugar de aprender la clase. Es una forma de fuga de información [@kapoor2023].
+
+## Un experimento que lo muestra
+
+Con datos simulados en los que las variables **no tienen ninguna relación con la clase**, la exactitud real de cualquier clasificador es 0,5. Cada uno de los 40 participantes simulados tiene cinco ensayos muy parecidos entre sí, y la clase se asigna al azar por participante.
+
+![Exactitud estimada con las dos validaciones sobre 60 simulaciones. La fila roja promete un clasificador casi perfecto que no existe.](fig/fuga){#fig-fuga width="92%"}
+
+Repartiendo ensayos (`KFold`), la validación estima una exactitud media de 0,96. Repartiendo participantes (`GroupKFold`), de 0,49: lo que de verdad hay.
+
+## La solución: grupos
+
+En scikit-learn basta con decirle a la validación cuál es la unidad de análisis:
+
+```python
+from sklearn.model_selection import GroupKFold, cross_val_score
+
+puntajes = cross_val_score(modelo, X, y,
+                           groups=participante,     # un identificador por fila
+                           cv=GroupKFold(n_splits=5))
+```
+
+Con `GroupKFold`, todos los ensayos de una persona quedan juntos, en entrenamiento o en prueba, nunca en los dos. Si las clases están desbalanceadas, `StratifiedGroupKFold` además conserva la proporción de cada clase en cada partición.
+
+## Lista de revisión
+
+- ¿Cuál es la unidad de análisis: el participante, la sesión o el ensayo?
+- ¿Algún paso aprende de los datos antes de la validación (escalado, imputación, selección de variables)? Si es así, va dentro del `Pipeline`, para que se ajuste solo con el entrenamiento.
+- ¿El conjunto de prueba final tiene participantes que el modelo nunca vio?
+
+## Código completo
+
+```{.python archivo="figuras.py"}
+```
+
+## Referencias
+
+::: {#refs}
+:::

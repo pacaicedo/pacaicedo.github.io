@@ -1,8 +1,0 @@
----
-format:
-  revealjs: default
-  beamer: default
-metadata-files: [_presentacion.yml, _oscuro.yml]
----
-
-{{< include _contenido.qmd >}}

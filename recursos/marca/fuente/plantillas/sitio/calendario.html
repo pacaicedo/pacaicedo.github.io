@@ -1,0 +1,53 @@
+<script>
+// calendario.html — marca P. E. Caicedo-Rodríguez v2.1 (generado por fuente/construir_marca.py).
+// Para el calendario de un curso:
+//   format: html: include-after-body: ../../recursos/marca/sitio/calendario.html
+//   ::: {.calendario}   tabla semanal: la primera fecha AAAA-MM-DD de cada fila es el lunes
+//   ::: {.fechas}       fechas importantes: una fecha por fila
+// Marca la semana en curso («esta semana»), la próxima fecha importante («próxima») y atenúa
+// lo que ya pasó. Las fechas se escriben AAAA-MM-DD (no hay ambigüedad) y aquí se muestran
+// en formato corto. Para revisar otro día: ?hoy=2026-10-21 en la dirección.
+document.addEventListener("DOMContentLoaded", function () {
+  var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  var forzado = new URLSearchParams(location.search).get("hoy");
+  var ISO = /(\d{4})-(\d{2})-(\d{2})/;
+  if (forzado && ISO.test(forzado)) { var f = ISO.exec(forzado); hoy = new Date(+f[1], f[2] - 1, +f[3]); }
+  var corto = new Intl.DateTimeFormat("es-CO", { weekday: "short", day: "numeric", month: "short" });
+  function rotulo(texto) {
+    var s = document.createElement("span"); s.className = "marca-fecha"; s.textContent = texto; return s;
+  }
+  function primeraFecha(fila) {
+    var celdas = fila.querySelectorAll("td");
+    for (var i = 0; i < celdas.length; i++) {
+      var m = ISO.exec(celdas[i].textContent);
+      if (m) {
+        var d = new Date(+m[1], m[2] - 1, +m[3]);
+        var t = document.createElement("time");
+        t.dateTime = m[0]; t.textContent = corto.format(d).replace(/\./g, "");
+        celdas[i].textContent = ""; celdas[i].appendChild(t);
+        return { fecha: d, celda: celdas[i] };
+      }
+    }
+    return null;
+  }
+  document.querySelectorAll(".calendario table").forEach(function (tabla) {
+    tabla.querySelectorAll("tbody tr").forEach(function (fila) {
+      var x = primeraFecha(fila); if (!x) return;
+      var fin = new Date(x.fecha); fin.setDate(fin.getDate() + 7);
+      if (hoy >= fin) fila.classList.add("pasada");
+      else if (hoy >= x.fecha) {
+        fila.classList.add("hoy"); fila.setAttribute("aria-current", "date");
+        x.celda.appendChild(rotulo("esta semana"));
+      }
+    });
+  });
+  document.querySelectorAll(".fechas table").forEach(function (tabla) {
+    var proxima = false;
+    tabla.querySelectorAll("tbody tr").forEach(function (fila) {
+      var x = primeraFecha(fila); if (!x) return;
+      if (x.fecha < hoy) fila.classList.add("pasada");
+      else if (!proxima) { proxima = true; fila.classList.add("proxima"); x.celda.appendChild(rotulo("próxima")); }
+    });
+  });
+});
+</script>

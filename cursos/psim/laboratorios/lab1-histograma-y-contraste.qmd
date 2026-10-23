@@ -1,0 +1,67 @@
+---
+title: "Laboratorio 1: histograma, ventana y contraste"
+description: "Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura."
+rotulo: "Lab 1"
+date: 2026-08-10
+---
+
+## Objetivos
+
+1. Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.
+2. Calcular e interpretar el histograma.
+3. Elegir y justificar una ventana para cada estructura del fantoma.
+
+## Materiales
+
+- Python 3.12 o posterior con NumPy, SciPy y Matplotlib (el tutorial [Entorno reproducible con uv](../../../tutoriales/entorno-uv-quarto/index.qmd) explica la instalación).
+- El archivo [`datos_ejemplo.py`](../../../recursos/python/datos_ejemplo.py), que genera el fantoma de Shepp-Logan en UH aproximadas.
+
+## Procedimiento
+
+### Cargar la imagen
+
+```python
+import numpy as np
+from datos_ejemplo import fantoma_uh, ventana
+
+uh = fantoma_uh(256)            # matriz 256 × 256 en UH
+print(uh.min(), uh.max())       # ¿qué estructuras explican los extremos?
+```
+
+### Histograma
+
+Calcula el histograma con `np.histogram` usando intervalos de 4 UH entre −150 y 250. Grafícalo y señala los picos.
+
+### Ventanas
+
+![Tres ventanas sobre el mismo corte.](../fig/ventanas){width="90%"}
+
+Prueba al menos tres ventanas. Para cada una anota $W$, $L$ y qué estructura se distingue mejor.
+
+::: {.callout-warning}
+## Cuidado
+La ventana cambia la imagen que se muestra, no los datos. Las medidas (áreas, intensidades) se hacen siempre sobre la matriz en UH.
+:::
+
+## Preguntas orientadoras
+
+1. ¿Por qué el aire queda en −1000 UH y qué pasa con él en la ventana de cerebro?
+2. Si el histograma tiene dos picos muy cercanos, ¿qué ventana los separa mejor y por qué?
+3. ¿Qué información se pierde al guardar la imagen ya ventaneada en 8 bits?
+
+## Entregables
+
+- Un cuaderno o script reproducible con el histograma y las tres ventanas.
+- Una tabla con $W$, $L$ y la estructura que cada ventana deja ver.
+- Respuestas breves a las preguntas orientadoras.
+
+## Rúbrica
+
+| Criterio | Peso | Logrado |
+|:--|--:|:--|
+| Conversión y verificación del rango en UH | 25 % | Explica los valores extremos con las estructuras del fantoma |
+| Histograma | 25 % | Intervalos adecuados, ejes con unidades y picos identificados |
+| Elección de ventanas | 30 % | Cada ventana se justifica con el histograma |
+| Reproducibilidad | 20 % | El código corre de principio a fin sin pasos manuales |
+
+: Rúbrica del laboratorio 1.

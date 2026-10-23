@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Fundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.">
+
+<title>Procesamiento Digital de Imágenes Médicas – P. E. Caicedo-Rodríguez</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../recursos/marca/logo/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3ea025ca51a21a1d1a970835ebe5fd04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-presentaciones .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-lang','listing-date-format','listing-website','listing-format','listing-filters','listing-language','listing-author','listing-shorttitle','listing-title','listing-subtitle','listing-description','listing-rotulo','listing-date','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-lang","listing-date-format","listing-website","listing-format","listing-filters","listing-language","listing-author","listing-shorttitle","listing-title","listing-subtitle","listing-description","listing-rotulo","listing-date","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-presentaciones'] = new List('listing-presentaciones', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-laboratorios .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-lang','listing-date-format','listing-website','listing-format','listing-filters','listing-language','listing-author','listing-number-sections','listing-title','listing-description','listing-rotulo','listing-date','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-lang","listing-date-format","listing-website","listing-format","listing-filters","listing-language","listing-author","listing-number-sections","listing-title","listing-description","listing-rotulo","listing-date","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-laboratorios'] = new List('listing-laboratorios', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-tutoriales-psim .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-tutoriales-psim'] = new List('listing-tutoriales-psim', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Procesamiento Digital de Imágenes Médicas – P. E. Caicedo-Rodríguez">
+<meta property="og:description" content="Fundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.">
+<meta property="og:image" content="tarjeta.png">
+<meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo light-content">
+    <img src="../../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../cursos/index.html"> 
+<span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../charlas/index.html"> 
+<span class="menu-text">Charlas y Conferencias</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../proyectos/index.html"> 
+<span class="menu-text">Proyectos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutoriales/index.html"> 
+<span class="menu-text">Herramientas y Tutoriales</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Procesamiento Digital de Imágenes Médicas</h1>
+            <p class="subtitle lead">PSIM · semestre 2026-2</p>
+                  <div>
+        <div class="description">
+          Fundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">PSIM</div>
+                <div class="quarto-category">Imágenes médicas</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#resultados-de-aprendizaje" id="toc-resultados-de-aprendizaje" class="nav-link" data-scroll-target="#resultados-de-aprendizaje">Resultados de Aprendizaje</a></li>
+  <li><a href="#calendario-y-fechas-importantes" id="toc-calendario-y-fechas-importantes" class="nav-link" data-scroll-target="#calendario-y-fechas-importantes">Calendario y fechas importantes</a>
+  <ul class="collapse">
+  <li><a href="#fechas-importantes" id="toc-fechas-importantes" class="nav-link" data-scroll-target="#fechas-importantes">Fechas importantes</a></li>
+  <li><a href="#semana-a-semana" id="toc-semana-a-semana" class="nav-link" data-scroll-target="#semana-a-semana">Semana a semana</a></li>
+  </ul></li>
+  <li><a href="#presentaciones" id="toc-presentaciones" class="nav-link" data-scroll-target="#presentaciones">Presentaciones</a></li>
+  <li><a href="#laboratorios" id="toc-laboratorios" class="nav-link" data-scroll-target="#laboratorios">Laboratorios</a></li>
+  <li><a href="#recursos-y-tutoriales" id="toc-recursos-y-tutoriales" class="nav-link" data-scroll-target="#recursos-y-tutoriales">Recursos y tutoriales</a>
+  <ul class="collapse">
+  <li><a href="#tutoriales-del-sitio" id="toc-tutoriales-del-sitio" class="nav-link" data-scroll-target="#tutoriales-del-sitio">Tutoriales del sitio</a></li>
+  <li><a href="#software-y-datos" id="toc-software-y-datos" class="nav-link" data-scroll-target="#software-y-datos">Software y datos</a></li>
+  </ul></li>
+  <li><a href="#referentes" id="toc-referentes" class="nav-link" data-scroll-target="#referentes">Referentes</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática <span class="citation" data-cites="gonzalez2018 suetens2017">(<a href="#ref-gonzalez2018" role="doc-biblioref">Gonzalez y Woods 2018</a>; <a href="#ref-suetens2017" role="doc-biblioref">Suetens 2017</a>)</span>.</p>
+<p>El curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.</p>
+<div class="ficha">
+<dl>
+<div class="ficha-dato"><dt>
+Código
+</dt><dd>
+PSIM
+</dd></div>
+<div class="ficha-dato"><dt>
+Semestre
+</dt><dd>
+2026-2
+</dd></div>
+<div class="ficha-dato"><dt>
+Horario
+</dt><dd>
+lunes y jueves, 7:00–9:00
+</dd></div>
+<div class="ficha-dato"><dt>
+Intensidad
+</dt><dd>
+4 horas por semana
+</dd></div>
+<div class="ficha-dato"><dt>
+Prerrequisito
+</dt><dd>
+Sistemas y Señales Biomédicos
+</dd></div>
+<div class="ficha-dato"><dt>
+Evaluación
+</dt><dd>
+3 laboratorios (60 %) y proyecto final (40 %)
+</dd></div>
+</dl>
+</div>
+</section>
+<section id="resultados-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="resultados-de-aprendizaje">Resultados de Aprendizaje</h2>
+<p>Al terminar el curso, cada estudiante podrá:</p>
+<div class="ra">
+<ol type="1">
+<li><strong>Describir</strong> una imagen médica como una función muestreada y cuantizada, y leer de su encabezado DICOM el tamaño del píxel, el grosor del corte y la conversión a unidades físicas.</li>
+<li><strong>Aplicar</strong> operaciones puntuales y de histograma (ventana y nivel, ecualización) y justificar cuál conviene para una tarea de lectura.</li>
+<li><strong>Implementar</strong> en NumPy filtros espaciales y en frecuencia (Ideal, Butterworth, Gaussiano, pasa-banda y notch) y comparar sus efectos sobre el espectro y la imagen.</li>
+<li><strong>Segmentar</strong> estructuras por umbral, regiones y morfología matemática, y medir sobre ellas áreas, intensidades y formas.</li>
+<li><strong>Construir</strong> un conjunto de características reproducible y ajustar con él una regresión logística o lineal múltiple, informando lo que el modelo mide y lo que no.</li>
+</ol>
+</div>
+</section>
+<section id="calendario-y-fechas-importantes" class="level2">
+<h2 class="anchored" data-anchor-id="calendario-y-fechas-importantes">Calendario y fechas importantes</h2>
+<section id="fechas-importantes" class="level3">
+<h3 class="anchored" data-anchor-id="fechas-importantes">Fechas importantes</h3>
+<div class="fechas">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fecha</th>
+<th style="text-align: left;">Entrega</th>
+<th style="text-align: right;">Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2026-08-28</td>
+<td style="text-align: left;">Laboratorio 1: histograma y contraste</td>
+<td style="text-align: right;">20 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-10-02</td>
+<td style="text-align: left;">Laboratorio 2: filtrado en frecuencia</td>
+<td style="text-align: right;">20 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-10-23</td>
+<td style="text-align: left;">Propuesta del proyecto</td>
+<td style="text-align: right;">5 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-10-30</td>
+<td style="text-align: left;">Laboratorio 3: segmentación y morfología</td>
+<td style="text-align: right;">20 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-11-13</td>
+<td style="text-align: left;">Avance del proyecto</td>
+<td style="text-align: right;">10 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-11-19</td>
+<td style="text-align: left;">Presentación final del proyecto</td>
+<td style="text-align: right;">25 %</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="semana-a-semana" class="level3">
+<h3 class="anchored" data-anchor-id="semana-a-semana">Semana a semana</h3>
+<div class="calendario">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 65%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Semana</th>
+<th style="text-align: left;">Lunes</th>
+<th style="text-align: left;">Tema</th>
+<th style="text-align: left;">Material</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2026-08-03</td>
+<td style="text-align: left;">La imagen como dato: muestreo, cuantización y DICOM</td>
+<td style="text-align: left;">Presentación 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2026-08-10</td>
+<td style="text-align: left;">Histograma, ventana y nivel</td>
+<td style="text-align: left;">Laboratorio 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2026-08-17</td>
+<td style="text-align: left;">Operaciones puntuales y aritméticas <span class="sin-clase">festivo el lunes</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2026-08-24</td>
+<td style="text-align: left;">Convolución 2D y operaciones espaciales</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">2026-08-31</td>
+<td style="text-align: left;">Suavizado y realce</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">2026-09-07</td>
+<td style="text-align: left;">Detección de bordes</td>
+<td style="text-align: left;">Laboratorio 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">2026-09-14</td>
+<td style="text-align: left;">Transformada de Fourier 2D</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">2026-09-21</td>
+<td style="text-align: left;">Filtrado en frecuencia: de Ideal a notch</td>
+<td style="text-align: left;">Presentación 8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">2026-09-28</td>
+<td style="text-align: left;">Segmentación por umbral y por regiones</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">2026-10-05</td>
+<td style="text-align: left;">Morfología matemática</td>
+<td style="text-align: left;">Laboratorio 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">2026-10-12</td>
+<td style="text-align: left;">Wavelets <span class="sin-clase">festivo el lunes</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">2026-10-19</td>
+<td style="text-align: left;">Extracción de características</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">2026-10-26</td>
+<td style="text-align: left;">De la imagen a la tabla</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">2026-11-02</td>
+<td style="text-align: left;">Regresión logística y lineal múltiple <span class="sin-clase">festivo el lunes</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">2026-11-09</td>
+<td style="text-align: left;">Validación e informe honesto</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">2026-11-16</td>
+<td style="text-align: left;">Presentaciones finales <span class="sin-clase">festivo el lunes</span></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="presentaciones" class="level2">
+<h2 class="anchored" data-anchor-id="presentaciones">Presentaciones</h2>
+<p>Cada presentación tiene una versión en línea (revealjs, para proyectar desde el navegador) y un PDF (beamer) con la misma composición.</p>
+<div id="listing-presentaciones" class="quarto-listing quarto-listing-container-custom">
+<ol class="materiales">
+
+  <li class="material" data-index="0" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792694439000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="359">
+    <div class="material-rotulo">Semana 1</div>
+    <div class="material-cuerpo">
+      <a class="material-titulo no-external" href="../../cursos/psim/presentaciones/01-la-imagen-como-dato.html">La imagen como dato</a>
+      <p class="material-desc">Qué guarda cada píxel, cómo se pasa a unidades Hounsfield y por qué la ventana cambia lo que vemos pero no el dato.</p>
+    </div>
+    <div class="material-formatos">
+      <a class="formato-html no-external" href="../../cursos/psim/presentaciones/01-la-imagen-como-dato.html">Diapositivas</a>
+      <a class="formato-pdf no-external" href="../../cursos/psim/presentaciones/01-la-imagen-como-dato.html">PDF</a>
+    </div>
+  </li>
+
+  <li class="material" data-index="1" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792694439000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="238">
+    <div class="material-rotulo">Semana 8</div>
+    <div class="material-cuerpo">
+      <a class="material-titulo no-external" href="../../cursos/psim/presentaciones/08-filtrado-frecuencial.html">Filtrado en el dominio de la frecuencia</a>
+      <p class="material-desc">Transformada de Fourier 2D, máscaras de filtrado y por qué el filtro ideal produce anillos.</p>
+    </div>
+    <div class="material-formatos">
+      <a class="formato-html no-external" href="../../cursos/psim/presentaciones/08-filtrado-frecuencial.html">Diapositivas</a>
+      <a class="formato-pdf no-external" href="../../cursos/psim/presentaciones/08-filtrado-frecuencial.html">PDF</a>
+    </div>
+  </li>
+
+</ol>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+</section>
+<section id="laboratorios" class="level2">
+<h2 class="anchored" data-anchor-id="laboratorios">Laboratorios</h2>
+<p>Las guías se leen en línea o en PDF. Cada una trae objetivos, procedimiento, preguntas orientadoras, entregables y rúbrica.</p>
+<div id="listing-laboratorios" class="quarto-listing quarto-listing-container-custom">
+<ol class="materiales">
+
+  <li class="material" data-index="0" data-listing-date-sort="1786338000000" data-listing-file-modified-sort="1792591664000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="327">
+    <div class="material-rotulo">Lab 1</div>
+    <div class="material-cuerpo">
+      <a class="material-titulo no-external" href="../../cursos/psim/laboratorios/lab1-histograma-y-contraste.html">Laboratorio 1: histograma, ventana y contraste</a>
+      <p class="material-desc">Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.</p>
+    </div>
+    <div class="material-formatos">
+      <a class="formato-html no-external" href="../../cursos/psim/laboratorios/lab1-histograma-y-contraste.html">Guía</a>
+      <a class="formato-pdf no-external" href="../../cursos/psim/laboratorios/lab1-histograma-y-contraste.html">PDF</a>
+    </div>
+  </li>
+
+  <li class="material" data-index="1" data-listing-date-sort="1788757200000" data-listing-file-modified-sort="1792591664000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="253">
+    <div class="material-rotulo">Lab 2</div>
+    <div class="material-cuerpo">
+      <a class="material-titulo no-external" href="../../cursos/psim/laboratorios/lab2-filtrado-frecuencial.html">Laboratorio 2: filtrado en frecuencia</a>
+      <p class="material-desc">Implementar filtros Ideal, Butterworth y Gaussiano y medir los anillos del filtro ideal.</p>
+    </div>
+    <div class="material-formatos">
+      <a class="formato-html no-external" href="../../cursos/psim/laboratorios/lab2-filtrado-frecuencial.html">Guía</a>
+      <a class="formato-pdf no-external" href="../../cursos/psim/laboratorios/lab2-filtrado-frecuencial.html">PDF</a>
+    </div>
+  </li>
+
+</ol>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+</section>
+<section id="recursos-y-tutoriales" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-y-tutoriales">Recursos y tutoriales</h2>
+<section id="tutoriales-del-sitio" class="level3">
+<h3 class="anchored" data-anchor-id="tutoriales-del-sitio">Tutoriales del sitio</h3>
+<div id="listing-tutoriales-psim" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="SGVycmFtaWVudGElMkNQU0lNJTJDU1lTQiUyQ1RBVSUyQ1F1YXJ0bw==" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792628300000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../tutoriales/entorno-uv-quarto/index.html" class="no-external">Entorno reproducible con uv y Quarto</a>
+</h3>
+<div class="delink listing-description"><a href="../../tutoriales/entorno-uv-quarto/index.html" class="no-external">
+<p>Instalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../tutoriales/entorno-uv-quarto/index.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="VHV0b3JpYWwlMkNQU0lNJTJDSW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792628241000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="435">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../tutoriales/filtros-frecuenciales/index.html" class="no-external">Filtros en frecuencia: de Ideal a Gaussiano</a>
+</h3>
+<div class="delink listing-description"><a href="../../tutoriales/filtros-frecuenciales/index.html" class="no-external">
+<p>Transformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../tutoriales/filtros-frecuenciales/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+</section>
+<section id="software-y-datos" class="level3">
+<h3 class="anchored" data-anchor-id="software-y-datos">Software y datos</h3>
+<ul>
+<li><a href="https://www.python.org">Python</a> con <a href="https://numpy.org">NumPy</a>, <a href="https://scipy.org">SciPy</a> y <a href="https://scikit-image.org">scikit-image</a>: todo el trabajo del curso.</li>
+<li><a href="https://pydicom.github.io">pydicom</a>: leer y escribir archivos DICOM desde Python.</li>
+<li><a href="https://www.slicer.org">3D Slicer</a> e <a href="http://www.itksnap.org">ITK-SNAP</a>: visualizar volúmenes y revisar segmentaciones a mano.</li>
+<li><a href="https://www.cancerimagingarchive.net">The Cancer Imaging Archive</a>: colecciones públicas de imágenes para el proyecto final.</li>
+<li><a href="../../recursos/python/datos_ejemplo.py">Datos de ejemplo del sitio</a>: el fantoma de Shepp-Logan en unidades Hounsfield aproximadas.</li>
+</ul>
+</section>
+</section>
+<section id="referentes" class="level2">
+<h2 class="anchored" data-anchor-id="referentes">Referentes</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bankman2009" class="csl-entry" role="listitem">
+Bankman, Isaac N., ed. 2009. <em>Handbook of Medical Image Processing and Analysis</em>. 2.ª ed. Academic Press.
+</div>
+<div id="ref-gonzalez2018" class="csl-entry" role="listitem">
+Gonzalez, Rafael C., y Richard E. Woods. 2018. <em>Digital Image Processing</em>. 4.ª ed. Pearson.
+</div>
+<div id="ref-prince2014" class="csl-entry" role="listitem">
+Prince, Jerry L., y Jonathan M. Links. 2014. <em>Medical Imaging Signals and Systems</em>. 2.ª ed. Pearson.
+</div>
+<div id="ref-shepp1974" class="csl-entry" role="listitem">
+Shepp, Lawrence A., y Benjamin F. Logan. 1974. <span>«The <span>Fourier</span> Reconstruction of a Head Section»</span>. <em>IEEE Transactions on Nuclear Science</em> 21 (3): 21-43.
+</div>
+<div id="ref-suetens2017" class="csl-entry" role="listitem">
+Suetens, Paul. 2017. <em>Fundamentals of Medical Imaging</em>. 3.ª ed. Cambridge University Press.
+</div>
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+// calendario.html — marca P. E. Caicedo-Rodríguez v2.1 (generado por fuente/construir_marca.py).
+// Para el calendario de un curso:
+//   format: html: include-after-body: ../../recursos/marca/sitio/calendario.html
+//   ::: {.calendario}   tabla semanal: la primera fecha AAAA-MM-DD de cada fila es el lunes
+//   ::: {.fechas}       fechas importantes: una fecha por fila
+// Marca la semana en curso («esta semana»), la próxima fecha importante («próxima») y atenúa
+// lo que ya pasó. Las fechas se escriben AAAA-MM-DD (no hay ambigüedad) y aquí se muestran
+// en formato corto. Para revisar otro día: ?hoy=2026-10-21 en la dirección.
+document.addEventListener("DOMContentLoaded", function () {
+  var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  var forzado = new URLSearchParams(location.search).get("hoy");
+  var ISO = /(\d{4})-(\d{2})-(\d{2})/;
+  if (forzado && ISO.test(forzado)) { var f = ISO.exec(forzado); hoy = new Date(+f[1], f[2] - 1, +f[3]); }
+  var corto = new Intl.DateTimeFormat("es-CO", { weekday: "short", day: "numeric", month: "short" });
+  function rotulo(texto) {
+    var s = document.createElement("span"); s.className = "marca-fecha"; s.textContent = texto; return s;
+  }
+  function primeraFecha(fila) {
+    var celdas = fila.querySelectorAll("td");
+    for (var i = 0; i < celdas.length; i++) {
+      var m = ISO.exec(celdas[i].textContent);
+      if (m) {
+        var d = new Date(+m[1], m[2] - 1, +m[3]);
+        var t = document.createElement("time");
+        t.dateTime = m[0]; t.textContent = corto.format(d).replace(/\./g, "");
+        celdas[i].textContent = ""; celdas[i].appendChild(t);
+        return { fecha: d, celda: celdas[i] };
+      }
+    }
+    return null;
+  }
+  document.querySelectorAll(".calendario table").forEach(function (tabla) {
+    tabla.querySelectorAll("tbody tr").forEach(function (fila) {
+      var x = primeraFecha(fila); if (!x) return;
+      var fin = new Date(x.fecha); fin.setDate(fin.getDate() + 7);
+      if (hoy >= fin) fila.classList.add("pasada");
+      else if (hoy >= x.fecha) {
+        fila.classList.add("hoy"); fila.setAttribute("aria-current", "date");
+        x.celda.appendChild(rotulo("esta semana"));
+      }
+    });
+  });
+  document.querySelectorAll(".fechas table").forEach(function (tabla) {
+    var proxima = false;
+    tabla.querySelectorAll("tbody tr").forEach(function (fila) {
+      var x = primeraFecha(fila); if (!x) return;
+      if (x.fecha < hoy) fila.classList.add("pasada");
+      else if (!proxima) { proxima = true; fila.classList.add("proxima"); x.celda.appendChild(rotulo("próxima")); }
+    });
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Del dato a la causa · Hecho con <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

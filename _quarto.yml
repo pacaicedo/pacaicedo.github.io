@@ -1,49 +1,58 @@
+# Sitio de ejemplo de la marca P. E. Caicedo-Rodríguez (v2.1).
+# Cuatro secciones: Cursos, Charlas y Conferencias, Proyectos, Herramientas y Tutoriales.
+# Ver LEEME.md para la organización de carpetas y cómo agregar contenido.
 project:
   type: website
   output-dir: docs
+  # Antes de renderizar se regeneran las figuras cuyo figuras.py cambió (ver recursos/figuras.py).
+  pre-render: recursos/figuras.py
   render:
-    - index.qmd
-    - cursos/**/*.qmd
-    - charlas-y-conferencias/**/*.qmd
-    - proyectos/**/*.qmd
-    - herramientas-y-tutoriales/**/*.qmd
-  resources:
-    - recursos/marca/logos/
-    - recursos/marca/paleta.json
-    - proyectos/**/codigo/*.py
-    - herramientas-y-tutoriales/codigo/*.py
+    - "*.qmd"
+    - "**/*.qmd"
+    - "!recursos/"
+
+lang: es
+date-format: "D [de] MMMM [de] YYYY"
+
 website:
   title: "P. E. Caicedo-Rodríguez"
-  favicon: recursos/marca/logos/insignia.png
-  navbar:
-    logo: recursos/marca/logos/isotipo-claro.svg
-    left:
-      - href: index.qmd
-        text: Perfil
-      - href: cursos/index.qmd
-        text: Cursos
-      - href: charlas-y-conferencias/index.qmd
-        text: Charlas y Conferencias
-      - href: proyectos/index.qmd
-        text: Proyectos
-      - href: herramientas-y-tutoriales/index.qmd
-        text: Herramientas y Tutoriales
-  bread-crumbs: true
+  description: "Docencia e investigación en señales e imágenes biomédicas, biomecánica e inferencia causal."
+  favicon: recursos/marca/logo/favicon.svg
+  image: recursos/marca/logo/tarjeta-social.png
+  open-graph: true
   search:
     location: navbar
     type: overlay
+  # Para los enlaces «Ver código fuente» y «Reportar un problema», pon la dirección del
+  # repositorio y descomenta:
+  # repo-url: https://github.com/USUARIO/REPOSITORIO
+  # repo-actions: [source, issue]
+  navbar:
+    logo: recursos/marca/logo/isotipo-oscuro.svg
+    logo-alt: "Triángulo causal: isotipo de P. E. Caicedo-Rodríguez"
+    title: "P. E. Caicedo-Rodríguez"
+    left:
+      - href: cursos/index.qmd
+        text: Cursos
+      - href: charlas/index.qmd
+        text: Charlas y Conferencias
+      - href: proyectos/index.qmd
+        text: Proyectos
+      - href: tutoriales/index.qmd
+        text: Herramientas y Tutoriales
   page-footer:
-    left: "Pablo Eduardo Caicedo-Rodríguez"
-    right: "Ingeniería que hace comprensible la salud."
-lang: es
+    left: "© 2026 P. E. Caicedo-Rodríguez · Contenido bajo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)"
+    right: "Del dato a la causa · Hecho con [Quarto](https://quarto.org)"
+
 format:
   html:
-    theme: [cosmo, recursos/marca/caicedo-sitio.scss]
-    highlight-style: recursos/marca/caicedo-claro.theme
-    html-math-method: mathml
+    theme: [cosmo, recursos/marca/caicedo-sitio.scss, recursos/marca/caicedo-documento.scss]
     toc: true
-    toc-depth: 2
     toc-title: "En esta página"
-    link-external-newwindow: true
-execute:
-  enabled: false
+    highlight-style: recursos/marca/caicedo-claro.theme
+    code-copy: true
+    # Las figuras se enlazan sin extensión (![](fig/senal)): SVG en la web, PDF en LaTeX.
+    default-image-extension: svg
+    fig-cap-location: bottom
+
+filters: [recursos/marca/caicedo.lua]

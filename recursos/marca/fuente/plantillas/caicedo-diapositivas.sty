@@ -1,0 +1,568 @@
+% caicedo-diapositivas.sty — Diapositivas Quarto + beamer de la marca P. E. Caicedo-Rodríguez (v2).
+% Gemelo de caicedo-diapositivas.scss (revealjs): mismas proporciones (16:9), colores,
+% letra, tamaños, portada, separadores de sección, pie y modo sala oscura.
+%
+% Archivo generado por fuente/construir_marca.py desde fuente/plantillas/.
+%
+% Uso en el qmd (la ruta del \usepackage es relativa a la carpeta del qmd: en una subcarpeta,
+% ../recursos/marca/..., ../../recursos/marca/...; las fuentes se encuentran solas):
+%   format:
+%     beamer:
+%       aspectratio: 169
+%       fontsize: 12pt
+%       pdf-engine: lualatex
+%       slide-level: 2
+%       highlight-style: recursos/marca/caicedo-claro.theme
+%       include-in-header:
+%         text: \usepackage{recursos/marca/caicedo-diapositivas}
+%   filters: [recursos/marca/caicedo.lua]
+%
+% Modo sala oscura (auditorio a oscuras):
+%         text: \usepackage[oscura]{recursos/marca/caicedo-diapositivas}
+%       highlight-style: recursos/marca/caicedo-oscuro.theme
+%
+% Equivalencia: la diapositiva beamer 16:9 mide 160 × 90 mm y la de revealjs 1280 × 720 px,
+% así que 1 mm = 8 px y 1 pt de TeX = 2.8125 px (12 pt = 33.75 px). Si cambias un tamaño
+% aquí, cámbialo también en el .scss.
+%
+% El pie muestra la firma (isotipo + nombre) a la izquierda y el título corto junto al número.
+% Para otro texto:  \renewcommand{\caicedopie}{Mi texto}
+\NeedsTeXFormat{LaTeX2e}
+% El nombre declarado es la ruta con la que se pidió el paquete: así no hay aviso de
+% «You have requested package ...» al cargarlo desde una subcarpeta (../../recursos/marca/...).
+\begingroup\edef\x{\endgroup\noexpand\ProvidesPackage{\ifx\CurrentFilePath\@empty\else\CurrentFilePath/\fi\@currname}}\x
+  [2026/10/21 v2.1 Marca P. E. Caicedo-Rodríguez: diapositivas]
+% Carpeta de este .sty (recursos/marca, ../../recursos/marca, ...): de aquí salen las fuentes.
+\edef\caicedo@dir{\CurrentFilePath}
+
+\newif\ifcaicedo@sala
+\DeclareOption{oscura}{\caicedo@salatrue}
+\DeclareOption{clara}{\caicedo@salafalse}
+\ProcessOptions\relax
+
+\RequirePackage{fontspec}
+\RequirePackage{etoolbox}
+\RequirePackage{booktabs}
+\RequirePackage{colortbl}
+\RequirePackage{tikz}
+\RequirePackage[most]{tcolorbox}
+
+% ---------------------------------------------------------------- Paleta
+@@COLORES_TEX@@
+
+% Papeles: qué color cumple cada función según el modo (claro o sala oscura).
+\ifcaicedo@sala
+  \colorlet{caicedofondo}{csala}   \colorlet{caicedotitulo}{cluz}     \colorlet{caicedotexto}{cluz}
+  \colorlet{caicedotenue}{ctenueluz} \colorlet{caicedodato}{cdatoluz} \colorlet{caicedografo}{cgrafoluz}
+  \colorlet{caicedocausa}{ccausaluz} \colorlet{caicedoaviso}{cavisoluz} \colorlet{caicedopapel}{csalados}
+  \colorlet{caicedoregla}{ctenueluz} \colorlet{caicedoportada}{csala}
+\else
+  \colorlet{caicedofondo}{white}   \colorlet{caicedotitulo}{ctinta}   \colorlet{caicedotexto}{ctinta}
+  \colorlet{caicedotenue}{ctenue}  \colorlet{caicedodato}{cdatod}     \colorlet{caicedografo}{cgrafod}
+  \colorlet{caicedocausa}{ccausad} \colorlet{caicedoaviso}{cavisod}   \colorlet{caicedopapel}{cpapel}
+  \colorlet{caicedoregla}{ctinta}  \colorlet{caicedoportada}{white}
+\fi
+
+% ---------------------------------------------------------------- Letra
+% Atkinson Hyperlegible Next (texto) y Mono (código), del Braille Institute, licencia SIL OFL
+% (recursos/marca/fuentes/OFL-*.txt). En diapositivas el texto va en peso medio (500) y la
+% negrita en extranegrita (800): el trazo resiste proyectores débiles. Lo que Atkinson no trae
+% (griego, flechas, algunos símbolos) sale de DejaVu Sans con el respaldo de luaotfload.
+\usefonttheme{professionalfonts}
+% Las fuentes están en la carpeta fuentes/ junto a este .sty; \caicedofuentes solo hace falta
+% si se movieron (\newcommand*{\caicedofuentes}{ruta/} antes del \usepackage).
+\ifdefined\caicedofuentes\else\edef\caicedofuentes{\ifx\caicedo@dir\@empty\else\caicedo@dir/\fi fuentes/}\fi
+% Si las fuentes están instaladas en el sistema se cargan por nombre; si no, desde
+% \caicedofuentes convertida en ruta absoluta. luaotfload guarda en caché la ruta con la que
+% cargó cada fuente la primera vez: con una ruta relativa, otro documento compilado desde
+% otra carpeta no encontraría el archivo («cannot find file ''»).
+\ifdefined\directlua
+  \edef\caicedofuentes{\directlua{
+    local p = "\luaescapestring{\caicedofuentes}"
+    if not (p:match("^/") or p:match("^[A-Za-z]:")) then
+      p = lfs.currentdir():gsub("\string\\", "/") .. "/" .. p
+    end
+    tex.sprint(-2, p)}}
+\fi
+\IfFontExistsTF{AtkinsonHyperlegibleNext-Regular}
+  {\def\caicedo@ruta{}\def\caicedo@rutam{}}
+  {\edef\caicedo@ruta{Path=\caicedofuentes, Extension=.ttf,}\let\caicedo@rutam\caicedo@ruta}
+\ifdefined\directlua
+  \IfFontExistsTF{DejaVuSans}{\def\caicedo@dv{name:}\def\caicedo@dva{}\def\caicedo@dvb{}}
+    {\def\caicedo@dv{}\edef\caicedo@dva{[\caicedofuentes}\def\caicedo@dvb{.ttf]}}
+  \directlua{
+    local function f(n) return "\caicedo@dv" .. "\caicedo@dva" .. n .. "\caicedo@dvb" .. ":mode=node;" end
+    luaotfload.add_fallback("caicedorespaldo", {f("DejaVuSans")})
+    luaotfload.add_fallback("caicedorespaldob", {f("DejaVuSans-Bold")})
+    luaotfload.add_fallback("caicedorespaldom", {f("DejaVuSansMono")})}
+  \def\caicedo@fb{RawFeature={fallback=caicedorespaldo}}
+  \def\caicedo@fbb{RawFeature={fallback=caicedorespaldob}}
+  \def\caicedo@fbm{RawFeature={fallback=caicedorespaldom}}
+\else
+  \def\caicedo@fb{}\def\caicedo@fbb{}\def\caicedo@fbm{}
+\fi
+% WordSpace={1,1,0}: los espacios no se encogen, como en el navegador, así las líneas
+% cortan en las mismas palabras que en revealjs.
+\edef\caicedo@tmpa{%
+  \noexpand\setmainfont{AtkinsonHyperlegibleNext}[\caicedo@ruta Scale=1, WordSpace={1,1,0},
+    UprightFont=*-Medium, BoldFont=*-ExtraBold, ItalicFont=*-MediumItalic, BoldItalicFont=*-ExtraBoldItalic,
+    UprightFeatures={\caicedo@fb}, ItalicFeatures={\caicedo@fb}, BoldFeatures={\caicedo@fbb}, BoldItalicFeatures={\caicedo@fbb}]%
+  \noexpand\setsansfont{AtkinsonHyperlegibleNext}[\caicedo@ruta Scale=1, WordSpace={1,1,0},
+    UprightFont=*-Medium, BoldFont=*-ExtraBold, ItalicFont=*-MediumItalic, BoldItalicFont=*-ExtraBoldItalic,
+    UprightFeatures={\caicedo@fb}, ItalicFeatures={\caicedo@fb}, BoldFeatures={\caicedo@fbb}, BoldItalicFeatures={\caicedo@fbb}]%
+  \noexpand\setmonofont{AtkinsonHyperlegibleMono}[\caicedo@rutam Scale=1,
+    UprightFont=*-Medium, BoldFont=*-Bold, ItalicFont=*-MediumItalic, BoldItalicFont=*-BoldItalic,
+    UprightFeatures={\caicedo@fbm}, ItalicFeatures={\caicedo@fbm}, BoldFeatures={\caicedo@fbm}, BoldItalicFeatures={\caicedo@fbm}]%
+  \noexpand\newfontfamily\noexpand\caicedodisplay{AtkinsonHyperlegibleNext}[\caicedo@ruta Scale=1, WordSpace={1,1,0},
+    UprightFont=*-ExtraBold, BoldFont=*-ExtraBold, ItalicFont=*-ExtraBoldItalic, BoldItalicFont=*-ExtraBoldItalic,
+    UprightFeatures={\caicedo@fbb}, BoldFeatures={\caicedo@fbb}, ItalicFeatures={\caicedo@fbb}, BoldItalicFeatures={\caicedo@fbb}]}
+\caicedo@tmpa
+% La marca está calibrada para fontsize: 12pt (= 33.75 px de revealjs).
+\AtBeginDocument{\begingroup\normalsize\ifdim\f@size pt=12pt\else
+  \PackageWarningNoLine{caicedo-diapositivas}{La marca está calibrada para fontsize: 12pt;\MessageBreak
+    con \f@size pt beamer y revealjs no cortarán igual las líneas}\fi\endgroup}
+% Interlineado = line-height 1.35 de revealjs: 16.2 pt (beamer usa 14.5 pt a 12 pt).
+\linespread{1.117241}
+% Quarto carga microtype: su protrusión y expansión dejan que beamer meta en una línea
+% texto que en el navegador ya no cabe. Se apagan para que los cortes coincidan.
+\@ifpackageloaded{microtype}{\microtypesetup{protrusion=false, expansion=false}}{}
+
+% ---------------------------------------------------------------- Colores beamer
+\setbeamercolor{background canvas}{bg=caicedofondo}
+\setbeamercolor{normal text}{fg=caicedotexto, bg=caicedofondo}
+\setbeamercolor{structure}{fg=caicedodato}
+\setbeamercolor{alerted text}{fg=caicedocausa}
+\setbeamercolor{example text}{fg=caicedografo}
+\setbeamercolor{frametitle}{fg=caicedotitulo}
+\setbeamercolor{title}{fg=caicedotitulo}
+\setbeamercolor{subtitle}{fg=caicedodato}
+\setbeamercolor{author}{fg=caicedotitulo}
+\setbeamercolor{date}{fg=caicedotenue}
+\setbeamercolor{block title}{fg=caicedodato, bg=}
+\setbeamercolor{block body}{fg=caicedotexto, bg=}
+\setbeamercolor{block title alerted}{fg=caicedocausa, bg=}
+\setbeamercolor{block title example}{fg=caicedografo, bg=}
+\setbeamercolor{caption name}{fg=caicedotitulo}
+\setbeamercolor{caption}{fg=caicedotenue}
+\setbeamercolor{footnote}{fg=caicedotenue}
+\setbeamercolor{footnote mark}{fg=caicedodato}
+\hypersetup{colorlinks=true, linkcolor=caicedodato, urlcolor=caicedodato, citecolor=caicedodato}
+\setbeamertemplate{navigation symbols}{}
+
+% Contenido alineado arriba, como revealjs (equivale a la opción de clase «t»).
+\beamer@centeredfalse
+% Bandera a la izquierda, como revealjs (beamer justifica por omisión).
+\setbeamertemplate{frame begin}{\raggedright}
+% Columnas sobre el ancho del texto, sin invadir los márgenes (como revealjs).
+\beamer@onlytextwidthtrue
+% Márgenes: 8 mm laterales (= 64 px)
+\setbeamersize{text margin left=8mm, text margin right=8mm}
+
+% ---------------------------------------------------------------- Isotipo, motivo y barra causal
+% Coordenadas en unidades del SVG (recursos/marca/logo/), generadas por fuente/construir_marca.py.
+\newlength{\caicedo@u}
+\newlength{\caicedo@isou}
+\newcommand*{\caicedo@colores@claro}{\colorlet{caicedo@tinta}{ctinta}\colorlet{caicedo@tenue}{ctenue}%
+  \colorlet{caicedo@dato}{cdato}\colorlet{caicedo@causa}{ccausa}\colorlet{caicedo@grafo}{cgrafo}\colorlet{caicedo@hueco}{white}}
+\newcommand*{\caicedo@colores@oscuro}{\colorlet{caicedo@tinta}{cluz}\colorlet{caicedo@tenue}{ctenueluz}%
+  \colorlet{caicedo@dato}{cdato}\colorlet{caicedo@causa}{ccausa}\colorlet{caicedo@grafo}{cgrafoluz}\colorlet{caicedo@hueco}{csala}}
+\newcommand*{\caicedo@colores@noche}{\caicedo@colores@oscuro\colorlet{caicedo@hueco}{cnoche}}
+\caicedo@colores@claro
+\newcommand*{\caicedo@arte}{%
+@@MOTIVO_TIKZ@@
+}
+% \caicedoisotipo[claro|oscuro|noche]{tamaño}
+\newcommand*{\caicedoisotipo}[2][claro]{%
+  \begingroup\csname caicedo@colores@#1\endcsname
+  \setlength{\caicedo@isou}{\dimexpr #2/64\relax}%
+  \begin{tikzpicture}[x=\caicedo@isou, y=-\caicedo@isou, baseline=(current bounding box.south)]
+  \useasboundingbox (0,0) rectangle (64,64);
+@@ISO_TIKZ@@
+  \end{tikzpicture}\endgroup}
+% \caicedomotivo[claro|oscuro|noche]{ancho}: «de x[n] a la causa» (lienzo 1500 × 340).
+\newcommand*{\caicedomotivo}[2][claro]{%
+  \begingroup\csname caicedo@colores@#1\endcsname
+  \setlength{\caicedo@u}{\dimexpr #2/1500\relax}%
+  \begin{tikzpicture}[x=\caicedo@u, y=-\caicedo@u]\useasboundingbox (0,0) rectangle (1500,340);\caicedo@arte\end{tikzpicture}\endgroup}
+% \caicedobarra{largo}: barra causal (dato, hueco, causa con punta); alto = largo × 6/108.
+\newcommand*{\caicedobarra}[1]{%
+  \begingroup\setlength{\caicedo@u}{\dimexpr #1/108\relax}%
+  \tikz[x=\caicedo@u, y=-\caicedo@u, baseline=0pt]{%
+    \fill[cdato] (0,4.2) rectangle (64,10.2); \fill[ccausa] (71,4.2) rectangle (93,10.2);
+    \fill[ccausa] (92,0) -- (108,7.2) -- (92,14.4) -- cycle;}\endgroup}
+% Compatibilidad con la v1: \caicedofilete{ancho}{grueso} dibuja ahora la barra causal.
+\newcommand*{\caicedofilete}[2]{\caicedobarra{#1}}
+
+% ---------------------------------------------------------------- Título de diapositiva
+% = h2 de revealjs: 40 px arriba, letra de 54 px (19.2 pt) con interlineado 1.08, 24 px de
+% relleno con la barra causal (108 × 14.4 px) al fondo y 28 px de margen.
+\setbeamertemplate{frametitle}{%
+  \global\caicedo@tras\z@
+  \vspace*{\caicedo@arriba}%
+  \setbox\z@\vbox{\caicedodisplay\linespread{1}\fontsize{19.2}{20.736}\selectfont
+    \color{caicedotitulo}\caicedo@puntal\insertframetitle\par
+    \global\caicedo@tmp\caicedo@fondocss}%
+  \dp\z@\caicedo@tmp \box\z@
+  \nointerlineskip\vspace{\dimexpr 24\caicedo@px-14.4\caicedo@px\relax}%
+  \hbox{\caicedobarra{108\caicedo@px}}}
+\addtobeamertemplate{frametitle}{}{\vspace*{0mm}}
+
+% ---------------------------------------------------------------- Pie
+% Firma (isotipo + nombre) a la izquierda; título corto y número a la derecha.
+% Sobre fondo oscuro (portada en sala oscura, separadores) se usan las variantes luz.
+\newif\ifcaicedo@pieoscuro
+\providecommand{\caicedopie}{\insertshorttitle}
+\newcommand*{\caicedo@firma}[1]{% {claro|oscuro|noche}
+  \begingroup\edef\caicedo@tmpb{#1}\def\caicedo@tmpc{claro}%
+  \ifx\caicedo@tmpb\caicedo@tmpc\color{ctinta}\else\color{cluz}\fi
+  \raisebox{0pt}{\caicedoisotipo[#1]{4mm}}\hspace{0.875mm}%
+  \raisebox{1.43mm}{\caicedodisplay\fontsize{6.4}{6.4}\selectfont P.\,E. Caicedo-Rodríguez}\endgroup}
+\setbeamertemplate{footline}{%
+  \ifcaicedo@sala\caicedo@pieoscurotrue\fi
+  \ifcaicedo@pieoscuro
+    \def\caicedo@piemodo{noche}\def\caicedo@pietxt{ctenueluz}\def\caicedo@pienum{cluz}%
+  \else
+    \def\caicedo@piemodo{claro}\def\caicedo@pietxt{caicedotenue}\def\caicedo@pienum{caicedotitulo}%
+  \fi
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \useasboundingbox (0,0) rectangle (\paperwidth,9);
+    \node[anchor=south west, inner sep=0pt] at (3,2.25) {\expandafter\caicedo@firma\expandafter{\caicedo@piemodo}};
+    \node[anchor=base east, inner sep=0pt] at ([xshift=-16.5mm]\paperwidth,3.4)
+      {\fontsize{7.47}{8.96}\selectfont\color{\caicedo@pietxt}\caicedopie};
+    \node[anchor=base east, inner sep=0pt] at ([xshift=-3.5mm]\paperwidth,3.4)
+      {\fontsize{7.47}{8.96}\selectfont\addfontfeature{Numbers={Monospaced,Lining}}{\caicedodisplay\color{\caicedo@pienum}\insertframenumber}\hspace{.3em}{\color{\caicedo@pietxt}/}\hspace{.3em}{\caicedodisplay\color{\caicedo@pienum}\inserttotalframenumber}};
+  \end{tikzpicture}%
+  \global\caicedo@pieoscurofalse}
+
+% ---------------------------------------------------------------- Portada
+% = section#title-slide: fondo de portada, texto arriba a la izquierda (72 px = 9 mm del borde
+% superior) y el motivo abajo a la derecha (980 px = 122.5 mm de ancho, a 5.5 mm del borde
+% derecho y 8.25 mm del inferior).
+\setbeamertemplate{title page}{%
+  \ifcaicedo@sala\global\caicedo@pieoscurotrue\fi\global\caicedo@tras\z@
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[caicedoportada] (current page.south west) rectangle (current page.north east);
+    \node[anchor=south east, inner sep=0pt] at ([xshift=-5.5mm, yshift=8.25mm]current page.south east)
+      {\ifcaicedo@sala\caicedomotivo[oscuro]{122.5mm}\else\caicedomotivo[claro]{122.5mm}\fi};
+    \node[anchor=north west, text width=144mm, align=left, inner sep=0pt]
+      at ([xshift=8mm, yshift=-9mm]current page.north west) {%
+        % Bandera a la izquierda, espacios naturales de cada fuente y sin guiones (como revealjs).
+        \raggedright\spaceskip\z@\xspaceskip\z@\hyphenpenalty\@M\exhyphenpenalty\@M
+        \linespread{1}%
+        \caicedo@linea{\caicedodisplay\fontsize{28}{29.12}\selectfont\color{caicedotitulo}}{\inserttitle}%
+        \vskip 2.25mm
+        \ifx\beamer@subtitle\@empty\else
+          \caicedo@linea{\fontsize{13.19}{15.83}\selectfont\color{caicedodato}}{\insertsubtitle}%
+          \vskip 4.25mm
+        \fi
+        \ifx\beamer@shortauthor\@empty\else
+          \caicedo@linea{\caicedodisplay\fontsize{10.67}{14.4}\selectfont\color{caicedotitulo}}{\insertauthor}%
+        \fi
+        \ifx\insertinstitute\@empty\else
+          \vskip 0.25mm
+          \caicedo@linea{\fontsize{9}{12.15}\selectfont\color{caicedotenue}}{\insertinstitute}%
+        \fi
+        \ifx\beamer@shortdate\@empty\else
+          \vskip 0.75mm
+          \caicedo@linea{\fontsize{9}{12.15}\selectfont\color{caicedotenue}}{\insertdate}%
+        \fi
+      };
+  \end{tikzpicture}}
+
+% Un renglón (o párrafo) con cajas de línea de CSS arriba y abajo: {fuente}{texto}.
+\newcommand{\caicedo@linea}[2]{\par\nointerlineskip{#1\caicedo@puntal#2\caicedo@puntalfondo\par}\nointerlineskip}
+% Sin fecha en el qmd no hay fecha en la portada (beamer pondría la de hoy), como en revealjs.
+\date{}
+
+% ---------------------------------------------------------------- Separador de sección
+% = section.level1 de revealjs con el filtro caicedo.lua: página en noche, título de 72 px
+% (25.6 pt) alineado a la izquierda y barra causal de 144 px (18 mm) debajo.
+\AtBeginSection[]{%
+  {\setbeamercolor{background canvas}{bg=cnoche}%
+  \begin{frame}
+    \global\caicedo@pieoscurotrue
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=west, text width=144mm, align=left, inner sep=0pt] at ([xshift=8mm, yshift=\caicedo@secy]current page.west) {%
+        \global\caicedo@tras\z@\raggedright\spaceskip\z@\xspaceskip\z@\hyphenpenalty\@M\linespread{1}%
+        \caicedo@linea{\caicedodisplay\fontsize{25.6}{26.88}\selectfont\color{cluz}}{\insertsectionhead}%
+        \vskip 14.8\caicedo@px\hbox{\caicedobarra{18mm}}};
+    \end{tikzpicture}
+  \end{frame}}}
+% El bloque (título + 34 px con la barra) queda centrado como el de revealjs (medido).
+\newcommand*{\caicedo@secy}{4.34mm}
+
+% ---------------------------------------------------------------- Texto
+\let\caicedo@textbf\textbf
+\renewcommand{\textbf}[1]{{\color{caicedotitulo}\caicedo@textbf{#1}}}
+\let\caicedo@texttt\texttt
+% Código en línea = code de revealjs: Mono a .88em sobre papel, sin color propio
+% (el naranja queda para la causa).
+\renewcommand{\texttt}[1]{{\setlength{\fboxsep}{0.5pt}\colorbox{caicedopapel}{\vphantom{Ág}\kern2.6pt%
+  {\fontsize{10.56}{14.256}\selectfont\color{caicedotexto}\caicedo@texttt{#1}}\kern2.6pt}}}
+
+% ---------------------------------------------------------------- Listas
+% Viñetas por forma y no solo por color: disco (nivel 1), anillo (nivel 2), raya (nivel 3).
+% Centro del disco a .249em sobre la línea base (= top .57em de revealjs con interlineado 1.35).
+\setbeamertemplate{itemize item}{\tikz[baseline=0pt]\fill[caicedodato] (0,.249em) circle (.19em);}
+\setbeamertemplate{itemize subitem}{\tikz[baseline=0pt]\draw[caicedografo, line width=.085em] (0,.239em) circle (.1375em);}
+\setbeamertemplate{itemize subsubitem}{\tikz[baseline=0pt]\fill[caicedotenue] (-.21em,.196em) rectangle (.21em,.306em);}
+\setbeamertemplate{enumerate item}{{\caicedodisplay\color{caicedodato}\addfontfeature{Numbers=Monospaced}\insertenumlabel.}}
+\setbeamertemplate{enumerate subitem}{{\caicedodisplay\color{caicedodato}\addfontfeature{Numbers=Monospaced}\insertsubenumlabel.}}
+\setbeamertemplate{enumerate subsubitem}{{\caicedodisplay\color{caicedodato}\addfontfeature{Numbers=Monospaced}\insertsubsubenumlabel.}}
+\setbeamertemplate{enumerate mini template}{{\caicedodisplay\color{caicedodato}\insertenumlabel}}
+\setbeamerfont{enumerate item}{size=\normalsize}
+\setbeamerfont{enumerate subitem}{size=\fontsize{10.8}{13.05}\selectfont}
+\setbeamerfont{enumerate subsubitem}{size=\fontsize{9.72}{11.745}\selectfont}
+% Listas anidadas a .9em y .81em (10.8 y 9.72 pt); el interlineado va dividido por \linespread
+% para que quede en 1.35 como el texto.
+\setbeamerfont{itemize/enumerate subbody}{size=\fontsize{10.8}{13.05}\selectfont}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\fontsize{9.72}{11.745}\selectfont}
+\setlength{\leftmargini}{12.6pt}     % 1.05em
+\setlength{\leftmarginii}{11.34pt}   % 1.05em a .9em
+\setlength{\leftmarginiii}{10.206pt}
+\def\@listi{\leftmargin\leftmargini \topsep \caicedo@lisep \parsep\z@ \itemsep \caicedo@lisep}
+\let\@listI\@listi
+\def\@listii{\leftmargin\leftmarginii \topsep \caicedo@lisepii \parsep\z@ \itemsep \caicedo@lisepii}
+\def\@listiii{\leftmargin\leftmarginiii \topsep \caicedo@lisepiii \parsep\z@ \itemsep \caicedo@lisepiii}
+\AtBeginDocument{\renewcommand{\tightlist}{\setlength{\parskip}{0pt}}}
+\AtBeginDocument{\setlength{\parskip}{\caicedo@parskip}}
+\AtEndEnvironment{itemize}{\ifnum\@listdepth=\@ne\par\addvspace{\caicedo@trasl}\fi}
+\AtEndEnvironment{enumerate}{\ifnum\@listdepth=\@ne\par\addvspace{\caicedo@trasl}\fi}
+\setlength{\parindent}{0pt}
+\AtBeginDocument{\setlength{\parindent}{0pt}}
+\newdimen\caicedo@izq
+\renewenvironment{description}{%
+  \par\begingroup\let\caicedo@dtsep\@empty
+  \def\item{\@ifnextchar[\caicedo@dt{\caicedo@dt[]}}}%
+  {\par\endgroup}
+\def\caicedo@dt[#1]{\par\caicedo@dtsep\def\caicedo@dtsep{\vskip\caicedo@lisep}%
+  {\ifdim\leftskip=\caicedo@izq\parskip\caicedo@parskip\else\parskip\z@\fi\leftskip\caicedo@izq
+   \noindent\caicedo@textbf{\color{caicedotitulo}#1}\par}%
+  \parskip\z@\leftskip\dimexpr\caicedo@izq+12.6\p@\relax\ignorespaces}
+
+% ---------------------------------------------------------------- Espaciado de CSS
+% revealjs coloca cada renglón en una caja de línea (alto = interlineado, con la base a
+% medio interlineado bajo la ascendente) y separa los bloques con márgenes que colapsan.
+% TeX apila renglones según sus letras. Para que coincidan, el primer renglón de lo que
+% sigue a un bloque «con borde» (título, caja, comienzo de columna o de diapositiva) lleva
+% un puntal con el alto de la caja de línea, sin interlineado de TeX encima, y el espacio
+% se calcula como en CSS a partir del margen inferior pendiente (\caicedo@margen).
+% Atkinson Hyperlegible Next: ascendente .984 em y descendente .316 em (asc - desc = .668 em).
+\newdimen\caicedo@px \caicedo@px=0.355556pt   % 1 px de revealjs
+\newdimen\caicedo@ajuste \caicedo@ajuste=@@AJUSTE@@
+\newcommand*{\caicedo@altocss}{\dimexpr(\baselineskip+.668em)/2+\caicedo@ajuste\relax}
+\newcommand*{\caicedo@fondocss}{\dimexpr\baselineskip-\caicedo@altocss\relax}
+\newcommand*{\caicedo@puntal}{\leavevmode\vrule\@height\caicedo@altocss\@width\z@}
+\newcommand*{\caicedo@puntalfondo}{%
+  \ifhmode\vrule\@depth\caicedo@fondocss\@width\z@
+  \else\ifdim\prevdepth>-1000\p@\ifdim\prevdepth<\caicedo@fondocss
+    \kern\dimexpr\caicedo@fondocss-\prevdepth\relax\prevdepth\caicedo@fondocss\fi\fi\fi}
+\newdimen\caicedo@mp \caicedo@mp=4.267pt      % margen de un <p>: 12 px
+\newdimen\caicedo@parskip \caicedo@parskip=4.267pt
+\newdimen\caicedo@lisep \caicedo@lisep=4.8pt   % .4em del <li> a 12 pt
+\newdimen\caicedo@lisepii \caicedo@lisepii=4.32pt
+\newdimen\caicedo@lisepiii \caicedo@lisepiii=3.888pt
+\newdimen\caicedo@trasl \caicedo@trasl=@@TRASLISTA@@
+\newdimen\caicedo@margen
+\newdimen\caicedo@tmp
+\newdimen\caicedo@arriba \caicedo@arriba=@@ARRIBA@@
+\newdimen\caicedo@inicio \caicedo@inicio=@@INICIO@@
+% \caicedo@tras: 0 = tras texto (TeX ya pone el interlineado), 1 = tras un bloque con borde,
+% 2 = arriba de una caja (sin margen previo), 3 = comienzo del cuerpo de la diapositiva.
+\newcount\caicedo@tras
+\newif\ifcaicedo@titulo
+\newif\ifcaicedo@puntal
+\newcommand*{\caicedo@trascaja}[1]{\global\caicedo@margen=#1\relax\global\caicedo@tras\@ne}
+\AddToHook{para/before}{\ifnum\caicedo@tras>\z@\caicedo@espacio\fi}
+\AddToHook{para/begin}{\ifcaicedo@puntal\global\caicedo@puntalfalse
+  \vrule\@height\caicedo@altocss\@width\z@\fi}
+\newcommand*{\caicedo@espacio}{%
+  \ifnum\caicedo@tras=\tw@
+    \ifnum\@listdepth>\z@\vskip\topsep\fi
+  \else
+    \vskip\dimexpr
+      \ifnum\caicedo@tras=\@ne
+        \ifcaicedo@titulo\caicedo@margen-\parskip
+        \else\ifnum\@listdepth>\z@\caicedo@margen-\caicedo@parskip
+        \else\ifdim\caicedo@margen<\caicedo@mp\caicedo@mp\else\caicedo@margen\fi-\parskip\fi\fi
+      \else
+        \caicedo@inicio
+      \fi\relax
+  \fi
+  \nointerlineskip
+  \global\caicedo@puntaltrue
+  \global\caicedo@tras\z@}
+\AddToHook{env/beamer@framepauses/begin}{\global\caicedo@tras\thr@@\global\caicedo@puntalfalse}
+\AtBeginEnvironment{longtable}{%
+  \ifcase\caicedo@tras\par\addvspace{\caicedo@mp}\caicedo@hastafondo\setlength\LTpre{\z@}%
+  \or\setlength\LTpre{\caicedo@margen}%
+  \or\setlength\LTpre{\z@}%
+  \or\setlength\LTpre{\dimexpr\caicedo@inicio+\caicedo@parskip\relax}\fi
+  \setlength\LTpost{\z@}\global\caicedo@tras\z@}
+\AfterEndEnvironment{longtable}{\caicedo@trascaja{\z@}}
+
+\newdimen\caicedo@margenc
+\def\caicedo@trasc{0}
+\newcommand*{\caicedo@guardar}{\edef\caicedo@trasc{\the\caicedo@tras}\caicedo@margenc=\caicedo@margen
+  \global\caicedo@tras\z@}
+\newcommand*{\caicedo@antes}[1]{%
+  \ifnum\lastnodetype=-1\relax\else
+    \par
+    \ifvmode
+      \ifnum\caicedo@trasc=\@ne
+        \vskip\dimexpr\ifdim\caicedo@margenc<#1 #1\else\caicedo@margenc\fi-\parskip\relax
+      \else\ifnum\caicedo@trasc=\thr@@
+        \vskip\caicedo@inicio
+      \else\ifnum\caicedo@trasc=\z@
+        \iftcb@minipage\else
+          \addvspace{\glueexpr\dimexpr\caicedo@fondocss-\ifdim\prevdepth<\z@\z@\else\prevdepth\fi
+            +\ifdim#1<\caicedo@mp\caicedo@mp\else#1\fi-\parskip\relax\relax}%
+        \fi
+      \fi\fi\fi
+      \nointerlineskip
+    \fi
+  \fi
+  \global\caicedo@tras\z@
+  \lineskip\z@skip\noindent}
+\newcommand*{\caicedo@despues}[1]{%
+  \tcb@parfillskip@check\par
+  \ifvmode\nointerlineskip\fi
+  \caicedo@trascaja{#1}}
+\newcommand*{\caicedo@arribacaja}{\global\caicedo@tras\tw@}
+\newcommand*{\caicedo@hastafondo}{\ifdim\prevdepth>-1000\p@\ifdim\prevdepth<\caicedo@fondocss
+  \vskip\dimexpr\caicedo@fondocss-\prevdepth\relax\fi\fi}
+
+% ---------------------------------------------------------------- Subtítulos y bloques
+% ### dentro de una diapositiva = block de beamer = h3 de revealjs (dato, 13.8 pt, negrita,
+% interlineado 1.08, sin margen superior y 12 px de margen inferior).
+\setbeamerfont{block title}{size=\linespread{1}\fontsize{13.8}{14.904}\selectfont}
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{block begin}{%
+  \par
+  {\ifnum\caicedo@tras=\z@\addvspace{\caicedo@mp}\caicedo@hastafondo\parskip\z@\caicedo@trascaja{\z@}\fi
+   \caicedo@titulotrue\usebeamercolor[fg]{block title}\usebeamerfont{block title}\bfseries
+   \insertblocktitle\caicedo@puntalfondo\par}%
+  \nointerlineskip\caicedo@trascaja{\caicedo@mp}%
+  \usebeamercolor[fg]{block body}}
+\setbeamertemplate{block end}{\par}
+
+% ---------------------------------------------------------------- Código
+\AtBeginDocument{%
+  \@ifundefined{Shaded}{}{%
+    \renewenvironment{Shaded}{\begin{caicedocodigo}}{\end{caicedocodigo}}}}
+% = pre de revealjs: letra de 9.6 pt (.8em), interlineado 1.4, relleno .5em .75em y filo de 6 px.
+\newcommand*{\caicedo@lineasconpuntal}{\renewcommand{\FancyVerbFormatLine}[1]{%
+  \vrule\@height\caicedo@altocss\@depth\caicedo@fondocss\@width\z@##1}}
+\newtcolorbox{caicedocodigo}{breakable, enhanced, frame hidden, boxrule=0pt, boxsep=0pt,
+  colback=caicedopapel, colupper=caicedotexto, arc=0.5mm, borderline west={0.75mm}{0pt}{caicedodato},
+  code=\caicedo@guardar, before upper=\caicedo@lineasconpuntal,
+  left=\dimexpr20.25\caicedo@px+0.75mm\relax, right=20.25\caicedo@px, top=13.5\caicedo@px, bottom=13.5\caicedo@px,
+  before={\caicedo@antes{\z@}}, after={\caicedo@despues{\z@}}, halign=flush left,
+  fontupper=\linespread{1}\fontsize{9.6}{13.44}\selectfont}
+
+% ---------------------------------------------------------------- Tablas (booktabs)
+\setlength{\heavyrulewidth}{0.375mm}
+\setlength{\lightrulewidth}{0.1875mm}
+\setlength{\abovetopsep}{0pt}\setlength{\belowrulesep}{0pt}\setlength{\aboverulesep}{0pt}\setlength{\belowbottomsep}{0pt}
+\renewcommand{\arraystretch}{1.2963}   % fila = 27 px × 1.35 + 2 × .2em = 47.25 px
+\AtBeginEnvironment{longtable}{\linespread{1}\fontsize{9.6}{12.96}\selectfont\arrayrulecolor{caicedoregla}\addfontfeature{Numbers=Monospaced}}
+\setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}
+\AtBeginEnvironment{tabular}{\linespread{1}\fontsize{9.6}{12.96}\selectfont\arrayrulecolor{caicedoregla}}
+% Encabezado en negrita, como el th de revealjs.
+\newif\ifcaicedo@cabecera
+\newcommand*{\caicedo@celdacab}{\begingroup\bfseries\color{caicedotitulo}}
+\newcommand*{\caicedo@cabon}{\noalign{\global\caicedo@cabeceratrue\global\let\d@llarbegin\caicedo@celdacab}}
+\newcommand*{\caicedo@caboff}{\noalign{\global\caicedo@cabecerafalse\global\let\d@llarbegin\begingroup}}
+\AtBeginEnvironment{longtable}{%
+  \let\caicedo@toprule\toprule\def\toprule{\caicedo@cabon\caicedo@toprule}%
+  \let\caicedo@midrule\midrule\def\midrule{\caicedo@caboff\caicedo@midrule}%
+  \let\caicedo@bottomrule\bottomrule\def\bottomrule{\caicedo@caboff\caicedo@bottomrule}}
+\AddToHook{env/longtable/after}{\global\caicedo@cabecerafalse\global\let\d@llarbegin\begingroup}
+
+% ---------------------------------------------------------------- Columnas
+\define@key{beamer@col}{T}[true]{\def\beamer@colmode{T}\def\beamer@colalign{t}%
+  \def\beamer@colheadskip{\setlength\parskip{\caicedo@parskip}%
+    \par\kern\caicedo@colarriba\nointerlineskip\@minipagefalse\caicedo@encolumnatrue\caicedo@trascaja{\z@}%
+    \caicedo@colmargenes}}
+\newif\ifcaicedo@encolumna
+\newdimen\caicedo@colml \newdimen\caicedo@colmr
+\newdimen\caicedo@colacum \newdimen\caicedo@coltotal
+\newcommand*{\caicedo@colmargenes}{%
+  \ifdim\caicedo@colacum<\p@\caicedo@colml\z@\caicedo@colmr1mm\else\caicedo@colml.5mm\caicedo@colmr.5mm\fi
+  \ifdim\dimexpr\caicedo@colacum+\linewidth\relax>\dimexpr\caicedo@coltotal-\p@\relax
+    \caicedo@colml1mm\caicedo@colmr\z@\fi
+  \global\advance\caicedo@colacum\linewidth
+  \caicedo@izq\caicedo@colml\leftskip\caicedo@colml\rightskip\caicedo@colmr\@plus1fil\relax
+  \tcbset{every box on layer 1/.append style={width=\linewidth-\caicedo@colml-\caicedo@colmr}}}
+\AtBeginEnvironment{itemize}{\ifcaicedo@encolumna\caicedo@izq\z@\leftskip\z@\rightskip\@flushglue\fi}
+\AtBeginEnvironment{enumerate}{\ifcaicedo@encolumna\caicedo@izq\z@\leftskip\z@\rightskip\@flushglue\fi}
+\AddToHook{env/minipage/begin}{\global\caicedo@tras\z@}
+\AddToHook{env/minipage/end}{\ifcaicedo@encolumna\par
+  \ifnum\caicedo@tras=\@ne\vskip\caicedo@margen
+  \else\vskip\dimexpr\caicedo@fondocss-\ifdim\prevdepth<\z@\z@\else\prevdepth\fi+\caicedo@mp\relax\fi
+  \global\caicedo@tras\z@\fi}
+\AfterEndEnvironment{columns}{\par\nointerlineskip\caicedo@trascaja{\caicedo@mp}}
+\newdimen\caicedo@colarriba \caicedo@colarriba=\z@
+\BeforeBeginEnvironment{columns}{\par\global\caicedo@coltotal\linewidth\global\caicedo@colacum\z@
+  \ifnum\caicedo@tras=\@ne\vskip\caicedo@margen
+  \else\ifnum\caicedo@tras=\thr@@\vskip\dimexpr\caicedo@inicio+\caicedo@parskip\relax
+  \else\addvspace{\dimexpr\caicedo@fondocss-\ifdim\prevdepth<\z@\z@\else\prevdepth\fi+\caicedo@mp\relax}\fi\fi
+  \nointerlineskip\global\caicedo@tras\z@}
+\define@key{beamer@col}{c}[true]{\def\beamer@colmode{c}\def\beamer@colalign{c}%
+  \def\beamer@colheadskip{\setlength\parskip{\caicedo@parskip}\caicedo@colmargenes}}
+\define@key{beamer@col}{t}[true]{\def\beamer@colmode{t}\def\beamer@colalign{t}%
+  \def\beamer@colheadskip{\setlength\parskip{\caicedo@parskip}\caicedo@colmargenes}}
+\define@key{beamer@col}{b}[true]{\def\beamer@colmode{b}\def\beamer@colalign{b}%
+  \def\beamer@colheadskip{\setlength\parskip{\caicedo@parskip}\caicedo@colmargenes}}
+
+% ---------------------------------------------------------------- Citas
+% = blockquote de revealjs: papel, filo de 6 px en grafo, relleno .45em .9em, margen .6em.
+\newtcolorbox{caicedocita}{enhanced, frame hidden, boxrule=0pt, boxsep=0pt, sharp corners,
+  colback=caicedopapel, colupper=caicedotexto, borderline west={0.75mm}{0pt}{caicedografo},
+  left=\dimexpr10.8pt+0.75mm\relax, right=10.8pt, top=5.4pt, bottom=5.4pt,
+  before={\caicedo@antes{7.2pt}}, after={\caicedo@despues{7.2pt}}, halign=flush left,
+  code=\caicedo@guardar, before upper=\caicedo@arribacaja, after upper=\caicedo@puntalfondo}
+\renewenvironment{quote}{\begin{caicedocita}}{\end{caicedocita}}
+
+% ---------------------------------------------------------------- Callouts de Quarto
+% = callouts de revealjs: fondo papel, solo el filo izquierdo (8 px) del color del tipo,
+% título en negrita del mismo color y letra a .9em (10.8 pt).
+\AtBeginDocument{%
+  \colorlet{quarto-callout-note-color}{caicedodato}\colorlet{quarto-callout-note-color-frame}{caicedodato}%
+  \colorlet{quarto-callout-tip-color}{caicedografo}\colorlet{quarto-callout-tip-color-frame}{caicedografo}%
+  \colorlet{quarto-callout-important-color}{caicedocausa}\colorlet{quarto-callout-important-color-frame}{caicedocausa}%
+  \colorlet{quarto-callout-warning-color}{caicedoaviso}\colorlet{quarto-callout-warning-color-frame}{caicedoaviso}%
+  \colorlet{quarto-callout-caution-color}{caicedoaviso}\colorlet{quarto-callout-caution-color-frame}{caicedoaviso}%
+  \colorlet{quarto-callout-color}{caicedotenue}\colorlet{quarto-callout-color-frame}{caicedotenue}}
+\newcommand*{\caicedo@callouthook}{%
+  \tcbset{colback=caicedopapel, opacityback=1, colupper=caicedotexto,
+    opacitybacktitle=1, toprule=0pt, bottomrule=0pt, rightrule=0pt, leftrule=1mm, arc=0.5mm,
+    boxsep=0pt, left=5.4pt, right=5.4pt, top=2.16pt, bottom=3.78pt,
+    lefttitle=5.4pt, righttitle=5.4pt, toptitle=3.24pt, bottomtitle=0pt,
+    before={\caicedo@antes{6.48pt}}, after={\caicedo@despues{6.48pt}}, halign=flush left, halign title=flush left,
+    fonttitle=\caicedodisplay\linespread{1}\fontsize{10.8}{14.04}\selectfont,
+    before title=\caicedo@puntal, after title=\caicedo@puntalfondo,
+    fontupper=\linespread{1}\fontsize{10.8}{14.04}\selectfont,
+    before upper=\caicedo@arribacaja, after upper=\caicedo@puntalfondo, code=\caicedo@guardar}%
+  \tcbset{colback/.code={}, opacityback/.code={}, colupper/.code={}, coltitle/.code={},
+    opacitybacktitle/.code={}, @colbacktitle/.code={}, toprule/.code={}, bottomrule/.code={},
+    rightrule/.code={}, leftrule/.code={}, left/.code={}, toptitle/.code={}, bottomtitle/.code={},
+    colframe/.code={\colorlet{tcbcolframe}{##1}\colorlet{tcbcoltitle}{##1}\colorlet{tcbcolbacktitle}{caicedopapel}}}}
+\AddToHook{env/tcolorbox/begin}{\caicedo@callouthook}
+% Iconos de los callouts = los de revealjs (Bootstrap Icons) en lugar de los macizos de Font Awesome.
+\newcommand*{\caicedo@bi}[1]{\smash{\tikz[baseline=-1.145em, x=0.0789em, y=-0.0789em]{%
+  \useasboundingbox (0,0) rectangle (12.67,16); #1}}}
+@@ICONOS@@
+
+% ---------------------------------------------------------------- Figuras
+% = figcaption de revealjs: centrada bajo la figura, sin «Figura n:», 8.4 pt (.7em) en tenue.
+\setbeamerfont{caption}{size=\fontsize{8.4}{11.34}\selectfont}
+\setbeamercolor{caption}{fg=caicedotenue}
+\setbeamertemplate{caption}{\centering\usebeamercolor[fg]{caption}\insertcaption\par}
+% Quarto carga el paquete caption, que reemplaza la plantilla de beamer: se ajusta igual.
+\AtBeginDocument{\@ifpackageloaded{caption}{%
+  \DeclareCaptionFont{caicedo}{\fontsize{8.4}{11.34}\selectfont\color{caicedotenue}}%
+  \captionsetup{labelformat=empty, labelsep=none, font=caicedo, justification=centering,
+    singlelinecheck=false, skip=4.5pt}}{}}
+
+\endinput

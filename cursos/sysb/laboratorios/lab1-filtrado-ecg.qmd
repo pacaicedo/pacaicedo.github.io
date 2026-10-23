@@ -1,0 +1,62 @@
+---
+title: "Laboratorio 1: filtrado de un ECG"
+description: "Separar la deriva de línea base, la red de 60 Hz y el ruido de un ECG sintético, sin desplazar la onda R."
+rotulo: "Lab 1"
+date: 2026-09-21
+---
+
+## Objetivos
+
+1. Identificar en el tiempo y en la frecuencia tres componentes no deseadas de un ECG.
+2. Diseñar un pasabanda y un notch con `scipy.signal`.
+3. Comprobar que el filtrado de fase cero no desplaza la onda R.
+
+## Materiales
+
+- Python con NumPy, SciPy y Matplotlib.
+- [`datos_ejemplo.py`](../../../recursos/python/datos_ejemplo.py): la función `ecg_sintetico` devuelve el ECG limpio y el contaminado.
+
+## Procedimiento
+
+### Mirar antes de filtrar
+
+![El ECG sintético, contaminado, y dos de sus componentes no deseadas.](../fig/ecg-componentes){width="85%"}
+
+```python
+from datos_ejemplo import ecg_sintetico
+t, limpio, sucio = ecg_sintetico(fs=500, duracion=10)
+```
+
+### Diseñar los filtros
+
+- Pasabanda Butterworth de orden 4 entre 0,5 y 40 Hz.
+- Notch de 60 Hz con `signal.iirnotch(60, Q=30, fs=500)`.
+
+### Comparar `lfilter` y `filtfilt`
+
+![Un latido filtrado con los dos métodos.](../../../tutoriales/filtrado-fase-cero/fig/fase-cero){width="85%"}
+
+Mide el retraso de la onda R en cada caso (por ejemplo con `np.argmax` en una ventana alrededor del latido).
+
+## Preguntas orientadoras
+
+1. ¿Qué componente se ve mejor en el tiempo y cuál en la frecuencia?
+2. ¿Por qué un pasa altos de 0,5 Hz no deforma el complejo QRS pero sí podría deformar el segmento ST?
+3. ¿Qué pasaría con el notch si la frecuencia de muestreo fuera de 100 Hz?
+
+## Entregables
+
+- Script reproducible con las figuras en el tiempo y en la frecuencia.
+- Tabla con el retraso de la onda R para cada método.
+- Respuestas a las preguntas orientadoras.
+
+## Rúbrica
+
+| Criterio | Peso | Logrado |
+|:--|--:|:--|
+| Identificación de componentes | 25 % | Cada componente se reconoce en el tiempo y en la frecuencia |
+| Diseño de filtros | 30 % | Orden, cortes y tipo justificados |
+| Fase | 25 % | El retraso se mide y se explica |
+| Reproducibilidad | 20 % | El código corre de principio a fin |
+
+: Rúbrica del laboratorio 1.

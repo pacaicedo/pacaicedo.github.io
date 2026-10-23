@@ -1,0 +1,476 @@
+/*-- scss:defaults --*/
+// caicedo-sitio.scss: tema del sitio Quarto de la marca P. E. Caicedo-Rodríguez (v2.1).
+// Uso en _quarto.yml:
+//   website:
+//     favicon: recursos/marca/logo/favicon.svg
+//     navbar:
+//       logo: recursos/marca/logo/isotipo-oscuro.svg
+//       title: "P. E. Caicedo-Rodríguez"
+//   format: html: theme: [cosmo, recursos/marca/caicedo-sitio.scss, recursos/marca/caicedo-documento.scss]
+//   (la segunda capa da a las páginas de contenido las tablas, el código y los callouts de los documentos)
+//
+// Archivo generado por fuente/construir_marca.py desde fuente/plantillas/. La marca comparte
+// tokens (paleta, letra, tamaños) con los documentos HTML y PDF y con las diapositivas.
+
+// ---------------------------------------------------------------- Tokens de color
+// Cada acento tiene un significado: dato (turquesa) = medición y extracción, grafo (violeta) =
+// estructura, causa (naranja) = efecto e intervención. El naranja se reserva para la causa
+// y para la acción principal.
+@@TOKENS@@
+
+// ---------------------------------------------------------------- Letra
+// Atkinson Hyperlegible Next y Mono (Braille Institute, SIL OFL); respaldo DejaVu para griego y símbolos.
+$c-fuente-texto: "Atkinson Hyperlegible Next", "Caicedo Respaldo", system-ui, sans-serif !default;
+$c-fuente-mono:  "Atkinson Hyperlegible Mono", "Caicedo Respaldo Mono", ui-monospace, monospace !default;
+$c-font-display: $c-fuente-texto !default;
+$c-font-text: $c-fuente-texto !default;
+$c-font-mono: $c-fuente-mono !default;
+
+// ---------------------------------------------------------------- Bootstrap / Quarto
+$body-bg: $c-blanco;
+$body-color: $c-texto;
+$primary: $c-dato-d;
+$secondary: $c-tenue;
+$success: $c-dato-d;
+$info: $c-dato-d;
+$warning: $c-causa-d;
+$danger: $c-aviso-d;
+$dark: $c-noche;
+$light: $c-papel;
+$link-color: $c-dato-d;
+$link-color-hover: $c-causa-d;
+$link-decoration: underline;
+$font-family-sans-serif: $c-fuente-texto;
+$font-family-base: $c-fuente-texto;
+$headings-font-family: $c-fuente-texto;
+$font-family-monospace: $c-fuente-mono;
+$web-font-path: false;
+$font-size-root: 18px;
+$line-height-base: 1.6;
+$headings-color: $c-tinta;
+$headings-font-weight: 800;
+$code-color: $c-texto;
+$code-bg: $c-papel;
+$code-block-bg: $c-papel;
+$code-block-border-left: $c-dato-d;
+$border-radius: 4px;
+$border-radius-lg: 8px;
+$selection-bg: rgba($c-dato, .30);
+
+// Barra de navegación y pie: noche, el campo de marca
+$navbar-bg: $c-noche;
+$navbar-fg: $c-luz;
+$navbar-hl: $c-dato-luz;
+$footer-bg: $c-noche;
+$footer-fg: $c-tenue-luz;
+$sidebar-bg: $c-blanco;
+$sidebar-fg: $c-texto;
+$sidebar-hl: $c-dato-d;
+$toc-color: $c-tenue;
+$toc-active-border: $c-dato-d;
+$toc-inactive-border: $c-filete;
+
+// Banner del título (title-block-banner: true)
+$title-banner-bg: $c-noche;
+$title-banner-color: $c-luz;
+$title-banner-image: url("@@MOTIVO_NOCHE@@");
+
+$callout-color-note: $c-dato-d;
+$callout-color-tip: $c-grafo-d;
+$callout-color-important: $c-causa-d;
+$callout-color-caution: $c-aviso-d;
+$callout-color-warning: $c-aviso-d;
+
+// Este tema incrusta las fuentes; caicedo-documento.scss lo mira para no repetirlas en las
+// páginas que superponen las dos capas (asignación sin !default a propósito).
+$c-fuentes-cargadas: true;
+$c-en-sitio: true;
+
+/*-- scss:rules --*/
+@@FUENTES@@
+
+// ================================================================ Base
+body { font-feature-settings: "kern"; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3 { letter-spacing: 0; }
+// Quarto deja h1 y h2 en 600: la jerarquía de la marca es 800 (h1, h2) y 700 (h3, h4).
+h1, .h1, h2, .h2 { font-weight: 800; }
+h3, .h3, h4, .h4 { font-weight: 700; }
+code, pre, kbd { font-variant-ligatures: none; }
+::selection { background: rgba($c-dato, .30); }
+:focus-visible { outline: 3px solid $c-causa; outline-offset: 2px; }   // foco visible, también sobre noche
+
+// ================================================================ Barra de navegación
+.navbar {
+  font-family: $c-fuente-texto;
+  .navbar-brand, .navbar-title { font-weight: 800; color: $c-luz !important; }
+  .navbar-brand img, .navbar-logo { max-height: 36px; }
+  .nav-link { color: $c-luz; font-weight: 500; white-space: nowrap; }
+  .nav-link:hover, .nav-link:focus { color: $c-dato-luz; }
+  // Página activa: subrayado grueso en dato (la forma, además del color).
+  .nav-link.active, .nav-item.active > .nav-link { color: $c-luz; box-shadow: inset 0 -3px 0 $c-dato-luz; }
+  .quarto-navbar-tools .quarto-navigation-tool { color: $c-luz; }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .navbar-nav .nav-link { padding-left: .4rem; padding-right: .4rem; }
+    .navbar-title { font-size: 1.05rem; }
+  }
+  @media (max-width: 575.98px) {
+    a.navbar-brand { white-space: normal; text-overflow: clip; }
+    .navbar-title { font-size: 1rem; line-height: 1.15; display: inline-block; }
+  }
+}
+
+// ================================================================ Pie de página
+.nav-footer {
+  font-size: .9rem;
+  a { color: $c-luz; text-decoration-color: rgba($c-luz, .45); }
+  a:hover { color: $c-dato-luz; }
+}
+
+// ================================================================ Portada (hero)
+// Uso en index.qmd:
+//   ::: {.hero}
+//   [Del dato a la causa]{.hero-kicker}
+//   # Título grande {.unnumbered .unlisted}
+//   Texto de entrada
+//   [Proyectos](proyectos.qmd){.btn .btn-marca} [Cursos](cursos.qmd){.btn .btn-marca-borde}
+//   :::
+// Campo noche; el motivo «de x[n] a la causa» corre por la parte baja, de izquierda a derecha.
+.hero {
+  position: relative;
+  margin: 0 0 3rem;
+  padding: 4rem 2.5rem calc(2.5rem + min(12rem, 22vw));
+  border-radius: $border-radius-lg;
+  background-color: $c-noche;
+  background-image: url("@@MOTIVO_NOCHE@@");
+  background-repeat: no-repeat;
+  background-position: right 2rem bottom 2rem;
+  background-size: min(52rem, 88%) auto;
+  color: $c-luz;
+  overflow: hidden;
+  > * { position: relative; z-index: 1; max-width: 40rem; }
+  h1, h2 { color: $c-luz; font-size: clamp(2.3rem, 5vw, 3.7rem); font-weight: 800; line-height: 1.05; border: 0; margin: .3rem 0 1rem; background-image: none; padding-bottom: 0; }
+  p { font-size: 1.15rem; color: $c-luz; }
+  a:not(.btn) { color: $c-dato-luz; }
+  @media (max-width: 767.98px) {
+    padding: 2.6rem 1.4rem calc(2rem + 26vw);
+    background-position: center bottom 1.2rem;
+    background-size: 94% auto;
+  }
+}
+// Antetítulo: minúscula de frase, negrita, en dato-luz (sin versalitas espaciadas).
+.hero-kicker {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $c-dato-luz;
+}
+
+// ================================================================ Botones
+// .btn-marca = la acción principal (naranja: la intervención); .btn-marca-borde = secundaria.
+.btn-marca, .btn-marca-borde {
+  font-weight: 700;
+  padding: .6rem 1.3rem;
+  border-radius: 6px;
+  margin: .3rem .5rem .3rem 0;
+  text-decoration: none;
+}
+.btn-marca { background: $c-causa; border: 2px solid $c-causa; color: $c-tinta !important; }
+.btn-marca:hover, .btn-marca:focus { background: $c-causa-luz; border-color: $c-causa-luz; color: $c-tinta !important; }
+.btn-marca-borde { background: transparent; border: 2px solid $c-dato-d; color: $c-dato-d !important; }
+.btn-marca-borde:hover { background: rgba($c-dato, .10); }
+.hero, .banda {
+  .btn-marca-borde { border-color: $c-dato-luz; color: $c-dato-luz !important; }
+  .btn-marca-borde:hover { background: rgba($c-dato-luz, .14); }
+}
+
+// ================================================================ Ejes temáticos
+// ::: {.ejes}
+// ::: {.eje .dato}   ### Extracción de información ... :::
+// ::: {.eje .grafo}  ### Grafos ... :::
+// ::: {.eje .causa}  ### Causalidad ... :::
+// ::: {.eje .ia}     ### IA confiable ... :::
+// :::
+// Cada eje lleva el nodo del isotipo que le corresponde: disco (dato), anillo (grafo),
+// flecha (causa) y cuadrado (ia). Sin sombras ni animaciones: la forma hace el trabajo.
+.ejes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1.4rem 2rem;
+  margin: 2rem 0 3rem;
+}
+.eje {
+  --eje: #{$c-dato-d};
+  position: relative;
+  padding: 1.1rem 0 0 0;
+  border-top: 4px solid var(--eje);
+  h3, h4 { margin-top: 0; color: $c-tinta; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: .55rem; }
+  h3::before, h4::before {
+    content: ""; flex: none; width: .8rem; height: .8rem; border-radius: 50%; background: var(--eje);
+  }
+  p:last-child { margin-bottom: 0; }
+  // .dato/.grafo/.causa solo cambian el acento del eje, no el color del texto
+  &.dato  { --eje: #{$c-dato-d}; color: $c-texto; }
+  &.grafo { --eje: #{$c-grafo-d}; color: $c-texto;
+    h3::before, h4::before { background: transparent; border: 3px solid var(--eje); box-sizing: border-box; } }
+  &.causa { --eje: #{$c-causa-d}; color: $c-texto;
+    h3::before, h4::before { border-radius: 0; width: .9rem; height: .7rem; clip-path: polygon(0 30%, 55% 30%, 55% 0, 100% 50%, 55% 100%, 55% 70%, 0 70%); } }
+  &.ia    { --eje: #{$c-tinta}; color: $c-texto;
+    h3::before, h4::before { border-radius: 2px; width: .72rem; height: .72rem; } }
+}
+
+// ================================================================ Banda oscura
+// ::: {.banda} ... ::: (bloque con fondo noche)
+.banda {
+  background: $c-noche;
+  color: $c-luz;
+  padding: 2.5rem 2rem;
+  border-radius: $border-radius-lg;
+  margin: 2.5rem 0;
+  h2, h3 { color: $c-luz; border: 0; background-image: none; }
+  a { color: $c-dato-luz; }
+  strong { color: $c-luz; }
+  code { color: $c-luz; background: rgba($c-luz, .12); }
+  .dato { color: $c-dato-luz; } .grafo { color: $c-grafo-luz; } .causa, .alert { color: $c-causa-luz; } .tenue { color: $c-tenue-luz; }
+}
+
+// ================================================================ Listados (blog, proyectos)
+.quarto-listing {
+  .listing-title, .card-title { font-weight: 800; color: $c-tinta; }
+  .listing-title a, .card-title a { font-weight: inherit; text-decoration: none; }
+  .listing-categories .listing-category, .quarto-category,
+  div.quarto-post .listing-categories .listing-category,
+  .quarto-grid-item .listing-categories .listing-category {
+    font-size: .78rem; font-weight: 600; text-transform: none; letter-spacing: 0;
+    border: 1px solid $c-filete; color: $c-dato-d; border-radius: 999px; padding: .1rem .6rem;
+  }
+  .listing-date, .listing-author, .listing-reading-time { color: $c-tenue; font-size: .85rem; text-transform: none; letter-spacing: 0; }
+  .card {
+    border: 1px solid $c-filete; border-radius: $border-radius;
+    &:hover { border-color: $c-dato-d; }
+  }
+}
+.listing-item-img-placeholder, .card-img-top.listing-item-img-placeholder {
+  background-color: $c-noche !important;
+  background-image: url("@@MOTIVO_NOCHE@@");
+  background-repeat: no-repeat; background-position: center; background-size: 88% auto;
+}
+// Listados sin fecha ni autor (fields: [title, description]): Quarto deja una columna de
+// metadatos vacía que corre el texto a la derecha; se oculta.
+div.quarto-post .metadata:not(:has(:not(a:empty))) { display: none; }
+div.quarto-post {
+  border-bottom: 1px solid $c-filete;
+  .listing-title a, .title a { color: $c-tinta; text-decoration: none; }
+  .listing-title a:hover { color: $c-dato-d; text-decoration: underline; }
+}
+.quarto-listing-category-title, .quarto-listing-category .category { font-weight: 600; }
+.quarto-listing-category .category.active { color: $c-dato-d; font-weight: 800; }
+
+// ================================================================ Listados lado a lado (portada)
+// ::: {.listados}
+// ::: {.listado}  ## Últimas noticias  ::: {#noticias} :::  :::
+// ::: {.listado}  ## Cursos            ::: {#cursos} :::    :::
+// :::
+.listados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 3rem;
+  align-items: start;
+  margin: 0 0 2rem;
+  > .listado { min-width: 0; }
+  .quarto-listing-container-default { margin-right: 0; }
+  .quarto-listing { padding-bottom: 0; }
+  div.quarto-post {
+    flex-direction: column;
+    gap: .3rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0;
+    &:last-child { margin-bottom: 0; }
+    .metadata { order: 0; flex-basis: auto; margin-top: 0; padding-bottom: 0; }
+    .body { order: 1; flex-basis: auto; }
+    .thumbnail { order: 2; flex-basis: auto; img { max-height: 10rem; } }
+    .listing-date { font-size: .85rem; font-weight: 600; color: $c-tenue; font-variant-numeric: tabular-nums; }
+    .listing-title { font-size: 1.25rem; }
+  }
+}
+.listados.tres {
+  grid-template-columns: minmax(0, 1fr);
+  @media (min-width: 992px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+#quarto-content .listados > section.listado > h2:first-child { margin-top: 0; }
+
+// ================================================================ Página «sobre mí» (about)
+div.quarto-about-jolla, div.quarto-about-trestles, div.quarto-about-solana, div.quarto-about-marquee, div.quarto-about-broadside {
+  .about-image { border: 4px solid $c-blanco; box-shadow: 0 0 0 4px $c-dato; }
+  .about-link, .about-entity .about-link, .about-links .about-link {
+    font-weight: 600; color: $c-dato-d; text-decoration: none;
+    border: 1px solid $c-filete; border-radius: 999px;
+    &:hover { color: $c-tinta; border-color: $c-dato-d; }
+  }
+}
+
+// ================================================================ Encabezados del sitio
+// Barra causal bajo los H2 (mismo gesto que documentos y diapositivas).
+main.content h2 {
+  border-bottom: 0;
+  padding-bottom: .9rem;
+  background-image: url("@@BARRA@@");
+  background-repeat: no-repeat;
+  background-size: 72px 9.6px;
+  background-position: left bottom;
+}
+main.content .hero h1, main.content .hero h2, main.content .banda h2 { background-image: none; padding-bottom: 0; }
+
+// ================================================================ Barra lateral y TOC
+.sidebar nav[role="doc-toc"] ul > li > a.active, .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+  color: $c-dato-d; border-left-color: $c-dato-d; font-weight: 600;
+}
+.sidebar-title, #toc-title { font-weight: 800; color: $c-tinta; text-transform: none; letter-spacing: 0; }
+
+// ================================================================ Utilidades de marca
+.dato  { color: $c-dato-d; }
+.grafo { color: $c-grafo-d; }
+.causa, .alert { color: $c-causa-d; }
+.aviso { color: $c-aviso-d; }
+.tenue { color: $c-tenue; }
+span.alert { padding: 0; margin: 0; border: 0; border-radius: 0; background: none; }
+.texto-dato  { color: $c-dato-d; }
+.texto-grafo { color: $c-grafo-d; }
+.texto-causa { color: $c-causa-d; }
+.mono { font-family: $c-fuente-mono; }
+.kicker { display: block; font-size: .9rem; font-weight: 700; color: $c-dato-d; margin-bottom: .2rem; }
+// [ ]{.isotipo}: el isotipo en línea, al tamaño del texto.
+.isotipo { display: inline-block; width: 1.2em; height: 1.2em; vertical-align: -.22em; background: url("@@ISO_CLARO@@") center / contain no-repeat; }
+.hero .isotipo, .banda .isotipo, .navbar .isotipo { background-image: url("@@ISO_NOCHE@@"); }
+
+// ================================================================ Componentes de contenido (v2.1)
+// Piezas para páginas de cursos, charlas y proyectos. Todas funcionan sin JavaScript y
+// ninguna depende solo del color: llevan texto, forma o posición.
+
+// ---------------------------------------------------------------- Ficha
+// Datos clave de un curso, una charla o un proyecto, como lista de definiciones:
+//   ::: {.ficha}
+//   Semestre
+//   : 2026-2
+//
+//   Intensidad
+//   : 4 horas por semana
+//   :::
+// El filtro caicedo.lua agrupa cada rótulo con su valor; la rejilla los reparte en las columnas
+// que quepan. El rótulo va en negrita pequeña y tenue, el valor en texto. En PDF queda como
+// lista de definiciones.
+.ficha {
+  margin: 1.2rem 0 2rem;
+  dl {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: .9rem 1.5rem; margin: 0; padding: 1rem 1.25rem;
+    background: $c-papel; border-left: 4px solid $c-dato-d; border-radius: 4px;
+  }
+  .ficha-dato { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
+  dt { font-size: .78rem; font-weight: 700; color: $c-tenue; margin: 0; }
+  dd { margin: 0; font-weight: 500; color: $c-texto; line-height: 1.35; }
+  dd p { margin: 0; }
+}
+.quarto-title-banner .ficha dl { background: rgba($c-luz, .06); border-left-color: $c-dato-luz; }
+
+// ---------------------------------------------------------------- Resultados de aprendizaje
+// ::: {.ra}  1. Describir ...  2. Implementar ...  :::  -> cada resultado lleva su rótulo RA1, RA2...
+.ra {
+  ol { list-style: none; counter-reset: ra; padding-left: 0; margin: 1rem 0 1.5rem; }
+  ol > li { counter-increment: ra; position: relative; padding-left: 3.7rem; margin: 0 0 .85rem; min-height: 1.6rem; }
+  ol > li::before {
+    content: "RA" counter(ra); position: absolute; left: 0; top: .1rem;
+    font-size: .8rem; font-weight: 800; line-height: 1.35; color: $c-dato-d;
+    border: 2px solid $c-dato-d; border-radius: 4px; padding: 0 .3rem; font-variant-numeric: tabular-nums;
+  }
+  ol > li::marker { content: none; }
+}
+
+// ---------------------------------------------------------------- Calendario y fechas
+// ::: {.calendario} (tabla semanal) y ::: {.fechas} (fechas importantes); el script
+// recursos/marca/sitio/calendario.html marca la semana en curso y la próxima fecha.
+.calendario, .fechas {
+  table { width: 100%; margin-left: 0; }
+  td time { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr.pasada td { color: $c-tenue; }
+  tr.hoy td, tr.proxima td { background: rgba($c-dato, .09); }
+  tr.hoy td:first-child, tr.proxima td:first-child { box-shadow: inset 4px 0 0 $c-dato-d; font-weight: 700; color: $c-tinta; }
+  .marca-fecha {
+    display: inline-block; margin-left: .5rem; padding: 0 .45rem;
+    font-size: .72rem; font-weight: 700; line-height: 1.5; color: $c-dato-d;
+    border: 1.5px solid currentColor; border-radius: 999px; white-space: nowrap;
+  }
+}
+// Un festivo o una semana sin clase: [festivo el lunes]{.sin-clase}
+.sin-clase { display: inline-block; margin-left: .35rem; font-size: .8rem; font-weight: 700; color: $c-tenue; }
+.calendario td { vertical-align: top; }
+.calendario td:last-child { white-space: nowrap; }
+// Peso de cada entrega (última columna): «15 %» no se parte en dos renglones.
+.fechas td:last-child, .fechas th:last-child { white-space: nowrap; }
+
+// ---------------------------------------------------------------- Materiales (listado)
+// Plantilla recursos/marca/sitio/materiales.ejs: rótulo, título, descripción y un botón por formato.
+.materiales {
+  list-style: none; padding: 0; margin: 1rem 0 2rem;
+  border-top: 1px solid $c-filete;
+}
+.material {
+  display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  column-gap: 1.25rem; row-gap: .4rem; align-items: baseline;
+  padding: .9rem 0; border-bottom: 1px solid $c-filete;
+}
+.material-rotulo { font-size: .85rem; font-weight: 700; color: $c-dato-d; font-variant-numeric: tabular-nums; }
+.material-titulo { font-weight: 800; color: $c-tinta; text-decoration: none; font-size: 1.08rem; line-height: 1.25; }
+.material-titulo:hover { color: $c-dato-d; text-decoration: underline; }
+.material-desc { margin: .2rem 0 0; color: $c-texto; font-size: .95rem; line-height: 1.45; }
+.material-formatos { display: flex; gap: .4rem; }
+.material-formatos a {
+  font-size: .82rem; font-weight: 700; text-decoration: none; white-space: nowrap;
+  color: $c-dato-d; border: 1.5px solid $c-dato-d; border-radius: 4px; padding: .1rem .55rem;
+}
+.material-formatos a:hover { background: rgba($c-dato, .10); }
+.material-formatos a.formato-pdf { color: $c-tenue; border-color: $c-tenue; }
+@media (max-width: 575.98px) {
+  .material { grid-template-columns: minmax(0, 1fr); }
+}
+
+// ---------------------------------------------------------------- Diapositivas incrustadas
+// ```{=html}
+// <div class="diapositivas"><iframe src="diapositivas.html" title="Diapositivas" loading="lazy" allowfullscreen></iframe></div>
+// ```
+.diapositivas {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  margin: 1rem 0 .75rem; border-radius: 6px; overflow: hidden;
+  background: $c-noche; box-shadow: 0 0 0 1px $c-filete;
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+}
+
+// ---------------------------------------------------------------- Fila de acciones
+// ::: {.acciones}  [Pantalla completa](...){.btn .btn-marca-borde} [PDF](...){.btn .btn-marca-borde}  :::
+.acciones {
+  display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0 1.75rem;
+  p { display: contents; }
+  .btn { margin: 0; }
+}
+
+// ---------------------------------------------------------------- Etiquetas de estado
+// [En curso]{.etiqueta .en-curso}  [Terminado]{.etiqueta .terminado}  [Datos simulados]{.etiqueta .aviso}
+// Siempre con texto: el color acompaña, no informa solo.
+.etiqueta {
+  display: inline-block; padding: 0 .6rem; border-radius: 999px;
+  font-size: .8rem; font-weight: 700; line-height: 1.6; color: $c-tenue;
+  border: 1.5px solid currentColor; white-space: nowrap;
+  &.en-curso { color: $c-dato-d; }
+  &.terminado { color: $c-tinta; }
+  &.aviso { color: $c-aviso-d; }
+}
+.quarto-title-banner .etiqueta { color: $c-luz; }
+
+// ---------------------------------------------------------------- Rejilla de tarjetas (listados grid)
+.quarto-grid-item {
+  // La tarjeta (1200 × 630, de fuente/tarjeta.py) se ve entera: la altura sale del ancho de la
+  // columna y no de image-height, que la recortaría por los lados.
+  .card-img-top { margin: 0; }
+  .card-img-top img.card-img { height: auto !important; aspect-ratio: 1200 / 630; object-fit: cover; }
+  .card-title { font-size: 1.1rem; line-height: 1.25; }
+  .card-text { color: $c-texto; }
+}

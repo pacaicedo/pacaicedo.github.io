@@ -1,0 +1,69 @@
+---
+title: "Cuantificación de actividad muscular con sEMG"
+subtitle: "Métricas reproducibles para estudiar la espasticidad, sin pedirles un diagnóstico"
+description: "Un procesamiento de electromiografía de superficie que va del CSV del equipo a métricas de amplitud y frecuencia, con cada paso registrado."
+date: 2026-08-20
+image: tarjeta.png
+title-block-banner: true
+categories: [Bioseñales, EMG, Reproducibilidad]
+bibliography: referencias.bib
+---
+
+::: {.ficha}
+Estado
+: [En curso]{.etiqueta .en-curso}
+
+Señal
+: sEMG de superficie, Delsys Trigno
+
+Formato de trabajo
+: CSV del equipo a Parquet
+
+Infraestructura
+: [BioForge Experiment OS](../bioforge/index.qmd)
+:::
+
+## Problema
+
+La espasticidad se evalúa en la clínica sobre todo con escalas ordinales, como la escala de Ashworth modificada [@bohannon1987]. La electromiografía de superficie (sEMG) mide la actividad eléctrica del músculo de forma continua y puede describir con más detalle cuándo y cuánto se activa. Pero ninguna métrica de sEMG, por sí sola, demuestra espasticidad: la amplitud depende de la colocación de los electrodos, del tejido y de la contracción.
+
+El proyecto busca un **procesamiento reproducible** que produzca métricas de actividad muscular comparables entre sesiones y participantes, y que diga con claridad qué mide cada una.
+
+## Métodos
+
+### Adquisición y datos
+
+Las señales vienen de sensores Delsys Trigno. Para que las métricas se puedan comparar, la colocación de los electrodos se documenta en cada sesión con una referencia común, como las recomendaciones SENIAM [@hermens2000]. El archivo CSV del equipo se conserva intacto; una copia normalizada pasa a Parquet y cada etapa —`raw`, `curated`, `derived`, `evidence`— se regenera desde la anterior.
+
+### Procesamiento
+
+| Etapa | Qué hace | Por qué |
+|:--|:--|:--|
+| Pasabanda 20–450 Hz | Butterworth, aplicado en fase cero | Quita la deriva por movimiento y lo que está fuera de la banda del sEMG |
+| Notch de 60 Hz | Adaptativo a la frecuencia real de la red | La interferencia de red no es ruido aleatorio: tiene una frecuencia conocida |
+| Envolvente | Rectificación y pasa bajos de 8 Hz | Amplitud suave de la activación |
+| RMS | Ventanas de 200 ms | Amplitud comparable con la literatura |
+| Frecuencias | MNF y MDF por contracción (Welch) | Cambios del espectro, por ejemplo con la fatiga |
+
+: Etapas del procesamiento.
+
+A partir de estas etapas se calculan además la entropía de Shannon, el porcentaje de la contracción voluntaria máxima (%MVC), la coactivación entre músculos antagonistas y la coherencia entre canales [@deluca1997; @merletti2004].
+
+La deriva de línea base, la interferencia de red y los artefactos de movimiento se tratan por separado: tienen estructuras distintas y piden estrategias distintas.
+
+## Resultados
+
+[Datos simulados]{.etiqueta .aviso}
+
+::: {.callout-warning}
+## Esta sección usa una señal simulada
+Para mostrar el procesamiento completo sin datos de pacientes, aquí se aplica a una señal **simulada** de 6 segundos con tres contracciones, deriva por movimiento e interferencia de 60 Hz. La versión simulada usa un notch fijo de 60 Hz y su tercer armónico en lugar del adaptativo.
+:::
+
+![Las tres etapas sobre la señal simulada: cruda, filtrada y amplitud.](fig/etapas){#fig-etapas width="92%"}
+
+![Espectro de la segunda contracción, con sus frecuencias media y mediana.](fig/espectro){#fig-espectro width="88%"}
+
+{{< include _tabla-metricas.md >}}
+
+La segunda contracción es la de mayor amplitud y las frecuencias media y mediana quedan en torno a 110 Hz en las tres. Son descripciones de la actividad simulada: en los datos reales, estas métricas se reportan junto con su variabilidad entre sesiones y nunca como diagnóstico.

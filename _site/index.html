@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Cursos, charlas, proyectos y tutoriales de ingeniería biomédica de Pablo Eduardo Caicedo-Rodríguez.">
+<meta name="description" content="Docencia e investigación en señales e imágenes biomédicas, biomecánica e inferencia causal.">
 
-<title>Pablo Eduardo Caicedo-Rodríguez – P. E. Caicedo-Rodríguez</title>
+<title>P. E. Caicedo-Rodríguez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,17 +31,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./recursos/marca/logos/insignia.png" rel="icon" type="image/png">
+<link href="./recursos/marca/logo/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-6b87496211af89a42e0b8524bfc2cf8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-14c35794a34ca90a81a742761068a50c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3f96da697018c44eb28203363ddf9427.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,11 +71,157 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-ultimos-cursos .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-ultimos-cursos'] = new List('listing-ultimos-cursos', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-ultimas-charlas .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-ultimas-charlas'] = new List('listing-ultimas-charlas', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-ultimos-proyectos .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-ultimos-proyectos'] = new List('listing-ultimos-proyectos', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-ultimos-tutoriales .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-ultimos-tutoriales'] = new List('listing-ultimos-tutoriales', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="P. E. Caicedo-Rodríguez">
+<meta property="og:description" content="Docencia e investigación en señales e imágenes biomédicas, biomecánica e inferencia causal.">
+<meta property="og:image" content="recursos/marca/logo/tarjeta-social.png">
+<meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
 </head>
 
-<body class="nav-fixed pagina-inicio quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -80,8 +229,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo light-content">
-    <img src="./recursos/marca/logos/isotipo-claro.svg" alt="" class="navbar-logo dark-content">
+    <img src="./recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo light-content">
+    <img src="./recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
@@ -94,15 +243,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Perfil</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./cursos/index.html"> 
 <span class="menu-text">Cursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./charlas-y-conferencias/index.html"> 
+    <a class="nav-link" href="./charlas/index.html"> 
 <span class="menu-text">Charlas y Conferencias</span></a>
   </li>  
   <li class="nav-item">
@@ -110,7 +255,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Proyectos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./herramientas-y-tutoriales/index.html"> 
+    <a class="nav-link" href="./tutoriales/index.html"> 
 <span class="menu-text">Herramientas y Tutoriales</span></a>
   </li>  
 </ul>
@@ -126,104 +271,262 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Pablo Eduardo Caicedo-Rodríguez</h1>
-</div>
-
-<div>
-  <div class="description">
-    Cursos, charlas, proyectos y tutoriales de ingeniería biomédica de Pablo Eduardo Caicedo-Rodríguez.
-  </div>
-</div>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta column-page">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <div class="hero">
-<div>
-<div class="kicker">
-<p>Pablo Eduardo Caicedo-Rodríguez</p>
+<p><span class="hero-kicker">Del dato a la causa</span></p>
+<section id="señales-imágenes-e-inferencia-causal-para-la-salud" class="level1 unnumbered unlisted">
+<h1 class="unnumbered unlisted">Señales, imágenes e inferencia causal para la salud</h1>
+<p>Docencia e investigación en ingeniería biomédica: procesamiento de bioseñales e imágenes médicas, biomecánica y aprendizaje automático evaluado con honestidad.</p>
+<p><a href="./cursos/index.html" class="btn btn-marca">Ver los cursos</a> <a href="./proyectos/index.html" class="btn btn-marca-borde">Proyectos</a></p>
+</section>
 </div>
-<h1 id="ingeniería-para-comprender.-software-para-cuidar."><span class="d-block">Ingeniería para</span> <span class="d-block">comprender.</span> Software para cuidar.</h1>
-<div class="lead">
-<p>Inteligencia artificial, señales e imágenes biomédicas y software para una salud más comprensible.</p>
+<div class="ejes">
+<section id="medir-bien" class="level3 eje dato">
+<h3 class="anchored" data-anchor-id="medir-bien">Medir bien</h3>
+<p>ECG, EMG, EEG e imágenes médicas procesados sin perder la trazabilidad del dato original.</p>
+</section>
+<section id="estructurar" class="level3 eje grafo">
+<h3 class="anchored" data-anchor-id="estructurar">Estructurar</h3>
+<p>Contratos de datos, grafos y modelos que dicen cómo se relacionan las variables.</p>
+</section>
+<section id="preguntar-por-la-causa" class="level3 eje causa">
+<h3 class="anchored" data-anchor-id="preguntar-por-la-causa">Preguntar por la causa</h3>
+<p>Qué cambia si intervenimos y qué hay que ajustar para poder saberlo.</p>
+</section>
+<section id="ia-confiable" class="level3 eje ia">
+<h3 class="anchored" data-anchor-id="ia-confiable">IA confiable</h3>
+<p>Métricas que describen lo que miden, sin afirmar diagnósticos que los datos no sostienen.</p>
+</section>
 </div>
-<p><a href="./cursos/index.html" class="btn btn-primary">Explorar los cursos</a></p>
+<div class="listados">
+<section id="cursos" class="level2 listado">
+<h2 class="anchored" data-anchor-id="cursos">Cursos</h2>
+<div id="listing-ultimos-cursos" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="UFNJTSUyQ0ltJUMzJUExZ2VuZXMlMjBtJUMzJUE5ZGljYXM=" data-listing-file-modified-sort="1792591626000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1109">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./cursos/psim/index.html" class="no-external">Procesamiento Digital de Imágenes Médicas</a>
+</h3>
+<div class="delink listing-description"><a href="./cursos/psim/index.html" class="no-external">
+<p>Fundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.</p>
+</a></div>
 </div>
-<div class="hero-art">
-<p><img src="recursos/marca/logos/isotipo-claro.svg" class="img-fluid" style="width:100.0%" alt="Símbolo de Caicedo-Rodríguez: una C abierta, nodos y una dirección de trabajo"></p>
-</div>
-</div>
-<div class="topic-section" role="region" aria-labelledby="bioforja">
-<div class="kicker">
-<p>BioForja · Conocimiento abierto</p>
-</div>
-<h2 id="bioforja">Aprender, compartir y construir</h2>
-<div class="topic-grid">
-<div class="topic-card" role="article">
-<p><span class="number">01 / FORMACIÓN</span></p>
-<h3 id="cursos"><a href="./cursos/index.html">Cursos</a></h3>
-<p>Resultados de aprendizaje, calendario, presentaciones y laboratorios en un mismo lugar.</p>
-</div>
-<div class="topic-card" role="article">
-<p><span class="number">02 / ENCUENTROS</span></p>
-<h3 id="charlas-y-conferencias"><a href="./charlas-y-conferencias/index.html">Charlas y Conferencias</a></h3>
-<p>El contexto de cada evento, sus presentaciones y el código que las acompaña.</p>
-</div>
-<div class="topic-card" role="article">
-<p><span class="number">03 / INVESTIGACIÓN Y DESARROLLO</span></p>
-<h3 id="proyectos"><a href="./proyectos/index.html">Proyectos</a></h3>
-<p>Del problema a los métodos y los resultados, con procedimientos reproducibles.</p>
-</div>
-<div class="topic-card" role="article">
-<p><span class="number">04 / PRÁCTICA</span></p>
-<h3 id="herramientas-y-tutoriales"><a href="./herramientas-y-tutoriales/index.html">Herramientas y Tutoriales</a></h3>
-<p>Guías, documentos y utilidades para trabajar con señales, modelos y comunicación técnica.</p>
-</div>
-</div>
-</div>
-<div role="region" aria-label="Líneas de trabajo">
-<div class="section-row">
-<div class="number">
-<p>01</p>
-</div>
-<h3 id="medir-y-comprender">Medir y comprender</h3>
-<p>Señales, imágenes y biomecánica. Convertir datos complejos en preguntas que puedan investigarse.</p>
-</div>
-<div class="section-row">
-<div class="number">
-<p>02</p>
-</div>
-<h3 id="modelar-con-evidencia">Modelar con evidencia</h3>
-<p>IA, grafos e inferencia causal. Explicar los supuestos, la incertidumbre y los límites de cada resultado.</p>
-</div>
-<div class="section-row">
-<div class="number">
-<p>03</p>
-</div>
-<h3 id="construir-y-enseñar">Construir y enseñar</h3>
-<p>Software para la salud y materiales reproducibles. BioForja reúne proyectos, laboratorios y conocimiento abierto.</p>
+<div class="metadata">
+<a href="./cursos/psim/index.html" class="no-external">
+</a>
 </div>
 </div>
+<div class="quarto-post image-right" data-index="1" data-categories="U1lTQiUyQ1NlJUMzJUIxYWxlcw==" data-listing-file-modified-sort="1792592392000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1034">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./cursos/sysb/index.html" class="no-external">Sistemas y Señales Biomédicos</a>
+</h3>
+<div class="delink listing-description"><a href="./cursos/sysb/index.html" class="no-external">
+<p>Señales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./cursos/sysb/index.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="VEFVJTJDQXByZW5kaXphamUlMjBhdXRvbSVDMyVBMXRpY28=" data-listing-file-modified-sort="1792615230000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1242">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./cursos/tau/index.html" class="no-external">Técnicas de Aprendizaje Automático</a>
+</h3>
+<div class="delink listing-description"><a href="./cursos/tau/index.html" class="no-external">
+<p>Aprendizaje automático clásico: explorar, reducir dimensión, agrupar y clasificar, con validación honesta.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./cursos/tau/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+<p><a href="./cursos/index.html">Todos los cursos →</a></p>
+</section>
+<section id="charlas-y-conferencias" class="level2 listado">
+<h2 class="anchored" data-anchor-id="charlas-y-conferencias">Charlas y Conferencias</h2>
+<div id="listing-ultimas-charlas" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Q2hhcmxhJTJDSW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==" data-listing-date-sort="1793854800000" data-listing-file-modified-sort="1792692542000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="340">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./charlas/2026-ver-el-cuerpo-como-dato/index.html" class="no-external">Imágenes médicas: ver el cuerpo como dato</a>
+</h3>
+<div class="delink listing-description"><a href="./charlas/2026-ver-el-cuerpo-como-dato/index.html" class="no-external">
+<p>Qué guarda cada píxel de una imagen médica, por qué la ventana cambia lo que vemos pero no el dato, y cómo medir bien abre la pregunta causal.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./charlas/2026-ver-el-cuerpo-como-dato/index.html" class="no-external">
+<div class="listing-date">
+5 de noviembre de 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Q2hhcmxhJTJDUmVwcm9kdWNpYmlsaWRhZA==" data-listing-date-sort="1789621200000" data-listing-file-modified-sort="1792692542000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="184">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./charlas/2026-experimentos-reproducibles/index.html" class="no-external">Experimentos biomédicos reproducibles</a>
+</h3>
+<div class="delink listing-description"><a href="./charlas/2026-experimentos-reproducibles/index.html" class="no-external">
+<p>Cuatro reglas y una arquitectura para que un experimento biomédico se pueda rehacer, del dato original a la evidencia.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./charlas/2026-experimentos-reproducibles/index.html" class="no-external">
+<div class="listing-date">
+17 de septiembre de 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+<p><a href="./charlas/index.html">Todas las charlas →</a></p>
+</section>
+<section id="proyectos" class="level2 listado">
+<h2 class="anchored" data-anchor-id="proyectos">Proyectos</h2>
+<div id="listing-ultimos-proyectos" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="QmlvbWVjJUMzJUExbmljYSUyQ01hcmNoYSUyQ0luZmVyZW5jaWE=" data-listing-date-sort="1790139600000" data-listing-file-modified-sort="1792628119000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="536">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./proyectos/riesgo-de-caida/index.html" class="no-external">Riesgo de caída a partir de parámetros de marcha</a>
+</h3>
+<div class="delink listing-description"><a href="./proyectos/riesgo-de-caida/index.html" class="no-external">
+<p>Análisis de 13 parámetros de marcha medidos con captura de movimiento en 44 participantes: repetibilidad, asociación con el riesgo de caída y control de comparaciones múltiples.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./proyectos/riesgo-de-caida/index.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="UmVwcm9kdWNpYmlsaWRhZCUyQ1NvZnR3YXJl" data-listing-date-sort="1788238800000" data-listing-file-modified-sort="1792628151000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="467">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./proyectos/bioforge/index.html" class="no-external">BioForge Experiment OS</a>
+</h3>
+<div class="delink listing-description"><a href="./proyectos/bioforge/index.html" class="no-external">
+<p>Separar el dato original, el curado, el derivado y la evidencia, con contratos versionados, seudonimización y manifiestos SHA-256.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./proyectos/bioforge/index.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Qmlvc2UlQzMlQjFhbGVzJTJDRU1HJTJDUmVwcm9kdWNpYmlsaWRhZA==" data-listing-date-sort="1787202000000" data-listing-file-modified-sort="1792628158000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="470">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./proyectos/espasticidad-semg/index.html" class="no-external">Cuantificación de actividad muscular con sEMG</a>
+</h3>
+<div class="delink listing-description"><a href="./proyectos/espasticidad-semg/index.html" class="no-external">
+<p>Un procesamiento de electromiografía de superficie que va del CSV del equipo a métricas de amplitud y frecuencia, con cada paso registrado.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./proyectos/espasticidad-semg/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+<p><a href="./proyectos/index.html">Todos los proyectos →</a></p>
+</section>
+<section id="herramientas-y-tutoriales" class="level2 listado">
+<h2 class="anchored" data-anchor-id="herramientas-y-tutoriales">Herramientas y Tutoriales</h2>
+<div id="listing-ultimos-tutoriales" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="VHV0b3JpYWwlMkNUQVUlMkNBcHJlbmRpemFqZSUyMGF1dG9tJUMzJUExdGljbw==" data-listing-date-sort="1791954000000" data-listing-file-modified-sort="1792628227000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="349">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./tutoriales/validacion-por-participante/index.html" class="no-external">Validación cruzada por participante</a>
+</h3>
+<div class="delink listing-description"><a href="./tutoriales/validacion-por-participante/index.html" class="no-external">
+<p>Cuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./tutoriales/validacion-por-participante/index.html" class="no-external">
+<div class="listing-date">
+14 de octubre de 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="VHV0b3JpYWwlMkNTWVNCJTJDU2UlQzMlQjFhbGVz" data-listing-date-sort="1791176400000" data-listing-file-modified-sort="1792628250000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="300">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./tutoriales/filtrado-fase-cero/index.html" class="no-external">Filtrado de fase cero en un ECG</a>
+</h3>
+<div class="delink listing-description"><a href="./tutoriales/filtrado-fase-cero/index.html" class="no-external">
+<p>Por qué lfilter retrasa la onda R y filtfilt no, y cuándo conviene cada uno.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./tutoriales/filtrado-fase-cero/index.html" class="no-external">
+<div class="listing-date">
+5 de octubre de 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="VHV0b3JpYWwlMkNQU0lNJTJDSW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792628241000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="435">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./tutoriales/filtros-frecuenciales/index.html" class="no-external">Filtros en frecuencia: de Ideal a Gaussiano</a>
+</h3>
+<div class="delink listing-description"><a href="./tutoriales/filtros-frecuenciales/index.html" class="no-external">
+<p>Transformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./tutoriales/filtros-frecuenciales/index.html" class="no-external">
+<div class="listing-date">
+21 de septiembre de 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
+</div>
+<p><a href="./tutoriales/index.html">Todos los tutoriales →</a></p>
+</section>
+</div>
+<section id="material-abierto-y-reproducible" class="level2 banda">
+<h2 class="anchored" data-anchor-id="material-abierto-y-reproducible">Material abierto y reproducible</h2>
+<p>Todo lo que hay en este sitio —páginas, diapositivas, guías de laboratorio y figuras— se genera con <a href="https://quarto.org">Quarto</a> y Python desde archivos de texto. Las figuras de cada página se vuelven a calcular con su propio <code>figuras.py</code>, y el contenido se publica con licencia <span class="dato">CC BY 4.0</span>.</p>
+</section>
+
 
 
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -302,11 +605,6 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -624,13 +922,13 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Pablo Eduardo Caicedo-Rodríguez</p>
+<p>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Ingeniería que hace comprensible la salud.</p>
+<p>Del dato a la causa · Hecho con <a href="https://quarto.org">Quarto</a></p>
 </div>
   </div>
 </footer>

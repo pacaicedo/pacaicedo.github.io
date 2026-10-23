@@ -1,0 +1,80 @@
+# Del cuerpo a la matriz
+
+## Una imagen médica es una medición
+
+- Cada píxel guarda **un número**, no un color
+- Qué mide ese número depende de la modalidad:
+  - **TC**: atenuación de los rayos X, en unidades Hounsfield (UH)
+  - **RM**: señal relativa, sin unidades absolutas
+  - **Ecografía**: intensidad de los ecos
+- El equipo, el protocolo y la reconstrucción también quedan en el número
+
+## Los mismos píxeles, como números
+
+![Fantoma sintético de Shepp-Logan en UH aproximadas.](fig/matriz{{< meta sufijo-figuras >}}){width="74%"}
+
+::: {.notes}
+Señalar el recuadro naranja: los números de la derecha son esos mismos píxeles. El borde del ventrículo se ve como un salto de unos 30 UH.
+:::
+
+## El número tiene unidades
+
+| Tejido         | UH aproximadas    |
+|:---------------|------------------:|
+| Aire           | −1000             |
+| Agua           | 0                 |
+| Cerebro        | 30 a 45           |
+| Hueso cortical | 700 a más de 1000 |
+
+- Con `PixelSpacing` del encabezado DICOM, las distancias van en **milímetros**
+
+## La ventana cambia lo que vemos
+
+$$
+g = \min\!\Big(1, \max\!\big(0, \tfrac{\text{UH} - (L - W/2)}{W}\big)\Big)
+$$
+
+- La pantalla tiene 256 grises; el rango de la TC, más de 4000 UH
+- La ventana $W$ y el nivel $L$ deciden qué parte se ve, [no cambian el dato]{.causa}
+
+::: {.notes}
+Preguntar al público: si guardo la imagen ya ventaneada en 8 bits, ¿qué información perdí?
+:::
+
+# Leer la imagen como dato
+
+## Una fila de la imagen es una señal
+
+![Perfil de intensidad: la misma herramienta que para un ECG.](fig/perfil{{< meta sufijo-figuras >}}){width="76%"}
+
+## Qué se puede medir
+
+- **Áreas y volúmenes**, con el tamaño del píxel y el grosor del corte
+- **Intensidades medias** dentro de una región, en unidades físicas
+- **Textura y forma**: cómo varían los valores y cómo es el borde
+- Cada medida es reproducible si se guarda el dato original y cada paso
+
+## Lo que la imagen no dice
+
+- Una medida describe lo que mide: [no es un diagnóstico]{.aviso}
+- Dos equipos pueden dar números distintos para el mismo tejido
+- Una diferencia entre grupos puede venir del protocolo y no del paciente
+
+# Del dato a la causa
+
+## Antes de comparar, preguntar por el confusor
+
+- ¿La diferencia viene del **tejido** o del **equipo** con que se adquirió?
+- El equipo afecta la imagen y también quién llega a ese equipo
+- Si no se ajusta por él, la comparación mezcla las dos cosas
+
+::: {.callout-important}
+## La pregunta causal
+¿Qué cambiaría en la medida si interviniéramos sobre el paciente, y no sobre el equipo?
+:::
+
+## Para llevarse
+
+1. Un píxel es una medición con unidades, no un color
+2. La ventana cambia la imagen que vemos, no los datos con que medimos
+3. Medir bien es la condición para preguntar por la causa

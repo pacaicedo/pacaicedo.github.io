@@ -1,0 +1,71 @@
+---
+title: "Imágenes médicas: ver el cuerpo como dato"
+subtitle: "XII Seminario de Automática · 2026"
+description: "Qué guarda cada píxel de una imagen médica, por qué la ventana cambia lo que vemos pero no el dato, y cómo medir bien abre la pregunta causal."
+date: 2026-11-05
+image: tarjeta.png
+title-block-banner: true
+categories: [Charla, Imágenes médicas]
+---
+
+## Evento
+
+::: {.ficha}
+Evento
+: XII Seminario de Automática
+
+Modalidad
+: Presencial, en auditorio
+
+Duración
+: 30 minutos y preguntas
+
+Público
+: Estudiantes y docentes de ingeniería
+:::
+
+Una charla para quien llega desde la automática y el control: una imagen médica se puede leer como cualquier otra medición. Cada píxel guarda un número con unidades que dependen del equipo y del protocolo; la ventana y el nivel deciden qué parte de ese rango vemos, pero no cambian el dato con el que se mide. A partir de ahí, una fila de la imagen es una señal, una región es un conjunto de mediciones y la pregunta por la causa exige primero separar lo que viene del paciente de lo que viene del equipo.
+
+Todas las figuras se hicieron con un fantoma **sintético** de Shepp-Logan llevado a unidades Hounsfield aproximadas: no hay datos de pacientes en la charla.
+
+## Presentación
+
+La charla se preparó para un auditorio a oscuras, con la versión **sala oscura** de la marca: fondo neutro casi negro, que no altera la lectura de las imágenes en gris. Para un aula con luz o ventanas está la versión clara, con el mismo contenido.
+
+```{=html}
+<div class="diapositivas">
+  <iframe src="diapositivas-sala.html" title="Diapositivas de la charla, versión sala oscura" loading="lazy" allowfullscreen></iframe>
+</div>
+```
+
+::: {.acciones}
+[Pantalla completa](diapositivas-sala.qmd){.btn .btn-marca} [Versión clara](diapositivas.qmd){.btn .btn-marca-borde} [PDF sala oscura](diapositivas-sala.pdf){.btn .btn-marca-borde} [PDF claro](diapositivas.pdf){.btn .btn-marca-borde}
+:::
+
+Dentro de las diapositivas: las flechas avanzan, **F** pone pantalla completa, **S** abre las notas del orador y **Esc** muestra todas las diapositivas.
+
+## Código
+
+Las diapositivas y las figuras salen de archivos de texto que están en el repositorio de este sitio, en la carpeta `charlas/2026-ver-el-cuerpo-como-dato/`:
+
+| Archivo | Qué es |
+|:--|:--|
+| `_diapositivas.qmd` | El contenido, compartido por las dos versiones |
+| `diapositivas.qmd` | Versión clara: revealjs y beamer |
+| `diapositivas-sala.qmd` | Versión sala oscura: revealjs y beamer |
+| `figuras.py` | Las figuras, en claro y en oscuro |
+| `recursos/python/datos_ejemplo.py` | El fantoma sintético en UH |
+
+: Archivos de la charla.
+
+Para reproducirla desde la raíz del repositorio:
+
+```bash
+uv run python charlas/2026-ver-el-cuerpo-como-dato/figuras.py
+uv run quarto render charlas/2026-ver-el-cuerpo-como-dato/
+```
+
+Este es el código que hizo las figuras; la página lo lee del archivo, así que siempre muestra la versión vigente:
+
+```{.python archivo="figuras.py"}
+```

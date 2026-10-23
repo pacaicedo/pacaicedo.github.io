@@ -1,0 +1,73 @@
+---
+title: "Aprender de datos"
+subtitle: "Tres preguntas distintas y una tabla"
+description: "Exploración, aprendizaje no supervisado y supervisado: qué pregunta cada uno, qué es una fila y qué no cubre el curso."
+rotulo: "Semana 1"
+date: 2026-08-05
+---
+
+# Tres preguntas
+
+## Cada técnica responde una pregunta distinta
+
+| Pregunta                          | Familia          | Ejemplos del curso              |
+|:----------------------------------|:-----------------|:--------------------------------|
+| ¿Qué hay en la tabla?             | Exploración      | Resúmenes, gráficos, faltantes  |
+| ¿Qué estructura tiene?            | No supervisado   | PCA, k-means, jerárquico        |
+| ¿Qué tan bien predice $y$?        | Supervisado      | Logística, k vecinos, SVM, árboles |
+
+- Mezclar las preguntas es el error más común: un grupo de k-means [no es una clase]{.causa}
+
+## La tabla: filas, columnas y unidad de análisis
+
+- Cada **fila** es una observación; cada **columna**, una variable
+- La **unidad de análisis** es lo que se supone independiente
+  - cinco marchas de una misma persona no son cinco personas
+- Si la unidad está mal, la validación cruzada mide de más
+
+```python
+import pandas as pd
+
+datos = pd.read_csv("marcha.csv")
+filas = datos.groupby("participante").size()   # filas por persona
+filas.describe()
+```
+
+## Lo que el curso no cubre
+
+- **Aprendizaje profundo**: redes neuronales, convolucionales y transformadores
+- **Procesamiento especializado** de señales e imágenes: lo ven SYSB y PSIM
+- Aquí: técnicas clásicas sobre tablas, con validación honesta
+
+# Explorar antes de modelar
+
+## Mirar cada variable
+
+```python
+datos.describe()                       # medias, cuartiles, extremos
+datos.isna().mean()                    # faltantes por columna
+datos.select_dtypes("number").corr()   # correlaciones
+```
+
+- Las unidades de cada columna van en el nombre o en un diccionario de datos
+
+## Faltantes y atípicos: decidir, no automatizar
+
+- Un faltante puede ser **un error**, **una medición imposible** o **información**
+- Un atípico puede ser un error de captura o el paciente más interesante
+- Cada decisión queda escrita y el dato original [no se toca]{.dato}
+
+::: {.callout-warning}
+## Cuidado
+Imputar con la media antes de separar entrenamiento y prueba ya es fuga de información.
+:::
+
+## Para esta semana
+
+::: {.callout-note}
+## Laboratorio 1
+Explorar los parámetros de marcha simulados: una tabla por participante, faltantes, atípicos y correlaciones.
+:::
+
+- Leer el capítulo 2 de James y colaboradores (2023)
+- Instalar el entorno con `uv` (ver el tutorial del sitio)

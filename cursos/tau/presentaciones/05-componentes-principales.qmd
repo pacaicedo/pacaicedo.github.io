@@ -1,0 +1,72 @@
+---
+title: "Componentes principales"
+subtitle: "Menos variables sin perder lo que importa"
+description: "Estandarizar, descomponer la matriz de correlación e interpretar la varianza explicada y las cargas de cada componente."
+rotulo: "Semana 5"
+date: 2026-09-02
+---
+
+# La idea
+
+## Variables correlacionadas repiten información
+
+- Los 13 parámetros de marcha no son independientes
+  - velocidad, cadencia y longitud de paso se mueven juntas
+- PCA busca nuevas variables, **no correlacionadas**, que resuman la tabla
+- Cada componente es una combinación lineal de las variables originales
+
+## Primero, estandarizar
+
+Con unidades distintas (m/s, pasos/min, %), la variable de mayor escala domina:
+
+$$
+z_{ij} = \frac{x_{ij} - \bar{x}_j}{s_j}
+$$
+
+- Con datos estandarizados, PCA descompone la **matriz de correlación**
+
+## Direcciones de máxima varianza
+
+Si $\mathbf{R}$ es la matriz de correlación,
+
+$$
+\mathbf{R}\,\mathbf{v}_k = \lambda_k\,\mathbf{v}_k, \qquad \lambda_1 \ge \lambda_2 \ge \dots
+$$
+
+- $\mathbf{v}_k$ son las **cargas**: cuánto pesa cada variable en la componente $k$
+- $\lambda_k / \sum_j \lambda_j$ es la **proporción de varianza** que explica
+
+# En la práctica
+
+## ¿Cuántas componentes?
+
+![Datos simulados: la primera componente explica cerca de la cuarta parte de la varianza.](../fig/varianza-diapositiva){width="54%"}
+
+## Dos componentes, 42 participantes
+
+![Los grupos de k-means son [estructura, no diagnóstico]{.causa}.](../fig/pca-dispersion-diapositiva){width="56%"}
+
+## En scikit-learn
+
+```python
+from sklearn.decomposition import PCA
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+
+modelo = make_pipeline(StandardScaler(), PCA(n_components=2))
+cp = modelo.fit_transform(medias)       # una fila por persona
+modelo[-1].explained_variance_ratio_    # varianza por componente
+```
+
+## Lo que PCA no hace
+
+- No sabe cuál variable importa para el **desenlace**: solo mira la varianza
+- No crea información: resume la que ya está en la tabla
+- Las componentes pueden ser difíciles de interpretar: se leen por sus cargas
+
+## Para esta semana
+
+::: {.callout-note}
+## Laboratorio 2
+PCA y k-means sobre los parámetros de marcha simulados, y comparación de los grupos con el desenlace.
+:::

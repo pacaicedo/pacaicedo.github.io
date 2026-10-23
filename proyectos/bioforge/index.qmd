@@ -1,0 +1,69 @@
+---
+title: "BioForge Experiment OS"
+subtitle: "Una arquitectura reproducible para experimentos biomédicos"
+description: "Separar el dato original, el curado, el derivado y la evidencia, con contratos versionados, seudonimización y manifiestos SHA-256."
+date: 2026-09-01
+image: tarjeta.png
+title-block-banner: true
+categories: [Reproducibilidad, Software]
+bibliography: referencias.bib
+---
+
+![](../../recursos/marca/logo/bioforge-firma-claro.svg){fig-alt="BioForge Experiment OS: yunque con las muestras de una señal y una chispa en el pico" width="300"}
+
+::: {.ficha}
+Estado
+: [En curso]{.etiqueta .en-curso}
+
+Tipo
+: Monolito modular local
+
+Tecnologías
+: Python, Pydantic, YAML y JSON Schema, Parquet, Git, Quarto y uv
+
+Proyectos que lo usan
+: [Riesgo de caída](../riesgo-de-caida/index.qmd), [sEMG](../espasticidad-semg/index.qmd)
+:::
+
+## Problema
+
+En un experimento biomédico, los archivos del equipo, las tablas limpias, las variables calculadas y las figuras del artículo suelen terminar en la misma carpeta. Cuando un resultado cambia, nadie puede decir si cambió el dato, el código o una decisión que se tomó a mano. Los principios FAIR y las reglas de investigación computacional reproducible piden lo contrario: datos identificables, transformaciones registradas y resultados que se puedan regenerar [@wilkinson2016; @sandve2013].
+
+BioForge busca que cada estudio del laboratorio se pueda rehacer desde el dato original sin pasos manuales, y que quede claro qué se hizo con los datos y qué no.
+
+## Métodos
+
+### Cuatro capas en una sola dirección
+
+![El dato fluye de izquierda a derecha; cada capa se regenera desde la anterior.](fig/flujo){#fig-flujo width="100%"}
+
+| Capa | Contiene | Regla |
+|:--|:--|:--|
+| `data/raw` | Los archivos del equipo, seudonimizados | Solo lectura; los archivos con identificadores personales no entran aquí sin seudonimizar |
+| `curated` | Tablas normalizadas según el contrato | Sin imputar faltantes; cada transformación queda en código |
+| `derived` | Métricas y variables de análisis | Calculadas desde `curated`, nunca a mano |
+| `evidence` | Figuras, tablas e informes | Se regeneran con Quarto |
+
+: Las capas de BioForge.
+
+### Contratos, adaptadores y manifiestos
+
+- Un **contrato** versionado (YAML y JSON Schema, validado con Pydantic) dice qué columnas, unidades y rangos son válidos para cada tipo de archivo.
+- Un **adaptador** por equipo lee su formato y lo lleva al contrato; por ejemplo, la exportación multisección de Vicon o el CSV de Delsys Trigno.
+- Un **manifiesto** guarda la huella SHA-256 de cada archivo original y las versiones del contrato y del código que se usaron.
+- Una interfaz de línea de comandos revisa el entorno (`bioforge doctor`) y crea la estructura de un estudio nuevo (`bioforge init-study`), descrito en su `study.yaml`.
+
+## Resultados
+
+El estado del sistema por componente:
+
+| Componente | Estado |
+|:--|:--|
+| Registro de estudios, protección de originales, SHA-256 y manifiestos | [Funciona]{.etiqueta .terminado} |
+| Vertical de captura de movimiento (Vicon): contrato y adaptador | [En curso]{.etiqueta .en-curso} |
+| Procesamiento de sEMG de `raw` a `evidence`, con ingesta a Parquet | [En curso]{.etiqueta .en-curso} |
+| Análisis de riesgo de caída sobre la nueva estructura | [En curso]{.etiqueta .en-curso} |
+
+: Estado de BioForge por componente.
+
+El análisis de riesgo de caída se reinició sobre la arquitectura sin perder el trabajo anterior, que quedó archivado en el historial de Git. Las páginas de [riesgo de caída](../riesgo-de-caida/index.qmd) y [sEMG](../espasticidad-semg/index.qmd) muestran el flujo completo sobre datos simulados mientras se terminan las verticales con datos reales. La charla [Experimentos biomédicos reproducibles](../../charlas/2026-experimentos-reproducibles/index.qmd) presenta las reglas en que se basa el sistema.

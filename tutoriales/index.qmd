@@ -1,0 +1,14 @@
+---
+title: "Herramientas y Tutoriales"
+description: "Tutoriales paso a paso y herramientas para trabajar con señales, imágenes y Quarto."
+toc: false
+listing:
+  contents: "*/index.qmd"
+  type: default
+  sort: "date desc"
+  categories: true
+  fields: [date, title, description, categories]
+  date-format: "D MMM YYYY"
+---
+
+Tutoriales cortos y herramientas que acompañan los cursos y los proyectos. Usa las categorías de la derecha para filtrar: **Tutorial** o **Herramienta**, el curso (PSIM, SYSB, TAU) o el tema.

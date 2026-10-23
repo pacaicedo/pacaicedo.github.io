@@ -1,0 +1,53 @@
+---
+title: "Filtrado de fase cero en un ECG"
+description: "Por qué lfilter retrasa la onda R y filtfilt no, y cuándo conviene cada uno."
+date: 2026-10-05
+categories: [Tutorial, SYSB, Señales]
+---
+
+## El problema
+
+Un filtro IIR como el Butterworth no retrasa todas las frecuencias por igual. Aplicado de forma causal (`scipy.signal.lfilter`), desplaza y deforma las ondas del ECG; si después se miden intervalos —RR, QT— el error viene del filtro, no del corazón.
+
+## Un ECG sintético
+
+La señal de este tutorial es **sintética**: latidos hechos con gaussianas (ondas P, Q, R, S y T), a los que se suman tres componentes no deseadas con estructuras distintas: deriva de línea base, interferencia de red de 60 Hz y ruido de banda ancha. No todo lo que estorba es «ruido»: cada componente pide su propio tratamiento.
+
+```python
+from scipy import signal
+from datos_ejemplo import ecg_sintetico      # recursos/python/datos_ejemplo.py
+
+fs = 500
+t, limpio, sucio = ecg_sintetico(fs=fs, duracion=10)
+b, a = signal.butter(4, [0.5, 40], btype="band", fs=fs)
+
+causal = signal.lfilter(b, a, sucio)         # una pasada, hacia adelante
+fase_cero = signal.filtfilt(b, a, sucio)     # hacia adelante y hacia atrás
+```
+
+## En la frecuencia
+
+![El pasabanda quita la deriva (por debajo de 0,5 Hz) y, al cortar en 40 Hz, también la red de 60 Hz.](fig/espectro){#fig-espectro width="88%"}
+
+## En el tiempo
+
+![Un tramo de dos latidos: con `lfilter` la onda R llega tarde; con `filtfilt` coincide con la referencia.](fig/fase-cero){#fig-fase width="88%"}
+
+`filtfilt` aplica el filtro hacia adelante y luego hacia atrás: los desfases de las dos pasadas se cancelan. A cambio:
+
+- el orden efectivo se duplica (y la atenuación también);
+- el filtro deja de ser causal: necesita la señal completa.
+
+## Cuándo usar cada uno
+
+| Situación | Filtro |
+|:--|:--|
+| Análisis fuera de línea, medición de intervalos y formas de onda | `filtfilt` (fase cero) |
+| Monitoreo en tiempo real, con la señal llegando muestra a muestra | `lfilter` o un FIR de fase lineal, compensando su retraso |
+
+: Elegir entre causal y fase cero.
+
+## Código de las figuras
+
+```{.python archivo="figuras.py"}
+```

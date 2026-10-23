@@ -1,0 +1,18 @@
+# Formatos de todas las guías de laboratorio del curso: HTML (dentro del sitio) y PDF.
+# Las rutas son relativas a esta carpeta.
+author: "P. E. Caicedo-Rodríguez"
+number-sections: true
+format:
+  html:
+    toc: true
+    default-image-extension: svg
+  pdf:
+    documentclass: scrartcl
+    papersize: a4
+    fontsize: 11pt
+    pdf-engine: lualatex
+    shift-heading-level-by: -1
+    highlight-style: ../../../recursos/marca/caicedo-claro.theme
+    default-image-extension: pdf
+    include-in-header:
+      text: \usepackage{../../../recursos/marca/caicedo-documento}

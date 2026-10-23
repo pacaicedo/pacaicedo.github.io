@@ -1,0 +1,14 @@
+---
+title: "Charlas y Conferencias"
+description: "Presentaciones en eventos académicos, con las diapositivas y el código de cada una."
+toc: false
+listing:
+  contents: "*/index.qmd"
+  type: default
+  sort: "date desc"
+  fields: [image, date, title, subtitle, description]
+  image-height: 120px
+  date-format: "D MMM YYYY"
+---
+
+Cada charla tiene tres partes: el **evento** (dónde, cuándo y para quién), la **presentación** (en línea, en PDF y en versión para sala oscura) y el **código** con el que se hicieron las figuras.

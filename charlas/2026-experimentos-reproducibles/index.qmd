@@ -1,0 +1,63 @@
+---
+title: "Experimentos biomédicos reproducibles"
+subtitle: "Seminario de investigación · 2026"
+description: "Cuatro reglas y una arquitectura para que un experimento biomédico se pueda rehacer, del dato original a la evidencia."
+date: 2026-09-17
+image: tarjeta.png
+title-block-banner: true
+categories: [Charla, Reproducibilidad]
+---
+
+## Evento
+
+::: {.ficha}
+Evento
+: Seminario de investigación
+
+Modalidad
+: Presencial, en aula
+
+Duración
+: 45 minutos y discusión
+
+Público
+: Estudiantes de posgrado e investigadores
+:::
+
+La charla parte de un problema conocido en los laboratorios: resultados que nadie puede volver a obtener porque el archivo original se sobrescribió, un paso se hizo a mano o los faltantes se llenaron sin dejar rastro. Propone cuatro reglas que se deciden antes de analizar y muestra cómo las aplica [BioForge](../../proyectos/bioforge/index.qmd), una arquitectura en cuatro capas con contratos de datos versionados y manifiestos con la huella SHA-256 de cada archivo.
+
+## Presentación
+
+Versión clara de la marca: la sala del seminario tiene luz natural.
+
+```{=html}
+<div class="diapositivas">
+  <iframe src="diapositivas.html" title="Diapositivas de la charla" loading="lazy" allowfullscreen></iframe>
+</div>
+```
+
+::: {.acciones}
+[Pantalla completa](diapositivas.qmd){.btn .btn-marca} [PDF](diapositivas.pdf){.btn .btn-marca-borde}
+:::
+
+## Código
+
+| Archivo | Qué es |
+|:--|:--|
+| `diapositivas.qmd` | Las diapositivas: revealjs y beamer desde el mismo archivo |
+| `manifiesto.py` | Crea y verifica el manifiesto SHA-256 de una carpeta de datos |
+| `proyectos/bioforge/figuras.py` | El diagrama de las cuatro capas |
+
+: Archivos de la charla.
+
+El manifiesto de la charla funciona sin dependencias, solo con la biblioteca estándar de Python:
+
+```bash
+python3 manifiesto.py crear data/raw manifiesto.json
+python3 manifiesto.py verificar data/raw manifiesto.json
+```
+
+[Descargar manifiesto.py](manifiesto.py){.btn .btn-marca-borde}
+
+```{.python archivo="manifiesto.py"}
+```

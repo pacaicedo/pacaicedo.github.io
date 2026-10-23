@@ -1,0 +1,36 @@
+---
+title: "Imágenes médicas: ver el cuerpo como dato"
+subtitle: "Del píxel a la pregunta causal"
+author:
+  - name: "P. E. Caicedo-Rodríguez"
+    affiliation: "Centro de Estudios en Biomédica y Biotecnología"
+date: 2026-11-05
+shorttitle: "XII Seminario de Automática"
+# Versión clara: para salas con luz o ventanas. La de sala oscura es diapositivas-sala.qmd.
+# El contenido está en _diapositivas.qmd, compartido por las dos versiones.
+sufijo-figuras: ""
+format:
+  revealjs:
+    theme: ../../recursos/marca/caicedo-diapositivas.scss
+    width: 1280
+    height: 720
+    margin: 0
+    logo: ../../recursos/marca/logo/firma-pie-claro.svg
+    footer: "XII Seminario de Automática"
+    slide-number: c/t
+    auto-stretch: false
+    code-line-numbers: false
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
+    default-image-extension: svg
+  beamer:
+    aspectratio: 169
+    fontsize: 12pt
+    pdf-engine: lualatex
+    slide-level: 2
+    highlight-style: ../../recursos/marca/caicedo-claro.theme
+    default-image-extension: pdf
+    include-in-header:
+      text: \usepackage{../../recursos/marca/caicedo-diapositivas}
+---
+
+{{< include _diapositivas.qmd >}}

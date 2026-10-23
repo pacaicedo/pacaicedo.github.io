@@ -1,13 +1,13 @@
 ---
 title: "Proyectos"
-subtitle: "Del problema a la evidencia"
+description: "Proyectos de investigación en biomecánica, bioseñales y reproducibilidad."
 toc: false
 listing:
   contents: "*/index.qmd"
-  type: default
-  categories: true
-  sort: title
-  fields: [title, description, categories]
+  type: grid
+  grid-columns: 3
+  sort: "date desc"
+  fields: [image, title, description, categories]
 ---
 
-Cada proyecto presenta el problema, los métodos y los resultados. El ejemplo disponible utiliza datos sintéticos y permite comprobar el procedimiento de los materiales docentes.
+Cada proyecto se presenta en tres partes: el **problema**, los **métodos** y los **resultados**. Cuando los resultados vienen de datos simulados (para mostrar el análisis antes de tener los datos reales), la página lo dice al comienzo de esa sección.

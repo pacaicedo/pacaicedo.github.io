@@ -1,0 +1,102 @@
+---
+title: "Laboratorio 2: PCA y k-means sobre parámetros de marcha"
+description: "Resumir 13 parámetros de marcha con PCA, agrupar a los participantes con k-means y comparar los grupos con el desenlace."
+rotulo: "Lab 2"
+date: 2026-09-09
+---
+
+## Objetivos
+
+1. Pasar de una tabla con varias marchas por persona a una fila por participante.
+2. Estandarizar las variables, ajustar PCA e interpretar la varianza explicada y las cargas.
+3. Agrupar a los participantes con k-means y elegir el número de grupos con la silueta.
+4. Comparar los grupos con el desenlace y explicar por qué no son lo mismo.
+
+## Materiales
+
+- Python con pandas, scikit-learn y Matplotlib (el tutorial [Entorno reproducible con uv y Quarto](../../../tutoriales/entorno-uv-quarto/index.qmd) explica la instalación).
+- [`datos_ejemplo.py`](../../../recursos/python/datos_ejemplo.py): la función `marcha_sintetica()` devuelve 44 participantes **simulados**, 5 marchas cada uno, 13 parámetros y un desenlace binario (16 con riesgo, 26 sin riesgo y 2 sin clasificar).
+
+## Procedimiento
+
+### Una fila por participante
+
+```python
+from datos_ejemplo import marcha_sintetica
+
+largo, participantes = marcha_sintetica()
+medias = (largo.groupby(["participante", "parametro"])["valor"]
+               .mean().unstack())                    # 44 × 13
+analizables = participantes.query("sppb != 'sin clasificar'")
+medias = medias.loc[analizables.participante]        # 42 × 13
+```
+
+La unidad de análisis es el participante: las cinco marchas de una persona se promedian antes de cualquier modelo.
+
+### Estandarizar y ajustar PCA
+
+```python
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+
+z = StandardScaler().fit_transform(medias)
+pca = PCA().fit(z)
+pca.explained_variance_ratio_.cumsum()[:5]
+```
+
+![Varianza explicada por componente y acumulada (datos simulados).](../fig/varianza){width="70%"}
+
+Lee las cargas de la primera componente (`pca.components_[0]`) y anota qué parámetros pesan más.
+
+### Agrupar con k-means
+
+```python
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+
+cp = pca.transform(z)[:, :2]
+for k in range(2, 7):
+    grupos = KMeans(n_clusters=k, n_init=20, random_state=0).fit_predict(cp)
+    print(k, silhouette_score(cp, grupos))
+```
+
+![Los participantes en las dos primeras componentes, coloreados por grupo de k-means.](../fig/pca-dispersion){width="70%"}
+
+### Comparar con el desenlace
+
+```python
+import pandas as pd
+desenlace = analizables.set_index("participante").loc[medias.index, "sppb"]
+pd.crosstab(grupos, desenlace)
+```
+
+::: {.callout-warning}
+## Cuidado
+k-means no conoce el desenlace. Si un grupo concentra más participantes con riesgo, es una observación sobre la estructura de los datos, no un clasificador ni un diagnóstico.
+:::
+
+## Preguntas orientadoras
+
+1. ¿Qué pasa con la primera componente si no estandarizas las variables? ¿Qué parámetro la domina y por qué?
+2. ¿Cuántas componentes necesitas para explicar el 80 % de la varianza? ¿Es mucho o poco para 13 variables?
+3. Con los datos simulados, uno de los dos grupos reúne casi todos los participantes con riesgo, pero también la mitad de los que no tienen riesgo. ¿Qué dice eso de usar el grupo como predicción?
+4. ¿Qué cambiaría en el análisis si usaras las 210 marchas como filas en lugar de los 42 participantes?
+
+## Entregables
+
+- Un script o cuaderno que corra de principio a fin con las dos figuras.
+- Una tabla con las cargas de las dos primeras componentes, ordenadas.
+- La silueta para $k$ entre 2 y 6 y la elección justificada de $k$.
+- Respuestas a las preguntas orientadoras.
+
+## Rúbrica
+
+| Criterio | Peso | Logrado |
+|:--|--:|:--|
+| Unidad de análisis | 20 % | Una fila por participante, con la justificación |
+| PCA | 30 % | Variables estandarizadas; varianza y cargas interpretadas |
+| Agrupamiento | 25 % | $k$ elegido con un criterio explícito |
+| Interpretación | 15 % | Distingue grupo de clase y no afirma diagnósticos |
+| Reproducibilidad | 10 % | El código corre de principio a fin |
+
+: Rúbrica del laboratorio 2.

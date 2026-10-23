@@ -1,0 +1,821 @@
+---
+title: "Datos fuera de GitHub con DVC y Dropbox"
+subtitle: "Guía paso a paso para versionar, sincronizar y reproducir datos de investigación usando una carpeta de Dropbox"
+author: "Ph.D. Pablo Eduardo Caicedo-Rodríguez"
+date: last-modified
+lang: es
+categories: [desarrollo, datos, herramientas]
+image: img/portada-tutorial-dvc-dropbox.png
+---
+
+## Introducción {#sec-intro}
+
+Un proyecto de investigación tiene dos tipos de material que envejecen de forma distinta. El
+**código** cambia todos los días, pesa poco y se lleva bien con Git y GitHub. Los **datos**
+pesan gigas, cambian pocas veces y, cuando son de participantes, no deben salir de un
+almacenamiento controlado. Subirlos a GitHub no es opción: el límite por archivo es de 100 MB,
+el repositorio se vuelve lento y los datos quedan donde no deben.
+
+La solución que propone este tutorial reparte el trabajo entre tres herramientas:
+
+| Herramienta | Qué guarda | Cómo llega a tus otras máquinas |
+|---|---|---|
+| **GitHub** | Código, parámetros y archivos pequeños que describen los datos. | `git push` / `git pull` |
+| **DVC** | El registro de qué versión de los datos usa cada commit. | Viaja dentro de Git |
+| **Dropbox** | Los datos mismos, en una carpeta que DVC usa como almacén. | La sincronización de Dropbox |
+
+**DVC** (*Data Version Control*) funciona encima de Git: en el repositorio solo queda un
+archivo pequeño con la huella de cada versión de los datos, y los datos van a una carpeta de
+**Dropbox** que DVC usa como almacén (un *remote*). Dropbox se encarga de copiar esa carpeta a
+tu portátil, al computador del laboratorio y a tus colaboradores. Así, cada commit del código
+apunta a la versión exacta de los datos con la que se obtuvo cada resultado, y nadie tiene que
+copiar discos a mano.
+
+El tutorial sigue el orden en que harías las cosas la primera vez:
+
+1. Entender **cómo funciona** DVC y qué papel juega Dropbox.
+2. **Instalar** DVC con uv en Python 3.14.
+3. **Preparar Dropbox**: la carpeta del almacén y la opción *disponible sin conexión*.
+4. **Versionar los datos** de un proyecto con `dvc add`.
+5. **Conectar DVC con Dropbox** y subir los datos con `dvc push`.
+6. **Bajar los datos en otra máquina** con `dvc pull`, y compartirlos con tu equipo.
+7. Volver a **versiones anteriores**.
+8. Declarar el **pipeline** de BioForge en `dvc.yaml` y lanzar **experimentos**.
+9. **Datos sensibles**, errores comunes y una **hoja de trucos**.
+
+::: {.callout-note}
+## Sobre el ejemplo
+Todas las salidas de este documento son reales: salen de ejecutar `ejemplo/demo.sh` con DVC
+3.67.1 sobre Python 3.14. El ejemplo es un proyecto de riesgo de caída con señales sEMG
+sintéticas de 20 participantes, con la misma estructura de capas que usa BioForge
+(`data/raw`, `data/curated`, `data/derived`). En la demostración, la carpeta de Dropbox es una
+carpeta local y la sincronización entre máquinas se simula copiándola; con el cliente de
+Dropbox instalado, esa copia la hace Dropbox.
+:::
+
+## Cómo funciona DVC {#sec-funcionamiento}
+
+DVC separa **qué** datos usa el proyecto de **dónde** están guardados.
+
+```{mermaid}
+%%| fig-width: 6.5
+flowchart LR
+    subgraph Equipo["Tu equipo"]
+        W["Espacio de trabajo<br/>data/raw/ ..."]
+        C[".dvc/cache<br/>archivos por hash"]
+    end
+    subgraph Git["GitHub"]
+        G["código + raw.dvc<br/>dvc.yaml + dvc.lock"]
+    end
+    R[("Dropbox<br/>~/Dropbox/beos-dvc")]
+    N["Otras máquinas<br/>y colaboradores"]
+    W -- "dvc add" --> C
+    C -- "dvc push" --> R
+    R -- "dvc pull" --> C
+    C -- "dvc checkout" --> W
+    W -- "git push" --> G
+    R -. "sincroniza" .-> N
+```
+
+Las piezas son cuatro:
+
+| Pieza | Qué es | ¿Va a Git? |
+|---|---|---|
+| Espacio de trabajo | Los archivos tal como los usas: `data/raw/P001_S01_T01.csv`. | No (DVC los añade a `.gitignore`) |
+| Caché `.dvc/cache` | Copia de cada versión de cada archivo, nombrada por su hash MD5. | No |
+| Archivo `.dvc` | Unas pocas líneas con el hash, el tamaño y la ruta de lo que versionas. | **Sí** |
+| Remote (la carpeta de Dropbox) | Almacén compartido con la misma estructura que la caché. | No; solo su dirección, en `.dvc/config` |
+
+Para DVC, la carpeta de Dropbox es una carpeta más del disco: `dvc push` copia archivos a ella
+y `dvc pull` los lee de ella. Lo que la convierte en almacén compartido es el cliente de
+Dropbox, que la sube a la nube y la replica en tus otras máquinas.
+
+La idea clave es que **el archivo `.dvc` es a los datos lo que un commit es al código**. Cuando
+haces `git checkout` de un commit antiguo y luego `dvc checkout`, DVC lee los hashes de ese
+commit y pone en el espacio de trabajo los datos que correspondían.
+
+## Instalación {#sec-instalacion}
+
+DVC es un paquete de Python. Tienes dos formas de instalarlo con uv:
+
+```bash
+uv tool install "dvc[ssh]"       # herramienta global, disponible en cualquier carpeta
+uv add --dev "dvc[ssh]"          # dependencia de desarrollo del proyecto, fija en uv.lock
+```
+
+Te recomiendo la segunda: la versión de DVC queda en `uv.lock` y todo el equipo usa la misma.
+Los extras dicen qué tipos de remote soportar: `ssh`, `s3` (también MinIO), `gdrive`, `azure`,
+`gs`, `webdav`, o `all`. Comprueba la instalación con `dvc version` (salida recortada, instalado con `dvc[ssh,s3,gdrive]`):
+
+```text
+DVC version: 3.67.1 (pip)
+-------------------------
+Platform: Python 3.14.0rc2 on Linux-6.18.44-x86_64-with-glibc2.39
+Supports:
+	gdrive (pydrive2 = 1.21.2),
+	http (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),
+	https (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),
+	s3 (s3fs = 2026.9.0),
+	ssh (sshfs = 2026.8.0)
+```
+
+::: {.callout-tip}
+## Python 3.14
+DVC 3.67 se instala y funciona con Python 3.14; el ejemplo completo de este tutorial se ejecutó
+así. Si usas el scaffold de BioForge con GPU, añádelo como dependencia de desarrollo:
+`uv add --dev "dvc[ssh]"`.
+:::
+
+## Preparar Dropbox {#sec-dropbox}
+
+Este paso se hace una sola vez por proyecto.
+
+### Paso 1. Instalar el cliente de Dropbox
+
+DVC necesita ver el almacén como una carpeta del disco, así que usa la aplicación de escritorio
+de Dropbox, no la web. Instálala desde dropbox.com/install en macOS o Windows, o con el paquete
+de tu distribución en Linux, e inicia sesión. Por defecto crea la carpeta `~/Dropbox`:
+
+| Sistema | Carpeta habitual |
+|---|---|
+| Linux | `/home/<usuario>/Dropbox` |
+| macOS | `/Users/<usuario>/Dropbox` (o `~/Library/CloudStorage/Dropbox`) |
+| Windows | `C:\Users\<usuario>\Dropbox` |
+| Cuenta de la universidad (Business) | `~/Dropbox (Nombre de la institución)` |
+
+### Paso 2. Crear la carpeta del almacén
+
+Crea **una** carpeta para todos los datos de DVC del proyecto, por ejemplo:
+
+```bash
+mkdir -p ~/Dropbox/beos-dvc
+```
+
+Esa carpeta es de DVC: **no guardes ni edites nada en ella a mano**. Por dentro tendrá
+subcarpetas con nombres de hash (`files/md5/8c/38f9...`), no tus archivos con su nombre
+original. Tus datos legibles siguen en el proyecto, en `data/raw/`.
+
+### Paso 3. Hacerla disponible sin conexión
+
+En macOS y Windows, Dropbox puede dejar archivos **solo en línea**: aparecen en la carpeta
+pero no están en el disco hasta que alguien los abre. DVC lee muchos archivos seguidos y
+funciona mucho mejor si están descargados. En el explorador de archivos, haz clic derecho sobre
+`beos-dvc` y elige **Hacer disponible sin conexión** (*Make available offline*).
+
+En Linux, el cliente descarga todo lo que no hayas excluido con la sincronización selectiva;
+comprueba que `beos-dvc` no esté excluida.
+
+### Paso 4. Compartirla con tu equipo (opcional)
+
+Si otras personas van a usar los datos, comparte la carpeta `beos-dvc` desde la web de Dropbox
+con permiso de **edición** (para que también puedan hacer `dvc push`). Cada colaborador acepta
+la invitación y la carpeta aparece en su propio Dropbox. No compartas la carpeta del proyecto
+con el código: el código se comparte por GitHub.
+
+## Primer proyecto: versionar datos {#sec-primeros-pasos}
+
+### Inicializar
+
+DVC vive dentro de un repositorio Git. En la raíz del proyecto:
+
+```text
+$ dvc init
+Initialized DVC repository.
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: <https://dvc.org/doc>
+- Get help and share ideas: <https://dvc.org/chat>
+- Star us on GitHub: <https://github.com/treeverse/dvc>
+```
+
+`dvc init` crea la carpeta `.dvc/` (configuración y caché) y el archivo `.dvcignore`. Las dos
+cosas se versionan con Git.
+
+### Añadir datos
+
+Los datos crudos del ejemplo son 40 archivos CSV, dos pruebas por participante:
+
+```text
+$ ls data/raw | head -4
+P001_S01_T01.csv
+P001_S01_T02.csv
+P002_S01_T01.csv
+P002_S01_T02.csv
+```
+
+Para ponerlos bajo DVC:
+
+```text
+$ dvc add data/raw
+
+To track the changes with git, run:
+
+	git add data/raw.dvc data/.gitignore
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+```
+
+DVC hizo tres cosas: copió los archivos a la caché, creó `data/raw.dvc` y añadió `data/raw` a
+`data/.gitignore`, para que Git no los suba nunca por error.
+
+```text
+$ cat data/raw.dvc
+outs:
+- md5: 326f765e85eeab018ebcf289de322f13.dir
+  size: 11929272
+  nfiles: 40
+  hash: md5
+  path: raw
+```
+
+```text
+$ cat data/.gitignore
+/raw
+```
+
+Ese archivo `.dvc` es todo lo que Git necesita saber de los datos: un hash para toda la
+carpeta (el sufijo `.dir` indica que es un directorio), su tamaño y el número de archivos. Lo
+añades y haces commit como cualquier archivo:
+
+```bash
+git add data/raw.dvc data/.gitignore .dvc .dvcignore
+git commit -m "Datos crudos sEMG bajo DVC"
+```
+
+::: {.callout-tip}
+## Autostage
+Con `dvc config core.autostage true`, DVC ejecuta él mismo `git add` de los archivos que
+genera y te ahorras copiar los comandos que sugiere.
+:::
+
+### Granularidad: ¿una carpeta o cada archivo?
+
+Para datos que llegan por lotes (un participante nuevo cada semana), versiona la **carpeta**:
+`dvc add data/raw` vuelve a calcular solo los archivos que cambiaron y el `.dvc` sigue siendo
+uno. Versiona archivos sueltos solo cuando son independientes entre sí, por ejemplo un
+modelo preentrenado que descargas una vez.
+
+## Conectar DVC con Dropbox {#sec-remotes}
+
+### Paso 5. Añadir la carpeta como remote
+
+La carpeta de Dropbox se registra como remote **una vez**, y su dirección se guarda en
+`.dvc/config`:
+
+```text
+$ dvc remote add -d dropbox '~/Dropbox/beos-dvc' && cat .dvc/config
+Setting 'dropbox' as a default remote.
+[core]
+    remote = dropbox
+['remote "dropbox"']
+    url = ~/Dropbox/beos-dvc
+```
+
+Dos detalles importantes:
+
+- **Las comillas simples en `'~/Dropbox/beos-dvc'`.** Sin comillas, la terminal cambia `~` por
+  tu ruta completa (`/home/pacaicedo/...`) y esa ruta no existe en el Mac o el Windows de un
+  colaborador. Con comillas, DVC guarda `~` tal cual y lo traduce a la carpeta personal de
+  cada máquina al ejecutar.
+- **`-d`** lo marca como remote por defecto, así no tienes que nombrarlo en cada comando.
+
+`.dvc/config` va a Git, de modo que quien clone el proyecto ya sabe dónde buscar los datos.
+
+```bash
+git add .dvc/config
+git commit -m "Dropbox como almacén de datos"
+```
+
+### Paso 6. Subir los datos
+
+```text
+$ dvc push
+41 files pushed
+```
+
+DVC copió a la carpeta de Dropbox todo lo que estaba en su caché. Lo que ves dentro son
+archivos nombrados por su hash:
+
+```text
+$ find ~/Dropbox/beos-dvc -type f | sort | sed -n 1,3p
+~/Dropbox/beos-dvc/files/md5/05/8412a219bd78717c277bab0663a076
+~/Dropbox/beos-dvc/files/md5/06/87b362f1a6ff9f9abd45bc57b4abec
+~/Dropbox/beos-dvc/files/md5/0f/04bd58128cd3d38f960fcde4812c3f
+$ find ~/Dropbox/beos-dvc -type f | wc -l
+41
+```
+
+Ahora Dropbox los sube a la nube en segundo plano.
+
+::: {.callout-important}
+## `dvc push` termina antes que Dropbox
+`dvc push` termina cuando los archivos están en tu carpeta local de Dropbox, no cuando ya
+están en la nube. Antes de apagar el computador o de avisar a un colaborador, espera a que el
+icono de Dropbox diga **Actualizado** (*Up to date*). Con muchos datos, la primera subida
+puede tardar horas.
+:::
+
+### Si tu carpeta de Dropbox tiene otro nombre
+
+Con una cuenta institucional la carpeta suele llamarse `~/Dropbox (Universidad)` y en algunos
+Mac está en `~/Library/CloudStorage/Dropbox`. No cambies `.dvc/config`, que es de todos:
+sobrescribe la ruta **solo en tu máquina** con `--local`, que la guarda en
+`.dvc/config.local`, un archivo que Git ignora:
+
+```bash
+dvc remote modify --local dropbox url '~/Dropbox (Universidad)/beos-dvc'
+```
+
+### Otras opciones de almacén
+
+Dropbox es cómodo porque ya lo tienes instalado, pero DVC admite otros remotes con los mismos
+comandos. Si el proyecto crece o los datos son sensibles, considera:
+
+| Remote | URL | Cuándo usarlo |
+|---|---|---|
+| Servidor por SSH | `ssh://servidor-lab/datos/beos-dvc` | Servidor de la universidad; el más adecuado para datos de participantes. |
+| S3 o MinIO | `s3://beos-dvc/riesgo-caida` | Nube o MinIO del laboratorio. |
+| NAS montado | `/mnt/nas/beos-dvc` | Disco compartido en red. |
+
+## Trabajar en otra máquina {#sec-otra-maquina}
+
+### Paso 7. Bajar los datos en el portátil o en el servidor
+
+En la otra máquina, primero **espera a que Dropbox termine de sincronizar** la carpeta
+`beos-dvc`. Luego clona el repositorio. Al principio solo tiene los archivos `.dvc`, no los
+datos:
+
+```text
+$ git clone -q riesgo-caida otra-maquina && cd otra-maquina && ls data
+derived
+raw.dvc
+```
+
+`dvc pull` lee de `~/Dropbox/beos-dvc` lo que corresponde al commit actual y lo coloca en su
+sitio:
+
+```text
+$ dvc pull
+A       data/curated/
+A       data/raw/
+A       data/derived/caracteristicas.csv
+A       data/derived/modelo.joblib
+A       data/derived/predicciones.csv
+85 files fetched and 83 files added
+```
+
+Si `dvc pull` dice que faltan archivos, casi siempre es que Dropbox aún no terminó de
+descargarlos: espera y repite.
+
+### El flujo diario
+
+```bash
+git pull && dvc pull                        # traer código y datos
+dvc add data/raw                            # después de añadir participantes nuevos
+git add data/raw.dvc && git commit -m "Participantes P021 a P030"
+dvc push && git push                        # primero los datos, luego el código
+```
+
+::: {.callout-important}
+## Primero `dvc push`, luego `git push`
+Si subes el commit antes que los datos, tus colaboradores verán un `.dvc` que apunta a un hash
+que todavía no está en Dropbox y `dvc pull` fallará con *missing cache files*.
+:::
+
+### Servidores sin cliente de Dropbox
+
+En un servidor con GPU sin escritorio puedes instalar el cliente de Dropbox para Linux en modo
+consola, o usar `rclone`, que habla con la API de Dropbox, para copiar la carpeta:
+
+```bash
+rclone config                                         # crea un remote "dropbox" una vez
+rclone sync dropbox:beos-dvc ~/Dropbox/beos-dvc       # baja el almacén
+dvc pull
+dvc push && rclone sync ~/Dropbox/beos-dvc dropbox:beos-dvc   # sube lo nuevo
+```
+
+Así la carpeta tiene la misma ruta que en tus otras máquinas y `.dvc/config` no cambia.
+
+## Volver a una versión anterior {#sec-versiones}
+
+Cada commit fija una versión de los datos. Para marcar las importantes, usa etiquetas de Git:
+
+```bash
+git tag -a datos-v1 -m "Primeros 20 participantes"
+git push --tags
+```
+
+Para recuperar los datos de esa versión:
+
+```bash
+git checkout datos-v1        # el código y los .dvc de esa versión
+dvc checkout                 # los datos que esos .dvc describen
+```
+
+`dvc checkout` copia desde la caché local; si no están, usa `dvc pull`, que los lee de Dropbox. Para traer solo un
+archivo de una versión antigua sin cambiar de rama:
+
+```bash
+dvc get . data/raw/P001_S01_T01.csv --rev datos-v1 -o P001_v1.csv
+```
+
+`dvc get` y `dvc import` también funcionan con **otros** repositorios: es la forma de reutilizar
+un conjunto de datos de un proyecto en otro sin copiarlo.
+
+## Pipelines: el flujo de BioForge en `dvc.yaml` {#sec-pipelines}
+
+Versionar datos es la mitad de la historia. La otra mitad es saber **cómo** se obtuvo cada
+resultado. DVC permite declarar el flujo de un experimento como una serie de etapas con sus
+dependencias y salidas, igual que los procesos de BioForge con sus contratos encadenados.
+
+```{mermaid}
+%%| fig-height: 5
+flowchart TB
+    R[("data/raw")] --> P["preprocesamiento<br/>pasabanda, notch, RMS"]
+    P --> C[("data/curated")]
+    C --> A["analisis<br/>características"]
+    A --> T[("caracteristicas.csv")]
+    T --> M["modelado<br/>bosque aleatorio"]
+    M --> Y[("predicciones.csv<br/>modelo.joblib")]
+    Y --> E["evaluacion<br/>AUC, ROC"]
+    E --> X[("metricas.json<br/>roc.csv")]
+    PA["params.yaml"] -.-> P
+    PA -.-> M
+```
+
+### Los parámetros
+
+Todo lo que quieras variar entre experimentos va en `params.yaml`:
+
+Archivo `params.yaml`:
+
+```yaml
+preprocesamiento:
+  fs_hz: 2000
+  pasabanda_hz: [20, 450]
+  notch_hz: 60
+  rms_ms: 100
+modelado:
+  n_arboles: 200
+  profundidad: 3
+  pliegues: 4
+  semilla: 2026
+```
+
+Los scripts los leen de ese archivo. Así queda el preprocesamiento:
+
+Archivo `src/preprocesar.py`:
+
+```python
+"""Preprocesamiento: pasabanda, notch y envolvente RMS de cada archivo."""
+
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import yaml
+from scipy import signal
+
+p = yaml.safe_load(open("params.yaml"))["preprocesamiento"]
+fs = p["fs_hz"]
+b, a = signal.butter(4, [p["pasabanda_hz"][0], p["pasabanda_hz"][1]], btype="band", fs=fs)
+bn, an = signal.iirnotch(p["notch_hz"], 30, fs=fs)
+ventana = int(p["rms_ms"] * fs / 1000)
+
+salida = Path("data/curated")
+salida.mkdir(parents=True, exist_ok=True)
+for archivo in sorted(Path("data/raw").glob("*.csv")):
+    df = pd.read_csv(archivo)
+    x = signal.filtfilt(bn, an, signal.filtfilt(b, a, df["ta_mv"].to_numpy()))
+    rms = np.sqrt(np.convolve(x**2, np.ones(ventana) / ventana, mode="same"))
+    df.assign(ta_limpia=x, ta_rms=rms).to_parquet(salida / f"{archivo.stem}.parquet")
+```
+
+### El `dvc.yaml`
+
+Cada etapa declara su comando (`cmd`), de qué depende (`deps`), qué parámetros usa (`params`)
+y qué produce (`outs`, `metrics`, `plots`):
+
+Archivo `dvc.yaml`:
+
+```yaml
+stages:
+  preprocesamiento:
+    cmd: python src/preprocesar.py
+    deps:
+      - src/preprocesar.py
+      - data/raw
+    params:
+      - preprocesamiento
+    outs:
+      - data/curated
+  analisis:
+    cmd: python src/caracteristicas.py
+    deps:
+      - src/caracteristicas.py
+      - data/curated
+    outs:
+      - data/derived/caracteristicas.csv
+  modelado:
+    cmd: python src/modelar.py
+    deps:
+      - src/modelar.py
+      - data/derived/caracteristicas.csv
+    params:
+      - modelado
+    outs:
+      - data/derived/predicciones.csv
+      - data/derived/modelo.joblib
+  evaluacion:
+    cmd: python src/evaluar.py
+    deps:
+      - src/evaluar.py
+      - data/derived/predicciones.csv
+    metrics:
+      - reports/metricas.json:
+          cache: false
+    plots:
+      - reports/roc.csv:
+          x: fpr
+          y: tpr
+          cache: false
+```
+
+La salida de una etapa es la dependencia de la siguiente: es la cadena de contratos de
+BioForge escrita de forma que DVC pueda comprobarla.
+
+### Ejecutar
+
+`dvc repro` ejecuta las etapas necesarias en orden:
+
+```text
+$ dvc repro
+'data/raw.dvc' didn't change, skipping
+Running stage 'preprocesamiento':
+> python src/preprocesar.py
+Generating lock file 'dvc.lock'
+Updating lock file 'dvc.lock'
+
+Running stage 'analisis':
+> python src/caracteristicas.py
+Updating lock file 'dvc.lock'
+
+Running stage 'modelado':
+> python src/modelar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluacion':
+> python src/evaluar.py
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+	git add dvc.lock data/.gitignore data/derived/.gitignore
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.
+```
+
+DVC guarda en `dvc.lock` el hash de cada dependencia, parámetro y salida. Ese archivo va a
+Git: es el acta de cómo se produjo cada resultado.
+
+```text
+$ dvc metrics show
+Path                   auc    exactitud
+reports/metricas.json  0.714  0.7
+```
+
+### Solo se rehace lo que cambió
+
+Si nada cambió, `dvc repro` no hace nada:
+
+```text
+$ dvc status
+Data and pipelines are up to date.
+```
+
+Si cambias la ventana RMS de 100 a 50 ms en `params.yaml`, DVC sabe exactamente qué etapa
+quedó obsoleta:
+
+```text
+$ dvc status
+preprocesamiento:
+	changed deps:
+		params.yaml:
+			modified:           preprocesamiento
+```
+
+```text
+$ dvc repro
+'data/raw.dvc' didn't change, skipping
+Running stage 'preprocesamiento':
+> python src/preprocesar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'analisis':
+> python src/caracteristicas.py
+Updating lock file 'dvc.lock'
+
+Running stage 'modelado':
+> python src/modelar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluacion':
+> python src/evaluar.py
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+	git add dvc.lock
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.
+```
+
+La evaluación no se rehízo porque las predicciones no cambiaron. Para comparar con el último
+commit:
+
+```text
+$ dvc params diff
+Path         Param                    HEAD    workspace
+params.yaml  preprocesamiento.rms_ms  100     50
+```
+
+```text
+$ dvc metrics diff
+Path                   Metric    HEAD    workspace    Change
+reports/metricas.json  auc       0.714   0.69         -0.024
+```
+
+::: {.callout-tip}
+## Ejecutar desde una etapa
+`dvc repro modelado` ejecuta esa etapa y las anteriores que hagan falta. `dvc repro -s
+modelado` ejecuta solo esa, sin mirar las anteriores. `dvc dag` dibuja el grafo de etapas en
+la terminal.
+:::
+
+## Experimentos {#sec-experimentos}
+
+Cambiar `params.yaml`, ejecutar y hacer commit para cada prueba llena la historia de Git de
+ruido. `dvc exp run` ejecuta el pipeline con otros parámetros y guarda el resultado como un
+**experimento**, sin crear commits:
+
+```text
+$ dvc exp run -n arboles-500 --set-param modelado.n_arboles=500
+Reproducing experiment 'arboles-500'
+'data/raw.dvc' didn't change, skipping
+Stage 'preprocesamiento' didn't change, skipping
+Stage 'analisis' didn't change, skipping
+Running stage 'modelado':
+> python src/modelar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluacion':
+> python src/evaluar.py
+Updating lock file 'dvc.lock'
+
+Ran experiment(s): arboles-500
+Experiment results have been applied to your workspace.
+```
+
+```bash
+dvc exp run -n profundidad-1 -S modelado.n_arboles=200 -S modelado.profundidad=1
+```
+
+`dvc exp show` los compara en una tabla:
+
+```bash
+dvc exp show --no-pager \
+    --drop 'Created|data/.*|src/.*|preprocesamiento.*|modelado.(pliegues|semilla)'
+```
+
+| Experiment                  | auc   | exactitud   | modelado.n_arboles   | modelado.profundidad   |
+|-----------------------------|-------|-------------|----------------------|------------------------|
+| workspace                   | 0.702 | 0.6         | 200                  | 1                      |
+| main                        | 0.714 | 0.7         | 200                  | 3                      |
+| ├── a2d0d05 [profundidad-1] | 0.702 | 0.6         | 200                  | 1                      |
+| └── 022bdce [arboles-500]   | 0.714 | 0.7         | 500                  | 3                      |
+
+Lo que haces después con un experimento:
+
+| Comando | Qué hace |
+|---|---|
+| `dvc exp apply arboles-500` | Pone sus parámetros y resultados en el espacio de trabajo, para hacer commit. |
+| `dvc exp branch arboles-500 rama-500` | Crea una rama de Git con él. |
+| `dvc exp push origin arboles-500` | Lo comparte con el equipo a través de GitHub y del remote DVC. |
+| `dvc exp remove profundidad-1` | Lo descarta. |
+
+::: {.callout-note}
+## ¿Y la GPU?
+DVC no ejecuta nada en la GPU: lanza tus comandos. Si `src/modelar.py` usa PyTorch con CUDA,
+`dvc repro` en una máquina con GPU entrena en la GPU. Lo que DVC aporta es que el modelo
+entrenado en el servidor vuelve a tu portátil con `dvc push` y `dvc pull`, con la garantía de
+que corresponde a ese código y esos datos.
+:::
+
+## Gráficos {#sec-graficos}
+
+Las salidas marcadas como `plots` en `dvc.yaml` se pueden dibujar y comparar entre versiones:
+
+```bash
+dvc plots show                      # genera dvc_plots/index.html con la curva ROC
+dvc plots diff datos-v1 workspace   # superpone las curvas de dos versiones
+```
+
+## Datos sensibles {#sec-sensibles}
+
+Con datos de participantes, DVC ayuda pero no sustituye la gestión de datos del protocolo, y
+Dropbox añade sus propias condiciones:
+
+1. **¿Se pueden guardar en Dropbox?** Dropbox cifra los archivos en sus servidores, pero con
+   claves propias, y los datos quedan fuera de tu institución. Para datos identificables usa
+   solo una cuenta institucional (Dropbox Business con acuerdo de tratamiento de datos) y
+   siempre que el consentimiento y el comité de ética lo permitan. Una cuenta personal no es
+   lugar para datos de participantes.
+2. **Seudonimiza antes de `dvc add`.** Los nombres de archivo del ejemplo
+   (`P001_S01_T01.csv`) ya son seudónimos; la tabla de correspondencia vive fuera del proyecto
+   y fuera de Dropbox.
+3. **Ningún dato identificable en Git.** DVC garantiza que `data/` no va a Git, pero no evita
+   que un script escriba nombres o documentos en un archivo que sí versionas, como `reports/`
+   o `params.yaml`. Revisa lo que sale de cada etapa.
+4. **Comparte con permiso mínimo.** Quien solo analiza puede tener la carpeta en modo lectura;
+   no podrá hacer `dvc push`, pero sí `dvc pull`.
+5. **Borrar de verdad.** Si un participante retira su consentimiento, elimina sus archivos,
+   haz `dvc add` y commit, y luego `dvc gc --workspace --cloud` para borrar del almacén las
+   versiones antiguas. Ojo: `gc` borra **todas** las versiones que no use el espacio de
+   trabajo actual, y Dropbox guarda los archivos borrados unos días en su papelera, que tendrás
+   que vaciar también.
+
+## DVC en BioForge Experiment OS {#sec-beos}
+
+El workspace de BioForge ya tiene la forma que DVC necesita:
+
+| Carpeta de BEOS | Con DVC |
+|---|---|
+| `data/raw/` | `dvc add`: datos originales, inmutables, con hash. |
+| `data/curated/` | Salida de la etapa de preprocesamiento. |
+| `data/derived/` | Salidas de análisis, modelado y producción. |
+| `data/evidence/`, `reports/` | Métricas y gráficos (`cache: false`, van a Git). |
+| `experimento.yaml` | Se puede traducir a `dvc.yaml`: un proceso por etapa. |
+| Contratos | Son las `deps` y `outs` de cada etapa. |
+
+La huella SHA-256 de BEOS y el MD5 de DVC conviven: BEOS comprueba la integridad de cada
+archivo contra su contrato, y DVC se encarga de moverlo y versionarlo.
+
+## Publicarlo en tu sitio {#sec-sitio}
+
+Este tutorial viene en dos versiones:
+
+- `tutorial-dvc-dropbox.qmd`: documento independiente con la marca, que se renderiza a HTML y PDF con
+  la carpeta `marca/` al lado.
+- `para-el-sitio/notas/datos-con-dvc-dropbox/`: la misma nota sin bloque `format`, lista para copiar a
+  la carpeta `notas/` de `pacaicedo.github.io`. Hereda el tema del sitio de
+  `notas/_metadata.yml`, aparece en el listado de notas con su portada y sus categorías, y se
+  publica con el `quarto render` de siempre.
+
+```bash
+cp -r para-el-sitio/notas/datos-con-dvc-dropbox ~/ruta/a/pacaicedo.github.io/notas/
+cd ~/ruta/a/pacaicedo.github.io && quarto preview
+```
+
+## Errores comunes {#sec-errores}
+
+| Síntoma | Causa | Solución |
+|---|---|---|
+| `output 'data/raw' is already tracked by SCM` | Los datos ya estaban en Git. | `git rm -r --cached data/raw` y repite `dvc add`. |
+| `Missing cache files` en `dvc pull` | Alguien hizo `git push` sin `dvc push`. | Que esa persona ejecute `dvc push`. |
+| `dvc repro` rehace todo cada vez | Una salida no está en `outs` o el script escribe con fecha. | Declara todas las salidas; evita marcas de tiempo en los archivos. |
+| `Missing cache files` en la otra máquina | Dropbox no terminó de sincronizar. | Espera a que diga *Actualizado* y repite `dvc pull`. |
+| `dvc pull` muy lento en macOS o Windows | Archivos *solo en línea*. | Marca `beos-dvc` como *disponible sin conexión*. |
+| La ruta del remote no existe en otra máquina | Se guardó `/home/...` en vez de `~`. | `dvc remote modify dropbox url '~/Dropbox/beos-dvc'`. |
+| Archivos «copia en conflicto» en `beos-dvc` | Dos personas hicieron `dvc push` a la vez. | Son copias idénticas por hash; se pueden borrar. |
+| La caché ocupa demasiado | Muchas versiones locales. | `dvc gc --workspace` en tu máquina (el remote no se toca). |
+| Archivos duplicados en disco | Caché y espacio de trabajo en copias. | `dvc config cache.type reflink,hardlink,symlink,copy`. |
+
+## Hoja de trucos {#sec-trucos}
+
+| Tarea | Comando |
+|---|---|
+| Empezar | `dvc init` |
+| Versionar datos | `dvc add data/raw` |
+| Dropbox como remote | `dvc remote add -d dropbox '~/Dropbox/beos-dvc'` |
+| Ruta distinta solo en tu máquina | `dvc remote modify --local dropbox url 'RUTA'` |
+| Subir / bajar | `dvc push` / `dvc pull` |
+| Datos de otro commit | `git checkout REV && dvc checkout` |
+| Un archivo de otra versión | `dvc get . RUTA --rev REV` |
+| Datos de otro repositorio | `dvc import URL-REPO RUTA` |
+| Ejecutar el pipeline | `dvc repro` |
+| ¿Qué cambió? | `dvc status`, `dvc params diff`, `dvc metrics diff` |
+| Experimento | `dvc exp run -n NOMBRE -S param=valor` |
+| Comparar experimentos | `dvc exp show` |
+| Gráficos | `dvc plots show`, `dvc plots diff` |
+| Limpiar caché | `dvc gc --workspace` |

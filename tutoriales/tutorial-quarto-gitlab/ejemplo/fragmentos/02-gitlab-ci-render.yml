@@ -1,0 +1,38 @@
+# Publica este sitio Quarto en GitLab Pages.
+#
+#   merge request      -> job "comprobar": renderiza el sitio para verificar que compila
+#                         y guarda _site/ como artefacto descargable (no publica nada).
+#   rama por defecto   -> job "publicar-sitio": renderiza y publica _site/ en GitLab Pages.
+#
+# Requiere GitLab 17.9 o posterior (GitLab.com ya lo cumple) por la palabra clave pages.publish.
+
+default:
+  # Imagen oficial de Quarto. Fija la misma versión que usas en tu equipo
+  # (quarto --version) para que el CI y tu render local den el mismo HTML.
+  image: ghcr.io/quarto-dev/quarto:1.8.27
+
+stages:
+  - comprobar
+  - publicar
+
+comprobar:
+  stage: comprobar
+  script:
+    - quarto --version
+    - quarto render
+  artifacts:
+    paths:
+      - _site/
+    expire_in: 1 week
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+publicar-sitio:
+  stage: publicar
+  script:
+    - quarto --version
+    - quarto render
+  pages:
+    publish: _site      # carpeta que GitLab sirve como sitio web
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

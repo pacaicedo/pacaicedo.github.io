@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Pablo Eduardo Caicedo-Rodríguez">
+
+<title>Datos fuera de GitHub con DVC – P. E. Caicedo-Rodríguez</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../recursos/marca/logo/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3ea025ca51a21a1d1a970835ebe5fd04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<meta property="og:title" content="Datos fuera de GitHub con DVC – P. E. Caicedo-Rodríguez">
+<meta property="og:description" content="Versionar, sincronizar y reproducir datos de investigación sin subirlos al repositorio">
+<meta property="og:image" content="recursos/marca/logo/tarjeta-social.png">
+<meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo light-content">
+    <img src="../../../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cursos/index.html"> 
+<span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../charlas/index.html"> 
+<span class="menu-text">Charlas y Conferencias</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../proyectos/index.html"> 
+<span class="menu-text">Proyectos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tutoriales/index.html"> 
+<span class="menu-text">Herramientas y Tutoriales</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link active" data-scroll-target="#sec-intro">Introducción</a></li>
+  <li><a href="#sec-funcionamiento" id="toc-sec-funcionamiento" class="nav-link" data-scroll-target="#sec-funcionamiento">Cómo funciona DVC</a></li>
+  <li><a href="#sec-instalacion" id="toc-sec-instalacion" class="nav-link" data-scroll-target="#sec-instalacion">Instalación</a></li>
+  <li><a href="#sec-primeros-pasos" id="toc-sec-primeros-pasos" class="nav-link" data-scroll-target="#sec-primeros-pasos">Primer proyecto: versionar datos</a>
+  <ul class="collapse">
+  <li><a href="#inicializar" id="toc-inicializar" class="nav-link" data-scroll-target="#inicializar">Inicializar</a></li>
+  <li><a href="#añadir-datos" id="toc-añadir-datos" class="nav-link" data-scroll-target="#añadir-datos">Añadir datos</a></li>
+  <li><a href="#granularidad-una-carpeta-o-cada-archivo" id="toc-granularidad-una-carpeta-o-cada-archivo" class="nav-link" data-scroll-target="#granularidad-una-carpeta-o-cada-archivo">Granularidad: ¿una carpeta o cada archivo?</a></li>
+  </ul></li>
+  <li><a href="#sec-remotes" id="toc-sec-remotes" class="nav-link" data-scroll-target="#sec-remotes">Remotes: dónde viven los datos</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-remote" id="toc-tipos-de-remote" class="nav-link" data-scroll-target="#tipos-de-remote">Tipos de remote</a></li>
+  <li><a href="#remote-ssh-con-un-alias" id="toc-remote-ssh-con-un-alias" class="nav-link" data-scroll-target="#remote-ssh-con-un-alias">Remote SSH con un alias</a></li>
+  <li><a href="#credenciales-fuera-de-git" id="toc-credenciales-fuera-de-git" class="nav-link" data-scroll-target="#credenciales-fuera-de-git">Credenciales fuera de Git</a></li>
+  </ul></li>
+  <li><a href="#sec-otra-maquina" id="toc-sec-otra-maquina" class="nav-link" data-scroll-target="#sec-otra-maquina">Trabajar en otra máquina</a></li>
+  <li><a href="#sec-versiones" id="toc-sec-versiones" class="nav-link" data-scroll-target="#sec-versiones">Volver a una versión anterior</a></li>
+  <li><a href="#sec-pipelines" id="toc-sec-pipelines" class="nav-link" data-scroll-target="#sec-pipelines">Pipelines: el flujo de BioForge en <code>dvc.yaml</code></a>
+  <ul class="collapse">
+  <li><a href="#los-parámetros" id="toc-los-parámetros" class="nav-link" data-scroll-target="#los-parámetros">Los parámetros</a></li>
+  <li><a href="#el-dvc.yaml" id="toc-el-dvc.yaml" class="nav-link" data-scroll-target="#el-dvc.yaml">El <code>dvc.yaml</code></a></li>
+  <li><a href="#ejecutar" id="toc-ejecutar" class="nav-link" data-scroll-target="#ejecutar">Ejecutar</a></li>
+  <li><a href="#solo-se-rehace-lo-que-cambió" id="toc-solo-se-rehace-lo-que-cambió" class="nav-link" data-scroll-target="#solo-se-rehace-lo-que-cambió">Solo se rehace lo que cambió</a></li>
+  </ul></li>
+  <li><a href="#sec-experimentos" id="toc-sec-experimentos" class="nav-link" data-scroll-target="#sec-experimentos">Experimentos</a></li>
+  <li><a href="#sec-graficos" id="toc-sec-graficos" class="nav-link" data-scroll-target="#sec-graficos">Gráficos</a></li>
+  <li><a href="#sec-sensibles" id="toc-sec-sensibles" class="nav-link" data-scroll-target="#sec-sensibles">Datos sensibles</a></li>
+  <li><a href="#sec-beos" id="toc-sec-beos" class="nav-link" data-scroll-target="#sec-beos">DVC en BioForge Experiment OS</a></li>
+  <li><a href="#sec-sitio" id="toc-sec-sitio" class="nav-link" data-scroll-target="#sec-sitio">Publicarlo en tu sitio</a></li>
+  <li><a href="#sec-errores" id="toc-sec-errores" class="nav-link" data-scroll-target="#sec-errores">Errores comunes</a></li>
+  <li><a href="#sec-trucos" id="toc-sec-trucos" class="nav-link" data-scroll-target="#sec-trucos">Hoja de trucos</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Datos fuera de GitHub con DVC</h1>
+<p class="subtitle lead">Versionar, sincronizar y reproducir datos de investigación sin subirlos al repositorio</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Pablo Eduardo Caicedo-Rodríguez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">14 de octubre de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-intro" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro">Introducción</h2>
+<p>Un proyecto de investigación tiene dos tipos de material que envejecen de forma distinta. El <strong>código</strong> cambia todos los días, pesa poco y se lleva bien con Git y GitHub. Los <strong>datos</strong> pesan gigas, cambian pocas veces y, cuando son de participantes, no deben salir de un almacenamiento controlado. Subirlos a GitHub no es opción: el límite por archivo es de 100 MB, el repositorio se vuelve lento y los datos quedan donde no deben.</p>
+<p><strong>DVC</strong> (<em>Data Version Control</em>) resuelve esa tensión. Funciona encima de Git: los datos van a un almacenamiento que tú eliges (un servidor por SSH, un NAS, un bucket S3 o MinIO, Google Drive) y en Git solo queda un archivo pequeño con la huella de cada versión. Así, cada commit del código apunta a la versión exacta de los datos con la que se obtuvo cada resultado.</p>
+<p>Este tutorial cubre:</p>
+<ol type="1">
+<li><strong>Cómo funciona</strong> DVC: caché, archivos <code>.dvc</code> y <em>remotes</em>.</li>
+<li><strong>Instalación</strong> con uv en Python 3.14.</li>
+<li><strong>Versionar datos</strong>: <code>dvc add</code>, <code>push</code>, <code>pull</code> y volver a una versión anterior.</li>
+<li><strong>Remotes</strong>: disco local, servidor SSH, S3/MinIO y Google Drive, con las credenciales fuera de Git.</li>
+<li><strong>Pipelines</strong>: el flujo preprocesamiento → análisis → modelado → evaluación de BioForge declarado en <code>dvc.yaml</code>, con parámetros, métricas y gráficos.</li>
+<li><strong>Experimentos</strong> con <code>dvc exp</code>.</li>
+<li><strong>Datos sensibles</strong>, el trabajo en equipo y la integración con BioForge Experiment OS.</li>
+<li>Errores comunes y una <strong>hoja de trucos</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Sobre el ejemplo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Todas las salidas de este documento son reales: salen de ejecutar <code>ejemplo/demo.sh</code> con DVC 3.67.1 sobre Python 3.14. El ejemplo es un proyecto de riesgo de caída con señales sEMG sintéticas de 20 participantes, con la misma estructura de capas que usa BioForge (<code>data/raw</code>, <code>data/curated</code>, <code>data/derived</code>).</p>
+</div>
+</div>
+</section>
+<section id="sec-funcionamiento" class="level2">
+<h2 class="anchored" data-anchor-id="sec-funcionamiento">Cómo funciona DVC</h2>
+<p>DVC separa <strong>qué</strong> datos usa el proyecto de <strong>dónde</strong> están guardados.</p>
+<div class="cell" data-fig-width="6.5" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph Equipo["Tu equipo"]
+        W["Espacio de trabajo&lt;br/&gt;data/raw/ ..."]
+        C[".dvc/cache&lt;br/&gt;archivos por hash"]
+    end
+    subgraph Git["GitHub"]
+        G["código + raw.dvc&lt;br/&gt;dvc.yaml + dvc.lock"]
+    end
+    R[("Remote DVC&lt;br/&gt;SSH · S3 · Drive")]
+    W -- "dvc add" --&gt; C
+    C -- "dvc push" --&gt; R
+    R -- "dvc pull" --&gt; C
+    C -- "dvc checkout" --&gt; W
+    W -- "git push" --&gt; G
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Las piezas son cuatro:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pieza</th>
+<th>Qué es</th>
+<th>¿Va a Git?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Espacio de trabajo</td>
+<td>Los archivos tal como los usas: <code>data/raw/P001_S01_T01.csv</code>.</td>
+<td>No (DVC los añade a <code>.gitignore</code>)</td>
+</tr>
+<tr class="even">
+<td>Caché <code>.dvc/cache</code></td>
+<td>Copia de cada versión de cada archivo, nombrada por su hash MD5.</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Archivo <code>.dvc</code></td>
+<td>Unas pocas líneas con el hash, el tamaño y la ruta de lo que versionas.</td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr class="even">
+<td>Remote</td>
+<td>Almacenamiento compartido con la misma estructura que la caché.</td>
+<td>No; solo su dirección, en <code>.dvc/config</code></td>
+</tr>
+</tbody>
+</table>
+<p>La idea clave es que <strong>el archivo <code>.dvc</code> es a los datos lo que un commit es al código</strong>. Cuando haces <code>git checkout</code> de un commit antiguo y luego <code>dvc checkout</code>, DVC lee los hashes de ese commit y pone en el espacio de trabajo los datos que correspondían.</p>
+</section>
+<section id="sec-instalacion" class="level2">
+<h2 class="anchored" data-anchor-id="sec-instalacion">Instalación</h2>
+<p>DVC es un paquete de Python. Tienes dos formas de instalarlo con uv:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> tool install <span class="st">"dvc[ssh]"</span>       <span class="co"># herramienta global, disponible en cualquier carpeta</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> <span class="st">"dvc[ssh]"</span>          <span class="co"># dependencia de desarrollo del proyecto, fija en uv.lock</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Te recomiendo la segunda: la versión de DVC queda en <code>uv.lock</code> y todo el equipo usa la misma. Los extras dicen qué tipos de remote soportar: <code>ssh</code>, <code>s3</code> (también MinIO), <code>gdrive</code>, <code>azure</code>, <code>gs</code>, <code>webdav</code>, o <code>all</code>. Comprueba la instalación con <code>dvc version</code> (salida recortada, instalado con <code>dvc[ssh,s3,gdrive]</code>):</p>
+<pre class="text"><code>DVC version: 3.67.1 (pip)
+-------------------------
+Platform: Python 3.14.0rc2 on Linux-6.18.44-x86_64-with-glibc2.39
+Supports:
+    gdrive (pydrive2 = 1.21.2),
+    http (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),
+    https (aiohttp = 3.14.5, aiohttp-retry = 2.9.1),
+    s3 (s3fs = 2026.9.0),
+    ssh (sshfs = 2026.8.0)</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Python 3.14
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>DVC 3.67 se instala y funciona con Python 3.14; el ejemplo completo de este tutorial se ejecutó así. Si usas el scaffold de BioForge con GPU, añádelo como dependencia de desarrollo: <code>uv add --dev "dvc[ssh]"</code>.</p>
+</div>
+</div>
+</section>
+<section id="sec-primeros-pasos" class="level2">
+<h2 class="anchored" data-anchor-id="sec-primeros-pasos">Primer proyecto: versionar datos</h2>
+<section id="inicializar" class="level3">
+<h3 class="anchored" data-anchor-id="inicializar">Inicializar</h3>
+<p>DVC vive dentro de un repositorio Git. En la raíz del proyecto:</p>
+<pre class="text"><code>$ dvc init
+Initialized DVC repository.
+
+You can now commit the changes to git.
+
+What's next?
+------------
+- Check out the documentation: &lt;https://dvc.org/doc&gt;
+- Get help and share ideas: &lt;https://dvc.org/chat&gt;
+- Star us on GitHub: &lt;https://github.com/treeverse/dvc&gt;</code></pre>
+<p><code>dvc init</code> crea la carpeta <code>.dvc/</code> (configuración y caché) y el archivo <code>.dvcignore</code>. Las dos cosas se versionan con Git.</p>
+</section>
+<section id="añadir-datos" class="level3">
+<h3 class="anchored" data-anchor-id="añadir-datos">Añadir datos</h3>
+<p>Los datos crudos del ejemplo son 40 archivos CSV, dos pruebas por participante:</p>
+<pre class="text"><code>$ ls data/raw | head -4
+P001_S01_T01.csv
+P001_S01_T02.csv
+P002_S01_T01.csv
+P002_S01_T02.csv</code></pre>
+<p>Para ponerlos bajo DVC:</p>
+<pre class="text"><code>$ dvc add data/raw
+
+To track the changes with git, run:
+
+    git add data/raw.dvc data/.gitignore
+
+To enable auto staging, run:
+
+    dvc config core.autostage true</code></pre>
+<p>DVC hizo tres cosas: copió los archivos a la caché, creó <code>data/raw.dvc</code> y añadió <code>data/raw</code> a <code>data/.gitignore</code>, para que Git no los suba nunca por error.</p>
+<pre class="text"><code>$ cat data/raw.dvc
+outs:
+- md5: 326f765e85eeab018ebcf289de322f13.dir
+  size: 11929272
+  nfiles: 40
+  hash: md5
+  path: raw</code></pre>
+<pre class="text"><code>$ cat data/.gitignore
+/raw</code></pre>
+<p>Ese archivo <code>.dvc</code> es todo lo que Git necesita saber de los datos: un hash para toda la carpeta (el sufijo <code>.dir</code> indica que es un directorio), su tamaño y el número de archivos. Lo añades y haces commit como cualquier archivo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add data/raw.dvc data/.gitignore .dvc .dvcignore</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Datos crudos sEMG bajo DVC"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Autostage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Con <code>dvc config core.autostage true</code>, DVC ejecuta él mismo <code>git add</code> de los archivos que genera y te ahorras copiar los comandos que sugiere.</p>
+</div>
+</div>
+</section>
+<section id="granularidad-una-carpeta-o-cada-archivo" class="level3">
+<h3 class="anchored" data-anchor-id="granularidad-una-carpeta-o-cada-archivo">Granularidad: ¿una carpeta o cada archivo?</h3>
+<p>Para datos que llegan por lotes (un participante nuevo cada semana), versiona la <strong>carpeta</strong>: <code>dvc add data/raw</code> vuelve a calcular solo los archivos que cambiaron y el <code>.dvc</code> sigue siendo uno. Versiona archivos sueltos solo cuando son independientes entre sí, por ejemplo un modelo preentrenado que descargas una vez.</p>
+</section>
+</section>
+<section id="sec-remotes" class="level2">
+<h2 class="anchored" data-anchor-id="sec-remotes">Remotes: dónde viven los datos</h2>
+<p>La caché es local. Para compartir los datos con otra máquina o con tu equipo necesitas un <strong>remote</strong>. Se añade una vez y su dirección se guarda en <code>.dvc/config</code>:</p>
+<pre class="text"><code>$ dvc remote add -d laboratorio ~/servidor/beos-dvc &amp;&amp; cat .dvc/config
+Setting 'laboratorio' as a default remote.
+[core]
+    remote = laboratorio
+['remote "laboratorio"']
+    url = ~/servidor/beos-dvc</code></pre>
+<p>La opción <code>-d</code> lo marca como remote por defecto. Después, <code>dvc push</code> sube a él todo lo que falte:</p>
+<pre class="text"><code>$ dvc push
+41 files pushed</code></pre>
+<section id="tipos-de-remote" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-remote">Tipos de remote</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Remote</th>
+<th>URL</th>
+<th>Cuándo usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Carpeta o NAS montado</td>
+<td><code>/mnt/nas/beos-dvc</code></td>
+<td>Un solo laboratorio con disco compartido.</td>
+</tr>
+<tr class="even">
+<td>SSH</td>
+<td><code>ssh://servidor-lab/datos/beos-dvc</code></td>
+<td>Servidor de la universidad. <strong>Mi recomendación</strong> para datos de participantes.</td>
+</tr>
+<tr class="odd">
+<td>S3 o MinIO</td>
+<td><code>s3://beos-dvc/riesgo-caida</code></td>
+<td>Nube o un MinIO propio del laboratorio.</td>
+</tr>
+<tr class="even">
+<td>Google Drive</td>
+<td><code>gdrive://&lt;id-de-carpeta&gt;</code></td>
+<td>Proyectos personales sin datos sensibles.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="remote-ssh-con-un-alias" class="level3">
+<h3 class="anchored" data-anchor-id="remote-ssh-con-un-alias">Remote SSH con un alias</h3>
+<p>Si ya usas alias SSH (como <code>github-personal</code> para GitHub), haz lo mismo con el servidor del laboratorio. En <code>~/.ssh/config</code>:</p>
+<pre class="text"><code>Host servidor-lab
+    HostName servidor.universidad.edu.co
+    User pacaicedo
+    IdentityFile ~/.ssh/id_ed25519_lab
+    IdentitiesOnly yes</code></pre>
+<p>Y en el proyecto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> remote add <span class="at">-d</span> laboratorio ssh://servidor-lab/datos/beos-dvc</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> push</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>DVC usa tu configuración SSH, así que no hace falta escribir usuario ni clave en ningún archivo del repositorio.</p>
+</section>
+<section id="credenciales-fuera-de-git" class="level3">
+<h3 class="anchored" data-anchor-id="credenciales-fuera-de-git">Credenciales fuera de Git</h3>
+<p><code>.dvc/config</code> se versiona y lo ve todo el que clona el repositorio. Las credenciales van en <code>.dvc/config.local</code>, que DVC ya ignora en Git. Se escriben con <code>--local</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> remote add <span class="at">-d</span> minio s3://beos-dvc/riesgo-caida</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> remote modify minio endpointurl https://minio.laboratorio.local</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> remote modify <span class="at">--local</span> minio access_key_id    TU_CLAVE</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> remote modify <span class="at">--local</span> minio secret_access_key TU_SECRETO</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La dirección del remote queda en <code>.dvc/config</code> y las claves solo en tu máquina.</p>
+</section>
+</section>
+<section id="sec-otra-maquina" class="level2">
+<h2 class="anchored" data-anchor-id="sec-otra-maquina">Trabajar en otra máquina</h2>
+<p>Un compañero (o tú en el servidor con GPU) clona el repositorio. Al principio solo tiene los archivos <code>.dvc</code>, no los datos:</p>
+<pre class="text"><code>$ git clone -q riesgo-caida otra-maquina &amp;&amp; cd otra-maquina &amp;&amp; ls data
+derived
+raw.dvc</code></pre>
+<p><code>dvc pull</code> descarga del remote lo que corresponde al commit actual y lo coloca en su sitio:</p>
+<pre class="text"><code>$ dvc pull
+A       data/curated/
+A       data/raw/
+A       data/derived/caracteristicas.csv
+A       data/derived/modelo.joblib
+A       data/derived/predicciones.csv
+85 files fetched and 83 files added</code></pre>
+<p>El flujo diario queda así:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="kw">&amp;&amp;</span> <span class="ex">dvc</span> pull                       <span class="co"># traer código y datos</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> add data/raw                            <span class="co"># después de añadir datos nuevos</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add data/raw.dvc <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Participantes P021 a P030"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> push <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push                        <span class="co"># primero los datos, luego el código</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Primero <code>dvc push</code>, luego <code>git push</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si subes el commit antes que los datos, tus compañeros verán un <code>.dvc</code> que apunta a un hash que todavía no está en el remote y <code>dvc pull</code> fallará con <em>missing cache files</em>.</p>
+</div>
+</div>
+</section>
+<section id="sec-versiones" class="level2">
+<h2 class="anchored" data-anchor-id="sec-versiones">Volver a una versión anterior</h2>
+<p>Cada commit fija una versión de los datos. Para marcar las importantes, usa etiquetas de Git:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-a</span> datos-v1 <span class="at">-m</span> <span class="st">"Primeros 20 participantes"</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Para recuperar los datos de esa versión:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout datos-v1        <span class="co"># el código y los .dvc de esa versión</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> checkout                 <span class="co"># los datos que esos .dvc describen</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>dvc checkout</code> copia desde la caché local; si no están, usa <code>dvc pull</code>. Para traer solo un archivo de una versión antigua sin cambiar de rama:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> get . data/raw/P001_S01_T01.csv <span class="at">--rev</span> datos-v1 <span class="at">-o</span> P001_v1.csv</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>dvc get</code> y <code>dvc import</code> también funcionan con <strong>otros</strong> repositorios: es la forma de reutilizar un conjunto de datos de un proyecto en otro sin copiarlo.</p>
+</section>
+<section id="sec-pipelines" class="level2">
+<h2 class="anchored" data-anchor-id="sec-pipelines">Pipelines: el flujo de BioForge en <code>dvc.yaml</code></h2>
+<p>Versionar datos es la mitad de la historia. La otra mitad es saber <strong>cómo</strong> se obtuvo cada resultado. DVC permite declarar el flujo de un experimento como una serie de etapas con sus dependencias y salidas, igual que los procesos de BioForge con sus contratos encadenados.</p>
+<div class="cell" data-fig-height="5" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    R[("data/raw")] --&gt; P["preprocesamiento&lt;br/&gt;pasabanda, notch, RMS"]
+    P --&gt; C[("data/curated")]
+    C --&gt; A["analisis&lt;br/&gt;características"]
+    A --&gt; T[("caracteristicas.csv")]
+    T --&gt; M["modelado&lt;br/&gt;bosque aleatorio"]
+    M --&gt; Y[("predicciones.csv&lt;br/&gt;modelo.joblib")]
+    Y --&gt; E["evaluacion&lt;br/&gt;AUC, ROC"]
+    E --&gt; X[("metricas.json&lt;br/&gt;roc.csv")]
+    PA["params.yaml"] -.-&gt; P
+    PA -.-&gt; M
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="los-parámetros" class="level3">
+<h3 class="anchored" data-anchor-id="los-parámetros">Los parámetros</h3>
+<p>Todo lo que quieras variar entre experimentos va en <code>params.yaml</code>:</p>
+<p>Archivo <code>params.yaml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preprocesamiento</span><span class="kw">:</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fs_hz</span><span class="kw">:</span><span class="at"> </span><span class="dv">2000</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pasabanda_hz</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="dv">20</span><span class="kw">,</span><span class="at"> </span><span class="dv">450</span><span class="kw">]</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">notch_hz</span><span class="kw">:</span><span class="at"> </span><span class="dv">60</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">rms_ms</span><span class="kw">:</span><span class="at"> </span><span class="dv">100</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">modelado</span><span class="kw">:</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">n_arboles</span><span class="kw">:</span><span class="at"> </span><span class="dv">200</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">profundidad</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pliegues</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">semilla</span><span class="kw">:</span><span class="at"> </span><span class="dv">2026</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Los scripts los leen de ese archivo. Así queda el preprocesamiento:</p>
+<p>Archivo <code>src/preprocesar.py</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""Preprocesamiento: pasabanda, notch y envolvente RMS de cada archivo."""</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> signal</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> yaml.safe_load(<span class="bu">open</span>(<span class="st">"params.yaml"</span>))[<span class="st">"preprocesamiento"</span>]</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>fs <span class="op">=</span> p[<span class="st">"fs_hz"</span>]</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>b, a <span class="op">=</span> signal.butter(<span class="dv">4</span>, [p[<span class="st">"pasabanda_hz"</span>][<span class="dv">0</span>], p[<span class="st">"pasabanda_hz"</span>][<span class="dv">1</span>]], btype<span class="op">=</span><span class="st">"band"</span>, fs<span class="op">=</span>fs)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>bn, an <span class="op">=</span> signal.iirnotch(p[<span class="st">"notch_hz"</span>], <span class="dv">30</span>, fs<span class="op">=</span>fs)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>ventana <span class="op">=</span> <span class="bu">int</span>(p[<span class="st">"rms_ms"</span>] <span class="op">*</span> fs <span class="op">/</span> <span class="dv">1000</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>salida <span class="op">=</span> Path(<span class="st">"data/curated"</span>)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>salida.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> archivo <span class="kw">in</span> <span class="bu">sorted</span>(Path(<span class="st">"data/raw"</span>).glob(<span class="st">"*.csv"</span>)):</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(archivo)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> signal.filtfilt(bn, an, signal.filtfilt(b, a, df[<span class="st">"ta_mv"</span>].to_numpy()))</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    rms <span class="op">=</span> np.sqrt(np.convolve(x<span class="op">**</span><span class="dv">2</span>, np.ones(ventana) <span class="op">/</span> ventana, mode<span class="op">=</span><span class="st">"same"</span>))</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    df.assign(ta_limpia<span class="op">=</span>x, ta_rms<span class="op">=</span>rms).to_parquet(salida <span class="op">/</span> <span class="ss">f"</span><span class="sc">{</span>archivo<span class="sc">.</span>stem<span class="sc">}</span><span class="ss">.parquet"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="el-dvc.yaml" class="level3">
+<h3 class="anchored" data-anchor-id="el-dvc.yaml">El <code>dvc.yaml</code></h3>
+<p>Cada etapa declara su comando (<code>cmd</code>), de qué depende (<code>deps</code>), qué parámetros usa (<code>params</code>) y qué produce (<code>outs</code>, <code>metrics</code>, <code>plots</code>):</p>
+<p>Archivo <code>dvc.yaml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stages</span><span class="kw">:</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">preprocesamiento</span><span class="kw">:</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cmd</span><span class="kw">:</span><span class="at"> python src/preprocesar.py</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deps</span><span class="kw">:</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> src/preprocesar.py</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/raw</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> preprocesamiento</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">outs</span><span class="kw">:</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/curated</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">analisis</span><span class="kw">:</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cmd</span><span class="kw">:</span><span class="at"> python src/caracteristicas.py</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deps</span><span class="kw">:</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> src/caracteristicas.py</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/curated</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">outs</span><span class="kw">:</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/derived/caracteristicas.csv</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">modelado</span><span class="kw">:</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cmd</span><span class="kw">:</span><span class="at"> python src/modelar.py</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deps</span><span class="kw">:</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> src/modelar.py</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/derived/caracteristicas.csv</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> modelado</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">outs</span><span class="kw">:</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/derived/predicciones.csv</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/derived/modelo.joblib</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">evaluacion</span><span class="kw">:</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cmd</span><span class="kw">:</span><span class="at"> python src/evaluar.py</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deps</span><span class="kw">:</span></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> src/evaluar.py</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> data/derived/predicciones.csv</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">metrics</span><span class="kw">:</span></span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">reports/metricas.json</span><span class="kw">:</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">plots</span><span class="kw">:</span></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">reports/roc.csv</span><span class="kw">:</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">x</span><span class="kw">:</span><span class="at"> fpr</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">y</span><span class="kw">:</span><span class="at"> tpr</span></span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La salida de una etapa es la dependencia de la siguiente: es la cadena de contratos de BioForge escrita de forma que DVC pueda comprobarla.</p>
+</section>
+<section id="ejecutar" class="level3">
+<h3 class="anchored" data-anchor-id="ejecutar">Ejecutar</h3>
+<p><code>dvc repro</code> ejecuta las etapas necesarias en orden:</p>
+<pre class="text"><code>$ dvc repro
+'data/raw.dvc' didn't change, skipping
+Running stage 'preprocesamiento':
+&gt; python src/preprocesar.py
+Generating lock file 'dvc.lock'
+Updating lock file 'dvc.lock'
+
+Running stage 'analisis':
+&gt; python src/caracteristicas.py
+Updating lock file 'dvc.lock'
+
+Running stage 'modelado':
+&gt; python src/modelar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluacion':
+&gt; python src/evaluar.py
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+    git add dvc.lock data/derived/.gitignore data/.gitignore
+
+To enable auto staging, run:
+
+    dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.</code></pre>
+<p>DVC guarda en <code>dvc.lock</code> el hash de cada dependencia, parámetro y salida. Ese archivo va a Git: es el acta de cómo se produjo cada resultado.</p>
+<pre class="text"><code>$ dvc metrics show
+Path                   auc    exactitud
+reports/metricas.json  0.714  0.7</code></pre>
+</section>
+<section id="solo-se-rehace-lo-que-cambió" class="level3">
+<h3 class="anchored" data-anchor-id="solo-se-rehace-lo-que-cambió">Solo se rehace lo que cambió</h3>
+<p>Si nada cambió, <code>dvc repro</code> no hace nada:</p>
+<pre class="text"><code>$ dvc status
+Data and pipelines are up to date.</code></pre>
+<p>Si cambias la ventana RMS de 100 a 50 ms en <code>params.yaml</code>, DVC sabe exactamente qué etapa quedó obsoleta:</p>
+<pre class="text"><code>$ dvc status
+preprocesamiento:
+    changed deps:
+        params.yaml:
+            modified:           preprocesamiento</code></pre>
+<pre class="text"><code>$ dvc repro
+'data/raw.dvc' didn't change, skipping
+Running stage 'preprocesamiento':
+&gt; python src/preprocesar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'analisis':
+&gt; python src/caracteristicas.py
+Updating lock file 'dvc.lock'
+
+Running stage 'modelado':
+&gt; python src/modelar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluacion':
+&gt; python src/evaluar.py
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+    git add dvc.lock
+
+To enable auto staging, run:
+
+    dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.</code></pre>
+<p>La evaluación no se rehízo porque las predicciones no cambiaron. Para comparar con el último commit:</p>
+<pre class="text"><code>$ dvc params diff
+Path         Param                    HEAD    workspace
+params.yaml  preprocesamiento.rms_ms  100     50</code></pre>
+<pre class="text"><code>$ dvc metrics diff
+Path                   Metric    HEAD    workspace    Change
+reports/metricas.json  auc       0.714   0.69         -0.024</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Ejecutar desde una etapa
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>dvc repro modelado</code> ejecuta esa etapa y las anteriores que hagan falta. <code>dvc repro -s modelado</code> ejecuta solo esa, sin mirar las anteriores. <code>dvc dag</code> dibuja el grafo de etapas en la terminal.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-experimentos" class="level2">
+<h2 class="anchored" data-anchor-id="sec-experimentos">Experimentos</h2>
+<p>Cambiar <code>params.yaml</code>, ejecutar y hacer commit para cada prueba llena la historia de Git de ruido. <code>dvc exp run</code> ejecuta el pipeline con otros parámetros y guarda el resultado como un <strong>experimento</strong>, sin crear commits:</p>
+<pre class="text"><code>$ dvc exp run -n arboles-500 --set-param modelado.n_arboles=500
+Reproducing experiment 'arboles-500'
+'data/raw.dvc' didn't change, skipping
+Stage 'preprocesamiento' didn't change, skipping
+Stage 'analisis' didn't change, skipping
+Running stage 'modelado':
+&gt; python src/modelar.py
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluacion':
+&gt; python src/evaluar.py
+Updating lock file 'dvc.lock'
+
+Ran experiment(s): arboles-500
+Experiment results have been applied to your workspace.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> exp run <span class="at">-n</span> profundidad-1 <span class="at">-S</span> modelado.n_arboles=200 <span class="at">-S</span> modelado.profundidad=1</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>dvc exp show</code> los compara en una tabla:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> exp show <span class="at">--no-pager</span> <span class="dt">\</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--drop</span> <span class="st">'Created|data/.*|src/.*|preprocesamiento.*|modelado.(pliegues|semilla)'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 7%">
+<col style="width: 13%">
+<col style="width: 23%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Experiment</th>
+<th>auc</th>
+<th>exactitud</th>
+<th>modelado.n_arboles</th>
+<th>modelado.profundidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>workspace</td>
+<td>0.702</td>
+<td>0.6</td>
+<td>200</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>main</td>
+<td>0.714</td>
+<td>0.7</td>
+<td>200</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>├── b64fca4 [profundidad-1]</td>
+<td>0.702</td>
+<td>0.6</td>
+<td>200</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>└── 457e426 [arboles-500]</td>
+<td>0.714</td>
+<td>0.7</td>
+<td>500</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Lo que haces después con un experimento:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Comando</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dvc exp apply arboles-500</code></td>
+<td>Pone sus parámetros y resultados en el espacio de trabajo, para hacer commit.</td>
+</tr>
+<tr class="even">
+<td><code>dvc exp branch arboles-500 rama-500</code></td>
+<td>Crea una rama de Git con él.</td>
+</tr>
+<tr class="odd">
+<td><code>dvc exp push origin arboles-500</code></td>
+<td>Lo comparte con el equipo a través de GitHub y del remote DVC.</td>
+</tr>
+<tr class="even">
+<td><code>dvc exp remove profundidad-1</code></td>
+<td>Lo descarta.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>¿Y la GPU?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>DVC no ejecuta nada en la GPU: lanza tus comandos. Si <code>src/modelar.py</code> usa PyTorch con CUDA, <code>dvc repro</code> en una máquina con GPU entrena en la GPU. Lo que DVC aporta es que el modelo entrenado en el servidor vuelve a tu portátil con <code>dvc push</code> y <code>dvc pull</code>, con la garantía de que corresponde a ese código y esos datos.</p>
+</div>
+</div>
+</section>
+<section id="sec-graficos" class="level2">
+<h2 class="anchored" data-anchor-id="sec-graficos">Gráficos</h2>
+<p>Las salidas marcadas como <code>plots</code> en <code>dvc.yaml</code> se pueden dibujar y comparar entre versiones:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> plots show                      <span class="co"># genera dvc_plots/index.html con la curva ROC</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dvc</span> plots diff datos-v1 workspace   <span class="co"># superpone las curvas de dos versiones</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sec-sensibles" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sensibles">Datos sensibles</h2>
+<p>Con datos de participantes, DVC ayuda pero no sustituye la gestión de datos del protocolo:</p>
+<ol type="1">
+<li><strong>Ningún dato identificable en Git.</strong> DVC garantiza que los datos no van a Git, pero no evita que un script escriba nombres o documentos en un CSV que sí versionas, como <code>reports/</code> o <code>params.yaml</code>. Revisa lo que sale de cada etapa.</li>
+<li><strong>El remote decide la seguridad.</strong> DVC no cifra. Usa un servidor de la universidad por SSH, un MinIO del laboratorio o un disco cifrado, según lo que diga el consentimiento y el comité de ética. No uses Google Drive personal para datos de participantes.</li>
+<li><strong>Seudonimiza antes de <code>dvc add</code>.</strong> Los nombres de archivo del ejemplo (<code>P001_S01_T01.csv</code>) ya son seudónimos; la tabla de correspondencia vive fuera del proyecto.</li>
+<li><strong>Borrar de verdad.</strong> Si un participante retira su consentimiento, elimina sus archivos, haz <code>dvc add</code> y commit, y luego <code>dvc gc --workspace --cloud</code> en el remote para borrar las versiones antiguas. Ojo: <code>gc</code> borra <strong>todas</strong> las versiones no referenciadas por el espacio de trabajo actual, así que lee la documentación de <code>--all-commits</code> antes de usarlo.</li>
+</ol>
+</section>
+<section id="sec-beos" class="level2">
+<h2 class="anchored" data-anchor-id="sec-beos">DVC en BioForge Experiment OS</h2>
+<p>El workspace de BioForge ya tiene la forma que DVC necesita:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Carpeta de BEOS</th>
+<th>Con DVC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>data/raw/</code></td>
+<td><code>dvc add</code>: datos originales, inmutables, con hash.</td>
+</tr>
+<tr class="even">
+<td><code>data/curated/</code></td>
+<td>Salida de la etapa de preprocesamiento.</td>
+</tr>
+<tr class="odd">
+<td><code>data/derived/</code></td>
+<td>Salidas de análisis, modelado y producción.</td>
+</tr>
+<tr class="even">
+<td><code>data/evidence/</code>, <code>reports/</code></td>
+<td>Métricas y gráficos (<code>cache: false</code>, van a Git).</td>
+</tr>
+<tr class="odd">
+<td><code>experimento.yaml</code></td>
+<td>Se puede traducir a <code>dvc.yaml</code>: un proceso por etapa.</td>
+</tr>
+<tr class="even">
+<td>Contratos</td>
+<td>Son las <code>deps</code> y <code>outs</code> de cada etapa.</td>
+</tr>
+</tbody>
+</table>
+<p>La huella SHA-256 de BEOS y el MD5 de DVC conviven: BEOS comprueba la integridad de cada archivo contra su contrato, y DVC se encarga de moverlo y versionarlo.</p>
+</section>
+<section id="sec-sitio" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sitio">Publicarlo en tu sitio</h2>
+<p>Este tutorial viene en dos versiones:</p>
+<ul>
+<li><code>tutorial-dvc.qmd</code>: documento independiente con la marca, que se renderiza a HTML y PDF con la carpeta <code>marca/</code> al lado.</li>
+<li><code>para-el-sitio/notas/datos-con-dvc/</code>: la misma nota sin bloque <code>format</code>, lista para copiar a la carpeta <code>notas/</code> de <code>pacaicedo.github.io</code>. Hereda el tema del sitio de <code>notas/_metadata.yml</code>, aparece en el listado de notas con su portada y sus categorías, y se publica con el <code>quarto render</code> de siempre.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> para-el-sitio/notas/datos-con-dvc ~/ruta/a/pacaicedo.github.io/notas/</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/ruta/a/pacaicedo.github.io <span class="kw">&amp;&amp;</span> <span class="ex">quarto</span> preview</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sec-errores" class="level2">
+<h2 class="anchored" data-anchor-id="sec-errores">Errores comunes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Síntoma</th>
+<th>Causa</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>output 'data/raw' is already tracked by SCM</code></td>
+<td>Los datos ya estaban en Git.</td>
+<td><code>git rm -r --cached data/raw</code> y repite <code>dvc add</code>.</td>
+</tr>
+<tr class="even">
+<td><code>Missing cache files</code> en <code>dvc pull</code></td>
+<td>Alguien hizo <code>git push</code> sin <code>dvc push</code>.</td>
+<td>Que esa persona ejecute <code>dvc push</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>dvc repro</code> rehace todo cada vez</td>
+<td>Una salida no está en <code>outs</code> o el script escribe con fecha.</td>
+<td>Declara todas las salidas; evita marcas de tiempo en los archivos.</td>
+</tr>
+<tr class="even">
+<td><code>ERROR: unexpected error - ... ssh</code></td>
+<td>El alias SSH no funciona fuera de DVC.</td>
+<td>Prueba <code>ssh servidor-lab</code> primero.</td>
+</tr>
+<tr class="odd">
+<td>La caché ocupa demasiado</td>
+<td>Muchas versiones locales.</td>
+<td><code>dvc gc --workspace</code> en tu máquina (el remote no se toca).</td>
+</tr>
+<tr class="even">
+<td>Archivos duplicados en disco</td>
+<td>Caché y espacio de trabajo en copias.</td>
+<td><code>dvc config cache.type reflink,hardlink,symlink,copy</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-trucos" class="level2">
+<h2 class="anchored" data-anchor-id="sec-trucos">Hoja de trucos</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tarea</th>
+<th>Comando</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Empezar</td>
+<td><code>dvc init</code></td>
+</tr>
+<tr class="even">
+<td>Versionar datos</td>
+<td><code>dvc add data/raw</code></td>
+</tr>
+<tr class="odd">
+<td>Añadir remote</td>
+<td><code>dvc remote add -d nombre URL</code></td>
+</tr>
+<tr class="even">
+<td>Credenciales</td>
+<td><code>dvc remote modify --local nombre clave valor</code></td>
+</tr>
+<tr class="odd">
+<td>Subir / bajar</td>
+<td><code>dvc push</code> / <code>dvc pull</code></td>
+</tr>
+<tr class="even">
+<td>Datos de otro commit</td>
+<td><code>git checkout REV &amp;&amp; dvc checkout</code></td>
+</tr>
+<tr class="odd">
+<td>Un archivo de otra versión</td>
+<td><code>dvc get . RUTA --rev REV</code></td>
+</tr>
+<tr class="even">
+<td>Datos de otro repositorio</td>
+<td><code>dvc import URL-REPO RUTA</code></td>
+</tr>
+<tr class="odd">
+<td>Ejecutar el pipeline</td>
+<td><code>dvc repro</code></td>
+</tr>
+<tr class="even">
+<td>¿Qué cambió?</td>
+<td><code>dvc status</code>, <code>dvc params diff</code>, <code>dvc metrics diff</code></td>
+</tr>
+<tr class="odd">
+<td>Experimento</td>
+<td><code>dvc exp run -n NOMBRE -S param=valor</code></td>
+</tr>
+<tr class="even">
+<td>Comparar experimentos</td>
+<td><code>dvc exp show</code></td>
+</tr>
+<tr class="odd">
+<td>Gráficos</td>
+<td><code>dvc plots show</code>, <code>dvc plots diff</code></td>
+</tr>
+<tr class="even">
+<td>Limpiar caché</td>
+<td><code>dvc gc --workspace</code></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var lista = window["quarto-listings"] && window["quarto-listings"]["listing-listing"];
+  if (lista) {
+    // Atrás puede volver a una URL sin categoría; Quarto conserva el filtro anterior.
+    window.addEventListener("hashchange", function () {
+      if (new URLSearchParams(location.hash.slice(1)).get("category")) return;
+      lista.filter();
+      document.querySelectorAll(".quarto-listing-category .category").forEach(function (categoria) {
+        categoria.classList.toggle("active", categoria.getAttribute("data-category") === "");
+      });
+    });
+  }
+
+  var encabezado = document.querySelector("header.quarto-title-block");
+  if (!encabezado || !encabezado.querySelector(".quarto-category")) return;
+
+  var offset = document.querySelector('meta[name="quarto:offset"]');
+  var raiz = new URL(offset ? offset.content : "./", location.href);
+  var listado = new URL("tutoriales/index.html", raiz);
+
+  function actualizarEnlaces() {
+    encabezado.querySelectorAll(".quarto-category a").forEach(function (enlace) {
+      var categoria = enlace.closest(".quarto-category").textContent.trim();
+      enlace.href = listado.href + "#category=" + encodeURIComponent(categoria);
+    });
+  }
+
+  // Quarto crea los enlaces después de consultar listings.json.
+  // Dirigirlos al listado de tutoriales también al abrirlos en otra pestaña.
+  new MutationObserver(actualizarEnlaces).observe(encabezado, {
+    childList: true,
+    subtree: true
+  });
+  actualizarEnlaces();
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Del dato a la causa · Hecho con <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

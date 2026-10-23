@@ -1,0 +1,41 @@
+project:
+  type: website
+  resources:
+    - marca/logo/
+
+website:
+  title: "P. E. Caicedo-Rodríguez"
+  description: "Del dato a la causa: extracción de información, grafos y causalidad."
+  favicon: marca/logo/insignia.svg
+  # Dirección pública del sitio. Cópiala de Deploy > Pages en GitLab, por ejemplo:
+  #   https://<usuario-gitlab>.gitlab.io/            (sitio de usuario)
+  #   https://<usuario-gitlab>.gitlab.io/sitio-gitlab/ (sitio de proyecto)
+  #   https://sitio-gitlab-a1b2c3.gitlab.io/          (dominio único, el valor por defecto)
+  site-url: https://usuario-gitlab.gitlab.io/sitio-gitlab/
+  navbar:
+    logo: marca/logo/isotipo-oscuro.svg
+    title: "P. E. Caicedo-Rodríguez"
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: notas/index.qmd
+        text: Notas
+      - href: marca.qmd
+        text: Marca
+      - href: sobre-mi.qmd
+        text: Sobre mí
+  page-footer:
+    left: "© 2026 Pablo Eduardo Caicedo-Rodríguez"
+    right: "Del dato a la causa"
+
+lang: es
+filters:
+  - marca/caicedo.lua
+
+format:
+  html:
+    # Tema del sitio. Las notas largas superponen además caicedo-documento.scss
+    # (ver notas/_metadata.yml).
+    theme: [cosmo, marca/caicedo-sitio.scss]
+    highlight-style: marca/caicedo-claro.theme
+    toc: false

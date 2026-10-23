@@ -1,0 +1,58 @@
+---
+pagetitle: "P. E. Caicedo-Rodríguez · Del dato a la causa"
+page-layout: full
+title-block-banner: false
+listing:
+  contents: "notas/*/index.qmd"
+  type: default
+  sort: "date desc"
+  max-items: 3
+  fields: [title, description, date, categories]
+---
+
+::: {.hero}
+[Del dato a la causa]{.hero-kicker}
+
+## Convierto señales biomédicas en evidencia causal
+
+Diseño plataformas que extraen información de marcha, sEMG y video, la conectan como grafos
+y la llevan hasta preguntas causales reproducibles.
+
+[Ver notas](notas/index.qmd){.btn .btn-marca} [Sobre mí](sobre-mi.qmd){.btn .btn-marca-borde}
+:::
+
+## Ejes de trabajo
+
+::: {.ejes}
+::: {.eje .dato}
+### Extracción de información
+Contratos de datos, adquisición y comprobación: cada variable sabe de dónde viene.
+:::
+
+::: {.eje .grafo}
+### Grafos
+Variables y relaciones como grafos para encontrar estructura y comunidades.
+:::
+
+::: {.eje .causa}
+### Causalidad
+DAG declarados en el protocolo, estimación de efectos y evaluación explicativa.
+:::
+
+::: {.eje .ia}
+### IA
+Modelos estadísticos, de aprendizaje automático y profundo sobre PyTorch.
+:::
+:::
+
+::: {.banda}
+### BioForge Experiment OS
+
+Una plataforma donde el **experimento** es la unidad de información: objetivo, protocolo y datos
+con contrato, recorridos por tres procesos encadenados (preprocesamiento, modelado y evaluación).
+:::
+
+## Últimas notas
+
+::: {#listing-listing}
+:::

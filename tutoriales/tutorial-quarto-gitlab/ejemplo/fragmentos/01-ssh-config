@@ -1,0 +1,6 @@
+# ~/.ssh/config  (añadir debajo del bloque github-personal que ya tienes)
+Host gitlab-personal
+    HostName gitlab.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_gitlab
+    IdentitiesOnly yes

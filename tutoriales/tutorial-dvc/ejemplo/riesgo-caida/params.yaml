@@ -1,0 +1,10 @@
+preprocesamiento:
+  fs_hz: 2000
+  pasabanda_hz: [20, 450]
+  notch_hz: 60
+  rms_ms: 100
+modelado:
+  n_arboles: 200
+  profundidad: 3
+  pliegues: 4
+  semilla: 2026

@@ -1,0 +1,5 @@
+# Fragmento de _quarto.yml para sitios con código Python o R.
+# Con freeze: auto, quarto render en tu equipo guarda los resultados en _freeze/;
+# haz commit de _freeze/ y el CI reutiliza esos resultados sin ejecutar código.
+execute:
+  freeze: auto

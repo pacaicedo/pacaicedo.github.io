@@ -1,0 +1,30 @@
+---
+title: "Grafos causales para experimentos"
+subtitle: "Del contrato de datos al DAG"
+author: "Pablo Eduardo Caicedo-Rodríguez"
+date: 2026-10-06
+categories: [causalidad, grafos]
+description: "Cómo declarar un DAG en el protocolo y qué ajustar al estimar."
+---
+
+## El DAG va en el protocolo
+
+Declarar el grafo antes de ver los datos evita ajustar por [mediadores]{.causa} o
+[colisionadores]{.causa}.
+
+::: {.callout-important}
+## Supuesto
+El confusor $Z$ se mide en la misma sesión que $X$ e $Y$.
+:::
+
+## Estimación
+
+```python
+import pandas as pd
+
+def efecto_ajustado(df: pd.DataFrame) -> float:
+    """Estandarización por el confusor Z."""
+    pesos = df["Z"].value_counts(normalize=True)
+    medias = df.groupby(["Z", "X"])["Y"].mean().unstack()
+    return float(((medias[1] - medias[0]) * pesos).sum())
+```

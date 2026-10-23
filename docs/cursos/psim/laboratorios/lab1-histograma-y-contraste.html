@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.8.27" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-
-<meta name="author" content="P. E. Caicedo-Rodríguez" />
-<meta name="description" content="Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura." />
+<meta name="author" content="P. E. Caicedo-Rodríguez">
+<meta name="description" content="Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.">
 
 <title>Laboratorio 1: histograma, ventana y contraste – P. E. Caicedo-Rodríguez</title>
 <style>
@@ -61,7 +59,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../recursos/marca/logo/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3ea025ca51a21a1d1a970835ebe5fd04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -119,45 +136,47 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Laboratorio 1: histograma, ventana y contraste – P. E. Caicedo-Rodríguez">
+<meta property="og:description" content="Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.">
+<meta property="og:image" content="../fig/ventanas.svg">
+<meta property="og:site_name" content="P. E. Caicedo-Rodríguez">
 </head>
 
-<body>
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="/index.html" class="navbar-brand navbar-brand-logo">
-    <img src="/recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo light-content" />
-    <img src="/recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo dark-content" />
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo light-content">
+    <img src="../../../recursos/marca/logo/isotipo-oscuro.svg" alt="Triángulo causal: isotipo de P. E. Caicedo-Rodríguez" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">P. E. Caicedo-Rodríguez</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/cursos/index.html"> 
+    <a class="nav-link" href="../../../cursos/index.html"> 
 <span class="menu-text">Cursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/charlas/index.html"> 
+    <a class="nav-link" href="../../../charlas/index.html"> 
 <span class="menu-text">Charlas y Conferencias</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/proyectos/index.html"> 
+    <a class="nav-link" href="../../../proyectos/index.html"> 
 <span class="menu-text">Proyectos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/tutoriales/index.html"> 
+    <a class="nav-link" href="../../../tutoriales/index.html"> 
 <span class="menu-text">Herramientas y Tutoriales</span></a>
   </li>  
 </ul>
@@ -172,7 +191,23 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1</span> Objetivos</a></li>
+  <li><a href="#materiales" id="toc-materiales" class="nav-link" data-scroll-target="#materiales"><span class="header-section-number">2</span> Materiales</a></li>
+  <li><a href="#procedimiento" id="toc-procedimiento" class="nav-link" data-scroll-target="#procedimiento"><span class="header-section-number">3</span> Procedimiento</a>
+  <ul class="collapse">
+  <li><a href="#cargar-la-imagen" id="toc-cargar-la-imagen" class="nav-link" data-scroll-target="#cargar-la-imagen"><span class="header-section-number">3.1</span> Cargar la imagen</a></li>
+  <li><a href="#histograma" id="toc-histograma" class="nav-link" data-scroll-target="#histograma"><span class="header-section-number">3.2</span> Histograma</a></li>
+  <li><a href="#ventanas" id="toc-ventanas" class="nav-link" data-scroll-target="#ventanas"><span class="header-section-number">3.3</span> Ventanas</a></li>
+  </ul></li>
+  <li><a href="#preguntas-orientadoras" id="toc-preguntas-orientadoras" class="nav-link" data-scroll-target="#preguntas-orientadoras"><span class="header-section-number">4</span> Preguntas orientadoras</a></li>
+  <li><a href="#entregables" id="toc-entregables" class="nav-link" data-scroll-target="#entregables"><span class="header-section-number">5</span> Entregables</a></li>
+  <li><a href="#rúbrica" id="toc-rúbrica" class="nav-link" data-scroll-target="#rúbrica"><span class="header-section-number">6</span> Rúbrica</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="lab1-histograma-y-contraste.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -212,25 +247,9 @@ window.Quarto = {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul>
-  <li><a href="#objetivos" id="toc-objetivos"><span class="header-section-number">1</span> Objetivos</a></li>
-  <li><a href="#materiales" id="toc-materiales"><span class="header-section-number">2</span> Materiales</a></li>
-  <li><a href="#procedimiento" id="toc-procedimiento"><span class="header-section-number">3</span> Procedimiento</a>
-  <ul>
-  <li><a href="#cargar-la-imagen" id="toc-cargar-la-imagen"><span class="header-section-number">3.1</span> Cargar la imagen</a></li>
-  <li><a href="#histograma" id="toc-histograma"><span class="header-section-number">3.2</span> Histograma</a></li>
-  <li><a href="#ventanas" id="toc-ventanas"><span class="header-section-number">3.3</span> Ventanas</a></li>
-  </ul></li>
-  <li><a href="#preguntas-orientadoras" id="toc-preguntas-orientadoras"><span class="header-section-number">4</span> Preguntas orientadoras</a></li>
-  <li><a href="#entregables" id="toc-entregables"><span class="header-section-number">5</span> Entregables</a></li>
-  <li><a href="#rúbrica" id="toc-rúbrica"><span class="header-section-number">6</span> Rúbrica</a></li>
-  </ul>
-</nav>
+
 <section id="objetivos" class="level2" data-number="1">
-<h2 data-number="1"><span class="header-section-number">1</span> Objetivos</h2>
+<h2 data-number="1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1</span> Objetivos</h2>
 <ol type="1">
 <li>Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.</li>
 <li>Calcular e interpretar el histograma.</li>
@@ -238,31 +257,31 @@ window.Quarto = {
 </ol>
 </section>
 <section id="materiales" class="level2" data-number="2">
-<h2 data-number="2"><span class="header-section-number">2</span> Materiales</h2>
+<h2 data-number="2" class="anchored" data-anchor-id="materiales"><span class="header-section-number">2</span> Materiales</h2>
 <ul>
-<li>Python 3.12 o posterior con NumPy, SciPy y Matplotlib (el tutorial <a href="../../../tutoriales/entorno-uv-quarto/index.qmd">Entorno reproducible con uv</a> explica la instalación).</li>
+<li>Python 3.12 o posterior con NumPy, SciPy y Matplotlib (el tutorial <a href="../../../tutoriales/entorno-uv-quarto/index.html">Entorno reproducible con uv</a> explica la instalación).</li>
 <li>El archivo <a href="../../../recursos/python/datos_ejemplo.py"><code>datos_ejemplo.py</code></a>, que genera el fantoma de Shepp-Logan en UH aproximadas.</li>
 </ul>
 </section>
 <section id="procedimiento" class="level2" data-number="3">
-<h2 data-number="3"><span class="header-section-number">3</span> Procedimiento</h2>
+<h2 data-number="3" class="anchored" data-anchor-id="procedimiento"><span class="header-section-number">3</span> Procedimiento</h2>
 <section id="cargar-la-imagen" class="level3" data-number="3.1">
-<h3 data-number="3.1"><span class="header-section-number">3.1</span> Cargar la imagen</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<h3 data-number="3.1" class="anchored" data-anchor-id="cargar-la-imagen"><span class="header-section-number">3.1</span> Cargar la imagen</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datos_ejemplo <span class="im">import</span> fantoma_uh, ventana</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>uh <span class="op">=</span> fantoma_uh(<span class="dv">256</span>)            <span class="co"># matriz 256 × 256 en UH</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(uh.<span class="bu">min</span>(), uh.<span class="bu">max</span>())       <span class="co"># ¿qué estructuras explican los extremos?</span></span></code></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(uh.<span class="bu">min</span>(), uh.<span class="bu">max</span>())       <span class="co"># ¿qué estructuras explican los extremos?</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="histograma" class="level3" data-number="3.2">
-<h3 data-number="3.2"><span class="header-section-number">3.2</span> Histograma</h3>
+<h3 data-number="3.2" class="anchored" data-anchor-id="histograma"><span class="header-section-number">3.2</span> Histograma</h3>
 <p>Calcula el histograma con <code>np.histogram</code> usando intervalos de 4 UH entre −150 y 250. Grafícalo y señala los picos.</p>
 </section>
 <section id="ventanas" class="level3" data-number="3.3">
-<h3 data-number="3.3"><span class="header-section-number">3.3</span> Ventanas</h3>
+<h3 data-number="3.3" class="anchored" data-anchor-id="ventanas"><span class="header-section-number">3.3</span> Ventanas</h3>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="../fig/ventanas.svg" class="img-fluid" style="width:90.0%" /></p>
+<figure class="figure">
+<p><img src="../fig/ventanas.svg" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption>Tres ventanas sobre el mismo corte.</figcaption>
 </figure>
 </div>
@@ -270,7 +289,7 @@ window.Quarto = {
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Advertencia</span>Cuidado
@@ -283,7 +302,7 @@ window.Quarto = {
 </section>
 </section>
 <section id="preguntas-orientadoras" class="level2" data-number="4">
-<h2 data-number="4"><span class="header-section-number">4</span> Preguntas orientadoras</h2>
+<h2 data-number="4" class="anchored" data-anchor-id="preguntas-orientadoras"><span class="header-section-number">4</span> Preguntas orientadoras</h2>
 <ol type="1">
 <li>¿Por qué el aire queda en −1000 UH y qué pasa con él en la ventana de cerebro?</li>
 <li>Si el histograma tiene dos picos muy cercanos, ¿qué ventana los separa mejor y por qué?</li>
@@ -291,7 +310,7 @@ window.Quarto = {
 </ol>
 </section>
 <section id="entregables" class="level2" data-number="5">
-<h2 data-number="5"><span class="header-section-number">5</span> Entregables</h2>
+<h2 data-number="5" class="anchored" data-anchor-id="entregables"><span class="header-section-number">5</span> Entregables</h2>
 <ul>
 <li>Un cuaderno o script reproducible con el histograma y las tres ventanas.</li>
 <li>Una tabla con <span class="math inline">\(W\)</span>, <span class="math inline">\(L\)</span> y la estructura que cada ventana deja ver.</li>
@@ -299,13 +318,13 @@ window.Quarto = {
 </ul>
 </section>
 <section id="rúbrica" class="level2" data-number="6">
-<h2 data-number="6"><span class="header-section-number">6</span> Rúbrica</h2>
-<table class="caption-top">
+<h2 data-number="6" class="anchored" data-anchor-id="rúbrica"><span class="header-section-number">6</span> Rúbrica</h2>
+<table class="caption-top table">
 <caption>Rúbrica del laboratorio 1.</caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -337,22 +356,12 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">P. E. Caicedo-Rodríguez</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">P. E. Caicedo-Rodríguez</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q3Vyc29z">Cursos</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2N1cnNvcy9pbmRleC5odG1s">/cursos/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hhcmxhcyB5IENvbmZlcmVuY2lhcw==">Charlas y Conferencias</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NoYXJsYXMvaW5kZXguaHRtbA==">/charlas/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UHJveWVjdG9z">Proyectos</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Byb3llY3Rvcy9pbmRleC5odG1s">/proyectos/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SGVycmFtaWVudGFzIHkgVHV0b3JpYWxlcw==">Herramientas y Tutoriales</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3R1dG9yaWFsZXMvaW5kZXguaHRtbA==">/tutoriales/index.html</span></p>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWxlZnQ=">
-<p>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
-</div>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLXJpZ2h0">
-<p>Del dato a la causa · Hecho con <a href="https://quarto.org">Quarto</a></p>
-</div>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Laboratorio 1: histograma, ventana y contraste – P. E. Caicedo-Rodríguez</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Laboratorio 1: histograma, ventana y contraste – P. E. Caicedo-Rodríguez</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Laboratorio 1: histograma, ventana y contraste – P. E. Caicedo-Rodríguez</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">P. E. Caicedo-Rodríguez</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw==">Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj">Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.</span></p>
-</div>
+
+
 </section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -756,17 +765,18 @@ window.Quarto = {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <div class='footer-contents'>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)</div>  
-    </div>   
+<p>© 2026 P. E. Caicedo-Rodríguez · Contenido bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-      <div class='footer-contents'>Del dato a la causa · Hecho con [Quarto](https://quarto.org)</div>  
-    </div>
+<p>Del dato a la causa · Hecho con <a href="https://quarto.org">Quarto</a></p>
+</div>
   </div>
 </footer>
 
-</body>
 
-</html>
+
+
+</body></html>

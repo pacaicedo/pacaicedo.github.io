@@ -1,21 +1,38 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/tutoriales/index.html",
     "items": [
-      "/cursos/psim/index.html",
-      "/cursos/sysb/index.html",
-      "/cursos/tau/index.html",
-      "/charlas/2026-ver-el-cuerpo-como-dato/index.html",
-      "/charlas/2026-experimentos-reproducibles/index.html",
-      "/proyectos/riesgo-de-caida/index.html",
-      "/proyectos/bioforge/index.html",
-      "/proyectos/espasticidad-semg/index.html",
       "/tutoriales/validacion-por-participante/index.html",
       "/tutoriales/filtrado-fase-cero/index.html",
       "/tutoriales/filtros-frecuenciales/index.html",
       "/tutoriales/figuras-con-la-marca/index.html",
       "/tutoriales/marca-en-quarto/index.html",
       "/tutoriales/entorno-uv-quarto/index.html"
+    ]
+  },
+  {
+    "listing": "/proyectos/index.html",
+    "items": [
+      "/proyectos/riesgo-de-caida/index.html",
+      "/proyectos/espasticidad-semg/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos/psim/index.html",
+    "items": [
+      "/cursos/psim/presentaciones/01-la-imagen-como-dato.html",
+      "/cursos/psim/presentaciones/08-filtrado-frecuencial.html",
+      "/cursos/psim/laboratorios/lab1-histograma-y-contraste.html",
+      "/cursos/psim/laboratorios/lab2-filtrado-frecuencial.html",
+      "/tutoriales/entorno-uv-quarto/index.html",
+      "/tutoriales/filtros-frecuenciales/index.html"
+    ]
+  },
+  {
+    "listing": "/charlas/index.html",
+    "items": [
+      "/charlas/2026-ver-el-cuerpo-como-dato/index.html",
+      "/charlas/2026-experimentos-reproducibles/index.html"
     ]
   },
   {
@@ -47,33 +64,21 @@
     ]
   },
   {
-    "listing": "/proyectos/index.html",
+    "listing": "/index.html",
     "items": [
+      "/cursos/psim/index.html",
+      "/cursos/sysb/index.html",
+      "/cursos/tau/index.html",
+      "/charlas/2026-ver-el-cuerpo-como-dato/index.html",
+      "/charlas/2026-experimentos-reproducibles/index.html",
       "/proyectos/riesgo-de-caida/index.html",
-      "/proyectos/bioforge/index.html",
-      "/proyectos/espasticidad-semg/index.html"
-    ]
-  },
-  {
-    "listing": "/tutoriales/index.html",
-    "items": [
+      "/proyectos/espasticidad-semg/index.html",
       "/tutoriales/validacion-por-participante/index.html",
       "/tutoriales/filtrado-fase-cero/index.html",
       "/tutoriales/filtros-frecuenciales/index.html",
       "/tutoriales/figuras-con-la-marca/index.html",
       "/tutoriales/marca-en-quarto/index.html",
       "/tutoriales/entorno-uv-quarto/index.html"
-    ]
-  },
-  {
-    "listing": "/cursos/psim/index.html",
-    "items": [
-      "/cursos/psim/presentaciones/01-la-imagen-como-dato.html",
-      "/cursos/psim/presentaciones/08-filtrado-frecuencial.html",
-      "/cursos/psim/laboratorios/lab1-histograma-y-contraste.html",
-      "/cursos/psim/laboratorios/lab2-filtrado-frecuencial.html",
-      "/tutoriales/entorno-uv-quarto/index.html",
-      "/tutoriales/filtros-frecuenciales/index.html"
     ]
   }
 ]

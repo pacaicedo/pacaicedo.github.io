@@ -23,7 +23,7 @@ Desenlace
 : Riesgo de caída derivado del SPPB
 
 Infraestructura
-: [BioForge Experiment OS](../bioforge/index.qmd)
+: Sw
 :::
 
 ## Problema

@@ -18,8 +18,8 @@
 %   filters: [recursos/marca/caicedo.lua]
 %
 % La portada es clara a propósito: se imprime y se fotocopia sin gastar tóner en una banda.
-% Requiere LuaLaTeX (o XeLaTeX), KOMA-Script y TikZ. Las fuentes se cargan por nombre si
-% están instaladas y, si no, desde recursos/marca/fuentes/.
+% Requiere LuaLaTeX (o XeLaTeX), KOMA-Script y TikZ. Las fuentes se cargan desde
+% recursos/marca/fuentes/; no hace falta instalarlas en el sistema.
 \NeedsTeXFormat{LaTeX2e}
 % El nombre declarado es la ruta con la que se pidió el paquete: así no hay aviso de
 % «You have requested package ...» al cargarlo desde una subcarpeta (../../recursos/marca/...).
@@ -107,10 +107,14 @@
 % Las fuentes están en la carpeta fuentes/ junto a este .sty; \caicedofuentes solo hace falta
 % si se movieron (\newcommand*{\caicedofuentes}{ruta/} antes del \usepackage).
 \ifdefined\caicedofuentes\else\edef\caicedofuentes{\ifx\caicedo@dir\@empty\else\caicedo@dir/\fi fuentes/}\fi
-% Si las fuentes están instaladas en el sistema se cargan por nombre; si no, desde
-% \caicedofuentes convertida en ruta absoluta. luaotfload guarda en caché la ruta con la que
-% cargó cada fuente la primera vez: con una ruta relativa, otro documento compilado desde
-% otra carpeta no encontraría el archivo («cannot find file ''»).
+% Primero se usan los archivos de \caicedofuentes, convertida en ruta absoluta: son la familia
+% completa y la misma versión en cualquier equipo. (luaotfload guarda en caché la ruta con la
+% que cargó cada fuente la primera vez: con una ruta relativa, otro documento compilado desde
+% otra carpeta no encontraría el archivo, «cannot find file ''».)
+% Solo si falta algún archivo se buscan las fuentes instaladas en el sistema, y cada una de
+% las caras que usa la marca: una instalación parcial (solo la Regular, o la versión variable
+% de Google Fonts) encontraba la redonda pero no la cursiva y la compilación se detenía con
+% «The font "AtkinsonHyperlegibleNext-Italic" cannot be found».
 \ifdefined\directlua
   \edef\caicedofuentes{\directlua{
     local p = "\luaescapestring{\caicedofuentes}"
@@ -119,12 +123,31 @@
     end
     tex.sprint(-2, p)}}
 \fi
-\IfFontExistsTF{AtkinsonHyperlegibleNext-Regular}
-  {\def\caicedo@ruta{}\def\caicedo@rutam{}}
-  {\edef\caicedo@ruta{Path=\caicedofuentes, Extension=.ttf,}\let\caicedo@rutam\caicedo@ruta}
+\def\caicedo@caras{%
+  AtkinsonHyperlegibleNext-Regular,AtkinsonHyperlegibleNext-Italic,%
+  AtkinsonHyperlegibleNext-Medium,AtkinsonHyperlegibleNext-MediumItalic,%
+  AtkinsonHyperlegibleNext-Bold,AtkinsonHyperlegibleNext-BoldItalic,%
+  AtkinsonHyperlegibleNext-ExtraBold,AtkinsonHyperlegibleNext-ExtraBoldItalic,%
+  AtkinsonHyperlegibleMono-Regular,AtkinsonHyperlegibleMono-Italic,%
+  AtkinsonHyperlegibleMono-Bold,AtkinsonHyperlegibleMono-BoldItalic}
+\newif\ifcaicedo@archivos
+\caicedo@archivostrue
+\@for\caicedo@c:=\caicedo@caras\do{%
+  \IfFileExists{\caicedofuentes\caicedo@c.ttf}{}{\global\caicedo@archivosfalse}}
+\ifcaicedo@archivos
+  \edef\caicedo@ruta{Path=\caicedofuentes, Extension=.ttf,}
+\else
+  \def\caicedo@ruta{}
+  \@for\caicedo@c:=\caicedo@caras\do{%
+    \IfFontExistsTF{\caicedo@c}{}{\PackageError{caicedo}{Falta la fuente \caicedo@c}{%
+      No está en \caicedofuentes\space ni instalada en el sistema.\MessageBreak
+      Copia completa la carpeta fuentes/ de la marca junto a este .sty.}}}
+\fi
+\let\caicedo@rutam\caicedo@ruta
 \ifdefined\directlua
-  \IfFontExistsTF{DejaVuSans}{\def\caicedo@dv{name:}\def\caicedo@dva{}\def\caicedo@dvb{}}
+  \IfFileExists{\caicedofuentes DejaVuSansMono.ttf}
     {\def\caicedo@dv{}\edef\caicedo@dva{[\caicedofuentes}\def\caicedo@dvb{.ttf]}}
+    {\def\caicedo@dv{name:}\def\caicedo@dva{}\def\caicedo@dvb{}}
   \directlua{
     local function f(n) return "\caicedo@dv" .. "\caicedo@dva" .. n .. "\caicedo@dvb" .. ":mode=node;" end
     luaotfload.add_fallback("caicedorespaldo", {f("DejaVuSans")})

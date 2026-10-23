@@ -97,4 +97,4 @@ python3 recursos/marca/fuente/construir_marca.py
 
 Requiere `fontTools`. Para exportar los PNG hace falta Playwright con Chromium.
 
-Para el PDF conviene instalar las fuentes de `fuentes/` en el sistema (`~/.local/share/fonts`); así se cargan por nombre. Si LuaLaTeX termina con `cannot find file ''`, se borra la caché de fuentes: `luaotfload-tool --cache=erase`.
+Para el PDF no hace falta instalar nada: los `.sty` cargan las fuentes desde `fuentes/`, así que esa carpeta tiene que ir completa en el repositorio. Solo si falta algún archivo buscan las fuentes del sistema, y exigen la familia entera: con una instalación parcial (solo la Regular, o la versión variable de Google Fonts) se detienen con un mensaje que nombra la cara que falta. Si LuaLaTeX termina con `cannot find file ''`, se borra la caché de fuentes: `luaotfload-tool --cache=erase`.

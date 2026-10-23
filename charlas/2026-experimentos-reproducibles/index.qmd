@@ -24,7 +24,7 @@ Público
 : Estudiantes de posgrado e investigadores
 :::
 
-La charla parte de un problema conocido en los laboratorios: resultados que nadie puede volver a obtener porque el archivo original se sobrescribió, un paso se hizo a mano o los faltantes se llenaron sin dejar rastro. Propone cuatro reglas que se deciden antes de analizar y muestra cómo las aplica [BioForge](../../proyectos/bioforge/index.qmd), una arquitectura en cuatro capas con contratos de datos versionados y manifiestos con la huella SHA-256 de cada archivo.
+La charla parte de un problema conocido en los laboratorios: resultados que nadie puede volver a obtener porque el archivo original se sobrescribió, un paso se hizo a mano o los faltantes se llenaron sin dejar rastro. Propone cuatro reglas que se deciden antes de analizar y muestra cómo las aplica algunos softwares, una arquitectura en cuatro capas con contratos de datos versionados y manifiestos con la huella SHA-256 de cada archivo.
 
 ## Presentación
 

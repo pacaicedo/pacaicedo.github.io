@@ -20,7 +20,7 @@ Formato de trabajo
 : CSV del equipo a Parquet
 
 Infraestructura
-: [BioForge Experiment OS](../bioforge/index.qmd)
+: SW
 :::
 
 ## Problema

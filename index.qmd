@@ -1,6 +1,6 @@
 ---
 pagetitle: "P. E. Caicedo-Rodríguez"
-description: "Docencia e investigación en señales e imágenes biomédicas e inferencia causal."
+description: "Docencia e investigación en señales e imágenes biomédicasu e inferencia causal."
 toc: false
 page-layout: full
 title-block-style: none

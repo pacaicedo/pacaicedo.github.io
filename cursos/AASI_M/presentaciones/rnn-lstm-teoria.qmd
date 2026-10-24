@@ -1,0 +1,402 @@
+---
+title: "Redes recurrentes y LSTM"
+subtitle: "Memoria, retropropagación en el tiempo y compuertas"
+description: "Qué es el estado oculto de una red recurrente, cómo se entrena con retropropagación en el tiempo, por qué el gradiente se desvanece y cómo lo resuelven la LSTM y la GRU."
+rotulo: "Semana [N]"
+date: 2026-10-24
+---
+
+# Por qué secuencias
+
+## Datos con orden
+
+En una señal biomédica [el orden importa]{.dato}: el mismo conjunto de muestras, desordenado, ya no es la misma señal.
+
+- EMG, ECG, EEG: el ritmo y la forma de los potenciales están en cómo cambia la señal en el tiempo
+- Una red densa necesita una entrada de **longitud fija** y no comparte nada entre instantes
+- Una red convolucional comparte pesos, pero ve una **ventana local** fija
+
+Queremos un modelo que lea la secuencia paso a paso, [con los mismos pesos en cada paso]{.grafo}, y que lleve un resumen de lo que ya vio.
+
+::: {.notes}
+Pregunta de entrada para la clase: si barajo las muestras de un ECG, ¿cambian la media y la varianza? No. ¿Cambia el diagnóstico? Sí. Esa diferencia es lo que un modelo secuencial intenta aprovechar. La red densa tendría un peso distinto para cada instante y no sabría que el instante 10 y el 11 son vecinos.
+:::
+
+## Cuatro formas de usar una secuencia
+
+![](./img/rnn-tipos-secuencia){width="100%"}
+
+| Forma | Ejemplo biomédico |
+|:--|:--|
+| Muchos a uno | clasificar un registro de EMG como sano, miopatía o neuropatía |
+| Muchos a muchos | marcar cada latido de un ECG como normal o ectópico |
+| Uno a muchos | generar una señal sintética a partir de una etiqueta |
+| Secuencia a secuencia | traducir una señal de un sensor a otro |
+
+::: {.notes}
+En el ejemplo de EMG del curso usamos el esquema muchos a uno: la red lee las 32 tramas de una ventana y solo el último estado pasa al clasificador. Conviene que el estudiante identifique el esquema antes de escribir una sola línea de código, porque decide qué salidas de la red se usan y cómo se define la pérdida.
+:::
+
+# La red recurrente simple
+
+## El estado oculto es la memoria
+
+En cada paso la red combina la entrada actual con su estado anterior:
+
+$$
+h_t = \tanh\left(W_{xh}\,x_t + b_{xh} + W_{hh}\,h_{t-1} + b_{hh}\right), \qquad h_0 = 0
+$$
+
+| Símbolo | Forma | Papel |
+|:--|:--|:--|
+| $x_t$ | $D$ | [entrada]{.dato} en el paso $t$ |
+| $h_t$ | $H$ | [estado oculto]{.grafo}: resumen de $x_1, \dots, x_t$ |
+| $W_{xh}$ | $H \times D$ | cómo entra el presente |
+| $W_{hh}$ | $H \times H$ | cómo pasa el pasado: [la recurrencia]{.causa} |
+
+::: {.notes}
+Esta es la red de Elman. Los dos sesgos aparecen separados porque así los guarda PyTorch (bias_ih y bias_hh); matemáticamente se pueden sumar en uno. La tangente hiperbólica mantiene el estado entre -1 y 1. La clave es que $W_{xh}$, $W_{hh}$ y los sesgos son los mismos en todos los pasos.
+:::
+
+## Desenrollar en el tiempo
+
+![](./img/rnn-elman-arquitectura){width="82%"}
+
+::: {.notes}
+Leer el diagrama en orden: A, la vista plegada con el lazo de memoria; B, la misma celda desenrollada en los pasos de tiempo; C, el interior de una celda; D, los parámetros. Desenrollada, una red recurrente es una red profunda con tantas capas como pasos de tiempo y con los pesos compartidos entre capas. Esa observación explica tanto cómo se entrena como por qué cuesta entrenarla.
+:::
+
+## Un ejemplo a mano
+
+Una red con $D = H = 1$, $w_{xh} = 0.5$, $w_{hh} = 0.8$, sin sesgos, y la entrada $x = (1, 0, 0, 0)$:
+
+| $t$ | Cálculo | $h_t$ |
+|:--:|:--|--:|
+| 1 | $\tanh(0.5 \cdot 1 + 0.8 \cdot 0)$ | 0.462 |
+| 2 | $\tanh(0.8 \cdot 0.462)$ | 0.354 |
+| 3 | $\tanh(0.8 \cdot 0.354)$ | 0.276 |
+| 4 | $\tanh(0.8 \cdot 0.276)$ | 0.217 |
+
+El pulso del primer paso [se recuerda, pero se apaga]{.causa}: cada paso lo multiplica por algo menor que 1.
+
+::: {.notes}
+Hacer este cálculo en el tablero. Es la intuición del desvanecimiento antes de ver una sola derivada: el recuerdo de $x_1$ en $h_t$ decae aproximadamente como $0.8^{t-1}$, y además la tangente hiperbólica comprime un poco más. Pregunta: ¿qué pasaría con $w_{hh} = 1.5$? El estado se satura cerca de 1 y la derivada de tanh se hace casi cero: otro camino hacia el mismo problema.
+:::
+
+## Salida, pérdida y parámetros
+
+**Salida** (muchos a uno): $\hat y = \operatorname{softmax}(W_{hy}\,h_T + b_y)$ y pérdida de entropía cruzada $\mathcal{L} = -\log \hat y_{c}$.
+
+**Muchos a muchos**: una salida por paso y $\mathcal{L} = \sum_t \ell_t$.
+
+**Parámetros de la celda**, independientes de la longitud $T$:
+
+$$
+H\,(D + H + 2) \quad\Rightarrow\quad D = 5,\ H = 32: \ 32 \cdot 39 = 1\,248
+$$
+
+::: {.notes}
+La cuenta: $HD$ de $W_{xh}$, $H^2$ de $W_{hh}$ y $2H$ de los dos sesgos. Que no dependa de $T$ es la ventaja de compartir pesos: la misma red procesa secuencias de 32 o de 3 000 pasos. En el ejemplo de EMG, RedRecurrente tiene 1 827 parámetros sumando el clasificador.
+:::
+
+# Entrenar: retropropagación en el tiempo
+
+## La idea de BPTT
+
+Se desenrolla la red, se calcula la pérdida y se retropropaga [a través de todos los pasos]{.grafo}. Como los pesos son compartidos, su gradiente es la **suma** de las contribuciones de cada paso:
+
+$$
+\frac{\partial \mathcal{L}}{\partial W_{hh}} = \sum_{t=1}^{T} \delta_t \odot \left(1 - h_t^2\right) h_{t-1}^{\top},
+\qquad \delta_t = \frac{\partial \mathcal{L}}{\partial h_t}
+$$
+
+El error llega a $h_t$ por dos caminos: su propia salida y el paso siguiente.
+
+$$
+\delta_t = \frac{\partial \ell_t}{\partial h_t} + W_{hh}^{\top}\,\operatorname{diag}\!\left(1 - h_{t+1}^2\right)\delta_{t+1}
+$$
+
+::: {.notes}
+$1 - h^2$ es la derivada de tanh. La recurrencia de $\delta_t$ se calcula hacia atrás, desde $T$ hasta 1: por eso se llama retropropagación en el tiempo. En la práctica PyTorch la hace sola con autograd; el objetivo de la diapositiva es ver de dónde sale el producto de matrices de la siguiente.
+:::
+
+## Un producto de jacobianos
+
+Para saber cuánto influye un estado lejano en el final:
+
+$$
+\frac{\partial h_T}{\partial h_k} = \prod_{t=k+1}^{T} \operatorname{diag}\!\left(1 - h_t^2\right) W_{hh}
+\qquad\Rightarrow\qquad
+\left\lVert \frac{\partial h_T}{\partial h_k} \right\rVert \le \left\lVert W_{hh} \right\rVert^{\,T-k}
+$$
+
+- Si $\lVert W_{hh} \rVert < 1$: el producto [se desvanece]{.grafo} exponencialmente
+- Si el mayor valor singular de $W_{hh}$ pasa de 1: el producto [puede explotar]{.aviso}
+- La saturación de tanh ($1 - h^2 \approx 0$) empuja hacia el desvanecimiento
+
+::: {.notes}
+La cota usa que la derivada de tanh nunca pasa de 1. Es una cota superior: con norma menor que 1 el desvanecimiento está garantizado; con norma mayor que 1 la explosión es posible pero no segura, porque la saturación puede compensarla. El mensaje para la clase: con $T - k = 50$ y una norma de 0.9, la cota ya es $0.9^{50} \approx 0.005$.
+:::
+
+## El gradiente se desvanece
+
+![Redes sin entrenar, secuencias aleatorias de 150 pasos, promedio de 20 secuencias.](./img/rnn-gradiente-influencia){width="78%"}
+
+| Red | 10 pasos atrás | 100 pasos atrás |
+|:--|--:|--:|
+| [RNN simple]{.grafo} | $1.4 \times 10^{-3}$ | $0$ |
+| LSTM, $b_f \approx 0$ | $1.8 \times 10^{-3}$ | $2 \times 10^{-22}$ |
+| [LSTM, $b_f = 2$]{.causa} | $1.0 \times 10^{-1}$ | $2.1 \times 10^{-3}$ |
+
+::: {.notes}
+Es el mismo experimento de la sección 3.8 del cuaderno de EMG. Con la RNN simple, a 100 pasos la influencia es cero en precisión de máquina: la red no puede aprender una dependencia tan larga porque el gradiente no llega. Una LSTM con la compuerta de olvido a medio abrir tampoco recuerda; con la compuerta casi abierta sí. Esa es la pista de la sección siguiente.
+:::
+
+## Remedios
+
+| Problema | Remedio |
+|:--|:--|
+| [Explosión]{.aviso} | **recorte de la norma**: si $\lVert g \rVert > \tau$, $\ g \leftarrow \tau\, g / \lVert g \rVert$ |
+| Secuencias muy largas | **BPTT truncada**: retropropagar solo los últimos $k$ pasos |
+| [Desvanecimiento]{.grafo} | inicialización ortogonal de $W_{hh}$ y, sobre todo, **cambiar la arquitectura** |
+
+```python
+perdida.backward()
+nn.utils.clip_grad_norm_(modelo.parameters(), max_norm=1.0)
+optimizador.step()
+```
+
+::: {.notes}
+El recorte es barato y se usa siempre con redes recurrentes; conserva la dirección del gradiente y solo limita su tamaño. La BPTT truncada ahorra memoria pero, por construcción, renuncia a dependencias más largas que $k$. La inicialización ortogonal hace que $W_{hh}$ empiece con todos sus valores singulares en 1, lo que ayuda al principio pero no se mantiene durante el entrenamiento. El remedio de fondo es la LSTM.
+:::
+
+# LSTM: memoria con compuertas
+
+## La idea
+
+La LSTM añade una **memoria** $c_t$ que se actualiza [sumando]{.causa}, no multiplicando, y tres **compuertas** que deciden qué pasa por ella:
+
+- [Olvido]{.aviso} $f_t$: cuánto conservar de $c_{t-1}$
+- [Entrada]{.dato} $i_t$: cuánto escribir del contenido nuevo
+- Candidato $g_t$: qué contenido nuevo se propone
+- [Salida]{.grafo} $o_t$: cuánto de la memoria se muestra en $h_t$
+
+::: {.notes}
+Hochreiter y Schmidhuber, 1997; la compuerta de olvido se añadió en 2000 (Gers, Schmidhuber y Cummins). Una analogía clínica que funciona en clase: la memoria $c$ es la historia clínica, que se va anotando; $h$ es el resumen que se lee en voz alta en el pase de visita. La compuerta de olvido decide qué notas viejas dejan de ser relevantes.
+:::
+
+## Una compuerta es una sigmoide que multiplica
+
+![](./img/rnn-activaciones-compuertas){width="72%"}
+
+Una compuerta es un vector de valores en $(0, 1)$ que multiplica [elemento a elemento]{.dato}: $f_t \odot c_{t-1}$ conserva cada componente de la memoria en una proporción distinta.
+
+::: {.notes}
+La sigmoide sirve para compuertas porque su salida se interpreta como una proporción: 0 cierra, 1 deja pasar. La tangente hiperbólica se usa para el contenido porque es centrada en cero y permite sumar o restar a la memoria. Las compuertas no son binarias: la red aprende valores intermedios y los ajusta en cada paso según la entrada y el estado.
+:::
+
+## Las ecuaciones
+
+$$
+\begin{aligned}
+i_t &= \sigma\left(W_{xi}\,x_t + W_{hi}\,h_{t-1} + b_i\right) \\
+f_t &= \sigma\left(W_{xf}\,x_t + W_{hf}\,h_{t-1} + b_f\right) \\
+g_t &= \tanh\left(W_{xg}\,x_t + W_{hg}\,h_{t-1} + b_g\right) \\
+o_t &= \sigma\left(W_{xo}\,x_t + W_{ho}\,h_{t-1} + b_o\right) \\
+c_t &= f_t \odot c_{t-1} + i_t \odot g_t \\
+h_t &= o_t \odot \tanh(c_t)
+\end{aligned}
+$$
+
+::: {.notes}
+Las cuatro primeras líneas tienen la misma forma que una RNN simple: cada una es una pequeña red que mira $x_t$ y $h_{t-1}$. Las dos últimas son la novedad: la memoria se actualiza con una suma ponderada y el estado oculto es una versión filtrada de la memoria. Cada $b$ representa la suma de los dos sesgos de PyTorch.
+:::
+
+## La celda por dentro
+
+![](./img/rnn-lstm-arquitectura){width="80%"}
+
+::: {.notes}
+Seguir la línea superior del diagrama: es el camino de la memoria. Solo la tocan una multiplicación por $f_t$ y una suma con $i_t \odot g_t$; no hay matriz ni tangente hiperbólica en ese camino. El estado oculto, en la línea inferior, alimenta las cuatro compuertas del paso siguiente y la capa siguiente.
+:::
+
+## Por qué no se desvanece
+
+Por el camino de la memoria la derivada es, sin contar los términos indirectos por $h_{t-1}$:
+
+$$
+\frac{\partial c_t}{\partial c_{t-1}} = \operatorname{diag}(f_t)
+\qquad\Rightarrow\qquad
+\frac{\partial c_T}{\partial c_k} \approx \prod_{t=k+1}^{T} \operatorname{diag}(f_t)
+$$
+
+| Compuerta de olvido | Lo que queda tras 10 pasos |
+|:--|--:|
+| $f = 0.99$ | 0.90 |
+| $f = 0.9$ | 0.35 |
+| RNN con $\lVert W_{hh} \rVert = 0.8$ (cota) | 0.11 |
+
+La red [aprende]{.causa} cuánto recordar: $f_t$ depende de la entrada y del estado.
+
+::: {.notes}
+Es el carrusel de error constante de la LSTM original: si $f_t = 1$, el gradiente pasa intacto. La diferencia con la RNN no es que la LSTM nunca olvide, sino que el ritmo de olvido lo decide una compuerta aprendida, en lugar de una matriz fija multiplicada una y otra vez. Por eso se suele inicializar $b_f$ en 1 o más: la red empieza recordando y aprende a olvidar.
+:::
+
+## Parámetros y convención de PyTorch
+
+$$
+4H\,(D + H + 2) \quad\Rightarrow\quad D = 5,\ H = 32: \ 4 \cdot 32 \cdot 39 = 4\,992
+$$
+
+PyTorch apila las cuatro compuertas en un solo tensor, [en el orden i, f, g, o]{.grafo}:
+
+| Tensor | Forma |
+|:--|:--|
+| `weight_ih_l0` | $[4H, D]$ |
+| `weight_hh_l0` | $[4H, H]$ |
+| `bias_ih_l0`, `bias_hh_l0` | $[4H]$ cada uno |
+
+```python
+with torch.no_grad():
+    lstm.bias_hh_l0[H:2 * H] = 1.0   # bloque f: empezar recordando
+```
+
+::: {.notes}
+Cuatro veces los parámetros de una RNN simple con el mismo $H$. El orden i, f, g, o es una convención de PyTorch; otras bibliotecas usan otro orden, y conviene comprobarlo antes de tocar un sesgo a mano. Se escribe en bias_hh pero da igual en cuál de los dos sesgos, porque se suman.
+:::
+
+## Un paso de la LSTM, escrito a mano
+
+```python
+def paso_lstm(x_t, h, c, W_x, W_h, b):
+    z = x_t @ W_x.T + h @ W_h.T + b      # [N, 4H]
+    i, f, g, o = z.chunk(4, dim=1)       # orden de PyTorch
+    i = torch.sigmoid(i)
+    f = torch.sigmoid(f)
+    g = torch.tanh(g)
+    o = torch.sigmoid(o)
+    c = f * c + i * g                    # memoria
+    h = o * torch.tanh(c)                # estado oculto
+    return h, c
+```
+
+Con los pesos de `nn.LSTM`, este paso reproduce su salida: es un buen ejercicio de comprobación.
+
+::: {.notes}
+El cuaderno de EMG hace exactamente esta comprobación en la sección 3.7 y obtiene coincidencia exacta con nn.LSTM. Pedir a los estudiantes que lo escriban ellos antes de mostrarlo. Detalle: W_x es weight_ih_l0, W_h es weight_hh_l0 y b es la suma de los dos sesgos.
+:::
+
+# Variantes y práctica
+
+## GRU: dos compuertas, sin memoria aparte
+
+$$
+\begin{aligned}
+r_t &= \sigma\left(W_{xr}\,x_t + W_{hr}\,h_{t-1} + b_r\right) \\
+z_t &= \sigma\left(W_{xz}\,x_t + W_{hz}\,h_{t-1} + b_z\right) \\
+n_t &= \tanh\left(W_{xn}\,x_t + b_{xn} + r_t \odot (W_{hn}\,h_{t-1} + b_{hn})\right) \\
+h_t &= (1 - z_t) \odot n_t + z_t \odot h_{t-1}
+\end{aligned}
+$$
+
+- $r_t$ ([reinicio]{.aviso}) decide cuánto pasado usar para el candidato
+- $z_t$ ([actualización]{.dato}) mezcla el estado anterior con el nuevo
+- $3H\,(D + H + 2)$ parámetros: 3 744 con $D = 5$, $H = 32$
+
+::: {.notes}
+Cho y colaboradores, 2014. La GRU fusiona memoria y estado oculto en $h_t$. El término $z_t \odot h_{t-1}$ cumple el papel del camino aditivo de la LSTM: si $z_t \approx 1$, el estado pasa casi intacto. Las ecuaciones siguen la convención de PyTorch, donde $r_t$ multiplica después de aplicar $W_{hn}$. En la práctica rinde parecido a la LSTM con un cuarto menos de parámetros; no hay un ganador general y conviene probar ambas.
+:::
+
+## Apilar y leer en los dos sentidos
+
+- **Apilada**: la secuencia completa de estados de la capa 1, $(h^{(1)}_1, \dots, h^{(1)}_T)$, es la entrada de la capa 2
+- **Bidireccional**: una red lee de 1 a $T$ y otra de $T$ a 1; se concatenan los estados: $[\overrightarrow{h}_t ; \overleftarrow{h}_t]$, de tamaño $2H$
+- [Cuidado]{.aviso}: la bidireccional usa el futuro; sirve para analizar un registro completo, no para decidir en tiempo real
+
+::: {.notes}
+En el ejemplo de EMG, RedLSTM apila dos capas, lstm1 y lstm2, escritas por separado. Dos o tres capas suelen bastar; más capas rara vez ayudan en señales biomédicas y cuestan más datos. La bidireccional es natural cuando el registro ya está completo, como en un EMG grabado; no lo es en un monitor que tiene que avisar en el momento.
+:::
+
+## En PyTorch: formas
+
+```python
+lstm = nn.LSTM(input_size=5, hidden_size=32, batch_first=True)
+x = torch.randn(8, 32, 5)              # [N, T, D]
+salidas, (h_n, c_n) = lstm(x)
+salidas.shape                          # [8, 32, 32]  todos los h_t
+h_n.shape                              # [1, 8, 32]   h_T por capa
+```
+
+| Esquema | Qué se usa |
+|:--|:--|
+| Muchos a uno | `h_n[-1]` o `salidas[:, -1]` |
+| Muchos a muchos | `salidas` completa |
+
+::: {.notes}
+El error más frecuente es olvidar batch_first=True y pasar $[N, T, D]$ a una red que espera $[T, N, D]$: no da error, simplemente mezcla ejemplos con pasos de tiempo. Otro: h_n tiene una primera dimensión de capas por direcciones; con una sola capa unidireccional es 1. Para secuencias de longitud variable están pack_padded_sequence y pad_packed_sequence.
+:::
+
+## Un modelo completo, capa por capa
+
+```python
+class RedLSTM(nn.Module):
+    def __init__(self, n_entradas=5, n_ocultas=32, n_clases=3):
+        super().__init__()
+        self.lstm1 = nn.LSTM(n_entradas, n_ocultas, batch_first=True)
+        self.lstm2 = nn.LSTM(n_ocultas, n_ocultas, batch_first=True)
+        self.dropout = nn.Dropout(0.3)
+        self.capa_densa = nn.Linear(n_ocultas, 16)
+        self.salida = nn.Linear(16, n_clases)
+
+    def forward(self, x):                    # x: [N, T, D]
+        h1, _ = self.lstm1(x)                # [N, T, H]
+        h1 = self.dropout(h1)
+        _, (h_T, _) = self.lstm2(h1)         # h_T: [1, N, H]
+        z = self.dropout(h_T[-1])            # [N, H]
+        z = torch.relu(self.capa_densa(z))   # [N, 16]
+        return self.salida(z)                # logits [N, 3]
+```
+
+::: {.notes}
+Cada capa tiene nombre y el paso adelante se lee de arriba abajo, con la forma del tensor en cada línea. Es la misma estructura del cuaderno de EMG. La salida son logits: la entropía cruzada de PyTorch aplica el softmax por dentro.
+:::
+
+## Antes de creer en el resultado
+
+- Normalizar las entradas con estadísticas [del entrenamiento]{.dato}
+- Dividir por paciente, no por ventana
+- Recortar el gradiente e iniciar $b_f$ en 1
+- Comparar con una [línea base sin tiempo]{.causa}: media y desviación de cada descriptor más una regresión logística
+- **Desordenar los pasos de tiempo** en la prueba: si el acierto no cae, el modelo no está usando el orden
+
+::: {.notes}
+Los dos últimos puntos vienen del ejemplo de EMG: con datos sintéticos, una regresión logística de 33 parámetros empató con la LSTM de 14 019, y desordenar las tramas no cambió el acierto de la LSTM. Una red recurrente que acierta no prueba que la memoria sirva; estas dos pruebas baratas lo comprueban.
+:::
+
+# Cierre
+
+## Resumen
+
+| | RNN simple | LSTM | GRU |
+|:--|:--|:--|:--|
+| Estado | $h_t$ | $h_t$ y memoria $c_t$ | $h_t$ |
+| Compuertas | ninguna | olvido, entrada, salida | reinicio, actualización |
+| Parámetros ($D = 5$, $H = 32$) | 1 248 | 4 992 | 3 744 |
+| Memoria larga | [se desvanece]{.aviso} | [la regula $f_t$]{.causa} | [la regula $z_t$]{.causa} |
+| Cuándo usarla | secuencias cortas, línea base | opción por defecto | menos datos o menos cómputo |
+
+## Para esta semana
+
+::: {.callout-note}
+## Laboratorio
+Escribir `paso_lstm` a mano, comprobar que reproduce `nn.LSTM` con los mismos pesos y medir $\lVert \partial h_T / \partial x_t \rVert$ con $b_f = 0$, 1 y 2.
+:::
+
+1. Rehacer a mano el ejemplo de $w_{hh} = 0.8$ con $w_{hh} = 1.5$. ¿Qué pasa con $1 - h_t^2$?
+2. Deducir $4H(D + H + 2)$ y $3H(D + H + 2)$ a partir de las ecuaciones.
+3. Mostrar que $\partial c_t / \partial c_{t-1} = \operatorname{diag}(f_t)$ si se ignoran los caminos por $h_{t-1}$.
+4. Cambiar la LSTM del ejemplo de EMG por una GRU y comparar parámetros y acierto.
+
+::: {.notes}
+El laboratorio cierra el ciclo de la sesión: implementar, verificar contra la biblioteca y medir el fenómeno que motiva la arquitectura. El ejercicio 1 muestra que el desvanecimiento también aparece por saturación, no solo por pesos pequeños. Lectura sugerida: capítulo 10 de Goodfellow, Bengio y Courville, Deep Learning.
+:::

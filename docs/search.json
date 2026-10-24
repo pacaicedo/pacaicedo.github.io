@@ -658,398 +658,6 @@
     "text": "Cada curso tiene la misma estructura: introducción, resultados de aprendizaje, calendario y fechas importantes, presentaciones, laboratorios, recursos y tutoriales y referentes. Las presentaciones se publican en HTML (revealjs) y en PDF (beamer), y las guías de laboratorio en HTML y PDF.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAprendizaje automático para el procesamiento de señales e imágenes médicas\n\n\nPSIM · semestre 2026-2\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\n\n\nProcesamiento Digital de Imágenes Médicas\n\n\nPSIM · semestre 2026-2\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\n\n\nSistemas y Señales Biomédicos\n\n\nSYSB · semestre 2026-2\n\n\nSeñales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python.\n\n\n\n\n\n\n\n\n\n\n\n\nTécnicas de Aprendizaje Automático\n\n\nTAU · semestre 2026-2\n\n\nAprendizaje automático clásico: explorar, reducir dimensión, agrupar y clasificar, con validación honesta.\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html",
-    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html",
-    "title": "Laboratorio 2: filtrado en frecuencia",
-    "section": "",
-    "text": "Calcular el espectro centrado de una imagen y la distancia \\(D(u, v)\\) en ciclos/píxel.\nImplementar pasa bajos y pasa altos Ideal, Butterworth y Gaussiano con el mismo \\(D_0\\).\nMedir el efecto Gibbs del filtro ideal en un perfil de intensidad."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#objetivos",
-    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#objetivos",
-    "title": "Laboratorio 2: filtrado en frecuencia",
-    "section": "",
-    "text": "Calcular el espectro centrado de una imagen y la distancia \\(D(u, v)\\) en ciclos/píxel.\nImplementar pasa bajos y pasa altos Ideal, Butterworth y Gaussiano con el mismo \\(D_0\\).\nMedir el efecto Gibbs del filtro ideal en un perfil de intensidad."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#procedimiento",
-    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#procedimiento",
-    "title": "Laboratorio 2: filtrado en frecuencia",
-    "section": "2 Procedimiento",
-    "text": "2 Procedimiento\n\n2.1 Espectro y máscaras\nSigue el tutorial Filtros en frecuencia para construir las tres máscaras con \\(D_0 = 0{,}08\\) ciclos/píxel.\n\n\n\nLas tres funciones de transferencia.\n\n\n\n\n2.2 Perfil de intensidad\nToma la fila central de la imagen original y de las filtradas y grafícalas juntas.\n\n\n\nPerfil de la fila central.\n\n\n\n\n2.3 Pasa altos y notch\nConstruye los pasa altos como \\(1 - H\\) y aplica un notch sobre una imagen a la que le sumaste un patrón \\(0{,}1 \\sin(2\\pi \\cdot 0{,}2\\, x)\\)."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#preguntas-orientadoras",
-    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#preguntas-orientadoras",
-    "title": "Laboratorio 2: filtrado en frecuencia",
-    "section": "3 Preguntas orientadoras",
-    "text": "3 Preguntas orientadoras\n\n¿Por qué el filtro ideal oscila cerca de los bordes y el gaussiano no?\n¿Cómo cambia el resultado si \\(D_0\\) se expresa en ciclos/mm con un PixelSpacing de 0,5 mm?\n¿Dónde aparece en el espectro el patrón periódico que añadiste?"
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#entregables",
-    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#entregables",
-    "title": "Laboratorio 2: filtrado en frecuencia",
-    "section": "4 Entregables",
-    "text": "4 Entregables\n\nScript con las máscaras, las imágenes filtradas y los perfiles.\nUna figura comparativa por tipo de filtro, con ejes y unidades.\nRespuestas a las preguntas orientadoras."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#rúbrica",
-    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#rúbrica",
-    "title": "Laboratorio 2: filtrado en frecuencia",
-    "section": "5 Rúbrica",
-    "text": "5 Rúbrica\n\nRúbrica del laboratorio 2.\n\n\n\n\n\n\n\nCriterio\nPeso\nLogrado\n\n\n\n\nMáscaras correctas y centradas\n30 %\nLas tres comparten \\(D_0\\) y unidades\n\n\nComparación visual y por perfil\n30 %\nSe mide la amplitud de los anillos\n\n\nNotch\n20 %\nEl pico del patrón desaparece del espectro\n\n\nReproducibilidad\n20 %\nEl código corre de principio a fin"
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html",
-    "href": "cursos/AASI_M/index.html",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "",
-    "text": "Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática (Gonzalez y Woods 2018; Suetens 2017).\nEl curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.\n\n\n\nCódigo\n\nPSIM\n\n\nSemestre\n\n2026-2\n\n\nHorario\n\nlunes y jueves, 7:00–9:00\n\n\nIntensidad\n\n4 horas por semana\n\n\nPrerrequisito\n\nSistemas y Señales Biomédicos\n\n\nEvaluación\n\n3 laboratorios (60 %) y proyecto final (40 %)"
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html#introducción",
-    "href": "cursos/AASI_M/index.html#introducción",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "",
-    "text": "Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática (Gonzalez y Woods 2018; Suetens 2017).\nEl curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.\n\n\n\nCódigo\n\nPSIM\n\n\nSemestre\n\n2026-2\n\n\nHorario\n\nlunes y jueves, 7:00–9:00\n\n\nIntensidad\n\n4 horas por semana\n\n\nPrerrequisito\n\nSistemas y Señales Biomédicos\n\n\nEvaluación\n\n3 laboratorios (60 %) y proyecto final (40 %)"
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html#resultados-de-aprendizaje",
-    "href": "cursos/AASI_M/index.html#resultados-de-aprendizaje",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "Resultados de Aprendizaje",
-    "text": "Resultados de Aprendizaje\nAl terminar el curso, cada estudiante podrá:\n\n\nDescribir una imagen médica como una función muestreada y cuantizada, y leer de su encabezado DICOM el tamaño del píxel, el grosor del corte y la conversión a unidades físicas.\nAplicar operaciones puntuales y de histograma (ventana y nivel, ecualización) y justificar cuál conviene para una tarea de lectura.\nImplementar en NumPy filtros espaciales y en frecuencia (Ideal, Butterworth, Gaussiano, pasa-banda y notch) y comparar sus efectos sobre el espectro y la imagen.\nSegmentar estructuras por umbral, regiones y morfología matemática, y medir sobre ellas áreas, intensidades y formas.\nConstruir un conjunto de características reproducible y ajustar con él una regresión logística o lineal múltiple, informando lo que el modelo mide y lo que no."
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html#calendario-y-fechas-importantes",
-    "href": "cursos/AASI_M/index.html#calendario-y-fechas-importantes",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "Calendario y fechas importantes",
-    "text": "Calendario y fechas importantes\n\nFechas importantes\n\n\n\n\nFecha\nEntrega\nPeso\n\n\n\n\n2026-08-28\nLaboratorio 1: histograma y contraste\n20 %\n\n\n2026-10-02\nLaboratorio 2: filtrado en frecuencia\n20 %\n\n\n2026-10-23\nPropuesta del proyecto\n5 %\n\n\n2026-10-30\nLaboratorio 3: segmentación y morfología\n20 %\n\n\n2026-11-13\nAvance del proyecto\n10 %\n\n\n2026-11-19\nPresentación final del proyecto\n25 %\n\n\n\n\n\n\nSemana a semana\n\n\n\n\n\n\n\n\n\n\nSemana\nLunes\nTema\nMaterial\n\n\n\n\n1\n2026-08-03\nLa imagen como dato: muestreo, cuantización y DICOM\nPresentación 1\n\n\n2\n2026-08-10\nHistograma, ventana y nivel\nLaboratorio 1\n\n\n3\n2026-08-17\nOperaciones puntuales y aritméticas festivo el lunes\n\n\n\n4\n2026-08-24\nConvolución 2D y operaciones espaciales\n\n\n\n5\n2026-08-31\nSuavizado y realce\n\n\n\n6\n2026-09-07\nDetección de bordes\nLaboratorio 2\n\n\n7\n2026-09-14\nTransformada de Fourier 2D\n\n\n\n8\n2026-09-21\nFiltrado en frecuencia: de Ideal a notch\nPresentación 8\n\n\n9\n2026-09-28\nSegmentación por umbral y por regiones\n\n\n\n10\n2026-10-05\nMorfología matemática\nLaboratorio 3\n\n\n11\n2026-10-12\nWavelets festivo el lunes\n\n\n\n12\n2026-10-19\nExtracción de características\n\n\n\n13\n2026-10-26\nDe la imagen a la tabla\n\n\n\n14\n2026-11-02\nRegresión logística y lineal múltiple festivo el lunes\n\n\n\n15\n2026-11-09\nValidación e informe honesto\n\n\n\n16\n2026-11-16\nPresentaciones finales festivo el lunes"
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html#presentaciones",
-    "href": "cursos/AASI_M/index.html#presentaciones",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "Presentaciones",
-    "text": "Presentaciones\nCada presentación tiene una versión en línea (revealjs, para proyectar desde el navegador) y un PDF (beamer) con la misma composición.\n\n\n\n  \n    Semana [N]\n    \n      Redes recurrentes y LSTM para EMG de aguja\n      Un ejemplo completo con cuatro miradas: qué ve el clínico en un EMG de aguja, cómo se limpia y se resume la señal, cómo funcionan la RNN y la LSTM y cómo comprobar si el orden temporal aporta.\n    \n    \n      Diapositivas\n      PDF\n    \n  \n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html#laboratorios",
-    "href": "cursos/AASI_M/index.html#laboratorios",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "Laboratorios",
-    "text": "Laboratorios\nLas guías se leen en línea o en PDF. Cada una trae objetivos, procedimiento, preguntas orientadoras, entregables y rúbrica.\n\n\n\n  \n    Lab 1\n    \n      Laboratorio 1: histograma, ventana y contraste\n      Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.\n    \n    \n      Guía\n      PDF\n    \n  \n\n  \n    Lab 2\n    \n      Laboratorio 2: filtrado en frecuencia\n      Implementar filtros Ideal, Butterworth y Gaussiano y medir los anillos del filtro ideal.\n    \n    \n      Guía\n      PDF\n    \n  \n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html#recursos-y-tutoriales",
-    "href": "cursos/AASI_M/index.html#recursos-y-tutoriales",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "Recursos y tutoriales",
-    "text": "Recursos y tutoriales\n\nTutoriales del sitio\n\n\n\n\n\nEntorno reproducible con uv y Quarto\n\n\nInstalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo.\n\n\n\n\n\n\n\n\n\n\nFiltros en frecuencia: de Ideal a Gaussiano\n\n\nTransformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\nSoftware y datos\n\nPython con NumPy, SciPy y scikit-image: todo el trabajo del curso.\npydicom: leer y escribir archivos DICOM desde Python.\n3D Slicer e ITK-SNAP: visualizar volúmenes y revisar segmentaciones a mano.\nThe Cancer Imaging Archive: colecciones públicas de imágenes para el proyecto final.\nDatos de ejemplo del sitio: el fantoma de Shepp-Logan en unidades Hounsfield aproximadas."
-  },
-  {
-    "objectID": "cursos/AASI_M/index.html#referentes",
-    "href": "cursos/AASI_M/index.html#referentes",
-    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
-    "section": "Referentes",
-    "text": "Referentes\n\n\nBankman, Isaac N., ed. 2009. Handbook of Medical Image Processing and Analysis. 2.ª ed. Academic Press.\n\n\nGonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. 4.ª ed. Pearson.\n\n\nPrince, Jerry L., y Jonathan M. Links. 2014. Medical Imaging Signals and Systems. 2.ª ed. Pearson.\n\n\nShepp, Lawrence A., y Benjamin F. Logan. 1974. «The Fourier Reconstruction of a Head Section». IEEE Transactions on Nuclear Science 21 (3): 21-43.\n\n\nSuetens, Paul. 2017. Fundamentals of Medical Imaging. 3.ª ed. Cambridge University Press."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "",
-    "text": "Evento\n\nXII Seminario de Automática\n\n\nModalidad\n\nPresencial, en auditorio\n\n\nDuración\n\n30 minutos y preguntas\n\n\nPúblico\n\nEstudiantes y docentes de ingeniería\n\n\n\nUna charla para quien llega desde la automática y el control: una imagen médica se puede leer como cualquier otra medición. Cada píxel guarda un número con unidades que dependen del equipo y del protocolo; la ventana y el nivel deciden qué parte de ese rango vemos, pero no cambian el dato con el que se mide. A partir de ahí, una fila de la imagen es una señal, una región es un conjunto de mediciones y la pregunta por la causa exige primero separar lo que viene del paciente de lo que viene del equipo.\nTodas las figuras se hicieron con un fantoma sintético de Shepp-Logan llevado a unidades Hounsfield aproximadas: no hay datos de pacientes en la charla."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html#evento",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html#evento",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "",
-    "text": "Evento\n\nXII Seminario de Automática\n\n\nModalidad\n\nPresencial, en auditorio\n\n\nDuración\n\n30 minutos y preguntas\n\n\nPúblico\n\nEstudiantes y docentes de ingeniería\n\n\n\nUna charla para quien llega desde la automática y el control: una imagen médica se puede leer como cualquier otra medición. Cada píxel guarda un número con unidades que dependen del equipo y del protocolo; la ventana y el nivel deciden qué parte de ese rango vemos, pero no cambian el dato con el que se mide. A partir de ahí, una fila de la imagen es una señal, una región es un conjunto de mediciones y la pregunta por la causa exige primero separar lo que viene del paciente de lo que viene del equipo.\nTodas las figuras se hicieron con un fantoma sintético de Shepp-Logan llevado a unidades Hounsfield aproximadas: no hay datos de pacientes en la charla."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html#presentación",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html#presentación",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Presentación",
-    "text": "Presentación\nLa charla se preparó para un auditorio a oscuras, con la versión sala oscura de la marca: fondo neutro casi negro, que no altera la lectura de las imágenes en gris. Para un aula con luz o ventanas está la versión clara, con el mismo contenido.\n\n  \n\n\nPantalla completa Versión clara PDF sala oscura PDF claro\n\nDentro de las diapositivas: las flechas avanzan, F pone pantalla completa, S abre las notas del orador y Esc muestra todas las diapositivas."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html#código",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html#código",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Código",
-    "text": "Código\nLas diapositivas y las figuras salen de archivos de texto que están en el repositorio de este sitio, en la carpeta charlas/2026-ver-el-cuerpo-como-dato/:\n\nArchivos de la charla.\n\n\nArchivo\nQué es\n\n\n\n\n_diapositivas.qmd\nEl contenido, compartido por las dos versiones\n\n\ndiapositivas.qmd\nVersión clara: revealjs y beamer\n\n\ndiapositivas-sala.qmd\nVersión sala oscura: revealjs y beamer\n\n\nfiguras.py\nLas figuras, en claro y en oscuro\n\n\nrecursos/python/datos_ejemplo.py\nEl fantoma sintético en UH\n\n\n\nPara reproducirla desde la raíz del repositorio:\nuv run python charlas/2026-ver-el-cuerpo-como-dato/figuras.py\nuv run quarto render charlas/2026-ver-el-cuerpo-como-dato/\nEste es el código que hizo las figuras; la página lo lee del archivo, así que siempre muestra la versión vigente:\n\"\"\"Figuras de la charla «Imágenes médicas: ver el cuerpo como dato» (fantoma sintético).\"\"\"\nimport sys\nfrom pathlib import Path\n\nAQUI = Path(__file__).resolve().parent\nRAIZ = next(p for p in AQUI.parents if (p / \"_quarto.yml\").exists())\nsys.path[:0] = [str(RAIZ / \"recursos/marca/python\"), str(RAIZ / \"recursos/python\")]\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom matplotlib.patches import Rectangle\nimport caicedo_mpl as cm\nfrom datos_ejemplo import fantoma_uh, ventana\n\nFIG = AQUI / \"fig\"\n\n\ndef matriz(contexto, modo, nombre):\n    cm.usar(contexto, modo)\n    uh = fantoma_uh(256, ruido=4)\n    w, l = 80, 40\n    f0, c0, n = 124, 118, 8  # recorte de 8 x 8 en el borde de un ventrículo (LCR y cerebro)\n    fig, (a1, a2) = plt.subplots(1, 2, figsize=(9.6, 4.4), gridspec_kw={\"width_ratios\": [1, 1]})\n    a1.imshow(ventana(uh, w, l), vmin=0, vmax=1)\n    a1.add_patch(Rectangle((c0 - .5, f0 - .5), n, n, fill=False, ec=cm.T[\"causa\"], lw=2.2))\n    a1.set_title(\"Corte (ventana de cerebro)\", loc=\"center\"); a1.axis(\"off\")\n    rec = uh[f0:f0 + n, c0:c0 + n]\n    a2.imshow(ventana(rec, w, l), vmin=0, vmax=1)\n    for i in range(n):\n        for j in range(n):\n            g = ventana(rec[i, j], w, l)\n            a2.text(j, i, f\"{rec[i, j]:.0f}\", ha=\"center\", va=\"center\", fontsize=8.5 if contexto == \"documento\" else 11,\n                    color=cm.T[\"tinta\"] if g &gt; .55 else cm.T[\"luz\"])\n    a2.set_title(\"Los mismos píxeles: números en UH\", loc=\"center\")\n    a2.set_xticks([]); a2.set_yticks([])\n    for s in a2.spines.values():\n        s.set_visible(True); s.set_color(cm.T[\"causa\"]); s.set_linewidth(2.2)\n    cm.guardar(fig, FIG / nombre); plt.close(fig)\n\n\ndef perfil(contexto, modo, nombre):\n    cm.usar(contexto, modo)\n    uh = fantoma_uh(256, ruido=4)\n    fila = 128\n    fig, ax = plt.subplots(figsize=(9.6, 3.6))\n    ax.axhspan(0, 80, color=cm.T[\"dato\"], alpha=.10, lw=0)\n    ax.plot(np.arange(256), uh[fila])\n    ax.set_ylim(-60, 140); ax.set_xlim(20, 236)\n    ax.text(232, 72, \"ventana de cerebro (0 a 80 UH)\", ha=\"right\", va=\"top\", fontsize=9 if contexto == \"documento\" else 12,\n            color=cm.TENUE[modo])\n    ax.set_xlabel(\"Columna (píxel)\"); ax.set_ylabel(\"UH\")\n    ax.set_title(\"Perfil de intensidad de la fila central\")\n    cm.guardar(fig, FIG / nombre); plt.close(fig)\n\n\ndef main():\n    for modo in (\"claro\", \"oscuro\"):\n        sufijo = \"\" if modo == \"claro\" else \"-oscuro\"\n        matriz(\"diapositiva\", modo, \"matriz\" + sufijo)\n        perfil(\"diapositiva\", modo, \"perfil\" + sufijo)\n\n\nif __name__ == \"__main__\":\n    main()"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-imagen-médica-es-una-medición",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-imagen-médica-es-una-medición",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Una imagen médica es una medición",
-    "text": "Una imagen médica es una medición\n\nCada píxel guarda un número, no un color\nQué mide ese número depende de la modalidad:\n\nTC: atenuación de los rayos X, en unidades Hounsfield (UH)\nRM: señal relativa, sin unidades absolutas\nEcografía: intensidad de los ecos\n\nEl equipo, el protocolo y la reconstrucción también quedan en el número"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#los-mismos-píxeles-como-números",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#los-mismos-píxeles-como-números",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Los mismos píxeles, como números",
-    "text": "Los mismos píxeles, como números\n\n\n\nFantoma sintético de Shepp-Logan en UH aproximadas.\n\n\n\nSeñalar el recuadro naranja: los números de la derecha son esos mismos píxeles. El borde del ventrículo se ve como un salto de unos 30 UH."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#el-número-tiene-unidades",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#el-número-tiene-unidades",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "El número tiene unidades",
-    "text": "El número tiene unidades\n\n\n\nTejido\nUH aproximadas\n\n\n\n\nAire\n−1000\n\n\nAgua\n0\n\n\nCerebro\n30 a 45\n\n\nHueso cortical\n700 a más de 1000\n\n\n\n\nCon PixelSpacing del encabezado DICOM, las distancias van en milímetros"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#la-ventana-cambia-lo-que-vemos",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#la-ventana-cambia-lo-que-vemos",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "La ventana cambia lo que vemos",
-    "text": "La ventana cambia lo que vemos\n\\[\ng = \\min\\!\\Big(1, \\max\\!\\big(0, \\tfrac{\\text{UH} - (L - W/2)}{W}\\big)\\Big)\n\\]\n\nLa pantalla tiene 256 grises; el rango de la TC, más de 4000 UH\nLa ventana \\(W\\) y el nivel \\(L\\) deciden qué parte se ve, no cambian el dato\n\n\nPreguntar al público: si guardo la imagen ya ventaneada en 8 bits, ¿qué información perdí?"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-fila-de-la-imagen-es-una-señal",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-fila-de-la-imagen-es-una-señal",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Una fila de la imagen es una señal",
-    "text": "Una fila de la imagen es una señal\n\n\n\nPerfil de intensidad: la misma herramienta que para un ECG."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#qué-se-puede-medir",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#qué-se-puede-medir",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Qué se puede medir",
-    "text": "Qué se puede medir\n\nÁreas y volúmenes, con el tamaño del píxel y el grosor del corte\nIntensidades medias dentro de una región, en unidades físicas\nTextura y forma: cómo varían los valores y cómo es el borde\nCada medida es reproducible si se guarda el dato original y cada paso"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#lo-que-la-imagen-no-dice",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#lo-que-la-imagen-no-dice",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Lo que la imagen no dice",
-    "text": "Lo que la imagen no dice\n\nUna medida describe lo que mide: no es un diagnóstico\nDos equipos pueden dar números distintos para el mismo tejido\nUna diferencia entre grupos puede venir del protocolo y no del paciente"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#antes-de-comparar-preguntar-por-el-confusor",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#antes-de-comparar-preguntar-por-el-confusor",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Antes de comparar, preguntar por el confusor",
-    "text": "Antes de comparar, preguntar por el confusor\n\n¿La diferencia viene del tejido o del equipo con que se adquirió?\nEl equipo afecta la imagen y también quién llega a ese equipo\nSi no se ajusta por él, la comparación mezcla las dos cosas\n\n\n\n\n\n\n\nLa pregunta causal\n\n\n¿Qué cambiaría en la medida si interviniéramos sobre el paciente, y no sobre el equipo?"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#para-llevarse",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#para-llevarse",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Para llevarse",
-    "text": "Para llevarse\n\nUn píxel es una medición con unidades, no un color\nLa ventana cambia la imagen que vemos, no los datos con que medimos\nMedir bien es la condición para preguntar por la causa"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-resultado-que-nadie-puede-rehacer",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-resultado-que-nadie-puede-rehacer",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Un resultado que nadie puede rehacer",
-    "text": "Un resultado que nadie puede rehacer\n\nEl archivo crudo se sobrescribió al «limpiarlo»\nUn paso se hizo a mano en una hoja de cálculo\nLos faltantes se llenaron con la media, sin dejar rastro\nExiste resultados_final_v3.xlsx, pero no el código que lo produjo"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#reproducible-no-es-lo-mismo-que-correcto",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#reproducible-no-es-lo-mismo-que-correcto",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Reproducible no es lo mismo que correcto",
-    "text": "Reproducible no es lo mismo que correcto\n\nReproducible: los mismos datos y el mismo código dan el mismo resultado\nEs necesario para revisar un análisis, pero no lo hace correcto\nSin reproducibilidad, ni siquiera se puede saber si es correcto"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#lo-que-se-decide-antes-de-analizar",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#lo-que-se-decide-antes-de-analizar",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Lo que se decide antes de analizar",
-    "text": "Lo que se decide antes de analizar\n\nEl dato original no se toca: solo lectura, con su huella SHA-256\nCada transformación queda escrita: código y contrato, no clics\nNada se inventa: los faltantes se conservan con su motivo\nLa unidad de análisis se fija antes de mirar los resultados\n\n\n\n\n\n\n\nIdentificadores personales\n\n\nLos archivos con datos personales no entran a data/raw: primero se seudonimizan."
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#cuatro-capas-una-sola-dirección",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#cuatro-capas-una-sola-dirección",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Cuatro capas, una sola dirección",
-    "text": "Cuatro capas, una sola dirección\n\n\n\nEl dato fluye en un solo sentido; cada capa se puede regenerar desde la anterior."
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-contrato-dice-qué-es-válido",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-contrato-dice-qué-es-válido",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Un contrato dice qué es válido",
-    "text": "Un contrato dice qué es válido\n# Ilustrativo: contrato de una tabla de parámetros de marcha\ncontrato: parametros-de-marcha\nversion: 0.1.0\nunidad_de_analisis: participante\ncolumnas:\n  - {nombre: velocidad_marcha, unidad: m/s, rango: [0.1, 2.5]}\n  - {nombre: cadencia, unidad: pasos/min, rango: [40, 180]}\nfaltantes: conservar          # no se imputan\n\nEl contrato se versiona como el código: cambiarlo es una decisión registrada"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-manifiesto-dice-qué-se-usó",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-manifiesto-dice-qué-se-usó",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Un manifiesto dice qué se usó",
-    "text": "Un manifiesto dice qué se usó\nimport hashlib\n\ndef sha256(ruta):\n    h = hashlib.sha256()\n    with open(ruta, \"rb\") as f:\n        while trozo := f.read(1 &lt;&lt; 20):\n            h.update(trozo)\n    return h.hexdigest()\n\nUna huella por archivo, más la versión del contrato y del código"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#del-manifiesto-al-informe",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#del-manifiesto-al-informe",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Del manifiesto al informe",
-    "text": "Del manifiesto al informe\nuv sync                     # el mismo entorno\nuv run python figuras.py    # figuras desde derived/\nuv run quarto render        # el informe"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#tres-hábitos",
-    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#tres-hábitos",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Tres hábitos",
-    "text": "Tres hábitos\n\nGuardar el original y su huella antes de hacer cualquier otra cosa\nEscribir cada transformación como código que se pueda volver a correr\nDecir lo que el análisis mide y lo que no, también en el informe"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/index.html",
-    "href": "charlas/2026-experimentos-reproducibles/index.html",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "",
-    "text": "Evento\n\nSeminario de investigación\n\n\nModalidad\n\nPresencial, en aula\n\n\nDuración\n\n45 minutos y discusión\n\n\nPúblico\n\nEstudiantes de posgrado e investigadores\n\n\n\nLa charla parte de un problema conocido en los laboratorios: resultados que nadie puede volver a obtener porque el archivo original se sobrescribió, un paso se hizo a mano o los faltantes se llenaron sin dejar rastro. Propone cuatro reglas que se deciden antes de analizar y muestra cómo las aplica algunos softwares, una arquitectura en cuatro capas con contratos de datos versionados y manifiestos con la huella SHA-256 de cada archivo."
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/index.html#evento",
-    "href": "charlas/2026-experimentos-reproducibles/index.html#evento",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "",
-    "text": "Evento\n\nSeminario de investigación\n\n\nModalidad\n\nPresencial, en aula\n\n\nDuración\n\n45 minutos y discusión\n\n\nPúblico\n\nEstudiantes de posgrado e investigadores\n\n\n\nLa charla parte de un problema conocido en los laboratorios: resultados que nadie puede volver a obtener porque el archivo original se sobrescribió, un paso se hizo a mano o los faltantes se llenaron sin dejar rastro. Propone cuatro reglas que se deciden antes de analizar y muestra cómo las aplica algunos softwares, una arquitectura en cuatro capas con contratos de datos versionados y manifiestos con la huella SHA-256 de cada archivo."
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/index.html#presentación",
-    "href": "charlas/2026-experimentos-reproducibles/index.html#presentación",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Presentación",
-    "text": "Presentación\nVersión clara de la marca: la sala del seminario tiene luz natural.\n\n  \n\n\nPantalla completa PDF"
-  },
-  {
-    "objectID": "charlas/2026-experimentos-reproducibles/index.html#código",
-    "href": "charlas/2026-experimentos-reproducibles/index.html#código",
-    "title": "Experimentos biomédicos reproducibles",
-    "section": "Código",
-    "text": "Código\n\nArchivos de la charla.\n\n\n\n\n\n\nArchivo\nQué es\n\n\n\n\ndiapositivas.qmd\nLas diapositivas: revealjs y beamer desde el mismo archivo\n\n\nmanifiesto.py\nCrea y verifica el manifiesto SHA-256 de una carpeta de datos\n\n\nproyectos/bioforge/figuras.py\nEl diagrama de las cuatro capas\n\n\n\nEl manifiesto de la charla funciona sin dependencias, solo con la biblioteca estándar de Python:\npython3 manifiesto.py crear data/raw manifiesto.json\npython3 manifiesto.py verificar data/raw manifiesto.json\nDescargar manifiesto.py\n#!/usr/bin/env python3\n\"\"\"manifiesto.py — huella SHA-256 de cada archivo de una carpeta de datos originales.\n\nEjemplo de la charla «Experimentos biomédicos reproducibles». Escribe un manifiesto JSON con\nla ruta, el tamaño y el SHA-256 de cada archivo, y comprueba más adelante que nada cambió:\n\n    python3 manifiesto.py crear data/raw manifiesto.json\n    python3 manifiesto.py verificar data/raw manifiesto.json\n\"\"\"\nimport hashlib\nimport json\nimport sys\nfrom datetime import datetime, timezone\nfrom pathlib import Path\n\n\ndef sha256(ruta, bloque=1 &lt;&lt; 20):\n    h = hashlib.sha256()\n    with open(ruta, \"rb\") as f:\n        while trozo := f.read(bloque):\n            h.update(trozo)\n    return h.hexdigest()\n\n\ndef crear(carpeta, salida):\n    carpeta = Path(carpeta)\n    archivos = sorted(p for p in carpeta.rglob(\"*\") if p.is_file())\n    manifiesto = {\n        \"creado\": datetime.now(timezone.utc).isoformat(timespec=\"seconds\"),\n        \"carpeta\": str(carpeta),\n        \"archivos\": [{\"ruta\": str(p.relative_to(carpeta)), \"bytes\": p.stat().st_size, \"sha256\": sha256(p)}\n                     for p in archivos],\n    }\n    Path(salida).write_text(json.dumps(manifiesto, indent=2, ensure_ascii=False), encoding=\"utf-8\")\n    print(f\"{len(archivos)} archivos registrados en {salida}\")\n\n\ndef verificar(carpeta, entrada):\n    carpeta = Path(carpeta)\n    esperado = json.loads(Path(entrada).read_text(encoding=\"utf-8\"))\n    problemas = 0\n    for a in esperado[\"archivos\"]:\n        p = carpeta / a[\"ruta\"]\n        if not p.exists():\n            print(\"FALTA      \", a[\"ruta\"]); problemas += 1\n        elif sha256(p) != a[\"sha256\"]:\n            print(\"MODIFICADO \", a[\"ruta\"]); problemas += 1\n    registrados = {a[\"ruta\"] for a in esperado[\"archivos\"]}\n    for p in sorted(q for q in carpeta.rglob(\"*\") if q.is_file()):\n        if str(p.relative_to(carpeta)) not in registrados:\n            print(\"NUEVO      \", p.relative_to(carpeta)); problemas += 1\n    print(\"Sin cambios.\" if problemas == 0 else f\"{problemas} diferencias.\")\n    return problemas\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 4 or sys.argv[1] not in (\"crear\", \"verificar\"):\n        sys.exit(__doc__)\n    accion, carpeta, archivo = sys.argv[1:]\n    if accion == \"crear\":\n        crear(carpeta, archivo)\n    else:\n        sys.exit(1 if verificar(carpeta, archivo) else 0)"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-imagen-médica-es-una-medición",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-imagen-médica-es-una-medición",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Una imagen médica es una medición",
-    "text": "Una imagen médica es una medición\n\nCada píxel guarda un número, no un color\nQué mide ese número depende de la modalidad:\n\nTC: atenuación de los rayos X, en unidades Hounsfield (UH)\nRM: señal relativa, sin unidades absolutas\nEcografía: intensidad de los ecos\n\nEl equipo, el protocolo y la reconstrucción también quedan en el número"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#los-mismos-píxeles-como-números",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#los-mismos-píxeles-como-números",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Los mismos píxeles, como números",
-    "text": "Los mismos píxeles, como números\n\n\n\nFantoma sintético de Shepp-Logan en UH aproximadas.\n\n\n\nSeñalar el recuadro naranja: los números de la derecha son esos mismos píxeles. El borde del ventrículo se ve como un salto de unos 30 UH."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#el-número-tiene-unidades",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#el-número-tiene-unidades",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "El número tiene unidades",
-    "text": "El número tiene unidades\n\n\n\nTejido\nUH aproximadas\n\n\n\n\nAire\n−1000\n\n\nAgua\n0\n\n\nCerebro\n30 a 45\n\n\nHueso cortical\n700 a más de 1000\n\n\n\n\nCon PixelSpacing del encabezado DICOM, las distancias van en milímetros"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#la-ventana-cambia-lo-que-vemos",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#la-ventana-cambia-lo-que-vemos",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "La ventana cambia lo que vemos",
-    "text": "La ventana cambia lo que vemos\n\\[\ng = \\min\\!\\Big(1, \\max\\!\\big(0, \\tfrac{\\text{UH} - (L - W/2)}{W}\\big)\\Big)\n\\]\n\nLa pantalla tiene 256 grises; el rango de la TC, más de 4000 UH\nLa ventana \\(W\\) y el nivel \\(L\\) deciden qué parte se ve, no cambian el dato\n\n\nPreguntar al público: si guardo la imagen ya ventaneada en 8 bits, ¿qué información perdí?"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-fila-de-la-imagen-es-una-señal",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-fila-de-la-imagen-es-una-señal",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Una fila de la imagen es una señal",
-    "text": "Una fila de la imagen es una señal\n\n\n\nPerfil de intensidad: la misma herramienta que para un ECG."
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#qué-se-puede-medir",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#qué-se-puede-medir",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Qué se puede medir",
-    "text": "Qué se puede medir\n\nÁreas y volúmenes, con el tamaño del píxel y el grosor del corte\nIntensidades medias dentro de una región, en unidades físicas\nTextura y forma: cómo varían los valores y cómo es el borde\nCada medida es reproducible si se guarda el dato original y cada paso"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#lo-que-la-imagen-no-dice",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#lo-que-la-imagen-no-dice",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Lo que la imagen no dice",
-    "text": "Lo que la imagen no dice\n\nUna medida describe lo que mide: no es un diagnóstico\nDos equipos pueden dar números distintos para el mismo tejido\nUna diferencia entre grupos puede venir del protocolo y no del paciente"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#antes-de-comparar-preguntar-por-el-confusor",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#antes-de-comparar-preguntar-por-el-confusor",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Antes de comparar, preguntar por el confusor",
-    "text": "Antes de comparar, preguntar por el confusor\n\n¿La diferencia viene del tejido o del equipo con que se adquirió?\nEl equipo afecta la imagen y también quién llega a ese equipo\nSi no se ajusta por él, la comparación mezcla las dos cosas\n\n\n\n\n\n\n\nLa pregunta causal\n\n\n¿Qué cambiaría en la medida si interviniéramos sobre el paciente, y no sobre el equipo?"
-  },
-  {
-    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#para-llevarse",
-    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#para-llevarse",
-    "title": "Imágenes médicas: ver el cuerpo como dato",
-    "section": "Para llevarse",
-    "text": "Para llevarse\n\nUn píxel es una medición con unidades, no un color\nLa ventana cambia la imagen que vemos, no los datos con que medimos\nMedir bien es la condición para preguntar por la causa"
-  },
-  {
-    "objectID": "charlas/index.html",
-    "href": "charlas/index.html",
-    "title": "Charlas y Conferencias",
-    "section": "",
-    "text": "Cada charla tiene tres partes: el evento (dónde, cuándo y para quién), la presentación (en línea, en PDF y en versión para sala oscura) y el código con el que se hicieron las figuras.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImágenes médicas: ver el cuerpo como dato\n\n\nXII Seminario de Automática · 2026\n\n\nQué guarda cada píxel de una imagen médica, por qué la ventana cambia lo que vemos pero no el dato, y cómo medir bien abre la pregunta causal.\n\n\n\n\n\n5 nov 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExperimentos biomédicos reproducibles\n\n\nSeminario de investigación · 2026\n\n\nCuatro reglas y una arquitectura para que un experimento biomédico se pueda rehacer, del dato original a la evidencia.\n\n\n\n\n\n17 sep 2026\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html",
-    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html",
-    "title": "Laboratorio 1: histograma, ventana y contraste",
-    "section": "",
-    "text": "Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.\nCalcular e interpretar el histograma.\nElegir y justificar una ventana para cada estructura del fantoma."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#objetivos",
-    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#objetivos",
-    "title": "Laboratorio 1: histograma, ventana y contraste",
-    "section": "",
-    "text": "Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.\nCalcular e interpretar el histograma.\nElegir y justificar una ventana para cada estructura del fantoma."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#materiales",
-    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#materiales",
-    "title": "Laboratorio 1: histograma, ventana y contraste",
-    "section": "2 Materiales",
-    "text": "2 Materiales\n\nPython 3.12 o posterior con NumPy, SciPy y Matplotlib (el tutorial Entorno reproducible con uv explica la instalación).\nEl archivo datos_ejemplo.py, que genera el fantoma de Shepp-Logan en UH aproximadas."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#procedimiento",
-    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#procedimiento",
-    "title": "Laboratorio 1: histograma, ventana y contraste",
-    "section": "3 Procedimiento",
-    "text": "3 Procedimiento\n\n3.1 Cargar la imagen\nimport numpy as np\nfrom datos_ejemplo import fantoma_uh, ventana\n\nuh = fantoma_uh(256)            # matriz 256 × 256 en UH\nprint(uh.min(), uh.max())       # ¿qué estructuras explican los extremos?\n\n\n3.2 Histograma\nCalcula el histograma con np.histogram usando intervalos de 4 UH entre −150 y 250. Grafícalo y señala los picos.\n\n\n3.3 Ventanas\n\n\n\nTres ventanas sobre el mismo corte.\n\n\nPrueba al menos tres ventanas. Para cada una anota \\(W\\), \\(L\\) y qué estructura se distingue mejor.\n\n\n\n\n\n\nAdvertenciaCuidado\n\n\n\nLa ventana cambia la imagen que se muestra, no los datos. Las medidas (áreas, intensidades) se hacen siempre sobre la matriz en UH."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#preguntas-orientadoras",
-    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#preguntas-orientadoras",
-    "title": "Laboratorio 1: histograma, ventana y contraste",
-    "section": "4 Preguntas orientadoras",
-    "text": "4 Preguntas orientadoras\n\n¿Por qué el aire queda en −1000 UH y qué pasa con él en la ventana de cerebro?\nSi el histograma tiene dos picos muy cercanos, ¿qué ventana los separa mejor y por qué?\n¿Qué información se pierde al guardar la imagen ya ventaneada en 8 bits?"
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#entregables",
-    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#entregables",
-    "title": "Laboratorio 1: histograma, ventana y contraste",
-    "section": "5 Entregables",
-    "text": "5 Entregables\n\nUn cuaderno o script reproducible con el histograma y las tres ventanas.\nUna tabla con \\(W\\), \\(L\\) y la estructura que cada ventana deja ver.\nRespuestas breves a las preguntas orientadoras."
-  },
-  {
-    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#rúbrica",
-    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#rúbrica",
-    "title": "Laboratorio 1: histograma, ventana y contraste",
-    "section": "6 Rúbrica",
-    "text": "6 Rúbrica\n\nRúbrica del laboratorio 1.\n\n\n\n\n\n\n\nCriterio\nPeso\nLogrado\n\n\n\n\nConversión y verificación del rango en UH\n25 %\nExplica los valores extremos con las estructuras del fantoma\n\n\nHistograma\n25 %\nIntervalos adecuados, ejes con unidades y picos identificados\n\n\nElección de ventanas\n30 %\nCada ventana se justifica con el histograma\n\n\nReproducibilidad\n20 %\nEl código corre de principio a fin sin pasos manuales"
-  },
-  {
     "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#qué-le-pasa-a-la-unidad-motora",
     "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#qué-le-pasa-a-la-unidad-motora",
     "title": "Redes recurrentes y LSTM para EMG de aguja",
@@ -1174,6 +782,566 @@
     "title": "Redes recurrentes y LSTM para EMG de aguja",
     "section": "Medir con cuidado, modelar lo justo",
     "text": "Medir con cuidado, modelar lo justo\ny comprobar que el tiempo importa.\n\nTres ideas para llevarse. La exploración y el preprocesamiento deciden casi todo. Una LSTM es una herramienta para secuencias, y hay que demostrar que la secuencia aporta. La línea base sin tiempo y la prueba de desordenar las tramas son baratas y deberían acompañar a cualquier modelo recurrente."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "",
+    "text": "Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.\nCalcular e interpretar el histograma.\nElegir y justificar una ventana para cada estructura del fantoma."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#objetivos",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#objetivos",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "",
+    "text": "Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.\nCalcular e interpretar el histograma.\nElegir y justificar una ventana para cada estructura del fantoma."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#materiales",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#materiales",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "2 Materiales",
+    "text": "2 Materiales\n\nPython 3.12 o posterior con NumPy, SciPy y Matplotlib (el tutorial Entorno reproducible con uv explica la instalación).\nEl archivo datos_ejemplo.py, que genera el fantoma de Shepp-Logan en UH aproximadas."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#procedimiento",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#procedimiento",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "3 Procedimiento",
+    "text": "3 Procedimiento\n\n3.1 Cargar la imagen\nimport numpy as np\nfrom datos_ejemplo import fantoma_uh, ventana\n\nuh = fantoma_uh(256)            # matriz 256 × 256 en UH\nprint(uh.min(), uh.max())       # ¿qué estructuras explican los extremos?\n\n\n3.2 Histograma\nCalcula el histograma con np.histogram usando intervalos de 4 UH entre −150 y 250. Grafícalo y señala los picos.\n\n\n3.3 Ventanas\n\n\n\nTres ventanas sobre el mismo corte.\n\n\nPrueba al menos tres ventanas. Para cada una anota \\(W\\), \\(L\\) y qué estructura se distingue mejor.\n\n\n\n\n\n\nAdvertenciaCuidado\n\n\n\nLa ventana cambia la imagen que se muestra, no los datos. Las medidas (áreas, intensidades) se hacen siempre sobre la matriz en UH."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#preguntas-orientadoras",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#preguntas-orientadoras",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "4 Preguntas orientadoras",
+    "text": "4 Preguntas orientadoras\n\n¿Por qué el aire queda en −1000 UH y qué pasa con él en la ventana de cerebro?\nSi el histograma tiene dos picos muy cercanos, ¿qué ventana los separa mejor y por qué?\n¿Qué información se pierde al guardar la imagen ya ventaneada en 8 bits?"
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#entregables",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#entregables",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "5 Entregables",
+    "text": "5 Entregables\n\nUn cuaderno o script reproducible con el histograma y las tres ventanas.\nUna tabla con \\(W\\), \\(L\\) y la estructura que cada ventana deja ver.\nRespuestas breves a las preguntas orientadoras."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#rúbrica",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#rúbrica",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "6 Rúbrica",
+    "text": "6 Rúbrica\n\nRúbrica del laboratorio 1.\n\n\n\n\n\n\n\nCriterio\nPeso\nLogrado\n\n\n\n\nConversión y verificación del rango en UH\n25 %\nExplica los valores extremos con las estructuras del fantoma\n\n\nHistograma\n25 %\nIntervalos adecuados, ejes con unidades y picos identificados\n\n\nElección de ventanas\n30 %\nCada ventana se justifica con el histograma\n\n\nReproducibilidad\n20 %\nEl código corre de principio a fin sin pasos manuales"
+  },
+  {
+    "objectID": "charlas/index.html",
+    "href": "charlas/index.html",
+    "title": "Charlas y Conferencias",
+    "section": "",
+    "text": "Cada charla tiene tres partes: el evento (dónde, cuándo y para quién), la presentación (en línea, en PDF y en versión para sala oscura) y el código con el que se hicieron las figuras.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImágenes médicas: ver el cuerpo como dato\n\n\nXII Seminario de Automática · 2026\n\n\nQué guarda cada píxel de una imagen médica, por qué la ventana cambia lo que vemos pero no el dato, y cómo medir bien abre la pregunta causal.\n\n\n\n\n\n5 nov 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExperimentos biomédicos reproducibles\n\n\nSeminario de investigación · 2026\n\n\nCuatro reglas y una arquitectura para que un experimento biomédico se pueda rehacer, del dato original a la evidencia.\n\n\n\n\n\n17 sep 2026\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-imagen-médica-es-una-medición",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-imagen-médica-es-una-medición",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Una imagen médica es una medición",
+    "text": "Una imagen médica es una medición\n\nCada píxel guarda un número, no un color\nQué mide ese número depende de la modalidad:\n\nTC: atenuación de los rayos X, en unidades Hounsfield (UH)\nRM: señal relativa, sin unidades absolutas\nEcografía: intensidad de los ecos\n\nEl equipo, el protocolo y la reconstrucción también quedan en el número"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#los-mismos-píxeles-como-números",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#los-mismos-píxeles-como-números",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Los mismos píxeles, como números",
+    "text": "Los mismos píxeles, como números\n\n\n\nFantoma sintético de Shepp-Logan en UH aproximadas.\n\n\n\nSeñalar el recuadro naranja: los números de la derecha son esos mismos píxeles. El borde del ventrículo se ve como un salto de unos 30 UH."
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#el-número-tiene-unidades",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#el-número-tiene-unidades",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "El número tiene unidades",
+    "text": "El número tiene unidades\n\n\n\nTejido\nUH aproximadas\n\n\n\n\nAire\n−1000\n\n\nAgua\n0\n\n\nCerebro\n30 a 45\n\n\nHueso cortical\n700 a más de 1000\n\n\n\n\nCon PixelSpacing del encabezado DICOM, las distancias van en milímetros"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#la-ventana-cambia-lo-que-vemos",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#la-ventana-cambia-lo-que-vemos",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "La ventana cambia lo que vemos",
+    "text": "La ventana cambia lo que vemos\n\\[\ng = \\min\\!\\Big(1, \\max\\!\\big(0, \\tfrac{\\text{UH} - (L - W/2)}{W}\\big)\\Big)\n\\]\n\nLa pantalla tiene 256 grises; el rango de la TC, más de 4000 UH\nLa ventana \\(W\\) y el nivel \\(L\\) deciden qué parte se ve, no cambian el dato\n\n\nPreguntar al público: si guardo la imagen ya ventaneada en 8 bits, ¿qué información perdí?"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-fila-de-la-imagen-es-una-señal",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#una-fila-de-la-imagen-es-una-señal",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Una fila de la imagen es una señal",
+    "text": "Una fila de la imagen es una señal\n\n\n\nPerfil de intensidad: la misma herramienta que para un ECG."
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#qué-se-puede-medir",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#qué-se-puede-medir",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Qué se puede medir",
+    "text": "Qué se puede medir\n\nÁreas y volúmenes, con el tamaño del píxel y el grosor del corte\nIntensidades medias dentro de una región, en unidades físicas\nTextura y forma: cómo varían los valores y cómo es el borde\nCada medida es reproducible si se guarda el dato original y cada paso"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#lo-que-la-imagen-no-dice",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#lo-que-la-imagen-no-dice",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Lo que la imagen no dice",
+    "text": "Lo que la imagen no dice\n\nUna medida describe lo que mide: no es un diagnóstico\nDos equipos pueden dar números distintos para el mismo tejido\nUna diferencia entre grupos puede venir del protocolo y no del paciente"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#antes-de-comparar-preguntar-por-el-confusor",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#antes-de-comparar-preguntar-por-el-confusor",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Antes de comparar, preguntar por el confusor",
+    "text": "Antes de comparar, preguntar por el confusor\n\n¿La diferencia viene del tejido o del equipo con que se adquirió?\nEl equipo afecta la imagen y también quién llega a ese equipo\nSi no se ajusta por él, la comparación mezcla las dos cosas\n\n\n\n\n\n\n\nLa pregunta causal\n\n\n¿Qué cambiaría en la medida si interviniéramos sobre el paciente, y no sobre el equipo?"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#para-llevarse",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html#para-llevarse",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Para llevarse",
+    "text": "Para llevarse\n\nUn píxel es una medición con unidades, no un color\nLa ventana cambia la imagen que vemos, no los datos con que medimos\nMedir bien es la condición para preguntar por la causa"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/index.html",
+    "href": "charlas/2026-experimentos-reproducibles/index.html",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "",
+    "text": "Evento\n\nSeminario de investigación\n\n\nModalidad\n\nPresencial, en aula\n\n\nDuración\n\n45 minutos y discusión\n\n\nPúblico\n\nEstudiantes de posgrado e investigadores\n\n\n\nLa charla parte de un problema conocido en los laboratorios: resultados que nadie puede volver a obtener porque el archivo original se sobrescribió, un paso se hizo a mano o los faltantes se llenaron sin dejar rastro. Propone cuatro reglas que se deciden antes de analizar y muestra cómo las aplica algunos softwares, una arquitectura en cuatro capas con contratos de datos versionados y manifiestos con la huella SHA-256 de cada archivo."
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/index.html#evento",
+    "href": "charlas/2026-experimentos-reproducibles/index.html#evento",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "",
+    "text": "Evento\n\nSeminario de investigación\n\n\nModalidad\n\nPresencial, en aula\n\n\nDuración\n\n45 minutos y discusión\n\n\nPúblico\n\nEstudiantes de posgrado e investigadores\n\n\n\nLa charla parte de un problema conocido en los laboratorios: resultados que nadie puede volver a obtener porque el archivo original se sobrescribió, un paso se hizo a mano o los faltantes se llenaron sin dejar rastro. Propone cuatro reglas que se deciden antes de analizar y muestra cómo las aplica algunos softwares, una arquitectura en cuatro capas con contratos de datos versionados y manifiestos con la huella SHA-256 de cada archivo."
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/index.html#presentación",
+    "href": "charlas/2026-experimentos-reproducibles/index.html#presentación",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Presentación",
+    "text": "Presentación\nVersión clara de la marca: la sala del seminario tiene luz natural.\n\n  \n\n\nPantalla completa PDF"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/index.html#código",
+    "href": "charlas/2026-experimentos-reproducibles/index.html#código",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Código",
+    "text": "Código\n\nArchivos de la charla.\n\n\n\n\n\n\nArchivo\nQué es\n\n\n\n\ndiapositivas.qmd\nLas diapositivas: revealjs y beamer desde el mismo archivo\n\n\nmanifiesto.py\nCrea y verifica el manifiesto SHA-256 de una carpeta de datos\n\n\nproyectos/bioforge/figuras.py\nEl diagrama de las cuatro capas\n\n\n\nEl manifiesto de la charla funciona sin dependencias, solo con la biblioteca estándar de Python:\npython3 manifiesto.py crear data/raw manifiesto.json\npython3 manifiesto.py verificar data/raw manifiesto.json\nDescargar manifiesto.py\n#!/usr/bin/env python3\n\"\"\"manifiesto.py — huella SHA-256 de cada archivo de una carpeta de datos originales.\n\nEjemplo de la charla «Experimentos biomédicos reproducibles». Escribe un manifiesto JSON con\nla ruta, el tamaño y el SHA-256 de cada archivo, y comprueba más adelante que nada cambió:\n\n    python3 manifiesto.py crear data/raw manifiesto.json\n    python3 manifiesto.py verificar data/raw manifiesto.json\n\"\"\"\nimport hashlib\nimport json\nimport sys\nfrom datetime import datetime, timezone\nfrom pathlib import Path\n\n\ndef sha256(ruta, bloque=1 &lt;&lt; 20):\n    h = hashlib.sha256()\n    with open(ruta, \"rb\") as f:\n        while trozo := f.read(bloque):\n            h.update(trozo)\n    return h.hexdigest()\n\n\ndef crear(carpeta, salida):\n    carpeta = Path(carpeta)\n    archivos = sorted(p for p in carpeta.rglob(\"*\") if p.is_file())\n    manifiesto = {\n        \"creado\": datetime.now(timezone.utc).isoformat(timespec=\"seconds\"),\n        \"carpeta\": str(carpeta),\n        \"archivos\": [{\"ruta\": str(p.relative_to(carpeta)), \"bytes\": p.stat().st_size, \"sha256\": sha256(p)}\n                     for p in archivos],\n    }\n    Path(salida).write_text(json.dumps(manifiesto, indent=2, ensure_ascii=False), encoding=\"utf-8\")\n    print(f\"{len(archivos)} archivos registrados en {salida}\")\n\n\ndef verificar(carpeta, entrada):\n    carpeta = Path(carpeta)\n    esperado = json.loads(Path(entrada).read_text(encoding=\"utf-8\"))\n    problemas = 0\n    for a in esperado[\"archivos\"]:\n        p = carpeta / a[\"ruta\"]\n        if not p.exists():\n            print(\"FALTA      \", a[\"ruta\"]); problemas += 1\n        elif sha256(p) != a[\"sha256\"]:\n            print(\"MODIFICADO \", a[\"ruta\"]); problemas += 1\n    registrados = {a[\"ruta\"] for a in esperado[\"archivos\"]}\n    for p in sorted(q for q in carpeta.rglob(\"*\") if q.is_file()):\n        if str(p.relative_to(carpeta)) not in registrados:\n            print(\"NUEVO      \", p.relative_to(carpeta)); problemas += 1\n    print(\"Sin cambios.\" if problemas == 0 else f\"{problemas} diferencias.\")\n    return problemas\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 4 or sys.argv[1] not in (\"crear\", \"verificar\"):\n        sys.exit(__doc__)\n    accion, carpeta, archivo = sys.argv[1:]\n    if accion == \"crear\":\n        crear(carpeta, archivo)\n    else:\n        sys.exit(1 if verificar(carpeta, archivo) else 0)"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-resultado-que-nadie-puede-rehacer",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-resultado-que-nadie-puede-rehacer",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Un resultado que nadie puede rehacer",
+    "text": "Un resultado que nadie puede rehacer\n\nEl archivo crudo se sobrescribió al «limpiarlo»\nUn paso se hizo a mano en una hoja de cálculo\nLos faltantes se llenaron con la media, sin dejar rastro\nExiste resultados_final_v3.xlsx, pero no el código que lo produjo"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#reproducible-no-es-lo-mismo-que-correcto",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#reproducible-no-es-lo-mismo-que-correcto",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Reproducible no es lo mismo que correcto",
+    "text": "Reproducible no es lo mismo que correcto\n\nReproducible: los mismos datos y el mismo código dan el mismo resultado\nEs necesario para revisar un análisis, pero no lo hace correcto\nSin reproducibilidad, ni siquiera se puede saber si es correcto"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#lo-que-se-decide-antes-de-analizar",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#lo-que-se-decide-antes-de-analizar",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Lo que se decide antes de analizar",
+    "text": "Lo que se decide antes de analizar\n\nEl dato original no se toca: solo lectura, con su huella SHA-256\nCada transformación queda escrita: código y contrato, no clics\nNada se inventa: los faltantes se conservan con su motivo\nLa unidad de análisis se fija antes de mirar los resultados\n\n\n\n\n\n\n\nIdentificadores personales\n\n\nLos archivos con datos personales no entran a data/raw: primero se seudonimizan."
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#cuatro-capas-una-sola-dirección",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#cuatro-capas-una-sola-dirección",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Cuatro capas, una sola dirección",
+    "text": "Cuatro capas, una sola dirección\n\n\n\nEl dato fluye en un solo sentido; cada capa se puede regenerar desde la anterior."
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-contrato-dice-qué-es-válido",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-contrato-dice-qué-es-válido",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Un contrato dice qué es válido",
+    "text": "Un contrato dice qué es válido\n# Ilustrativo: contrato de una tabla de parámetros de marcha\ncontrato: parametros-de-marcha\nversion: 0.1.0\nunidad_de_analisis: participante\ncolumnas:\n  - {nombre: velocidad_marcha, unidad: m/s, rango: [0.1, 2.5]}\n  - {nombre: cadencia, unidad: pasos/min, rango: [40, 180]}\nfaltantes: conservar          # no se imputan\n\nEl contrato se versiona como el código: cambiarlo es una decisión registrada"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-manifiesto-dice-qué-se-usó",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#un-manifiesto-dice-qué-se-usó",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Un manifiesto dice qué se usó",
+    "text": "Un manifiesto dice qué se usó\nimport hashlib\n\ndef sha256(ruta):\n    h = hashlib.sha256()\n    with open(ruta, \"rb\") as f:\n        while trozo := f.read(1 &lt;&lt; 20):\n            h.update(trozo)\n    return h.hexdigest()\n\nUna huella por archivo, más la versión del contrato y del código"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#del-manifiesto-al-informe",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#del-manifiesto-al-informe",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Del manifiesto al informe",
+    "text": "Del manifiesto al informe\nuv sync                     # el mismo entorno\nuv run python figuras.py    # figuras desde derived/\nuv run quarto render        # el informe"
+  },
+  {
+    "objectID": "charlas/2026-experimentos-reproducibles/diapositivas.html#tres-hábitos",
+    "href": "charlas/2026-experimentos-reproducibles/diapositivas.html#tres-hábitos",
+    "title": "Experimentos biomédicos reproducibles",
+    "section": "Tres hábitos",
+    "text": "Tres hábitos\n\nGuardar el original y su huella antes de hacer cualquier otra cosa\nEscribir cada transformación como código que se pueda volver a correr\nDecir lo que el análisis mide y lo que no, también en el informe"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-imagen-médica-es-una-medición",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-imagen-médica-es-una-medición",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Una imagen médica es una medición",
+    "text": "Una imagen médica es una medición\n\nCada píxel guarda un número, no un color\nQué mide ese número depende de la modalidad:\n\nTC: atenuación de los rayos X, en unidades Hounsfield (UH)\nRM: señal relativa, sin unidades absolutas\nEcografía: intensidad de los ecos\n\nEl equipo, el protocolo y la reconstrucción también quedan en el número"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#los-mismos-píxeles-como-números",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#los-mismos-píxeles-como-números",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Los mismos píxeles, como números",
+    "text": "Los mismos píxeles, como números\n\n\n\nFantoma sintético de Shepp-Logan en UH aproximadas.\n\n\n\nSeñalar el recuadro naranja: los números de la derecha son esos mismos píxeles. El borde del ventrículo se ve como un salto de unos 30 UH."
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#el-número-tiene-unidades",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#el-número-tiene-unidades",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "El número tiene unidades",
+    "text": "El número tiene unidades\n\n\n\nTejido\nUH aproximadas\n\n\n\n\nAire\n−1000\n\n\nAgua\n0\n\n\nCerebro\n30 a 45\n\n\nHueso cortical\n700 a más de 1000\n\n\n\n\nCon PixelSpacing del encabezado DICOM, las distancias van en milímetros"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#la-ventana-cambia-lo-que-vemos",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#la-ventana-cambia-lo-que-vemos",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "La ventana cambia lo que vemos",
+    "text": "La ventana cambia lo que vemos\n\\[\ng = \\min\\!\\Big(1, \\max\\!\\big(0, \\tfrac{\\text{UH} - (L - W/2)}{W}\\big)\\Big)\n\\]\n\nLa pantalla tiene 256 grises; el rango de la TC, más de 4000 UH\nLa ventana \\(W\\) y el nivel \\(L\\) deciden qué parte se ve, no cambian el dato\n\n\nPreguntar al público: si guardo la imagen ya ventaneada en 8 bits, ¿qué información perdí?"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-fila-de-la-imagen-es-una-señal",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#una-fila-de-la-imagen-es-una-señal",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Una fila de la imagen es una señal",
+    "text": "Una fila de la imagen es una señal\n\n\n\nPerfil de intensidad: la misma herramienta que para un ECG."
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#qué-se-puede-medir",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#qué-se-puede-medir",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Qué se puede medir",
+    "text": "Qué se puede medir\n\nÁreas y volúmenes, con el tamaño del píxel y el grosor del corte\nIntensidades medias dentro de una región, en unidades físicas\nTextura y forma: cómo varían los valores y cómo es el borde\nCada medida es reproducible si se guarda el dato original y cada paso"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#lo-que-la-imagen-no-dice",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#lo-que-la-imagen-no-dice",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Lo que la imagen no dice",
+    "text": "Lo que la imagen no dice\n\nUna medida describe lo que mide: no es un diagnóstico\nDos equipos pueden dar números distintos para el mismo tejido\nUna diferencia entre grupos puede venir del protocolo y no del paciente"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#antes-de-comparar-preguntar-por-el-confusor",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#antes-de-comparar-preguntar-por-el-confusor",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Antes de comparar, preguntar por el confusor",
+    "text": "Antes de comparar, preguntar por el confusor\n\n¿La diferencia viene del tejido o del equipo con que se adquirió?\nEl equipo afecta la imagen y también quién llega a ese equipo\nSi no se ajusta por él, la comparación mezcla las dos cosas\n\n\n\n\n\n\n\nLa pregunta causal\n\n\n¿Qué cambiaría en la medida si interviniéramos sobre el paciente, y no sobre el equipo?"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#para-llevarse",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html#para-llevarse",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Para llevarse",
+    "text": "Para llevarse\n\nUn píxel es una medición con unidades, no un color\nLa ventana cambia la imagen que vemos, no los datos con que medimos\nMedir bien es la condición para preguntar por la causa"
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "",
+    "text": "Evento\n\nXII Seminario de Automática\n\n\nModalidad\n\nPresencial, en auditorio\n\n\nDuración\n\n30 minutos y preguntas\n\n\nPúblico\n\nEstudiantes y docentes de ingeniería\n\n\n\nUna charla para quien llega desde la automática y el control: una imagen médica se puede leer como cualquier otra medición. Cada píxel guarda un número con unidades que dependen del equipo y del protocolo; la ventana y el nivel deciden qué parte de ese rango vemos, pero no cambian el dato con el que se mide. A partir de ahí, una fila de la imagen es una señal, una región es un conjunto de mediciones y la pregunta por la causa exige primero separar lo que viene del paciente de lo que viene del equipo.\nTodas las figuras se hicieron con un fantoma sintético de Shepp-Logan llevado a unidades Hounsfield aproximadas: no hay datos de pacientes en la charla."
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html#evento",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html#evento",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "",
+    "text": "Evento\n\nXII Seminario de Automática\n\n\nModalidad\n\nPresencial, en auditorio\n\n\nDuración\n\n30 minutos y preguntas\n\n\nPúblico\n\nEstudiantes y docentes de ingeniería\n\n\n\nUna charla para quien llega desde la automática y el control: una imagen médica se puede leer como cualquier otra medición. Cada píxel guarda un número con unidades que dependen del equipo y del protocolo; la ventana y el nivel deciden qué parte de ese rango vemos, pero no cambian el dato con el que se mide. A partir de ahí, una fila de la imagen es una señal, una región es un conjunto de mediciones y la pregunta por la causa exige primero separar lo que viene del paciente de lo que viene del equipo.\nTodas las figuras se hicieron con un fantoma sintético de Shepp-Logan llevado a unidades Hounsfield aproximadas: no hay datos de pacientes en la charla."
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html#presentación",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html#presentación",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Presentación",
+    "text": "Presentación\nLa charla se preparó para un auditorio a oscuras, con la versión sala oscura de la marca: fondo neutro casi negro, que no altera la lectura de las imágenes en gris. Para un aula con luz o ventanas está la versión clara, con el mismo contenido.\n\n  \n\n\nPantalla completa Versión clara PDF sala oscura PDF claro\n\nDentro de las diapositivas: las flechas avanzan, F pone pantalla completa, S abre las notas del orador y Esc muestra todas las diapositivas."
+  },
+  {
+    "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html#código",
+    "href": "charlas/2026-ver-el-cuerpo-como-dato/index.html#código",
+    "title": "Imágenes médicas: ver el cuerpo como dato",
+    "section": "Código",
+    "text": "Código\nLas diapositivas y las figuras salen de archivos de texto que están en el repositorio de este sitio, en la carpeta charlas/2026-ver-el-cuerpo-como-dato/:\n\nArchivos de la charla.\n\n\nArchivo\nQué es\n\n\n\n\n_diapositivas.qmd\nEl contenido, compartido por las dos versiones\n\n\ndiapositivas.qmd\nVersión clara: revealjs y beamer\n\n\ndiapositivas-sala.qmd\nVersión sala oscura: revealjs y beamer\n\n\nfiguras.py\nLas figuras, en claro y en oscuro\n\n\nrecursos/python/datos_ejemplo.py\nEl fantoma sintético en UH\n\n\n\nPara reproducirla desde la raíz del repositorio:\nuv run python charlas/2026-ver-el-cuerpo-como-dato/figuras.py\nuv run quarto render charlas/2026-ver-el-cuerpo-como-dato/\nEste es el código que hizo las figuras; la página lo lee del archivo, así que siempre muestra la versión vigente:\n\"\"\"Figuras de la charla «Imágenes médicas: ver el cuerpo como dato» (fantoma sintético).\"\"\"\nimport sys\nfrom pathlib import Path\n\nAQUI = Path(__file__).resolve().parent\nRAIZ = next(p for p in AQUI.parents if (p / \"_quarto.yml\").exists())\nsys.path[:0] = [str(RAIZ / \"recursos/marca/python\"), str(RAIZ / \"recursos/python\")]\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom matplotlib.patches import Rectangle\nimport caicedo_mpl as cm\nfrom datos_ejemplo import fantoma_uh, ventana\n\nFIG = AQUI / \"fig\"\n\n\ndef matriz(contexto, modo, nombre):\n    cm.usar(contexto, modo)\n    uh = fantoma_uh(256, ruido=4)\n    w, l = 80, 40\n    f0, c0, n = 124, 118, 8  # recorte de 8 x 8 en el borde de un ventrículo (LCR y cerebro)\n    fig, (a1, a2) = plt.subplots(1, 2, figsize=(9.6, 4.4), gridspec_kw={\"width_ratios\": [1, 1]})\n    a1.imshow(ventana(uh, w, l), vmin=0, vmax=1)\n    a1.add_patch(Rectangle((c0 - .5, f0 - .5), n, n, fill=False, ec=cm.T[\"causa\"], lw=2.2))\n    a1.set_title(\"Corte (ventana de cerebro)\", loc=\"center\"); a1.axis(\"off\")\n    rec = uh[f0:f0 + n, c0:c0 + n]\n    a2.imshow(ventana(rec, w, l), vmin=0, vmax=1)\n    for i in range(n):\n        for j in range(n):\n            g = ventana(rec[i, j], w, l)\n            a2.text(j, i, f\"{rec[i, j]:.0f}\", ha=\"center\", va=\"center\", fontsize=8.5 if contexto == \"documento\" else 11,\n                    color=cm.T[\"tinta\"] if g &gt; .55 else cm.T[\"luz\"])\n    a2.set_title(\"Los mismos píxeles: números en UH\", loc=\"center\")\n    a2.set_xticks([]); a2.set_yticks([])\n    for s in a2.spines.values():\n        s.set_visible(True); s.set_color(cm.T[\"causa\"]); s.set_linewidth(2.2)\n    cm.guardar(fig, FIG / nombre); plt.close(fig)\n\n\ndef perfil(contexto, modo, nombre):\n    cm.usar(contexto, modo)\n    uh = fantoma_uh(256, ruido=4)\n    fila = 128\n    fig, ax = plt.subplots(figsize=(9.6, 3.6))\n    ax.axhspan(0, 80, color=cm.T[\"dato\"], alpha=.10, lw=0)\n    ax.plot(np.arange(256), uh[fila])\n    ax.set_ylim(-60, 140); ax.set_xlim(20, 236)\n    ax.text(232, 72, \"ventana de cerebro (0 a 80 UH)\", ha=\"right\", va=\"top\", fontsize=9 if contexto == \"documento\" else 12,\n            color=cm.TENUE[modo])\n    ax.set_xlabel(\"Columna (píxel)\"); ax.set_ylabel(\"UH\")\n    ax.set_title(\"Perfil de intensidad de la fila central\")\n    cm.guardar(fig, FIG / nombre); plt.close(fig)\n\n\ndef main():\n    for modo in (\"claro\", \"oscuro\"):\n        sufijo = \"\" if modo == \"claro\" else \"-oscuro\"\n        matriz(\"diapositiva\", modo, \"matriz\" + sufijo)\n        perfil(\"diapositiva\", modo, \"perfil\" + sufijo)\n\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html",
+    "href": "cursos/AASI_M/index.html",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "",
+    "text": "Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática (Gonzalez y Woods 2018; Suetens 2017).\nEl curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.\n\n\n\nCódigo\n\nPSIM\n\n\nSemestre\n\n2026-2\n\n\nHorario\n\nlunes y jueves, 7:00–9:00\n\n\nIntensidad\n\n4 horas por semana\n\n\nPrerrequisito\n\nSistemas y Señales Biomédicos\n\n\nEvaluación\n\n3 laboratorios (60 %) y proyecto final (40 %)"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#introducción",
+    "href": "cursos/AASI_M/index.html#introducción",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "",
+    "text": "Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática (Gonzalez y Woods 2018; Suetens 2017).\nEl curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.\n\n\n\nCódigo\n\nPSIM\n\n\nSemestre\n\n2026-2\n\n\nHorario\n\nlunes y jueves, 7:00–9:00\n\n\nIntensidad\n\n4 horas por semana\n\n\nPrerrequisito\n\nSistemas y Señales Biomédicos\n\n\nEvaluación\n\n3 laboratorios (60 %) y proyecto final (40 %)"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#resultados-de-aprendizaje",
+    "href": "cursos/AASI_M/index.html#resultados-de-aprendizaje",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Resultados de Aprendizaje",
+    "text": "Resultados de Aprendizaje\nAl terminar el curso, cada estudiante podrá:\n\n\nDescribir una imagen médica como una función muestreada y cuantizada, y leer de su encabezado DICOM el tamaño del píxel, el grosor del corte y la conversión a unidades físicas.\nAplicar operaciones puntuales y de histograma (ventana y nivel, ecualización) y justificar cuál conviene para una tarea de lectura.\nImplementar en NumPy filtros espaciales y en frecuencia (Ideal, Butterworth, Gaussiano, pasa-banda y notch) y comparar sus efectos sobre el espectro y la imagen.\nSegmentar estructuras por umbral, regiones y morfología matemática, y medir sobre ellas áreas, intensidades y formas.\nConstruir un conjunto de características reproducible y ajustar con él una regresión logística o lineal múltiple, informando lo que el modelo mide y lo que no."
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#calendario-y-fechas-importantes",
+    "href": "cursos/AASI_M/index.html#calendario-y-fechas-importantes",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Calendario y fechas importantes",
+    "text": "Calendario y fechas importantes\n\nFechas importantes\n\n\n\n\nFecha\nEntrega\nPeso\n\n\n\n\n2026-08-28\nLaboratorio 1: histograma y contraste\n20 %\n\n\n2026-10-02\nLaboratorio 2: filtrado en frecuencia\n20 %\n\n\n2026-10-23\nPropuesta del proyecto\n5 %\n\n\n2026-10-30\nLaboratorio 3: segmentación y morfología\n20 %\n\n\n2026-11-13\nAvance del proyecto\n10 %\n\n\n2026-11-19\nPresentación final del proyecto\n25 %\n\n\n\n\n\n\nSemana a semana\n\n\n\n\n\n\n\n\n\n\nSemana\nLunes\nTema\nMaterial\n\n\n\n\n1\n2026-08-03\nLa imagen como dato: muestreo, cuantización y DICOM\nPresentación 1\n\n\n2\n2026-08-10\nHistograma, ventana y nivel\nLaboratorio 1\n\n\n3\n2026-08-17\nOperaciones puntuales y aritméticas festivo el lunes\n\n\n\n4\n2026-08-24\nConvolución 2D y operaciones espaciales\n\n\n\n5\n2026-08-31\nSuavizado y realce\n\n\n\n6\n2026-09-07\nDetección de bordes\nLaboratorio 2\n\n\n7\n2026-09-14\nTransformada de Fourier 2D\n\n\n\n8\n2026-09-21\nFiltrado en frecuencia: de Ideal a notch\nPresentación 8\n\n\n9\n2026-09-28\nSegmentación por umbral y por regiones\n\n\n\n10\n2026-10-05\nMorfología matemática\nLaboratorio 3\n\n\n11\n2026-10-12\nWavelets festivo el lunes\n\n\n\n12\n2026-10-19\nExtracción de características\n\n\n\n13\n2026-10-26\nDe la imagen a la tabla\n\n\n\n14\n2026-11-02\nRegresión logística y lineal múltiple festivo el lunes\n\n\n\n15\n2026-11-09\nValidación e informe honesto\n\n\n\n16\n2026-11-16\nPresentaciones finales festivo el lunes"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#presentaciones",
+    "href": "cursos/AASI_M/index.html#presentaciones",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Presentaciones",
+    "text": "Presentaciones\nCada presentación tiene una versión en línea (revealjs, para proyectar desde el navegador) y un PDF (beamer) con la misma composición.\n\n\n\n  \n    Semana [N]\n    \n      Redes recurrentes y LSTM para EMG de aguja\n      Un ejemplo completo con cuatro miradas: qué ve el clínico en un EMG de aguja, cómo se limpia y se resume la señal, cómo funcionan la RNN y la LSTM y cómo comprobar si el orden temporal aporta.\n    \n    \n      Diapositivas\n      PDF\n    \n  \n\n  \n    Semana [N]\n    \n      Redes recurrentes y LSTM\n      Qué es el estado oculto de una red recurrente, cómo se entrena con retropropagación en el tiempo, por qué el gradiente se desvanece y cómo lo resuelven la LSTM y la GRU.\n    \n    \n      Diapositivas\n      PDF\n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#laboratorios",
+    "href": "cursos/AASI_M/index.html#laboratorios",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Laboratorios",
+    "text": "Laboratorios\nLas guías se leen en línea o en PDF. Cada una trae objetivos, procedimiento, preguntas orientadoras, entregables y rúbrica.\n\n\n\n  \n    Lab 1\n    \n      Laboratorio 1: histograma, ventana y contraste\n      Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.\n    \n    \n      Guía\n      PDF\n    \n  \n\n  \n    Lab 2\n    \n      Laboratorio 2: filtrado en frecuencia\n      Implementar filtros Ideal, Butterworth y Gaussiano y medir los anillos del filtro ideal.\n    \n    \n      Guía\n      PDF\n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#recursos-y-tutoriales",
+    "href": "cursos/AASI_M/index.html#recursos-y-tutoriales",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Recursos y tutoriales",
+    "text": "Recursos y tutoriales\n\nTutoriales del sitio\n\n\n\n\n\nEntorno reproducible con uv y Quarto\n\n\nInstalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo.\n\n\n\n\n\n\n\n\n\n\nFiltros en frecuencia: de Ideal a Gaussiano\n\n\nTransformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\nSoftware y datos\n\nPython con NumPy, SciPy y scikit-image: todo el trabajo del curso.\npydicom: leer y escribir archivos DICOM desde Python.\n3D Slicer e ITK-SNAP: visualizar volúmenes y revisar segmentaciones a mano.\nThe Cancer Imaging Archive: colecciones públicas de imágenes para el proyecto final.\nDatos de ejemplo del sitio: el fantoma de Shepp-Logan en unidades Hounsfield aproximadas."
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#referentes",
+    "href": "cursos/AASI_M/index.html#referentes",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Referentes",
+    "text": "Referentes\n\n\nBankman, Isaac N., ed. 2009. Handbook of Medical Image Processing and Analysis. 2.ª ed. Academic Press.\n\n\nGonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. 4.ª ed. Pearson.\n\n\nPrince, Jerry L., y Jonathan M. Links. 2014. Medical Imaging Signals and Systems. 2.ª ed. Pearson.\n\n\nShepp, Lawrence A., y Benjamin F. Logan. 1974. «The Fourier Reconstruction of a Head Section». IEEE Transactions on Nuclear Science 21 (3): 21-43.\n\n\nSuetens, Paul. 2017. Fundamentals of Medical Imaging. 3.ª ed. Cambridge University Press."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "",
+    "text": "Calcular el espectro centrado de una imagen y la distancia \\(D(u, v)\\) en ciclos/píxel.\nImplementar pasa bajos y pasa altos Ideal, Butterworth y Gaussiano con el mismo \\(D_0\\).\nMedir el efecto Gibbs del filtro ideal en un perfil de intensidad."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#objetivos",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#objetivos",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "",
+    "text": "Calcular el espectro centrado de una imagen y la distancia \\(D(u, v)\\) en ciclos/píxel.\nImplementar pasa bajos y pasa altos Ideal, Butterworth y Gaussiano con el mismo \\(D_0\\).\nMedir el efecto Gibbs del filtro ideal en un perfil de intensidad."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#procedimiento",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#procedimiento",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "2 Procedimiento",
+    "text": "2 Procedimiento\n\n2.1 Espectro y máscaras\nSigue el tutorial Filtros en frecuencia para construir las tres máscaras con \\(D_0 = 0{,}08\\) ciclos/píxel.\n\n\n\nLas tres funciones de transferencia.\n\n\n\n\n2.2 Perfil de intensidad\nToma la fila central de la imagen original y de las filtradas y grafícalas juntas.\n\n\n\nPerfil de la fila central.\n\n\n\n\n2.3 Pasa altos y notch\nConstruye los pasa altos como \\(1 - H\\) y aplica un notch sobre una imagen a la que le sumaste un patrón \\(0{,}1 \\sin(2\\pi \\cdot 0{,}2\\, x)\\)."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#preguntas-orientadoras",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#preguntas-orientadoras",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "3 Preguntas orientadoras",
+    "text": "3 Preguntas orientadoras\n\n¿Por qué el filtro ideal oscila cerca de los bordes y el gaussiano no?\n¿Cómo cambia el resultado si \\(D_0\\) se expresa en ciclos/mm con un PixelSpacing de 0,5 mm?\n¿Dónde aparece en el espectro el patrón periódico que añadiste?"
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#entregables",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#entregables",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "4 Entregables",
+    "text": "4 Entregables\n\nScript con las máscaras, las imágenes filtradas y los perfiles.\nUna figura comparativa por tipo de filtro, con ejes y unidades.\nRespuestas a las preguntas orientadoras."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#rúbrica",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#rúbrica",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "5 Rúbrica",
+    "text": "5 Rúbrica\n\nRúbrica del laboratorio 2.\n\n\n\n\n\n\n\nCriterio\nPeso\nLogrado\n\n\n\n\nMáscaras correctas y centradas\n30 %\nLas tres comparten \\(D_0\\) y unidades\n\n\nComparación visual y por perfil\n30 %\nSe mide la amplitud de los anillos\n\n\nNotch\n20 %\nEl pico del patrón desaparece del espectro\n\n\nReproducibilidad\n20 %\nEl código corre de principio a fin"
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#datos-con-orden",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#datos-con-orden",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Datos con orden",
+    "text": "Datos con orden\nEn una señal biomédica el orden importa: el mismo conjunto de muestras, desordenado, ya no es la misma señal.\n\nEMG, ECG, EEG: el ritmo y la forma de los potenciales están en cómo cambia la señal en el tiempo\nUna red densa necesita una entrada de longitud fija y no comparte nada entre instantes\nUna red convolucional comparte pesos, pero ve una ventana local fija\n\nQueremos un modelo que lea la secuencia paso a paso, con los mismos pesos en cada paso, y que lleve un resumen de lo que ya vio.\n\nPregunta de entrada para la clase: si barajo las muestras de un ECG, ¿cambian la media y la varianza? No. ¿Cambia el diagnóstico? Sí. Esa diferencia es lo que un modelo secuencial intenta aprovechar. La red densa tendría un peso distinto para cada instante y no sabría que el instante 10 y el 11 son vecinos."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#cuatro-formas-de-usar-una-secuencia",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#cuatro-formas-de-usar-una-secuencia",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Cuatro formas de usar una secuencia",
+    "text": "Cuatro formas de usar una secuencia\n\n\n\n\n\n\n\n\nForma\nEjemplo biomédico\n\n\n\n\nMuchos a uno\nclasificar un registro de EMG como sano, miopatía o neuropatía\n\n\nMuchos a muchos\nmarcar cada latido de un ECG como normal o ectópico\n\n\nUno a muchos\ngenerar una señal sintética a partir de una etiqueta\n\n\nSecuencia a secuencia\ntraducir una señal de un sensor a otro\n\n\n\n\nEn el ejemplo de EMG del curso usamos el esquema muchos a uno: la red lee las 32 tramas de una ventana y solo el último estado pasa al clasificador. Conviene que el estudiante identifique el esquema antes de escribir una sola línea de código, porque decide qué salidas de la red se usan y cómo se define la pérdida."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#el-estado-oculto-es-la-memoria",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#el-estado-oculto-es-la-memoria",
+    "title": "Redes recurrentes y LSTM",
+    "section": "El estado oculto es la memoria",
+    "text": "El estado oculto es la memoria\nEn cada paso la red combina la entrada actual con su estado anterior:\n\\[\nh_t = \\tanh\\left(W_{xh}\\,x_t + b_{xh} + W_{hh}\\,h_{t-1} + b_{hh}\\right), \\qquad h_0 = 0\n\\]\n\n\n\n\n\n\n\n\nSímbolo\nForma\nPapel\n\n\n\n\n\\(x_t\\)\n\\(D\\)\nentrada en el paso \\(t\\)\n\n\n\\(h_t\\)\n\\(H\\)\nestado oculto: resumen de \\(x_1, \\dots, x_t\\)\n\n\n\\(W_{xh}\\)\n\\(H \\times D\\)\ncómo entra el presente\n\n\n\\(W_{hh}\\)\n\\(H \\times H\\)\ncómo pasa el pasado: la recurrencia\n\n\n\n\nEsta es la red de Elman. Los dos sesgos aparecen separados porque así los guarda PyTorch (bias_ih y bias_hh); matemáticamente se pueden sumar en uno. La tangente hiperbólica mantiene el estado entre -1 y 1. La clave es que \\(W_{xh}\\), \\(W_{hh}\\) y los sesgos son los mismos en todos los pasos."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#desenrollar-en-el-tiempo",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#desenrollar-en-el-tiempo",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Desenrollar en el tiempo",
+    "text": "Desenrollar en el tiempo\n\n\nLeer el diagrama en orden: A, la vista plegada con el lazo de memoria; B, la misma celda desenrollada en los pasos de tiempo; C, el interior de una celda; D, los parámetros. Desenrollada, una red recurrente es una red profunda con tantas capas como pasos de tiempo y con los pesos compartidos entre capas. Esa observación explica tanto cómo se entrena como por qué cuesta entrenarla."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-ejemplo-a-mano",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-ejemplo-a-mano",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Un ejemplo a mano",
+    "text": "Un ejemplo a mano\nUna red con \\(D = H = 1\\), \\(w_{xh} = 0.5\\), \\(w_{hh} = 0.8\\), sin sesgos, y la entrada \\(x = (1, 0, 0, 0)\\):\n\n\n\n\\(t\\)\nCálculo\n\\(h_t\\)\n\n\n\n\n1\n\\(\\tanh(0.5 \\cdot 1 + 0.8 \\cdot 0)\\)\n0.462\n\n\n2\n\\(\\tanh(0.8 \\cdot 0.462)\\)\n0.354\n\n\n3\n\\(\\tanh(0.8 \\cdot 0.354)\\)\n0.276\n\n\n4\n\\(\\tanh(0.8 \\cdot 0.276)\\)\n0.217\n\n\n\nEl pulso del primer paso se recuerda, pero se apaga: cada paso lo multiplica por algo menor que 1.\n\nHacer este cálculo en el tablero. Es la intuición del desvanecimiento antes de ver una sola derivada: el recuerdo de \\(x_1\\) en \\(h_t\\) decae aproximadamente como \\(0.8^{t-1}\\), y además la tangente hiperbólica comprime un poco más. Pregunta: ¿qué pasaría con \\(w_{hh} = 1.5\\)? El estado se satura cerca de 1 y la derivada de tanh se hace casi cero: otro camino hacia el mismo problema."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#salida-pérdida-y-parámetros",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#salida-pérdida-y-parámetros",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Salida, pérdida y parámetros",
+    "text": "Salida, pérdida y parámetros\nSalida (muchos a uno): \\(\\hat y = \\operatorname{softmax}(W_{hy}\\,h_T + b_y)\\) y pérdida de entropía cruzada \\(\\mathcal{L} = -\\log \\hat y_{c}\\).\nMuchos a muchos: una salida por paso y \\(\\mathcal{L} = \\sum_t \\ell_t\\).\nParámetros de la celda, independientes de la longitud \\(T\\):\n\\[\nH\\,(D + H + 2) \\quad\\Rightarrow\\quad D = 5,\\ H = 32: \\ 32 \\cdot 39 = 1\\,248\n\\]\n\nLa cuenta: \\(HD\\) de \\(W_{xh}\\), \\(H^2\\) de \\(W_{hh}\\) y \\(2H\\) de los dos sesgos. Que no dependa de \\(T\\) es la ventaja de compartir pesos: la misma red procesa secuencias de 32 o de 3 000 pasos. En el ejemplo de EMG, RedRecurrente tiene 1 827 parámetros sumando el clasificador."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#la-idea-de-bptt",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#la-idea-de-bptt",
+    "title": "Redes recurrentes y LSTM",
+    "section": "La idea de BPTT",
+    "text": "La idea de BPTT\nSe desenrolla la red, se calcula la pérdida y se retropropaga a través de todos los pasos. Como los pesos son compartidos, su gradiente es la suma de las contribuciones de cada paso:\n\\[\n\\frac{\\partial \\mathcal{L}}{\\partial W_{hh}} = \\sum_{t=1}^{T} \\delta_t \\odot \\left(1 - h_t^2\\right) h_{t-1}^{\\top},\n\\qquad \\delta_t = \\frac{\\partial \\mathcal{L}}{\\partial h_t}\n\\]\nEl error llega a \\(h_t\\) por dos caminos: su propia salida y el paso siguiente.\n\\[\n\\delta_t = \\frac{\\partial \\ell_t}{\\partial h_t} + W_{hh}^{\\top}\\,\\operatorname{diag}\\!\\left(1 - h_{t+1}^2\\right)\\delta_{t+1}\n\\]\n\n\\(1 - h^2\\) es la derivada de tanh. La recurrencia de \\(\\delta_t\\) se calcula hacia atrás, desde \\(T\\) hasta 1: por eso se llama retropropagación en el tiempo. En la práctica PyTorch la hace sola con autograd; el objetivo de la diapositiva es ver de dónde sale el producto de matrices de la siguiente."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-producto-de-jacobianos",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-producto-de-jacobianos",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Un producto de jacobianos",
+    "text": "Un producto de jacobianos\nPara saber cuánto influye un estado lejano en el final:\n\\[\n\\frac{\\partial h_T}{\\partial h_k} = \\prod_{t=k+1}^{T} \\operatorname{diag}\\!\\left(1 - h_t^2\\right) W_{hh}\n\\qquad\\Rightarrow\\qquad\n\\left\\lVert \\frac{\\partial h_T}{\\partial h_k} \\right\\rVert \\le \\left\\lVert W_{hh} \\right\\rVert^{\\,T-k}\n\\]\n\nSi \\(\\lVert W_{hh} \\rVert &lt; 1\\): el producto se desvanece exponencialmente\nSi el mayor valor singular de \\(W_{hh}\\) pasa de 1: el producto puede explotar\nLa saturación de tanh (\\(1 - h^2 \\approx 0\\)) empuja hacia el desvanecimiento\n\n\nLa cota usa que la derivada de tanh nunca pasa de 1. Es una cota superior: con norma menor que 1 el desvanecimiento está garantizado; con norma mayor que 1 la explosión es posible pero no segura, porque la saturación puede compensarla. El mensaje para la clase: con \\(T - k = 50\\) y una norma de 0.9, la cota ya es \\(0.9^{50} \\approx 0.005\\)."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#el-gradiente-se-desvanece",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#el-gradiente-se-desvanece",
+    "title": "Redes recurrentes y LSTM",
+    "section": "El gradiente se desvanece",
+    "text": "El gradiente se desvanece\n\n\n\nRedes sin entrenar, secuencias aleatorias de 150 pasos, promedio de 20 secuencias.\n\n\n\n\n\n\n\n\n\n\nRed\n10 pasos atrás\n100 pasos atrás\n\n\n\n\nRNN simple\n\\(1.4 \\times 10^{-3}\\)\n\\(0\\)\n\n\nLSTM, \\(b_f \\approx 0\\)\n\\(1.8 \\times 10^{-3}\\)\n\\(2 \\times 10^{-22}\\)\n\n\nLSTM, \\(b_f = 2\\)\n\\(1.0 \\times 10^{-1}\\)\n\\(2.1 \\times 10^{-3}\\)\n\n\n\n\nEs el mismo experimento de la sección 3.8 del cuaderno de EMG. Con la RNN simple, a 100 pasos la influencia es cero en precisión de máquina: la red no puede aprender una dependencia tan larga porque el gradiente no llega. Una LSTM con la compuerta de olvido a medio abrir tampoco recuerda; con la compuerta casi abierta sí. Esa es la pista de la sección siguiente."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#remedios",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#remedios",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Remedios",
+    "text": "Remedios\n\n\n\n\n\n\n\nProblema\nRemedio\n\n\n\n\nExplosión\nrecorte de la norma: si \\(\\lVert g \\rVert &gt; \\tau\\), \\(\\ g \\leftarrow \\tau\\, g / \\lVert g \\rVert\\)\n\n\nSecuencias muy largas\nBPTT truncada: retropropagar solo los últimos \\(k\\) pasos\n\n\nDesvanecimiento\ninicialización ortogonal de \\(W_{hh}\\) y, sobre todo, cambiar la arquitectura\n\n\n\nperdida.backward()\nnn.utils.clip_grad_norm_(modelo.parameters(), max_norm=1.0)\noptimizador.step()\n\nEl recorte es barato y se usa siempre con redes recurrentes; conserva la dirección del gradiente y solo limita su tamaño. La BPTT truncada ahorra memoria pero, por construcción, renuncia a dependencias más largas que \\(k\\). La inicialización ortogonal hace que \\(W_{hh}\\) empiece con todos sus valores singulares en 1, lo que ayuda al principio pero no se mantiene durante el entrenamiento. El remedio de fondo es la LSTM."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#la-idea",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#la-idea",
+    "title": "Redes recurrentes y LSTM",
+    "section": "La idea",
+    "text": "La idea\nLa LSTM añade una memoria \\(c_t\\) que se actualiza sumando, no multiplicando, y tres compuertas que deciden qué pasa por ella:\n\nOlvido \\(f_t\\): cuánto conservar de \\(c_{t-1}\\)\nEntrada \\(i_t\\): cuánto escribir del contenido nuevo\nCandidato \\(g_t\\): qué contenido nuevo se propone\nSalida \\(o_t\\): cuánto de la memoria se muestra en \\(h_t\\)\n\n\nHochreiter y Schmidhuber, 1997; la compuerta de olvido se añadió en 2000 (Gers, Schmidhuber y Cummins). Una analogía clínica que funciona en clase: la memoria \\(c\\) es la historia clínica, que se va anotando; \\(h\\) es el resumen que se lee en voz alta en el pase de visita. La compuerta de olvido decide qué notas viejas dejan de ser relevantes."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#una-compuerta-es-una-sigmoide-que-multiplica",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#una-compuerta-es-una-sigmoide-que-multiplica",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Una compuerta es una sigmoide que multiplica",
+    "text": "Una compuerta es una sigmoide que multiplica\n\nUna compuerta es un vector de valores en \\((0, 1)\\) que multiplica elemento a elemento: \\(f_t \\odot c_{t-1}\\) conserva cada componente de la memoria en una proporción distinta.\n\nLa sigmoide sirve para compuertas porque su salida se interpreta como una proporción: 0 cierra, 1 deja pasar. La tangente hiperbólica se usa para el contenido porque es centrada en cero y permite sumar o restar a la memoria. Las compuertas no son binarias: la red aprende valores intermedios y los ajusta en cada paso según la entrada y el estado."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#las-ecuaciones",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#las-ecuaciones",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Las ecuaciones",
+    "text": "Las ecuaciones\n\\[\n\\begin{aligned}\ni_t &= \\sigma\\left(W_{xi}\\,x_t + W_{hi}\\,h_{t-1} + b_i\\right) \\\\\nf_t &= \\sigma\\left(W_{xf}\\,x_t + W_{hf}\\,h_{t-1} + b_f\\right) \\\\\ng_t &= \\tanh\\left(W_{xg}\\,x_t + W_{hg}\\,h_{t-1} + b_g\\right) \\\\\no_t &= \\sigma\\left(W_{xo}\\,x_t + W_{ho}\\,h_{t-1} + b_o\\right) \\\\\nc_t &= f_t \\odot c_{t-1} + i_t \\odot g_t \\\\\nh_t &= o_t \\odot \\tanh(c_t)\n\\end{aligned}\n\\]\n\nLas cuatro primeras líneas tienen la misma forma que una RNN simple: cada una es una pequeña red que mira \\(x_t\\) y \\(h_{t-1}\\). Las dos últimas son la novedad: la memoria se actualiza con una suma ponderada y el estado oculto es una versión filtrada de la memoria. Cada \\(b\\) representa la suma de los dos sesgos de PyTorch."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#la-celda-por-dentro",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#la-celda-por-dentro",
+    "title": "Redes recurrentes y LSTM",
+    "section": "La celda por dentro",
+    "text": "La celda por dentro\n\n\nSeguir la línea superior del diagrama: es el camino de la memoria. Solo la tocan una multiplicación por \\(f_t\\) y una suma con \\(i_t \\odot g_t\\); no hay matriz ni tangente hiperbólica en ese camino. El estado oculto, en la línea inferior, alimenta las cuatro compuertas del paso siguiente y la capa siguiente."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#por-qué-no-se-desvanece",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#por-qué-no-se-desvanece",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Por qué no se desvanece",
+    "text": "Por qué no se desvanece\nPor el camino de la memoria la derivada es, sin contar los términos indirectos por \\(h_{t-1}\\):\n\\[\n\\frac{\\partial c_t}{\\partial c_{t-1}} = \\operatorname{diag}(f_t)\n\\qquad\\Rightarrow\\qquad\n\\frac{\\partial c_T}{\\partial c_k} \\approx \\prod_{t=k+1}^{T} \\operatorname{diag}(f_t)\n\\]\n\n\n\nCompuerta de olvido\nLo que queda tras 10 pasos\n\n\n\n\n\\(f = 0.99\\)\n0.90\n\n\n\\(f = 0.9\\)\n0.35\n\n\nRNN con \\(\\lVert W_{hh} \\rVert = 0.8\\) (cota)\n0.11\n\n\n\nLa red aprende cuánto recordar: \\(f_t\\) depende de la entrada y del estado.\n\nEs el carrusel de error constante de la LSTM original: si \\(f_t = 1\\), el gradiente pasa intacto. La diferencia con la RNN no es que la LSTM nunca olvide, sino que el ritmo de olvido lo decide una compuerta aprendida, en lugar de una matriz fija multiplicada una y otra vez. Por eso se suele inicializar \\(b_f\\) en 1 o más: la red empieza recordando y aprende a olvidar."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#parámetros-y-convención-de-pytorch",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#parámetros-y-convención-de-pytorch",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Parámetros y convención de PyTorch",
+    "text": "Parámetros y convención de PyTorch\n\\[\n4H\\,(D + H + 2) \\quad\\Rightarrow\\quad D = 5,\\ H = 32: \\ 4 \\cdot 32 \\cdot 39 = 4\\,992\n\\]\nPyTorch apila las cuatro compuertas en un solo tensor, en el orden i, f, g, o:\n\n\n\nTensor\nForma\n\n\n\n\nweight_ih_l0\n\\([4H, D]\\)\n\n\nweight_hh_l0\n\\([4H, H]\\)\n\n\nbias_ih_l0, bias_hh_l0\n\\([4H]\\) cada uno\n\n\n\nwith torch.no_grad():\n    lstm.bias_hh_l0[H:2 * H] = 1.0   # bloque f: empezar recordando\n\nCuatro veces los parámetros de una RNN simple con el mismo \\(H\\). El orden i, f, g, o es una convención de PyTorch; otras bibliotecas usan otro orden, y conviene comprobarlo antes de tocar un sesgo a mano. Se escribe en bias_hh pero da igual en cuál de los dos sesgos, porque se suman."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-paso-de-la-lstm-escrito-a-mano",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-paso-de-la-lstm-escrito-a-mano",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Un paso de la LSTM, escrito a mano",
+    "text": "Un paso de la LSTM, escrito a mano\ndef paso_lstm(x_t, h, c, W_x, W_h, b):\n    z = x_t @ W_x.T + h @ W_h.T + b      # [N, 4H]\n    i, f, g, o = z.chunk(4, dim=1)       # orden de PyTorch\n    i = torch.sigmoid(i)\n    f = torch.sigmoid(f)\n    g = torch.tanh(g)\n    o = torch.sigmoid(o)\n    c = f * c + i * g                    # memoria\n    h = o * torch.tanh(c)                # estado oculto\n    return h, c\nCon los pesos de nn.LSTM, este paso reproduce su salida: es un buen ejercicio de comprobación.\n\nEl cuaderno de EMG hace exactamente esta comprobación en la sección 3.7 y obtiene coincidencia exacta con nn.LSTM. Pedir a los estudiantes que lo escriban ellos antes de mostrarlo. Detalle: W_x es weight_ih_l0, W_h es weight_hh_l0 y b es la suma de los dos sesgos."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#gru-dos-compuertas-sin-memoria-aparte",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#gru-dos-compuertas-sin-memoria-aparte",
+    "title": "Redes recurrentes y LSTM",
+    "section": "GRU: dos compuertas, sin memoria aparte",
+    "text": "GRU: dos compuertas, sin memoria aparte\n\\[\n\\begin{aligned}\nr_t &= \\sigma\\left(W_{xr}\\,x_t + W_{hr}\\,h_{t-1} + b_r\\right) \\\\\nz_t &= \\sigma\\left(W_{xz}\\,x_t + W_{hz}\\,h_{t-1} + b_z\\right) \\\\\nn_t &= \\tanh\\left(W_{xn}\\,x_t + b_{xn} + r_t \\odot (W_{hn}\\,h_{t-1} + b_{hn})\\right) \\\\\nh_t &= (1 - z_t) \\odot n_t + z_t \\odot h_{t-1}\n\\end{aligned}\n\\]\n\n\\(r_t\\) (reinicio) decide cuánto pasado usar para el candidato\n\\(z_t\\) (actualización) mezcla el estado anterior con el nuevo\n\\(3H\\,(D + H + 2)\\) parámetros: 3 744 con \\(D = 5\\), \\(H = 32\\)\n\n\nCho y colaboradores, 2014. La GRU fusiona memoria y estado oculto en \\(h_t\\). El término \\(z_t \\odot h_{t-1}\\) cumple el papel del camino aditivo de la LSTM: si \\(z_t \\approx 1\\), el estado pasa casi intacto. Las ecuaciones siguen la convención de PyTorch, donde \\(r_t\\) multiplica después de aplicar \\(W_{hn}\\). En la práctica rinde parecido a la LSTM con un cuarto menos de parámetros; no hay un ganador general y conviene probar ambas."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#apilar-y-leer-en-los-dos-sentidos",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#apilar-y-leer-en-los-dos-sentidos",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Apilar y leer en los dos sentidos",
+    "text": "Apilar y leer en los dos sentidos\n\nApilada: la secuencia completa de estados de la capa 1, \\((h^{(1)}_1, \\dots, h^{(1)}_T)\\), es la entrada de la capa 2\nBidireccional: una red lee de 1 a \\(T\\) y otra de \\(T\\) a 1; se concatenan los estados: \\([\\overrightarrow{h}_t ; \\overleftarrow{h}_t]\\), de tamaño \\(2H\\)\nCuidado: la bidireccional usa el futuro; sirve para analizar un registro completo, no para decidir en tiempo real\n\n\nEn el ejemplo de EMG, RedLSTM apila dos capas, lstm1 y lstm2, escritas por separado. Dos o tres capas suelen bastar; más capas rara vez ayudan en señales biomédicas y cuestan más datos. La bidireccional es natural cuando el registro ya está completo, como en un EMG grabado; no lo es en un monitor que tiene que avisar en el momento."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#en-pytorch-formas",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#en-pytorch-formas",
+    "title": "Redes recurrentes y LSTM",
+    "section": "En PyTorch: formas",
+    "text": "En PyTorch: formas\nlstm = nn.LSTM(input_size=5, hidden_size=32, batch_first=True)\nx = torch.randn(8, 32, 5)              # [N, T, D]\nsalidas, (h_n, c_n) = lstm(x)\nsalidas.shape                          # [8, 32, 32]  todos los h_t\nh_n.shape                              # [1, 8, 32]   h_T por capa\n\n\n\nEsquema\nQué se usa\n\n\n\n\nMuchos a uno\nh_n[-1] o salidas[:, -1]\n\n\nMuchos a muchos\nsalidas completa\n\n\n\n\nEl error más frecuente es olvidar batch_first=True y pasar \\([N, T, D]\\) a una red que espera \\([T, N, D]\\): no da error, simplemente mezcla ejemplos con pasos de tiempo. Otro: h_n tiene una primera dimensión de capas por direcciones; con una sola capa unidireccional es 1. Para secuencias de longitud variable están pack_padded_sequence y pad_packed_sequence."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-modelo-completo-capa-por-capa",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#un-modelo-completo-capa-por-capa",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Un modelo completo, capa por capa",
+    "text": "Un modelo completo, capa por capa\nclass RedLSTM(nn.Module):\n    def __init__(self, n_entradas=5, n_ocultas=32, n_clases=3):\n        super().__init__()\n        self.lstm1 = nn.LSTM(n_entradas, n_ocultas, batch_first=True)\n        self.lstm2 = nn.LSTM(n_ocultas, n_ocultas, batch_first=True)\n        self.dropout = nn.Dropout(0.3)\n        self.capa_densa = nn.Linear(n_ocultas, 16)\n        self.salida = nn.Linear(16, n_clases)\n\n    def forward(self, x):                    # x: [N, T, D]\n        h1, _ = self.lstm1(x)                # [N, T, H]\n        h1 = self.dropout(h1)\n        _, (h_T, _) = self.lstm2(h1)         # h_T: [1, N, H]\n        z = self.dropout(h_T[-1])            # [N, H]\n        z = torch.relu(self.capa_densa(z))   # [N, 16]\n        return self.salida(z)                # logits [N, 3]\n\nCada capa tiene nombre y el paso adelante se lee de arriba abajo, con la forma del tensor en cada línea. Es la misma estructura del cuaderno de EMG. La salida son logits: la entropía cruzada de PyTorch aplica el softmax por dentro."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#antes-de-creer-en-el-resultado",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#antes-de-creer-en-el-resultado",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Antes de creer en el resultado",
+    "text": "Antes de creer en el resultado\n\nNormalizar las entradas con estadísticas del entrenamiento\nDividir por paciente, no por ventana\nRecortar el gradiente e iniciar \\(b_f\\) en 1\nComparar con una línea base sin tiempo: media y desviación de cada descriptor más una regresión logística\nDesordenar los pasos de tiempo en la prueba: si el acierto no cae, el modelo no está usando el orden\n\n\nLos dos últimos puntos vienen del ejemplo de EMG: con datos sintéticos, una regresión logística de 33 parámetros empató con la LSTM de 14 019, y desordenar las tramas no cambió el acierto de la LSTM. Una red recurrente que acierta no prueba que la memoria sirva; estas dos pruebas baratas lo comprueban."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#resumen",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#resumen",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\n\n\n\n\n\n\n\nRNN simple\nLSTM\nGRU\n\n\n\n\nEstado\n\\(h_t\\)\n\\(h_t\\) y memoria \\(c_t\\)\n\\(h_t\\)\n\n\nCompuertas\nninguna\nolvido, entrada, salida\nreinicio, actualización\n\n\nParámetros (\\(D = 5\\), \\(H = 32\\))\n1 248\n4 992\n3 744\n\n\nMemoria larga\nse desvanece\nla regula \\(f_t\\)\nla regula \\(z_t\\)\n\n\nCuándo usarla\nsecuencias cortas, línea base\nopción por defecto\nmenos datos o menos cómputo"
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#para-esta-semana",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-teoria.html#para-esta-semana",
+    "title": "Redes recurrentes y LSTM",
+    "section": "Para esta semana",
+    "text": "Para esta semana\n\n\n\n\n\n\nLaboratorio\n\n\nEscribir paso_lstm a mano, comprobar que reproduce nn.LSTM con los mismos pesos y medir \\(\\lVert \\partial h_T / \\partial x_t \\rVert\\) con \\(b_f = 0\\), 1 y 2.\n\n\n\n\nRehacer a mano el ejemplo de \\(w_{hh} = 0.8\\) con \\(w_{hh} = 1.5\\). ¿Qué pasa con \\(1 - h_t^2\\)?\nDeducir \\(4H(D + H + 2)\\) y \\(3H(D + H + 2)\\) a partir de las ecuaciones.\nMostrar que \\(\\partial c_t / \\partial c_{t-1} = \\operatorname{diag}(f_t)\\) si se ignoran los caminos por \\(h_{t-1}\\).\nCambiar la LSTM del ejemplo de EMG por una GRU y comparar parámetros y acierto.\n\n\nEl laboratorio cierra el ciclo de la sesión: implementar, verificar contra la biblioteca y medir el fenómeno que motiva la arquitectura. El ejercicio 1 muestra que el desvanecimiento también aparece por saturación, no solo por pesos pequeños. Lectura sugerida: capítulo 10 de Goodfellow, Bengio y Courville, Deep Learning."
   },
   {
     "objectID": "cursos/psim/index.html",

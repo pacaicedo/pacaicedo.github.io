@@ -1,0 +1,53 @@
+---
+title: "Laboratorio 2: filtrado en frecuencia"
+description: "Implementar filtros Ideal, Butterworth y Gaussiano y medir los anillos del filtro ideal."
+rotulo: "Lab 2"
+date: 2026-09-07
+---
+
+## Objetivos
+
+1. Calcular el espectro centrado de una imagen y la distancia $D(u, v)$ en ciclos/píxel.
+2. Implementar pasa bajos y pasa altos Ideal, Butterworth y Gaussiano con el mismo $D_0$.
+3. Medir el efecto Gibbs del filtro ideal en un perfil de intensidad.
+
+## Procedimiento
+
+### Espectro y máscaras
+
+Sigue el tutorial [Filtros en frecuencia](../../../tutoriales/filtros-frecuenciales/index.qmd) para construir las tres máscaras con $D_0 = 0{,}08$ ciclos/píxel.
+
+![Las tres funciones de transferencia.](../../../tutoriales/filtros-frecuenciales/fig/filtros-transferencia){width="72%"}
+
+### Perfil de intensidad
+
+Toma la fila central de la imagen original y de las filtradas y grafícalas juntas.
+
+![Perfil de la fila central.](../../../tutoriales/filtros-frecuenciales/fig/filtros-perfil){width="72%"}
+
+### Pasa altos y notch
+
+Construye los pasa altos como $1 - H$ y aplica un notch sobre una imagen a la que le sumaste un patrón $0{,}1 \sin(2\pi \cdot 0{,}2\, x)$.
+
+## Preguntas orientadoras
+
+1. ¿Por qué el filtro ideal oscila cerca de los bordes y el gaussiano no?
+2. ¿Cómo cambia el resultado si $D_0$ se expresa en ciclos/mm con un `PixelSpacing` de 0,5 mm?
+3. ¿Dónde aparece en el espectro el patrón periódico que añadiste?
+
+## Entregables
+
+- Script con las máscaras, las imágenes filtradas y los perfiles.
+- Una figura comparativa por tipo de filtro, con ejes y unidades.
+- Respuestas a las preguntas orientadoras.
+
+## Rúbrica
+
+| Criterio | Peso | Logrado |
+|:--|--:|:--|
+| Máscaras correctas y centradas | 30 % | Las tres comparten $D_0$ y unidades |
+| Comparación visual y por perfil | 30 % | Se mide la amplitud de los anillos |
+| Notch | 20 % | El pico del patrón desaparece del espectro |
+| Reproducibilidad | 20 % | El código corre de principio a fin |
+
+: Rúbrica del laboratorio 2.

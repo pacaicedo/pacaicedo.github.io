@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>Procesamiento Digital de Imágenes Médicas – P. E. Caicedo-Rodríguez</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -25,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -56,15 +61,14 @@ div.csl-indent {
 <script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b8a047099821e907c6fabfb5407c139d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3ea025ca51a21a1d1a970835ebe5fd04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-61bcbb53aff0eca065d6c598cffce363.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,9 +105,9 @@ div.csl-indent {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-lang','listing-date-format','listing-website','listing-format','listing-filters','listing-language','listing-author','listing-shorttitle','listing-title','listing-subtitle','listing-description','listing-rotulo','listing-date','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      valueNames: ['listing-project','listing-lang','listing-date-format','listing-website','listing-format','listing-filters','listing-engines','listing-language','listing-author','listing-shorttitle','listing-title','listing-subtitle','listing-description','listing-rotulo','listing-date','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-lang","listing-date-format","listing-website","listing-format","listing-filters","listing-language","listing-author","listing-shorttitle","listing-title","listing-subtitle","listing-description","listing-rotulo","listing-date","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-lang","listing-date-format","listing-website","listing-format","listing-filters","listing-engines","listing-language","listing-author","listing-shorttitle","listing-title","listing-subtitle","listing-description","listing-rotulo","listing-date","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -129,9 +133,9 @@ div.csl-indent {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-lang','listing-date-format','listing-website','listing-format','listing-filters','listing-language','listing-author','listing-number-sections','listing-title','listing-description','listing-rotulo','listing-date','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      valueNames: ['listing-project','listing-lang','listing-date-format','listing-website','listing-format','listing-filters','listing-engines','listing-language','listing-author','listing-number-sections','listing-title','listing-description','listing-rotulo','listing-date','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-lang","listing-date-format","listing-website","listing-format","listing-filters","listing-language","listing-author","listing-number-sections","listing-title","listing-description","listing-rotulo","listing-date","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-lang","listing-date-format","listing-website","listing-format","listing-filters","listing-engines","listing-language","listing-author","listing-number-sections","listing-title","listing-description","listing-rotulo","listing-date","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -178,7 +182,7 @@ div.csl-indent {
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -545,7 +549,7 @@ Evaluación
 <div id="listing-presentaciones" class="quarto-listing quarto-listing-container-custom">
 <ol class="materiales">
 
-  <li class="material" data-index="0" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792694439000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="359">
+  <li class="material" data-index="0" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792845252315" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="359">
     <div class="material-rotulo">Semana 1</div>
     <div class="material-cuerpo">
       <a class="material-titulo no-external" href="../../cursos/psim/presentaciones/01-la-imagen-como-dato.html">La imagen como dato</a>
@@ -557,7 +561,7 @@ Evaluación
     </div>
   </li>
 
-  <li class="material" data-index="1" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792694439000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="238">
+  <li class="material" data-index="1" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792845252315" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="238">
     <div class="material-rotulo">Semana 8</div>
     <div class="material-cuerpo">
       <a class="material-titulo no-external" href="../../cursos/psim/presentaciones/08-filtrado-frecuencial.html">Filtrado en el dominio de la frecuencia</a>
@@ -579,7 +583,7 @@ Evaluación
 <div id="listing-laboratorios" class="quarto-listing quarto-listing-container-custom">
 <ol class="materiales">
 
-  <li class="material" data-index="0" data-listing-date-sort="1786338000000" data-listing-file-modified-sort="1792591664000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="327">
+  <li class="material" data-index="0" data-listing-date-sort="1786338000000" data-listing-file-modified-sort="1792845252315" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="327">
     <div class="material-rotulo">Lab 1</div>
     <div class="material-cuerpo">
       <a class="material-titulo no-external" href="../../cursos/psim/laboratorios/lab1-histograma-y-contraste.html">Laboratorio 1: histograma, ventana y contraste</a>
@@ -591,7 +595,7 @@ Evaluación
     </div>
   </li>
 
-  <li class="material" data-index="1" data-listing-date-sort="1788757200000" data-listing-file-modified-sort="1792767610342" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="253">
+  <li class="material" data-index="1" data-listing-date-sort="1788757200000" data-listing-file-modified-sort="1792845252315" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="253">
     <div class="material-rotulo">Lab 2</div>
     <div class="material-cuerpo">
       <a class="material-titulo no-external" href="../../cursos/psim/laboratorios/lab2-filtrado-frecuencial.html">Laboratorio 2: filtrado en frecuencia</a>
@@ -613,7 +617,7 @@ Evaluación
 <h3 class="anchored" data-anchor-id="tutoriales-del-sitio">Tutoriales del sitio</h3>
 <div id="listing-tutoriales-psim" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="SGVycmFtaWVudGElMkNQU0lNJTJDU1lTQiUyQ1RBVSUyQ1F1YXJ0bw==" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792628300000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
+<div class="quarto-post image-right" data-index="0" data-categories="SGVycmFtaWVudGElMkNQU0lNJTJDU1lTQiUyQ1RBVSUyQ1F1YXJ0bw==" data-listing-date-sort="1785733200000" data-listing-file-modified-sort="1792845252372" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../../tutoriales/entorno-uv-quarto/index.html" class="no-external">Entorno reproducible con uv y Quarto</a>
@@ -627,7 +631,7 @@ Evaluación
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="VHV0b3JpYWwlMkNQU0lNJTJDSW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792628241000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="435">
+<div class="quarto-post image-right" data-index="1" data-categories="VHV0b3JpYWwlMkNQU0lNJTJDSW0lQzMlQTFnZW5lcyUyMG0lQzMlQTlkaWNhcw==" data-listing-date-sort="1789966800000" data-listing-file-modified-sort="1792845252374" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="435">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../../tutoriales/filtros-frecuenciales/index.html" class="no-external">Filtros en frecuencia: de Ideal a Gaussiano</a>
@@ -658,7 +662,7 @@ Evaluación
 </section>
 <section id="referentes" class="level2">
 <h2 class="anchored" data-anchor-id="referentes">Referentes</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-bankman2009" class="csl-entry" role="listitem">
 Bankman, Isaac N., ed. 2009. <em>Handbook of Medical Image Processing and Analysis</em>. 2.ª ed. Academic Press.
 </div>

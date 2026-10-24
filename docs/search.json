@@ -221,7 +221,7 @@
     "href": "tutoriales/index.html",
     "title": "Herramientas y Tutoriales",
     "section": "",
-    "text": "Tutoriales cortos y herramientas que acompañan los cursos y los proyectos. Usa las categorías de la derecha para filtrar: Tutorial o Herramienta, el curso (PSIM, SYSB, TAU) o el tema.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUn sitio Quarto en GitLab Pages\n\n\n\ndesarrollo\n\nherramientas\n\n\n\n\n\n\n\n23 oct 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatos fuera de GitHub con DVC y Dropbox\n\n\n\ndesarrollo\n\ndatos\n\nherramientas\n\n\n\n\n\n\n\n23 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nValidación cruzada por participante\n\n\n\nTutorial\n\nTAU\n\nAprendizaje automático\n\n\n\nCuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold.\n\n\n\n14 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nFiltrado de fase cero en un ECG\n\n\n\nTutorial\n\nSYSB\n\nSeñales\n\n\n\nPor qué lfilter retrasa la onda R y filtfilt no, y cuándo conviene cada uno.\n\n\n\n5 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nFiltros en frecuencia: de Ideal a Gaussiano\n\n\n\nTutorial\n\nPSIM\n\nImágenes médicas\n\n\n\nTransformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.\n\n\n\n21 sep 2026\n\n\n\n\n\n\n\n\n\n\n\nEntorno reproducible con uv y Quarto\n\n\n\nHerramienta\n\nPSIM\n\nSYSB\n\nTAU\n\nQuarto\n\n\n\nInstalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo.\n\n\n\n3 ago 2026\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Tutoriales cortos y herramientas que acompañan los cursos y los proyectos. Usa las categorías de la derecha para filtrar: Tutorial o Herramienta, el curso (PSIM, SYSB, TAU) o el tema.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatos fuera de GitHub con DVC y Dropbox\n\n\n\ndesarrollo\n\ndatos\n\nherramientas\n\n\n\n\n\n\n\n24 oct 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nUn sitio Quarto en GitLab Pages\n\n\n\ndesarrollo\n\nherramientas\n\n\n\n\n\n\n\n24 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nValidación cruzada por participante\n\n\n\nTutorial\n\nTAU\n\nAprendizaje automático\n\n\n\nCuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold.\n\n\n\n14 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nFiltrado de fase cero en un ECG\n\n\n\nTutorial\n\nSYSB\n\nSeñales\n\n\n\nPor qué lfilter retrasa la onda R y filtfilt no, y cuándo conviene cada uno.\n\n\n\n5 oct 2026\n\n\n\n\n\n\n\n\n\n\n\nFiltros en frecuencia: de Ideal a Gaussiano\n\n\n\nTutorial\n\nPSIM\n\nImágenes médicas\n\n\n\nTransformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.\n\n\n\n21 sep 2026\n\n\n\n\n\n\n\n\n\n\n\nEntorno reproducible con uv y Quarto\n\n\n\nHerramienta\n\nPSIM\n\nSYSB\n\nTAU\n\nQuarto\n\n\n\nInstalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo.\n\n\n\n3 ago 2026\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "tutoriales/filtrado-fase-cero/index.html",
@@ -340,7 +340,7 @@
     "href": "index.html#cursos",
     "title": "Señales, imágenes e inferencia causal para la salud",
     "section": "Cursos",
-    "text": "Cursos\n\n\n\n\n\nProcesamiento Digital de Imágenes Médicas\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\nSistemas y Señales Biomédicos\n\n\nSeñales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python.\n\n\n\n\n\n\n\n\n\n\nTécnicas de Aprendizaje Automático\n\n\nAprendizaje automático clásico: explorar, reducir dimensión, agrupar y clasificar, con validación honesta.\n\n\n\n\n\n\n\n\nNo hay resultados\n\nTodos los cursos →"
+    "text": "Cursos\n\n\n\n\n\nAprendizaje automático para el procesamiento de señales e imágenes médicas\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\nProcesamiento Digital de Imágenes Médicas\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\nSistemas y Señales Biomédicos\n\n\nSeñales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python.\n\n\n\n\n\n\n\n\nNo hay resultados\n\nTodos los cursos →"
   },
   {
     "objectID": "index.html#charlas-y-conferencias",
@@ -361,7 +361,7 @@
     "href": "index.html#herramientas-y-tutoriales",
     "title": "Señales, imágenes e inferencia causal para la salud",
     "section": "Herramientas y Tutoriales",
-    "text": "Herramientas y Tutoriales\n\n\n\n\n\nUn sitio Quarto en GitLab Pages\n\n\n\n\n\n\n\n\n23 de octubre de 2026\n\n\n\n\n\n\n\nDatos fuera de GitHub con DVC y Dropbox\n\n\n\n\n\n\n\n\n23 de octubre de 2026\n\n\n\n\n\n\n\nValidación cruzada por participante\n\n\nCuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold.\n\n\n\n\n\n14 de octubre de 2026\n\n\n\n\n\nNo hay resultados\n\nTodos los tutoriales →"
+    "text": "Herramientas y Tutoriales\n\n\n\n\n\nDatos fuera de GitHub con DVC y Dropbox\n\n\n\n\n\n\n\n\n24 de octubre de 2026\n\n\n\n\n\n\n\nUn sitio Quarto en GitLab Pages\n\n\n\n\n\n\n\n\n24 de octubre de 2026\n\n\n\n\n\n\n\nValidación cruzada por participante\n\n\nCuando cada persona aporta varios ensayos, repartir ensayos entre entrenamiento y prueba infla la exactitud. Cómo evitarlo con GroupKFold.\n\n\n\n\n\n14 de octubre de 2026\n\n\n\n\n\nNo hay resultados\n\nTodos los tutoriales →"
   },
   {
     "objectID": "index.html#material-abierto-y-reproducible",
@@ -655,7 +655,7 @@
     "href": "cursos/index.html",
     "title": "Cursos",
     "section": "",
-    "text": "Cada curso tiene la misma estructura: introducción, resultados de aprendizaje, calendario y fechas importantes, presentaciones, laboratorios, recursos y tutoriales y referentes. Las presentaciones se publican en HTML (revealjs) y en PDF (beamer), y las guías de laboratorio en HTML y PDF.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProcesamiento Digital de Imágenes Médicas\n\n\nPSIM · semestre 2026-2\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\n\n\nSistemas y Señales Biomédicos\n\n\nSYSB · semestre 2026-2\n\n\nSeñales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python.\n\n\n\n\n\n\n\n\n\n\n\n\nTécnicas de Aprendizaje Automático\n\n\nTAU · semestre 2026-2\n\n\nAprendizaje automático clásico: explorar, reducir dimensión, agrupar y clasificar, con validación honesta.\n\n\n\n\n\nNo hay resultados"
+    "text": "Cada curso tiene la misma estructura: introducción, resultados de aprendizaje, calendario y fechas importantes, presentaciones, laboratorios, recursos y tutoriales y referentes. Las presentaciones se publican en HTML (revealjs) y en PDF (beamer), y las guías de laboratorio en HTML y PDF.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAprendizaje automático para el procesamiento de señales e imágenes médicas\n\n\nPSIM · semestre 2026-2\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\n\n\nProcesamiento Digital de Imágenes Médicas\n\n\nPSIM · semestre 2026-2\n\n\nFundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender.\n\n\n\n\n\n\n\n\n\n\n\n\nSistemas y Señales Biomédicos\n\n\nSYSB · semestre 2026-2\n\n\nSeñales y sistemas aplicados al ECG, el EMG y el EEG: muestreo, sistemas LTI, Fourier y filtros digitales en Python.\n\n\n\n\n\n\n\n\n\n\n\n\nTécnicas de Aprendizaje Automático\n\n\nTAU · semestre 2026-2\n\n\nAprendizaje automático clásico: explorar, reducir dimensión, agrupar y clasificar, con validación honesta.\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "charlas/2026-ver-el-cuerpo-como-dato/index.html",
@@ -1594,5 +1594,285 @@
     "title": "Un sitio Quarto en GitLab Pages",
     "section": "Archivos de este tutorial",
     "text": "Archivos de este tutorial\n\nArchivos de ejemplo\n\n\n\n\n\n\nArchivo\nContenido\n\n\n\n\nejemplo/sitio-gitlab/\nTu sitio de marca listo para GitLab (pipeline, .gitignore, site-url, enlaces corregidos)\n\n\nejemplo/fragmentos/01-ssh-config\nBloque gitlab-personal para ~/.ssh/config\n\n\nejemplo/fragmentos/02-gitlab-ci-render.yml\nPipeline recomendado (render en el CI)\n\n\nejemplo/fragmentos/03-gitlab-ci-prerenderizado.yml\nPublicar _site/ renderizado en local\n\n\nejemplo/fragmentos/04-gitlab-ci-clasico.yml\nGitLab anterior a 17.9\n\n\nejemplo/fragmentos/05-freeze.yml\nfreeze: auto para sitios con código\n\n\nejemplo/fragmentos/06-gitlab-ci-python.yml\nEjecutar Python en el CI\n\n\nejemplo/fragmentos/07-dos-remotos.sh\nPublicar en GitHub y GitLab desde un repositorio"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html",
+    "href": "cursos/AASI_M/index.html",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "",
+    "text": "Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática (Gonzalez y Woods 2018; Suetens 2017).\nEl curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.\n\n\n\nCódigo\n\nPSIM\n\n\nSemestre\n\n2026-2\n\n\nHorario\n\nlunes y jueves, 7:00–9:00\n\n\nIntensidad\n\n4 horas por semana\n\n\nPrerrequisito\n\nSistemas y Señales Biomédicos\n\n\nEvaluación\n\n3 laboratorios (60 %) y proyecto final (40 %)"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#introducción",
+    "href": "cursos/AASI_M/index.html#introducción",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "",
+    "text": "Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática (Gonzalez y Woods 2018; Suetens 2017).\nEl curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.\n\n\n\nCódigo\n\nPSIM\n\n\nSemestre\n\n2026-2\n\n\nHorario\n\nlunes y jueves, 7:00–9:00\n\n\nIntensidad\n\n4 horas por semana\n\n\nPrerrequisito\n\nSistemas y Señales Biomédicos\n\n\nEvaluación\n\n3 laboratorios (60 %) y proyecto final (40 %)"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#resultados-de-aprendizaje",
+    "href": "cursos/AASI_M/index.html#resultados-de-aprendizaje",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Resultados de Aprendizaje",
+    "text": "Resultados de Aprendizaje\nAl terminar el curso, cada estudiante podrá:\n\n\nDescribir una imagen médica como una función muestreada y cuantizada, y leer de su encabezado DICOM el tamaño del píxel, el grosor del corte y la conversión a unidades físicas.\nAplicar operaciones puntuales y de histograma (ventana y nivel, ecualización) y justificar cuál conviene para una tarea de lectura.\nImplementar en NumPy filtros espaciales y en frecuencia (Ideal, Butterworth, Gaussiano, pasa-banda y notch) y comparar sus efectos sobre el espectro y la imagen.\nSegmentar estructuras por umbral, regiones y morfología matemática, y medir sobre ellas áreas, intensidades y formas.\nConstruir un conjunto de características reproducible y ajustar con él una regresión logística o lineal múltiple, informando lo que el modelo mide y lo que no."
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#calendario-y-fechas-importantes",
+    "href": "cursos/AASI_M/index.html#calendario-y-fechas-importantes",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Calendario y fechas importantes",
+    "text": "Calendario y fechas importantes\n\nFechas importantes\n\n\n\n\nFecha\nEntrega\nPeso\n\n\n\n\n2026-08-28\nLaboratorio 1: histograma y contraste\n20 %\n\n\n2026-10-02\nLaboratorio 2: filtrado en frecuencia\n20 %\n\n\n2026-10-23\nPropuesta del proyecto\n5 %\n\n\n2026-10-30\nLaboratorio 3: segmentación y morfología\n20 %\n\n\n2026-11-13\nAvance del proyecto\n10 %\n\n\n2026-11-19\nPresentación final del proyecto\n25 %\n\n\n\n\n\n\nSemana a semana\n\n\n\n\n\n\n\n\n\n\nSemana\nLunes\nTema\nMaterial\n\n\n\n\n1\n2026-08-03\nLa imagen como dato: muestreo, cuantización y DICOM\nPresentación 1\n\n\n2\n2026-08-10\nHistograma, ventana y nivel\nLaboratorio 1\n\n\n3\n2026-08-17\nOperaciones puntuales y aritméticas festivo el lunes\n\n\n\n4\n2026-08-24\nConvolución 2D y operaciones espaciales\n\n\n\n5\n2026-08-31\nSuavizado y realce\n\n\n\n6\n2026-09-07\nDetección de bordes\nLaboratorio 2\n\n\n7\n2026-09-14\nTransformada de Fourier 2D\n\n\n\n8\n2026-09-21\nFiltrado en frecuencia: de Ideal a notch\nPresentación 8\n\n\n9\n2026-09-28\nSegmentación por umbral y por regiones\n\n\n\n10\n2026-10-05\nMorfología matemática\nLaboratorio 3\n\n\n11\n2026-10-12\nWavelets festivo el lunes\n\n\n\n12\n2026-10-19\nExtracción de características\n\n\n\n13\n2026-10-26\nDe la imagen a la tabla\n\n\n\n14\n2026-11-02\nRegresión logística y lineal múltiple festivo el lunes\n\n\n\n15\n2026-11-09\nValidación e informe honesto\n\n\n\n16\n2026-11-16\nPresentaciones finales festivo el lunes"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#presentaciones",
+    "href": "cursos/AASI_M/index.html#presentaciones",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Presentaciones",
+    "text": "Presentaciones\nCada presentación tiene una versión en línea (revealjs, para proyectar desde el navegador) y un PDF (beamer) con la misma composición.\n\n\n\n  \n    Semana [N]\n    \n      Redes recurrentes y LSTM para EMG de aguja\n      Un ejemplo completo con cuatro miradas: qué ve el clínico en un EMG de aguja, cómo se limpia y se resume la señal, cómo funcionan la RNN y la LSTM y cómo comprobar si el orden temporal aporta.\n    \n    \n      Diapositivas\n      PDF\n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#laboratorios",
+    "href": "cursos/AASI_M/index.html#laboratorios",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Laboratorios",
+    "text": "Laboratorios\nLas guías se leen en línea o en PDF. Cada una trae objetivos, procedimiento, preguntas orientadoras, entregables y rúbrica.\n\n\n\n  \n    Lab 1\n    \n      Laboratorio 1: histograma, ventana y contraste\n      Calcular el histograma de una tomografía sintética y elegir una ventana para cada estructura.\n    \n    \n      Guía\n      PDF\n    \n  \n\n  \n    Lab 2\n    \n      Laboratorio 2: filtrado en frecuencia\n      Implementar filtros Ideal, Butterworth y Gaussiano y medir los anillos del filtro ideal.\n    \n    \n      Guía\n      PDF\n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#recursos-y-tutoriales",
+    "href": "cursos/AASI_M/index.html#recursos-y-tutoriales",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Recursos y tutoriales",
+    "text": "Recursos y tutoriales\n\nTutoriales del sitio\n\n\n\n\n\nEntorno reproducible con uv y Quarto\n\n\nInstalar Python, las bibliotecas del curso y Quarto de forma que el mismo código corra igual en cualquier equipo.\n\n\n\n\n\n\n\n\n\n\nFiltros en frecuencia: de Ideal a Gaussiano\n\n\nTransformada de Fourier 2D, la distancia D(u, v) en ciclos por píxel y tres pasa bajos con la misma frecuencia de corte, implementados en NumPy.\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\nSoftware y datos\n\nPython con NumPy, SciPy y scikit-image: todo el trabajo del curso.\npydicom: leer y escribir archivos DICOM desde Python.\n3D Slicer e ITK-SNAP: visualizar volúmenes y revisar segmentaciones a mano.\nThe Cancer Imaging Archive: colecciones públicas de imágenes para el proyecto final.\nDatos de ejemplo del sitio: el fantoma de Shepp-Logan en unidades Hounsfield aproximadas."
+  },
+  {
+    "objectID": "cursos/AASI_M/index.html#referentes",
+    "href": "cursos/AASI_M/index.html#referentes",
+    "title": "Aprendizaje automático para el procesamiento de señales e imágenes médicas",
+    "section": "Referentes",
+    "text": "Referentes\n\n\nBankman, Isaac N., ed. 2009. Handbook of Medical Image Processing and Analysis. 2.ª ed. Academic Press.\n\n\nGonzalez, Rafael C., y Richard E. Woods. 2018. Digital Image Processing. 4.ª ed. Pearson.\n\n\nPrince, Jerry L., y Jonathan M. Links. 2014. Medical Imaging Signals and Systems. 2.ª ed. Pearson.\n\n\nShepp, Lawrence A., y Benjamin F. Logan. 1974. «The Fourier Reconstruction of a Head Section». IEEE Transactions on Nuclear Science 21 (3): 21-43.\n\n\nSuetens, Paul. 2017. Fundamentals of Medical Imaging. 3.ª ed. Cambridge University Press."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "",
+    "text": "Calcular el espectro centrado de una imagen y la distancia \\(D(u, v)\\) en ciclos/píxel.\nImplementar pasa bajos y pasa altos Ideal, Butterworth y Gaussiano con el mismo \\(D_0\\).\nMedir el efecto Gibbs del filtro ideal en un perfil de intensidad."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#objetivos",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#objetivos",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "",
+    "text": "Calcular el espectro centrado de una imagen y la distancia \\(D(u, v)\\) en ciclos/píxel.\nImplementar pasa bajos y pasa altos Ideal, Butterworth y Gaussiano con el mismo \\(D_0\\).\nMedir el efecto Gibbs del filtro ideal en un perfil de intensidad."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#procedimiento",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#procedimiento",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "2 Procedimiento",
+    "text": "2 Procedimiento\n\n2.1 Espectro y máscaras\nSigue el tutorial Filtros en frecuencia para construir las tres máscaras con \\(D_0 = 0{,}08\\) ciclos/píxel.\n\n\n\nLas tres funciones de transferencia.\n\n\n\n\n2.2 Perfil de intensidad\nToma la fila central de la imagen original y de las filtradas y grafícalas juntas.\n\n\n\nPerfil de la fila central.\n\n\n\n\n2.3 Pasa altos y notch\nConstruye los pasa altos como \\(1 - H\\) y aplica un notch sobre una imagen a la que le sumaste un patrón \\(0{,}1 \\sin(2\\pi \\cdot 0{,}2\\, x)\\)."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#preguntas-orientadoras",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#preguntas-orientadoras",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "3 Preguntas orientadoras",
+    "text": "3 Preguntas orientadoras\n\n¿Por qué el filtro ideal oscila cerca de los bordes y el gaussiano no?\n¿Cómo cambia el resultado si \\(D_0\\) se expresa en ciclos/mm con un PixelSpacing de 0,5 mm?\n¿Dónde aparece en el espectro el patrón periódico que añadiste?"
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#entregables",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#entregables",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "4 Entregables",
+    "text": "4 Entregables\n\nScript con las máscaras, las imágenes filtradas y los perfiles.\nUna figura comparativa por tipo de filtro, con ejes y unidades.\nRespuestas a las preguntas orientadoras."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#rúbrica",
+    "href": "cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html#rúbrica",
+    "title": "Laboratorio 2: filtrado en frecuencia",
+    "section": "5 Rúbrica",
+    "text": "5 Rúbrica\n\nRúbrica del laboratorio 2.\n\n\n\n\n\n\n\nCriterio\nPeso\nLogrado\n\n\n\n\nMáscaras correctas y centradas\n30 %\nLas tres comparten \\(D_0\\) y unidades\n\n\nComparación visual y por perfil\n30 %\nSe mide la amplitud de los anillos\n\n\nNotch\n20 %\nEl pico del patrón desaparece del espectro\n\n\nReproducibilidad\n20 %\nEl código corre de principio a fin"
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "",
+    "text": "Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.\nCalcular e interpretar el histograma.\nElegir y justificar una ventana para cada estructura del fantoma."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#objetivos",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#objetivos",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "",
+    "text": "Pasar los valores de una imagen a unidades Hounsfield y comprobar el rango.\nCalcular e interpretar el histograma.\nElegir y justificar una ventana para cada estructura del fantoma."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#materiales",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#materiales",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "2 Materiales",
+    "text": "2 Materiales\n\nPython 3.12 o posterior con NumPy, SciPy y Matplotlib (el tutorial Entorno reproducible con uv explica la instalación).\nEl archivo datos_ejemplo.py, que genera el fantoma de Shepp-Logan en UH aproximadas."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#procedimiento",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#procedimiento",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "3 Procedimiento",
+    "text": "3 Procedimiento\n\n3.1 Cargar la imagen\nimport numpy as np\nfrom datos_ejemplo import fantoma_uh, ventana\n\nuh = fantoma_uh(256)            # matriz 256 × 256 en UH\nprint(uh.min(), uh.max())       # ¿qué estructuras explican los extremos?\n\n\n3.2 Histograma\nCalcula el histograma con np.histogram usando intervalos de 4 UH entre −150 y 250. Grafícalo y señala los picos.\n\n\n3.3 Ventanas\n\n\n\nTres ventanas sobre el mismo corte.\n\n\nPrueba al menos tres ventanas. Para cada una anota \\(W\\), \\(L\\) y qué estructura se distingue mejor.\n\n\n\n\n\n\nAdvertenciaCuidado\n\n\n\nLa ventana cambia la imagen que se muestra, no los datos. Las medidas (áreas, intensidades) se hacen siempre sobre la matriz en UH."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#preguntas-orientadoras",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#preguntas-orientadoras",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "4 Preguntas orientadoras",
+    "text": "4 Preguntas orientadoras\n\n¿Por qué el aire queda en −1000 UH y qué pasa con él en la ventana de cerebro?\nSi el histograma tiene dos picos muy cercanos, ¿qué ventana los separa mejor y por qué?\n¿Qué información se pierde al guardar la imagen ya ventaneada en 8 bits?"
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#entregables",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#entregables",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "5 Entregables",
+    "text": "5 Entregables\n\nUn cuaderno o script reproducible con el histograma y las tres ventanas.\nUna tabla con \\(W\\), \\(L\\) y la estructura que cada ventana deja ver.\nRespuestas breves a las preguntas orientadoras."
+  },
+  {
+    "objectID": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#rúbrica",
+    "href": "cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html#rúbrica",
+    "title": "Laboratorio 1: histograma, ventana y contraste",
+    "section": "6 Rúbrica",
+    "text": "6 Rúbrica\n\nRúbrica del laboratorio 1.\n\n\n\n\n\n\n\nCriterio\nPeso\nLogrado\n\n\n\n\nConversión y verificación del rango en UH\n25 %\nExplica los valores extremos con las estructuras del fantoma\n\n\nHistograma\n25 %\nIntervalos adecuados, ejes con unidades y picos identificados\n\n\nElección de ventanas\n30 %\nCada ventana se justifica con el histograma\n\n\nReproducibilidad\n20 %\nEl código corre de principio a fin sin pasos manuales"
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "",
+    "text": "Esquema ilustrativo de un MUAP por clase, a la misma escala.\n\n\n\n\n\n\n\n\n\n\n\nMUAP\nReclutamiento\n\n\n\n\nSano\nbi o trifásico, 5–15 ms, 0.2–2 mV\nprogresivo\n\n\nMiopatía\ncorto, pequeño, polifásico\nprecoz\n\n\nNeuropatía\nlargo, grande, polifásico\nreducido, descarga rápida\n\n\n\n\nUna unidad motora es una motoneurona y todas las fibras que inerva; la aguja registra su potencial de acción (MUAP). En la miopatía se pierden fibras dentro de cada unidad: potenciales cortos, pequeños y polifásicos, y muchas unidades reclutadas para poca fuerza. En la neuropatía se pierden unidades enteras; las supervivientes adoptan fibras huérfanas por reinervación colateral: potenciales largos, grandes y polifásicos, pocas unidades descargando rápido. Los trazos son esquemas, no registros del dataset. Pregunta para el grupo: ¿qué es forma de un potencial y qué es ritmo de descarga?\n\n\n\n\n\nClínica: ¿qué patrón de unidad motora hay detrás de la señal y qué decisión cambiaría?\nProcesamiento de señales: ¿qué parte del registro es fisiología y qué parte es red eléctrica, movimiento o equipo?\nAprendizaje automático: ¿aprende el modelo algo que un método simple no capta, y lo comprobamos sin fugas?\nDidáctica: ¿qué debe poder explicar el estudiante al final, y con qué ejercicio lo demuestra?\n\n\nEs el contrato de la sesión. Conviene volver a esta lámina al final y pedir a cada estudiante que conteste una de las cuatro preguntas. La de aprendizaje automático es incómoda a propósito: un buen resultado no prueba que el modelo use lo que creemos que usa.\n\n\n\n\n\n\n\n\n\n\n\n\nPaso\nQué se hace\nSecciones del cuaderno\n\n\n\n\nMedir\nleer los .asc a 32 768 Hz y explorar la señal\n1–2\n\n\nModelar\nfiltrar, cortar en ventanas, secuencia de \\(32 \\times 5\\), RNN y LSTM\n3–7\n\n\nEvaluar y usar\nacierto, prueba del orden, diagnóstico por registro\n8–10\n\n\n\nEl modelo decide sobre ventanas de 0.5 s; el diagnóstico se da por registro, promediando sus ventanas.\n\nLas secciones del cuaderno siguen este orden, así que el estudiante puede abrirlo en paralelo. Promediar ventanas se parece más a cómo trabaja el neurofisiólogo, que no juzga un solo potencial sino el conjunto."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#qué-le-pasa-a-la-unidad-motora",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#qué-le-pasa-a-la-unidad-motora",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "¿Qué le pasa a la unidad motora?",
+    "text": "¿Qué le pasa a la unidad motora?\n\n\n\nEsquema ilustrativo de un MUAP por clase, a la misma escala.\n\n\n\n\n\n\n\n\n\n\n\nMUAP\nReclutamiento\n\n\n\n\nSano\nbi o trifásico, 5–15 ms, 0.2–2 mV\nprogresivo\n\n\nMiopatía\ncorto, pequeño, polifásico\nprecoz\n\n\nNeuropatía\nlargo, grande, polifásico\nreducido, descarga rápida\n\n\n\n\nUna unidad motora es una motoneurona y todas las fibras que inerva; la aguja registra su potencial de acción (MUAP). En la miopatía se pierden fibras dentro de cada unidad: potenciales cortos, pequeños y polifásicos, y muchas unidades reclutadas para poca fuerza. En la neuropatía se pierden unidades enteras; las supervivientes adoptan fibras huérfanas por reinervación colateral: potenciales largos, grandes y polifásicos, pocas unidades descargando rápido. Los trazos son esquemas, no registros del dataset. Pregunta para el grupo: ¿qué es forma de un potencial y qué es ritmo de descarga?"
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#cuatro-miradas-sobre-el-mismo-ejemplo",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#cuatro-miradas-sobre-el-mismo-ejemplo",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Cuatro miradas sobre el mismo ejemplo",
+    "text": "Cuatro miradas sobre el mismo ejemplo\n\nClínica: ¿qué patrón de unidad motora hay detrás de la señal y qué decisión cambiaría?\nProcesamiento de señales: ¿qué parte del registro es fisiología y qué parte es red eléctrica, movimiento o equipo?\nAprendizaje automático: ¿aprende el modelo algo que un método simple no capta, y lo comprobamos sin fugas?\nDidáctica: ¿qué debe poder explicar el estudiante al final, y con qué ejercicio lo demuestra?\n\n\nEs el contrato de la sesión. Conviene volver a esta lámina al final y pedir a cada estudiante que conteste una de las cuatro preguntas. La de aprendizaje automático es incómoda a propósito: un buen resultado no prueba que el modelo use lo que creemos que usa."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#el-recorrido-de-la-aguja-a-la-probabilidad",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#el-recorrido-de-la-aguja-a-la-probabilidad",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "El recorrido, de la aguja a la probabilidad",
+    "text": "El recorrido, de la aguja a la probabilidad\n\n\n\n\n\n\n\n\nPaso\nQué se hace\nSecciones del cuaderno\n\n\n\n\nMedir\nleer los .asc a 32 768 Hz y explorar la señal\n1–2\n\n\nModelar\nfiltrar, cortar en ventanas, secuencia de \\(32 \\times 5\\), RNN y LSTM\n3–7\n\n\nEvaluar y usar\nacierto, prueba del orden, diagnóstico por registro\n8–10\n\n\n\nEl modelo decide sobre ventanas de 0.5 s; el diagnóstico se da por registro, promediando sus ventanas.\n\nLas secciones del cuaderno siguen este orden, así que el estudiante puede abrirlo en paralelo. Promediar ventanas se parece más a cómo trabaja el neurofisiólogo, que no juzga un solo potencial sino el conjunto."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#los-datos-emg-de-aguja",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#los-datos-emg-de-aguja",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Los datos: EMG de aguja",
+    "text": "Los datos: EMG de aguja\n\n241 sujetos, bíceps y deltoides de ambos lados, 32 768 muestras por segundo\nLa etiqueta está en el nombre del archivo, por ejemplo EMG_001_01_RD_Hea.asc:\n\n\n\n\n\n\n\n\n\n\n\n001\n01\nR\nD\nHea\n\n\n\n\npaciente\nregistro\nlado (R o L)\nmúsculo (B o D)\nclase (Hea, Myo, Neu)\n\n\n\n\n\n\n\n\n\nDatos sintéticos\n\n\nLas cifras de esta presentación salen de datos sintéticos con el mismo esquema. Muestran que el código funciona; no tienen valor clínico.\n\n\n\n\nDataset de Mendeley Data (543xpjycj9). El número de paciente es tan importante como la clase: es lo que permite separar entrenamiento y prueba por paciente. Al construir el cuaderno no fue posible descargar los archivos desde el entorno de ejecución; con los archivos reales en la carpeta de datos, todo se recalcula."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#explorar-un-resumen-por-registro",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#explorar-un-resumen-por-registro",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Explorar: un resumen por registro",
+    "text": "Explorar: un resumen por registro\n\n\n\n\n\n\n\n\n\n\nMediana por clase\nRMS (mV)\nPico a pico (mV)\nCurtosis\nFrec. mediana (Hz)\n\n\n\n\nSano\n0.27\n3.4\n6.1\n240\n\n\nMiopatía\n0.12\n1.6\n3.5\n468\n\n\nNeuropatía\n0.88\n8.6\n3.2\n160\n\n\n\n\nNeuropatía: más amplitud y menos frecuencia; miopatía, lo contrario. Es lo que predicen los MUAP.\nSi cuatro números ya separan las clases, el modelo secuencial tendrá que ganarse su sitio.\n\n\nSección 2.2. Cada registro completo, tras quitar la media, se resume en cuatro números: RMS (energía), pico a pico, curtosis (potenciales aislados sobre línea de base dan curtosis alta) y frecuencia mediana del espectro de Welch. La curtosis del sano es más alta en estos datos sintéticos; con datos reales hay que mirarla otra vez. Datos sintéticos."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#hay-memoria-entre-tramas-vecinas",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#hay-memoria-entre-tramas-vecinas",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "¿Hay memoria entre tramas vecinas?",
+    "text": "¿Hay memoria entre tramas vecinas?\n\n\n\nLo que supera la barra gris es dependencia temporal. Datos sintéticos.\n\n\nEn neuropatía la autocorrelación tiene un pico cerca de 50 ms. Hipótesis, no conclusión: que haya dependencia no garantiza que el modelo la necesite.\n\nSección 2.7. La autocorrelación de la envolvente (tras quitar los 50 Hz) muestra ritmos: el pico de 50 ms corresponde a unidades que descargan unas 20 veces por segundo. La información mutua se calcula con 6 intervalos por cuantiles; con más intervalos el estimador tiene sesgo y hasta una secuencia desordenada parece tener información. Por eso se compara siempre con las tramas desordenadas. Pregunta didáctica: ¿por qué la línea de azar no es cero?"
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#preprocesar-dejar-solo-la-fisiología",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#preprocesar-dejar-solo-la-fisiología",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Preprocesar: dejar solo la fisiología",
+    "text": "Preprocesar: dejar solo la fisiología\n\nMuesca en 50 Hz: quita el pico estrecho de la red eléctrica.\nPasa-banda 20–3500 Hz: por debajo hay movimiento y deriva de la línea de base; por encima casi no hay energía de los MUAP.\nDiezmado por 4: de 32 768 a 8 192 Hz. Nyquist queda en 4 096 Hz, por encima de la banda útil.\n\nUn registro de 3 s pasa de 98 304 a 24 576 muestras.\n\nSección 4. Cada paso responde a la exploración: el pico de 50 Hz en la densidad espectral justifica la muesca; que casi toda la energía esté por debajo de 3 a 4 kHz justifica el pasa-banda y el diezmado. Los filtros se aplican hacia delante y hacia atrás (filtfilt, sosfiltfilt) para no desplazar los potenciales; decimate incluye su filtro antialias. Pregunta: ¿qué pasaría si se diezmara por 8?"
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#la-secuencia-32-tramas-por-5-descriptores",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#la-secuencia-32-tramas-por-5-descriptores",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "La secuencia: 32 tramas por 5 descriptores",
+    "text": "La secuencia: 32 tramas por 5 descriptores\nVentana de 0.5 s = 4 096 muestras; una trama = 128 muestras = 15.6 ms.\n\n\n\nDescriptor\nQué mide\nLectura clínica\n\n\n\n\nlog RMS\nenergía de la trama\ntamaño de los potenciales\n\n\nlog WL\nlongitud de la curva\namplitud y complejidad\n\n\nZC\ncruces por cero con umbral\ncontenido de alta frecuencia\n\n\nSSC\ncambios de pendiente\nnúmero de fases\n\n\nFrec. media\ncentro del espectro\npotenciales cortos o largos\n\n\n\nEntrada de la red: \\(x \\in \\mathbb{R}^{N \\times 32 \\times 5}\\).\n\nSección 5. Las ventanas se solapan un 50 %. La trama de 15.6 ms deja que quepa más o menos un MUAP. El umbral de ZC y SSC es el 5 % de la desviación estándar de la ventana. Los descriptores se estandarizan con la media y la desviación del entrenamiento. Limitación: cinco números por trama pierden la forma fina del potencial."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#la-rnn-simple-una-celda-que-se-repite",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#la-rnn-simple-una-celda-que-se-repite",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "La RNN simple: una celda que se repite",
+    "text": "La RNN simple: una celda que se repite\n\n\\[\nh_t = \\tanh\\left(W_{xh}\\,x_t + W_{hh}\\,h_{t-1} + b\\right)\n\\]\n\nSección 3.2. Leer el diagrama en orden: A, vista plegada con el lazo de memoria; B, la misma celda desenrollada en 32 pasos con los mismos pesos; C, el interior de la celda; D, los parámetros. \\(H(D+H+2) = 32 \\cdot 39 = 1248\\) no depende de la longitud de la secuencia. Solo \\(h_T\\) pasa al clasificador: esquema muchos a uno. RedRecurrente tiene 1 827 parámetros con el clasificador."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#el-problema-el-pasado-se-desvanece",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#el-problema-el-pasado-se-desvanece",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "El problema: el pasado se desvanece",
+    "text": "El problema: el pasado se desvanece\nInfluencia de una entrada pasada sobre el último estado, \\(\\lVert \\partial h_T / \\partial x_t \\rVert\\), en redes sin entrenar:\n\n\n\n\n\n\n\n\nRed\n10 pasos atrás\n100 pasos atrás\n\n\n\n\nRNN simple\n\\(1.4 \\times 10^{-3}\\)\n\\(0\\)\n\n\nLSTM, \\(b_f \\approx 0\\)\n\\(1.8 \\times 10^{-3}\\)\n\\(2 \\times 10^{-22}\\)\n\n\nLSTM, \\(b_f = 2\\)\n\\(1.0 \\times 10^{-1}\\)\n\\(2.1 \\times 10^{-3}\\)\n\n\n\nEn la LSTM lo controla la compuerta de olvido: por eso el cuaderno empieza con \\(b_f = 1\\).\n\nSecciones 3.3 y 3.8. Tres redes recién inicializadas, secuencias aleatorias de 150 pasos, promedio de 20 secuencias. En la RNN el gradiente se multiplica por \\(W_{hh}\\) en cada paso hacia atrás. La explosión se controla recortando la norma (el cuaderno recorta a 1); el desvanecimiento exige cambiar la arquitectura. En este ejemplo las secuencias tienen 32 pasos, así que el desvanecimiento importa menos; el ejercicio 2 lo pone a prueba."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#la-lstm-una-memoria-con-compuertas",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#la-lstm-una-memoria-con-compuertas",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "La LSTM: una memoria con compuertas",
+    "text": "La LSTM: una memoria con compuertas\n\n\\[\nc_t = f_t \\odot c_{t-1} + i_t \\odot g_t, \\qquad h_t = o_t \\odot \\tanh(c_t)\n\\]\n\nSección 3.4. La memoria \\(c\\) se actualiza sumando: \\(\\partial c_t / \\partial c_{t-1} = \\mathrm{diag}(f_t)\\), y con \\(f_t \\approx 1\\) el gradiente pasa casi intacto. Las compuertas deciden qué olvidar (\\(f\\)), qué escribir (\\(i\\)) y qué mostrar (\\(o\\)). En PyTorch van apiladas en el orden i, f, g, o. RedLSTM usa dos capas, lstm1 y lstm2, con dropout entre ellas: 14 019 parámetros con el clasificador."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#entrenar-sin-hacer-trampa",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#entrenar-sin-hacer-trampa",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Entrenar sin hacer trampa",
+    "text": "Entrenar sin hacer trampa\n\nDivisión por paciente (53, 11 y 16 pacientes): sus registros se parecen y el modelo podría reconocer a la persona, no la enfermedad.\nClases desiguales: pérdida de entropía cruzada con pesos 1.36 para sano y 0.88 para cada clase patológica.\nOptimización: Adam con tasa \\(10^{-3}\\), lotes de 64, recorte del gradiente a 1 y parada temprana con validación.\n\n\nSecciones 5.1 y 7; corrida con 80 pacientes sintéticos. La RNN se detuvo en la época 22 y la LSTM en la 25. La estandarización usa solo estadísticas del entrenamiento por la misma razón. Pregunta: ¿qué otro dato del nombre del archivo podría causar una fuga parecida?"
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#resultados-aciertan-incluso-sin-tiempo",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#resultados-aciertan-incluso-sin-tiempo",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Resultados: aciertan incluso sin tiempo",
+    "text": "Resultados: aciertan incluso sin tiempo\n\n\n\nModelo\nParámetros\nExactitud bal. por ventana\nPor registro\n\n\n\n\nRNN simple\n1 827\n0.990\n1.00\n\n\nLSTM, dos capas\n14 019\n0.994\n1.00\n\n\nBase sin tiempo\n33\n0.992\n1.00\n\n\n\nLa base es una regresión logística sobre la media y la desviación de cada descriptor. Que empate con la LSTM dice que el código funciona, no que la memoria aporte.\n\nSecciones 8 y 8.1; datos sintéticos, prueba con 16 pacientes, 352 ventanas y 32 registros. La exactitud balanceada promedia la sensibilidad de cada clase. Mensaje de aprendizaje automático: comparar siempre con una línea base simple antes de atribuir el resultado a la arquitectura. Mensaje clínico: 32 registros sintéticos no dicen nada sobre sensibilidad o especificidad reales."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#usa-la-red-el-orden-de-las-tramas",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#usa-la-red-el-orden-de-las-tramas",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "¿Usa la red el orden de las tramas?",
+    "text": "¿Usa la red el orden de las tramas?\nSe barajan las 32 tramas de cada ventana de prueba, 10 veces: mismos valores, otro orden.\n\n\n\nExactitud bal. por ventana\nOrden original\nDesordenado\nCaída\n\n\n\n\nRNN simple\n0.990\n0.977\n0.013\n\n\nLSTM, dos capas\n0.994\n0.995\n\\(-0.001\\)\n\n\n\nAquí la LSTM no usa el orden. Con los registros reales, esta prueba dirá si el modelo secuencial se gana su sitio.\n\nSección 8.1, datos sintéticos. Si la red se apoyara en cómo cambian los descriptores en el tiempo, el acierto tendría que caer. En estos datos la LSTM clasifica por la distribución de los descriptores, igual que la línea base. La hipótesis de la sección 2.8 se tiene que comprobar con los registros reales. Mirada didáctica: un experimento sencillo puede refutar la historia que contamos sobre un modelo."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#aplicación-un-registro-una-respuesta",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#aplicación-un-registro-una-respuesta",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Aplicación: un registro, una respuesta",
+    "text": "Aplicación: un registro, una respuesta\ndiagnosticar_registro(\"EMG015_08_RB_Hea.asc\")\n\n\n\nClase\nProbabilidad\n\n\n\n\nSano\n0.988\n\n\nMiopatía\n0.009\n\n\nNeuropatía\n0.003\n\n\n\n11 ventanas, probabilidad por ventana, media del registro. Es apoyo, no diagnóstico: el informe sigue siendo del neurofisiólogo.\n\nSección 10; registro sintético de un sujeto sano. La función lee, filtra, diezma, corta en ventanas, calcula y estandariza los descriptores, pasa cada ventana por la LSTM y promedia. El modelo no ve la historia, la distribución de músculos afectados ni la neuroconducción. Promediar ventanas suaviza errores aislados pero puede ocultar un patrón focal; conviene mirar también la dispersión entre ventanas."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#límites-que-hay-que-decir-en-voz-alta",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#límites-que-hay-que-decir-en-voz-alta",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Límites que hay que decir en voz alta",
+    "text": "Límites que hay que decir en voz alta\n\nClínica: la señal depende de la posición de la aguja, el músculo y el nivel de contracción; habría que validar en otro hospital y con otro equipo.\nSeñales: cinco números cada 15.6 ms pierden la forma fina de los potenciales.\nAprendizaje: pocos pacientes, sin validación cruzada ni ajuste de hiperparámetros.\nAviso: todas las cifras son de datos sintéticos. Es un modelo didáctico, no una herramienta diagnóstica."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#para-esta-semana",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#para-esta-semana",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Para esta semana",
+    "text": "Para esta semana\n\n\n\n\n\n\nLaboratorio\n\n\nCon los registros reales, repetir la línea base sin tiempo y la prueba de desordenar las tramas, y decidir con esos dos números si la LSTM aporta.\n\n\n\n\nGRU: cambiar la LSTM por una GRU. ¿Cuántos parámetros ahorra?\n\\(T = 128\\): tramas de 32 muestras. ¿Sufre más la RNN simple?\nBidireccional: ¿qué forma tiene ahora \\(h\\)?\nSin descriptores: una Conv1d sobre la señal cruda.\nCinco semillas: media y desviación de la división por paciente.\nPor músculo: entrenar con bíceps, evaluar en deltoides.\n\n\nEjercicios de la sección 11, de menor a mayor esfuerzo. Sugerencia: grupos mixtos de medicina e ingeniería, y que cada grupo explique qué significaría clínicamente su resultado. nn.GRU devuelve la salida y \\(h_T\\), sin celda \\(c\\)."
+  },
+  {
+    "objectID": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#medir-con-cuidado-modelar-lo-justo",
+    "href": "cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html#medir-con-cuidado-modelar-lo-justo",
+    "title": "Redes recurrentes y LSTM para EMG de aguja",
+    "section": "Medir con cuidado, modelar lo justo",
+    "text": "Medir con cuidado, modelar lo justo\ny comprobar que el tiempo importa.\n\nTres ideas para llevarse. La exploración y el preprocesamiento deciden casi todo. Una LSTM es una herramienta para secuencias, y hay que demostrar que la secuencia aporta. La línea base sin tiempo y la prueba de desordenar las tramas son baratas y deberían acompañar a cualquier modelo recurrente."
   }
 ]

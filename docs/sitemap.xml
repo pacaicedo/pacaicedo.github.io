@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/validacion-por-participante/index.html</loc>
-    <lastmod>2026-10-22T00:17:07.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.376Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/tutorial-dvc/index.html</loc>
-    <lastmod>2026-10-23T14:47:10.822Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.375Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/marca-en-quarto/figuras-con-la-marca/outindex.html</loc>
-    <lastmod>2026-10-23T15:22:32.771Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.374Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/index.html</loc>
-    <lastmod>2026-10-23T14:46:47.880Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.374Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/filtrado-fase-cero/index.html</loc>
-    <lastmod>2026-10-22T00:17:30.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.372Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/proyectos/riesgo-de-caida/index.html</loc>
-    <lastmod>2026-10-23T13:43:45.506Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.355Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/proyectos/espasticidad-semg/index.html</loc>
-    <lastmod>2026-10-23T13:43:34.622Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.354Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/index.html</loc>
-    <lastmod>2026-10-23T15:02:44.054Z</lastmod>
+    <lastmod>2026-10-24T12:50:40.968Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/tau/presentaciones/01-aprender-de-datos.html</loc>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/presentaciones/01-la-imagen-como-dato.html</loc>
-    <lastmod>2026-10-22T18:40:39.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/laboratorios/lab1-histograma-y-contraste.html</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/index.html</loc>
-    <lastmod>2026-10-22T18:09:45.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.313Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/charlas/2026-ver-el-cuerpo-como-dato/index.html</loc>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/index.html</loc>
-    <lastmod>2026-10-21T14:07:06.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.314Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/laboratorios/lab2-filtrado-frecuencial.html</loc>
@@ -114,30 +114,46 @@
   </url>
   <url>
     <loc>https://pacaicedo.github.io/proyectos/bioforge/bak_index.html</loc>
-    <lastmod>2026-10-22T00:15:51.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.354Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/proyectos/index.html</loc>
-    <lastmod>2026-10-22T18:09:45.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.355Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/entorno-uv-quarto/index.html</loc>
-    <lastmod>2026-10-22T00:18:20.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.372Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/filtros-frecuenciales/index.html</loc>
-    <lastmod>2026-10-22T00:17:21.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.374Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/marca-en-quarto/entorno-uv-quarto/outindex.html</loc>
-    <lastmod>2026-10-23T15:27:55.724Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.374Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/marca-en-quarto/outindex.html</loc>
-    <lastmod>2026-10-23T15:02:34.017Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.374Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/tutorial-quarto-gitlab/index.html</loc>
-    <lastmod>2026-10-23T14:49:25.686Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.376Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/index.html</loc>
+    <lastmod>2026-10-24T12:44:33.580Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html</loc>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html</loc>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html</loc>
+    <lastmod>2026-10-24T12:50:07.162Z</lastmod>
   </url>
 </urlset>

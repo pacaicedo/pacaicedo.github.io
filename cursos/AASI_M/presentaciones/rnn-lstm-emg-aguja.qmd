@@ -1,0 +1,259 @@
+---
+title: "Redes recurrentes y LSTM para EMG de aguja"
+subtitle: "Sano, miopatía o neuropatía a partir de la señal"
+description: "Un ejemplo completo con cuatro miradas: qué ve el clínico en un EMG de aguja, cómo se limpia y se resume la señal, cómo funcionan la RNN y la LSTM y cómo comprobar si el orden temporal aporta."
+rotulo: "Semana [N]"
+date: 2026-10-24
+---
+
+# El problema
+
+## ¿Qué le pasa a la unidad motora?
+
+![Esquema ilustrativo de un MUAP por clase, a la misma escala.](img/rnn-muap-patrones){width="95%"}
+
+| | MUAP | Reclutamiento |
+|:--|:--|:--|
+| [Sano]{.dato} | bi o trifásico, 5–15 ms, 0.2–2 mV | progresivo |
+| [Miopatía]{.grafo} | corto, pequeño, polifásico | precoz |
+| [Neuropatía]{.causa} | largo, grande, polifásico | reducido, descarga rápida |
+
+::: {.notes}
+Una unidad motora es una motoneurona y todas las fibras que inerva; la aguja registra su potencial de acción (MUAP). En la miopatía se pierden fibras dentro de cada unidad: potenciales cortos, pequeños y polifásicos, y muchas unidades reclutadas para poca fuerza. En la neuropatía se pierden unidades enteras; las supervivientes adoptan fibras huérfanas por reinervación colateral: potenciales largos, grandes y polifásicos, pocas unidades descargando rápido. Los trazos son esquemas, no registros del dataset. Pregunta para el grupo: ¿qué es forma de un potencial y qué es ritmo de descarga?
+:::
+
+## Cuatro miradas sobre el mismo ejemplo
+
+- [Clínica]{.dato}: ¿qué patrón de unidad motora hay detrás de la señal y qué decisión cambiaría?
+- [Procesamiento de señales]{.grafo}: ¿qué parte del registro es fisiología y qué parte es red eléctrica, movimiento o equipo?
+- [Aprendizaje automático]{.causa}: ¿aprende el modelo algo que un método simple no capta, y lo comprobamos sin fugas?
+- **Didáctica**: ¿qué debe poder explicar el estudiante al final, y con qué ejercicio lo demuestra?
+
+::: {.notes}
+Es el contrato de la sesión. Conviene volver a esta lámina al final y pedir a cada estudiante que conteste una de las cuatro preguntas. La de aprendizaje automático es incómoda a propósito: un buen resultado no prueba que el modelo use lo que creemos que usa.
+:::
+
+## El recorrido, de la aguja a la probabilidad
+
+| Paso | Qué se hace | Secciones del cuaderno |
+|:--|:--|:--|
+| [Medir]{.dato} | leer los `.asc` a 32 768 Hz y explorar la señal | 1–2 |
+| [Modelar]{.grafo} | filtrar, cortar en ventanas, secuencia de $32 \times 5$, RNN y LSTM | 3–7 |
+| [Evaluar y usar]{.causa} | acierto, prueba del orden, diagnóstico por registro | 8–10 |
+
+El modelo decide sobre ventanas de 0.5 s; el diagnóstico se da **por registro**, promediando sus ventanas.
+
+::: {.notes}
+Las secciones del cuaderno siguen este orden, así que el estudiante puede abrirlo en paralelo. Promediar ventanas se parece más a cómo trabaja el neurofisiólogo, que no juzga un solo potencial sino el conjunto.
+:::
+
+# Medir
+
+## Los datos: EMG de aguja
+
+- 241 sujetos, bíceps y deltoides de ambos lados, 32 768 muestras por segundo
+- La etiqueta está en el nombre del archivo, por ejemplo `EMG_001_01_RD_Hea.asc`:
+
+| `001` | `01` | `R` | `D` | `Hea` |
+|:--:|:--:|:--:|:--:|:--:|
+| paciente | registro | lado (R o L) | músculo (B o D) | [clase]{.causa} (Hea, Myo, Neu) |
+
+::: {.callout-warning}
+## Datos sintéticos
+Las cifras de esta presentación salen de datos sintéticos con el mismo esquema. Muestran que el código funciona; no tienen valor clínico.
+:::
+
+::: {.notes}
+Dataset de Mendeley Data (543xpjycj9). El número de paciente es tan importante como la clase: es lo que permite separar entrenamiento y prueba por paciente. Al construir el cuaderno no fue posible descargar los archivos desde el entorno de ejecución; con los archivos reales en la carpeta de datos, todo se recalcula.
+:::
+
+## Explorar: un resumen por registro
+
+| Mediana por clase | RMS (mV) | Pico a pico (mV) | Curtosis | Frec. mediana (Hz) |
+|:--|--:|--:|--:|--:|
+| [Sano]{.dato} | 0.27 | 3.4 | 6.1 | 240 |
+| [Miopatía]{.grafo} | 0.12 | 1.6 | 3.5 | 468 |
+| [Neuropatía]{.causa} | 0.88 | 8.6 | 3.2 | 160 |
+
+- Neuropatía: más amplitud y menos frecuencia; miopatía, lo contrario. Es lo que predicen los MUAP.
+- Si cuatro números ya separan las clases, el modelo secuencial tendrá que [ganarse su sitio]{.causa}.
+
+::: {.notes}
+Sección 2.2. Cada registro completo, tras quitar la media, se resume en cuatro números: RMS (energía), pico a pico, curtosis (potenciales aislados sobre línea de base dan curtosis alta) y frecuencia mediana del espectro de Welch. La curtosis del sano es más alta en estos datos sintéticos; con datos reales hay que mirarla otra vez. Datos sintéticos.
+:::
+
+## ¿Hay memoria entre tramas vecinas?
+
+![Lo que supera la barra gris es dependencia temporal. Datos sintéticos.](img/rnn-memoria-tramas){width="80%"}
+
+En neuropatía la autocorrelación tiene un pico cerca de 50 ms. [Hipótesis, no conclusión]{.causa}: que haya dependencia no garantiza que el modelo la necesite.
+
+::: {.notes}
+Sección 2.7. La autocorrelación de la envolvente (tras quitar los 50 Hz) muestra ritmos: el pico de 50 ms corresponde a unidades que descargan unas 20 veces por segundo. La información mutua se calcula con 6 intervalos por cuantiles; con más intervalos el estimador tiene sesgo y hasta una secuencia desordenada parece tener información. Por eso se compara siempre con las tramas desordenadas. Pregunta didáctica: ¿por qué la línea de azar no es cero?
+:::
+
+# Modelar
+
+## Preprocesar: dejar solo la fisiología
+
+1. **Muesca en 50 Hz**: quita el pico estrecho de la red eléctrica.
+2. **Pasa-banda 20–3500 Hz**: por debajo hay movimiento y deriva de la línea de base; por encima casi no hay energía de los MUAP.
+3. **Diezmado por 4**: de 32 768 a 8 192 Hz. Nyquist queda en 4 096 Hz, por encima de la banda útil.
+
+Un registro de 3 s pasa de [98 304]{.grafo} a [24 576]{.grafo} muestras.
+
+::: {.notes}
+Sección 4. Cada paso responde a la exploración: el pico de 50 Hz en la densidad espectral justifica la muesca; que casi toda la energía esté por debajo de 3 a 4 kHz justifica el pasa-banda y el diezmado. Los filtros se aplican hacia delante y hacia atrás (filtfilt, sosfiltfilt) para no desplazar los potenciales; decimate incluye su filtro antialias. Pregunta: ¿qué pasaría si se diezmara por 8?
+:::
+
+## La secuencia: 32 tramas por 5 descriptores
+
+Ventana de 0.5 s = 4 096 muestras; una trama = 128 muestras = 15.6 ms.
+
+| Descriptor | Qué mide | Lectura clínica |
+|:--|:--|:--|
+| log RMS | energía de la trama | tamaño de los potenciales |
+| log WL | longitud de la curva | amplitud y complejidad |
+| ZC | cruces por cero con umbral | contenido de alta frecuencia |
+| SSC | cambios de pendiente | número de fases |
+| Frec. media | centro del espectro | potenciales cortos o largos |
+
+Entrada de la red: $x \in \mathbb{R}^{N \times 32 \times 5}$.
+
+::: {.notes}
+Sección 5. Las ventanas se solapan un 50 %. La trama de 15.6 ms deja que quepa más o menos un MUAP. El umbral de ZC y SSC es el 5 % de la desviación estándar de la ventana. Los descriptores se estandarizan con la media y la desviación del entrenamiento. Limitación: cinco números por trama pierden la forma fina del potencial.
+:::
+
+## La RNN simple: una celda que se repite
+
+![](img/rnn-elman-arquitectura){width="80%"}
+
+$$
+h_t = \tanh\left(W_{xh}\,x_t + W_{hh}\,h_{t-1} + b\right)
+$$
+
+::: {.notes}
+Sección 3.2. Leer el diagrama en orden: A, vista plegada con el lazo de memoria; B, la misma celda desenrollada en 32 pasos con los mismos pesos; C, el interior de la celda; D, los parámetros. $H(D+H+2) = 32 \cdot 39 = 1248$ no depende de la longitud de la secuencia. Solo $h_T$ pasa al clasificador: esquema muchos a uno. RedRecurrente tiene 1 827 parámetros con el clasificador.
+:::
+
+## El problema: el pasado se desvanece
+
+Influencia de una entrada pasada sobre el último estado, $\lVert \partial h_T / \partial x_t \rVert$, en redes sin entrenar:
+
+| Red | 10 pasos atrás | 100 pasos atrás |
+|:--|--:|--:|
+| [RNN simple]{.grafo} | $1.4 \times 10^{-3}$ | $0$ |
+| LSTM, $b_f \approx 0$ | $1.8 \times 10^{-3}$ | $2 \times 10^{-22}$ |
+| [LSTM, $b_f = 2$]{.causa} | $1.0 \times 10^{-1}$ | $2.1 \times 10^{-3}$ |
+
+En la LSTM lo controla la compuerta de olvido: por eso el cuaderno empieza con $b_f = 1$.
+
+::: {.notes}
+Secciones 3.3 y 3.8. Tres redes recién inicializadas, secuencias aleatorias de 150 pasos, promedio de 20 secuencias. En la RNN el gradiente se multiplica por $W_{hh}$ en cada paso hacia atrás. La explosión se controla recortando la norma (el cuaderno recorta a 1); el desvanecimiento exige cambiar la arquitectura. En este ejemplo las secuencias tienen 32 pasos, así que el desvanecimiento importa menos; el ejercicio 2 lo pone a prueba.
+:::
+
+## La LSTM: una memoria con compuertas
+
+![](img/rnn-lstm-arquitectura){width="78%"}
+
+$$
+c_t = f_t \odot c_{t-1} + i_t \odot g_t, \qquad h_t = o_t \odot \tanh(c_t)
+$$
+
+::: {.notes}
+Sección 3.4. La memoria $c$ se actualiza sumando: $\partial c_t / \partial c_{t-1} = \mathrm{diag}(f_t)$, y con $f_t \approx 1$ el gradiente pasa casi intacto. Las compuertas deciden qué olvidar ($f$), qué escribir ($i$) y qué mostrar ($o$). En PyTorch van apiladas en el orden i, f, g, o. RedLSTM usa dos capas, lstm1 y lstm2, con dropout entre ellas: 14 019 parámetros con el clasificador.
+:::
+
+## Entrenar sin hacer trampa
+
+- **División por paciente** (53, 11 y 16 pacientes): sus registros se parecen y el modelo podría reconocer a la persona, no la enfermedad.
+- **Clases desiguales**: pérdida de entropía cruzada con pesos 1.36 para sano y 0.88 para cada clase patológica.
+- **Optimización**: Adam con tasa $10^{-3}$, lotes de 64, recorte del gradiente a 1 y parada temprana con validación.
+
+::: {.notes}
+Secciones 5.1 y 7; corrida con 80 pacientes sintéticos. La RNN se detuvo en la época 22 y la LSTM en la 25. La estandarización usa solo estadísticas del entrenamiento por la misma razón. Pregunta: ¿qué otro dato del nombre del archivo podría causar una fuga parecida?
+:::
+
+# Evaluar y usar
+
+## Resultados: aciertan incluso sin tiempo
+
+| Modelo | Parámetros | Exactitud bal. por ventana | Por registro |
+|:--|--:|--:|--:|
+| [RNN simple]{.grafo} | 1 827 | 0.990 | 1.00 |
+| [LSTM, dos capas]{.grafo} | 14 019 | 0.994 | 1.00 |
+| [Base sin tiempo]{.causa} | **33** | **0.992** | **1.00** |
+
+La base es una regresión logística sobre la media y la desviación de cada descriptor. Que empate con la LSTM dice que [el código funciona]{.causa}, no que la memoria aporte.
+
+::: {.notes}
+Secciones 8 y 8.1; datos sintéticos, prueba con 16 pacientes, 352 ventanas y 32 registros. La exactitud balanceada promedia la sensibilidad de cada clase. Mensaje de aprendizaje automático: comparar siempre con una línea base simple antes de atribuir el resultado a la arquitectura. Mensaje clínico: 32 registros sintéticos no dicen nada sobre sensibilidad o especificidad reales.
+:::
+
+## ¿Usa la red el orden de las tramas?
+
+Se barajan las 32 tramas de cada ventana de prueba, 10 veces: mismos valores, otro orden.
+
+| Exactitud bal. por ventana | Orden original | Desordenado | Caída |
+|:--|--:|--:|--:|
+| [RNN simple]{.grafo} | 0.990 | 0.977 | 0.013 |
+| [LSTM, dos capas]{.grafo} | 0.994 | 0.995 | $-0.001$ |
+
+[Aquí la LSTM no usa el orden.]{.causa} Con los registros reales, esta prueba dirá si el modelo secuencial se gana su sitio.
+
+::: {.notes}
+Sección 8.1, datos sintéticos. Si la red se apoyara en cómo cambian los descriptores en el tiempo, el acierto tendría que caer. En estos datos la LSTM clasifica por la distribución de los descriptores, igual que la línea base. La hipótesis de la sección 2.8 se tiene que comprobar con los registros reales. Mirada didáctica: un experimento sencillo puede refutar la historia que contamos sobre un modelo.
+:::
+
+## Aplicación: un registro, una respuesta
+
+```python
+diagnosticar_registro("EMG015_08_RB_Hea.asc")
+```
+
+| Clase | Probabilidad |
+|:--|--:|
+| [Sano]{.dato} | **0.988** |
+| [Miopatía]{.grafo} | 0.009 |
+| [Neuropatía]{.causa} | 0.003 |
+
+11 ventanas, probabilidad por ventana, media del registro. Es apoyo, no diagnóstico: el informe sigue siendo del neurofisiólogo.
+
+::: {.notes}
+Sección 10; registro sintético de un sujeto sano. La función lee, filtra, diezma, corta en ventanas, calcula y estandariza los descriptores, pasa cada ventana por la LSTM y promedia. El modelo no ve la historia, la distribución de músculos afectados ni la neuroconducción. Promediar ventanas suaviza errores aislados pero puede ocultar un patrón focal; conviene mirar también la dispersión entre ventanas.
+:::
+
+# Cierre
+
+## Límites que hay que decir en voz alta
+
+- [Clínica]{.dato}: la señal depende de la posición de la aguja, el músculo y el nivel de contracción; habría que validar en otro hospital y con otro equipo.
+- [Señales]{.grafo}: cinco números cada 15.6 ms pierden la forma fina de los potenciales.
+- [Aprendizaje]{.causa}: pocos pacientes, sin validación cruzada ni ajuste de hiperparámetros.
+- [Aviso]{.aviso}: todas las cifras son de datos sintéticos. Es un modelo didáctico, no una herramienta diagnóstica.
+
+## Para esta semana
+
+::: {.callout-note}
+## Laboratorio
+Con los registros reales, repetir la línea base sin tiempo y la prueba de desordenar las tramas, y decidir con esos dos números si la LSTM aporta.
+:::
+
+1. **GRU**: cambiar la LSTM por una GRU. ¿Cuántos parámetros ahorra?
+2. **$T = 128$**: tramas de 32 muestras. ¿Sufre más la RNN simple?
+3. **Bidireccional**: ¿qué forma tiene ahora $h$?
+4. **Sin descriptores**: una `Conv1d` sobre la señal cruda.
+5. **Cinco semillas**: media y desviación de la división por paciente.
+6. **Por músculo**: entrenar con bíceps, evaluar en deltoides.
+
+::: {.notes}
+Ejercicios de la sección 11, de menor a mayor esfuerzo. Sugerencia: grupos mixtos de medicina e ingeniería, y que cada grupo explique qué significaría clínicamente su resultado. nn.GRU devuelve la salida y $h_T$, sin celda $c$.
+:::
+
+## Medir con cuidado, modelar lo justo
+
+y [comprobar que el tiempo importa]{.causa}.
+
+::: {.notes}
+Tres ideas para llevarse. La exploración y el preprocesamiento deciden casi todo. Una LSTM es una herramienta para secuencias, y hay que demostrar que la secuencia aporta. La línea base sin tiempo y la prueba de desordenar las tramas son baratas y deberían acompañar a cualquier modelo recurrente.
+:::

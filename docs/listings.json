@@ -2,8 +2,8 @@
   {
     "listing": "/tutoriales/index.html",
     "items": [
-      "/tutoriales/tutorial-quarto-gitlab/index.html",
       "/tutoriales/tutorial-dvc/index.html",
+      "/tutoriales/tutorial-quarto-gitlab/index.html",
       "/tutoriales/validacion-por-participante/index.html",
       "/tutoriales/filtrado-fase-cero/index.html",
       "/tutoriales/filtros-frecuenciales/index.html",
@@ -13,6 +13,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/cursos/AASI_M/index.html",
       "/cursos/psim/index.html",
       "/cursos/sysb/index.html",
       "/cursos/tau/index.html",
@@ -20,8 +21,8 @@
       "/charlas/2026-experimentos-reproducibles/index.html",
       "/proyectos/riesgo-de-caida/index.html",
       "/proyectos/espasticidad-semg/index.html",
-      "/tutoriales/tutorial-quarto-gitlab/index.html",
       "/tutoriales/tutorial-dvc/index.html",
+      "/tutoriales/tutorial-quarto-gitlab/index.html",
       "/tutoriales/validacion-por-participante/index.html",
       "/tutoriales/filtrado-fase-cero/index.html",
       "/tutoriales/filtros-frecuenciales/index.html",
@@ -51,6 +52,7 @@
   {
     "listing": "/cursos/index.html",
     "items": [
+      "/cursos/AASI_M/index.html",
       "/cursos/psim/index.html",
       "/cursos/sysb/index.html",
       "/cursos/tau/index.html"
@@ -79,6 +81,16 @@
     "items": [
       "/proyectos/riesgo-de-caida/index.html",
       "/proyectos/espasticidad-semg/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos/AASI_M/index.html",
+    "items": [
+      "/cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html",
+      "/cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html",
+      "/cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html",
+      "/tutoriales/entorno-uv-quarto/index.html",
+      "/tutoriales/filtros-frecuenciales/index.html"
     ]
   }
 ]

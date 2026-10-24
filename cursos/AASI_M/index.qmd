@@ -1,0 +1,144 @@
+---
+title: "Aprendizaje automático para el procesamiento de señales e imágenes médicas"
+subtitle: "PSIM · semestre 2026-2"
+description: "Fundamentos del procesamiento de imágenes médicas, sin aprendizaje automático: del píxel a una medida que se puede defender."
+image: tarjeta.png
+title-block-banner: true
+categories: [PSIM, Imágenes médicas]
+bibliography: referentes.bib
+nocite: |
+  @*
+include-after-body: ../../recursos/marca/sitio/calendario.html
+listing:
+  - id: presentaciones
+    contents: presentaciones/*.qmd
+    sort: date
+    template: ../../recursos/marca/sitio/materiales.ejs
+    template-params:
+      html: Diapositivas
+      pdf: PDF
+  - id: laboratorios
+    contents: laboratorios/*.qmd
+    sort: date
+    template: ../../recursos/marca/sitio/materiales.ejs
+    template-params:
+      html: Guía
+      pdf: PDF
+  - id: tutoriales-psim
+    contents: ../../tutoriales/*/index.qmd
+    include:
+      categories: PSIM
+    type: default
+    fields: [title, description]
+    sort: title
+---
+
+## Introducción
+
+Una imagen médica es una medición: cada píxel guarda un número que depende del equipo, del protocolo y de cómo se reconstruyó. El curso enseña a tratar esos números con cuidado, desde las operaciones sobre el histograma hasta el filtrado en frecuencia, la segmentación y la morfología matemática [@gonzalez2018; @suetens2017].
+
+El curso deja fuera, a propósito, el aprendizaje automático: primero los fundamentos del procesamiento. Al final del semestre cada equipo construye un proyecto completo que termina en una regresión logística (clasificación) o una regresión lineal múltiple (regresión) sobre características que extrajo de las imágenes.
+
+::: {.ficha}
+Código
+: PSIM
+
+Semestre
+: 2026-2
+
+Horario
+: lunes y jueves, 7:00–9:00
+
+Intensidad
+: 4 horas por semana
+
+Prerrequisito
+: Sistemas y Señales Biomédicos
+
+Evaluación
+: 3 laboratorios (60 %) y proyecto final (40 %)
+:::
+
+## Resultados de Aprendizaje
+
+Al terminar el curso, cada estudiante podrá:
+
+::: {.ra}
+1. **Describir** una imagen médica como una función muestreada y cuantizada, y leer de su encabezado DICOM el tamaño del píxel, el grosor del corte y la conversión a unidades físicas.
+2. **Aplicar** operaciones puntuales y de histograma (ventana y nivel, ecualización) y justificar cuál conviene para una tarea de lectura.
+3. **Implementar** en NumPy filtros espaciales y en frecuencia (Ideal, Butterworth, Gaussiano, pasa-banda y notch) y comparar sus efectos sobre el espectro y la imagen.
+4. **Segmentar** estructuras por umbral, regiones y morfología matemática, y medir sobre ellas áreas, intensidades y formas.
+5. **Construir** un conjunto de características reproducible y ajustar con él una regresión logística o lineal múltiple, informando lo que el modelo mide y lo que no.
+:::
+
+## Calendario y fechas importantes
+
+### Fechas importantes
+
+::: {.fechas}
+| Fecha      | Entrega                              | Peso |
+|:-----------|:-------------------------------------|-----:|
+| 2026-08-28 | Laboratorio 1: histograma y contraste | 20 % |
+| 2026-10-02 | Laboratorio 2: filtrado en frecuencia | 20 % |
+| 2026-10-23 | Propuesta del proyecto                |  5 % |
+| 2026-10-30 | Laboratorio 3: segmentación y morfología | 20 % |
+| 2026-11-13 | Avance del proyecto                   | 10 % |
+| 2026-11-19 | Presentación final del proyecto       | 25 % |
+:::
+
+### Semana a semana
+
+::: {.calendario}
+| Semana | Lunes      | Tema                                                     | Material |
+|-------:|:-----------|:---------------------------------------------------------|:---------|
+| 1  | 2026-08-03 | La imagen como dato: muestreo, cuantización y DICOM       | Presentación 1 |
+| 2  | 2026-08-10 | Histograma, ventana y nivel                               | Laboratorio 1 |
+| 3  | 2026-08-17 | Operaciones puntuales y aritméticas [festivo el lunes]{.sin-clase} | |
+| 4  | 2026-08-24 | Convolución 2D y operaciones espaciales                   | |
+| 5  | 2026-08-31 | Suavizado y realce                                        | |
+| 6  | 2026-09-07 | Detección de bordes                                       | Laboratorio 2 |
+| 7  | 2026-09-14 | Transformada de Fourier 2D                                | |
+| 8  | 2026-09-21 | Filtrado en frecuencia: de Ideal a notch                  | Presentación 8 |
+| 9  | 2026-09-28 | Segmentación por umbral y por regiones                    | |
+| 10 | 2026-10-05 | Morfología matemática                                     | Laboratorio 3 |
+| 11 | 2026-10-12 | Wavelets [festivo el lunes]{.sin-clase}                   | |
+| 12 | 2026-10-19 | Extracción de características                             | |
+| 13 | 2026-10-26 | De la imagen a la tabla                                   | |
+| 14 | 2026-11-02 | Regresión logística y lineal múltiple [festivo el lunes]{.sin-clase} | |
+| 15 | 2026-11-09 | Validación e informe honesto                              | |
+| 16 | 2026-11-16 | Presentaciones finales [festivo el lunes]{.sin-clase}     | |
+:::
+
+## Presentaciones
+
+Cada presentación tiene una versión en línea (revealjs, para proyectar desde el navegador) y un PDF (beamer) con la misma composición.
+
+::: {#presentaciones}
+:::
+
+## Laboratorios
+
+Las guías se leen en línea o en PDF. Cada una trae objetivos, procedimiento, preguntas orientadoras, entregables y rúbrica.
+
+::: {#laboratorios}
+:::
+
+## Recursos y tutoriales
+
+### Tutoriales del sitio
+
+::: {#tutoriales-psim}
+:::
+
+### Software y datos
+
+- [Python](https://www.python.org) con [NumPy](https://numpy.org), [SciPy](https://scipy.org) y [scikit-image](https://scikit-image.org): todo el trabajo del curso.
+- [pydicom](https://pydicom.github.io): leer y escribir archivos DICOM desde Python.
+- [3D Slicer](https://www.slicer.org) e [ITK-SNAP](http://www.itksnap.org): visualizar volúmenes y revisar segmentaciones a mano.
+- [The Cancer Imaging Archive](https://www.cancerimagingarchive.net): colecciones públicas de imágenes para el proyecto final.
+- [Datos de ejemplo del sitio](../../recursos/python/datos_ejemplo.py): el fantoma de Shepp-Logan en unidades Hounsfield aproximadas.
+
+## Referentes
+
+::: {#refs}
+:::

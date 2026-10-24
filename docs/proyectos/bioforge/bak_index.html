@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>BioForge Experiment OS – P. E. Caicedo-Rodríguez</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -25,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -54,15 +59,14 @@ div.csl-indent {
 <link href="../../recursos/marca/logo/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ff8a91d90c3139c3b69ade772a594071.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b8a047099821e907c6fabfb5407c139d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3ea025ca51a21a1d1a970835ebe5fd04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-61bcbb53aff0eca065d6c598cffce363.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -228,7 +232,7 @@ Proyectos que lo usan
 </div>
 <section id="problema" class="level2">
 <h2 class="anchored" data-anchor-id="problema">Problema</h2>
-<p>En un experimento biomédico, los archivos del equipo, las tablas limpias, las variables calculadas y las figuras del artículo suelen terminar en la misma carpeta. Cuando un resultado cambia, nadie puede decir si cambió el dato, el código o una decisión que se tomó a mano. Los principios FAIR y las reglas de investigación computacional reproducible piden lo contrario: datos identificables, transformaciones registradas y resultados que se puedan regenerar <span class="citation" data-cites="wilkinson2016 sandve2013">(<a href="#ref-wilkinson2016" role="doc-biblioref">Wilkinson et&nbsp;al. 2016</a>; <a href="#ref-sandve2013" role="doc-biblioref">Sandve et&nbsp;al. 2013</a>)</span>.</p>
+<p>En un experimento biomédico, los archivos del equipo, las tablas limpias, las variables calculadas y las figuras del artículo suelen terminar en la misma carpeta. Cuando un resultado cambia, nadie puede decir si cambió el dato, el código o una decisión que se tomó a mano. Los principios FAIR y las reglas de investigación computacional reproducible piden lo contrario: datos identificables, transformaciones registradas y resultados que se puedan regenerar <span class="citation" data-cites="wilkinson2016 sandve2013">(<a href="#ref-wilkinson2016" role="doc-biblioref"><span class="nocase">Wilkinson et&nbsp;al.</span> 2016</a>; <a href="#ref-sandve2013" role="doc-biblioref">Sandve et&nbsp;al. 2013</a>)</span>.</p>
 <p>BioForge busca que cada estudio del laboratorio se pueda rehacer desde el dato original sin pasos manuales, y que quede claro qué se hizo con los datos y qué no.</p>
 </section>
 <section id="métodos" class="level2">
@@ -333,12 +337,12 @@ Figura&nbsp;1: El dato fluye de izquierda a derecha; cada capa se regenera desde
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-sandve2013" class="csl-entry" role="listitem">
 Sandve, Geir Kjetil, Anton Nekrutenko, James Taylor, y Eivind Hovig. 2013. <span>«Ten Simple Rules for Reproducible Computational Research»</span>. <em>PLoS Computational Biology</em> 9 (10): e1003285.
 </div>
 <div id="ref-wilkinson2016" class="csl-entry" role="listitem">
-Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, et&nbsp;al. 2016. <span>«The <span>FAIR</span> Guiding Principles for Scientific Data Management and Stewardship»</span>. <em>Scientific Data</em> 3: 160018.
+<span class="nocase">Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, et&nbsp;al.</span> 2016. <span>«The <span>FAIR</span> Guiding Principles for Scientific Data Management and Stewardship»</span>. <em>Scientific Data</em> 3: 160018.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

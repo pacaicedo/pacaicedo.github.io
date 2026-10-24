@@ -18,6 +18,9 @@ format:
     code-line-numbers: false
     highlight-style: ../../../recursos/marca/caicedo-claro.theme
     default-image-extension: svg
+    embed-resources: true
+    aspectratio: 16:9
+    scrollable: true
     
   beamer:
     aspectratio: 169

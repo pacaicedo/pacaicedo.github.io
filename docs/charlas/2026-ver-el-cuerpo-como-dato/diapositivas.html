@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-6859d8b57d6897ff58286a1a7f24652b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-41b7b16d6e16a34197f9a12efd025f55.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="P. E. Caicedo-Rodríguez">
   <title>P. E. Caicedo-Rodríguez – Imágenes médicas: ver el cuerpo como dato</title>
@@ -18,10 +18,16 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -30,7 +36,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-c3ba5358ac3ef4324881648d15950e76.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-df3969a774e9bc4595f9b6a1d547107b.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -138,7 +144,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-P. E. Caicedo-Rodríguez 
+P. E. Caicedo-Rodríguez
 </div>
         <p class="quarto-title-affiliation">
             Centro de Estudios en Biomédica y Biotecnología
@@ -170,7 +176,7 @@ P. E. Caicedo-Rodríguez
 <h2>Los mismos píxeles, como números</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="fig/matriz" style="width:74.0%"></p>
+<p><img data-src="fig/matriz.svg" style="width:74.0%"></p>
 <figcaption>Fantoma sintético de Shepp-Logan en UH aproximadas.</figcaption>
 </figure>
 </div>
@@ -252,7 +258,7 @@ g = \min\!\Big(1, \max\!\big(0, \tfrac{\text{UH} - (L - W/2)}{W}\big)\Big)
 <h2>Una fila de la imagen es una señal</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="fig/perfil" style="width:76.0%"></p>
+<p><img data-src="fig/perfil.svg" style="width:76.0%"></p>
 <figcaption>Perfil de intensidad: la misma herramienta que para un ECG.</figcaption>
 </figure>
 </div>

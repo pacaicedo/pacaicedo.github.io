@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="598.317937pt" height="274.6596pt" viewBox="0 0 598.317937 274.6596" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 274.6596 
+L 598.317937 274.6596 
+L 598.317937 -0 
+L 0 -0 
+z
+" style="fill: #111419"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 58.317938 227.436 
+L 593.997937 227.436 
+L 593.997937 27.852 
+L 58.317938 27.852 
+z
+" style="fill: #111419"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 70.717938 227.436 
+L 70.717938 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m43685598f4" d="M 0 0 
+L 0 5.25 
+" style="stroke: #a9b0c8; stroke-width: 1.2"/>
+      </defs>
+      <g>
+       <use xlink:href="#m43685598f4" x="70.717938" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 25 -->
+      <g style="fill: #a9b0c8" transform="translate(62.720406 247.1708) scale(0.138 -0.138)">
+       <defs>
+        <path id="AtkinsonHyperlegibleNext-Medium-e7" d="M 186 614 
+L 186 0 
+L 3341 0 
+L 3341 621 
+L 1107 621 
+C 2323 1421 3270 2195 3270 3149 
+C 3270 3923 2662 4352 1843 4352 
+C 1088 4352 531 3981 346 3373 
+L 1018 3155 
+C 1114 3629 1466 3802 1818 3802 
+C 2253 3802 2534 3546 2534 3149 
+C 2534 2426 1581 1626 186 614 
+z
+" transform="scale(0.015625)"/>
+        <path id="AtkinsonHyperlegibleNext-Medium-ea" d="M 1862 -77 
+C 2707 -77 3462 429 3462 1408 
+C 3462 2368 2778 2893 2022 2893 
+C 1690 2893 1344 2810 1126 2592 
+L 1254 3661 
+L 3283 3661 
+L 3283 4275 
+L 678 4275 
+L 416 2093 
+L 1069 1882 
+C 1184 2112 1453 2330 1850 2330 
+C 2285 2330 2733 2048 2733 1408 
+C 2733 806 2336 474 1843 474 
+C 1382 474 1088 704 979 1152 
+L 333 941 
+C 538 339 1043 -77 1862 -77 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e7"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea" transform="translate(56.203125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 132.717937 227.436 
+L 132.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m43685598f4" x="132.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 50 -->
+      <g style="fill: #a9b0c8" transform="translate(124.092937 247.1708) scale(0.138 -0.138)">
+       <defs>
+        <path id="AtkinsonHyperlegibleNext-Medium-e5" d="M 2093 -77 
+C 3226 -77 3834 736 3834 2144 
+C 3834 3552 3226 4358 2093 4358 
+C 954 4358 346 3552 346 2144 
+C 346 736 954 -77 2093 -77 
+z
+M 2093 493 
+C 1427 493 1088 1037 1088 2144 
+C 1088 2490 1126 2790 1203 3034 
+L 2765 794 
+C 2598 595 2381 493 2093 493 
+z
+M 2995 1306 
+L 1446 3520 
+C 1606 3699 1818 3795 2093 3795 
+C 2810 3795 3098 3110 3098 2144 
+C 3098 1818 3059 1536 2995 1306 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(59.703125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 194.717937 227.436 
+L 194.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m43685598f4" x="194.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 75 -->
+      <g style="fill: #a9b0c8" transform="translate(186.996406 247.1708) scale(0.138 -0.138)">
+       <defs>
+        <path id="AtkinsonHyperlegibleNext-Medium-ec" d="M 589 0 
+L 1414 0 
+L 3142 3654 
+L 3142 4275 
+L 96 4275 
+L 96 3654 
+L 2387 3654 
+L 589 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ec"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea" transform="translate(52.203125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 256.717937 227.436 
+L 256.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m43685598f4" x="256.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 100 -->
+      <g style="fill: #a9b0c8" transform="translate(244.794953 247.1708) scale(0.138 -0.138)">
+       <defs>
+        <path id="AtkinsonHyperlegibleNext-Medium-e6" d="M 1325 0 
+L 2022 0 
+L 2022 4275 
+L 1523 4275 
+C 1318 3731 883 3654 250 3654 
+L 250 3091 
+L 1325 3091 
+L 1325 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e6"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(42.203125 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(107.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 318.717937 227.436 
+L 318.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m43685598f4" x="318.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 125 -->
+      <g style="fill: #a9b0c8" transform="translate(307.808391 247.1708) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e6"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e7" transform="translate(42.203125 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea" transform="translate(98.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 380.717937 227.436 
+L 380.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m43685598f4" x="380.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 150 -->
+      <g style="fill: #a9b0c8" transform="translate(369.180922 247.1708) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e6"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea" transform="translate(42.203125 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(101.90625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 442.717937 227.436 
+L 442.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m43685598f4" x="442.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 175 -->
+      <g style="fill: #a9b0c8" transform="translate(432.084391 247.1708) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e6"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ec" transform="translate(42.203125 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea" transform="translate(94.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 504.717937 227.436 
+L 504.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m43685598f4" x="504.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 200 -->
+      <g style="fill: #a9b0c8" transform="translate(491.828953 247.1708) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e7"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(56.203125 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(121.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_17">
+      <path d="M 566.717937 227.436 
+L 566.717937 27.852 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m43685598f4" x="566.717937" y="227.436" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 225 -->
+      <g style="fill: #a9b0c8" transform="translate(554.842391 247.1708) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e7"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e7" transform="translate(56.203125 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea" transform="translate(112.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_10">
+     <!-- Columna (píxel) -->
+     <g style="fill: #eef1f6" transform="translate(272.86575 266.5746) scale(0.15 -0.15)">
+      <defs>
+       <path id="AtkinsonHyperlegibleNext-Medium-e" d="M 2259 -77 
+C 3034 -77 3680 275 4000 896 
+L 3334 1139 
+C 3136 755 2758 550 2291 550 
+C 1562 550 1030 1133 1030 2144 
+C 1030 3162 1574 3725 2272 3725 
+C 2752 3725 3117 3501 3309 3136 
+L 3974 3379 
+C 3667 3987 3053 4352 2304 4352 
+C 1050 4352 250 3482 250 2144 
+C 250 819 998 -77 2259 -77 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-ad" d="M 1792 -77 
+C 2579 -77 3379 435 3379 1581 
+C 3379 2733 2579 3238 1792 3238 
+C 1005 3238 211 2733 211 1581 
+C 211 435 1005 -77 1792 -77 
+z
+M 1792 506 
+C 1350 506 941 813 941 1581 
+C 941 2349 1350 2662 1792 2662 
+C 2240 2662 2643 2349 2643 1581 
+C 2643 813 2240 506 1792 506 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-a3" d="M 1261 0 
+L 1715 0 
+L 1715 595 
+L 1478 595 
+C 1158 595 1094 659 1094 947 
+L 1094 4531 
+L 390 4531 
+L 390 806 
+C 390 154 595 0 1261 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-c6" d="M 1453 -77 
+C 1965 -77 2234 147 2419 454 
+L 2554 0 
+L 3123 0 
+L 3123 3174 
+L 2419 3174 
+L 2419 1459 
+C 2419 813 2170 506 1702 506 
+C 1158 506 1101 909 1101 1389 
+L 1101 3174 
+L 403 3174 
+L 403 1197 
+C 403 422 672 -77 1453 -77 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-a7" d="M 416 0 
+L 1114 0 
+L 1114 1696 
+C 1114 2330 1376 2669 1811 2669 
+C 2349 2669 2413 2259 2413 1792 
+L 2413 0 
+L 3117 0 
+L 3117 1702 
+C 3117 2336 3366 2669 3802 2669 
+C 4346 2669 4416 2259 4416 1792 
+L 4416 0 
+L 5114 0 
+L 5114 1984 
+C 5114 2752 4838 3238 4070 3238 
+C 3629 3238 3251 3072 2995 2694 
+C 2854 3040 2566 3238 2074 3238 
+C 1600 3238 1280 2995 1114 2714 
+L 986 3174 
+L 416 3174 
+L 416 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-a8" d="M 416 0 
+L 1114 0 
+L 1114 1690 
+C 1114 2330 1382 2669 1862 2669 
+C 2419 2669 2477 2259 2477 1792 
+L 2477 0 
+L 3181 0 
+L 3181 1984 
+C 3181 2752 2912 3238 2125 3238 
+C 1606 3238 1280 2995 1114 2714 
+L 986 3174 
+L 416 3174 
+L 416 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-70" d="M 1280 -77 
+C 1798 -77 2157 90 2355 416 
+L 2477 0 
+L 3123 0 
+C 3066 294 3014 723 3014 1216 
+L 3014 1939 
+C 3014 2842 2579 3238 1683 3238 
+C 1062 3238 576 2944 390 2483 
+L 1024 2278 
+C 1094 2566 1331 2726 1677 2726 
+C 2125 2726 2342 2477 2342 2061 
+L 2342 1984 
+C 1011 1875 179 1594 179 838 
+C 179 262 678 -77 1280 -77 
+z
+M 1498 442 
+C 1146 442 928 614 928 870 
+C 928 1267 1446 1434 2342 1504 
+L 2342 1306 
+C 2342 646 1965 442 1498 442 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-1" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-115" d="M 1133 -1037 
+L 1818 -1037 
+C 1286 -224 973 774 973 1747 
+C 973 2726 1286 3718 1818 4531 
+L 1133 4531 
+C 627 3718 320 2726 320 1747 
+C 320 774 627 -224 1133 -1037 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-b6" d="M 416 -1037 
+L 1114 -1037 
+L 1114 474 
+C 1312 128 1683 -77 2125 -77 
+C 2880 -77 3501 538 3501 1581 
+C 3501 2624 2880 3238 2125 3238 
+C 1683 3238 1312 3040 1114 2701 
+L 979 3174 
+L 416 3174 
+L 416 -1037 
+z
+M 1920 493 
+C 1434 493 1094 870 1094 1587 
+C 1094 2304 1434 2669 1920 2669 
+C 2400 2669 2746 2272 2746 1581 
+C 2746 883 2400 493 1920 493 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-97" d="M 621 0 
+L 1325 0 
+L 1325 3174 
+L 147 3174 
+L 147 2630 
+L 621 2630 
+L 621 0 
+z
+M 1229 4365 
+L 672 3661 
+L 1222 3661 
+L 1574 3942 
+C 1760 4096 1824 4186 1824 4294 
+C 1824 4454 1709 4570 1542 4570 
+C 1421 4570 1344 4506 1229 4365 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-d5" d="M 64 0 
+L 858 0 
+L 1626 1082 
+L 2394 0 
+L 3187 0 
+L 2022 1645 
+L 3117 3174 
+L 2323 3174 
+L 1626 2195 
+L 928 3174 
+L 134 3174 
+L 1229 1645 
+L 64 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-85" d="M 1837 -77 
+C 2400 -77 2874 173 3142 589 
+L 2528 787 
+C 2394 614 2163 506 1824 506 
+C 1472 506 998 704 922 1402 
+L 3347 1402 
+C 3418 2394 2835 3238 1811 3238 
+C 922 3238 211 2598 211 1594 
+C 211 614 826 -77 1837 -77 
+z
+M 2656 1888 
+L 922 1888 
+C 1018 2483 1421 2682 1824 2682 
+C 2317 2682 2637 2317 2656 1888 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-116" d="M 198 -1030 
+L 890 -1030 
+C 1389 -218 1696 781 1696 1754 
+C 1696 2733 1389 3725 890 4538 
+L 198 4538 
+C 736 3725 1043 2733 1043 1754 
+C 1043 781 736 -218 198 -1030 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ad" transform="translate(65.1875 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-a3" transform="translate(121.28125 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-c6" transform="translate(150.078125 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-a7" transform="translate(205.28125 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-a8" transform="translate(291.484375 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-70" transform="translate(347.484375 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-1" transform="translate(401.1875 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-115" transform="translate(430.6875 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-b6" transform="translate(462.28125 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-97" transform="translate(519.375 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-d5" transform="translate(546.78125 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-85" transform="translate(595.171875 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-a3" transform="translate(650.171875 0)"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-116" transform="translate(678.96875 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_19">
+      <path d="M 58.317938 217.4568 
+L 593.997937 217.4568 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_20">
+      <defs>
+       <path id="m95f2c22fec" d="M 0 0 
+L -5.25 0 
+" style="stroke: #a9b0c8; stroke-width: 1.2"/>
+      </defs>
+      <g>
+       <use xlink:href="#m95f2c22fec" x="58.317938" y="217.4568" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- −50 -->
+      <g style="fill: #a9b0c8" transform="translate(24.025 222.9492) scale(0.138 -0.138)">
+       <defs>
+        <path id="AtkinsonHyperlegibleNext-Medium-141" d="M 314 1280 
+L 3526 1280 
+L 3526 1901 
+L 314 1901 
+L 314 1280 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-141"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea" transform="translate(60.09375 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(119.796875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_21">
+      <path d="M 58.317938 167.5608 
+L 593.997937 167.5608 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m95f2c22fec" x="58.317938" y="167.5608" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- 0 -->
+      <g style="fill: #a9b0c8" transform="translate(40.556969 173.0532) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_23">
+      <path d="M 58.317938 117.6648 
+L 593.997937 117.6648 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#m95f2c22fec" x="58.317938" y="117.6648" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <!-- 50 -->
+      <g style="fill: #a9b0c8" transform="translate(32.317938 123.1572) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ea"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(59.703125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_25">
+      <path d="M 58.317938 67.7688 
+L 593.997937 67.7688 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #2a2f3a; stroke-width: 1.2; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m95f2c22fec" x="58.317938" y="67.7688" style="fill: #a9b0c8; stroke: #a9b0c8; stroke-width: 1.2"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <!-- 100 -->
+      <g style="fill: #a9b0c8" transform="translate(25.721969 73.2612) scale(0.138 -0.138)">
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e6"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(42.203125 0)"/>
+       <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(107.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_15">
+     <!-- UH -->
+     <g style="fill: #eef1f6" transform="translate(16.26 138.0315) rotate(-90) scale(0.15 -0.15)">
+      <defs>
+       <path id="AtkinsonHyperlegibleNext-Medium-57" d="M 2202 -77 
+C 3482 -77 3968 544 3968 1818 
+L 3968 4275 
+L 3213 4275 
+L 3213 1747 
+C 3213 941 2944 557 2208 557 
+C 1466 557 1190 941 1190 1747 
+L 1190 4275 
+L 435 4275 
+L 435 1818 
+C 435 544 928 -77 2202 -77 
+z
+" transform="scale(0.015625)"/>
+       <path id="AtkinsonHyperlegibleNext-Medium-25" d="M 448 0 
+L 1203 0 
+L 1203 1869 
+L 3264 1869 
+L 3264 0 
+L 4019 0 
+L 4019 4275 
+L 3264 4275 
+L 3264 2528 
+L 1203 2528 
+L 1203 4275 
+L 448 4275 
+L 448 0 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-57"/>
+      <use xlink:href="#AtkinsonHyperlegibleNext-Medium-25" transform="translate(68.796875 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 58.317938 167.5608 
+L 593.997937 167.5608 
+L 593.997937 87.7272 
+L 58.317938 87.7272 
+z
+" clip-path="url(#p2f23b3d507)" style="fill: #13a3ba; opacity: 0.1"/>
+   </g>
+   <g id="line2d_27">
+    <path d="M 106.543164 275.6596 
+L 106.887528 -1 
+M 117.506202 -1 
+L 117.837937 126.888323 
+L 120.317937 138.667288 
+L 122.797937 135.168621 
+L 125.277937 129.218349 
+L 127.757937 133.281123 
+L 130.237937 133.656685 
+L 132.717937 136.138366 
+L 135.197937 127.058353 
+L 137.677937 130.520449 
+L 140.157937 135.187287 
+L 142.637937 132.587895 
+L 145.117937 132.011197 
+L 147.597937 137.790381 
+L 150.077937 129.908333 
+L 152.557937 132.915328 
+L 155.037937 131.271716 
+L 157.517937 143.18523 
+L 159.997937 127.002946 
+L 162.477937 139.987769 
+L 164.957937 132.274916 
+L 167.437937 129.781682 
+L 169.917937 130.252464 
+L 172.397937 138.870363 
+L 174.877937 128.257339 
+L 177.357937 132.129831 
+L 179.837937 123.886651 
+L 182.317937 136.095241 
+L 184.797937 131.615201 
+L 187.277937 134.936411 
+L 189.757937 132.420113 
+L 192.237937 132.772053 
+L 194.717937 129.56445 
+L 197.197937 137.844947 
+L 199.677937 131.771594 
+L 202.157937 127.206618 
+L 204.637937 166.657283 
+L 207.117937 162.730052 
+L 209.597937 160.881123 
+L 212.077937 167.599189 
+L 214.557937 155.162369 
+L 217.037937 165.758469 
+L 219.517937 158.097373 
+L 221.997937 159.084158 
+L 224.477937 166.323831 
+L 226.957937 159.07967 
+L 229.437937 161.718265 
+L 231.917937 156.259494 
+L 234.397937 164.968799 
+L 236.877937 163.457194 
+L 239.357937 160.182553 
+L 241.837937 159.324432 
+L 244.317937 169.175914 
+L 246.797937 165.249956 
+L 249.277937 159.936489 
+L 251.757937 164.297145 
+L 254.237937 163.213269 
+L 256.717937 154.648894 
+L 259.197937 168.887446 
+L 261.677937 170.160695 
+L 264.157937 159.203374 
+L 266.637937 166.830936 
+L 269.117937 165.436328 
+L 271.597937 158.011971 
+L 274.077937 163.519034 
+L 276.557937 169.763147 
+L 279.037937 154.662347 
+L 281.517937 163.459099 
+L 283.997937 167.681277 
+L 286.477937 160.157966 
+L 288.957937 155.238719 
+L 291.437937 162.297064 
+L 293.917937 161.624593 
+L 296.397937 164.102099 
+L 298.877937 163.581023 
+L 301.357937 159.70974 
+L 303.837937 169.370889 
+L 306.317937 162.141104 
+L 308.797937 135.30264 
+L 311.277937 134.349869 
+L 313.757937 130.01792 
+L 316.237937 126.401426 
+L 318.717937 137.347332 
+L 321.197937 137.98566 
+L 323.677937 130.96822 
+L 326.157937 134.52277 
+L 328.637937 133.648583 
+L 331.117937 134.102196 
+L 333.597937 129.924156 
+L 336.077937 124.603146 
+L 338.557937 129.174473 
+L 341.037937 133.16953 
+L 343.517937 131.959022 
+L 345.997937 135.154048 
+L 348.477937 127.559827 
+L 350.957937 132.341622 
+L 353.437937 128.615422 
+L 355.917937 136.994109 
+L 358.397937 165.310577 
+L 360.877937 164.723437 
+L 363.357937 160.527152 
+L 365.837937 169.144309 
+L 368.317937 159.381803 
+L 370.797937 153.375233 
+L 373.277937 158.740335 
+L 375.757937 157.326945 
+L 378.237937 159.53461 
+L 380.717937 159.633276 
+L 383.197937 158.967525 
+L 385.677937 163.932745 
+L 388.157937 166.212894 
+L 390.637937 163.131712 
+L 393.117937 166.667696 
+L 395.597937 158.024443 
+L 398.077937 156.816958 
+L 400.557937 158.468811 
+L 403.037937 166.891992 
+L 405.517937 158.620098 
+L 407.997937 159.748828 
+L 410.477937 158.961492 
+L 412.957937 162.931413 
+L 415.437937 160.816262 
+L 417.917937 163.277254 
+L 420.397937 160.177211 
+L 422.877937 171.996423 
+L 425.357937 160.944149 
+L 427.837937 166.036091 
+L 430.317937 159.221246 
+L 432.797937 131.081246 
+L 437.757937 132.779067 
+L 440.237937 133.913548 
+L 442.717937 132.658264 
+L 445.197937 128.811593 
+L 447.677937 131.290605 
+L 450.157937 126.447811 
+L 452.637937 132.801351 
+L 455.117937 125.879143 
+L 457.597937 139.342342 
+L 460.077937 124.349877 
+L 462.557937 124.694649 
+L 465.037937 137.513555 
+L 467.517937 132.844056 
+L 469.997937 127.046563 
+L 472.477937 130.14006 
+L 474.957937 131.398236 
+L 477.437937 134.671303 
+L 479.917937 133.692459 
+L 482.397937 136.731153 
+L 484.877937 132.700335 
+L 487.357937 135.583274 
+L 489.837937 127.664677 
+L 492.317937 130.144765 
+L 494.797937 133.180401 
+L 497.277937 133.188896 
+L 499.757937 132.905099 
+L 502.237937 138.196533 
+L 504.717937 127.250241 
+L 507.197937 126.547317 
+L 509.677937 131.288721 
+L 512.157937 131.647321 
+L 514.637937 128.434484 
+L 517.117937 130.732371 
+L 519.597937 129.561089 
+L 522.077937 138.43007 
+L 524.557937 144.331567 
+L 527.037937 132.115109 
+L 529.517938 134.74805 
+L 531.997937 134.074763 
+L 532.345854 -1 
+M 542.952991 -1 
+L 543.295821 275.6596 
+L 543.295821 275.6596 
+" clip-path="url(#p2f23b3d507)" style="fill: none; stroke: #13a3ba; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 58.317938 227.436 
+L 58.317938 27.852 
+" style="fill: none; stroke: #a9b0c8; stroke-width: 1.2; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 58.317938 227.436 
+L 593.997937 227.436 
+" style="fill: none; stroke: #a9b0c8; stroke-width: 1.2; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_16">
+    <!-- ventana de cerebro (0 a 80 UH) -->
+    <g style="fill: #a9b0c8" transform="translate(412.035437 105.26256) scale(0.12 -0.12)">
+     <defs>
+      <path id="AtkinsonHyperlegibleNext-Medium-cf" d="M 1197 0 
+L 1958 0 
+L 3091 3174 
+L 2349 3174 
+L 1581 819 
+L 806 3174 
+L 64 3174 
+L 1197 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-Medium-c2" d="M 1498 0 
+L 2010 0 
+L 2010 595 
+L 1696 595 
+C 1408 595 1338 646 1338 986 
+L 1338 2630 
+L 2010 2630 
+L 2010 3174 
+L 1338 3174 
+L 1338 3968 
+L 640 3968 
+L 640 3174 
+L 102 3174 
+L 102 2630 
+L 640 2630 
+L 640 832 
+C 640 141 826 0 1498 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-Medium-81" d="M 1587 -77 
+C 2029 -77 2387 109 2605 454 
+L 2739 0 
+L 3405 0 
+C 3309 525 3296 960 3296 1216 
+L 3296 4531 
+L 2598 4531 
+L 2598 2701 
+C 2400 3040 2029 3238 1587 3238 
+C 832 3238 211 2630 211 1587 
+C 211 544 832 -77 1587 -77 
+z
+M 1792 493 
+C 1312 493 966 896 966 1587 
+C 966 2278 1312 2669 1792 2669 
+C 2278 2669 2618 2298 2618 1581 
+C 2618 864 2278 493 1792 493 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-Medium-7c" d="M 1747 -77 
+C 2285 -77 2797 186 3072 653 
+L 2464 877 
+C 2336 659 2093 506 1779 506 
+C 1350 506 947 832 947 1587 
+C 947 2342 1344 2662 1779 2662 
+C 2074 2662 2330 2522 2451 2259 
+L 3066 2483 
+C 2829 2957 2342 3238 1779 3238 
+C 832 3238 211 2554 211 1587 
+C 211 608 781 -77 1747 -77 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-Medium-b9" d="M 416 0 
+L 1114 0 
+L 1114 1453 
+C 1114 2195 1421 2560 2214 2528 
+L 2214 3238 
+C 1696 3251 1338 3021 1120 2586 
+L 947 3174 
+L 416 3174 
+L 416 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-Medium-7b" d="M 2125 -77 
+C 2880 -77 3501 544 3501 1587 
+C 3501 2630 2880 3238 2125 3238 
+C 1683 3238 1312 3040 1114 2701 
+L 1114 4531 
+L 416 4531 
+L 416 0 
+L 986 0 
+L 1114 461 
+C 1312 115 1683 -77 2125 -77 
+z
+M 1920 493 
+C 1434 493 1094 864 1094 1581 
+C 1094 2298 1434 2669 1920 2669 
+C 2400 2669 2746 2278 2746 1587 
+C 2746 896 2400 493 1920 493 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-Medium-ed" d="M 1978 -77 
+C 2918 -77 3629 410 3629 1248 
+C 3629 1779 3341 2144 2861 2368 
+C 3053 2579 3168 2861 3168 3168 
+C 3168 3821 2656 4358 1978 4358 
+C 1306 4358 787 3821 787 3168 
+C 787 2861 909 2579 1101 2368 
+C 621 2144 333 1779 333 1248 
+C 333 410 1050 -77 1978 -77 
+z
+M 1978 525 
+C 1434 525 1075 813 1075 1254 
+C 1075 1702 1434 1978 1978 1978 
+C 2534 1978 2893 1702 2893 1254 
+C 2893 813 2534 525 1978 525 
+z
+M 1978 2579 
+C 1658 2579 1395 2842 1395 3162 
+C 1395 3488 1658 3750 1978 3750 
+C 2304 3750 2566 3488 2566 3162 
+C 2566 2842 2304 2579 1978 2579 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-cf"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-85" transform="translate(48 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-a8" transform="translate(103 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-c2" transform="translate(157.703125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-70" transform="translate(192.609375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-a8" transform="translate(246.3125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-70" transform="translate(302.3125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-1" transform="translate(356.015625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-81" transform="translate(385.515625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-85" transform="translate(443.421875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-1" transform="translate(498.421875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-7c" transform="translate(527.921875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-85" transform="translate(576.328125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-b9" transform="translate(631.328125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-85" transform="translate(666.015625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-7b" transform="translate(721.015625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-b9" transform="translate(779.015625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ad" transform="translate(813.703125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-1" transform="translate(869.796875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-115" transform="translate(899.296875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(928.890625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-1" transform="translate(994.1875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-70" transform="translate(1023.6875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-1" transform="translate(1077.390625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-ed" transform="translate(1106.890625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-e5" transform="translate(1168.796875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-1" transform="translate(1234.09375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-57" transform="translate(1263.59375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-25" transform="translate(1332.390625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-Medium-116" transform="translate(1402.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- Perfil de intensidad de la fila central -->
+    <g style="fill: #eef1f6" transform="translate(58.317938 17.852) scale(0.17 -0.17)">
+     <defs>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-47" d="M 346 0 
+L 1434 0 
+L 1434 1427 
+L 2310 1427 
+C 3232 1427 4026 1850 4026 2854 
+C 4026 3853 3232 4275 2310 4275 
+L 346 4275 
+L 346 0 
+z
+M 2291 2349 
+L 1434 2349 
+L 1434 3354 
+L 2291 3354 
+C 2618 3354 2880 3206 2880 2854 
+C 2880 2496 2618 2349 2291 2349 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-85" d="M 1952 -77 
+C 2458 -77 3014 141 3366 646 
+L 2541 954 
+C 2426 819 2208 730 1920 730 
+C 1581 730 1299 922 1203 1312 
+L 3558 1312 
+C 3648 2483 2957 3270 1907 3270 
+C 966 3270 179 2624 179 1613 
+C 179 538 915 -77 1952 -77 
+z
+M 2598 1926 
+L 1197 1926 
+C 1286 2336 1587 2496 1939 2496 
+C 2285 2496 2560 2323 2598 1926 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-b9" d="M 326 0 
+L 1382 0 
+L 1382 1491 
+C 1382 2131 1837 2323 2458 2221 
+L 2458 3270 
+C 1984 3302 1510 3130 1338 2592 
+L 1165 3174 
+L 326 3174 
+L 326 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-8e" d="M 582 0 
+L 1638 0 
+L 1638 2374 
+L 2336 2374 
+L 2336 3174 
+L 1638 3174 
+L 1638 3501 
+C 1638 3731 1722 3770 2080 3770 
+L 2336 3770 
+L 2336 4595 
+L 1875 4595 
+C 986 4595 582 4384 582 3610 
+L 582 3174 
+L 58 3174 
+L 58 2374 
+L 582 2374 
+L 582 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-95" d="M 685 0 
+L 1747 0 
+L 1747 3174 
+L 134 3174 
+L 134 2381 
+L 685 2381 
+L 685 0 
+z
+M 1158 3686 
+C 1498 3686 1766 3955 1766 4294 
+C 1766 4634 1498 4902 1158 4902 
+C 819 4902 550 4634 550 4294 
+C 550 3955 819 3686 1158 3686 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-a3" d="M 1408 0 
+L 2093 0 
+L 2093 845 
+L 1792 845 
+C 1434 845 1370 909 1370 1261 
+L 1370 4531 
+L 307 4531 
+L 307 928 
+C 307 147 595 0 1408 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-1" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-81" d="M 1587 -77 
+C 1901 -77 2285 51 2573 403 
+L 2694 0 
+L 3706 0 
+C 3616 448 3597 909 3597 1248 
+L 3597 4531 
+L 2541 4531 
+L 2541 2752 
+C 2330 3110 1901 3270 1587 3270 
+C 755 3270 179 2656 179 1619 
+C 179 589 749 -77 1587 -77 
+z
+M 1933 736 
+C 1574 736 1267 1062 1267 1619 
+C 1267 2176 1574 2464 1933 2464 
+C 2278 2464 2592 2227 2592 1600 
+C 2592 954 2278 736 1933 736 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-a8" d="M 326 0 
+L 1382 0 
+L 1382 1613 
+C 1382 2170 1542 2464 1933 2464 
+C 2246 2464 2387 2259 2387 1811 
+L 2387 0 
+L 3443 0 
+L 3443 2029 
+C 3443 2835 3136 3270 2362 3270 
+C 1882 3270 1517 2982 1382 2765 
+L 1267 3174 
+L 326 3174 
+L 326 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-c2" d="M 1683 0 
+L 2323 0 
+L 2323 851 
+L 2054 851 
+C 1741 851 1632 909 1632 1203 
+L 1632 2374 
+L 2323 2374 
+L 2323 3174 
+L 1632 3174 
+L 1632 3968 
+L 576 3968 
+L 576 3174 
+L 51 3174 
+L 51 2374 
+L 576 2374 
+L 576 915 
+C 576 147 864 0 1683 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-bc" d="M 1715 -83 
+C 2586 -83 3283 275 3283 1011 
+C 3283 1549 2976 1805 2170 1946 
+L 1562 2054 
+C 1286 2099 1210 2163 1210 2278 
+C 1210 2419 1350 2528 1696 2528 
+C 2010 2528 2214 2419 2304 2195 
+L 3187 2522 
+C 2931 3072 2336 3270 1709 3270 
+C 864 3270 205 2867 205 2221 
+C 205 1715 621 1395 1261 1286 
+L 1837 1184 
+C 2195 1126 2278 1037 2278 941 
+C 2278 755 2003 666 1728 666 
+C 1350 666 1043 806 966 1056 
+L 83 730 
+C 320 218 922 -83 1715 -83 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-70" d="M 1254 -77 
+C 1677 -77 2048 26 2278 378 
+L 2387 0 
+L 3379 0 
+C 3315 243 3270 730 3270 1184 
+L 3270 1997 
+C 3270 2880 2720 3270 1786 3270 
+C 1037 3270 518 2938 307 2522 
+L 1203 2214 
+C 1267 2426 1485 2560 1728 2560 
+C 2054 2560 2253 2438 2253 2099 
+L 2253 2010 
+C 941 1939 128 1626 128 858 
+C 128 288 595 -77 1254 -77 
+z
+M 1626 634 
+C 1402 634 1235 755 1235 947 
+C 1235 1178 1485 1344 2253 1389 
+L 2253 1306 
+C 2253 781 2003 634 1626 634 
+z
+" transform="scale(0.015625)"/>
+      <path id="AtkinsonHyperlegibleNext-ExtraBold-7c" d="M 1830 -77 
+C 2323 -77 2938 96 3277 704 
+L 2432 1011 
+C 2323 832 2150 730 1894 730 
+C 1574 730 1248 934 1248 1606 
+C 1248 2253 1568 2464 1894 2464 
+C 2118 2464 2330 2374 2426 2099 
+L 3296 2419 
+C 2982 3091 2355 3270 1818 3270 
+C 845 3270 179 2618 179 1613 
+C 179 602 755 -77 1830 -77 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-47"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-85" transform="translate(64.90625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-b9" transform="translate(122.5 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-8e" transform="translate(165.390625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-95" transform="translate(205.296875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-a3" transform="translate(237.890625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-1" transform="translate(272.59375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-81" transform="translate(305.59375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-85" transform="translate(366.796875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-1" transform="translate(424.390625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-95" transform="translate(457.390625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-a8" transform="translate(489.984375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-c2" transform="translate(548.1875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-85" transform="translate(586.578125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-a8" transform="translate(644.171875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-bc" transform="translate(702.671875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-95" transform="translate(755.265625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-81" transform="translate(787.859375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-70" transform="translate(849.0625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-81" transform="translate(904.5625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-1" transform="translate(965.765625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-81" transform="translate(998.765625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-85" transform="translate(1059.96875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-1" transform="translate(1117.5625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-a3" transform="translate(1150.5625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-70" transform="translate(1186.0625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-1" transform="translate(1242.15625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-8e" transform="translate(1275.15625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-95" transform="translate(1315.0625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-a3" transform="translate(1347.65625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-70" transform="translate(1383.15625 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-1" transform="translate(1439.25 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-7c" transform="translate(1472.25 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-85" transform="translate(1522.75 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-a8" transform="translate(1580.34375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-c2" transform="translate(1638.546875 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-b9" transform="translate(1678.34375 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-70" transform="translate(1718.03125 0)"/>
+     <use xlink:href="#AtkinsonHyperlegibleNext-ExtraBold-a3" transform="translate(1774.125 0)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2f23b3d507">
+   <rect x="58.317938" y="27.852" width="535.68" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg>

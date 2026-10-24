@@ -30,23 +30,23 @@
   </url>
   <url>
     <loc>https://pacaicedo.github.io/index.html</loc>
-    <lastmod>2026-10-24T12:50:40.968Z</lastmod>
+    <lastmod>2026-10-24T12:57:46.544Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/tau/presentaciones/01-aprender-de-datos.html</loc>
-    <lastmod>2026-10-22T18:36:54.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.318Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/tau/index.html</loc>
-    <lastmod>2026-10-21T20:40:30.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.318Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/sysb/presentaciones/01-senales-y-sistemas.html</loc>
-    <lastmod>2026-10-22T18:40:39.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.317Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/sysb/index.html</loc>
-    <lastmod>2026-10-21T14:19:52.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.317Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/presentaciones/01-la-imagen-como-dato.html</loc>
@@ -54,35 +54,51 @@
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/laboratorios/lab1-histograma-y-contraste.html</loc>
-    <lastmod>2026-10-21T14:07:44.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/index.html</loc>
     <lastmod>2026-10-24T12:34:12.313Z</lastmod>
   </url>
   <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html</loc>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/index.html</loc>
+    <lastmod>2026-10-24T12:44:33.580Z</lastmod>
+  </url>
+  <url>
     <loc>https://pacaicedo.github.io/charlas/2026-ver-el-cuerpo-como-dato/index.html</loc>
-    <lastmod>2026-10-22T18:09:02.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.313Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/charlas/2026-ver-el-cuerpo-como-dato/diapositivas-sala.html</loc>
-    <lastmod>2026-10-22T18:19:15.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.311Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/charlas/2026-experimentos-reproducibles/diapositivas.html</loc>
-    <lastmod>2026-10-22T18:19:25.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.311Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/charlas/2026-experimentos-reproducibles/index.html</loc>
-    <lastmod>2026-10-23T13:06:14.214Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.311Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/charlas/2026-ver-el-cuerpo-como-dato/diapositivas.html</loc>
-    <lastmod>2026-10-22T18:19:15.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.311Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/charlas/index.html</loc>
-    <lastmod>2026-10-21T14:05:36.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.313Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html</loc>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pacaicedo.github.io/cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html</loc>
+    <lastmod>2026-10-24T12:55:56.615Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/index.html</loc>
@@ -90,27 +106,27 @@
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/laboratorios/lab2-filtrado-frecuencial.html</loc>
-    <lastmod>2026-10-23T15:00:10.342Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/psim/presentaciones/08-filtrado-frecuencial.html</loc>
-    <lastmod>2026-10-22T18:40:39.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/sysb/laboratorios/lab1-filtrado-ecg.html</loc>
-    <lastmod>2026-10-21T14:19:52.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.317Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/sysb/presentaciones/07-convolucion.html</loc>
-    <lastmod>2026-10-22T18:40:39.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.317Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/tau/laboratorios/lab2-pca-y-kmeans.html</loc>
-    <lastmod>2026-10-22T18:23:17.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.318Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/cursos/tau/presentaciones/05-componentes-principales.html</loc>
-    <lastmod>2026-10-22T18:40:39.000Z</lastmod>
+    <lastmod>2026-10-24T12:34:12.318Z</lastmod>
   </url>
   <url>
     <loc>https://pacaicedo.github.io/proyectos/bioforge/bak_index.html</loc>
@@ -139,21 +155,5 @@
   <url>
     <loc>https://pacaicedo.github.io/tutoriales/tutorial-quarto-gitlab/index.html</loc>
     <lastmod>2026-10-24T12:34:12.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pacaicedo.github.io/cursos/AASI_M/index.html</loc>
-    <lastmod>2026-10-24T12:44:33.580Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pacaicedo.github.io/cursos/AASI_M/laboratorios/lab2-filtrado-frecuencial.html</loc>
-    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pacaicedo.github.io/cursos/AASI_M/laboratorios/lab1-histograma-y-contraste.html</loc>
-    <lastmod>2026-10-24T12:34:12.315Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pacaicedo.github.io/cursos/AASI_M/presentaciones/rnn-lstm-emg-aguja.html</loc>
-    <lastmod>2026-10-24T12:50:07.162Z</lastmod>
   </url>
 </urlset>

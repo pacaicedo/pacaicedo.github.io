@@ -55,5 +55,6 @@ format:
     # Las figuras se enlazan sin extensión (![](fig/senal)): SVG en la web, PDF en LaTeX.
     default-image-extension: svg
     fig-cap-location: bottom
+    embed-resources: true
 
 filters: [recursos/marca/caicedo.lua]

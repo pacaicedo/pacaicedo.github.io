@@ -12,12 +12,13 @@ format:
     height: 720
     margin: 0
     logo: ../../../recursos/marca/logo/firma-pie-claro.svg
-    footer: "PSIM · Procesamiento Digital de Imágenes Médicas"
+    footer: "AASI · Aprendizaje automático para el procesamiento de señales e imágenes médicas"
     slide-number: c/t
     auto-stretch: false          # las imágenes miden lo que dice width=, igual que en beamer
     code-line-numbers: false
     highlight-style: ../../../recursos/marca/caicedo-claro.theme
     default-image-extension: svg
+    
   beamer:
     aspectratio: 169
     fontsize: 12pt
